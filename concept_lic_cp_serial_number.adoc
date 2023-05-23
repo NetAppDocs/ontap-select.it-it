@@ -1,0 +1,42 @@
+---
+sidebar: sidebar 
+permalink: concept_lic_cp_serial_number.html 
+keywords: license, licensing, capacity pools, node serial numbers 
+summary: Con il modello di licenza Capacity Tier, il numero di serie del nodo a nove cifre corrisponde al numero di serie della licenza assegnato al nodo. Tuttavia, i numeri di serie assegnati ai nodi che utilizzano il modello di licenza dei pool di capacità hanno un formato diverso. 
+---
+= Numeri di serie del nodo
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Con il modello di licenza Capacity Tier, il numero di serie del nodo a nove cifre corrisponde al numero di serie della licenza assegnato al nodo. Tuttavia, i numeri di serie assegnati ai nodi che utilizzano il modello di licenza dei pool di capacità hanno un formato diverso.
+
+Il numero di serie di un nodo che utilizza le licenze di Capacity Pools ha il seguente formato:
+
+`999 ppppppppp nnnnnnnn`
+
+
+NOTE: Gli spazi sono stati aggiunti per maggiore chiarezza, ma non fanno parte del numero di serie effettivo.
+
+Ciascuna sezione del numero di serie del nodo è descritta nella seguente tabella, da sinistra a destra.
+
+[cols="15,85"]
+|===
+| Sezione | Descrizione 
+
+
+| "999" | Valore costante di tre cifre riservato da NetApp. 
+
+
+| ppppppppppp | Numero di serie variabile di nove cifre assegnato al pool di capacità da NetApp 
+
+
+| nnnnnnnn | Valore variabile di otto cifre generato dal Manager di licenza per ciascun nodo che utilizza il pool di capacità 
+|===
+
+NOTE: Attenzione: Quando si apre un caso con il supporto NetApp che coinvolge un nodo che utilizza una licenza di Capacity Pool, non è possibile fornire il numero di serie completo del nodo di venti cifre. È invece necessario fornire il numero di serie della licenza Capacity Pool a nove cifre. È possibile ricavare il numero seriale della licenza dal numero seriale del nodo come mostrato sopra. Saltare le prime tre cifre del numero di serie del nodo ('999') ed estrarre le nove cifre successive (ppppppppp).

@@ -1,0 +1,46 @@
+---
+sidebar: sidebar 
+permalink: concept_lic_evaluation.html 
+keywords: license, licensing, evaluation, upgrade license 
+summary: 'È possibile utilizzare una licenza di valutazione se si desidera valutare ONTAP Select prima di prendere la decisione di acquisto. La licenza di valutazione è inclusa nell"utility di amministrazione di ONTAP Select Deploy e viene applicata automaticamente a ciascun nodo ONTAP Select come parte di un"implementazione di valutazione.' 
+---
+= Licenze di valutazione
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+È possibile utilizzare una licenza di valutazione se si desidera valutare ONTAP Select prima di prendere la decisione di acquisto. La licenza di valutazione è inclusa nell'utility di amministrazione di ONTAP Select Deploy e viene applicata automaticamente a ciascun nodo ONTAP Select come parte di un'implementazione di valutazione.
+
+
+
+== Caratteristiche di licensing
+
+La licenza di valutazione ONTAP Select presenta le seguenti caratteristiche:
+
+* Non è richiesta una licenza di produzione con capacità di storage
+* Il numero di serie del nodo è composto da venti cifre e viene generato automaticamente dall'implementazione di ONTAP Select
++
+(Non lo acquisisci direttamente da NetApp)
+
+* Il periodo di valutazione fornito dalla licenza può arrivare fino a 90 giorni
+* Lo storage massimo allocato da ciascun nodo è lo stesso di una licenza di produzione
+
+
+
+
+== Aggiornamento a una licenza di produzione
+
+È possibile aggiornare un cluster di valutazione ONTAP Select per utilizzare una licenza di produzione. È necessario conoscere le seguenti restrizioni:
+
+* Per eseguire l'aggiornamento della licenza, è necessario utilizzare l'utility di amministrazione della distribuzione
+* L'aggiornamento della licenza è supportato solo con ONTAP Select 9.5P1 utilizzando Deploy 2.11 o versione successiva
+* È possibile utilizzare una licenza di livello di capacità, tuttavia le licenze di pool di capacità non sono supportate
+* Ogni nodo deve disporre di spazio di storage sufficiente per supportare il minimo richiesto per una licenza di produzione, in base alle dimensioni del cluster
+
+
+link:task_adm_licenses.html["Conversione di una licenza di valutazione in una licenza di produzione"] per ulteriori informazioni.

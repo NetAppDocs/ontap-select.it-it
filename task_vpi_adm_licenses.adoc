@@ -1,0 +1,39 @@
+---
+sidebar: sidebar 
+permalink: task_vpi_adm_licenses.html 
+keywords: vcenter, plug-in, vcenter plug-in, deploy plug-in, administer, administering, licenses, licensing 
+summary: 'Esistono diverse attività correlate che è possibile eseguire nell"ambito dell"amministrazione delle licenze ONTAP Select.' 
+---
+= Licenze ONTAP Select
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Esistono diverse attività correlate che è possibile eseguire nell'ambito dell'amministrazione delle licenze ONTAP Select.
+
+
+
+== Gestione delle licenze
+
+È possibile aggiungere, modificare ed eliminare le licenze del Tier di capacità ONTAP Select in base alle esigenze.
+
+.Fasi
+. Fare clic su *ONTAP Select Deploy* nel riquadro *elenchi di inventario globali*.
+. Fare clic sulla scheda *Amministrazione*.
+. Espandere l'opzione *Licenses* e fare clic su *Capacity Tier* o *Capacity Pool* per selezionare il tipo di licenza.
++
+Vengono visualizzate le licenze correnti e gli eventuali problemi.
+
+. Facoltativamente, fare clic su *Filtering* e creare un filtro per limitare le licenze visualizzate.
+. Eseguire l'attività desiderata:
++
+.. Per aggiungere una licenza, fare clic su *+ADD*, fare clic su *Upload License(s)* (carica licenze) e selezionare un file di licenza.
+.. Per eliminare una licenza esistente, fare clic sull'icona del cestino a destra della licenza.
+
+
+

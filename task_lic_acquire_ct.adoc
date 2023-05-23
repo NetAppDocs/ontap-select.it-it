@@ -1,0 +1,42 @@
+---
+sidebar: sidebar 
+permalink: task_lic_acquire_ct.html 
+keywords: license, licensing, acquire, capacity tiers 
+summary: Quando si utilizzano i livelli di licenza della capacità, è necessario acquisire un file di licenza per ciascun nodo ONTAP Select. Il file di licenza definisce la capacità di storage per il nodo e viene bloccato nel nodo tramite il numero di serie univoco a nove cifre assegnato da NetApp. 
+---
+= Acquisizione di una licenza di livello di capacità
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Quando si utilizzano i livelli di licenza della capacità, è necessario acquisire un file di licenza per ciascun nodo ONTAP Select. Il file di licenza definisce la capacità di storage per il nodo e viene bloccato nel nodo tramite il numero di serie univoco a nove cifre assegnato da NetApp.
+
+.Prima di iniziare
+Il numero di serie della licenza a nove cifre deve essere assegnato al nodo da NetApp. Prima di tentare di acquisire un file di licenza, attendere almeno ventiquattro ore dopo la data di spedizione dell'ordine di acquisto.
+
+.A proposito di questa attività
+È necessario eseguire questa attività per ogni nodo ONTAP Select che richiede una licenza di livello di capacità.
+
+.Fasi
+. Accedere al sito di licenza ONTAP Select utilizzando un browser Web:
++
+`https://register.netapp.com/register/getlicensefile`
+
+. Accedi utilizzando le credenziali del tuo account NetApp.
+. Nella pagina *License Generator*, selezionare l'offerta di licenza desiderata dal menu a discesa.
+. Compilare i campi rimanenti della stessa pagina, compreso il numero di serie del prodotto *, che corrisponde al numero di serie del nodo ONTAP Select.
+. Fare clic su *Invia*.
+. Una volta convalidata la richiesta, selezionare il metodo di consegna della licenza.
++
+È possibile fare clic su *Download License* (Scarica licenza) o *Email License* (Invia licenza).
+
+. Confermare di aver ricevuto il file di licenza in base al metodo di consegna selezionato.
+
+
+.Al termine
+È necessario caricare il file di licenza nell'utility di amministrazione di deploy prima di poterlo applicare a un nodo ONTAP Select.

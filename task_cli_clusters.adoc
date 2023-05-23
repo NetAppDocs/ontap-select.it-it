@@ -1,0 +1,36 @@
+---
+sidebar: sidebar 
+permalink: task_cli_clusters.html 
+keywords: administer, administering, cli, clusters 
+summary: Per amministrare un cluster ONTAP Select è possibile eseguire diverse attività correlate. 
+---
+= Cluster ONTAP Select
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Per amministrare un cluster ONTAP Select è possibile eseguire diverse attività correlate.
+
+
+
+== Eliminazione di cluster ONTAP Select
+
+È possibile eliminare un cluster ONTAP Select quando non è più necessario utilizzando l'interfaccia della riga di comando.
+
+.A proposito di questa attività
+Il cluster deve essere in stato offline.
+
+.Fasi
+. Accedere alla CLI della macchina virtuale di implementazione utilizzando l'account amministratore.
+. Visualizzare lo stato del cluster:
+`cluster show -name CLUSTERNAME`
+. Se il cluster non è offline, spostarlo in uno stato offline:
+`cluster offline -name CLUSTERNAME`
+. Dopo aver verificato che il cluster si trova in uno stato offline, eliminare il cluster:
+`cluster delete -name CLUSTERNAME`
+

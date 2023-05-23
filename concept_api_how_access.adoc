@@ -1,0 +1,35 @@
+---
+sidebar: sidebar 
+permalink: concept_api_how_access.html 
+keywords: rest api, deploy rest api, rest, access, accessing, how to access 
+summary: 'Grazie alla flessibilità intrinseca dei servizi web REST, è possibile accedere all"API di implementazione ONTAP Select in diversi modi.' 
+---
+= Come accedere all'API di implementazione
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Grazie alla flessibilità intrinseca dei servizi web REST, è possibile accedere all'API di implementazione ONTAP Select in diversi modi.
+
+
+
+== Implementare l'interfaccia utente nativa dell'utility
+
+Il modo principale per accedere all'API è tramite l'interfaccia utente Web di ONTAP Select Deploy. Il browser effettua chiamate all'API e riformatta i dati in base alla progettazione dell'interfaccia utente. È possibile accedere all'API anche tramite l'interfaccia della riga di comando dell'utilità di implementazione.
+
+
+
+== Pagina della documentazione online di ONTAP Select Deploy
+
+La pagina della documentazione online di ONTAP Select Deploy fornisce un access point alternativo quando si utilizza un browser. Oltre a fornire un modo per eseguire direttamente le singole chiamate API, la pagina include anche una descrizione dettagliata dell'API, inclusi i parametri di input e altre opzioni per ciascuna chiamata. Le chiamate API sono organizzate in diverse aree funzionali o categorie.
+
+
+
+== Programma personalizzato
+
+È possibile accedere all'API di distribuzione utilizzando uno dei diversi linguaggi e tool di programmazione. Le scelte più popolari includono Python, Java e CURL. Un programma, uno script o uno strumento che utilizza l'API agisce come un client di servizi Web REST. L'utilizzo di un linguaggio di programmazione consente di comprendere meglio l'API e offre l'opportunità di automatizzare le implementazioni di ONTAP Select.

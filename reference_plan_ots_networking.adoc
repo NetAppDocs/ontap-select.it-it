@@ -1,0 +1,166 @@
+---
+sidebar: sidebar 
+permalink: reference_plan_ots_networking.html 
+keywords: plan, planning, networking, network, drivers, vmxnet3, cluster mtu, firewall 
+summary: 'È necessario configurare correttamente la rete dell"hypervisor prima di implementare ONTAP Select.' 
+---
+= Considerazioni sul networking
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+È necessario configurare correttamente la rete dell'hypervisor prima di implementare ONTAP Select.
+
+
+
+== Opzioni di switch virtuali
+
+È necessario configurare uno switch virtuale su ciascuno degli host ONTAP Select per supportare la rete esterna e la rete interna (solo cluster multi-nodo). Nell'ambito dell'implementazione di un cluster a più nodi, è necessario verificare la connettività di rete sulla rete cluster interna.
+
+
+NOTE: Per ulteriori informazioni su come configurare un vSwitch su un host hypervisor e sulla funzione di interfaccia ad alta velocità, vedere link:concept_nw_concepts_chars.html["Networking di approfondimento"] sezione.
+
+
+
+== Aggiornamento a VMXNET3
+
+A partire da ONTAP Select 9.5 con Deploy 2.10, VMXNET3 è il driver di rete predefinito incluso nelle nuove implementazioni cluster su VMware ESXi. Se si aggiorna un nodo ONTAP Select esistente alla versione 9.5 o successiva, il driver non viene aggiornato automaticamente.
+
+
+NOTE: Al momento non è necessario eseguire l'aggiornamento a VMXNET3. Tuttavia, se si sceglie di aggiornare il driver, è necessario eseguire l'aggiornamento manualmente. In questo caso, contattare il supporto NetApp per assistenza.
+
+
+
+== MTU del cluster
+
+Una rete interna separata viene utilizzata per connettere i nodi ONTAP Select in un cluster a più nodi. In genere, la dimensione MTU per questa rete è 9000. Tuttavia, esistono situazioni in cui questa dimensione MTU è troppo grande per la rete che connette i nodi ONTAP Select. Per ospitare i frame più piccoli, le dimensioni MTU utilizzate da ONTAP Select sulla rete interna possono essere comprese nell'intervallo di 7500-9000 byte.
+
+La dimensione MTU viene visualizzata nella sezione Cluster Details della pagina di creazione del cluster. Il valore viene determinato dall'utilità di amministrazione di deploy nel modo seguente:
+
+. Valore predefinito iniziale 9000.
+. Quando si aggiungono gli host e le reti per le coppie ha, il valore MTU viene ridotto in base alle necessità, in base alla configurazione degli vSwitch nella rete.
+. Il valore MTU finale del cluster viene impostato dopo aver aggiunto tutte le coppie ha e dopo essere pronti per creare il cluster.
+
+
+
+NOTE: È possibile impostare manualmente il valore MTU del cluster, se necessario, in base alla progettazione della rete.
+
+
+
+== Host a due NIC con vSwitch standard
+
+Per migliorare le prestazioni della ONTAP Select in una configurazione a due NIC, è necessario isolare il traffico di rete interno ed esterno utilizzando due gruppi di porte. Questo suggerimento si applica alla seguente configurazione specifica:
+
+* Cluster multi-nodo ONTAP Select
+* Due NIC (NIC1 e NIC2)
+* VSwitch standard
+
+
+In questo ambiente, è necessario configurare il traffico utilizzando due gruppi di porte come segue:
+
+.Gruppo di porte 1
+* Rete interna (cluster, RSM, traffico ha-IC)
+* NIC1 è attivo
+* NIC2 in standby
+
+
+.Gruppo di porte 2
+* Rete esterna (traffico dati e di gestione)
+* NIC1 è in standby
+* NIC2 in attivo
+
+
+Vedere link:concept_nw_concepts_chars.html["Networking di approfondimento"] Per ulteriori informazioni sulle implementazioni a due NIC.
+
+
+
+== Host a quattro NIC con vSwitch standard
+
+Per migliorare le prestazioni ONTAP Select in una configurazione a quattro NIC, è necessario isolare il traffico di rete interno ed esterno utilizzando quattro gruppi di porte. Questo suggerimento si applica alla seguente configurazione specifica:
+
+* Cluster multi-nodo ONTAP Select
+* Quattro NIC (NIC1, NIC2, NIC3 e NIC4)
+* VSwitch standard
+
+
+In questo ambiente, è necessario configurare il traffico utilizzando quattro gruppi di porte come segue:
+
+.Gruppo di porte 1
+* Rete interna (cluster, traffico RSM)
+* NIC1 è attivo
+* NIC2, NIC3, NIC4 in standby
+
+
+.Gruppo di porte 2
+* Rete interna (cluster, traffico ha-IC)
+* NIC3 è attivo
+* NIC1, NIC2, NIC4 in standby
+
+
+.Gruppo di porte 3
+* Rete esterna (traffico dati e di gestione)
+* NIC2 è attivo
+* NIC1, NIC3, NIC4 in standby
+
+
+.Gruppo di porte 4
+* Rete esterna (traffico dati)
+* NIC4 è attivo
+* NIC1, NIC2, NIC3 in standby
+
+
+Vedere link:concept_nw_concepts_chars.html["Networking di approfondimento"] Per ulteriori informazioni sulle implementazioni a quattro NIC.
+
+
+
+== Requisiti di traffico di rete
+
+È necessario assicurarsi che i firewall siano configurati correttamente per consentire il flusso del traffico di rete tra i vari partecipanti in un ambiente di implementazione ONTAP Select.
+
+.Partecipanti
+Esistono diversi partecipanti o entità che scambiano il traffico di rete come parte di un'implementazione ONTAP Select. Questi vengono introdotti e quindi utilizzati nella descrizione riepilogativa dei requisiti di traffico di rete.
+
+* Implementare l'utility di amministrazione di ONTAP Select Deploy
+* VSphere/ESXi è un server vSphere o un host ESXi, a seconda della modalità di gestione dell'host nell'implementazione del cluster
+* Host hypervisor ESXi del server hypervisor
+* Nodo OTS un nodo ONTAP Select
+* Cluster OTS un cluster ONTAP Select
+* Admin WS Local amministrative workstation
+
+
+.Riepilogo dei requisiti di traffico di rete
+La seguente tabella descrive i requisiti di traffico di rete per un'implementazione ONTAP Select.
+
+[cols="20,45,35"]
+|===
+| Protocollo/porta | Direzione | Descrizione 
+
+
+| TLS (443) | Implementazione su server vCenter (gestito) o ESXi (non gestito) | API VMware VIX 
+
+
+| 902 | Implementazione su server vCenter (gestito) o ESXi (non gestito) | API VMware VIX 
+
+
+| ICMP | Implementazione sul server hypervisor | Ping 
+
+
+| ICMP | Implementare su ciascun nodo OTS | Ping 
+
+
+| SSH (22) | WS di amministrazione per ciascun nodo OTS | Amministrazione 
+
+
+| TLS (443) | Implementazione su nodi e cluster OTS | Accedere a ONTAP 
+
+
+| TLS (443) | Ciascun nodo OTS da implementare | Implementazione dell'accesso 
+
+
+| ISCSI (3260) | Ciascun nodo OTS da implementare | Disco mediatore/mailbox 
+|===

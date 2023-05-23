@@ -1,0 +1,60 @@
+---
+sidebar: sidebar 
+permalink: reference_lic_ontap_features.html 
+keywords: license, licensing, ontap features, default ontap features 
+summary: ONTAP Select offre il supporto completo per la maggior parte delle funzionalità ONTAP. Molte delle funzionalità di ONTAP vengono concesse in licenza automaticamente per ogni nodo quando si implementa un cluster. Tuttavia, alcune funzionalità richiedono una licenza separata. 
+---
+= Funzionalità di ONTAP
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+ONTAP Select offre il supporto completo per la maggior parte delle funzionalità ONTAP. Molte delle funzionalità di ONTAP vengono concesse in licenza automaticamente per ogni nodo quando si implementa un cluster. Tuttavia, alcune funzionalità richiedono una licenza separata.
+
+
+NOTE: Le funzionalità di ONTAP con dipendenze specifiche dell'hardware non sono generalmente supportate con ONTAP Select.
+
+
+
+== Le funzioni ONTAP sono attivate automaticamente per impostazione predefinita
+
+Le seguenti funzioni sono incluse in ONTAP Select e concesse in licenza per impostazione predefinita:
+
+* NFS
+* CIFS
+* ISCSI
+* SnapMirror
+* SnapVault
+* FlexClone
+* SnapRestore
+* Deduplica e compressione
+* Funzionalità di multi-tenancy ONTAP
+* ONTAP S3
+* NetApp Volume Encryption (solo paesi non soggetti a restrizioni)
+
+
+
+
+== Funzionalità ONTAP con licenza separata
+
+È necessario acquistare una licenza separata per qualsiasi funzione ONTAP non attivata per impostazione predefinita, tra cui:
+
+* Azienda SnapLock
+* FabricPool
+* Servizio di disponibilità dei dati
+* FlexCache (costo zero)
+* SyncMirror (costo zero)
+* SDS MetroCluster (offerta di licenze premium ONTAP Select)
+
+
+
+NOTE: Non è necessaria una licenza FabricPool quando si utilizza StorageGRID webscale.
+
+.Informazioni correlate
+* link:concept_ots_overview.html#comparing-ontap-select-and-ontap-9["Confronto tra ONTAP Select e ONTAP 9"]
+

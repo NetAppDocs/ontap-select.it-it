@@ -1,0 +1,115 @@
+---
+sidebar: sidebar 
+permalink: reference_new_ots.html 
+keywords: new features 
+// summary: The current release includes several new features and improvements specific to ONTAP Select. 
+summary: La versione corrente non include nuove funzionalità o miglioramenti specifici di ONTAP Select. 
+---
+= Novità di questa release
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+NetApp aggiorna periodicamente ONTAP Select per offrire nuove funzionalità e miglioramenti.
+
+
+
+== ONTAP Select 9.12.1
+
+ONTAP Select 9.12.1 beneficia della maggior parte dei nuovi sviluppi della release corrente del prodotto ONTAP principale. Non include nuove funzioni o miglioramenti specifici di ONTAP Select.
+
+
+
+== ONTAP Select 9.11.1
+
+ONTAP Select 9.11.1 include diverse nuove funzionalità e miglioramenti.
+
+Supporto migliorato di VMware ESXi:: ONTAP Select 9.11.1 include il supporto per VMware ESXi 7.0 U3C.
+Supporto per VMware NSX-T.:: ONTAP Select 9.10.1 e le versioni successive sono qualificate per VMware NSX-T versione 3.1.2. Non ci sono problemi funzionali o difetti quando si utilizza NSX-T con un cluster a nodo singolo ONTAP Select implementato con un file OVA e l'utility di amministrazione di ONTAP Select Deploy. Tuttavia, quando si utilizza NSX-T con un cluster a più nodi ONTAP Select, è necessario tenere presente il seguente limite per ONTAP Select 9.11.1:
++
+--
+* Strumento di controllo della connettività di rete
++
+Il controllo della connettività di rete disponibile tramite la CLI di implementazione non riesce quando viene eseguito su una rete basata su NSX-T.
+
+
+
+--
+L'hypervisor KVM non è più supportato::
++
+--
+* A partire da ONTAP Select 9.10.1, non è più possibile implementare un nuovo cluster sull'hypervisor KVM.
+* A partire da ONTAP Select 9.11.1, tutte le funzionalità di gestibilità non sono più disponibili per i cluster e gli host KVM esistenti, ad eccezione delle funzioni take offline e delete.
++
+NetApp consiglia vivamente ai clienti di pianificare ed eseguire una migrazione completa dei dati da ONTAP Select per KVM a qualsiasi altra piattaforma ONTAP, incluso ONTAP Select per ESXi. Per ulteriori informazioni, consultare https://mysupport.netapp.com/info/communications/ECMLP2877451.html["Avviso EOA"^]
+
+
+
+--
+
+
+
+
+== ONTAP Select 9.10.1
+
+ONTAP Select 9.10.1 include diverse nuove funzionalità e miglioramenti.
+
+Supporto per VMware NSX-T.:: ONTAP Select 9.10.1 è stato qualificato per VMware NSX-T versione 3.1.2. Non ci sono problemi funzionali o difetti quando si utilizza NSX-T con un cluster a nodo singolo ONTAP Select implementato con un file OVA e l'utility di amministrazione di ONTAP Select Deploy. Tuttavia, quando si utilizza NSX-T con un cluster a più nodi ONTAP Select, è necessario tenere presenti i seguenti requisiti e limitazioni:
++
+--
+* MTU del cluster
++
+È necessario regolare manualmente la dimensione MTU del cluster su 8800 prima di implementare il cluster per tenere conto dell'overhead aggiuntivo. La guida di VMware è quella di consentire un buffer da 200 byte quando si utilizza NSX-T.
+
+* Configurazione di rete 4x10 GB
++
+Per le implementazioni ONTAP Select su un host VMware ESXi configurato con quattro NIC, l'utility di implementazione richiede di seguire la procedura consigliata per suddividere il traffico interno tra due diversi gruppi di porte e il traffico esterno tra due diversi gruppi di porte. Tuttavia, quando si utilizza una rete sovrapposta, questa configurazione non funziona e si consiglia di non seguire questa raccomandazione. In questo caso, utilizzare un solo gruppo di porte interno e un solo gruppo di porte esterno.
+
+* Strumento di controllo della connettività di rete
++
+Il controllo della connettività di rete disponibile tramite la CLI di implementazione non riesce quando viene eseguito su una rete basata su NSX-T.
+
+
+
+--
+L'hypervisor KVM non è più supportato:: A partire da ONTAP Select 9.10.1, non è più possibile implementare un nuovo cluster sull'hypervisor KVM. Tuttavia, se si aggiorna un cluster da una release precedente a 9.10.1, è comunque possibile utilizzare l'utility di distribuzione per amministrare il cluster.
+
+
+
+
+== ONTAP Select 9.9.1
+
+ONTAP Select 9.9.1 include diverse nuove funzionalità e miglioramenti.
+
+Supporto per la famiglia di processori:: A partire da ONTAP Select 9.9.1, solo i modelli di CPU di Intel Xeon Sandy Bridge o versioni successive sono supportati per ONTAP Select.
+Supporto VMware ESXi aggiornato:: Il supporto per VMware ESXi è stato migliorato con ONTAP Select 9.9.1. Sono ora supportate le seguenti versioni:
++
+--
+* ESXi 7.0 U2
+* ESXi 7.0 U1
+
+
+--
+
+
+
+
+== ONTAP Select 9.8
+
+ONTAP Select 9.8 include diverse funzionalità nuove e modificate.
+
+Interfaccia ad alta velocità:: L'interfaccia ad alta velocità migliora la connettività di rete offrendo un'opzione per 25G (25 GbE) e 40G (40 GbE). Per ottenere le migliori prestazioni quando si utilizzano queste velocità più elevate, seguire le Best practice relative alle configurazioni di mappatura delle porte descritte nella documentazione di ONTAP Select.
+Supporto VMware ESXi aggiornato:: Sono state apportate due modifiche a ONTAP Select 9.8 per quanto riguarda il supporto di VMware ESXi.
++
+--
+* È supportato ESXi 7.0 (GA build 15843807 e versioni successive)
+* ESXi 6.0 non è più supportato
+
+
+--
+

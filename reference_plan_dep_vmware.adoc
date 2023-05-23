@@ -1,0 +1,68 @@
+---
+sidebar: sidebar 
+permalink: reference_plan_dep_vmware.html 
+keywords: plan, planning, ontap select deploy, vmware requirements 
+summary: 'Prima di installare l"utilità di implementazione ONTAP Select in un ambiente VMware, è necessario prendere in considerazione diversi requisiti e restrizioni specifici per l"ambiente VMware.' 
+---
+= Ambiente hypervisor VMware
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Prima di installare l'utilità di implementazione ONTAP Select in un ambiente VMware, è necessario prendere in considerazione diversi requisiti e restrizioni specifici per l'ambiente VMware.
+
+
+
+== Requisiti hardware del server host ESXi
+
+Esistono diversi requisiti minimi di risorse che l'host dell'hypervisor ESXi deve soddisfare. Assicurarsi che gli host in cui viene implementato ONTAP Select soddisfino i seguenti requisiti di base:
+
+* Server ESXi:
++
+** Hardware e software devono essere a 64 bit
+** Deve rispettare le stesse versioni supportate definite per un nodo ONTAP Select
+
+
+* CPU virtuali (2)
+* Memoria virtuale (4 GB)
+* Storage (40 GB)
+* DHCP attivato (può anche assegnare un indirizzo IP statico)
+
+
+
+
+== Connettività di rete
+
+È necessario assicurarsi che l'interfaccia di rete della macchina virtuale ONTAP Select Deploy sia configurata e disponga di un singolo indirizzo IP di gestione. È possibile utilizzare DHCP per assegnare dinamicamente un indirizzo IP o configurare manualmente un indirizzo IP statico.
+
+A seconda delle decisioni di implementazione, la VM di implementazione deve essere in grado di connettersi al server vCenter, agli host hypervisor ESXi e ai nodi ONTAP Select gestiti. È necessario configurare i firewall per consentire il traffico richiesto.
+
+L'implementazione utilizza l'API VMware VIX per comunicare con il server vCenter e gli host ESXi. Inizialmente, stabilisce una connessione utilizzando SOAP su SSL sulla porta TCP 443. Quindi, viene aperta una connessione utilizzando SSL sulla porta 902. Inoltre, Deploy emette comandi PING per verificare la presenza di un host ESXi all'indirizzo IP specificato.
+
+L'implementazione deve inoltre essere in grado di comunicare con il nodo ONTAP Select e gli indirizzi IP di gestione del cluster utilizzando i seguenti protocolli:
+
+* Comando PING (ICMP)
+* SSH (porta 22)
+* SSL (porta 443)
+
+
+
+
+== Supporto per IP versione 4
+
+ONTAP Select Deploy supporta solo IP versione 4 (IPv4). IP versione 6 (IPv6) non supportato. Questa restrizione interessa ONTAP Select nei seguenti modi:
+
+* È necessario assegnare un indirizzo IPv4 alla LIF di gestione della macchina virtuale di implementazione.
+* L'implementazione non può creare nodi ONTAP Select configurati per l'utilizzo di IPv6 sulle LIF ONTAP.
+
+
+
+
+== Restrizione linguistica di VMware vCenter
+
+Se si utilizza ONTAP Select Deploy per creare un cluster in esecuzione su ESXi con vCenter su un server Windows, è necessario utilizzare una versione in lingua inglese. ONTAP Select Deploy non supporta vCenter su versioni di Windows non in inglese.

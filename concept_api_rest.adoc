@@ -1,0 +1,55 @@
+---
+sidebar: sidebar 
+permalink: concept_api_rest.html 
+keywords: rest api, deploy rest api, rest, architecture, resources, state, uri, http, json 
+summary: 'Representational state Transfer (REST) è uno stile per la creazione di applicazioni web distribuite. Quando viene applicato alla progettazione di un"API di servizi Web, stabilisce un insieme di tecnologie e Best practice per esporre le risorse basate su server e gestirne gli stati. Utilizza protocolli e standard mainstream per fornire una base flessibile per l"implementazione e la gestione dei cluster ONTAP Select.' 
+---
+= Base REST per i web Services
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Representational state Transfer (REST) è uno stile per la creazione di applicazioni web distribuite. Quando viene applicato alla progettazione di un'API di servizi Web, stabilisce un insieme di tecnologie e Best practice per esporre le risorse basate su server e gestirne gli stati. Utilizza protocolli e standard mainstream per fornire una base flessibile per l'implementazione e la gestione dei cluster ONTAP Select.
+
+
+
+== Architettura e limiti classici
+
+REST è stato formalmente articolato da Roy Fielding nel suo dottorato https://www.ics.uci.edu/~fielding/pubs/dissertation/top.htm["dissertazione"] Presso UC Irvine nel 2000. Definisce uno stile architettonico attraverso una serie di vincoli, che collettivamente hanno migliorato le applicazioni basate sul web e i protocolli sottostanti. I vincoli stabiliscono un'applicazione di servizi web RESTful basata su un'architettura client/server che utilizza un protocollo di comunicazione stateless.
+
+
+
+== Risorse e rappresentazione dello stato
+
+Le risorse sono i componenti di base di un sistema basato su web. Quando si crea un'applicazione di servizi Web REST, le attività di progettazione iniziali includono:
+
+* Identificazione delle risorse di sistema o basate su server che ogni sistema utilizza e gestisce le risorse. Una risorsa può essere un file, una transazione di business, un processo o un'entità amministrativa. Una delle prime attività nella progettazione di un'applicazione basata sui servizi web REST è quella di identificare le risorse.
+* Definizione degli stati delle risorse e delle operazioni di stato associate le risorse si trovano sempre in un numero finito di stati. Gli stati, così come le operazioni associate utilizzate per influenzare i cambiamenti di stato, devono essere chiaramente definiti.
+
+
+I messaggi vengono scambiati tra il client e il server per accedere e modificare lo stato delle risorse in base al modello generico CRUD (Create, Read, Update e Delete).
+
+
+
+== Endpoint URI
+
+Ogni risorsa REST deve essere definita e resa disponibile utilizzando uno schema di indirizzamento ben definito. Gli endpoint in cui sono situate e identificate le risorse utilizzano un URI (Uniform Resource Identifier). L'URI fornisce un framework generale per la creazione di un nome univoco per ogni risorsa nella rete. L'URL (Uniform Resource Locator) è un tipo di URI utilizzato con i servizi Web per identificare e accedere alle risorse. Le risorse sono in genere esposte in una struttura gerarchica simile a una directory di file.
+
+
+
+== Messaggi HTTP
+
+HTTP (Hypertext Transfer Protocol) è il protocollo utilizzato dal client e dal server dei servizi Web per scambiare messaggi di richiesta e risposta relativi alle risorse. Durante la progettazione di un'applicazione di servizi Web, i verbi HTTP (come GET e POST) vengono mappati alle risorse e alle azioni di gestione dello stato corrispondenti.
+
+HTTP è stateless. Pertanto, per associare un insieme di richieste e risposte correlate in un'unica transazione, è necessario includere informazioni aggiuntive nelle intestazioni HTTP portate con i flussi di dati di richiesta/risposta.
+
+
+
+== Formattazione JSON
+
+Sebbene le informazioni possano essere strutturate e trasferite tra un client e un server in diversi modi, l'opzione più diffusa (e quella utilizzata con l'API DI DISTRIBUZIONE REST) è JavaScript Object Notation (JSON). JSON è uno standard di settore per la rappresentazione di semplici strutture di dati in testo normale e viene utilizzato per trasferire informazioni di stato che descrivono le risorse.

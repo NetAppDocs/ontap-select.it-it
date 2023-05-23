@@ -1,0 +1,115 @@
+---
+sidebar: sidebar 
+permalink: concept_vpi_overview.html 
+keywords: vcenter, plug-in, vcenter plug-in, deploy plug-in, overview, functionality 
+summary: 'Il plug-in VMware vCenter per ONTAP Select Deploy è progettato per gli amministratori ONTAP Select che lavorano nell"ambiente VMware. Fornisce un"alternativa all"interfaccia utente di implementazione nativa.' 
+---
+= Panoramica del plug-in Deploy vCenter
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il plug-in VMware vCenter per ONTAP Select Deploy è progettato per gli amministratori ONTAP Select che lavorano nell'ambiente VMware. Fornisce un'alternativa all'interfaccia utente di implementazione nativa.
+
+
+
+== Pacchetto con implementazione
+
+Il plug-in Deploy vCenter viene fornito con l'utility di amministrazione Deploy. Dopo aver utilizzato l'interfaccia utente di Deploy per installare il plug-in sul server vCenter, è possibile accedere al plug-in tramite l'interfaccia Web di vSphere.
+
+
+
+== Integrazione con VMware
+
+Per molte aziende, VMware vCenter è una piattaforma centrale per l'amministrazione di data center virtualizzati e risorse cloud. Poiché il plug-in di implementazione è strettamente integrato con vCenter, gli amministratori possono spostarsi rapidamente tra i domini ONTAP Select e vCenter per sfruttare le relazioni tra le varie risorse.
+
+
+
+== Funzionalità fornita dal plug-in Deploy vCenter
+
+Dopo aver installato il plug-in Deploy vCenter, sono disponibili due opzioni principali tramite vSphere nel riquadro *Global Inventory Lists*.
+
+
+
+=== Cluster ONTAP Select
+
+L'opzione Clusters ONTAP Select equivale all'incirca alla scheda *Clusters* nell'interfaccia utente Web di distribuzione nativa. Fornisce le funzionalità descritte nella seguente tabella.
+
+[cols="30,70"]
+|===
+| Questa operazione viene eseguita... | In questo modo... 
+
+
+| Implementare un cluster ONTAP Select | Fare clic su New ONTAP Select (nuovo utente) 
+
+
+| Visualizzare i dettagli del cluster | Selezionare un cluster, fare clic su Summary (Riepilogo), quindi su Details (Dettagli). 
+
+
+| Visualizzare i messaggi degli eventi del cluster | Selezionare un cluster, fare clic su Summary (Riepilogo), quindi su Events (Eventi). 
+
+
+| Spostare un cluster online o offline oppure eliminare un cluster | Selezionare un cluster, fare clic su azioni, quindi fare clic sull'azione desiderata. 
+
+
+| Avviare System Manager | Selezionare un cluster, fare clic su Summary (Riepilogo), Details (Dettagli), quindi su Launch System Manager (Avvia Gestione sistema). 
+
+
+| Visualizzare gli host ESXi utilizzati da un cluster | Selezionare un cluster, fare clic su altri oggetti, quindi su host. Selezionare un host per ulteriori dettagli e ulteriori azioni. 
+
+
+| Visualizzare le macchine virtuali ONTAP utilizzate da un cluster | Selezionare un cluster, fare clic su More Objects (altri oggetti), quindi fare clic su ONTAP VM (Seleziona VM). Selezionare una macchina virtuale per ulteriori dettagli e ulteriori azioni. 
+
+
+| Visualizzare gli archivi dati utilizzati da un cluster | Selezionare un cluster, fare clic su altri oggetti, quindi fare clic su Datastore. Selezionare un datastore per ulteriori dettagli e ulteriori azioni. 
+
+
+| Visualizzare le reti utilizzate da un cluster | Selezionare un cluster, fare clic su altri oggetti, quindi fare clic su reti. Selezionare una rete per ulteriori dettagli e ulteriori azioni. 
+|===
+
+
+=== Implementazione di ONTAP Select
+
+L'opzione di implementazione di ONTAP Select è approssimativamente equivalente alle schede *host hypervisor* e *Amministrazione* nell'interfaccia utente Web di implementazione nativa. Fornisce funzionalità attraverso tre schede nella parte superiore della pagina, come descritto nella tabella seguente.
+
+[cols="15,85"]
+|===
+| Scheda | Descrizione 
+
+
+| Riepilogo | Descrive le caratteristiche dell'istanza di implementazione, inclusi il nome host e l'indirizzo IP. 
+
+
+| Host | Visualizza le informazioni sugli host ESXi registrati con ONTAP Select Deploy. È possibile aggiungere o rimuovere host. 
+
+
+| Amministrazione | Consente di eseguire attività amministrative tramite l'utility di distribuzione. Questa funzionalità è equivalente all'interfaccia utente nativa di ONTAP Select Deploy, ad eccezione del fatto che le opzioni *credenziali* e *Plugin* non sono disponibili con il plug-in. 
+|===
+
+
+== Confronto tra il plug-in vCenter e l'interfaccia utente di implementazione nativa
+
+La funzionalità fornita con il plug-in vCenter tramite vSphere equivale all'interfaccia utente nativa di implementazione. Tuttavia, alcune funzionalità non vengono fornite con il plug-in e sono disponibili solo con l'interfaccia utente di implementazione.
+
+
+
+=== Gestione del plug-in vCenter
+
+Non è possibile installare, aggiornare, rimuovere o verificare il plug-in vCenter utilizzando il plug-in vCenter. È necessario eseguire queste attività di gestione tramite l'interfaccia utente di implementazione nativa.
+
+
+
+=== Gestione delle credenziali vCenter
+
+Prima di installare il plug-in vCenter, è necessario aggiungere le credenziali vCenter necessarie per la distribuzione utilizzando l'interfaccia utente di distribuzione nativa.
+
+
+
+=== I cluster ONTAP Select devono essere controllati dallo stesso server vCenter
+
+È possibile implementare e supportare solo i cluster ONTAP Select gestiti dal singolo server vCenter in cui è installato il plug-in. Non è possibile utilizzare il plug-in per accedere ai cluster ONTAP Select gestiti da altri server o cluster vCenter in esecuzione su host ESXi o KVM standalone.

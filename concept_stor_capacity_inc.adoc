@@ -1,0 +1,71 @@
+---
+sidebar: sidebar 
+permalink: concept_stor_capacity_inc.html 
+keywords: ontap select, deploy, increase storage 
+summary: ONTAP Deploy può essere utilizzato per aggiungere e concedere in licenza storage aggiuntivo per ciascun nodo di un cluster ONTAP Select. 
+---
+= Aumento della capacità di storage
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+ONTAP Deploy può essere utilizzato per aggiungere e concedere in licenza storage aggiuntivo per ciascun nodo di un cluster ONTAP Select.
+
+La funzionalità storage-add in ONTAP Deploy è l'unico modo per aumentare lo storage in gestione e non è supportata la modifica diretta della macchina virtuale ONTAP Select. La figura seguente mostra l'icona "+" che avvia la procedura guidata di aggiunta dello storage.
+
+image:ST_05.jpg["Dettagli su cluster e nodi"]
+
+Le seguenti considerazioni sono importanti per il successo dell'operazione di espansione della capacità. L'aggiunta di capacità richiede la licenza esistente per coprire la quantità totale di spazio (esistente più nuovo). Un'operazione di aggiunta dello storage che comporta il superamento della capacità concessa in licenza da parte del nodo non riesce. È necessario installare prima una nuova licenza con capacità sufficiente.
+
+Se la capacità aggiuntiva viene aggiunta a un aggregato ONTAP Select esistente, il nuovo pool di storage (datastore) dovrebbe avere un profilo di performance simile a quello del pool di storage esistente (datastore). Si noti che non è possibile aggiungere storage non SSD a un nodo ONTAP Select installato con una personalità simile a AFF (flash abilitata). Non è supportata anche la combinazione di DAS e storage esterno.
+
+Se a un sistema viene aggiunto storage collegato localmente per fornire ulteriori pool di storage locali (DAS), è necessario creare un gruppo RAID e LUN (o LUN) aggiuntivi. Come per i sistemi FAS, è necessario assicurarsi che le prestazioni del nuovo gruppo RAID siano simili a quelle del gruppo RAID originale se si aggiunge nuovo spazio allo stesso aggregato. Se si crea un nuovo aggregato, il nuovo layout del gruppo RAID potrebbe essere diverso se le implicazioni delle performance per il nuovo aggregato sono ben comprese.
+
+Il nuovo spazio può essere aggiunto allo stesso datastore come un'estensione se la dimensione totale del datastore non supera la dimensione massima del datastore supportata da ESX. L'aggiunta di un'estensione del datastore all'archivio dati in cui è già installato ONTAP Select può essere eseguita in modo dinamico e non influisce sulle operazioni del nodo ONTAP Select.
+
+Se il nodo ONTAP Select fa parte di una coppia ha, è necessario considerare alcuni problemi aggiuntivi.
+
+In una coppia ha, ogni nodo contiene una copia speculare dei dati del partner. L'aggiunta di spazio al nodo 1 richiede l'aggiunta di una quantità di spazio identica al suo partner, il nodo 2, in modo che tutti i dati dal nodo 1 vengano replicati nel nodo 2. In altre parole, lo spazio aggiunto al nodo 2 come parte dell'operazione di aggiunta di capacità per il nodo 1 non è visibile o accessibile sul nodo 2. Lo spazio viene aggiunto al nodo 2 in modo che i dati del nodo 1 siano completamente protetti durante un evento ha.
+
+Vi è un'ulteriore considerazione per quanto riguarda le performance. I dati sul nodo 1 vengono replicati in modo sincrono sul nodo 2. Pertanto, le performance del nuovo spazio (datastore) sul nodo 1 devono corrispondere alle performance del nuovo spazio (datastore) sul nodo 2. In altre parole, l'aggiunta di spazio su entrambi i nodi, ma utilizzando diverse tecnologie di dischi o diverse dimensioni di gruppi RAID, può causare problemi di performance. Ciò è dovuto all'operazione RAID SyncMirror utilizzata per mantenere una copia dei dati sul nodo partner.
+
+Per aumentare la capacità accessibile all'utente su entrambi i nodi di una coppia ha, è necessario eseguire due operazioni storage-add, una per ogni nodo. Ogni operazione storage-add richiede spazio aggiuntivo su entrambi i nodi. Lo spazio totale richiesto su ciascun nodo è uguale allo spazio richiesto sul nodo 1 più lo spazio richiesto sul nodo 2.
+
+La configurazione iniziale prevede due nodi, ciascuno dei quali dispone di due datastore con 30 TB di spazio in ciascun datastore. ONTAP Deploy crea un cluster a due nodi, con ogni nodo che consuma 10 TB di spazio dal datastore 1. ONTAP Deploy configura ogni nodo con 5 TB di spazio attivo per nodo.
+
+La figura seguente mostra i risultati di una singola operazione storage-add per il nodo 1. ONTAP Select utilizza ancora una quantità uguale di storage (15 TB) su ciascun nodo. Tuttavia, il nodo 1 ha più storage attivo (10 TB) rispetto al nodo 2 (5 TB). Entrambi i nodi sono completamente protetti, poiché ogni nodo ospita una copia dei dati dell'altro nodo. C'è spazio libero aggiuntivo nel datastore 1 e il datastore 2 è ancora completamente libero.
+
+*Distribuzione della capacità: Allocazione e spazio libero dopo una singola operazione di aggiunta dello storage*
+
+image:ST_06.jpg["Distribuzione della capacità: Allocazione e spazio libero dopo una singola operazione storage-add"]
+
+Due operazioni aggiuntive di storage-add sul nodo 1 consumano il resto del datastore 1 e una parte del datastore 2 (utilizzando il limite di capacità). La prima operazione storage-add consuma i 15 TB di spazio libero rimasti nel datastore 1. La figura seguente mostra il risultato della seconda operazione di aggiunta dello storage. A questo punto, il nodo 1 ha 50 TB di dati attivi in gestione, mentre il nodo 2 ha i 5 TB originali.
+
+*Distribuzione della capacità: Allocazione e spazio libero dopo due operazioni aggiuntive di storage-add per il nodo 1*
+
+image:ST_07.jpg["Distribuzione della capacità: Allocazione e spazio libero dopo due operazioni aggiuntive di storage-add per il nodo 1"]
+
+La dimensione massima VMDK utilizzata durante le operazioni di aggiunta della capacità è di 16 TB. La dimensione massima VMDK utilizzata durante le operazioni di creazione del cluster continua ad essere di 8 TB. ONTAP Deploy crea VMDK dimensionati correttamente in base alla configurazione (un cluster a nodo singolo o a più nodi) e alla quantità di capacità aggiunta. Tuttavia, la dimensione massima di ciascun VMDK non deve superare 8 TB durante le operazioni di creazione del cluster e 16 TB durante le operazioni di aggiunta dello storage.
+
+
+
+== Aumento della capacità per ONTAP Select con RAID software
+
+La procedura guidata storage-add può essere utilizzata in modo analogo per aumentare la capacità di gestione dei nodi ONTAP Select utilizzando il RAID software. La procedura guidata presenta solo i dischi DAS SDD disponibili e possono essere mappati come RDM alla macchina virtuale ONTAP Select.
+
+Sebbene sia possibile aumentare la licenza di capacità di un singolo TB, quando si lavora con il software RAID, non è possibile aumentare fisicamente la capacità di un singolo TB. Analogamente all'aggiunta di dischi a un array FAS o AFF, alcuni fattori determinano la quantità minima di storage che può essere aggiunta in una singola operazione.
+
+Si noti che in una coppia ha, l'aggiunta di storage al nodo 1 richiede che sia disponibile un numero identico di dischi anche sulla coppia ha del nodo (nodo 2). Sia i dischi locali che i dischi remoti vengono utilizzati da un'operazione storage-add sul nodo 1. In altre parole, i dischi remoti vengono utilizzati per garantire che il nuovo storage sul nodo 1 sia replicato e protetto sul nodo 2. Per aggiungere storage utilizzabile localmente sul nodo 2, è necessario che su entrambi i nodi siano disponibili un'operazione storage-add separata e un numero uguale di dischi.
+
+ONTAP Select suddivide tutti i nuovi dischi nella stessa partizione root, dati e dati dei dischi esistenti. L'operazione di partizione avviene durante la creazione di un nuovo aggregato o durante l'espansione su un aggregato esistente. La dimensione della stripe di partizione root su ciascun disco è impostata in modo che corrisponda alla dimensione della partizione root esistente sui dischi esistenti. Pertanto, ciascuna delle due dimensioni uguali delle partizioni dati può essere calcolata come la capacità totale del disco meno la dimensione della partizione root divisa per due. La dimensione dello stripe della partizione root è variabile e viene calcolata durante la configurazione iniziale del cluster come segue. Lo spazio root totale richiesto (68 GB per un cluster a nodo singolo e 136 GB per le coppie ha) viene diviso tra il numero iniziale di dischi meno eventuali dischi di riserva e di parità. La dimensione dello stripe della partizione root viene mantenuta costante su tutti i dischi aggiunti al sistema.
+
+Se si crea un nuovo aggregato, il numero minimo di dischi richiesto varia a seconda del tipo di RAID e se il nodo ONTAP Select fa parte di una coppia ha.
+
+Se si aggiunge storage a un aggregato esistente, sono necessarie alcune considerazioni aggiuntive. È possibile aggiungere dischi a un gruppo RAID esistente, supponendo che il gruppo RAID non sia già al limite massimo. Anche le Best practice tradizionali di FAS e AFF per l'aggiunta di spindle ai gruppi RAID esistenti si applicano qui e la creazione di un hot spot sul nuovo spindle è un potenziale problema. Inoltre, è possibile aggiungere a un gruppo RAID esistente solo dischi con partizioni di dati uguali o superiori. Come spiegato in precedenza, la dimensione della partizione dei dati non corrisponde alla dimensione raw del disco. Se le partizioni dei dati aggiunte sono più grandi delle partizioni esistenti, le nuove unità sono di dimensioni corrette. In altre parole, una parte della capacità di ogni nuovo disco rimane inutilizzata.
+
+È inoltre possibile utilizzare i nuovi dischi per creare un nuovo gruppo RAID come parte di un aggregato esistente. In questo caso, la dimensione del gruppo RAID deve corrispondere alla dimensione del gruppo RAID esistente.

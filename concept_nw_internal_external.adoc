@@ -1,0 +1,110 @@
+---
+sidebar: sidebar 
+permalink: concept_nw_internal_external.html 
+keywords: ontap select, internal network, external network 
+summary: Caratteristiche delle reti ONTAP Select interne ed esterne. 
+---
+= Rete interna ed esterna ONTAP Select
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Caratteristiche delle reti interne ed esterne ONTAP Select.
+
+
+
+== Rete interna ONTAP Select
+
+La rete ONTAP Select interna, presente solo nella variante multinodo del prodotto, è responsabile della fornitura al cluster ONTAP Select di servizi di comunicazione cluster, interconnessione ha e replica sincrona. Questa rete include le seguenti porte e interfacce:
+
+* *E0c, e0d.* hosting delle LIF di rete del cluster
+* *E0e.* hosting della LIF RSM
+* *E0f.* hosting della LIF di interconnessione ha
+
+
+Il throughput e la latenza di questa rete sono fondamentali per determinare le performance e la resilienza del cluster ONTAP Select. L'isolamento della rete è necessario per la sicurezza del cluster e per garantire che le interfacce di sistema siano separate da altri tipi di traffico di rete. Pertanto, questa rete deve essere utilizzata esclusivamente dal cluster ONTAP Select.
+
+
+NOTE: Non è supportato l'utilizzo di Select Internal Network per il traffico diverso da Select Cluster, ad esempio il traffico di gestione o dell'applicazione. Sulla VLAN interna di ONTAP non possono essere presenti altre macchine virtuali o host.
+
+I pacchetti di rete che attraversano la rete interna devono trovarsi su una rete Layer-2 con tag VLAN dedicata. Per eseguire questa operazione, eseguire una delle seguenti operazioni:
+
+* Assegnazione di un gruppo di porte con tag VLAN alle NIC virtuali interne (da e0c a e0f) (modalità VST)
+* Utilizzo della VLAN nativa fornita dallo switch upstream in cui la VLAN nativa non viene utilizzata per altri tipi di traffico (assegnazione di un gruppo di porte senza ID VLAN, ovvero in modalità EST)
+
+
+In tutti i casi, il tagging VLAN per il traffico di rete interno viene eseguito all'esterno della macchina virtuale ONTAP Select.
+
+
+NOTE: Sono supportati solo vSwitch ESX standard e distribuiti. Altri switch virtuali o connettività diretta tra host ESX non sono supportati. La rete interna deve essere completamente aperta; NAT o firewall non sono supportati.
+
+All'interno di un cluster ONTAP Select, il traffico interno e il traffico esterno vengono separati utilizzando oggetti di rete Layer-2 virtuali noti come gruppi di porte. L'assegnazione corretta di vSwitch a questi gruppi di porte è estremamente importante, soprattutto per la rete interna, che è responsabile della fornitura di cluster, interconnessione ha e servizi di replica mirror. Una larghezza di banda di rete insufficiente per queste porte di rete può causare un peggioramento delle performance e persino compromettere la stabilità del nodo del cluster. Pertanto, i cluster a quattro, sei e otto nodi richiedono che la rete ONTAP Select interna utilizzi una connettività da 10 GB; le NIC da 1 GB non sono supportate. Tuttavia, è possibile effettuare compromessi sulla rete esterna, poiché la limitazione del flusso di dati in entrata a un cluster ONTAP Select non influisce sulla sua capacità di operare in modo affidabile.
+
+Un cluster a due nodi può utilizzare quattro porte da 1 GB per il traffico interno o una singola porta da 10 GB invece delle due porte da 10 GB richieste dal cluster a quattro nodi. In un ambiente in cui le condizioni impediscono al server di adattarsi a quattro schede NIC da 10 GB, è possibile utilizzare due schede NIC da 10 GB per la rete interna e due schede NIC da 1 GB per la rete ONTAP esterna.
+
+
+
+=== Validazione e troubleshooting della rete interna
+
+La rete interna di un cluster multinode può essere validata utilizzando la funzionalità di verifica della connettività di rete. Questa funzione può essere richiamata dalla CLI di distribuzione che esegue `network connectivity-check start` comando.
+
+Eseguire il seguente comando per visualizzare l'output del test:
+
+[listing]
+----
+network connectivity-check show --run-id X (X is a number)
+----
+Questo strumento è utile solo per la risoluzione dei problemi della rete interna in un cluster Multinode Select. Lo strumento non deve essere utilizzato per risolvere i problemi relativi a cluster a nodo singolo (incluse le configurazioni vNAS), implementazione ONTAP su connettività ONTAP Select o problemi di connettività lato client.
+
+La creazione guidata del cluster (parte dell'interfaccia grafica di implementazione di ONTAP) include il Network checker interno come passaggio opzionale disponibile durante la creazione di cluster a più nodi. Dato l'importante ruolo svolto dalla rete interna nei cluster a più nodi, facendo parte del workflow di creazione del cluster questo passaggio migliora il tasso di successo delle operazioni di creazione del cluster.
+
+A partire da ONTAP Deploy 2.10, la dimensione MTU utilizzata dalla rete interna può essere impostata tra 7,500 e 9,000. Il controllo della connettività di rete può essere utilizzato anche per verificare le dimensioni MTU comprese tra 7,500 e 9,000. Il valore MTU predefinito viene impostato sul valore dello switch della rete virtuale. Se nell'ambiente è presente un overlay di rete come VXLAN, tale valore predefinito deve essere sostituito con un valore inferiore.
+
+
+
+== Rete esterna ONTAP Select
+
+La rete esterna ONTAP Select è responsabile di tutte le comunicazioni in uscita dal cluster e, pertanto, è presente sia nella configurazione a nodo singolo che in quella a più nodi. Sebbene questa rete non abbia i requisiti di throughput strettamente definiti della rete interna, l'amministratore deve fare attenzione a non creare colli di bottiglia di rete tra il client e ONTAP VM, perché i problemi di performance potrebbero essere erroneamente definiti come problemi ONTAP Select.
+
+
+NOTE: In modo simile al traffico interno, il traffico esterno può essere etichettato al vSwitch Layer (VST) e al External Switch Layer (EST). Inoltre, il traffico esterno può essere etichettato dalla macchina virtuale ONTAP Select stessa in un processo noto come VGT. Vedere la sezione link:concept_nw_data_mgmt_separation.html["Separazione dei dati e del traffico di gestione"] per ulteriori dettagli.
+
+La tabella seguente evidenzia le principali differenze tra le reti interne ed esterne di ONTAP Select.
+
+*Guida di riferimento rapido per reti interne ed esterne*
+
+[cols="3*"]
+|===
+| Descrizione | Rete interna | Rete esterna 
+
+
+| Servizi di rete | Cluster ha/IC RAID SyncMirror (RSM) | Intercluster di gestione dei dati (SnapMirror e SnapVault) 
+
+
+| Isolamento della rete | Obbligatorio | Opzionale 
+
+
+| Dimensioni del frame (MTU) | da 7,500 a 9,000 | 1,500 (impostazione predefinita) 9,000 (supportata) 
+
+
+| Assegnazione dell'indirizzo IP | Generato automaticamente | Definito dall'utente 
+
+
+| Supporto DHCP | No | No 
+|===
+
+
+=== Raggruppamento NIC
+
+Per garantire che le reti interne ed esterne dispongano delle caratteristiche di larghezza di banda e resilienza necessarie per garantire performance elevate e tolleranza agli errori, si consiglia il raggruppamento fisico delle schede di rete. Sono supportate configurazioni cluster a due nodi con un singolo collegamento da 10 GB. Tuttavia, la Best practice consigliata da NetApp consiste nell'utilizzare il raggruppamento delle schede di rete sulle reti interne ed esterne del cluster ONTAP Select.
+
+
+
+=== Generazione di indirizzi MAC
+
+Gli indirizzi MAC assegnati a tutte le porte di rete ONTAP Select vengono generati automaticamente dall'utilità di implementazione inclusa. L'utility utilizza un OUI (Organizationally Unique Identifier) specifico della piattaforma per garantire che non vi siano conflitti con i sistemi FAS. Una copia di questo indirizzo viene quindi memorizzata in un database interno all'interno della macchina virtuale per l'installazione di ONTAP Select (implementazione di ONTAP), per evitare riassegnazioni accidentali durante le implementazioni future dei nodi. L'amministratore non deve mai modificare l'indirizzo MAC assegnato a una porta di rete.

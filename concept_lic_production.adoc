@@ -1,0 +1,66 @@
+---
+sidebar: sidebar 
+permalink: concept_lic_production.html 
+keywords: license, licensing, production, purchased, standard, premium, premium xl 
+summary: 'Una volta stabilito che ONTAP Select è adatto alla tua organizzazione, puoi acquistare le licenze necessarie per supportare un"implementazione in produzione. È necessario scegliere i Tier di capacità o il modello di licenza dei pool di capacità, nonché la capacità di storage per ogni implementazione.' 
+---
+= Licenze acquistate per implementazioni in produzione
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Una volta stabilito che ONTAP Select è adatto alla tua organizzazione, puoi acquistare le licenze necessarie per supportare un'implementazione in produzione. È necessario scegliere i Tier di capacità o il modello di licenza dei pool di capacità, nonché la capacità di storage per ogni implementazione.
+
+
+
+== Caratteristiche comuni delle licenze
+
+I modelli di licenza dei _Tier di capacità_ e dei _pool di capacità_ sono molto diversi sotto diversi aspetti. Tuttavia, i due modelli di licenza condividono diverse caratteristiche comuni, tra cui:
+
+* Quando si implementa ONTAP Select in un ambiente di produzione, è necessario acquistare una o più licenze in base alle necessità.
+* La capacità di storage per una licenza viene allocata in incrementi di 1 TB.
+* La capacità di storage identifica la capacità raw e corrisponde alla dimensione totale consentita dei dischi dati disponibili per la macchina virtuale ONTAP Select.
+* Sono supportate tutte le offerte di licenze della piattaforma (standard, premium, premium XL).
+* Per ricevere assistenza in caso di acquisizione delle licenze necessarie, contatta il tuo account team o partner NetApp.
+* È necessario caricare i file di licenza nell'utility di amministrazione di Deploy, che applica le licenze in base al modello di licenza.
+* Dopo aver installato e applicato una licenza, è possibile aggiungere ulteriore capacità contattando l'account team o il partner NetApp per ottenere una licenza aggiornata.
+* Entrambi i nodi di una coppia ha devono avere la stessa capacità di storage e licenza.
+* Un nodo ONTAP Select inizialmente implementato con una licenza acquistata non può essere convertito in una licenza di valutazione.
+
+
+
+
+== Modello di licensing dei Tier di capacità
+
+Esistono diverse caratteristiche esclusive del modello di licensing dei Tier di capacità, tra cui:
+
+* È necessario acquistare una licenza per ciascun nodo ONTAP Select.
+* L'importo minimo che puoi acquistare è di 1 TB.
+* Ogni licenza di livello di capacità ha una capacità di storage ed è bloccata su un nodo specifico.
+* NetApp genera un numero seriale di nove cifre per ogni nodo ONTAP Select.
+* Lo storage allocato a un nodo è perpetuo (non è richiesto alcun rinnovo).
+* Il numero di serie del nodo è composto da nove cifre e corrisponde al numero di serie della licenza.
+* È possibile applicare il file di licenza durante l'implementazione del cluster o entro 30 giorni dalla creazione di un cluster.
+
+
+
+
+== Modello di licensing dei pool di capacità
+
+Esistono diverse caratteristiche esclusive del modello di licensing dei pool di capacità, tra cui:
+
+* È necessario acquistare una licenza per ciascun pool di capacità condiviso.
+* L'importo minimo che puoi acquistare è di 2 TB.
+* Ogni licenza del pool di capacità ha una capacità di storage ed è bloccata su una specifica istanza del Manager di licenza.
+* NetApp genera un numero seriale di nove cifre per ogni pool di capacità.
+* Lo storage allocato a un pool di capacità è valido solo per un tempo specifico in base all'acquisto (è richiesto il rinnovo).
+* Il numero di serie del nodo è composto da venti cifre ed è generato dal Manager di licenza in base al numero di serie della licenza del pool di capacità.
+* Ogni nodo localizza automaticamente la capacità di storage per i propri aggregati di dati locali da un pool di capacità condiviso.
+
+
+Per ulteriori informazioni sul modello di licensing dei pool di capacità, consulta il _modello di licensing dei pool di capacità_.

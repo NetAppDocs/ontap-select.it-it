@@ -1,0 +1,41 @@
+---
+sidebar: sidebar 
+permalink: reference_plan_ots_two_node.html 
+keywords: plan, planning, two nodes, two node clusters 
+summary: 'L"implementazione di un cluster a due nodi con ha implica la stessa pianificazione e configurazione utilizzate con altre configurazioni di nodi del cluster. Tuttavia, quando si crea un cluster a due nodi, è necessario tenere presenti diverse differenze.' 
+---
+= Cluster a due nodi ONTAP Select con ha
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+L'implementazione di un cluster a due nodi con ha implica la stessa pianificazione e configurazione utilizzate con altre configurazioni di nodi del cluster. Tuttavia, quando si crea un cluster a due nodi, è necessario tenere presenti diverse differenze.
+
+.Ambiente di destinazione
+Il cluster a due nodi è costituito da una coppia ha ed è stato progettato specificamente per le implementazioni di uffici remoti e filiali.
+
+
+NOTE: Sebbene sia progettato principalmente per l'ambiente di filiali e filiali, è possibile implementare un cluster a due nodi nel data center, se necessario.
+
+.Licensing
+È possibile implementare un cluster a due nodi utilizzando qualsiasi licenza VMware vSphere. Tuttavia, le licenze VMware ROBO Standard e Advanced sono ideali per implementazioni remote e di filiali.
+
+.Servizio mediatore
+Quando un cluster è costituito da due nodi, non è possibile ottenere il quorum richiesto quando un nodo non riesce o perde la comunicazione. Per risolvere questi tipi di situazioni di split-brain, ogni istanza dell'utilità di implementazione di ONTAP Select include un servizio di mediazione. Questo servizio si connette a ciascun nodo dei cluster a due nodi attivi per monitorare le coppie ha e assistere nella gestione degli errori. Il servizio mediatore mantiene le informazioni sullo stato ha in corrispondenza di una destinazione iSCSI dedicata associata a ciascun cluster a due nodi.
+
+
+CAUTION: Se si dispone di uno o più cluster a due nodi attivi, la macchina virtuale ONTAP Select Deploy che amministra i cluster deve essere sempre in esecuzione. Se la macchina virtuale di implementazione viene arrestata o non funziona, il servizio mediatore non è disponibile e la funzionalità ha viene persa per i cluster a due nodi.
+
+.Ubicazione del servizio cluster e mediatore
+Poiché i cluster a due nodi vengono generalmente implementati in una sede remota o in una filiale, possono essere remoti dal data center aziendale e dall'utility di implementazione che fornisce supporto amministrativo. Con questa configurazione, il traffico di gestione tra l'utility di implementazione e il cluster passa attraverso la WAN. Per ulteriori informazioni su limitazioni e restrizioni, consulta le note sulla versione.
+
+.Backup dei dati di configurazione di implementazione
+È consigliabile eseguire regolarmente il backup dei dati di configurazione di implementazione, anche dopo la creazione di un cluster. Ciò diventa particolarmente importante con i cluster a due nodi, a causa dei dati di configurazione del mediatore inclusi nel backup.
+
+.Indirizzo IP statico assegnato per l'implementazione
+È necessario assegnare un indirizzo IP statico all'utilità di amministrazione di Deploy. Questo requisito si applica a tutte le istanze di implementazione che gestiscono uno o più cluster a due nodi ONTAP Select.

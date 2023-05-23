@@ -1,0 +1,38 @@
+---
+sidebar: sidebar 
+permalink: concept_lic_cp_restrictions.html 
+keywords: license, licensing, capacity pools, restrictions 
+summary: 'Di seguito sono illustrate le restrizioni applicabili all"utilizzo del modello di licenza del pool di capacità.' 
+---
+= Restrizioni di implementazione per le licenze dei pool di capacità
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Di seguito sono illustrate le restrizioni applicabili all'utilizzo del modello di licenza del pool di capacità.
+
+.Modello di licenza coerente per cluster
+Tutti i nodi all'interno di un singolo cluster ONTAP Select devono utilizzare lo stesso modello di licenza, ovvero Tier di capacità o pool di capacità. Non è possibile combinare i tipi di licenza per i nodi all'interno di un singolo cluster.
+
+.Tutti i nodi di un cluster utilizzano la stessa istanza del Manager di licenza
+Tutti i nodi con una licenza per pool di capacità in un cluster ONTAP Select devono utilizzare la stessa istanza del Manager di licenza. Poiché esiste un'istanza di Manager di licenza all'interno di ogni istanza di distribuzione, questa restrizione rappresenta un ripristino del requisito esistente secondo cui tutti i nodi di un cluster devono essere gestiti dalla stessa istanza di distribuzione.
+
+.Un pool di capacità per nodo
+Ogni nodo può concedere in leasing lo storage da un unico pool di capacità. Un nodo non può utilizzare due o più pool.
+
+.Stesso pool per i nodi in una coppia ha
+Entrambi i nodi di una singola coppia ha devono concedere in leasing lo storage dallo stesso pool di capacità. Tuttavia, coppie ha diverse all'interno dello stesso cluster possono concedere in leasing lo storage da diversi pool gestiti dallo stesso Manager di licenza.
+
+.Durata della licenza di storage
+Quando si acquista la licenza storage da NetApp, è necessario scegliere la durata della licenza. Ad esempio, una licenza potrebbe essere valida per un anno.
+
+.Durata del lease aggregato dei dati
+Quando un nodo ONTAP Select richiede un lease dello storage per un aggregato di dati, il Manager di licenza fornisce un lease per una durata specifica in base alla configurazione del pool di capacità. È possibile configurare la durata del lease per ciascun pool tra un'ora e sette giorni. La durata predefinita del leasing è di 24 ore.
+
+.Indirizzo IP statico assegnato per l'implementazione
+È necessario assegnare un indirizzo IP statico all'utility di amministrazione di implementazione quando si utilizza la licenza per i pool di capacità.

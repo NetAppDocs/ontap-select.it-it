@@ -1,0 +1,32 @@
+---
+sidebar: sidebar 
+permalink: task_adm_mediators.html 
+keywords: administer, administering, web, mediators 
+summary: Ogni cluster a due nodi ONTAP Select viene monitorato dal servizio mediatore, che assiste nella gestione della funzionalità ha condivisa dai nodi. 
+---
+= Amministrazione dei servizi di deploy mediator
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Ogni cluster a due nodi ONTAP Select viene monitorato dal servizio mediatore, che assiste nella gestione della funzionalità ha condivisa dai nodi.
+
+
+
+== Visualizzazione dello stato del servizio mediatore
+
+È possibile visualizzare lo stato del servizio mediatore rispetto a ciascuno dei cluster a due nodi definiti nell'utilità di implementazione di ONTAP Select.
+
+.A proposito di questa attività
+È possibile visualizzare la configurazione di ciascun mediatore, inclusi lo stato corrente, i due nodi ONTAP Select e la destinazione iSCSI in cui sono memorizzate le informazioni di controllo ha. Passare il mouse sugli oggetti della pagina per visualizzare informazioni dettagliate.
+
+.Fasi
+. Accedere all'interfaccia utente Web dell'utilità di implementazione utilizzando l'account amministratore.
+. Fare clic sulla scheda *Administration* (Amministrazione) nella parte superiore della pagina e fare clic su *mediatori*.
+. Facoltativamente, fare clic su *Filter* (filtro) per personalizzare la visualizzazione dei cluster a due nodi monitorati dal servizio di mediatore.
+

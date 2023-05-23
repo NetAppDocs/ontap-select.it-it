@@ -1,0 +1,36 @@
+---
+sidebar: sidebar 
+permalink: task_adm_resize.html 
+keywords: administer, administering, web, resizing nodes, resizing 
+summary: 'Dopo aver implementato un cluster ONTAP Select, è possibile aggiornare il tipo di istanza dell"hypervisor dei nodi utilizzando l"utility di amministrazione di deploy.' 
+---
+= Ridimensionamento dei nodi del cluster ONTAP Select
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Dopo aver implementato un cluster ONTAP Select, è possibile aggiornare il tipo di istanza dell'hypervisor dei nodi utilizzando l'utility di amministrazione di deploy.
+
+
+NOTE: È possibile eseguire l'operazione di ridimensionamento dei nodi del cluster solo quando si utilizza il modello di licenza dei livelli di capacità. Non è possibile ridimensionare i nodi ONTAP Select che dispongono di una licenza per i pool di capacità.
+
+.Prima di iniziare
+Il cluster deve essere nello stato online.
+
+.A proposito di questa attività
+Questa attività descrive come utilizzare l'interfaccia utente Web di implementazione. È inoltre possibile utilizzare la CLI di distribuzione per eseguire il ridimensionamento dell'istanza. Indipendentemente dall'interfaccia utilizzata, il tempo necessario per l'operazione di ridimensionamento può variare in modo significativo in base a diversi fattori e può richiedere un periodo di tempo prolungato per il completamento. È possibile ridimensionare un nodo solo a una dimensione maggiore.
+
+.Fasi
+. Accedere all'interfaccia utente Web dell'utilità di implementazione utilizzando l'account amministratore.
+. Fare clic sulla scheda *Cluster* nella parte superiore della pagina e selezionare il cluster desiderato dall'elenco.
+. Nella pagina dei dettagli del cluster, fare clic sull'icona a forma di ingranaggio a destra della pagina e selezionare *Instance Resize* (Ridimensiona istanza).
+. Selezionare *tipo di istanza* e fornire le credenziali ONTAP, quindi fare clic su *Modifica*.
+
+
+.Al termine
+Attendere il completamento dell'operazione di ridimensionamento.

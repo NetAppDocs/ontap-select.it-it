@@ -1,0 +1,80 @@
+---
+sidebar: sidebar 
+permalink: concept_lic_cp_operation.html 
+keywords: license, licensing, capacity pools, operation details 
+summary: Il modello di licensing dei pool di capacità è diverso dal modello dei Tier di capacità. Invece di dedicare capacità di storage a ciascun nodo, la capacità di storage viene allocata a un pool e condivisa tra più nodi. Sono stati creati altri componenti e processi per supportare il modello dei pool di capacità. 
+---
+= Dettagli operativi
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il modello di licensing dei pool di capacità è diverso dal modello dei Tier di capacità. Invece di dedicare capacità di storage a ciascun nodo, la capacità di storage viene allocata a un pool e condivisa tra più nodi. Sono stati creati altri componenti e processi per supportare il modello dei pool di capacità.
+
+
+
+== Manager di licenza
+
+Il Manager di licenza è un componente software introdotto con ONTAP Select 9.5 utilizzando ONTAP Select Deploy 2.10. LM viene eseguito come processo separato all'interno di ogni istanza dell'utilità di amministrazione di Deploy. Alcune delle funzioni fornite da LM includono:
+
+* Generare un numero di serie univoco di venti cifre per ciascun nodo in base al numero di serie della licenza del pool di capacità
+* Creare lease per la capacità dai pool di capacità condivisi in base alle richieste provenienti dai nodi ONTAP Select
+* Report sulle informazioni di utilizzo del pool tramite l'interfaccia utente di implementazione
+
+
+
+
+== Caratteristiche del leasing
+
+Lo storage allocato per ogni aggregato di dati in un nodo che utilizza una licenza per il pool di capacità deve avere un lease associato. Il nodo richiede un lease dello storage e, se la capacità è disponibile, il Manager di licenza risponde con un lease. Ogni lease ha i seguenti attributi espliciti o impliciti:
+
+* Manager di licenza ogni nodo ONTAP Select è associato a un'istanza del Manager di licenza
+* Pool di capacità ogni nodo ONTAP Select è associato a un pool di capacità
+* Allocazione dello storage Nel lease viene assegnato un valore di capacità specifico
+* Data e ora di scadenza i leases hanno una durata compresa tra un'ora e sette giorni, a seconda della configurazione dell'utente.
+
+
+
+
+== ID blocco licenza
+
+Ogni istanza del Manager di licenza, e quindi ogni istanza dell'utility di implementazione corrispondente, viene identificata con un numero univoco a 128 bit. Questo numero viene combinato con il numero seriale a nove cifre della licenza del pool di capacità per bloccare il pool in una specifica istanza del Manager di licenza (che in effetti è un'istanza di implementazione). È necessario fornire entrambi i valori nel sito di supporto NetApp come parte della generazione del file di licenza NetApp (NLF).
+
+È possibile determinare l'ID del blocco di licenza per l'istanza di implementazione utilizzando l'interfaccia utente Web nei seguenti modi:
+
+* Getting Started page questa pagina viene visualizzata quando si effettua il primo accesso per la distribuzione. È inoltre possibile visualizzare la pagina facendo clic sulla casella a discesa in alto a destra della pagina e selezionando Guida introduttiva. L'LLID viene visualizzato nella sezione Add Licenses (Aggiungi licenze).
+* Amministrazione fare clic sulla scheda *Amministrazione* nella parte superiore della pagina, quindi fare clic su *sistemi* e *Impostazioni*.
+
+
+
+
+== Operazioni di leasing di base
+
+Un nodo ONTAP Select deve individuare o richiedere un lease di capacità valido ogni volta che un aggregato di dati viene creato, espanso o modificato. È possibile utilizzare un lease ottenuto da una richiesta precedente ancora valida oppure richiedere un nuovo lease, se necessario. Il nodo ONTAP Select deve eseguire le seguenti operazioni per individuare un lease del pool di capacità:
+
+. Se un lease esistente si trova nel nodo, viene utilizzato purché siano vere tutte le seguenti condizioni:
++
+** Il leasing non è scaduto
+** La richiesta di storage per l'aggregato non supera la capacità di leasing
+
+
+. Se non è possibile individuare un lease esistente, il nodo richiede un nuovo lease dal Manager di licenza.
+
+
+
+
+== Restituzione della capacità di storage a un pool di capacità
+
+La capacità dello storage viene allocata da un pool di capacità in base alle necessità e ogni nuova richiesta può ridurre lo storage disponibile nel pool. La capacità dello storage viene restituita al pool in diverse situazioni, tra cui:
+
+* Il lease per un aggregato di dati scade e non viene rinnovato dal nodo
+* L'aggregato di dati viene cancellato
+
+
+
+NOTE: Se una macchina virtuale ONTAP Select viene eliminata, i lease attivi rimangono in vigore fino alla scadenza. In questo caso, la capacità viene restituita al pool.

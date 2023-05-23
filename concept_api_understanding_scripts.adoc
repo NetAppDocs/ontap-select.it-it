@@ -1,0 +1,83 @@
+---
+sidebar: sidebar 
+permalink: concept_api_understanding_scripts.html 
+keywords: rest api, deploy rest api, rest, python, python scripts, understanding 
+summary: 'Gli script Python di esempio consentono di eseguire diverse attività. È necessario comprendere gli script prima di utilizzarli in un"istanza di distribuzione live.' 
+---
+= Comprendere gli script Python
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Gli script Python di esempio consentono di eseguire diverse attività. È necessario comprendere gli script prima di utilizzarli in un'istanza di distribuzione live.
+
+
+
+== Caratteristiche di progettazione comuni
+
+Gli script sono stati progettati con le seguenti caratteristiche comuni:
+
+* Esecuzione dall'interfaccia della riga di comando su una macchina client è possibile eseguire gli script Python da qualsiasi macchina client correttamente configurata. Per ulteriori informazioni, consulta la sezione _before you begin_.
+* Accettare i parametri di input CLI ogni script viene controllato in corrispondenza della CLI attraverso i parametri di input.
+* Read input file ogni script legge un file di input in base al suo scopo. Quando si crea o si elimina un cluster, è necessario fornire un file di configurazione JSON. Quando si aggiunge una licenza nodo, è necessario fornire un file di licenza valido.
+* Utilizza un modulo di supporto comune il modulo di supporto comune _deploy_requests.py_ contiene una singola classe. Viene importato e utilizzato da ciascuno degli script.
+
+
+
+
+== Creazione di un cluster
+
+È possibile creare un cluster ONTAP Select utilizzando lo script cluster.py. In base ai parametri CLI e al contenuto del file di input JSON, è possibile modificare lo script nell'ambiente di implementazione come segue:
+
+[NOTE]
+====
+* A partire da ONTAP Select 9.10.1, non è più possibile implementare un nuovo cluster sull'hypervisor KVM.
+* A partire da ONTAP Select 9.11.1, tutte le funzionalità di gestibilità non sono più disponibili per i cluster e gli host KVM esistenti, ad eccezione delle funzioni take offline e delete.
+
+
+====
+* Hypervisor implementabili in ESXI o KVM (a seconda della release di implementazione). Durante l'implementazione in ESXi, l'hypervisor può essere gestito da vCenter o può essere un host standalone.
+* Dimensione del cluster è possibile implementare un cluster a nodo singolo o a più nodi.
+* Licenza di produzione o di valutazione è possibile implementare un cluster con una licenza di valutazione o acquistata per la produzione.
+
+
+I parametri di input CLI per lo script includono:
+
+* Nome host o indirizzo IP del server di implementazione
+* Password per l'account utente admin
+* Nome del file di configurazione JSON
+* Flag dettagliato per l'output del messaggio
+
+
+
+
+== Aggiunta di una licenza per nodi
+
+Se si sceglie di implementare un cluster di produzione, è necessario aggiungere una licenza per ciascun nodo utilizzando lo script _add_License.py_. È possibile aggiungere la licenza prima o dopo l'implementazione del cluster.
+
+I parametri di input CLI per lo script includono:
+
+* Nome host o indirizzo IP del server di implementazione
+* Password per l'account utente admin
+* Nome del file di licenza
+* Nome utente ONTAP con privilegi per aggiungere la licenza
+* Password per l'utente ONTAP
+
+
+
+
+== Eliminazione di un cluster
+
+È possibile eliminare un cluster ONTAP Select esistente utilizzando lo script _delete_cluster.py_.
+
+I parametri di input CLI per lo script includono:
+
+* Nome host o indirizzo IP del server di implementazione
+* Password per l'account utente admin
+* Nome del file di configurazione JSON
+

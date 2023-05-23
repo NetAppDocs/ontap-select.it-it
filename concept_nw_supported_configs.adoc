@@ -1,0 +1,44 @@
+---
+sidebar: sidebar 
+permalink: concept_nw_supported_configs.html 
+keywords: ontap select, supported network configurations 
+summary: 'Seleziona l"hardware migliore e configura la tua rete per ottimizzare performance e resilienza.' 
+---
+= Configurazioni di rete supportate
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Seleziona l'hardware migliore e configura la tua rete per ottimizzare performance e resilienza.
+
+I vendor di server sanno che i clienti hanno esigenze diverse e che la scelta è fondamentale. Di conseguenza, quando si acquista un server fisico, sono disponibili numerose opzioni per prendere decisioni sulla connettività di rete. La maggior parte dei sistemi commodity viene fornita con diverse opzioni NIC che offrono opzioni a porta singola e multiporta con variazioni di velocità e throughput. A partire da ONTAP Select 9.8, gli adattatori NIC da 25 GB/s e 40 GB/s sono supportati con VMware ESX.
+
+Poiché le prestazioni della macchina virtuale ONTAP Select sono legate direttamente alle caratteristiche dell'hardware sottostante, l'aumento del throughput della macchina virtuale selezionando NIC a velocità più elevata consente di ottenere un cluster dalle performance più elevate e un'esperienza utente migliore. È possibile utilizzare quattro NIC da 10 GB o due NIC a velocità superiore (25/40 GB/s) per ottenere un layout di rete dalle performance elevate. Sono supportate anche altre configurazioni. Per i cluster a due nodi, sono supportate 4 porte da 1 GB o 1 porta da 10 GB. Per i cluster a nodo singolo, sono supportate 2 porte da 1 GB.
+
+.Configurazioni minime di rete e consigliate
+Sono supportate diverse configurazioni Ethernet in base alle dimensioni del cluster.
+
+[cols="30,35,35"]
+|===
+
+
+| Dimensione del cluster | Requisiti minimi | Consiglio 
+
+
+| Cluster a nodo singolo | 2 x 1 GbE | 2 x 10 GbE 
+
+
+| Cluster a due nodi o SDS MetroCluster | 4 x 1 GbE o 1 x 10 GbE | 2 x 10 GbE 
+
+
+| cluster a 4/6/8 nodi | 2 x 10 GbE | 4 x 10 GbE o 2 x 25/40 GbE 
+|===
+.Configurazione di rete con più switch fisici
+Quando è disponibile hardware sufficiente, NetApp consiglia di utilizzare la configurazione multiswitch illustrata nella figura seguente, a causa della protezione aggiuntiva contro i guasti fisici degli switch.
+
+image:BP_02.jpg["Configurazione di rete con più switch fisici"]

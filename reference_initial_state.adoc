@@ -1,0 +1,46 @@
+---
+sidebar: sidebar 
+permalink: reference_initial_state.html 
+keywords: install, installing, initial state, cluster initial state 
+summary: 'È necessario conoscere lo stato iniziale di un cluster dopo averlo implementato e configurarlo in base alle esigenze dell"ambiente.' 
+---
+= Stato iniziale del cluster dopo l'implementazione
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+È necessario conoscere lo stato iniziale di un cluster dopo averlo implementato e configurarlo in base alle esigenze dell'ambiente.
+
+Dopo la creazione, un cluster ONTAP Select presenta diverse caratteristiche.
+
+.LIF
+Sono stati assegnati due tipi di LIF specificati dal cliente:
+
+* Gestione del cluster (una per cluster)
+* Gestione dei nodi (uno per nodo)
+
+
+.SVM
+Sono attive due SVM amministrative:
+
+* SVM predefinito
+* SVM del cluster
+
+
+.Aggregati
+Viene creato l'aggregato root.
+
+.Caratteristiche
+Tutte le funzioni sono concesse in licenza e disponibili. Sia SnapLock che FabricPool richiedono licenze separate.
+
+
+NOTE: Non sono stati creati dati SVM. Inoltre, il cluster multi-nodo dispone di una rete interna con LIF autogenerate.
+
+.Informazioni correlate
+* link:reference_lic_ontap_features.html["Funzionalità ONTAP attivate per impostazione predefinita"]
+

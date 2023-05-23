@@ -1,0 +1,72 @@
+---
+sidebar: sidebar 
+permalink: concept_api_operation.html 
+keywords: rest api, deploy rest api, rest, operation, basic operation 
+summary: 'Mentre REST stabilisce un insieme comune di tecnologie e Best practice, i dettagli di ciascuna API possono variare in base alle scelte di progettazione. Prima di utilizzare l"API, è necessario conoscere i dettagli e le caratteristiche operative dell"API di implementazione di ONTAP Select.' 
+---
+= Caratteristiche operative di base
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Mentre REST stabilisce un insieme comune di tecnologie e Best practice, i dettagli di ciascuna API possono variare in base alle scelte di progettazione. Prima di utilizzare l'API, è necessario conoscere i dettagli e le caratteristiche operative dell'API di implementazione di ONTAP Select.
+
+
+
+== Host hypervisor rispetto al nodo ONTAP Select
+
+Un _host hypervisor_ è la piattaforma hardware principale che ospita una macchina virtuale ONTAP Select. Quando una macchina virtuale ONTAP Select viene implementata e attiva su un host hypervisor, la macchina virtuale viene considerata un _nodo ONTAP Select_. Con la versione 3 dell'API REST di implementazione, gli oggetti host e nodo sono separati e distinti. Ciò consente una relazione uno-a-molti, in cui uno o più nodi ONTAP Select possono essere eseguiti sullo stesso host hypervisor.
+
+
+
+== Identificatori di oggetti
+
+A ogni istanza o oggetto di risorsa viene assegnato un identificatore univoco al momento della creazione. Questi identificatori sono univoci a livello globale all'interno di una specifica istanza di ONTAP Select Deploy. Dopo aver eseguito una chiamata API che crea una nuova istanza di oggetto, il valore id associato viene restituito al chiamante in `location` Intestazione della risposta HTTP. È possibile estrarre l'identificatore e utilizzarlo nelle chiamate successive quando si fa riferimento all'istanza della risorsa.
+
+
+NOTE: Il contenuto e la struttura interna degli identificatori di oggetti possono cambiare in qualsiasi momento. È necessario utilizzare gli identificatori delle chiamate API applicabili solo se necessario quando si fa riferimento agli oggetti associati.
+
+
+
+== Richiedi identificatori
+
+A ogni richiesta API riuscita viene assegnato un identificatore univoco. L'identificatore viene restituito in `request-id` Intestazione della risposta HTTP associata. È possibile utilizzare un identificatore di richiesta per fare riferimento collettivamente alle attività di una singola transazione richiesta-risposta API specifica. Ad esempio, è possibile recuperare tutti i messaggi di evento per una transazione in base all'ID della richiesta.
+
+
+
+== Chiamate sincrone e asincrone
+
+Esistono due modi principali in cui un server esegue una richiesta HTTP ricevuta da un client:
+
+* Sincrono il server esegue immediatamente la richiesta e risponde con un codice di stato 200, 201 o 204.
+* Asincrono il server accetta la richiesta e risponde con un codice di stato 202. Indica che il server ha accettato la richiesta del client e ha avviato un'attività in background per completare la richiesta. Il successo o l'errore finale non sono immediatamente disponibili e devono essere determinati tramite chiamate API aggiuntive.
+
+
+
+
+== Conferma del completamento di un lavoro a lunga durata
+
+In genere, tutte le operazioni che possono richiedere molto tempo vengono elaborate in modo asincrono utilizzando un'attività in background sul server. Con l'API di distribuzione REST, ogni attività in background viene ancorata da un oggetto Job che tiene traccia dell'attività e fornisce informazioni, ad esempio lo stato corrente. Un oggetto Job, incluso il relativo identificatore univoco, viene restituito nella risposta HTTP dopo la creazione di un'attività in background.
+
+È possibile eseguire query direttamente sull'oggetto Job per determinare il successo o l'errore della chiamata API associata. Per ulteriori informazioni, fare riferimento a _elaborazione asincrona mediante l'oggetto Job_.
+
+Oltre all'utilizzo dell'oggetto Job, esistono altri modi per determinare il successo o il fallimento di una richiesta, tra cui:
+
+* Messaggi di evento è possibile recuperare tutti i messaggi di evento associati a una chiamata API specifica utilizzando l'id della richiesta restituito con la risposta originale. I messaggi di evento contengono in genere un'indicazione di successo o di errore e possono essere utili anche quando si esegue il debug di una condizione di errore.
+* Stato o stato delle risorse diverse risorse mantengono uno stato o un valore di stato che è possibile eseguire una query per determinare indirettamente il successo o l'errore di una richiesta.
+
+
+
+
+== Sicurezza
+
+L'API di implementazione utilizza le seguenti tecnologie di sicurezza:
+
+* Transport Layer Security tutto il traffico inviato in rete tra il server di implementazione e il client viene crittografato tramite TLS. L'utilizzo del protocollo HTTP su un canale non crittografato non è supportato. È supportata la versione TLS 1.2.
+* Autenticazione HTTP l'autenticazione di base viene utilizzata per ogni transazione API. A ogni richiesta viene aggiunta un'intestazione HTTP, che include il nome utente e la password in una stringa base64.
+

@@ -1,0 +1,216 @@
+---
+sidebar: sidebar 
+permalink: task_cli_deploy_recover_two_node.html 
+keywords: administer, administering, cli, two node cluster, recover, recovering 
+summary: 'Se l"utilità di implementazione di ONTAP Select non riesce o non è disponibile per qualche motivo, si perde la capacità di amministrare i nodi e i cluster ONTAP Select. Inoltre, tutti i cluster a due nodi perdono la funzionalità ha perché il servizio mediatore incluso con l"implementazione non è disponibile. Se si verifica un errore irreversibile, è necessario ripristinare l"istanza dell"utilità di implementazione per ripristinare la funzionalità amministrativa e ha.' 
+---
+= Ripristino dell'utilità di implementazione per un cluster a due nodi
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Se l'utilità di implementazione di ONTAP Select non riesce o non è disponibile per qualche motivo, si perde la capacità di amministrare i nodi e i cluster ONTAP Select. Inoltre, tutti i cluster a due nodi perdono la funzionalità ha perché il servizio mediatore incluso con l'implementazione non è disponibile. Se si verifica un errore irreversibile, è necessario ripristinare l'istanza dell'utilità di implementazione per ripristinare la funzionalità amministrativa e ha.
+
+
+
+== Prima di iniziare
+
+È necessario prepararsi prima di tentare di ripristinare un'istanza dell'utilità di distribuzione per garantire il successo.
+
+.Competenze e informazioni richieste
+È necessario conoscere diverse procedure amministrative e disporre delle informazioni necessarie.
+
+.Installazione della macchina virtuale di implementazione
+È necessario essere in grado di installare una nuova istanza dell'utilità di implementazione di ONTAP Select nell'ambiente hypervisor.
+
+.Interfaccia a riga di comando di ONTAP
+È necessario essere in grado di accedere all'interfaccia utente di ONTAP del cluster ONTAP Select e utilizzare l'interfaccia della shell.
+
+.Disponibilità del backup della configurazione dell'utility di implementazione
+È necessario determinare se si dispone di un backup dei dati di configurazione dall'istanza dell'utilità di implementazione non riuscita che contiene il cluster a due nodi ONTAP Select. Potrebbe essere presente un backup che non contiene il cluster.
+
+.Ripristino di un backup della configurazione di implementazione
+A seconda della procedura di ripristino utilizzata, dovrebbe essere possibile ripristinare un backup dei dati di configurazione di implementazione.
+
+.Indirizzo IP della macchina virtuale di implementazione originale
+È necessario conoscere l'indirizzo IP della macchina virtuale dell'utility di implementazione originale che ha avuto esito negativo.
+
+.Licenze per la capacità dello storage
+È necessario determinare se vengono utilizzati i pool di capacità o i livelli di capacità delle licenze. Se si utilizzano le licenze per i pool di capacità, è necessario reinstallare ogni licenza del pool di capacità dopo il ripristino o il ripristino dell'istanza di distribuzione.
+
+.Scelta della procedura di ripristino da utilizzare
+È necessario decidere quale procedura utilizzare per il ripristino di un'istanza dell'utilità di distribuzione di ONTAP Select. La decisione dipende dalla disponibilità o meno di un backup dei dati di configurazione dall'utilità di implementazione non riuscita originale che contiene il cluster a due nodi ONTAP Select.
+
+[cols="35,65"]
+|===
+| Si dispone di un backup di implementazione contenente il cluster a due nodi? | Procedura di ripristino da utilizzare 
+
+
+| Sì | Ripristino di un'istanza dell'utility di implementazione utilizzando un backup della configurazione 
+
+
+| No | Riconfigurazione e ripristino di un'istanza dell'utility di distribuzione 
+|===
+
+
+== Ripristino di un'istanza dell'utility di implementazione utilizzando un backup della configurazione
+
+Se si dispone di un backup dell'istanza dell'utilità di implementazione non riuscita contenente il cluster a due nodi, è possibile ripristinare i dati di configurazione nella nuova istanza della macchina virtuale di implementazione. A questo punto, è necessario completare il ripristino eseguendo una configurazione aggiuntiva dei due nodi nel cluster ONTAP Select.
+
+.Prima di iniziare
+È necessario disporre di un backup dei dati di configurazione dalla macchina virtuale di implementazione non riuscita originale che contiene il cluster a due nodi. È necessario essere in grado di accedere alla CLI ONTAP del cluster a due nodi e conoscere i nomi ONTAP dei due nodi.
+
+.A proposito di questa attività
+Poiché il backup della configurazione ripristinato contiene il cluster a due nodi, le destinazioni iSCSI del mediatore e le caselle postali vengono ricreate nella nuova macchina virtuale dell'utility di implementazione.
+
+.Fasi
+. Preparare una nuova istanza dell'utilità di implementazione di ONTAP Select:
++
+.. Installare una nuova macchina virtuale dell'utility di implementazione.
+.. Ripristinare la configurazione di implementazione da un backup precedente alla nuova macchina virtuale.
++
+Fare riferimento alle attività correlate per informazioni più dettagliate sulle procedure di installazione e ripristino.
+
+
+
+. Accedere all'interfaccia della riga di comando ONTAP del cluster a due nodi ONTAP Select.
+. Accedere alla modalità avanzata dei privilegi:
++
+`set adv`
+
+. Se l'indirizzo IP della nuova macchina virtuale di implementazione è diverso da quello della macchina virtuale di implementazione originale, è necessario rimuovere le vecchie destinazioni iSCSI del mediatore e aggiungere nuove destinazioni:
++
+....
+storage iscsi-initiator remove-target -node * -target-type mailbox
+
+storage iscsi-initiator add-target -node <node1_name> -label mediator -target-type mailbox -target-portal <ip_address> -target-name <target>
+
+storage iscsi-initiator add-target -node <node2_name> -label mediator -target-type mailbox -target-portal <ip_address> -target-name <target>
+....
++
+Il `<ip_address>` Il parametro è l'indirizzo IP della nuova macchina virtuale di implementazione.
+
++
+Questi comandi consentono ai nodi ONTAP Select di rilevare i dischi della mailbox sulla nuova macchina virtuale dell'utility di implementazione.
+
+. Determinare i nomi dei dischi del mediatore:
++
+`disk show -container-type mediator`
+
+. Assegnare i dischi della mailbox ai due nodi:
++
+....
+disk assign -disk <mediator-disk1-name> -owner <node1-name>
+disk assign -disk <mediator-disk2-name> -owner <node2-name>
+....
+. Verificare che il failover dello storage sia attivato:
++
+`storage failover show`
+
+
+
+.Al termine
+Se si utilizzano le licenze per i pool di capacità, è necessario reinstallare ciascuna licenza per il pool di capacità. Per ulteriori informazioni, consulta la sezione _reinstallazione di una licenza per il pool di capacità_.
+
+
+
+== Riconfigurazione e ripristino di un'istanza dell'utility di distribuzione
+
+Se non si dispone di un backup dell'istanza dell'utilità di implementazione non riuscita contenente il cluster a due nodi, è necessario configurare la destinazione iSCSI del mediatore e la mailbox nella nuova macchina virtuale di implementazione. A questo punto, è necessario completare il ripristino eseguendo una configurazione aggiuntiva dei due nodi nel cluster ONTAP Select.
+
+.Prima di iniziare
+È necessario disporre del nome della destinazione del mediatore per la nuova istanza dell'utilità di implementazione. È necessario essere in grado di accedere alla CLI ONTAP del cluster a due nodi e conoscere i nomi ONTAP dei due nodi.
+
+.A proposito di questa attività
+È possibile ripristinare un backup della configurazione sulla nuova macchina virtuale di implementazione anche se non contiene il cluster a due nodi. Poiché il cluster a due nodi non viene ricreato con il ripristino, è necessario aggiungere manualmente la destinazione iSCSI del mediatore e la mailbox alla nuova istanza dell'utilità di implementazione attraverso la pagina Web della documentazione online di ONTAP Select nella distribuzione. È necessario essere in grado di accedere al cluster a due nodi e conoscere i nomi ONTAP dei due nodi.
+
+
+NOTE: L'obiettivo della procedura di ripristino è ripristinare il cluster a due nodi in uno stato integro, in cui è possibile eseguire normali operazioni di Takeover e giveback di ha.
+
+.Fasi
+. Preparare una nuova istanza dell'utilità di implementazione di ONTAP Select:
++
+.. Installare una nuova macchina virtuale dell'utility di implementazione.
+.. Se si desidera, ripristinare la configurazione di implementazione da un backup precedente alla nuova macchina virtuale.
++
+Se si ripristina un backup precedente, la nuova istanza di implementazione non conterrà il cluster a due nodi. Per informazioni più dettagliate sulle procedure di installazione e ripristino, consultare la sezione relativa alle informazioni correlate.
+
+
+
+. Accedere all'interfaccia della riga di comando ONTAP del cluster a due nodi ONTAP Select.
+. Accedere alla modalità avanzata con privilegi:
++
+`set adv`
+
+. Ottenere il nome di destinazione iSCSI del mediatore:
++
+`storage iscsi-initiator show -target-type mailbox`
+
+. Accedere alla pagina Web della documentazione online sulla nuova macchina virtuale dell'utility di implementazione e accedere utilizzando l'account admin:
++
+`\http://<ip_address>/api/ui`
+
++
+È necessario utilizzare l'indirizzo IP della macchina virtuale di implementazione.
+
+. Fare clic su *Mediator*, quindi su *GET /mediators*.
+. Fare clic su *Provalo!* per visualizzare un elenco di mediatori gestiti da Deploy.
++
+Annotare l'ID dell'istanza del mediatore desiderata.
+
+. Fare clic su *Mediator*, quindi su *POST*.
+. Fornire il valore per mediator_ID.
+. Fare clic su *Model* accanto a. `iscsi_target` e completare il valore del nome.
++
+Utilizzare il nome di destinazione per il parametro iqn_NAME.
+
+. Fare clic su *Provalo!* per creare la destinazione iSCSI del mediatore.
++
+Se la richiesta ha esito positivo, si riceverà il codice di stato HTTP 200.
+
+. Se l'indirizzo IP della nuova macchina virtuale di implementazione è diverso da quello della macchina virtuale di implementazione originale, è necessario utilizzare la CLI ONTAP per rimuovere le destinazioni iSCSI del mediatore precedente e aggiungere nuove destinazioni:
++
+....
+storage iscsi-initiator remove-target -node * -target-type mailbox
+
+storage iscsi-initiator add-target -node <node1_name> -label mediator -target-type mailbox -target-portal <ip_address> -target-name <target>
+
+storage iscsi-initiator add-target -node <node2_name> -label mediator-target-type mailbox -target-portal <ip_address> -target-name <target>
+....
++
+Il `<ip_address>` Il parametro è l'indirizzo IP della nuova macchina virtuale di implementazione.
+
+
+
+Questi comandi consentono ai nodi ONTAP Select di rilevare i dischi della mailbox sulla nuova macchina virtuale dell'utility di implementazione.
+
+. Determinare i nomi dei dischi del mediatore:
++
+`disk show -container-type mediator`
+
+. Assegnare i dischi della mailbox ai due nodi:
++
+....
+disk assign -disk <mediator-disk1-name> -owner <node1-name>
+
+disk assign -disk <mediator-disk2-name> -owner <node2-name>
+....
+. Verificare che il failover dello storage sia attivato:
++
+`storage failover show`
+
+
+
+.Al termine
+Se si utilizzano le licenze per i pool di capacità, è necessario reinstallare ciascuna licenza per il pool di capacità. Per ulteriori informazioni, vedere reinstallazione di una licenza di Capacity Pool.
+
+.Informazioni correlate
+* link:task_install_deploy.html["Installazione di ONTAP Select Deploy"]
+* link:task_cli_migrate_deploy.html#restoring-the-deploy-configuration-data-to-the-new-virtual-machine["Ripristino dei dati di configurazione dell'implementazione nella nuova macchina virtuale"]
+* link:task_adm_licenses.html#reinstalling-a-capacity-pool-license["Reinstallazione di una licenza del pool di capacità"]
+

@@ -1,0 +1,35 @@
+---
+sidebar: sidebar 
+permalink: task_cli_signing_in.html 
+keywords: administer, administering, cli, deploy, sign in, signing in 
+summary: 'È necessario accedere alla shell di gestione della distribuzione utilizzando SSH. Dopo aver effettuato l"accesso, è possibile inviare comandi CLI per creare un cluster ONTAP Select ed eseguire le relative procedure amministrative.' 
+---
+= Accesso per la distribuzione tramite SSH
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+È necessario accedere alla shell di gestione della distribuzione utilizzando SSH. Dopo aver effettuato l'accesso, è possibile inviare comandi CLI per creare un cluster ONTAP Select ed eseguire le relative procedure amministrative.
+
+.Prima di iniziare
+È necessario disporre della password corrente per l'account dell'amministratore di implementazione (admin). Se si effettua l'accesso per la prima volta e si utilizza vCenter per installare la macchina virtuale di distribuzione, è necessario utilizzare la password impostata durante l'installazione.
+
+.Fasi
+. Accedere utilizzando l'account amministratore e l'indirizzo IP di gestione della macchina virtuale di implementazione; ad esempio:
++
+`ssh admin@<10.235.82.22>`
+
+. Se è la prima volta che si effettua l'accesso e non si installa Deploy utilizzando la procedura guidata disponibile con vCenter, fornire le seguenti informazioni di configurazione quando richiesto:
++
+** Nuova password per l'account amministratore (obbligatoria)
+** Nome dell'azienda (obbligatorio)
+** URL proxy (opzionale)
+
+
+. Digitare *?* e premere *Invio* per visualizzare un elenco dei comandi della shell di gestione disponibili.
+

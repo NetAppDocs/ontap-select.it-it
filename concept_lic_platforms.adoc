@@ -1,0 +1,76 @@
+---
+sidebar: sidebar 
+permalink: concept_lic_platforms.html 
+keywords: license, licensing, platform license offerings, license offerings, standard, premium, premium xl 
+summary: È possibile acquistare una licenza ONTAP Select Capacity Tier o Capacity Pool in uno dei tre livelli di capacità della piattaforma. Queste offerte di licenza determinano le funzionalità degli host in cui si implementa ONTAP Select. 
+---
+= Informazioni sulle offerte di licenze per la piattaforma
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+È possibile acquistare una licenza ONTAP Select Capacity Tier o Capacity Pool in uno dei tre livelli di capacità della piattaforma. Queste offerte di licenza determinano le funzionalità degli host in cui si implementa ONTAP Select.
+
+
+
+== Cosa offre una licenza per piattaforma
+
+Un'offerta di licenza specifica definisce e restrizione le funzionalità dell'host hypervisor in due aree:
+
+* Tipo di istanza (CPU, memoria)
+* Funzionalità aggiuntive
+
+
+Le offerte di licenza sono organizzate in ordine crescente di funzionalità, da standard a premium XL. In generale, l'opzione di licenza scelta garantisce le funzionalità di quel livello e di tutti i livelli inferiori. Ad esempio, il livello premium offre funzionalità sia premium che standard.
+
+
+
+== Offerte di licenze per la piattaforma
+
+Sono disponibili tre offerte di licenze per piattaforme.
+
+
+
+=== Standard
+
+L'offerta standard offre le seguenti funzionalità:
+
+* Solo tipo di istanza di piccole dimensioni
+* Solo dischi rigidi (HDD)
+* Solo controller RAID hardware locale
+* VNAS
+
+
+
+
+=== Premium
+
+L'offerta premium offre le seguenti funzionalità:
+
+* Tipo di istanza piccola o media
+* Dischi rigidi (HDD) o SSD (Solid state Drive)
+* Controller RAID hardware locale o RAID software
+* VNAS
+* Scheda di sicurezza MetroCluster
+
+
+
+
+=== Premium XL
+
+L'offerta premium XL offre le seguenti funzionalità:
+
+* Tipo di istanza piccolo, medio o grande.
+* Dischi rigidi (HDD) o SSD (Solid state Drive)
+* Controller RAID hardware locale o RAID software.
+* VNAS
+* Scheda di sicurezza MetroCluster
+
+
+
+NOTE: Il tipo di istanza di grandi dimensioni (che utilizza la licenza premium XL) è disponibile solo su VMware ESXi.

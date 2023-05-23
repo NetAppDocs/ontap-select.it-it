@@ -1,0 +1,415 @@
+---
+sidebar: sidebar 
+permalink: reference_api_workflow01.html 
+keywords: rest api, deploy rest api, rest, workflow, create cluster, curl, json 
+summary: È possibile implementare un cluster ONTAP Select a nodo singolo su un host VMware ESXi gestito da vCenter. Il cluster viene creato con una licenza di valutazione. 
+---
+= Workflow 1: Creazione di un cluster di valutazione a nodo singolo su ESXi
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+È possibile implementare un cluster ONTAP Select a nodo singolo su un host VMware ESXi gestito da vCenter. Il cluster viene creato con una licenza di valutazione.
+
+Il flusso di lavoro per la creazione del cluster è diverso nelle seguenti situazioni:
+
+* L'host ESXi non è gestito da vCenter (host standalone)
+* Nel cluster vengono utilizzati più nodi o host
+* Il cluster viene implementato in un ambiente di produzione con una licenza acquistata
+* L'hypervisor KVM viene utilizzato al posto di VMware ESXi
++
+[NOTE]
+====
+** A partire da ONTAP Select 9.10.1, non è più possibile implementare un nuovo cluster sull'hypervisor KVM.
+** A partire da ONTAP Select 9.11.1, tutte le funzionalità di gestibilità non sono più disponibili per i cluster e gli host KVM esistenti, ad eccezione delle funzioni take offline e delete.
+
+
+====
+
+
+
+
+== 1. Registrare le credenziali del server vCenter
+
+Durante la distribuzione su un host ESXi gestito da un server vCenter, è necessario aggiungere una credenziale prima di registrare l'host. L'utility di amministrazione di deploy può quindi utilizzare la credenziale per l'autenticazione in vCenter.
+
+[cols="15,15,70"]
+|===
+| Categoria | Verbo HTTP | Percorso 
+
+
+| Implementare | POST | /security/credentials 
+|===
+Arricciatura::
+
+
+[source, curl]
+----
+curl -iX POST -H 'Content-Type: application/json' -u admin:<password> -k -d @step01 'https://10.21.191.150/api/security/credentials'
+----
+Ingresso JSON (step01)::
+
+
+[source, json]
+----
+{
+  "hostname": "vcenter.company-demo.com",
+  "type": "vcenter",
+  "username": "misteradmin@vsphere.local",
+  "password": "mypassword"
+}
+----
+Tipo di elaborazione:: Asincrono
+Output::
++
+--
+* ID credenziale nell'intestazione della risposta di posizione
+* Oggetto lavoro
+
+
+--
+
+
+
+
+== 2. Registrare un host hypervisor
+
+È necessario aggiungere un host hypervisor in cui verrà eseguita la macchina virtuale contenente il nodo ONTAP Select.
+
+[cols="15,15,70"]
+|===
+| Categoria | Verbo HTTP | Percorso 
+
+
+| Cluster | POST | /hosts 
+|===
+Arricciatura::
+
+
+[source, curl]
+----
+curl -iX POST -H 'Content-Type: application/json' -u admin:<password> -k -d @step02 'https://10.21.191.150/api/hosts'
+----
+Ingresso JSON (step02)::
+
+
+[source, json]
+----
+{
+  "hosts": [
+    {
+      "hypervisor_type": "ESX",
+      "management_server": "vcenter.company-demo.com",
+      "name": "esx1.company-demo.com"
+    }
+  ]
+}
+----
+Tipo di elaborazione:: Asincrono
+Output::
++
+--
+* ID host nell'intestazione di risposta della posizione
+* Oggetto lavoro
+
+
+--
+
+
+
+
+== 3. Creare un cluster
+
+Quando si crea un cluster ONTAP Select, la configurazione di base del cluster viene registrata e i nomi dei nodi vengono generati automaticamente da Deploy.
+
+[cols="15,15,70"]
+|===
+| Categoria | Verbo HTTP | Percorso 
+
+
+| Cluster | POST | /cluster 
+|===
+Arricciatura:: Il parametro di query node_count deve essere impostato su 1 per un cluster a nodo singolo.
+
+
+[source, curl]
+----
+curl -iX POST -H 'Content-Type: application/json' -u admin:<password> -k -d @step03 'https://10.21.191.150/api/clusters? node_count=1'
+----
+Ingresso JSON (step03)::
+
+
+[source, json]
+----
+{
+  "name": "my_cluster"
+}
+----
+Tipo di elaborazione:: Sincrono
+Output::
++
+--
+* ID del cluster nell'intestazione della risposta di posizione
+
+
+--
+
+
+
+
+== 4. Configurare il cluster
+
+Durante la configurazione del cluster, è necessario fornire diversi attributi.
+
+[cols="15,15,70"]
+|===
+| Categoria | Verbo HTTP | Percorso 
+
+
+| Cluster | PATCH | /cluster/{cluster_id} 
+|===
+Arricciatura:: È necessario fornire l'ID del cluster.
+
+
+[source, curl]
+----
+curl -iX PATCH -H 'Content-Type: application/json' -u admin:<password> -k -d @step04 'https://10.21.191.150/api/clusters/CLUSTERID'
+----
+Ingresso JSON (punto 04)::
+
+
+[source, json]
+----
+{
+  "dns_info": {
+    "domains": ["lab1.company-demo.com"],
+    "dns_ips": ["10.206.80.135", "10.206.80.136"]
+    },
+    "ontap_image_version": "9.5",
+    "gateway": "10.206.80.1",
+    "ip": "10.206.80.115",
+    "netmask": "255.255.255.192",
+    "ntp_servers": {"10.206.80.183"}
+}
+----
+Tipo di elaborazione:: Sincrono
+Output:: Nessuno
+
+
+
+
+== 5. Recuperare il nome del nodo
+
+L'utility di amministrazione di deploy genera automaticamente gli identificatori e i nomi dei nodi quando viene creato un cluster. Prima di poter configurare un nodo, è necessario recuperare l'ID assegnato.
+
+[cols="15,15,70"]
+|===
+| Categoria | Verbo HTTP | Percorso 
+
+
+| Cluster | OTTIENI | /cluster/{cluster_id}/nodi 
+|===
+Arricciatura:: È necessario fornire l'ID del cluster.
+
+
+[source, curl]
+----
+curl -iX GET -u admin:<password> -k 'https://10.21.191.150/api/clusters/CLUSTERID/nodes?fields=id,name'
+----
+Tipo di elaborazione:: Sincrono
+Output::
++
+--
+* Record di array ciascuno dei quali descrive un singolo nodo con ID e nome univoci
+
+
+--
+
+
+
+
+== 6. Configurare i nodi
+
+È necessario fornire la configurazione di base per il nodo, che è la prima delle tre chiamate API utilizzate per configurare un nodo.
+
+[cols="15,15,70"]
+|===
+| Categoria | Verbo HTTP | Percorso 
+
+
+| Cluster | PERCORSO | /clusters/{cluster_id}/nodes/{node_id} 
+|===
+Arricciatura:: È necessario fornire l'ID del cluster e l'ID del nodo.
+
+
+[source, curl]
+----
+curl -iX PATCH -H 'Content-Type: application/json' -u admin:<password> -k -d @step06 'https://10.21.191.150/api/clusters/CLUSTERID/nodes/NODEID'
+----
+Ingresso JSON (punto 06):: Specificare l'ID host in cui verrà eseguito il nodo ONTAP Select.
+
+
+[source, json]
+----
+{
+  "host": {
+    "id": "HOSTID"
+    },
+  "instance_type": "small",
+  "ip": "10.206.80.101",
+  "passthrough_disks": false
+}
+----
+Tipo di elaborazione:: Sincrono
+Output:: Nessuno
+
+
+
+
+== 7. Recuperare le reti di nodi
+
+È necessario identificare le reti di dati e di gestione utilizzate dal nodo nel cluster a nodo singolo. La rete interna non viene utilizzata con un cluster a nodo singolo.
+
+[cols="15,15,70"]
+|===
+| Categoria | Verbo HTTP | Percorso 
+
+
+| Cluster | OTTIENI | /clusters/{cluster_id}/nodes/{node_id}/networks 
+|===
+Arricciatura:: È necessario fornire l'ID del cluster e l'ID del nodo.
+
+
+[source, curl]
+----
+curl -iX GET -u admin:<password> -k 'https://10.21.191.150/api/ clusters/CLUSTERID/nodes/NODEID/networks?fields=id,purpose'
+----
+Tipo di elaborazione:: Sincrono
+Output::
++
+--
+* Array di due record ciascuno che descrive una singola rete per il nodo, inclusi ID e scopo univoci
+
+
+--
+
+
+
+
+== 8. Configurare la rete del nodo
+
+È necessario configurare le reti dati e di gestione. La rete interna non viene utilizzata con un cluster a nodo singolo.
+
+
+NOTE: Eseguire due volte la seguente chiamata API, una per ciascuna rete.
+
+[cols="15,15,70"]
+|===
+| Categoria | Verbo HTTP | Percorso 
+
+
+| Cluster | PATCH | /cluster/{cluster_id}/nodes/{node_id}/networks/{network_id} 
+|===
+Arricciatura:: È necessario fornire l'ID del cluster, l'ID del nodo e l'ID di rete.
+
+
+[source, curl]
+----
+curl -iX PATCH -H 'Content-Type: application/json' -u admin:<password> -k -d @step08 'https://10.21.191.150/api/clusters/ CLUSTERID/nodes/NODEID/networks/NETWORKID'
+----
+Ingresso JSON (step08):: Specificare il nome della rete.
+
+
+[source, json]
+----
+{
+  "name": "sDOT_Network"
+}
+----
+Tipo di elaborazione:: Sincrono
+Output:: Nessuno
+
+
+
+
+== 9. Configurare il pool di storage del nodo
+
+La fase finale della configurazione di un nodo consiste nell'associare un pool di storage. È possibile determinare i pool di storage disponibili tramite il client Web vSphere o, facoltativamente, tramite l'API REST di implementazione.
+
+[cols="15,15,70"]
+|===
+| Categoria | Verbo HTTP | Percorso 
+
+
+| Cluster | PATCH | /cluster/{cluster_id}/nodes/{node_id}/networks/{network_id} 
+|===
+Arricciatura:: È necessario fornire l'ID del cluster, l'ID del nodo e l'ID di rete.
+
+
+[source, curl]
+----
+curl -iX PATCH -H 'Content-Type: application/json' -u admin:<password> -k -d @step09 'https://10.21.191.150/api/clusters/ CLUSTERID/nodes/NODEID'
+----
+Ingresso JSON (punto 09):: La capacità del pool è di 2 TB.
+
+
+[source, json]
+----
+{
+  "pool_array": [
+    {
+      "name": "sDOT-01",
+      "capacity": 2147483648000
+    }
+  ]
+}
+----
+Tipo di elaborazione:: Sincrono
+Output:: Nessuno
+
+
+
+
+== 10. Implementare il cluster
+
+Una volta configurati il cluster e il nodo, è possibile implementarlo.
+
+[cols="15,15,70"]
+|===
+| Categoria | Verbo HTTP | Percorso 
+
+
+| Cluster | POST | /clusters/{cluster_id}/deploy 
+|===
+Arricciatura:: È necessario fornire l'ID del cluster.
+
+
+[source, curl]
+----
+curl -iX POST -H 'Content-Type: application/json' -u admin:<password> -k -d @step10 'https://10.21.191.150/api/clusters/CLUSTERID/deploy'
+----
+Ingresso JSON (step10):: Specificare la password per l'account amministratore di ONTAP.
+
+
+[source, json]
+----
+{
+  "ontap_credentials": {
+    "password": "mypassword"
+  }
+}
+----
+Tipo di elaborazione:: Asincrono
+Output::
++
+--
+* Oggetto lavoro
+
+
+--
+

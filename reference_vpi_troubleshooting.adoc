@@ -1,0 +1,54 @@
+---
+sidebar: sidebar 
+permalink: reference_vpi_troubleshooting.html 
+keywords: vcenter, plug-in, vcenter plug-in, deploy plug-in, troubleshooting 
+summary: È necessario conoscere le tecniche di risoluzione dei problemi e gli errori comuni disponibili come parte del supporto del plug-in Deploy vCenter. 
+---
+= Risoluzione dei problemi
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+È necessario conoscere le tecniche di risoluzione dei problemi e gli errori comuni disponibili come parte del supporto del plug-in Deploy vCenter.
+
+
+
+== Errori di installazione, disinstallazione e aggiornamento
+
+Se si verifica un errore durante l'installazione, la disinstallazione o una procedura di aggiornamento, l'API restituisce un messaggio di errore visualizzato dall'interfaccia di distribuzione utilizzata per avviare la procedura (interfaccia utente Web o CLI).
+
+Gli errori più comuni includono:
+
+* Credenziali errate (nome utente o password)
+* Plug-in non valido o mancante specificato per l'installazione
+* Il server vCenter non è in linea o non è raggiungibile
+
+
+Per ulteriori informazioni su un errore, esaminare i seguenti registri:
+
+* Implementare il log del server
+* Log del server vCenter
+
+
+
+
+== Errori di plug-in in vCenter
+
+Se si verifica un errore durante una sessione con vCenter, viene visualizzato un messaggio di errore. Gli errori più comuni includono:
+
+* Impossibile caricare contenuto incorporato in vCenter dal server di implementazione perché il certificato SSL del server di implementazione non è stato accettato nel browser.
+* Il server di distribuzione non autorizza l'ID sessione per un utente vCenter che sta tentando di accedere al plug-in Deploy vCenter. La sessione è in timeout.
+* Privilegi insufficienti per accedere al plug-in Deploy vCenter.
+* Il server di implementazione non è in linea o non è raggiungibile.
+
+
+Per ulteriori informazioni su un errore, consultare i seguenti registri:
+
+* Log del server vCenter
+* Implementare il log del server
+

@@ -1,0 +1,122 @@
+---
+sidebar: sidebar 
+permalink: concept_nw_concepts_chars.html 
+keywords: ontap select, networking concepts, cluster characteristics 
+summary: 'Acquisire familiarità con i concetti generali di rete applicabili all"ambiente ONTAP Select. Quindi, esplora le caratteristiche e le opzioni specifiche disponibili con i cluster a nodo singolo e multi-nodo.' 
+---
+= Networking: Concetti e caratteristiche generali
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Acquisire familiarità con i concetti generali di rete applicabili all'ambiente ONTAP Select. Quindi, esplora le caratteristiche e le opzioni specifiche disponibili con i cluster a nodo singolo e multi-nodo.
+
+
+
+== Rete fisica
+
+La rete fisica supporta un'implementazione del cluster ONTAP Select principalmente fornendo l'infrastruttura di switching di livello due sottostante. La configurazione relativa alla rete fisica include sia l'host dell'hypervisor che l'ambiente di rete con switch più ampio.
+
+
+
+=== Opzioni NIC host
+
+Ciascun host dell'hypervisor ONTAP Select deve essere configurato con due o quattro porte fisiche. La configurazione esatta scelta dipende da diversi fattori, tra cui:
+
+* Se il cluster contiene uno o più host ONTAP Select
+* Quale sistema operativo hypervisor viene utilizzato
+* Come è configurato lo switch virtuale
+* Se LACP viene utilizzato o meno con i collegamenti
+
+
+
+
+=== Configurazione fisica dello switch
+
+È necessario assicurarsi che la configurazione degli switch fisici supporti l'implementazione di ONTAP Select. Gli switch fisici sono integrati con gli switch virtuali basati su hypervisor. La configurazione esatta scelta dipende da diversi fattori. Le considerazioni principali includono quanto segue:
+
+* In che modo è possibile mantenere la separazione tra le reti interne ed esterne?
+* Mantieni una separazione tra le reti di dati e di gestione?
+* Come verranno configurate le VLAN di livello due?
+
+
+
+
+== Rete logica
+
+ONTAP Select utilizza due diverse reti logiche, separando il traffico in base al tipo. In particolare, il traffico può fluire tra gli host all'interno del cluster, oltre che verso i client di storage e altre macchine all'esterno del cluster. Gli switch virtuali gestiti dagli hypervisor aiutano a supportare la rete logica.
+
+
+
+=== Rete interna
+
+Con un'implementazione di cluster multi-nodo, i singoli nodi ONTAP Select comunicano utilizzando una rete "interna" isolata. Questa rete non è esposta o disponibile al di fuori dei nodi nel cluster ONTAP Select.
+
+
+NOTE: La rete interna è presente solo con un cluster a più nodi.
+
+La rete interna presenta le seguenti caratteristiche:
+
+* Utilizzato per elaborare il traffico intra-cluster di ONTAP, tra cui:
++
+** Cluster
+** High Availability Interconnect (ha-IC)
+** RAID Synch Mirror (RSM)
+
+
+* Rete single Layer-due basata su una VLAN
+* Gli indirizzi IP statici vengono assegnati da ONTAP Select:
++
+** Solo IPv4
+** DHCP non utilizzato
+** Indirizzo link-local
+
+
+* La dimensione MTU è di 9000 byte per impostazione predefinita e può essere regolata entro un intervallo di 7500-9000 (incluso)
+
+
+
+
+=== Rete esterna
+
+La rete esterna elabora il traffico tra i nodi di un cluster ONTAP Select, i client di storage esterni e le altre macchine. La rete esterna fa parte di ogni implementazione del cluster e presenta le seguenti caratteristiche:
+
+* Utilizzato per elaborare il traffico ONTAP, tra cui:
++
+** Dati (NFS, CIFS, iSCSI)
+** Gestione (cluster e nodo; SVM opzionale)
+** Intercluster (opzionale)
+
+
+* Supporto opzionale di VLAN:
++
+** Gruppo di porte dati
+** Gruppo di porte di gestione
+
+
+* Indirizzi IP assegnati in base alle opzioni di configurazione dell'amministratore:
++
+** IPv4 o IPv6
+
+
+* La dimensione MTU è di 1500 byte per impostazione predefinita (può essere regolata)
+
+
+La rete esterna è presente con cluster di tutte le dimensioni.
+
+
+
+== Ambiente di rete di macchine virtuali
+
+L'host dell'hypervisor offre diverse funzionalità di rete.
+
+ONTAP Select si affida alle seguenti funzionalità esposte attraverso la macchina virtuale:
+
+Porte delle macchine virtuali:: Sono disponibili diverse porte per l'utilizzo da parte di ONTAP Select. Vengono assegnati e utilizzati in base a diversi fattori, tra cui la dimensione del cluster.
+Switch virtuale:: Il software dello switch virtuale all'interno dell'ambiente hypervisor, vSwitch (VMware) o Open vSwitch (KVM), unisce le porte esposte dalla macchina virtuale alle porte NIC Ethernet fisiche. È necessario configurare un vSwitch per ogni host ONTAP Select, in base all'ambiente in uso.
+

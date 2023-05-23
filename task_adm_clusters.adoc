@@ -1,0 +1,119 @@
+---
+sidebar: sidebar 
+permalink: task_adm_clusters.html 
+keywords: administer, administering, web, clusters 
+summary: Per amministrare un cluster ONTAP Select è possibile eseguire diverse attività correlate. 
+---
+= Cluster ONTAP Select
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Per amministrare un cluster ONTAP Select è possibile eseguire diverse attività correlate.
+
+
+
+== Spostamento di un cluster ONTAP Select offline e online
+
+Dopo aver creato un cluster, è possibile spostarlo offline e online in base alle esigenze.
+
+.Prima di iniziare
+Una volta creato, il cluster si trova inizialmente nello stato online.
+
+.Fasi
+. Accedere all'interfaccia utente Web dell'utilità di implementazione utilizzando l'account amministratore.
+. Fare clic sulla scheda *Clusters* nella parte superiore della pagina e selezionare il cluster desiderato dall'elenco.
+. Fare clic su image:icon_kebab.gif["Opzioni"] A destra del cluster e selezionare *take Offline*.
++
+Se l'opzione offline non è disponibile, il cluster è già in stato offline.
+
+. Fare clic su *Sì* nella finestra a comparsa per confermare la richiesta.
+. Fare clic su *Refresh* saltuariamente per confermare che il cluster non è in linea.
+. Per riportare il cluster in linea, fare clic su image:icon_kebab.gif["Opzioni"] E selezionare *Bring Online*.
+. Fare clic su *Refresh* occasionalmente per confermare che il cluster è in linea.
+
+
+
+
+== Eliminazione di un cluster ONTAP Select
+
+È possibile eliminare un cluster ONTAP Select quando non è più necessario.
+
+.Prima di iniziare
+Il cluster deve essere in stato offline.
+
+.Fasi
+. Accedere all'interfaccia utente Web dell'utilità di implementazione utilizzando l'account amministratore.
+. Fare clic sulla scheda *Clusters* nella parte superiore della pagina e selezionare il cluster desiderato dall'elenco.
+. Fare clic su image:icon_kebab.gif["Opzioni"] A destra del cluster e selezionare *Delete* (Elimina).
++
+Se l'opzione di eliminazione non è disponibile, il cluster non si trova in uno stato offline.
+
+. Fare clic su *Refresh* saltuariamente per confermare la rimozione del cluster dall'elenco.
+
+
+
+
+== Aggiornamento della configurazione del cluster di implementazione
+
+Dopo aver creato un cluster ONTAP Select, è possibile apportare modifiche alla configurazione del cluster o della macchina virtuale all'esterno dell'utility di implementazione utilizzando gli strumenti di amministrazione di ONTAP o hypervisor. Anche la configurazione di una macchina virtuale può cambiare dopo la migrazione.
+
+Quando si verificano queste modifiche al cluster o alla macchina virtuale, il database di configurazione dell'utility di implementazione non viene aggiornato automaticamente e può non essere sincronizzato con lo stato del cluster. È necessario eseguire un aggiornamento del cluster in queste e altre situazioni per aggiornare il database di distribuzione in base allo stato corrente del cluster.
+
+.Prima di iniziare
+Informazioni richieste:: È necessario disporre delle informazioni di configurazione correnti per il cluster, tra cui:
++
+--
+* Credenziali di amministratore di ONTAP
+* Indirizzo IP di gestione del cluster
+* Nomi dei nodi nel cluster
+
+
+--
+Stato del cluster stabile:: Il cluster deve essere in uno stato stabile. Non è possibile aggiornare un cluster quando è in fase di creazione o eliminazione o quando si trova nello stato _create_failed_ o _delete_failed_.
+Dopo una migrazione delle macchine virtuali:: Dopo la migrazione di una macchina virtuale che esegue ONTAP Select, è necessario creare un nuovo host utilizzando l'utility di implementazione prima di eseguire un aggiornamento del cluster.
+
+
+.A proposito di questa attività
+È possibile eseguire un aggiornamento del cluster per aggiornare il database di configurazione di implementazione utilizzando l'interfaccia utente Web.
+
+
+NOTE: Invece di utilizzare la GUI di distribuzione, è possibile utilizzare il comando di refresh del cluster nella shell di distribuzione della CLI per aggiornare un cluster.
+
+Configurazione di cluster e macchine virtuali:: Alcuni dei valori di configurazione che possono cambiare e causare la mancata sincronizzazione del database di implementazione includono:
++
+--
+* Nomi di cluster e nodi
+* Configurazione di rete ONTAP
+* Versione di ONTAP (dopo un aggiornamento)
+* Nomi delle macchine virtuali
+* Nomi di rete host
+* Nomi dei pool di storage
+
+
+--
+Cluster e stati dei nodi:: Un cluster o nodo ONTAP Select può trovarsi in uno stato che impedisce il corretto funzionamento. È necessario eseguire un'operazione di refresh del cluster per correggere le seguenti condizioni:
++
+--
+* Nodo nello stato _Unknown_ un nodo ONTAP Select può trovarsi nello stato _Unknown_ per diversi motivi, incluso il nodo non trovato.
+* Cluster in stato _degradato_ se un nodo è spento, potrebbe ancora apparire in linea nell'utilità di implementazione. In questa situazione, il cluster si trova in uno stato _degradato_.
+
+
+--
+
+
+.Fasi
+. Accedere all'interfaccia utente Web dell'utilità di implementazione utilizzando l'account amministratore.
+. Fare clic sulla scheda *Clusters* nella parte superiore sinistra della pagina e selezionare il cluster desiderato dall'elenco.
+. Fare clic su image:icon_kebab.gif["Opzioni"] Sul lato destro della pagina e selezionare *Cluster Refresh* (aggiornamento cluster).
+. Nella sezione *credenziali cluster*, fornire la password dell'amministratore ONTAP per il cluster.
+. Fare clic su *Aggiorna*.
+
+
+.Al termine
+Se l'operazione ha esito positivo, il campo _Last Refresh_ (ultimo aggiornamento) viene aggiornato. Una volta completata l'operazione di aggiornamento del cluster, è necessario eseguire il backup dei dati di configurazione di implementazione.

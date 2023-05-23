@@ -1,0 +1,71 @@
+---
+bar: sidebar 
+permalink: reference_chk_deploy_req_info.html 
+keywords: ontap select, deploy, pre-installation, vmware 
+summary: 'Prima di installare l"utility di amministrazione di deploy in un ambiente VMware, esaminare i requisiti di base e prepararsi per una corretta implementazione.' 
+---
+= Informazioni richieste per l'installazione dell'utility di implementazione
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Prima di installare l'utilità di amministrazione di Deploy in un ambiente VMware, esaminare le informazioni di configurazione richieste e le informazioni di configurazione di rete opzionali per prepararsi alla corretta implementazione.
+
+
+
+== Informazioni di configurazione richieste
+
+Nell'ambito della pianificazione della distribuzione, è necessario determinare le informazioni di configurazione richieste prima di installare l'utilità di amministrazione di ONTAP Select Deploy.
+
+[cols="40,60"]
+|===
+| Informazioni richieste | Descrizione 
+
+
+| Nome della macchina virtuale di implementazione | Identificatore da utilizzare per la macchina virtuale. 
+
+
+| Nome dell'host ESXi | Identificatore dell'host VMware ESXi in cui è installata l'utility di implementazione. 
+
+
+| Nome dell'archivio dati | Identificatore del datastore VMware che contiene i file della macchina virtuale (sono necessari circa 40 GB). 
+
+
+| Rete per la macchina virtuale | Identificatore della rete a cui è connessa la macchina virtuale di implementazione. 
+|===
+
+
+== Informazioni opzionali sulla configurazione di rete
+
+Per impostazione predefinita, la macchina virtuale di implementazione viene configurata utilizzando DHCP. Tuttavia, se necessario, è possibile configurare manualmente l'interfaccia di rete per la macchina virtuale.
+
+[cols="35,65"]
+|===
+| Informazioni di rete | Descrizione 
+
+
+| Nome host | Identificatore del computer host. 
+
+
+| Host IP address (Indirizzo IP host) | Indirizzo IPv4 statico del computer host. 
+
+
+| Subnet mask | Subnetwork mask, in base alla rete di cui fa parte la macchina virtuale. 
+
+
+| Gateway | Gateway o router predefinito. 
+
+
+| Server DNS primario | Server dei nomi di dominio primario. 
+
+
+| Server DNS secondario | Server dei nomi di dominio secondario. 
+
+
+| Cerca domini | Elenco dei domini di ricerca da utilizzare. 
+|===

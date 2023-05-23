@@ -1,0 +1,116 @@
+---
+sidebar: sidebar 
+permalink: reference_plan_ots_general.html 
+keywords: plan, planning, general requirements 
+summary: 'Per la pianificazione di un"implementazione ONTAP Select, è necessario prendere in considerazione diversi requisiti generali.' 
+---
+= Requisiti generali e considerazioni di pianificazione
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Esistono diversi requisiti generali da prendere in considerazione durante la pianificazione di un'implementazione di ONTAP Select.
+
+
+
+== Dimensione del cluster e considerazioni correlate
+
+Esistono diversi problemi di pianificazione relativi alle dimensioni del cluster che è necessario prendere in considerazione.
+
+Numero di nodi nel cluster:: Un cluster ONTAP Select è composto da uno, due, quattro, sei o otto nodi. È necessario determinare le dimensioni del cluster in base ai requisiti dell'applicazione. Ad esempio, se è necessaria la funzionalità ha per un'implementazione aziendale, è necessario utilizzare un cluster multi-nodo.
+Dedicato e collocato:: In base al tipo di applicazione, è necessario determinare se l'implementazione segue il modello dedicato o collocato. Si noti che il modello collocato può essere più complesso a causa della diversità dei carichi di lavoro e di una maggiore integrazione.
+
+
+
+
+== Host hypervisor
+
+Esistono diversi problemi di pianificazione relativi all'host dell'hypervisor che è necessario considerare.
+
+
+CAUTION: Non modificare direttamente la configurazione di una macchina virtuale ONTAP Select, a meno che non venga richiesto dal supporto NetApp. Una macchina virtuale deve essere configurata e modificata solo tramite l'utility di amministrazione di Deploy. Apportare modifiche a una macchina virtuale ONTAP Select al di fuori dell'utility di implementazione senza l'assistenza del supporto NetApp può causare il malfunzionamento della macchina virtuale e renderla inutilizzabile.
+
+Indipendente dall'hypervisor:: Sia ONTAP Select che l'utility di amministrazione di ONTAP Select Deploy sono indipendenti dall'hypervisor. I seguenti hypervisor sono supportati per entrambi.
++
+--
+* VMware ESXi
+* Macchina virtuale basata su kernel (KVM)
+
+
+--
+
+
+
+NOTE: A partire da ONTAP Select 9.10.1, l'hypervisor KVM non è più supportato durante l'implementazione di un nuovo cluster. È comunque possibile utilizzare KVM con una versione precedente supportata.
+
+Fare riferimento alle informazioni di pianificazione specifiche dell'hypervisor e alle note sulla versione per ulteriori dettagli sulle piattaforme supportate.
+
+Hypervisor per nodi ONTAP Select e utility di amministrazione:: Sia l'utility di amministrazione di Deploy che i nodi ONTAP Select vengono eseguiti come macchine virtuali. L'hypervisor scelto per l'utility di implementazione è indipendente dall'hypervisor scelto per i nodi ONTAP Select. Si dispone di una flessibilità completa per l'associazione dei due elementi:
++
+--
+* L'utility di implementazione eseguita su VMware ESXi può creare e gestire cluster ONTAP Select su VMware ESXi o KVM
+* L'utility di implementazione in esecuzione su KVM può creare e gestire cluster ONTAP Select su VMware ESXi o KVM
+
+
+--
+Una o più istanze del nodo ONTAP Select per host:: Ogni nodo ONTAP Select viene eseguito come macchina virtuale dedicata. È possibile creare più nodi sullo stesso host hypervisor, con le seguenti restrizioni:
++
+--
+* Non è possibile eseguire più nodi da un singolo cluster ONTAP Select sullo stesso host. Tutti i nodi di un host specifico devono provenire da diversi cluster ONTAP Select.
+* È necessario utilizzare uno storage esterno.
+* Se si utilizza il software RAID, è possibile implementare un solo nodo ONTAP Select sull'host.
+
+
+--
+Coerenza dell'hypervisor per i nodi all'interno di un cluster:: Tutti gli host all'interno di un cluster ONTAP Select devono essere eseguiti con la stessa versione e release del software dell'hypervisor.
+Numero di porte fisiche su ciascun host:: È necessario configurare ciascun host in modo che utilizzi una, due o quattro porte fisiche. Anche se si dispone di una certa flessibilità nella configurazione delle porte di rete, attenersi alle seguenti raccomandazioni, se possibile:
++
+--
+* Un host in un cluster a nodo singolo deve avere due porte fisiche.
+* Ciascun host di un cluster a più nodi deve disporre di quattro porte fisiche
+
+
+--
+Integrazione di ONTAP Select con un cluster basato su hardware ONTAP:: Non è possibile aggiungere un nodo ONTAP Select direttamente a un cluster basato su hardware ONTAP. Tuttavia, è possibile stabilire una relazione di peering del cluster tra un cluster ONTAP Select e un cluster ONTAP basato su hardware.
+
+
+
+
+== Storage
+
+È necessario considerare diversi problemi di pianificazione relativi allo storage host.
+
+Tipo RAID:: Quando si utilizza lo storage DAS (Direct-Attached Storage) su ESXi, è necessario decidere se utilizzare un controller RAID hardware locale o la funzionalità RAID software inclusa in ONTAP Select. Se si utilizza il software RAID, vedere link:reference_plan_ots_storage.html["Considerazioni su storage e RAID"] per ulteriori informazioni.
+Storage locale:: Quando si utilizza lo storage locale gestito da un controller RAID, è necessario decidere quanto segue:
++
+--
+* Se utilizzare uno o più gruppi RAID
+* Se utilizzare una o più LUN
+
+
+--
+Storage esterno:: Quando si utilizza la soluzione ONTAP Select vNAS, è necessario decidere dove si trovano gli archivi dati remoti e come accedervi. ONTAP Select vNAS supporta le seguenti configurazioni:
++
+--
+* VMware vSAN
+* Storage array esterno generico
+
+
+--
+Stima dello storage necessario:: È necessario determinare la quantità di storage necessaria per i nodi ONTAP Select. Queste informazioni sono necessarie per l'acquisizione delle licenze acquistate con capacità di storage. Per ulteriori informazioni, fare riferimento alla sezione limitazioni della capacità dello storage.
+
+
+
+NOTE: La capacità dello storage ONTAP Select corrisponde alla dimensione totale consentita dei dischi dati collegati alla macchina virtuale ONTAP Select.
+
+Modello di licensing per l'implementazione in produzione:: È necessario selezionare i livelli di capacità o il modello di licenza dei pool di capacità per ciascun cluster ONTAP Select implementato in un ambiente di produzione. Per ulteriori informazioni, consultare la sezione _licenza_.
+
+
+.Informazioni correlate
+* link:reference_plan_ots_storage.html["Considerazioni su storage e RAID"]
+

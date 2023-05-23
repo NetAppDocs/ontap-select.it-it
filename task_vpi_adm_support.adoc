@@ -1,0 +1,96 @@
+---
+sidebar: sidebar 
+permalink: task_vpi_adm_support.html 
+keywords: vcenter, plug-in, vcenter plug-in, deploy plug-in, administer, administering, diagnostics, support 
+summary: 'Esistono diverse attività di diagnostica e supporto correlate che è possibile eseguire nell"ambito dell"amministrazione di ONTAP Select.' 
+---
+= Diagnostica e supporto
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Esistono diverse attività di diagnostica e supporto correlate che è possibile eseguire nell'ambito dell'amministrazione di ONTAP Select.
+
+
+
+== Visualizzazione delle impostazioni di sistema
+
+È possibile visualizzare le impostazioni di base dell'utilità di amministrazione di deploy tramite il plugin vCenter.
+
+.Fasi
+. Fare clic su *ONTAP Select Deploy* nel riquadro *elenchi di inventario globali*.
+. Fare clic sulla scheda *Amministrazione*.
+. Espandere l'opzione *sistema* e fare clic su *Impostazioni*.
+. Aggiornare la configurazione del sistema secondo necessità e fare clic su *Save* (Salva).
+
+
+
+
+== Visualizzazione dei messaggi degli eventi
+
+L'utility di amministrazione di Deploy include una funzione di registrazione degli eventi che fornisce informazioni sull'attività del sistema. È possibile visualizzare il contenuto del registro eventi attraverso il plug-in di implementazione per eseguire il debug di qualsiasi problema o quando richiesto dal supporto.
+
+.A proposito di questa attività
+È possibile filtrare l'elenco dei messaggi di evento in base a diverse caratteristiche, tra cui:
+
+* Categoria
+* Tipo
+* Livello
+* Istanza
+
+
+.Fasi
+. Fare clic su *ONTAP Select Deploy* nel riquadro *elenchi di inventario globali*.
+. Fare clic sulla scheda *Amministrazione*.
+. Espandere l'opzione *Eventi* e fare clic su *Deploy*.
+. Facoltativamente, fare clic su Filtering (filtraggio) e creare un filtro per limitare i messaggi di evento visualizzati.
+
+
+
+
+== Abilitazione di AutoSupport
+
+AutoSupport è il principale strumento di troubleshooting utilizzato da NetApp per supportare ONTAP Select. È possibile attivare o disattivare la funzione AutoSupport in base alle esigenze.
+
+.A proposito di questa attività
+Dopo aver implementato un nuovo cluster, assicurarsi che AutoSupport sia attivato. Disattivare AutoSupport solo quando necessario. Se si disattiva AutoSupport, i dati vengono ancora raccolti ma non trasmessi a NetApp.
+
+.Fasi
+. Fare clic su *ONTAP Select Deploy* nel riquadro *elenchi di inventario globali*.
+. Fare clic sulla scheda *Amministrazione*.
+. Espandere l'opzione *AutoSupport* e fare clic su *Configura*
+. Attivare o disattivare AutoSupport in base alle esigenze.
+
+
+
+
+== Generazione di un pacchetto AutoSupport
+
+Il plug-in Deploy vCenter include la capacità di generare un pacchetto AutoSupport. Si consiglia di generare un pacchetto per il debug dei problemi o quando richiesto dal supporto.
+
+.A proposito di questa attività
+È possibile generare i seguenti pacchetti AutoSupport:
+
+* Distribuzione dei file di log creati dall'utilità di implementazione di ONTAP Select
+* Risoluzione dei problemi risoluzione dei problemi e informazioni di debug sugli host hypervisor e sui nodi ONTAP Select
+* Performance informazioni sulle performance degli host hypervisor e dei nodi ONTAP Select
+
+
+.Fasi
+. Fare clic su *ONTAP Select Deploy* nel riquadro *elenchi di inventario globali*.
+. Fare clic sulla scheda *Amministrazione*.
+. Espandere l'opzione *AutoSupport* e fare clic su *generate*.
+. Selezionare il tipo e fornire una descrizione per il pacchetto o fornire un numero di caso, quindi fare clic su *generate AutoSupport* (genera richiesta).
+. Nel riquadro a sinistra, fare clic su *Cronologia* in *AutoSupport* e individuare il pacchetto.
++
+È possibile fare clic su *Refresh* (Aggiorna) in base alle esigenze.
+
+
+
+.Al termine
+È possibile scaricare il pacchetto AutoSupport sulla workstation utilizzando l'interfaccia utente dell'utility di implementazione nativa. Non è possibile scaricare il pacchetto utilizzando il plug-in Deploy vCenter.

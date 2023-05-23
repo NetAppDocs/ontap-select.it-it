@@ -1,0 +1,101 @@
+---
+sidebar: sidebar 
+permalink: concept_ots_overview.html 
+keywords: overview, software defined storage, sds, typical deployment, ontap 9 
+summary: ONTAP Select è una versione software di ONTAP implementata come macchina virtuale su un host hypervisor. Integra la suite di offerte FAS e AFF ONTAP mainstream e altre opzioni software-only come Cloud Volumes ONTAP. 
+---
+= Panoramica di ONTAP Select
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+ONTAP Select è una versione software di ONTAP che è possibile implementare come macchina virtuale su un host hypervisor. Integra la suite di offerte FAS e AFF ONTAP mainstream e altre opzioni software-only come Cloud Volumes ONTAP.
+
+
+
+== Storage software-defined
+
+L'implementazione e l'erogazione di servizi IT tramite software consentono agli amministratori di eseguire rapidamente il provisioning delle risorse con una velocità e un'agilità che in precedenza non erano possibili. Man mano che i data center moderni passano a un'architettura SDI (Software-Defined Infrastructure), è possibile separare le risorse IT più preziose dall'infrastruttura fisica sottostante, fornendo flessibilità, scalabilità e programmabilità.
+
+In un mondo commodity in cui i dati sono frammentati in silos di direct-attached storage (DAS), la mobilità e la gestione dei dati sono diventate problemi più complessi. Lo storage software-defined (SDS) è emerso come una parte importante del panorama SDI per risolvere questi e altri problemi.
+
+ONTAP Select è la soluzione NetApp per il mercato SDS. ONTAP Select offre funzionalità di gestione dello storage di livello Enterprise al data center software-defined ed ed estende l'architettura del data fabric NetApp ai casi di utilizzo edge estremi, inclusi l'Internet of Things (IoT) e i server tattici.
+
+
+
+== Due componenti software
+
+ONTAP Select è composto da due componenti software principali:
+
+
+
+=== Nodo ONTAP Select
+
+Un cluster ONTAP Select è composto da uno, due, quattro, sei o otto nodi. Ogni nodo del cluster viene implementato come macchina virtuale separata ed esegue una versione appositamente progettata del software ONTAP 9.
+
+
+
+=== Utility di amministrazione di ONTAP Select Deploy
+
+L'utility di amministrazione di Deploy viene fornita in pacchetti e installata come macchina virtuale Linux separata. È necessario utilizzare l'utility per implementare i cluster ONTAP Select in un ambiente di produzione. Una versione corrente dell'immagine del nodo ONTAP Select viene fornita con l'utility di implementazione.
+
+
+NOTE: A partire da ONTAP Select 9.7, all'utilità di amministrazione della distribuzione non viene più assegnato un numero di versione separato. Deploy ha lo stesso numero di versione della release ONTAP Select associata. Tuttavia, ogni aggiornamento dell'utilità di distribuzione all'interno di una specifica release di ONTAP Select ha un numero di build univoco.
+
+
+
+== Immagine di un'implementazione tipica
+
+La figura seguente illustra l'utility di amministrazione di ONTAP Select Deploy utilizzata per implementare e supportare un cluster ONTAP Select a quattro nodi. L'utility di implementazione e i nodi ONTAP Select vengono eseguiti come macchine virtuali separate su host hypervisor dedicati.
+
+image:ots_architecture.png["Viene illustrato un cluster a quattro nodi ONTAP Select creato con l'utilità di amministrazione di Deploy."]
+
+
+
+== Confronto tra ONTAP Select e ONTAP 9
+
+ONTAP e ONTAP Select basati su hardware offrono soluzioni storage di livello Enterprise. Tuttavia, poiché sono progettati e implementati in modo diverso, ciascuno può soddisfare diversi requisiti di business e scenari di utilizzo. Prima di pianificare un'implementazione di ONTAP Select, è necessario acquisire familiarità con le principali differenze tra le piattaforme.
+
+
+
+=== Architettura ha diversa
+
+A seconda del numero di nodi definiti in un cluster, ONTAP Select offre una funzionalità ha. Ad esempio, un cluster a quattro nodi è costituito da due coppie ha. L'architettura ha utilizzata con ONTAP Select si basa su un modello di storage non condiviso. Ovvero, un nodo di una coppia ha non può accedere direttamente allo storage di proprietà dell'altro nodo. Questa progettazione può influire su alcune caratteristiche operative di ONTAP Select.
+
+
+
+=== Licenze di capacità
+
+ONTAP Select introduce un modello di licenza basato sui consumi. Quando si implementa un cluster ONTAP Select in un ambiente di produzione, è necessario acquistare una licenza con capacità di storage per ciascun nodo o pool di capacità condiviso. Utilizzando l'utility di implementazione, è necessario applicare i file di licenza che stabiliscono la capacità di storage per i nodi del cluster.
+
+
+
+=== Licenze delle funzionalità ONTAP
+
+Ogni nodo di un cluster ONTAP Select viene automaticamente concesso in licenza per l'utilizzo di diverse funzionalità ONTAP. Non è necessario installare o applicare manualmente queste licenze di funzionalità.
+
+
+
+=== Funzionalità ONTAP non supportate in ONTAP Select
+
+Diverse funzionalità di ONTAP non sono supportate con ONTAP Select. Nella maggior parte dei casi, queste funzionalità richiedono hardware speciale che non è disponibile nell'ambiente ONTAP Select virtualizzato.
+
+* Fibre Channel Fibre Channel e Fibre Channel over Ethernet non sono supportati.
+* Gruppi di interfacce i gruppi di interfacce (IFGRP) non sono supportati.
+* Monitoraggio dello stato di salute il monitoraggio tradizionale dello stato di salute utilizzato con un'implementazione ONTAP basata su hardware è specifico per i componenti hardware sottostanti. A causa dell'ambiente virtualizzato utilizzato con ONTAP Select, i monitor dello stato di salute non sono attivi.
+* Supporto dell'offload della scheda di rete a causa dell'ambiente virtualizzato utilizzato con ONTAP Select, la funzione di offload della scheda di rete non è supportata.
+* Cluster IPSpace qualsiasi modifica apportata a Cluster IPSpace, inclusa l'aggiunta o la rimozione di porte, non è supportata.
+* Proprietà della porta ONTAP la modifica delle proprietà delle porte ONTAP, inclusi velocità, duplex e controllo del flusso, non è supportata.
+* Processori di servizio
+* Dischi di crittografia per lo storage NetApp
+* Protezione ransomware autonoma (ARP)
+
+
+.Informazioni correlate
+* link:reference_lic_ontap_features.html["Funzionalità ONTAP attivate per impostazione predefinita"]
+

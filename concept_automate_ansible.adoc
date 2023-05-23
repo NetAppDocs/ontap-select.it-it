@@ -1,0 +1,123 @@
+---
+sidebar: sidebar 
+permalink: concept_automate_ansible.html 
+keywords: ansible, automation, configuration management, ontap, ontap select, na_ots_deploy, na_ots_cluster, ansible roles, ansible playbook 
+summary: Utilizzare i ruoli Ansible per automatizzare le implementazioni di ONTAP Select. 
+---
+= Automatizza le implementazioni ONTAP Select con Ansible
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Utilizza i ruoli e i playbook di Ansible per automatizzare le implementazioni di ONTAP Select.
+
+Un ruolo Ansible è un insieme logico di attività, modelli, gestori e variabili in una struttura di file standardizzata. Utilizzare questi ruoli per facilitare, riutilizzare e modulare le funzionalità che possono essere utilizzate in modo indipendente. Includere i ruoli e l'elenco degli host in cui si desidera eseguirli in un manuale per l'esecuzione. Dopo aver installato Ansible, aggiornato i moduli necessari e compreso i playbook, sei pronto per scaricare i ruoli OTS (ONTAP Select) da NetApp GitHub per creare ed eseguire il tuo manuale personale per implementare i cluster ONTAP Select.
+
+
+
+== Ruoli
+
+Sono disponibili due ruoli per ONTAP Select:
+
+
+
+=== na_ots_deploy
+
+Questo ruolo scarica il file di installazione per ONTAP Select Deploy su un host vCenter o ESXi. Quindi crea ed esegue la VM di implementazione.
+
+Questo ruolo utilizza i seguenti valori di input:
+
+* Credenziali host vCenter o ESXi
+* Implementare la creazione di macchine virtuali, incluse informazioni quali:
++
+** Indirizzo IP
+** Nome host
+** Accesso
+** Password
+** Datastore
+** Rete
+
+
+* Percorso locale al file OVA
++
+Assicurarsi che il file di installazione sia disponibile prima di eseguire il manuale, incluso il ruolo).
+
+
+
+
+NOTE: Il modo più semplice per fornire questi valori di input è attraverso un file di variabili globali in formato YML. Passare questo file YML nel playbook.
+
+Il ruolo prevede un'unica attività che importa il file OVA di implementazione nell'host, crea la macchina virtuale e lo esegue. Puoi accedere e scaricare questo ruolo da NetApp Ansible GitHub qui: link:https://github.com/netapp-automation/na_ots_deploy["na_ots_deploy"^]
+
+
+
+=== na_ots_cluster
+
+Questo ruolo utilizza le API di implementazione di ONTAP Select per creare e implementare il cluster ONTAP Select. Presuppone che la macchina virtuale di implementazione sia stata creata e sia operativa manualmente o utilizzando il ruolo *na_ots_Deploy*. Inoltre, il ruolo presuppone che gli host Select siano configurati in modo appropriato con il networking e lo storage richiesti per il cluster ONTAP Select.
+
+Il ruolo utilizza i valori di input per le credenziali vCenter o ESXI e implementa le credenziali della macchina virtuale per accedere alle API e a tutte le informazioni pertinenti richieste per creare il cluster ONTAP Select e la macchina virtuale del nodo.
+
+Il ruolo esegue le seguenti attività:
+
+* Aggiunta di credenziali host (vcenter o esxi)
+* Ottenere e registrare gli ID host
+* Convalida della rete interna (per cluster multi-nodo)
+* Creazione del cluster
+* Configurazione dei nodi
+* Configurazione della rete e del pool di storage
+* Implementazione del cluster
+
+
+Di conseguenza, il ruolo viene completato con la macchina virtuale del cluster in esecuzione e il cluster ONTAP Select completamente implementato. Puoi accedere e scaricare questo ruolo da NetApp Ansible GitHub qui: link:https://github.com/NetApp-Automation/na_ots_cluster["na_ots_cluster"^]
+
+
+
+== Esempio di Playbook
+
+Di seguito viene riportato un esempio di manuale che definisce questi due ruoli ONTAP Select. Si noti che le variabili di input sono definite in FILE YML e trasmesse tramite "vars_Files". Per ulteriori informazioni, consultare i file README in ciascuno dei ruoli.
+
+[listing]
+----
+—
+
+– name: Create ONTAP Select deploy from OVA (ESXi)
+
+vars_files:
+
+– vars_deploy.yml                              # All Variables
+
+– vars_deploy_pwd.yml                          # host_password & deploy_password
+
+hosts: “{{ target_vcenter_or_esxi_host }}”     # Entry in Ansible ‘hosts’ file
+
+gather_facts: false
+
+connection: ‘local’
+
+roles:
+
+– na_ots_deploy
+
+– name: Create ONTAP Select Cluster
+
+vars_files:
+
+– vars_cluster_test.yml
+
+– vars_cluster_pwd.yml
+
+hosts: “localhost”
+
+gather_facts: false
+
+roles:
+
+– na_ots_cluster
+
+----
+Una volta creato ed eseguito il cluster ONTAP Select utilizzando i ruoli sopra indicati, è possibile sfruttare l'insieme completo di ruoli ONTAP Ansible disponibili per automatizzare ulteriormente le funzionalità e le funzionalità di ONTAP. È possibile accedere ai ruoli ONTAP disponibili link:https://github.com/NetApp/ansible["qui"]. In sintesi, i ruoli ONTAP Select Ansible e ONTAP consentono di automatizzare completamente il workflow end-to-end per gestire lo storage con ONTAP Select.

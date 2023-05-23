@@ -1,0 +1,39 @@
+---
+sidebar: sidebar 
+permalink: concept_api_before_browser.html 
+keywords: rest api, deploy rest api, rest, access browser, before you begin 
+summary: Prima di utilizzare la pagina di documentazione online di implementazione, è necessario conoscere diversi aspetti. 
+---
+= Prima di accedere all'API con un browser
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Prima di utilizzare la pagina di documentazione online di implementazione, è necessario conoscere diversi aspetti.
+
+
+
+== Piano di implementazione
+
+Se si intende effettuare chiamate API nell'ambito dell'esecuzione di attività amministrative o di implementazione specifiche, è consigliabile creare un piano di distribuzione. Questi piani possono essere formali o informali e generalmente contengono gli obiettivi e le chiamate API da utilizzare. Per ulteriori informazioni, fare riferimento a processi di workflow che utilizzano l'API DI distribuzione REST.
+
+
+
+== Esempi JSON e definizioni dei parametri
+
+Ogni chiamata API viene descritta nella pagina della documentazione utilizzando un formato coerente. Il contenuto include note di implementazione, parametri di query e codici di stato HTTP. Inoltre, è possibile visualizzare i dettagli relativi al JSON utilizzato con le richieste e le risposte API come segue:
+
+* Valore di esempio se si fa clic su _valore di esempio_ in una chiamata API, viene visualizzata una struttura JSON tipica per la chiamata. È possibile modificare l'esempio in base alle esigenze e utilizzarlo come input per la richiesta.
+* Modello facendo clic su _Model_, viene visualizzato un elenco completo dei parametri JSON, con una descrizione per ciascun parametro.
+
+
+
+
+== Prestare attenzione quando si emettono chiamate API
+
+Tutte le operazioni API eseguite utilizzando la pagina della documentazione di implementazione sono operazioni live. Prestare attenzione a non creare, aggiornare o eliminare per errore la configurazione o altri dati.

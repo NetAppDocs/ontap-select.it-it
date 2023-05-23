@@ -1,0 +1,70 @@
+---
+sidebar: sidebar 
+permalink: reference_chk_select_req_info.html 
+keywords: ontap select, pre-installation, vmware 
+summary: 'Durante la preparazione all"implementazione di un cluster ONTAP Select in un ambiente VMware, raccogliere le informazioni necessarie quando si utilizza l"utility di amministrazione di ONTAP Select Deploy per implementare e configurare il cluster.' 
+---
+= Informazioni richieste per l'installazione di ONTAP Select
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Durante la preparazione all'implementazione di un cluster ONTAP Select in un ambiente VMware, raccogliere le informazioni necessarie quando si utilizza l'utility di amministrazione di ONTAP Select Deploy per implementare e configurare il cluster.
+
+Alcune delle informazioni raccolte si applicano al cluster stesso, mentre altre si applicano ai singoli nodi del cluster.
+
+
+
+== Informazioni a livello di cluster
+
+È necessario raccogliere informazioni relative al cluster ONTAP Select.
+
+[cols="35,65"]
+|===
+| Informazioni sul cluster | Descrizione 
+
+
+| Nome del cluster | Identificatore univoco del cluster. 
+
+
+| Modalità licensing | Valutazione o licenze acquistate. 
+
+
+| Configurazione IP per il cluster | Configurazione IP per cluster e nodi, tra cui: * Indirizzo IP di gestione del cluster * Subnet mask * Gateway predefinito 
+|===
+
+
+== Informazioni a livello di host
+
+È necessario raccogliere informazioni relative a ciascuno dei nodi nel cluster ONTAP Select.
+
+[cols="35,65"]
+|===
+| Informazioni sul cluster | Descrizione 
+
+
+| Nome dell'host | Identificatore univoco dell'host. 
+
+
+| Nome di dominio dell'host | Nome di dominio completo dell'host. 
+
+
+| Configurazione IP per i nodi | Indirizzo IP di gestione per ciascun nodo del cluster. 
+
+
+| Nodo mirror | Nome del nodo associato nella coppia ha (solo cluster multi-nodo). 
+
+
+| Pool di storage | Nome del pool di storage utilizzato. 
+
+
+| Dischi di storage | Elenco dei dischi se si utilizza RAID software. 
+
+
+| Numero di serie | Se si esegue l'implementazione con una licenza acquistata, il numero seriale univoco a nove cifre fornito da NetApp. 
+|===

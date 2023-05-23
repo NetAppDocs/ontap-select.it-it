@@ -1,0 +1,118 @@
+---
+sidebar: sidebar 
+permalink: task_install_deploy.html 
+keywords: install, installing, ontap select deploy, deploy administration utility, deploy utility 
+summary: 'È necessario installare l"utility di amministrazione di ONTAP Select Deploy e utilizzare l"utility per creare un cluster ONTAP Select.' 
+---
+= Installazione di ONTAP Select Deploy
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+È necessario installare l'utility di amministrazione di ONTAP Select Deploy e utilizzare l'utility per creare un cluster ONTAP Select.
+
+
+
+== Download dell'immagine della macchina virtuale
+
+È possibile scaricare il pacchetto ONTAP Select dal sito di supporto NetApp.
+
+.A proposito di questa attività
+L'utility di amministrazione di ONTAP Select Deploy viene fornita come macchina virtuale basata sullo standard OVF (Open Virtualization Format). Il singolo file compresso ha il suffisso `ova`.
+
+.Fasi
+. Accedere al sito di supporto NetApp utilizzando un browser Web e fare clic su *link rapidi al supporto*.
+. Fare clic su *Download Software* sotto *Top Tasks* ed effettuare l'accesso.
+. Fare clic su *trova il prodotto*.
+. Scorrere verso il basso e fare clic su *ONTAP Select*.
+. Selezionare la versione desiderata del pacchetto.
+. Leggere il Contratto di licenza con l'utente finale (EULA) e fare clic su *Accept & Continue* (Accetta e continua).
+. Selezionare e scaricare il pacchetto appropriato, rispondendo a tutte le richieste in base alle necessità.
+
+
+
+
+== Implementazione della macchina virtuale
+
+È necessario installare e avviare la macchina virtuale ONTAP Select Deploy utilizzando l'immagine della macchina virtuale OVF. Nell'ambito del processo di installazione, è necessario configurare l'interfaccia di rete in modo che utilizzi DHCP o una configurazione IP statica.
+
+.Prima di iniziare
+È necessario prepararsi per implementare la macchina virtuale ONTAP Select Deploy:
+
+* Abilitare la funzionalità OVF nel browser installando il plug-in di integrazione del client VMware o eseguendo una configurazione simile in base alle necessità
+* Abilitato DHCP nell'ambiente VMware se si assegna dinamicamente un indirizzo IP alla macchina virtuale di implementazione
+
+
+È necessario disporre delle informazioni di configurazione da utilizzare durante la creazione della macchina virtuale, inclusi il nome della macchina virtuale, la rete esterna e il nome host. Quando si definisce una configurazione di rete statica, sono necessarie le seguenti informazioni aggiuntive:
+
+* Indirizzo IP della macchina virtuale di implementazione
+* Netmask
+* Indirizzo IP del gateway (router)
+* Indirizzo IP del server DNS primario
+* Indirizzo IP del secondo server DNS
+* Domini di ricerca DNS
+
+
+.A proposito di questa attività
+Se si utilizza vSphere, la procedura guidata di implementazione dei modelli OVF include un modulo che fornisce tutte le informazioni di configurazione di implementazione, inclusa la configurazione di rete. Tuttavia, se si sceglie di non utilizzare questo modulo, è possibile utilizzare la console della macchina virtuale di implementazione per configurare la rete.
+
+.Fasi
+. Accedere al client vSphere e accedere.
+. Individuare la posizione appropriata nella gerarchia e selezionare *Deploy OVF Template* (implementa modello OVF).
+. Selezionare il file OVA e completare la procedura guidata Deploy OVF Template, selezionando le opzioni appropriate per l'ambiente in uso.
++
+È necessario definire la password per l'account amministratore. È necessario fornire questa password quando si effettua l'accesso all'utilità di implementazione.
+
+. Una volta implementata la macchina virtuale, selezionare la nuova macchina virtuale e accenderla se non è già accesa in base all'input fornito alla procedura guidata di implementazione.
+. Se necessario, è possibile configurare la rete di implementazione utilizzando la console della macchina virtuale:
++
+.. Fare clic sulla scheda *Console* per accedere alla shell di configurazione dell'host ESXi e monitorare il processo di accensione.
+.. Attendere la seguente richiesta:
++
+Nome host:
+
+.. Digitare il nome host e premere *Invio*.
+.. Attendere la seguente richiesta:
++
+Inserire una password per l'utente amministratore:
+
+.. Digitare la password e premere *Invio*.
+.. Attendere la seguente richiesta:
++
+Utilizzare DHCP per impostare le informazioni di rete? [n]:
+
+.. Digitare *n* per definire una configurazione IP statica o y per utilizzare DHCP, quindi premere *Invio*.
+.. Se si sceglie una configurazione statica, fornire tutte le informazioni di configurazione di rete necessarie.
+
+
+
+
+
+
+== Accesso all'interfaccia Web di implementazione
+
+Accedere all'interfaccia utente Web per verificare che l'utilità di implementazione sia disponibile ed eseguire la configurazione iniziale.
+
+.Fasi
+. Puntare il browser verso l'utility di implementazione utilizzando l'indirizzo IP o il nome di dominio:
++
+`\https://<ip_address>/`
+
+. Fornire il nome e la password dell'account amministratore (admin) e accedere.
+. Se viene visualizzata la finestra a comparsa *Benvenuti in ONTAP Select*, verificare i prerequisiti e fare clic su *OK* per continuare.
+. Se è la prima volta che si effettua l'accesso e non si installa Deploy utilizzando la procedura guidata disponibile con vCenter, fornire le seguenti informazioni di configurazione quando richiesto:
++
+** Nuova password per l'account amministratore (obbligatoria)
+** AutoSupport (opzionale)
+** Server vCenter con credenziali dell'account (opzionale)
+
+
+
+
+.Informazioni correlate
+link:task_cli_signing_in.html["Accesso per la distribuzione tramite SSH"]

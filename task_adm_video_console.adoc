@@ -1,0 +1,26 @@
+---
+sidebar: sidebar 
+permalink: task_adm_video_console.html 
+keywords: administer, administering, web, video console 
+summary: È possibile accedere alla console video della macchina virtuale ESXi in cui è in esecuzione ONTAP Select. 
+---
+= Accesso alla console video ONTAP Select
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+È possibile accedere alla console video della macchina virtuale ESXi in cui è in esecuzione ONTAP Select.
+
+.A proposito di questa attività
+Potrebbe essere necessario accedere alla console della macchina virtuale per risolvere un problema o quando richiesto dal supporto NetApp.
+
+.Fasi
+. Accedere al client vSphere e accedere.
+. Accedere alla posizione appropriata nella gerarchia per individuare la macchina virtuale ONTAP Select.
+. Fare clic con il pulsante destro del mouse sulla macchina virtuale e selezionare *Open Console*.
+

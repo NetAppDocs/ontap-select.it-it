@@ -1,0 +1,154 @@
+---
+sidebar: sidebar 
+permalink: reference_plan_best_practices.html 
+keywords: plan, planning, best practices, recommendations 
+summary: 'Per pianificare un"implementazione di ONTAP Select, è necessario prendere in considerazione alcune Best practice.' 
+---
+= Riepilogo delle Best practice
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Per pianificare un'implementazione di ONTAP Select, è necessario prendere in considerazione alcune Best practice.
+
+
+
+== Storage
+
+È necessario prendere in considerazione le seguenti Best practice per lo storage.
+
+
+
+=== Array all-flash o flash generico
+
+Le implementazioni di ONTAP Select Virtual NAS (vNAS) che utilizzano VSAN all-flash o array flash generici devono seguire le Best practice per ONTAP Select con storage DAS non SSD.
+
+
+
+=== Hardware di base dell'hypervisor
+
+Tutti i dischi di un singolo aggregato ONTAP Select devono essere dello stesso tipo. Ad esempio, non si dovrebbero combinare dischi HDD e SSD nello stesso aggregato.
+
+
+
+=== Controller RAID
+
+Il controller RAID del server deve essere configurato per funzionare in modalità writeback. Se si riscontrano problemi di performance del carico di lavoro in scrittura, controllare le impostazioni del controller e assicurarsi che writethrough o Writeound non sia abilitato.
+
+Se il server fisico contiene un singolo controller RAID che gestisce tutti i dischi collegati localmente, NetApp consiglia di creare un LUN separato per il sistema operativo del server e uno o più LUN per ONTAP Select. In caso di danneggiamento del disco di avvio, questa procedura consigliata consente all'amministratore di ricreare il LUN del sistema operativo senza influire su ONTAP Select.
+
+La cache del controller RAID viene utilizzata per memorizzare tutte le modifiche dei blocchi in entrata, non solo quelle destinate alla partizione NVRAM. Pertanto, quando si sceglie un controller RAID, selezionare un controller con la cache più grande disponibile. Una cache più ampia consente un lavaggio dei dischi meno frequente e un aumento delle performance per ONTAP Select VM, hypervisor e qualsiasi macchina virtuale di calcolo collocata nel server.
+
+
+
+=== Gruppi RAID
+
+Le dimensioni ottimali del gruppo RAID sono da otto a 12 dischi. Il numero massimo di dischi per gruppo RAID è 24.
+
+Il numero massimo di unità NVME supportate per nodo ONTAP Select è 14.
+
+Un disco spare è opzionale, ma consigliato. NetApp consiglia inoltre di utilizzare uno spare per gruppo RAID; tuttavia, è possibile utilizzare spare globali per tutti i gruppi RAID. Ad esempio, è possibile utilizzare due unità di riserva per ogni tre gruppi RAID, con ciascun gruppo RAID composto da otto a 12 unità.
+
+ONTAP Select non riceve alcun beneficio in termini di performance aumentando il numero di LUN all'interno di un gruppo RAID. Utilizzare più LUN solo per seguire le Best practice per le configurazioni SATA/NL-SAS o per ignorare le limitazioni del file system dell'hypervisor.
+
+
+
+=== Host VMware ESXi
+
+NetApp consiglia di utilizzare ESX 6.5 U2 o versione successiva e un disco NVMe per il datastore che ospita i dischi di sistema. Questa configurazione offre le migliori prestazioni per la partizione NVRAM.
+
+
+NOTE: Durante l'installazione su ESX 6.5 U2 e versioni successive, ONTAP Select utilizza il driver vNVME indipendentemente dal fatto che il disco di sistema risieda su un SSD o su un disco NVME. Questo imposta il livello hardware della macchina virtuale su 13, che è compatibile con ESX 6.5 e versioni successive.
+
+Definire le porte di rete dedicate, la larghezza di banda e le configurazioni vSwitch per le reti ONTAP Select e lo storage esterno (VMware vSAN e traffico generico degli array di storage quando si utilizza iSCSI o NFS).
+
+Configurare l'opzione di capacità per limitare l'utilizzo dello storage (ONTAP Select non può consumare l'intera capacità di un datastore vNAS esterno).
+
+Garantire che tutti gli storage array esterni generici utilizzino, ove possibile, le funzionalità di ridondanza e ha disponibili.
+
+
+
+=== VMware Storage vMotion
+
+La capacità disponibile su un nuovo host non è l'unico fattore quando si decide se utilizzare VMware Storage vMotion con un nodo ONTAP Select. Il tipo di storage sottostante, la configurazione dell'host e le funzionalità di rete devono essere in grado di sostenere lo stesso carico di lavoro dell'host originale.
+
+
+
+== Networking
+
+Per il collegamento in rete, è necessario prendere in considerazione le seguenti Best practice.
+
+
+
+=== Indirizzi MAC duplicati
+
+Per eliminare la possibilità che più istanze di implementazione assegnino indirizzi MAC duplicati, è necessario utilizzare un'istanza di implementazione per rete Layer-2 per creare o gestire un cluster o nodo ONTAP Select.
+
+
+
+=== Messaggi EMS
+
+Il cluster a due nodi ONTAP Select deve essere monitorato attentamente per i messaggi EMS che indicano che il failover dello storage è disattivato. Questi messaggi indicano una perdita di connettività con il servizio del mediatore e devono essere corretti immediatamente.
+
+
+
+=== Bilanciamento del carico
+
+Per ottimizzare il bilanciamento del carico tra le reti ONTAP Select interne ed esterne, utilizzare l'instradamento basato sul criterio di bilanciamento del carico delle porte virtuali di origine.
+
+
+
+=== Reti multiple Layer-2
+
+Se il traffico dati si estende su più reti Layer-2 ed è richiesto l'utilizzo di porte VLAN o quando si utilizzano più spazi IP, è necessario utilizzare VGT.
+
+
+
+=== Configurazione fisica dello switch
+
+VMware consiglia di impostare STP su Portfast sulle porte dello switch collegate agli host ESXi. La mancata impostazione di STP su Portfast sulle porte dello switch può influire sulla capacità di ONTAP Select di tollerare errori di uplink. Quando si utilizza LACP, il timer LACP deve essere impostato su veloce (1 secondo). Il criterio di bilanciamento del carico deve essere impostato su Route in base all'hash IP sul gruppo di porte e su Source and Destination IP Address (Indirizzo IP di origine e destinazione), TCP/UDP port and VLAN (porta TCP/UDP e VLAN sul LAG).
+
+
+
+== HA
+
+Per l'alta disponibilità, è necessario prendere in considerazione le seguenti Best practice.
+
+
+
+=== Implementare i backup
+
+È consigliabile eseguire regolarmente il backup dei dati di configurazione di implementazione, anche dopo la creazione di un cluster. Ciò diventa particolarmente importante con i cluster a due nodi, perché i dati di configurazione del mediatore sono inclusi nel backup.
+
+Dopo aver creato o implementato un cluster, è necessario eseguire il backup dei dati di configurazione di ONTAP Select Deploy.
+
+
+
+=== Aggregati mirrorati
+
+Anche se l'esistenza dell'aggregato mirrorato è necessaria per fornire una copia aggiornata (RPO 0) dell'aggregato primario, fare attenzione che l'aggregato primario non venga eseguito a basso livello di spazio libero. Una condizione di spazio ridotto nell'aggregato primario potrebbe far sì che ONTAP elimini la copia NetApp Snapshot™ comune utilizzata come riferimento per il giveback dello storage. Questo funziona come progettato per adattarsi alle scritture dei client. Tuttavia, la mancanza di una copia Snapshot comune in caso di failback richiede che il nodo ONTAP Select faccia una linea di base completa dall'aggregato mirrorato. Questa operazione può richiedere molto tempo in un ambiente senza condivisione. Una buona base di riferimento per il monitoraggio dell'utilizzo dello spazio aggregato è fino al 85%.
+
+
+
+=== Aggregazione NIC, raggruppamento e failover
+
+ONTAP Select supporta un singolo collegamento da 10 GB per cluster a due nodi; tuttavia, è una Best practice NetApp avere ridondanza hardware tramite l'aggregazione NIC o il raggruppamento NIC sulle reti interne ed esterne del cluster ONTAP Select.
+
+Se una scheda di rete dispone di più ASIC (Application-Specific Integrated Circuits), selezionare una porta di rete da ogni ASIC quando si costruisce un costrutto di rete attraverso il raggruppamento NIC per le reti interne ed esterne.
+
+NetApp consiglia di attivare la modalità LACP sia su ESX che sugli switch fisici. Inoltre, il timer LACP deve essere impostato su FAST (1 secondo) sullo switch fisico, sulle porte, sulle interfacce del canale delle porte e sulle VMNIC.
+
+Quando si utilizza un vSwitch distribuito con LACP, NetApp consiglia di configurare il criterio di bilanciamento del carico su Route in base all'hash IP sul gruppo di porte, l'indirizzo IP di origine e destinazione, la porta TCP/UDP e la VLAN sul LAG.
+
+
+
+=== Best practice di ha (MetroCluster SDS) con due nodi estesi
+
+Prima di creare un SDS MetroCluster, utilizzare il correttore di connettività ONTAP Deploy per assicurarsi che la latenza di rete tra i due data center rientri nell'intervallo accettabile.
+
+Esiste un'ulteriore avvertenza quando si utilizzano i tag guest virtuali (VGT) e i cluster a due nodi. Nelle configurazioni cluster a due nodi, l'indirizzo IP di gestione dei nodi viene utilizzato per stabilire la connettività iniziale al mediatore prima che ONTAP sia completamente disponibile. Pertanto, solo l'EST (External Switch Tagging) e il tag VST (Virtual Switch Tagging) sono supportati sul gruppo di porte mappato alla LIF di gestione dei nodi (porta e0a). Inoltre, se sia la gestione che il traffico dati utilizzano lo stesso gruppo di porte, solo EST e VST sono supportati per l'intero cluster a due nodi.

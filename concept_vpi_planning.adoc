@@ -1,0 +1,97 @@
+---
+sidebar: sidebar 
+permalink: concept_vpi_planning.html 
+keywords: vcenter, plug-in, vcenter plug-in, deploy plug-in, planning 
+summary: Prima di installare e utilizzare il plug-in Deploy vCenter, è necessario prepararsi a garantire il successo. 
+---
+= Pianificazione dell'utilizzo del plug-in Deploy vCenter
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Prima di installare e utilizzare il plug-in Deploy vCenter, è necessario prepararsi a garantire il successo.
+
+
+
+== Requisiti software
+
+Esistono diversi requisiti software da considerare, come descritto nella seguente tabella.
+
+[cols="35,65"]
+|===
+| Software | Versione supportata 
+
+
+| Utility di implementazione ONTAP Select | 2.11.2 o versione successiva 
+
+
+| VMware vSphere | 6.5 GA o versione successiva 
+
+
+| Interfaccia utente di VMware vSphere | HTML5 (la versione basata su flash non è supportata) 
+
+
+| ESXi | 6.5U2 o versione successiva 
+|===
+
+
+== Limitazioni delle dimensioni del cluster
+
+Esistono diverse limitazioni relative alle dimensioni del cluster da considerare, come descritto nella seguente tabella.
+
+[cols="35,65"]
+|===
+| Elemento | Massimo supportato 
+
+
+| ONTAP Select implementa cluster | 100 
+
+
+| Nodi (macchine virtuali) | 1000 
+
+
+| Host | 800 
+|===
+
+
+== Privilegi RBAC per gli account utente vCenter
+
+Per gestire e accedere al plug-in sono necessari diversi privilegi vCenter. Questi privilegi corrispondono alle azioni delle tre categorie seguenti:
+
+* Gestione del plug-in tramite l'implementazione:
++
+** Installare
+** Eseguire l'upgrade
+** Rimuovere
+
+
+* Accesso al plug-in tramite il client vSphere
+* Convalida dell'accesso dell'utente al plug-in tramite vSphere
+
+
+Vedere link:concept_vpi_manage_before.html#preparing-the-vcenter-server-accounts["Preparazione degli account server vCenter"] per ulteriori informazioni.
+
+
+
+== Limitazioni di AutoSupport
+
+Il plug-in Deploy vCenter fornisce una quantità minima di informazioni sull'utilizzo nell'utility di amministrazione di deploy (incluso l'URL del plug-in). Tuttavia, AutoSupport include una tabella dei plug-in installati che può essere visualizzata tramite il visualizzatore AutoSupport.
+
+
+NOTE: Non è possibile scaricare un pacchetto AutoSupport tramite il client Web vSphere utilizzando il plug-in di implementazione. Per scaricare i pacchetti AutoSupport, è necessario utilizzare l'interfaccia di distribuzione nativa.
+
+
+
+== Ulteriori restrizioni
+
+Prima di installare e utilizzare il plug-in Deploy vCenter, è necessario prendere in considerazione alcune limitazioni aggiuntive:
+
+* Ogni istanza del plug-in vCenter supporta un solo server vCenter.
+* I server vCenter configurati in modalità collegata non sono supportati.
+* L'interfaccia grafica del plug-in Deploy in vSphere visualizza solo i cluster con macchine virtuali ONTAP Select gestite dallo stesso server vCenter. I cluster ONTAP Select in esecuzione su host ESXi e KVM standalone non sono inclusi.
+

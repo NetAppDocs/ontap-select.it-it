@@ -1,0 +1,191 @@
+---
+sidebar: sidebar 
+permalink: concept_api_transaction.html 
+keywords: rest api, deploy rest api, rest, transaction, request, response, headers, input, output 
+summary: 'Ogni chiamata API di implementazione viene eseguita come richiesta HTTP alla macchina virtuale di implementazione, che genera una risposta associata al client. Questa coppia di richieste/risposte è considerata una transazione API. Prima di utilizzare l"API di distribuzione, è necessario conoscere le variabili di input disponibili per controllare una richiesta e il contenuto dell"output della risposta.' 
+---
+= Transazione API di richiesta e risposta
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Ogni chiamata API di implementazione viene eseguita come richiesta HTTP alla macchina virtuale di implementazione, che genera una risposta associata al client. Questa coppia di richieste/risposte è considerata una transazione API. Prima di utilizzare l'API di distribuzione, è necessario conoscere le variabili di input disponibili per controllare una richiesta e il contenuto dell'output della risposta.
+
+
+
+== Variabili di input che controllano una richiesta API
+
+È possibile controllare la modalità di elaborazione di una chiamata API tramite i parametri impostati nella richiesta HTTP.
+
+
+
+=== Intestazioni delle richieste
+
+È necessario includere diverse intestazioni nella richiesta HTTP, tra cui:
+
+* Content-type se il corpo della richiesta include JSON, questa intestazione deve essere impostata su application/json.
+* Accept (Accetta) se il corpo della risposta includerà JSON, questa intestazione deve essere impostata su Application/json.
+* Autorizzazione l'autenticazione di base deve essere impostata con il nome utente e la password codificati in una stringa base64.
+
+
+
+
+=== Corpo della richiesta
+
+Il contenuto del corpo della richiesta varia in base alla chiamata specifica. Il corpo della richiesta HTTP è costituito da uno dei seguenti elementi:
+
+* Oggetto JSON con variabili di input (ad esempio, il nome di un nuovo cluster)
+* Vuoto
+
+
+
+
+=== Filtraggio degli oggetti
+
+Quando si esegue una chiamata API che utilizza GET, è possibile limitare o filtrare gli oggetti restituiti in base a qualsiasi attributo. Ad esempio, è possibile specificare un valore esatto da associare:
+
+`<field>=<query value>`
+
+Oltre a una corrispondenza esatta, sono disponibili altri operatori per restituire un set di oggetti su un intervallo di valori. ONTAP Select supporta gli operatori di filtraggio indicati di seguito.
+
+[cols="30,70"]
+|===
+| Operatore | Descrizione 
+
+
+| = | Uguale a. 
+
+
+| < | Inferiore a. 
+
+
+| > | Maggiore di 
+
+
+| <= | Minore o uguale a. 
+
+
+| >= | Maggiore o uguale a. 
+
+
+|  | Oppure 
+
+
+| ! | Non uguale a. 
+
+
+| * | Goloso carattere jolly 
+|===
+È inoltre possibile restituire un insieme di oggetti in base all'impostazione o meno di un campo specifico utilizzando la parola chiave Null o la relativa negazione (!null) come parte della query.
+
+
+
+=== Selezione dei campi oggetto
+
+Per impostazione predefinita, l'emissione di una chiamata API utilizzando GET restituisce solo gli attributi che identificano in modo univoco lo o gli oggetti. Questo insieme minimo di campi funge da chiave per ciascun oggetto e varia in base al tipo di oggetto. È possibile selezionare ulteriori proprietà dell'oggetto utilizzando il parametro di query dei campi nei seguenti modi:
+
+* Specificare campi economici `fields=*` per recuperare i campi oggetto gestiti nella memoria del server locale o che richiedono un'elaborazione ridotta per l'accesso.
+* Specificare campi costosi `fields=**` per recuperare tutti i campi oggetto, inclusi quelli che richiedono un'ulteriore elaborazione del server per l'accesso.
+* Uso della selezione di campi personalizzati `fields=FIELDNAME` per specificare il campo esatto desiderato. Quando si richiedono più campi, i valori devono essere separati utilizzando virgole senza spazi.
+
+
+
+TIP: Come Best practice, devi sempre identificare i campi specifici che desideri. È necessario recuperare l'insieme di campi economici o costosi solo quando necessario. La classificazione economica e costosa è determinata da NetApp in base all'analisi interna delle performance. La classificazione di un dato campo può cambiare in qualsiasi momento.
+
+
+
+=== Ordinamento degli oggetti nel set di output
+
+I record di una raccolta di risorse vengono restituiti nell'ordine predefinito definito dall'oggetto. È possibile modificare l'ordine utilizzando il parametro di query Order_by con il nome del campo e la direzione di ordinamento come segue:
+`order_by=<field name> asc|desc`
+
+Ad esempio, è possibile ordinare il campo tipo in ordine decrescente seguito da id in ordine crescente:
+`order_by=type desc, id asc`
+
+Quando si includono più parametri, è necessario separare i campi con una virgola.
+
+
+
+=== Impaginazione
+
+Quando si esegue una chiamata API utilizzando GET per accedere a un insieme di oggetti dello stesso tipo, vengono restituiti tutti gli oggetti corrispondenti per impostazione predefinita. Se necessario, è possibile limitare il numero di record restituiti utilizzando il parametro di query max_records con la richiesta. Ad esempio:
+`max_records=20`
+
+Se necessario, è possibile combinare questo parametro con altri parametri di query per restringere il set di risultati. Ad esempio, quanto segue restituisce fino a 10 eventi di sistema generati dopo il tempo specificato:
+`time=> 2019-04-04T15:41:29.140265Z&max_records=10`
+
+È possibile inviare più richieste per scorrere gli eventi (o qualsiasi tipo di oggetto). Ogni successiva chiamata API deve utilizzare un nuovo valore temporale basato sull'ultimo evento dell'ultimo set di risultati.
+
+
+
+== Interpretazione di una risposta API
+
+Ogni richiesta API genera una risposta al client. È possibile esaminare la risposta per determinare se è stata eseguita correttamente e recuperare dati aggiuntivi in base alle necessità.
+
+
+
+=== Codice di stato HTTP
+
+I codici di stato HTTP utilizzati dall'API DI DISTRIBUZIONE REST sono descritti di seguito.
+
+[cols="15,20,65"]
+|===
+| Codice | Significato | Descrizione 
+
+
+| 200 | OK | Indica che le chiamate che non creano un nuovo oggetto sono riuscite. 
+
+
+| 201 | Creato | Un oggetto è stato creato correttamente; l'intestazione della risposta di posizione include l'identificatore univoco dell'oggetto. 
+
+
+| 202 | Accettato | Per eseguire la richiesta è stato avviato un processo in background a esecuzione prolungata, ma l'operazione non è ancora stata completata. 
+
+
+| 400 | Richiesta errata | L'input della richiesta non viene riconosciuto o non è appropriato. 
+
+
+| 403 | Vietato | Accesso negato a causa di un errore di autorizzazione. 
+
+
+| 404 | Non trovato | La risorsa a cui si fa riferimento nella richiesta non esiste. 
+
+
+| 405 | Metodo non consentito | Il verbo HTTP nella richiesta non è supportato per la risorsa. 
+
+
+| 409 | Conflitto | Tentativo di creazione di un oggetto non riuscito perché l'oggetto esiste già. 
+
+
+| 500 | Errore interno | Si è verificato un errore interno generale nel server. 
+
+
+| 501 | Non implementato | L'URI è noto ma non è in grado di eseguire la richiesta. 
+|===
+
+
+=== Intestazioni delle risposte
+
+Nella risposta HTTP generata dal server di implementazione sono incluse diverse intestazioni, tra cui:
+
+* Request-id a ogni richiesta API riuscita viene assegnato un identificatore di richiesta univoco.
+* Posizione quando viene creato un oggetto, l'intestazione di posizione include l'URL completo del nuovo oggetto, incluso l'identificatore univoco dell'oggetto.
+
+
+
+
+=== Corpo di risposta
+
+Il contenuto della risposta associata a una richiesta API varia in base all'oggetto, al tipo di elaborazione e all'esito positivo o negativo della richiesta. Il rendering del corpo di risposta viene eseguito in JSON.
+
+* Oggetto singolo Un singolo oggetto può essere restituito con un insieme di campi in base alla richiesta. AD esempio, È possibile utilizzare GET per recuperare le proprietà selezionate di un cluster utilizzando l'identificatore univoco.
+* Oggetti multipli è possibile restituire più oggetti da una raccolta di risorse. In tutti i casi, viene utilizzato un formato coerente, con `num_records` indica il numero di record e record che contengono una matrice delle istanze dell'oggetto. Ad esempio, è possibile recuperare tutti i nodi definiti in un cluster specifico.
+* Oggetto job se una chiamata API viene elaborata in modo asincrono, viene restituito un oggetto Job che ancora l'attività in background. Ad esempio, la richiesta POST utilizzata per implementare un cluster viene elaborata in modo asincrono e restituisce un oggetto Job.
+* Oggetto Error se si verifica un errore, viene sempre restituito un oggetto Error. Ad esempio, quando si tenta di creare un cluster con un nome già esistente, viene visualizzato un messaggio di errore.
+* Vuoto in alcuni casi, non viene restituito alcun dato e il corpo della risposta è vuoto. Ad esempio, il corpo della risposta è vuoto dopo aver utilizzato DELETE per eliminare un host esistente.
+

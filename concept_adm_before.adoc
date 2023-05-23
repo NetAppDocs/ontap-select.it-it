@@ -1,0 +1,80 @@
+---
+sidebar: sidebar 
+permalink: concept_adm_before.html 
+keywords: administer, administering, web, before you begin 
+summary: Dopo aver creato un cluster ONTAP Select, è possibile supportare la distribuzione eseguendo varie attività amministrative. Ci sono alcune considerazioni di carattere generale da tenere presente. 
+---
+= Prima di iniziare ad amministrare ONTAP Select
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Dopo aver creato un cluster ONTAP Select, è possibile supportare la distribuzione eseguendo varie attività amministrative. Ci sono alcune considerazioni di carattere generale da tenere presente.
+
+
+
+== Prima di iniziare
+
+In generale, le procedure che è possibile eseguire utilizzando l'interfaccia Web di implementazione sono suddivise in una delle tre categorie.
+
+.Implementare un cluster ONTAP Select
+È possibile implementare un cluster a nodo singolo o a più nodi. Vedere link:task_deploy_cluster.html["Implementazione di un cluster ONTAP Select"] per ulteriori informazioni.
+
+.Eseguire una procedura con un cluster ONTAP Select esistente
+Le procedure amministrative sono organizzate in varie categorie, ad esempio _Security_ e _Clusters_.
+
+.Eseguire una procedura sull'utilità di implementazione
+Esistono diverse procedure specifiche per la distribuzione (ad esempio, la modifica della password dell'amministratore).
+
+
+
+== Amministrazione di ONTAP Select
+
+Nell'ambito del supporto di ONTAP Select sono disponibili numerose procedure amministrative. Inoltre, sono disponibili procedure specifiche per l'utilità di amministrazione di Deploy. Le procedure più importanti sono illustrate di seguito. In generale, tutti utilizzano l'interfaccia utente Web di implementazione. Un processo amministrativo può essere costituito da un singolo task passo per passo o da una sequenza di task multipli.
+
+
+NOTE: È inoltre possibile utilizzare l'interfaccia della riga di comando per amministrare ONTAP Select. Per ulteriori informazioni, consultare la sezione _utilizzo della CLI_.
+
+
+
+== Esecuzione di una configurazione ONTAP aggiuntiva
+
+Dopo l'implementazione di un cluster ONTAP Select, è possibile configurare e gestire il cluster proprio come avviene per un sistema ONTAP basato su hardware. Ad esempio, è possibile utilizzare Gestore di sistema di OnCommand o l'interfaccia utente di ONTAP per configurare il cluster ONTAP Select.
+
+.Software client NetApp
+È possibile connettersi a ONTAP Select utilizzando il seguente software client NetApp supportato:
+
+* Gestore di sistema di OnCommand
+* Gestore unificato OnCommand
+* Gestore delle performance di OnCommand
+* OnCommand Insight
+* OnCommand Workflow Automation
+* SnapCenter
+* Virtual Storage Console per VMware vSphere
+
+
+Per identificare le versioni supportate del software client, consultare il _NetApp Interoperability Matrix Tool_. Se il software client supporta ONTAP 9, la stessa versione è supportata anche con ONTAP Select.
+
+
+NOTE: L'utilizzo di SnapCenter e dei relativi plug-in richiede licenze basate su server. La licenza del sistema storage dei plug-in SnapCenter non è attualmente supportata con ONTAP Select.
+
+Qualsiasi altro software client NetApp non incluso nell'elenco non è supportato da ONTAP Select.
+
+.Possibili opzioni di configurazione
+Durante la configurazione del cluster sono disponibili diverse opzioni, tra cui:
+
+* Creazione della configurazione di rete
+* La disposizione dei tuoi aggregati
+* Creazione delle macchine virtuali per lo storage dei dati (SVM)
+
+
+.Licenze acquistate con capacità di storage
+Se si decide di non installare i file di licenza con capacità di storage durante l'implementazione del cluster ONTAP Select, è necessario acquisire e installare i file di licenza prima della scadenza del periodo di tolleranza per i cluster eseguiti con una licenza acquistata.
+
+.Aggregati mirrorati
+Esistono dischi di riserva dati creati dall'utility di amministrazione di Deploy su ciascun nodo ONTAP Select dallo spazio datastore utilizzabile (ad esempio, Pool0 e Pool1). Per implementare la disponibilità elevata per i dati su un cluster a più nodi, è necessario creare un aggregato mirrorato utilizzando queste parti di ricambio.

@@ -1,0 +1,120 @@
+---
+sidebar: sidebar 
+permalink: reference_chk_host_prep.html 
+keywords: ontap select, pre-installation checklist, host preparation 
+summary: 'Preparare ciascuno degli host hypervisor in cui viene implementato un nodo ONTAP Select. Durante la preparazione degli host, valutare attentamente l"ambiente di implementazione per assicurarsi che gli host siano configurati correttamente e pronti a supportare la distribuzione di un cluster ONTAP Select.' 
+---
+= Lista di controllo per la preparazione e la configurazione dell'host
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Preparare ciascuno degli host hypervisor in cui viene implementato un nodo ONTAP Select. Durante la preparazione degli host, valutare attentamente l'ambiente di implementazione per assicurarsi che gli host siano configurati correttamente e pronti a supportare la distribuzione di un cluster ONTAP Select.
+
+
+NOTE: L'utility di amministrazione di ONTAP Select Deploy non esegue la configurazione di rete e storage richiesta dagli host dell'hypervisor. È necessario preparare manualmente ciascun host prima di implementare un cluster ONTAP Select.
+
+
+
+== Preparazione generale dell'hypervisor
+
+È necessario preparare gli host dell'hypervisor.
+
+Ciascun host deve essere configurato con i seguenti elementi:
+
+* Un hypervisor preinstallato e supportato
+* Una licenza VMware vSphere
+
+
+Inoltre, lo stesso server vCenter deve essere in grado di gestire tutti gli host in cui viene implementato un nodo ONTAP Select all'interno del cluster.
+
+Inoltre, assicurarsi che le porte del firewall siano configurate per consentire l'accesso a vSphere. Queste porte devono essere aperte per supportare la connettività della porta seriale alle macchine virtuali ONTAP Select.
+
+Per impostazione predefinita, VMware consente l'accesso alle seguenti porte:
+
+* Porta 22 e porte 1024 – 65535 (traffico in entrata)
+* Porte 0 – 65535 (traffico in uscita)
+
+
+NetApp consiglia di aprire le seguenti porte firewall per consentire l'accesso a vSphere:
+
+* Porte 7200 – 7400 (traffico in entrata e in uscita)
+
+
+Inoltre, è necessario conoscere i diritti vCenter richiesti. Vedere link:reference_plan_ots_vcenter.html["Server VMware vCenter"] per ulteriori informazioni.
+
+
+
+== Preparazione della rete del cluster ONTAP Select
+
+È possibile implementare ONTAP Select come cluster a più nodi o come cluster a nodo singolo. In molti casi, un cluster multi-nodo è preferibile a causa della capacità di storage aggiuntiva e della capacità ha.
+
+
+
+=== Immagine delle reti e dei nodi ONTAP Select
+
+Le figure seguenti illustrano le reti utilizzate con un cluster a nodo singolo e un cluster a quattro nodi.
+
+
+
+==== Cluster a nodo singolo che mostra una rete
+
+La figura seguente illustra un cluster a nodo singolo. La rete esterna supporta il traffico di replica client, gestione e cross-cluster (SnapMirror/SnapVault).
+
+image:CHK_01.jpg["Cluster a nodo singolo che mostra una rete"]
+
+
+
+==== Cluster a quattro nodi che mostra due reti
+
+La figura seguente illustra un cluster a quattro nodi. La rete interna consente la comunicazione tra i nodi a supporto dei servizi di rete del cluster ONTAP. La rete esterna supporta il traffico di replica client, gestione e cross-cluster (SnapMirror/SnapVault).
+
+image:CHK_02.jpg["Cluster a quattro nodi che mostra due reti"]
+
+
+
+==== Nodo singolo all'interno di un cluster a quattro nodi
+
+La figura seguente illustra la configurazione di rete tipica per una singola macchina virtuale ONTAP Select all'interno di un cluster a quattro nodi. Esistono due reti separate: ONTAP-Internal e ONTAP-External.
+
+image:CHK_03.jpg["Nodo singolo all'interno di un cluster a quattro nodi"]
+
+
+
+=== Configurazione di vSwitch su un host hypervisor
+
+VSwitch è il componente principale dell'hypervisor utilizzato per supportare la connettività per le reti interne ed esterne. Nella configurazione di ogni vSwitch hypervisor è necessario prendere in considerazione diversi aspetti.
+
+
+
+==== Configurazione vSwitch per un host con due porte fisiche (2 x 10 GB)
+
+Quando ciascun host include due porte da 10 GB, è necessario configurare vSwitch come segue:
+
+* Configurare un vSwitch e assegnare entrambe le porte a vSwitch. Creare un raggruppamento NIC utilizzando le due porte.
+* Impostare il criterio di bilanciamento del carico su "Route based on the origining virtual port ID" (instradamento basato sull'ID della porta virtuale di origine).
+* Contrassegnare entrambi gli adattatori come "attivi" o contrassegnare un adattatore come "attivo" e l'altro come "standby".
+* Impostare "failover" su "Yes" (Sì).image:CHK_04.jpg["Proprietà vSwitch)"]
+* Configurare vSwitch per l'utilizzo di frame jumbo (9000 MTU).
+* Configurare un gruppo di porte su vSwitch per il traffico interno (ONTAP-interno):
++
+** Il gruppo di porte viene assegnato alle schede di rete virtuali ONTAP Select e0c-e0g utilizzate per il cluster, l'interconnessione ha e il traffico di mirroring.
+** Il gruppo di porte deve trovarsi su una VLAN non instradabile perché si prevede che questa rete sia privata. Aggiungere il tag VLAN appropriato al gruppo di porte per tenere conto di questo.
+** Le impostazioni di bilanciamento del carico, failback e ordine di failover del gruppo di porte devono essere le stesse di vSwitch.
+
+
+* Configurare un gruppo di porte su vSwitch per il traffico esterno (ONTAP-esterno):
++
+** Il gruppo di porte viene assegnato agli adattatori di rete virtuale ONTAP Select e0a-e0c utilizzati per il traffico di dati e di gestione.
+** Il gruppo di porte può trovarsi su una VLAN instradabile. Inoltre, a seconda dell'ambiente di rete, è necessario aggiungere un tag VLAN appropriato o configurare il gruppo di porte per il trunking VLAN.
+** Le impostazioni di bilanciamento del carico, failback e ordine di failover del gruppo di porte devono essere le stesse di vSwitch.
+
+
+
+
+La suddetta configurazione vSwitch è per un host con 2 porte da 10 GB in un ambiente di rete tipico.

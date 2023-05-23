@@ -1,0 +1,54 @@
+---
+sidebar: sidebar 
+permalink: reference_plan_dep_general.html 
+keywords: plan, planning, ontap select deploy, general requirements 
+summary: 'Nell"ambito della pianificazione dell"installazione dell"utilità di amministrazione di ONTAP Select Deploy, è necessario prendere in considerazione diversi requisiti generali.' 
+---
+= ONTAP Select implementa requisiti generali e pianificazione
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Nell'ambito della pianificazione dell'installazione dell'utilità di amministrazione di ONTAP Select Deploy, è necessario prendere in considerazione diversi requisiti generali.
+
+
+
+== Associazione dell'utility di implementazione con i cluster ONTAP Select
+
+Sono disponibili diverse opzioni per l'associazione di un'istanza dell'utilità di implementazione con i cluster ONTAP Select.
+
+
+NOTE: In tutti gli scenari di implementazione, un singolo cluster ONTAP Select e i nodi nel cluster possono essere gestiti da una sola istanza dell'utilità di amministrazione di Deploy. Un cluster non può essere gestito da due o più istanze diverse dell'utilità di implementazione.
+
+.Un'istanza dell'utility per ciascun cluster ONTAP Select
+È possibile implementare e gestire ciascun cluster ONTAP Select utilizzando un'istanza dedicata dell'utilità di implementazione. Con questa configurazione one-to-one, esiste una chiara separazione tra ogni collegamento utility-cluster. Questa configurazione offre un elevato livello di isolamento con domini di errore più piccoli.
+
+.Un'istanza dell'utility per più cluster ONTAP Select
+È possibile implementare e gestire più cluster ONTAP Select all'interno dell'organizzazione utilizzando una singola istanza dell'utilità di implementazione. Con questa configurazione one-to-many, tutti i dati di elaborazione e configurazione vengono gestiti dalla stessa istanza dell'utilità di implementazione.
+
+
+NOTE: Un'istanza dell'utilità di implementazione può amministrare fino a 400 nodi ONTAP Select o 100 cluster.
+
+
+
+== Autenticazione mediante l'archivio delle credenziali
+
+L'archivio di credenziali ONTAP Select Deploy è un database che contiene informazioni sull'account. L'implementazione utilizza le credenziali dell'account per eseguire l'autenticazione host come parte della creazione e della gestione del cluster. È necessario conoscere il modo in cui l'archivio di credenziali viene utilizzato per pianificare un'implementazione di ONTAP Select.
+
+
+NOTE: Le informazioni sull'account vengono memorizzate in modo sicuro nel database utilizzando l'algoritmo di crittografia AES e l'algoritmo di hashing SHA-256.
+
+.Tipi di credenziali
+Sono supportati i seguenti tipi di credenziali:
+
+* Host utilizzato per autenticare un host hypervisor come parte dell'implementazione di un nodo ONTAP Select direttamente su VMware ESXi
+* VCenter utilizzato per autenticare un server vCenter come parte dell'implementazione di un nodo ONTAP Select in ESXi quando l'host viene gestito da VMware vCenter
+
+
+.Accesso
+L'accesso all'archivio delle credenziali viene eseguito internamente durante l'esecuzione delle normali attività amministrative mediante l'implementazione, ad esempio l'aggiunta di un host hypervisor. È inoltre possibile gestire l'archivio di credenziali direttamente tramite l'interfaccia utente Web di implementazione e la CLI.

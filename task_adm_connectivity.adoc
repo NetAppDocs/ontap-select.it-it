@@ -1,0 +1,42 @@
+---
+sidebar: sidebar 
+permalink: task_adm_connectivity.html 
+keywords: administer, administering, web, connectivity, network connectivity, network checker 
+summary: 'È possibile verificare la connettività di rete tra due o più nodi ONTAP Select sulla rete cluster interna. In genere, si esegue questo test prima dell"implementazione di un cluster a più nodi per rilevare problemi che potrebbero causare un errore dell"operazione.' 
+---
+= Conferma della connettività tra i nodi ONTAP Select
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+È possibile verificare la connettività di rete tra due o più nodi ONTAP Select sulla rete cluster interna. In genere, si esegue questo test prima dell'implementazione di un cluster a più nodi per rilevare problemi che potrebbero causare un errore dell'operazione.
+
+.Prima di iniziare
+Tutti i nodi ONTAP Select inclusi nel test devono essere configurati e accesi.
+
+.A proposito di questa attività
+Ogni volta che si avvia un test, viene creata una nuova esecuzione di processo in background e viene assegnato un identificatore di esecuzione univoco. È possibile attivare una sola seriografia alla volta.
+
+Il test ha due modalità che ne controllano il funzionamento:
+
+* Quick (veloce) questa modalità esegue un test di base senza interruzioni. Viene eseguito un TEST PING, insieme a un test delle dimensioni MTU della rete e di vSwitch.
+* Extended (estesa): Questa modalità esegue un test più completo su tutti i percorsi di rete ridondanti. Se si esegue questa operazione su un cluster ONTAP Select attivo, le prestazioni del cluster potrebbero risentirvi.
+
+
+
+NOTE: Si consiglia di eseguire sempre un test rapido prima di creare un cluster a più nodi. Una volta completato correttamente il test rapido, è possibile eseguire un test esteso in base ai requisiti di produzione.
+
+.Fasi
+. Accedere all'interfaccia utente Web dell'utilità di implementazione utilizzando l'account amministratore.
+. Fare clic sulla scheda *Administration* nella parte superiore della pagina e fare clic su *Network Checker*.
+. Fare clic su *Start New Run* (Avvia nuova esecuzione) e selezionare gli host e le reti per la coppia ha
++
+È possibile aggiungere e configurare coppie ha aggiuntive in base alle esigenze.
+
+. Fare clic su *Start* per avviare il test di connettività di rete.
+

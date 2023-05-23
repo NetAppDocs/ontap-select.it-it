@@ -1,0 +1,79 @@
+---
+sidebar: sidebar 
+permalink: reference_host_modify_command.html 
+keywords: host modify, command, syntax, host management server 
+summary: È possibile utilizzare il comando host modify per modificare un server di gestione host con questa istanza di ONTAP Select Deploy. 
+---
+= Modificare un server di gestione host
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+È possibile utilizzare `host modify` Comando per modificare un server di gestione host con questa istanza di ONTAP Select Deploy.
+
+
+
+== Sintassi
+
+`host modify [-help] [-foreground] -name _name_ -mgmt-server _management_server_ [-username _username_]`
+
+
+
+== Parametri richiesti
+
+[cols="35,65"]
+|===
+
+
+| Parametro | Descrizione 
+
+
+ a| 
+`-name _name_`
+ a| 
+L'indirizzo IP o FQDN dell'host che si desidera modificare.
+
+
+
+ a| 
+`-mgmt-server _management_server_`
+ a| 
+L'indirizzo IP o FQDN del server di gestione host da impostare sull'host. Specificare "-" (trattino) per annullare l'impostazione del server di gestione dall'host. Le credenziali per questo server di gestione devono essere aggiunte prima di registrare questo host utilizzando  `credential add` comando.
+
+|===
+
+
+== Parametri opzionali
+
+[cols="35,65"]
+|===
+
+
+| Parametro | Descrizione 
+
+
+ a| 
+`-help`
+ a| 
+Visualizza il messaggio della guida.
+
+
+
+ a| 
+`-foreground`
+ a| 
+Questo parametro controlla il comportamento dei comandi a esecuzione prolungata. Se impostato, il comando viene eseguito in primo piano e i messaggi di evento relativi all'operazione vengono visualizzati man mano che si verificano.
+
+
+
+ a| 
+`-username _username_`
+ a| 
+Il nome utente che ha accesso a questo host. Questo è necessario solo se l'host non è gestito da un server di gestione (ovvero un host ESX gestito da un vCenter).
+
+|===

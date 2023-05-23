@@ -1,0 +1,30 @@
+---
+sidebar: sidebar 
+permalink: task_cli_security.html 
+keywords: administer, administering, cli, security 
+summary: 'Esistono diverse attività correlate che è possibile eseguire nell"ambito della protezione di un"implementazione ONTAP Select.' 
+---
+= Sicurezza
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Esistono diverse attività correlate che è possibile eseguire nell'ambito della protezione di un'implementazione ONTAP Select.
+
+
+
+= Modifica della password dell'amministratore di implementazione
+
+È possibile modificare la password per l'account di amministratore della macchina virtuale Deploy in base alle necessità utilizzando l'interfaccia della riga di comando.
+
+.Fasi
+. Accedere alla CLI dell'utilità di implementazione utilizzando l'account amministratore.
+. Modificare la password:
+`password modify`
+. Rispondere a tutte le richieste in base all'ambiente in uso.
+

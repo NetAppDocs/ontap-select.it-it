@@ -1,0 +1,27 @@
+---
+sidebar: sidebar 
+permalink: concept_usecase_private_cloud.html 
+keywords: ontap select, private cloud 
+summary: 'ONTAP Select è ideale per supportare uno o più cloud privati all"interno della tua organizzazione. Un caso di utilizzo comune è quello di fornire servizi di storage per cloud privati basati su server commodity.' 
+---
+= Cloud privato e data center
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+ONTAP Select è ideale per supportare uno o più cloud privati all'interno della tua organizzazione. Un caso di utilizzo comune è quello di fornire servizi di storage per cloud privati basati su server commodity.
+
+Come per il cloud pubblico, un cloud privato offre flessibilità, nonché configurazione e smontaggio rapidi. Inoltre, un cloud privato offre maggiore sicurezza e controllo.
+
+La figura seguente mostra come una farm di storage fornisce calcolo e storage collegato localmente alle macchine virtuali ONTAP Select, che forniscono servizi di storage a monte di uno stack di applicazioni. L'intero flusso di lavoro, dal provisioning delle SVM all'implementazione e alla configurazione delle VM applicative, viene automatizzato attraverso un framework di orchestrazione del cloud privato.
+
+Si tratta di un modello di cloud privato orientato ai servizi. L'utilizzo della versione ha di ONTAP Select crea la stessa esperienza ONTAP che ci si aspetta dagli array FAS a costi più elevati. Le risorse dei server di storage vengono utilizzate esclusivamente dalla macchina virtuale ONTAP Select, con le macchine virtuali delle applicazioni ospitate su un'infrastruttura fisica separata.
+
+*Cloud privato basato su DAS*
+
+image:PrivateCloud_01.jpg["Cloud privato basato su DAS"]
