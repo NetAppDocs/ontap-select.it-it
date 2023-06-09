@@ -2594,7 +2594,7 @@
 <p class="page-details">
   
     
-    <time datetime="2023-05-23 12:14:19 +0000">05/23/2023</time>
+    <time datetime="2023-06-09 15:35:39 +0000">06/09/2023</time>
     
   
 
@@ -2616,6 +2616,18 @@
 <div class="sectionbody">
 <div class="paragraph">
 <p>Assicurarsi che la distribuzione non venga utilizzata per eseguire altre attività durante l&#8217;aggiornamento. Per informazioni e restrizioni sull&#8217;aggiornamento dell&#8217;utility di distribuzione, consultare le note di rilascio correnti.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/ontap-select/images/note.svg" alt="Nota">
+</td>
+<td class="content">
+Se è installata un&#8217;istanza dell&#8217;utilità di amministrazione di ONTAP Select Deploy, è consigliabile eseguire l&#8217;aggiornamento alla release corrente. Il nodo ONTAP Select e il componente di implementazione ONTAP Select vengono aggiornati in modo indipendente. Vedere <a href="concept_adm_upgrading_nodes.html" target="_blank" rel="noopener">"Aggiornamento dei nodi ONTAP Select"</a> per ulteriori dettagli.
+</td>
+</tr>
+</table>
 </div>
 </div>
 </div>
@@ -2675,15 +2687,13 @@
 <div class="title">Fasi</div>
 <ol class="arabic">
 <li>
-<p>In una shell di comandi sulla workstation locale, utilizzare l&#8217;utility sftp per caricare il file di immagine sulla macchina virtuale di implementazione.</p>
+<p>In una shell di comandi sulla workstation locale, utilizzare l&#8217;utility SCP per caricare il file di immagine sulla macchina virtuale di implementazione.</p>
 <div class="paragraph">
 <p>Esempio</p>
 </div>
 <div class="literalblock">
 <div class="content">
-<pre>sftp admin@10.234.81.101 (provide password when prompted)
-put ONTAPdeploy2.12_upgrade.tar.gz
-exit</pre>
+<pre>scp ONTAPdeploy2.12_upgrade.tar.gz admin@10.228.162.221:/home/admin (provide password when prompted)</pre>
 </div>
 </div>
 </li>
@@ -2721,8 +2731,7 @@ exit</pre>
 </div>
 <div class="literalblock">
 <div class="content">
-<pre>deploy upgrade -package-path /home/admin/
-ONTAPdeploy2.12_upgrade.tar.gz</pre>
+<pre>deploy upgrade -package-path /home/admin/ONTAPdeploy2.12_upgrade.tar.gz</pre>
 </div>
 </div>
 </li>
