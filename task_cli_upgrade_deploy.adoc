@@ -23,6 +23,9 @@ summary: 'È possibile aggiornare una macchina virtuale dell"utility di implemen
 Assicurarsi che la distribuzione non venga utilizzata per eseguire altre attività durante l'aggiornamento. Per informazioni e restrizioni sull'aggiornamento dell'utility di distribuzione, consultare le note di rilascio correnti.
 
 
+NOTE: Se è installata un'istanza dell'utilità di amministrazione di ONTAP Select Deploy, è consigliabile eseguire l'aggiornamento alla release corrente. Il nodo ONTAP Select e il componente di implementazione ONTAP Select vengono aggiornati in modo indipendente. Vedere link:concept_adm_upgrading_nodes.html["Aggiornamento dei nodi ONTAP Select"^] per ulteriori dettagli.
+
+
 
 == Download del pacchetto di aggiornamento
 
@@ -54,15 +57,13 @@ Il file di aggiornamento deve essere disponibile sulla workstation locale. È in
 Questa attività descrive un metodo per caricare il file sulla macchina virtuale di implementazione. Potrebbero essere disponibili altre opzioni più adatte al proprio ambiente.
 
 .Fasi
-. In una shell di comandi sulla workstation locale, utilizzare l'utility sftp per caricare il file di immagine sulla macchina virtuale di implementazione.
+. In una shell di comandi sulla workstation locale, utilizzare l'utility SCP per caricare il file di immagine sulla macchina virtuale di implementazione.
 +
 Esempio
 
 +
 ....
-sftp admin@10.234.81.101 (provide password when prompted)
-put ONTAPdeploy2.12_upgrade.tar.gz
-exit
+scp ONTAPdeploy2.12_upgrade.tar.gz admin@10.228.162.221:/home/admin (provide password when prompted)
 ....
 
 
@@ -89,8 +90,7 @@ Esempio
 
 +
 ....
-deploy upgrade -package-path /home/admin/
-ONTAPdeploy2.12_upgrade.tar.gz
+deploy upgrade -package-path /home/admin/ONTAPdeploy2.12_upgrade.tar.gz
 ....
 
 
