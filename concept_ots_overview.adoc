@@ -89,11 +89,15 @@ Diverse funzionalità di ONTAP non sono supportate con ONTAP Select. Nella maggi
 * Gruppi di interfacce i gruppi di interfacce (IFGRP) non sono supportati.
 * Monitoraggio dello stato di salute il monitoraggio tradizionale dello stato di salute utilizzato con un'implementazione ONTAP basata su hardware è specifico per i componenti hardware sottostanti. A causa dell'ambiente virtualizzato utilizzato con ONTAP Select, i monitor dello stato di salute non sono attivi.
 * Supporto dell'offload della scheda di rete a causa dell'ambiente virtualizzato utilizzato con ONTAP Select, la funzione di offload della scheda di rete non è supportata.
-* Cluster IPSpace qualsiasi modifica apportata a Cluster IPSpace, inclusa l'aggiunta o la rimozione di porte, non è supportata.
+* IPSpace del cluster
+Qualsiasi modifica a Cluster IPSpace, inclusa l'aggiunta o la rimozione di porte, VLAN (Virtual LAN) o gruppi di aggregazione di collegamenti, non è supportata.
 * Proprietà della porta ONTAP la modifica delle proprietà delle porte ONTAP, inclusi velocità, duplex e controllo del flusso, non è supportata.
 * Processori di servizio
 * Dischi di crittografia per lo storage NetApp
 * Protezione ransomware autonoma (ARP)
+* Copie Snapshot a prova di manomissione
+* Migrazione SVM
+* VMware HCX
 
 
 .Informazioni correlate
