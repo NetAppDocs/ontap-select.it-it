@@ -162,7 +162,6 @@
   <block id="6bc6433efd5abd7e3ac98556742ca0e4" category="paragraph">L'accesso all'archivio delle credenziali viene eseguito internamente durante l'esecuzione delle normali attività amministrative mediante l'implementazione, ad esempio l'aggiunta di un host hypervisor. È inoltre possibile gestire l'archivio di credenziali direttamente tramite l'interfaccia utente Web di implementazione e la CLI.</block>
   <block id="9f8405ace72665fee032686e586d5366" category="summary">Dopo aver implementato un cluster ONTAP Select, è possibile aggiornare il tipo di istanza dell'hypervisor dei nodi utilizzando l'utility di amministrazione di deploy.</block>
   <block id="a81401e9911e6ba18e35f42e304aeafc" category="doc">Ridimensionamento dei nodi del cluster ONTAP Select</block>
-  <block id="da8c60eda9de027a78518654141ef28e" category="admonition">È possibile eseguire l'operazione di ridimensionamento dei nodi del cluster solo quando si utilizza il modello di licenza dei livelli di capacità. Non è possibile ridimensionare i nodi ONTAP Select che dispongono di una licenza per i pool di capacità.</block>
   <block id="c491351d31e9a04b74d8cf6b5f75e570" category="paragraph">Il cluster deve essere nello stato online.</block>
   <block id="bbe48fb854ea022537208eeeff822f91" category="paragraph-title">A proposito di questa attività</block>
   <block id="090def24fea0489fb8d3e01bab4bd447" category="paragraph">Questa attività descrive come utilizzare l'interfaccia utente Web di implementazione. È inoltre possibile utilizzare la CLI di distribuzione per eseguire il ridimensionamento dell'istanza. Indipendentemente dall'interfaccia utilizzata, il tempo necessario per l'operazione di ridimensionamento può variare in modo significativo in base a diversi fattori e può richiedere un periodo di tempo prolungato per il completamento. È possibile ridimensionare un nodo solo a una dimensione maggiore.</block>
@@ -3646,4 +3645,7 @@ Qualsiasi modifica a Cluster IPSpace, inclusa l'aggiunta o la rimozione di porte
   <block id="690f3dfc132299176ff75952d43e8d9d" category="list-text">Copie Snapshot a prova di manomissione</block>
   <block id="363ac709cba54fea743eb36bb06d23c7" category="list-text">Migrazione SVM</block>
   <block id="b7e93a737ead6d7716c8af57ebde241a" category="list-text">VMware HCX</block>
+  <block id="c87ac723a8ad54443fb95ff969ba10fa" category="admonition">È possibile eseguire l'operazione di ridimensionamento dei nodi del cluster utilizzando il modello di licenza dei livelli di capacità e il modello di licenza dei pool di capacità.</block>
+  <block id="6c8b8cb454d3ccba7c258b15c1a29605" category="inline-link-macro">L'aggiornamento del cluster di implementazione dell'OTS non riesce con un errore</block>
+  <block id="07c811008e90cffbb0d342cd1beb72b8" category="admonition">La limitazione dei ruoli e delle autorizzazioni per l'account amministratore di ONTAP può limitare la capacità di ONTAP Select Deploy di gestire il cluster. Per ulteriori informazioni, consulta l'articolo della Knowledge base <block ref="e376689174188790c996782ceb328c45" category="inline-link-macro-rx"></block>.</block>
 </blocks>
