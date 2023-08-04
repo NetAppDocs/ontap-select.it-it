@@ -131,7 +131,10 @@ Dopo aver creato o implementato un cluster, è necessario eseguire il backup dei
 
 === Aggregati mirrorati
 
-Anche se l'esistenza dell'aggregato mirrorato è necessaria per fornire una copia aggiornata (RPO 0) dell'aggregato primario, fare attenzione che l'aggregato primario non venga eseguito a basso livello di spazio libero. Una condizione di spazio ridotto nell'aggregato primario potrebbe far sì che ONTAP elimini la copia NetApp Snapshot™ comune utilizzata come riferimento per il giveback dello storage. Questo funziona come progettato per adattarsi alle scritture dei client. Tuttavia, la mancanza di una copia Snapshot comune in caso di failback richiede che il nodo ONTAP Select faccia una linea di base completa dall'aggregato mirrorato. Questa operazione può richiedere molto tempo in un ambiente senza condivisione. Una buona base di riferimento per il monitoraggio dell'utilizzo dello spazio aggregato è fino al 85%.
+Anche se l'esistenza dell'aggregato mirrorato è necessaria per fornire una copia aggiornata (RPO 0) dell'aggregato primario, fare attenzione che l'aggregato primario non venga eseguito a basso livello di spazio libero. In presenza di uno spazio ridotto nell'aggregato primario, ONTAP può eliminare la copia Snapshot comune utilizzata come base per il giveback dello storage. Questo funziona come progettato per adattarsi alle scritture dei client. Tuttavia, la mancanza di una copia Snapshot comune in caso di failback richiede che il nodo ONTAP Select faccia una linea di base completa dall'aggregato mirrorato. Questa operazione può richiedere molto tempo in un ambiente senza condivisione.
+
+
+NOTE: Si consiglia di mantenere almeno il 20% di spazio libero per gli aggregati con mirroring, per performance e disponibilità dello storage ottimali. Sebbene il suggerimento sia del 10% per gli aggregati non speculari, il 10% di spazio aggiuntivo può essere utilizzato dal filesystem per assorbire le modifiche incrementali. I cambiamenti incrementali aumentano l'utilizzo dello spazio per gli aggregati con mirroring grazie all'architettura copy-on-write basata su Snapshot di ONTAP. Il mancato rispetto di queste Best practice può avere un impatto negativo sulle prestazioni.
 
 
 

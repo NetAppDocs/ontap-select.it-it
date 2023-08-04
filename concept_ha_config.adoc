@@ -65,7 +65,7 @@ Il cluster a due nodi è definito come un cluster per il quale entrambi i nodi s
 
 Per SDS MetroCluster a due nodi si intende un cluster per il quale i nodi sono fisicamente separati (stanze diverse, edifici diversi e data center diversi) di oltre 300 m. Inoltre, le connessioni uplink di ciascun nodo sono collegate a switch di rete separati. L'SDS MetroCluster non richiede hardware dedicato. Tuttavia, l'ambiente deve rispettare i requisiti di latenza (massimo 5 ms per RTT e 5 ms per jitter, per un totale di 10 ms) e distanza fisica (massimo 10 km).
 
-MetroCluster SDS è una funzionalità premium e richiede una licenza Premium. La licenza Premium supporta la creazione di macchine virtuali di piccole e medie dimensioni, oltre a supporti HDD e SSD.
+MetroCluster SDS è una funzione premium e richiede una licenza Premium o Premium XL. La licenza Premium supporta la creazione di macchine virtuali di piccole e medie dimensioni, oltre a supporti HDD e SSD. La licenza Premium XL supporta anche la creazione di dischi NVMe.
 
 
 NOTE: MetroCluster SDS è supportato sia con DAS (Local Attached Storage) che con vNAS (Shared Storage). Si noti che le configurazioni vNAS hanno solitamente una latenza innata più elevata a causa della rete tra la VM ONTAP Select e lo storage condiviso. Le configurazioni SDS di MetroCluster devono fornire un massimo di 10 ms di latenza tra i nodi, inclusa la latenza dello storage condiviso. In altre parole, solo la misurazione della latenza tra le Select VM non è adeguata, perché la latenza dello storage condiviso non è trascurabile per queste configurazioni.
