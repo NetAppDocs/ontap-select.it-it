@@ -73,17 +73,23 @@ Dopo l'implementazione di un cluster:: È necessario eseguire il backup dei dati
 
 
 
-== Creazione di un cluster a nodo singolo
+== Creazione di un cluster a nodo singolo o a nodi multipli
 
-È possibile utilizzare l'interfaccia utente Web di ONTAP Select Deploy per implementare un cluster ONTAP Select a nodo singolo.
+È possibile utilizzare l'interfaccia utente Web ONTAP Select Deploy per implementare un cluster ONTAP Select a nodo singolo o multi-nodo.
 
 .Prima di iniziare
-Vedere link:task_deploy_cluster.html#before-you-begin["Prima di iniziare"] per prepararsi all'implementazione del cluster. L'amministrazione della distribuzione deve essere installata e configurata inizialmente (password, AutoSupport, vCenter).
+Vedere link:task_deploy_cluster.html#before-you-begin["Prima di iniziare"] per prepararsi all'implementazione del cluster. L'amministrazione di deploy deve essere installata e configurata inizialmente (password, AutoSupport e vCenter).
 
 .A proposito di questa attività
-Viene creato un cluster ONTAP Select con un nodo per un'implementazione in produzione.
+Viene creato un cluster ONTAP Select con uno o più nodi per un'implementazione in produzione.
 
 .Fasi
+I passaggi che segui dipendono dalla creazione di un cluster a nodo singolo o a più nodi.
+
+[role="tabbed-block"]
+====
+.Cluster a nodo singolo
+--
 . Accedere all'utilità di implementazione tramite l'interfaccia Web utilizzando l'account amministratore (admin).
 . Se viene visualizzata la finestra a comparsa *Benvenuti in ONTAP Select*, verificare di aver soddisfatto i prerequisiti di configurazione e fare clic su *OK*.
 . Se la pagina di avvio del cluster *Getting Started* non viene visualizzata, fare clic su image:icon_question_mark.gif["Punto interrogativo"] Nella parte superiore della pagina e fare clic su *Guida introduttiva*.
@@ -126,9 +132,61 @@ La pagina viene aggiornata automaticamente a intervalli regolari.
 
 +
 
-TIP: Se l'operazione di creazione del cluster viene avviata ma non viene completata, la password amministrativa ONTAP definita potrebbe non essere registrata. In questo caso, è possibile accedere all'interfaccia di gestione del cluster ONTAP Select utilizzando la password _changeme123_ per l'account admin.
+TIP: Se l'operazione di creazione del cluster viene avviata ma non viene completata, la password amministrativa di ONTAP definita potrebbe non essere registrata. In questo caso, è possibile accedere all'interfaccia di gestione del cluster ONTAP Select utilizzando la password _changeme123_ per l'account admin.
 
 
 
+--
+.Cluster multi-nodo
+--
+. Accedere all'utilità di implementazione tramite l'interfaccia Web utilizzando l'account amministratore (admin).
+. Se viene visualizzata la finestra a comparsa *Benvenuti in ONTAP Select*, verificare di aver soddisfatto i prerequisiti di configurazione e fare clic su *OK*.
+. Se la pagina di avvio del cluster *Getting Started* non viene visualizzata, fare clic su image:icon_question_mark.gif["Punto interrogativo"] Nella parte superiore della pagina e fare clic su *Guida introduttiva*.
+. Nella pagina *Getting Started*, fare clic su *Upload* (carica), selezionare una licenza dalla workstation locale e fare clic su *Open* (Apri) per caricare la licenza. Ripetere l'operazione per aggiungere una seconda licenza.
+. Fare clic su *Aggiorna* e confermare che le licenze sono state aggiunte.
+. Fare clic su *Avanti* per aggiungere due host hypervisor, quindi fare clic su *Aggiungi*.
++
+È possibile aggiungere gli host ESXi direttamente o collegandosi a un server vCenter. Fornire le credenziali e i dettagli host appropriati in base alle necessità.
+
+. Fare clic su *Refresh* (Aggiorna) e verificare che il valore *Type* dell'host sia *ESX*.
++
+Tutte le credenziali dell'account fornite vengono aggiunte al database delle credenziali di implementazione.
+
+. Fare clic su *Avanti* per avviare il processo di creazione del cluster.
+. Nella sezione *Dettagli cluster*, selezionare *cluster a 2 nodi* per *dimensione cluster*, fornire tutte le informazioni richieste che descrivono i cluster e fare clic su *fine*.
+. In *impostazione nodo*, fornire gli indirizzi IP di gestione dei nodi e selezionare le licenze per ogni nodo; è possibile caricare una nuova licenza se necessario. Se necessario, è anche possibile modificare i nomi dei nodi.
+. Fornire la configurazione *Hypervisor* e *Network*.
++
+Esistono tre configurazioni di nodi che definiscono le dimensioni della macchina virtuale e il set di funzionalità disponibili. Questi tipi di istanze sono supportati rispettivamente dalle offerte XL standard, premium e premium della licenza acquistata. La licenza selezionata per i nodi deve corrispondere o superare il tipo di istanza.
+
++
+Seleziona gli host dell'hypervisor come pure la gestione, i dati e le reti interne.
+
+. Fornire la configurazione *Storage* e fare clic su *Done*.
++
+È possibile selezionare i dischi in base al livello di licenza della piattaforma e alla configurazione dell'host.
+
+. Esaminare e confermare la configurazione del cluster.
++
+È possibile modificare la configurazione facendo clic su image:icon_pencil.gif["Modifica"] nella sezione pertinente.
+
+. Fare clic su *Avanti* ed eseguire il controllo preliminare rete facendo clic su *Esegui*. In questo modo, la rete interna selezionata per il traffico del cluster ONTAP funziona correttamente.
+. Fare clic su *Avanti* e fornire la password dell'amministratore di ONTAP.
+. Fare clic su *Create Cluster* (Crea cluster) per avviare il processo di creazione del cluster, quindi fare clic su *OK* nella finestra a comparsa.
++
+La creazione del cluster può richiedere fino a 45 minuti.
+
+. Monitorare il processo di creazione del cluster multi-step per confermare che il cluster è stato creato correttamente.
++
+La pagina viene aggiornata automaticamente a intervalli regolari.
+
++
+
+TIP: Se l'operazione di creazione del cluster viene avviata ma non viene completata, la password amministrativa di ONTAP definita potrebbe non essere registrata. In questo caso, è possibile accedere all'interfaccia di gestione del cluster ONTAP Select utilizzando la password _changeme123_ per l'account admin.
+
+
+
+--
+====
 .Al termine
-Verificare che la funzione ONTAP Select AutoSupport sia configurata ed eseguire il backup dei dati di configurazione di ONTAP Select Deploy.
+Verificare che la funzione ONTAP Select AutoSupport sia configurata e quindi eseguire il backup dei dati di configurazione di ONTAP Select Deploy.
