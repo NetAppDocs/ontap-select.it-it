@@ -33,7 +33,7 @@ NetApp ONTAP Select è un'appliance di storage software-defined che è possibile
 
 == Consultare la documentazione del prodotto
 
-ONTAP Select 9.12.1 può essere implementato su VMware ESXi. Questo sito contiene la documentazione per ONTAP Select 9.12.1, 9.11.1, 9.10.1, 9.9.1, 9.8, E 9.7 su VMware ESXi, oltre alla documentazione indipendente dall'hypervisor (come l'API REST).
+ONTAP Select 9.13.1 può essere implementato su VMware ESXi. Questo sito contiene la documentazione per ONTAP Select 9.13.1, 9.12.1, 9.11.1, 9.10.1, 9,9.1, 9,8 e 9,7 in esecuzione su VMware ESXi così come la documentazione indipendente dall'hypervisor (come l'API REST).
 
 È possibile trovare le note di rilascio e la documentazione per la versione KVM del prodotto, come supportato con le release precedenti, all'indirizzo https://mysupport.netapp.com/documentation/productlibrary/index.html?productID=62293["Libreria di prodotti ONTAP Select"^].
 

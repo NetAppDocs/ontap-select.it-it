@@ -18,7 +18,7 @@ summary: 'È necessario installare l"utility di amministrazione di ONTAP Select 
 
 
 
-== Download dell'immagine della macchina virtuale
+== Scaricare l'immagine della macchina virtuale
 
 È possibile scaricare il pacchetto ONTAP Select dal sito di supporto NetApp.
 
@@ -37,7 +37,51 @@ L'utility di amministrazione di ONTAP Select Deploy viene fornita come macchina 
 
 
 
-== Implementazione della macchina virtuale
+== Verificare la firma ONTAP Select Deploy OVA
+
+È necessario verificare la firma OVA (Open Virtualization Appliance) di ONTAP Select prima di installare il pacchetto di installazione.
+
+.Prima di iniziare
+Verificare che il sistema soddisfi i seguenti requisiti:
+
+* OpenSSL versioni da 1.0.2 a 3,0 per la verifica di base
+* Accesso Internet pubblico per la verifica OCSP (Online Certificate Status Protocol)
+
+
+.Fasi
+. Reperire i seguenti file dalla pagina di download del prodotto sul sito di assistenza NetApp:
++
+[cols="2*"]
+|===
+| File | Descrizione 
+
+
+| `ONTAP-Select-Deploy-Production.pub` | La chiave pubblica utilizzata per verificare la firma. 
+
+
+| `csc-prod-chain-ONTAP-Select-Deploy.pem` | La catena di trust dell'autorità di certificazione pubblica (CA). 
+
+
+| `csc-prod-ONTAP-Select-Deploy.pem` | Il certificato utilizzato per generare la chiave. 
+
+
+| `ONTAPdeploy.ova` | Il file eseguibile di installazione del prodotto per ONTAP Select 9.13.1. 
+
+
+| `ONTAPdeploy.ova.sig` | L'algoritmo SHA-256 viene sottoposto a hash e quindi firmato dal Remote Support Agent (RSA) utilizzando `csc-prod` chiave e firma per il programma di installazione. 
+|===
+. Verificare che il `ONTAPdeploy.ova.sig` il file utilizza i certificati e i comandi di convalida associati.
+. Verificare la firma con il seguente comando:
++
+[listing]
+----
+openssl dgst  -sha256 -verify ONTAP-Select-Deploy-Production.pub -signature ONTAPdeploy.ova.sig  ONTAPdeploy.ova
+----
+
+
+
+
+== Implementare la macchina virtuale
 
 È necessario installare e avviare la macchina virtuale ONTAP Select Deploy utilizzando l'immagine della macchina virtuale OVF. Nell'ambito del processo di installazione, è necessario configurare l'interfaccia di rete in modo che utilizzi DHCP o una configurazione IP statica.
 
@@ -94,7 +138,7 @@ Utilizzare DHCP per impostare le informazioni di rete? [n]:
 
 
 
-== Accesso all'interfaccia Web di implementazione
+== Accedere all'interfaccia Web di distribuzione
 
 Accedere all'interfaccia utente Web per verificare che l'utilità di implementazione sia disponibile ed eseguire la configurazione iniziale.
 

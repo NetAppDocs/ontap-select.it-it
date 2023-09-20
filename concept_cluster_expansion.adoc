@@ -1,0 +1,101 @@
+---
+sidebar: sidebar 
+permalink: concept_cluster_expansion.html 
+keywords: cluster, expand, expansion, single, two, node deployment workflow, workflow, deployment steps 
+summary: 'Espandi un cluster esistente a nodo singolo in un cluster a due nodi configurando entrambi i nodi come coppia ha (high Availability).' 
+---
+= Espandere il cluster
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+A partire da ONTAP 9.13.1, puoi espandere un cluster a nodo singolo esistente in un cluster a due nodi configurando entrambi i nodi come coppia ha (high Availability). L'espansione a un cluster ha a due nodi offre high-Availability, che ti protegge dall'impatto dell'interruzione di un nodo sulla capacità di un cluster di erogare i dati.
+
+La procedura viene automatizzata e avviata da ONTAP Select Deploy utilizzando l'interfaccia CLI o Web. Si tratta di una procedura distruttiva.
+
+.Prerequisiti di espansione cluster
+Prima di avviare la procedura di espansione del cluster, verificare di soddisfare i seguenti prerequisiti:
+
+* Il nodo esistente è acceso.
+* L'aggiornamento del cluster sul nodo esistente è stato eseguito correttamente.
+* Gli host ESX per i nodi nuovi ed esistenti hanno la stessa configurazione.
+* È stato eseguito correttamente il controllo della connettività di rete tra gli host ESX per i nodi esistenti e nuovi.
+* Per utilizzare la procedura di espansione del cluster di implementazione di ONTAP Select, è necessario disporre di una licenza di valutazione (90 giorni) e di una licenza di produzione (Tier di capacità o pool di capacità). Verificare di soddisfare i seguenti requisiti di licenza:
++
+--
+** Disponi del Tier di capacità o della licenza pool di capacità necessari per il nuovo nodo.
++
+
+NOTE: Per una licenza per pool di capacità, è possibile utilizzare la capacità inutilizzata di un pool esistente. Se necessario, è possibile aumentare la capacità aggiornando la licenza.
+
+** Se entrambi i nodi hanno una licenza per pool di capacità, appartengono allo stesso pool di capacità.
+** È stato applicato lo stesso tipo di licenza a entrambi i nodi.
+
+
+--
++
+Il requisito di licenza per ogni nodo (nuovo ed esistente) in un cluster a due nodi è il doppio del requisito per un cluster a nodo singolo:
+
++
+--
+** Per un cluster a nodo singolo, è disponibile la licenza completa per gli aggregati di dati. Ad esempio, un singolo nodo con una licenza 1TB può ospitare 1TB TB di aggregati di dati.
+** Per un cluster a due nodi, metà della capacità di licenza viene utilizzata per gli aggregati di dati su ciascun nodo, l'altra metà viene consumata dai dischi mirror degli aggregati di dati per il nodo partner corrispondente. Ad esempio, due nodi con un host di licenze da 2TB TB 1TB TB di aggregati di dati ciascuno per dare una capacità totale disponibile di 2TB TB combinata per gli aggregati di dati e 2TB TB per ospitare i dischi mirror degli aggregati.
+
+
+--
++
+Per ulteriori informazioni sulle licenze, vedere link:concept_lic_evaluation.html["Licenza"] sezione.
+
+* Gli archivi dati collegati ai nodi soddisfano i seguenti criteri:
++
+** Gli archivi dati del nodo esistente devono essere dello stesso tipo, ad esempio VMware Virtual Machine file System (VMFS)-5, VMFS-6 o NFS.
+** Il datastore collegato al nuovo nodo deve essere dello stesso tipo del datastore predefinito per il nodo esistente.
+** Gli archivi dati sul nodo esistente devono avere uno spazio libero pari o superiore allo spazio utilizzato sul nodo.
+** Lo spazio libero sul datastore collegato al nuovo nodo deve essere il doppio dello spazio occupato totale sul nodo esistente.
+
+
+* Entrambi i nodi ONTAP Select sono dello stesso tipo di istanza.
+
+
+.Requisiti hardware e software
+I nodi nuovi ed esistenti devono soddisfare diversi requisiti hardware e software:
+
+* Il cluster a nodo singolo esistente esegue ONTAP 9.13.1 o versioni successive.
+* Gli host ESX per i nodi nuovi ed esistenti soddisfano i seguenti criteri:
++
+** Supportano vCenter Server 7,0 Update 3 o versione successiva. NetApp consiglia inoltre vCenter Server 7,0 o versione successiva.
+** Dispongono di una rete interna per la connessione intercluster.
+
+
+* Il nodo esistente e il nuovo nodo sono tipi di RAID hardware.
+* Per un tipo di istanza di piccole dimensioni, il nodo ha un minimo di 16GB GB di RAM e quattro CPU. Per un tipo di istanza di grandi dimensioni, il nodo ha un massimo di 128GB GB di RAM e 16 CPU.
+
+
+.Limitazioni di espansione dei cluster
+Sono da tenere presenti le seguenti limitazioni per un'espansione cluster ONTAP Select:
+
+* La procedura supporta solo l'espansione di un cluster a nodo singolo in un cluster a due nodi.
+* L'espansione è limitata a 64TB TB di capacità totale del datastore; la capacità dello storage dei dati è di 32TB TB e i 32TB rimanenti sono spazio aggiuntivo per il mirroring dei dati.
+* L'espansione del cluster è supportata solo per i tipi di cluster e nodi RAID hardware. L'espansione a tipi di RAID hardware e software misti non è supportata.
+
+
+La figura seguente illustra la configurazione a nodo singolo prima dell'espansione e la configurazione della coppia ha a due nodi dopo l'espansione.
+image:cluster_expansion_two_node.PNG["diagramma di espansione del cluster da nodo singolo a due nodi"]
+
+.Avviare la procedura di espansione del cluster
+Per avviare l'implementazione di ONTAP Select ed eseguire la procedura di espansione del cluster, eseguire i seguenti comandi dall'interfaccia CLI:
+
+. `node add -cluster-name <cluster_name> -nodes <2nd_node_name>`
+. `node modify -cluster-name <cluster_name> -name <1st_node_name> -internal-networks ONTAP-Internal`
+. `node modify -cluster-name <cluster_name> -name <2nd_node_name> -mgmt-ip <node_ip> -host-name <host_name> -management-networks ONTAP-Management -internal-networks ONTAP-Internal -data-networks ONTAP-External -passthrough-disks false`
+. `node storage pool attach -cluster-name <cluster_name> -node-name <2nd_node_name> -name <storage_pool_name> -capacity-limit <capacity>`
+. `cluster expand -name <cluster_name>`
++
+Quando richiesto, inserire la password dell'amministratore ONTAP.
+
+

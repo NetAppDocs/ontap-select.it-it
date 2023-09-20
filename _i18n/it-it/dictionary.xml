@@ -1525,8 +1525,6 @@
   <block id="12f423cf4aa4ff75a7ca9220c1c56cd8" category="paragraph">Le Note di rilascio per ONTAP Select forniscono informazioni specifiche sulla release, tra cui nuove funzionalità, configurazioni supportate, note sull'aggiornamento, problemi noti, problemi risolti e limitazioni note.</block>
   <block id="e1060dc2ca9dac04bf54c9156ff74480" category="admonition">Per accedere alle Note di rilascio, devi disporre di un account per accedere al NetApp Support Site.</block>
   <block id="9c62f110f4b589aa5470f4d43f3a8d6a" category="paragraph-title">Versione corrente di ONTAP Select</block>
-  <block id="f35dd9a9dbe889bc05b23cec8774b252" category="inline-link">Note sulla versione di ONTAP Select 9.12.1</block>
-  <block id="b3075927414c52e4bd4c7e822453d175" category="paragraph">È possibile accedere a.<block ref="3ec17b33e7ccb0ff402fc289d09bfa2b" category="inline-link-rx"></block> per visualizzare i dettagli sulla versione corrente.</block>
   <block id="72c6c134de9cf5ac97e05f3ab4e187b8" category="paragraph-title">Versioni precedenti di ONTAP Select</block>
   <block id="a300be52ac6bc20637c7ea03e867e8d8" category="paragraph">Per accedere alle Note di rilascio relative alle versioni precedenti del prodotto, vedere:</block>
   <block id="f1dfdf3ad3b4debf7b9ee14f56bcdf31" category="list-text"><block ref="f1dfdf3ad3b4debf7b9ee14f56bcdf31" category="inline-link-rx"></block></block>
@@ -2160,7 +2158,6 @@
   <block id="bc8028393dfe2dad42a885ee42952937" category="inline-link-macro">Novità di questa release</block>
   <block id="81f4b69f6b074a0894dc780d0c5fe22f" category="list-text"><block ref="81f4b69f6b074a0894dc780d0c5fe22f" category="inline-link-macro-rx"></block></block>
   <block id="93c13bfba0d6bca47835d55338a89bcb" category="section-title">Consultare la documentazione del prodotto</block>
-  <block id="14f3d38ecd199a3a7efaea74103df87f" category="paragraph">ONTAP Select 9.12.1 può essere implementato su VMware ESXi. Questo sito contiene la documentazione per ONTAP Select 9.12.1, 9.11.1, 9.10.1, 9.9.1, 9.8, E 9.7 su VMware ESXi, oltre alla documentazione indipendente dall'hypervisor (come l'API REST).</block>
   <block id="f24c86f59b1831aca015361d668be674" category="paragraph">È possibile trovare le note di rilascio e la documentazione per la versione KVM del prodotto, come supportato con le release precedenti, all'indirizzo<block ref="39a2274ac9dcd1e1802780008f8c7665" category="inline-link-rx"></block>.</block>
   <block id="a753bf5f3b9313fdceb106b5c3e89d3f" category="section-title">Ottieni maggiori informazioni e connettiti con i colleghi</block>
   <block id="e4781b422f188feda95092622ffa38cb" category="list-text"><block ref="e4781b422f188feda95092622ffa38cb" category="inline-link-macro-rx"></block></block>
@@ -2715,8 +2712,6 @@
   <block id="65691488761a7747318eb7ff73d74467" category="paragraph">È possibile utilizzare ONTAP Select per implementare storage aggiuntivo in grado di aumentare le funzionalità dello storage primario. Lo storage aggiuntivo può essere utilizzato per supportare le attività di disaster recovery e i piani di backup dei dati della tua organizzazione.</block>
   <block id="201682dba6c42f044edb1fb3b72e26dd" category="section-title">Sviluppo e test</block>
   <block id="72baaefd6e8827d0e29d5eccbe87eb9d" category="paragraph">Durante la distribuzione di varie applicazioni all'interno dell'organizzazione, è possibile utilizzare ONTAP Select come parte integrante del processo generale di sviluppo e test delle applicazioni. Ad esempio, potrebbe essere necessario uno storage temporaneo per memorizzare i dati di input o output di test. La lunghezza di questi tipi di implementazioni può variare in base alle caratteristiche e ai requisiti dell'applicazione.</block>
-  <block id="132bf791073c4b17c13357c14b6562bf" category="summary">Se si utilizza ONTAP Select su VMware ESXi, è possibile aggiornare il software ESXi da una versione precedente supportata a ESXi 6.5 o 6.7. Prima di eseguire l'aggiornamento, è necessario comprendere il processo e selezionare la procedura di aggiornamento appropriata.</block>
-  <block id="d2283a8b3afa21d3f713bd9cda08fb85" category="doc">Aggiornamento di VMware ESXi alla versione 6.5 e successive</block>
   <block id="ce78f638c1329fc432323298fd5ab053" category="paragraph">Prima di aggiornare il software ESXi sugli hypervisor che ospitano un cluster ONTAP Select, è necessario preparare e selezionare la procedura di aggiornamento appropriata per il proprio ambiente.</block>
   <block id="a74a74cc9eac206cd17b389aebee1edf" category="admonition">Se si sceglie di eseguire l'aggiornamento a VMware ESXi 6.5, è necessario eseguire l'aggiornamento a ESXi U2 (build 8294253) o superiore. L'utilizzo di ESXi 6.5 U1 può esporre l'utente a un guasto di una macchina virtuale dovuto a un bug noto di VMware.</block>
   <block id="c4e95f89325739a12066fe59a8c74035" category="section-title">Acquisire familiarità con l'aggiornamento di VMware ESXi</block>
@@ -2726,7 +2721,6 @@
   <block id="d98bf1b619a94ca49b2cf4e249269541" category="list-text">Le dimensioni del cluster ONTAP Select sono supportate sia cluster a nodo singolo che cluster a nodo multiplo.</block>
   <block id="c9a714bea6de08f5989eee603a121dae" category="list-text">L'utilizzo dell'aggiornamento ONTAP Select Deploy è possibile sia con che senza l'utility di implementazione.</block>
   <block id="649ae0572dea5b8bc6208820d18b8e73" category="admonition">Selezionare una procedura di aggiornamento che utilizzi l'utility di amministrazione di deploy.</block>
-  <block id="cbd6ddbbce02203098e22e613d37b57b" category="paragraph">L'esecuzione di un aggiornamento ESXi con l'utility di amministrazione di Deploy è l'opzione più generale e resiliente. Tuttavia, potrebbero esserci delle istanze quando la distribuzione non è disponibile o non può essere utilizzata. Ad esempio, l'aggiornamento a ESXi 6.5 non è supportato con le versioni precedenti di ONTAP Select e l'utility di amministrazione di deploy.</block>
   <block id="d24e4d209595dd00d983cbed66cc28da" category="paragraph">Se si utilizzano queste versioni precedenti e si tenta di eseguire un aggiornamento, è possibile lasciare la macchina virtuale ONTAP Select in uno stato in cui non è possibile avviarla. In questo caso, è necessario selezionare una procedura di aggiornamento che non utilizza la distribuzione. Fare riferimento a *1172198* per ulteriori informazioni.</block>
   <block id="4331a924031e9c4e425fc81ec923f3c4" category="section-title">Aggiornamento dell'utility di amministrazione di Deploy</block>
   <block id="f037c33af478257218bc64b1facea5ab" category="paragraph">Prima di eseguire una procedura di aggiornamento utilizzando l'utility di distribuzione, potrebbe essere necessario aggiornare l'istanza di distribuzione. In generale, è necessario eseguire l'aggiornamento alla versione più recente di Deploy. È necessario utilizzare almeno Deploy 2.5 o versione successiva. L'utility di distribuzione deve supportare la versione di ONTAP Select in uso. Per ulteriori informazioni, consultare le note di rilascio di ONTAP Select.</block>
@@ -2737,7 +2731,6 @@
   <block id="b150b43a1c50821ffa6faf08aa2b2fec" category="paragraph">È necessario utilizzare la versione di distribuzione 2.5 o successiva.</block>
   <block id="681dd84e331133125fc528e3066ea4b7" category="list-text">Spostare il nodo nello stato offline.</block>
   <block id="3a5d7f86dd219466ffbcb0e2f8ffd034" category="paragraph">Esempio<block ref="1d9004e86530b1ab04f3876007089fa3" prefix=" " category="inline-code"></block></block>
-  <block id="92e4e00b84d8a746bc85b6d5962866e2" category="list-text">Aggiornare l'host dell'hypervisor in cui è in esecuzione ONTAP Select a ESXi 6.5 o 6.7 utilizzando la procedura fornita da VMware.</block>
   <block id="577326be3a2834459d5d211f052684dd" category="paragraph">Per ulteriori informazioni, fare riferimento a _before you begin_.</block>
   <block id="d1c1e91e03c71fa9882b17583973d0c4" category="list-text">Spostare il nodo nello stato online.</block>
   <block id="fb373c881fd0931abd6943e8bcf86440" category="paragraph">Esempio<block ref="7f4a244ceab3e93b8a7b88a17bb9bde0" prefix=" " category="inline-code"></block></block>
@@ -2934,13 +2927,11 @@
   <block id="5155efbcd1e27494a48f0822b79e35fa" category="list-text"><block ref="5155efbcd1e27494a48f0822b79e35fa" category="inline-link-macro-rx"></block></block>
   <block id="d7af9ae95a1e59c78282dc165f7f88f0" category="list-text"><block ref="d7af9ae95a1e59c78282dc165f7f88f0" category="inline-link-macro-rx"></block></block>
   <block id="2e872cc50863e55fb4478e06d9231f07" category="summary">È necessario installare l'utility di amministrazione di ONTAP Select Deploy e utilizzare l'utility per creare un cluster ONTAP Select.</block>
-  <block id="9451ede3dcf8c6274c0874b432242b1d" category="section-title">Download dell'immagine della macchina virtuale</block>
   <block id="4457cc766e233dbf5bfec7006eded349" category="paragraph">È possibile scaricare il pacchetto ONTAP Select dal sito di supporto NetApp.</block>
   <block id="428ed2a3ebb9fd9f1d5b11240dec37f3" category="paragraph">L'utility di amministrazione di ONTAP Select Deploy viene fornita come macchina virtuale basata sullo standard OVF (Open Virtualization Format). Il singolo file compresso ha il suffisso<block ref="f81b21fb4e12a0e6917f955a9a305553" prefix=" " category="inline-code"></block>.</block>
   <block id="97cb0dfea21cc934eab612152be86e44" category="list-text">Accedere al sito di supporto NetApp utilizzando un browser Web e fare clic su *link rapidi al supporto*.</block>
   <block id="49f3378bb78e3d9783ddf1d56b07097e" category="list-text">Selezionare la versione desiderata del pacchetto.</block>
   <block id="a0ce89b8db68d7f3e4fb721f6bf6c751" category="list-text">Selezionare e scaricare il pacchetto appropriato, rispondendo a tutte le richieste in base alle necessità.</block>
-  <block id="4ce7c1d0ecac9ee18490989135de7a8f" category="section-title">Implementazione della macchina virtuale</block>
   <block id="24d390150f97fa124ebe58c6f7ce9bb7" category="paragraph">È necessario installare e avviare la macchina virtuale ONTAP Select Deploy utilizzando l'immagine della macchina virtuale OVF. Nell'ambito del processo di installazione, è necessario configurare l'interfaccia di rete in modo che utilizzi DHCP o una configurazione IP statica.</block>
   <block id="efcc2f6be3ed35ac69f6663f683772f3" category="paragraph">È necessario prepararsi per implementare la macchina virtuale ONTAP Select Deploy:</block>
   <block id="780f7110b279a0cc42242a48431ab5bd" category="list-text">Abilitare la funzionalità OVF nel browser installando il plug-in di integrazione del client VMware o eseguendo una configurazione simile in base alle necessità</block>
@@ -2966,7 +2957,6 @@
   <block id="c5d6ff59e8e5595e5fc323f4237b333c" category="paragraph">Utilizzare DHCP per impostare le informazioni di rete? [n]:</block>
   <block id="4c2427d11d6824d2270f4f66eaa29805" category="list-text">Digitare *n* per definire una configurazione IP statica o y per utilizzare DHCP, quindi premere *Invio*.</block>
   <block id="79a72de3f5191386741777dd0441f591" category="list-text">Se si sceglie una configurazione statica, fornire tutte le informazioni di configurazione di rete necessarie.</block>
-  <block id="9a51bd26983db2f29b85944ae1a3fd6e" category="section-title">Accesso all'interfaccia Web di implementazione</block>
   <block id="887ee30caedf2bee91979565f5ddf01e" category="paragraph">Accedere all'interfaccia utente Web per verificare che l'utilità di implementazione sia disponibile ed eseguire la configurazione iniziale.</block>
   <block id="32be4d152f2326423c990dde583d8768" category="list-text">Puntare il browser verso l'utility di implementazione utilizzando l'indirizzo IP o il nome di dominio:</block>
   <block id="cc0e719d3ebda123b94502d26d56a7eb" category="paragraph"><block ref="5ecf8b6869afd2efb46edbb07a649207" prefix="" category="inline-code"></block></block>
@@ -3365,8 +3355,6 @@
   <block id="880e4da9bcc9725e517c69e219a63339" category="paragraph">Per implementare un cluster ONTAP Select, l'organizzazione deve disporre di una licenza VMware vSphere valida per gli host hypervisor in cui viene eseguito ONTAP Select. Utilizzare le licenze appropriate per l'implementazione.</block>
   <block id="da132c60d8df0a4756d0a1e64618decf" category="section-title">Compatibilità software</block>
   <block id="f2df12ffd4f2520acaaeab11317642da" category="paragraph">ONTAP Select può essere implementato sui seguenti hypervisor:</block>
-  <block id="cb09cc9a7c5645adef2952e42c8113a4" category="list-text">VMware ESXi 6.5 U2 (build 8294253 o superiore)</block>
-  <block id="6d49558f2efead8b9c52640d24baa9c6" category="list-text">VMware ESXi 6.7 GA (build 8169922 o superiore) inclusi 6.7 U1, U2 e U3</block>
   <block id="33b6370e1de46bd324564163dfaf48a9" category="list-text">VMware ESXi 7.0 GA (build 15843807 o superiore) inclusi 7.0 U1, U2 e U3C</block>
   <block id="3522298772b42c1feed00428b1765cfd" category="admonition">NetApp supporta ONTAP Select sulle versioni identificate di ESXi, a condizione che anche VMware continui a supportare le stesse versioni.</block>
   <block id="b4d68fa6f7a2f05a7861fc01bd7d54df" category="section-title">Aggiornamento a VMware ESXi 6.5 U2 o versione successiva</block>
@@ -3663,4 +3651,153 @@ Qualsiasi modifica a Cluster IPSpace, inclusa l'aggiunta o la rimozione di porte
   <block id="d92261c550ee327019eb3a3ca7a78e30" category="paragraph">Verificare che la funzione ONTAP Select AutoSupport sia configurata e quindi eseguire il backup dei dati di configurazione di ONTAP Select Deploy.</block>
   <block id="7284a07b58626766b72ec946cfd845c9" category="admonition">Le informazioni sul supporto dello storage esterno sono riportate nella <block ref="e339e9377e7bf65a8e1fae3dee4b8697" category="inline-link-macro-rx"></block>.</block>
   <block id="8542ad0a9f97f96320929367de2b74cc" category="list-text">VMware ESXi 7,0 GA (build 15843807) o versione successiva</block>
+  <block id="8930a560533f598bac6dd3f7f9bfedb6" category="summary">Espandi un cluster esistente a nodo singolo in un cluster a due nodi configurando entrambi i nodi come coppia ha (high Availability).</block>
+  <block id="c0fa4ded01a6d24b2a77cd3a6b10e6e7" category="doc">Espandere il cluster</block>
+  <block id="9ee92687843ac50c08d2dcb3c75ec679" category="paragraph">A partire da ONTAP 9.13.1, puoi espandere un cluster a nodo singolo esistente in un cluster a due nodi configurando entrambi i nodi come coppia ha (high Availability). L'espansione a un cluster ha a due nodi offre high-Availability, che ti protegge dall'impatto dell'interruzione di un nodo sulla capacità di un cluster di erogare i dati.</block>
+  <block id="2e8a327b283fd50b16d1b5295d65b015" category="paragraph">La procedura viene automatizzata e avviata da ONTAP Select Deploy utilizzando l'interfaccia CLI o Web. Si tratta di una procedura distruttiva.</block>
+  <block id="0c76347c001891562a0f24f80b85e516" category="paragraph-title">Prerequisiti di espansione cluster</block>
+  <block id="e0fd129ed78300784653b377b8198dbb" category="paragraph">Prima di avviare la procedura di espansione del cluster, verificare di soddisfare i seguenti prerequisiti:</block>
+  <block id="44a3770a41ceabe41ad75ce81596fa56" category="list-text">Il nodo esistente è acceso.</block>
+  <block id="1f82de86080fe46e8a75ac3507754123" category="list-text">L'aggiornamento del cluster sul nodo esistente è stato eseguito correttamente.</block>
+  <block id="ecf4c2fcb52cc03a7c2d7b050f653f18" category="list-text">Gli host ESX per i nodi nuovi ed esistenti hanno la stessa configurazione.</block>
+  <block id="e493ed3a4bfea3ebf118f361ad92ba47" category="list-text">È stato eseguito correttamente il controllo della connettività di rete tra gli host ESX per i nodi esistenti e nuovi.</block>
+  <block id="eb0f08fae2c41a7793a912980295a2e5" category="list-text">Per utilizzare la procedura di espansione del cluster di implementazione di ONTAP Select, è necessario disporre di una licenza di valutazione (90 giorni) e di una licenza di produzione (Tier di capacità o pool di capacità). Verificare di soddisfare i seguenti requisiti di licenza:</block>
+  <block id="d994644aa0b2bc896cb4e64956675a0d" category="list-text">Disponi del Tier di capacità o della licenza pool di capacità necessari per il nuovo nodo.</block>
+  <block id="f704690c246db554ef6568a89bdff702" category="admonition">Per una licenza per pool di capacità, è possibile utilizzare la capacità inutilizzata di un pool esistente. Se necessario, è possibile aumentare la capacità aggiornando la licenza.</block>
+  <block id="305a476aa1b8f3372c65ac3346486cf2" category="list-text">Se entrambi i nodi hanno una licenza per pool di capacità, appartengono allo stesso pool di capacità.</block>
+  <block id="62ab77cacb864affe5ac1c6e259a142c" category="list-text">È stato applicato lo stesso tipo di licenza a entrambi i nodi.</block>
+  <block id="cd43d984bcc3a4f711cfa1af282b7455" category="paragraph">Il requisito di licenza per ogni nodo (nuovo ed esistente) in un cluster a due nodi è il doppio del requisito per un cluster a nodo singolo:</block>
+  <block id="1b6b2c9a82282029d8cd12086bc16748" category="list-text">Per un cluster a nodo singolo, è disponibile la licenza completa per gli aggregati di dati. Ad esempio, un singolo nodo con una licenza 1TB può ospitare 1TB TB di aggregati di dati.</block>
+  <block id="4fe400ca1b94c1aadc6481c02d68ee64" category="list-text">Per un cluster a due nodi, metà della capacità di licenza viene utilizzata per gli aggregati di dati su ciascun nodo, l'altra metà viene consumata dai dischi mirror degli aggregati di dati per il nodo partner corrispondente. Ad esempio, due nodi con un host di licenze da 2TB TB 1TB TB di aggregati di dati ciascuno per dare una capacità totale disponibile di 2TB TB combinata per gli aggregati di dati e 2TB TB per ospitare i dischi mirror degli aggregati.</block>
+  <block id="11f428ea307b5e86300719c1b6dc8fea" category="paragraph">Per ulteriori informazioni sulle licenze, vedere <block ref="9575ba7bfcdc84cc585701a17575801c" category="inline-link-macro-rx"></block> sezione.</block>
+  <block id="92ae53adefd2bce2616eabbc31ca99d6" category="list-text">Gli archivi dati collegati ai nodi soddisfano i seguenti criteri:</block>
+  <block id="ecfe3a20b4af8b63e0f7fd2223373048" category="list-text">Gli archivi dati del nodo esistente devono essere dello stesso tipo, ad esempio VMware Virtual Machine file System (VMFS)-5, VMFS-6 o NFS.</block>
+  <block id="e8534479a8ab3e9f651571dccdd016b9" category="list-text">Il datastore collegato al nuovo nodo deve essere dello stesso tipo del datastore predefinito per il nodo esistente.</block>
+  <block id="d41741a2b7d1a4249520e3eedfa415d3" category="list-text">Gli archivi dati sul nodo esistente devono avere uno spazio libero pari o superiore allo spazio utilizzato sul nodo.</block>
+  <block id="9d430f9d9bdca636bf2bd34d0ca10048" category="list-text">Lo spazio libero sul datastore collegato al nuovo nodo deve essere il doppio dello spazio occupato totale sul nodo esistente.</block>
+  <block id="f509b7af47ddc6f61e01296750db0a94" category="list-text">Entrambi i nodi ONTAP Select sono dello stesso tipo di istanza.</block>
+  <block id="630e5660de352108f57840f67c4ce73b" category="paragraph-title">Requisiti hardware e software</block>
+  <block id="1deab229dd7288feb521151130a73e51" category="paragraph">I nodi nuovi ed esistenti devono soddisfare diversi requisiti hardware e software:</block>
+  <block id="ab12d295318edecf8e697f5aa1e28b04" category="list-text">Il cluster a nodo singolo esistente esegue ONTAP 9.13.1 o versioni successive.</block>
+  <block id="571bab1b8c172b818850c083f2b7d219" category="list-text">Gli host ESX per i nodi nuovi ed esistenti soddisfano i seguenti criteri:</block>
+  <block id="b16daec5e991a4bdaff00495ee637ff3" category="list-text">Supportano vCenter Server 7,0 Update 3 o versione successiva. NetApp consiglia inoltre vCenter Server 7,0 o versione successiva.</block>
+  <block id="135e04137c0f3fc2a13414acc2f294fc" category="list-text">Dispongono di una rete interna per la connessione intercluster.</block>
+  <block id="3007f0b4c8fb013252aaf0d42faf5b5a" category="list-text">Il nodo esistente e il nuovo nodo sono tipi di RAID hardware.</block>
+  <block id="b1f291eee188a7c63f37b91bcf001a94" category="list-text">Per un tipo di istanza di piccole dimensioni, il nodo ha un minimo di 16GB GB di RAM e quattro CPU. Per un tipo di istanza di grandi dimensioni, il nodo ha un massimo di 128GB GB di RAM e 16 CPU.</block>
+  <block id="8237ba6c0c380781f49dc22af5f26bcf" category="paragraph-title">Limitazioni di espansione dei cluster</block>
+  <block id="b5355429781ee9ef7d73aa9f8fe3d3b3" category="paragraph">Sono da tenere presenti le seguenti limitazioni per un'espansione cluster ONTAP Select:</block>
+  <block id="3f3b17881e2b6e6eadaf34fd18c031cc" category="list-text">La procedura supporta solo l'espansione di un cluster a nodo singolo in un cluster a due nodi.</block>
+  <block id="cb33ce1462fe7e5b557f6db4425ece2e" category="list-text">L'espansione è limitata a 64TB TB di capacità totale del datastore; la capacità dello storage dei dati è di 32TB TB e i 32TB rimanenti sono spazio aggiuntivo per il mirroring dei dati.</block>
+  <block id="afa22359d4f3cf79284a0728560e7264" category="list-text">L'espansione del cluster è supportata solo per i tipi di cluster e nodi RAID hardware. L'espansione a tipi di RAID hardware e software misti non è supportata.</block>
+  <block id="27025ea85d4bc0d28bef7e51e8da61f3" category="inline-image-macro">diagramma di espansione del cluster da nodo singolo a due nodi</block>
+  <block id="3a42ded421b7b7328d29348b4f404e36" category="paragraph">La figura seguente illustra la configurazione a nodo singolo prima dell'espansione e la configurazione della coppia ha a due nodi dopo l'espansione.
+<block ref="6e6de549f8b72b049bce1f29ebacc7fc" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="287742be1329b1bd7bf7d7fb169b2fa6" category="paragraph-title">Avviare la procedura di espansione del cluster</block>
+  <block id="e3321a5f63313219081d62cede2f8ca2" category="paragraph">Per avviare l'implementazione di ONTAP Select ed eseguire la procedura di espansione del cluster, eseguire i seguenti comandi dall'interfaccia CLI:</block>
+  <block id="e0f45ff72f2d7d91d9e112f7c7b7e686" category="list-text"><block ref="f0489c17dde991a8954f812ebbe2a6c0" prefix="" category="inline-code"></block></block>
+  <block id="31792351955ddd5711877797e67e90e6" category="list-text"><block ref="66866e8e2f0d236b0f23317b92e3498d" prefix="" category="inline-code"></block></block>
+  <block id="c2187f782201a45ff7b8db0effd6da3e" category="list-text"><block ref="091de9b7e3eb6abf6d66ba8e5e98d03f" prefix="" category="inline-code"></block></block>
+  <block id="8ae8ceb1e3c34f71654ecd45e3edd18b" category="list-text"><block ref="1e50fe28b3ba1196bf5c7e0d1f4aa881" prefix="" category="inline-code"></block></block>
+  <block id="cc85e5e33f89d779593267f90f3de591" category="list-text"><block ref="2437f2194443c2e0de2deac482449798" prefix="" category="inline-code"></block></block>
+  <block id="492625061ab08d886a40d6113d7d5261" category="paragraph">Quando richiesto, inserire la password dell'amministratore ONTAP.</block>
+  <block id="dd4c12bfc49beb3edaea04166917c887" category="paragraph">ONTAP Select 9.13.1 può essere implementato su VMware ESXi. Questo sito contiene la documentazione per ONTAP Select 9.13.1, 9.12.1, 9.11.1, 9.10.1, 9,9.1, 9,8 e 9,7 in esecuzione su VMware ESXi così come la documentazione indipendente dall'hypervisor (come l'API REST).</block>
+  <block id="015a51a212cad15ae88ab6926256ef36" category="inline-link-macro">Avviso per ONTAP Select 9.13.1</block>
+  <block id="e9deea859bf1ecf9513d6b6ff2f0d72b" category="list-text"><block ref="e9deea859bf1ecf9513d6b6ff2f0d72b" category="inline-link-macro-rx"></block></block>
+  <block id="d1c880d2d3422bfbdd2ae687b1d78a6f" category="list-text">NVMe su TCP</block>
+  <block id="5062d6ea23d4fd55ee88803b528d99a6" category="inline-link">Note sulla versione di ONTAP Select 9.13.1</block>
+  <block id="4bd7854eb0f9c44ba581e8e66001d6a2" category="paragraph">È possibile accedere a.<block ref="a3fdd86b36a3532f43f007788a7d3f9e" category="inline-link-rx"></block> per visualizzare i dettagli sulla versione corrente.</block>
+  <block id="64a49455734301778985c42afcafa1b5" category="list-text">VMware ESXi 8,0 GA (build 20513097)</block>
+  <block id="9702dfddce9ca846a20b21815bd5bf71" category="list-text">VMware ESXi 8,0 U1 (build 21495797)</block>
+  <block id="c9dd6bad4c7d561872f2e2d498a990bf" category="inline-link">Tool di matrice di interoperabilità (IMT)</block>
+  <block id="2dbfa835ab3a0bf6c79ee95b561f1daf" category="admonition">ESXi 6,5 GA e ESXi 6,7 GA stanno raggiungendo la fine dello stato di disponibilità. Se si dispone di cluster ONTAP Select con queste versioni, è necessario eseguire l'aggiornamento alle versioni supportate in base a.<block ref="2b761b14db6e131ceb5a9ee87e5e085a" category="inline-link-rx"></block>.</block>
+  <block id="be89bf0bd68c0f721ab7e25e408b6fa7" category="summary">Se si esegue ONTAP Select su VMware ESXi, è possibile aggiornare il software ESXi da una versione precedente supportata a ESXi 7,0 o versione successiva. Prima di eseguire l'aggiornamento, è necessario comprendere il processo e selezionare la procedura di aggiornamento appropriata.</block>
+  <block id="945bbea596cf9bf88be28497537ef993" category="doc">Aggiornamento di VMware ESXi alla versione 7,0 o successiva</block>
+  <block id="817a2297c74a908c3261968059682b32" category="paragraph">L'esecuzione di un aggiornamento ESXi con l'utility di amministrazione di Deploy è l'opzione più generale e resiliente. Tuttavia, potrebbero esserci delle istanze quando la distribuzione non è disponibile o non può essere utilizzata. Ad esempio, l'aggiornamento a ESXi 7,0 non è supportato dalle versioni precedenti di ONTAP Select e dall'utilità di amministrazione di distribuzione.</block>
+  <block id="f87065c0eaa86d23a9d0bc62defec91b" category="list-text">Aggiornare l'host dell'hypervisor in cui ONTAP Select è in esecuzione a ESXi 7,0 o versioni successive utilizzando la procedura fornita da VMware.</block>
+  <block id="1e2be71e8b4858c0b3e832cba35731d1" category="section-title">ONTAP Select 9.13.1</block>
+  <block id="cdbcb12eafeb6cc1f6a058e9c52a7f8d" category="paragraph">ONTAP Select 9.13.1 include diverse nuove funzioni e miglioramenti.</block>
+  <block id="85c9296df6a3c9630ed684b4af8847a8" category="list-text">Espansione del cluster</block>
+  <block id="d59048f21fd887ad520398ce677be586" category="inline-link-macro">Scopri di più</block>
+  <block id="406ccb0f77a29335e34c2bfe9553fc82" category="list-text">ONTAP Select 9.13.1 introduce l'espansione del cluster, che offre protezione dall'alta disponibilità (ha) in caso di impatto di un'interruzione del nodo sulla capacità di un cluster di erogare i dati. A partire da ONTAP Select 9.13.1, puoi espandere un cluster a nodo singolo in un cluster a due nodi configurando entrambi i nodi come coppia ha. La procedura viene automatizzata e avviata da ONTAP Select Deploy utilizzando l'interfaccia CLI o Web. Per eseguire questa procedura, è necessario soddisfare determinati requisiti hardware e software. <block ref="42332fd9348b1caa61a2a7319c6d2c9d" category="inline-link-macro-rx"></block>.</block>
+  <block id="58c277c116ff23ffb9879debb95b4968" category="list-text">Supporto di NVMe over TCP</block>
+  <block id="db5f5d6e1e5a3e29724ce78258556ff1" category="list-text">Quando esegui l'upgrade a ONTAP Select 9.13.1, devi disporre della nuova licenza per supportare NVMe su TCP. Questa licenza viene inclusa automaticamente quando si distribuisce ONTAP Select per la prima volta dalla versione 9.13.1.</block>
+  <block id="4d8daf3f51ebf7fefb4dfcf900e9b79d" category="list-text">A partire da ONTAP 9.13.1, VMware ESXi 8,0 GA (build 20513097) è supportato con la versione hardware 4 e successive.</block>
+  <block id="da691cb71c1f879ed7bf93a9a845601a" category="section-title">Scaricare l'immagine della macchina virtuale</block>
+  <block id="8435c401e57e043b0c57edfb0a00c774" category="section-title">Verificare la firma ONTAP Select Deploy OVA</block>
+  <block id="ab07c13a31893a6c9ee2547e7b9df643" category="paragraph">È necessario verificare la firma OVA (Open Virtualization Appliance) di ONTAP Select prima di installare il pacchetto di installazione.</block>
+  <block id="cfa6562e428e1a648631dac061567897" category="paragraph">Verificare che il sistema soddisfi i seguenti requisiti:</block>
+  <block id="80c9c2739b6086de81c8ec7262f87af8" category="list-text">OpenSSL versioni da 1.0.2 a 3,0 per la verifica di base</block>
+  <block id="03018e3ee63fad9b70308ee5184022f9" category="list-text">Accesso Internet pubblico per la verifica OCSP (Online Certificate Status Protocol)</block>
+  <block id="940949e444a7d7ca33644736f8b10bcd" category="list-text">Reperire i seguenti file dalla pagina di download del prodotto sul sito di assistenza NetApp:</block>
+  <block id="0b27918290ff5323bea1e3b78a9cf04e" category="cell">File</block>
+  <block id="249111a1c7f415853c625e0755631d11" category="cell"><block ref="008c7b6d630fe84ef2d584c45f088cb2" prefix="" category="inline-code"></block></block>
+  <block id="e4069d9d0927b15ac9a4b5a57f151285" category="cell">La chiave pubblica utilizzata per verificare la firma.</block>
+  <block id="efe8e2ee824be146dc129d30269a5102" category="cell"><block ref="0c30c017e47f5d9daacaa689d14755a1" prefix="" category="inline-code"></block></block>
+  <block id="a7a0ef9e615ab0d55916e8c44b6b02d8" category="cell">La catena di trust dell'autorità di certificazione pubblica (CA).</block>
+  <block id="b30eb909f1cf7890af614e0a372ebe69" category="cell"><block ref="44d439b98474c4bea1ce90f963d0ce9b" prefix="" category="inline-code"></block></block>
+  <block id="11e28814e8daa6ab60f29e9365e29951" category="cell">Il certificato utilizzato per generare la chiave.</block>
+  <block id="e2ce763ce4c328af6852dedbd857137a" category="cell"><block ref="1699fe41f4360ef312a48730cf26d035" prefix="" category="inline-code"></block></block>
+  <block id="7c8af6e0bab843ab8817d688f7e31835" category="cell">Il file eseguibile di installazione del prodotto per ONTAP Select 9.13.1.</block>
+  <block id="4e4e408ba11d90a1648acdc6230e66d0" category="cell"><block ref="20db26963ac3dc0b119aa4c781855701" prefix="" category="inline-code"></block></block>
+  <block id="51efe37fbdc37f9d0c55c657a430d296" category="cell">L'algoritmo SHA-256 viene sottoposto a hash e quindi firmato dal Remote Support Agent (RSA) utilizzando<block ref="b6ad60ee94a07b2ba8c24c883ec70503" prefix=" " category="inline-code"></block> chiave e firma per il programma di installazione.</block>
+  <block id="1f463ad70f232a0c4114c51cb2a44a5a" category="list-text">Verificare che il<block ref="20db26963ac3dc0b119aa4c781855701" prefix=" " category="inline-code"></block> il file utilizza i certificati e i comandi di convalida associati.</block>
+  <block id="134cfba28fd247854afe7ce4d31767ad" category="list-text">Verificare la firma con il seguente comando:</block>
+  <block id="0ba1987cb555e519f115071e917656fc" category="section-title">Implementare la macchina virtuale</block>
+  <block id="25775c61c3281e6d412f48371102d8b3" category="section-title">Accedere all'interfaccia Web di distribuzione</block>
+  <block id="db05ec33127afb72e99fdef2dd7e222b" category="section-title">Configurare MFA</block>
+  <block id="aef6d7448e31d21fcd5e57734fa1fb88" category="paragraph">A partire da ONTAP Select 9.13.1, l'autenticazione multifattore (MFA) è supportata per l'account amministratore dell'implementazione di ONTAP Select:</block>
+  <block id="b43e5dc621bb5f7a6746a0bf53636924" category="inline-link-macro">ONTAP Select implementa il login CLI MFA utilizzando l'autenticazione YubiKey Personal Identity Verification (PIV) o Fast Identity Online (FIDO2)</block>
+  <block id="f82ace39832c70c06efc78eb1947b6f4" category="list-text"><block ref="f82ace39832c70c06efc78eb1947b6f4" category="inline-link-macro-rx"></block></block>
+  <block id="cebd67670761a5da244bef9609848dcb" category="list-text"><block ref="c4c2e789fdec94b8ef39088bdc0b1cb6" category="inline-xref-macro-rx"></block></block>
+  <block id="4ca5ee356d097d93144cfeb2518d619a" category="section-title">ONTAP Select implementa il login CLI MFA utilizzando l'autenticazione YubiKey PIV o FIDO2</block>
+  <block id="b3725c8fd10aa9a2adf70ad57738023c" category="section-title">PIV YubiKey</block>
+  <block id="a6fe75fc63ca141194b414c175d2cc5f" category="inline-link-macro">TR-4647: Autenticazione a più fattori in ONTAP</block>
+  <block id="4bf14d500591d8e73d655aed56c2f144" category="paragraph">Configurare il PIN YubiKey e generare o importare la chiave privata e il certificato dell'agente di supporto remoto (RSA) o dell'algoritmo ECDSA (Elliptic Curve Digital Signature Algorithm) seguendo i passaggi descritti nella <block ref="a5f594d2a3d4fe1cd7c633ac516cda13" category="inline-link-macro-rx"></block>.</block>
+  <block id="b3e210c6ecd68c2d26827f1c14c340c0" category="list-text">Per Windows: La sezione *Configurazione client PIV YubiKey per Windows* del report tecnico.</block>
+  <block id="e9b47ad7b72a1ecb0b5d30a048aa46d6" category="list-text">Per MacOS: La sezione *configurazione client PIV YubiKey per MAC OS e Linux* del report tecnico.</block>
+  <block id="54d0308327747160e6c6b7dc700227c1" category="section-title">FIDO2</block>
+  <block id="2019415b8fc23071e4232f343c0ab895" category="paragraph">Se si sceglie di scegliere l'autenticazione YubiKey FIDO2, configurare il PIN YubiKey FIDO2 utilizzando YubiKey Manager e generare la chiave FIDO2 con una Putty-CAC (Common Access Card) per Windows o ssh-keygen per MacOS. La procedura da seguire è riportata nel report tecnico <block ref="a5f594d2a3d4fe1cd7c633ac516cda13" category="inline-link-macro-rx"></block>.</block>
+  <block id="0cb9161b88a09a798735ff874cb58681" category="list-text">Per Windows: La sezione *configurazione client YubiKey FIDO2 per Windows* del report tecnico.</block>
+  <block id="d83115ad366c14a6a480c0d85bed6f85" category="list-text">Per MacOS: La sezione *configurazione client YubiKey FIDO2 per Mac OS e Linux* del report tecnico.</block>
+  <block id="10dc6aa5a383cdc8860db4e3b0f8bf60" category="section-title">Ottenere la chiave pubblica YubiKey PIV o FIDO2</block>
+  <block id="889467bdd100f2f2c376dc3477eb6cd3" category="paragraph">Il reperimento della chiave pubblica dipende dal fatto che si sia un client Windows o MacOS e se si utilizza PIV o FIDO2.</block>
+  <block id="950ec0214988f2cee4280a4a29075cf3" category="list-title">Per Windows:</block>
+  <block id="8d6a89420d27c2eec893fe29cccfc617" category="list-text">Esportare la chiave pubblica PIV utilizzando la funzione *Copia negli Appunti* sotto SSH → certificato come descritto nella sezione *Configurazione del client SSH di Windows Putty-CAC per l'autenticazione PIV YubiKey* a pagina 16 di TR-4647.</block>
+  <block id="d56a5bd77b47be09a794ac2118102335" category="list-text">Esportare la chiave pubblica FIDO2 utilizzando la funzione *Copia negli Appunti* sotto SSH → certificato come descritto nella sezione *Configurazione del client SSH di Windows Putty-CAC per l'autenticazione YubiKey FIDO2* a pagina 30 di TR-4647.</block>
+  <block id="d8932a31f1a3ea027d5c1af6b38df831" category="list-title">Per MacOS:</block>
+  <block id="e489cc8b368bd3ee132f3803c8151d4a" category="list-text">La chiave pubblica PIV deve essere esportata utilizzando<block ref="fdad7cf0556ad767cd0b40ca8200a4a1" prefix=" " category="inline-code"></block> Comando come descritto nella sezione *Configurazione del client SSH Mac OS o Linux per l'autenticazione PIV YubiKey* a pagina 24 di TR-4647.</block>
+  <block id="92275395881e3dde58a2721ffc2f016c" category="list-text">La chiave pubblica FIDO2 si trova in<block ref="c580db344c164b01bb07a17bfda85db7" prefix=" " category="inline-code"></block> file o.<block ref="87c80ab3cf592031066461837cfc5ea4" prefix=" " category="inline-code"></block> A seconda che si utilizzi ECDSA o EDD519, come descritto nella sezione *configurare il client MAC OS o Linux SSH per l'autenticazione YubiKey FIDO2* a pagina 39 di TR-4647.</block>
+  <block id="7554e364dbafdbff96a16b6e1958aa51" category="section-title">Configurazione della chiave pubblica in ONTAP Select Deploy</block>
+  <block id="463ec45e1f25f14c852f797accb188ef" category="paragraph">SSH viene utilizzato dall'account amministratore per il metodo di autenticazione a chiave pubblica. Il comando utilizzato è lo stesso sia che il metodo di autenticazione sia l'autenticazione a chiave pubblica SSH standard o l'autenticazione YubiKey PIV o FIDO2.</block>
+  <block id="d6dd48f51d84aeddf71fc065e33b2eb3" category="paragraph">Per l'autenticazione MFA SSH basata su hardware, i fattori di autenticazione oltre alla chiave pubblica configurata nella distribuzione di ONTAP Select sono i seguenti:</block>
+  <block id="f7fd97c62eac2db373c94fcbbf9ad996" category="list-text">Il PIN PIV o FIDO2</block>
+  <block id="7c4de63e6b87ea14ce9f7e28c8bae2d1" category="list-text">Possesso del dispositivo hardware YubiKey. Per FIDO2, questo viene confermato toccando fisicamente YubiKey durante il processo di autenticazione.</block>
+  <block id="2f749bc08afa54d64b543ebedbb07a59" category="paragraph">Impostare la chiave pubblica PIV o FIDO2 configurata per YubiKey. Il comando CLI di implementazione ONTAP Select<block ref="4e8003b3e13aedbdbae0e2cefcc81e9d" prefix=" " category="inline-code"></block> È lo stesso per PIV o FIDO2 e la stringa della chiave pubblica è diversa.</block>
+  <block id="d77ec4c5ee8d59f72f1f6b297e7d0b7f" category="paragraph">La chiave pubblica è ottenuta da:</block>
+  <block id="ea0f6462129cba41747fd16a699fbdb0" category="list-text">La funzione *Copia negli Appunti* per Putty-CAC per PIV e FIDO2 (Windows)</block>
+  <block id="59bcf48a535c070308e348ff0eb6072c" category="list-text">Esportare la chiave pubblica in un formato compatibile SSH utilizzando<block ref="fdad7cf0556ad767cd0b40ca8200a4a1" prefix=" " category="inline-code"></block> Comando per PIV</block>
+  <block id="f91f5438c03c536c36ab8c75be650eed" category="list-text">Il file della chiave pubblica che si trova in<block ref="e27450519cf8f26be0ac320bff396bb9" prefix=" " category="inline-code"></block> File per FIDO2 (MacOS)</block>
+  <block id="3a7b749a5de6a8e432d510f4c11146e8" category="list-text">Individuare la chiave generata in<block ref="25e9c3d606cf0c8c542629e62d39cd96" prefix=" " category="inline-code"></block> file.</block>
+  <block id="52be2639af408dc18bf18bc365ca5b1c" category="list-text">Aggiungere la chiave generata all'implementazione di ONTAP Select utilizzando il<block ref="79efd197d8563de439f329489f64a255" prefix=" " category="inline-code"></block> comando.</block>
+  <block id="425b3bbc04135a05a75dfa8f1f1690ca" category="list-text">Attivare l'autenticazione MFA con<block ref="29ac8cfa360949bc886c34f99f56ce7b" prefix=" " category="inline-code"></block> comando.</block>
+  <block id="38b6e3ddfe3da156ee999db029f405ab" category="section-title">Accedere a ONTAP Select Deploy utilizzando l'autenticazione PIV YubiKey su SSH</block>
+  <block id="786024c8427e697db51d5ba099540cdd" category="paragraph">È possibile accedere a ONTAP Select Deploy utilizzando l'autenticazione PIV YubiKey su SSH.</block>
+  <block id="872240e5c7be9f19081516cf86692a1c" category="list-text">Dopo aver configurato il token YubiKey, il client SSH e il deploy ONTAP Select, è possibile utilizzare l'autenticazione PIV YubiKey MFA su SSH.</block>
+  <block id="537f7afd03be7b15c5c054ee8d444af6" category="list-text">Accedere a ONTAP Select Deploy. Se si utilizza il client SSH di Windows Putty-CAC, viene visualizzata una finestra di dialogo che richiede di immettere il PIN YubiKey.</block>
+  <block id="5f2a207c324401bbadd72cb5d7a24609" category="list-text">Accedi dal tuo dispositivo con YubiKey collegato.</block>
+  <block id="587b796170a9abac4701cd8aa1bb38cb" category="listing-title">Output di esempio</block>
+  <block id="8c4bb7f7c610b4adc9048e26d1b16545" category="section-title">ONTAP Select implementa il login CLI MFA usando ssh-keygen</block>
+  <block id="8b2b97b78c39d5d348e1374ff3fd45ba" category="paragraph">Il<block ref="5356c138de038f32891acc3ddf8f3ed6" prefix=" " category="inline-code"></block> Command è uno strumento per creare nuove coppie di chiavi di autenticazione per SSH. Le coppie di chiavi vengono utilizzate per automatizzare gli accessi, il single sign-on e l'autenticazione degli host.</block>
+  <block id="6d70341637494536c584f85439a39827" category="paragraph">Il<block ref="5356c138de038f32891acc3ddf8f3ed6" prefix=" " category="inline-code"></block> command supporta diversi algoritmi a chiave pubblica per le chiavi di autenticazione.</block>
+  <block id="fdd2ff2892e86d8ca17b98a7c2b215b9" category="list-text">L'algoritmo viene selezionato con<block ref="b7cc4b6b2b8c0f37377b5cc259385de0" prefix=" " category="inline-code"></block> opzione</block>
+  <block id="bca99f13a64f5c3bdc8afc6a3c9f9ff8" category="list-text">La dimensione della chiave viene selezionata con<block ref="15e4235e578d96be98a6c3f8a346a52c" prefix=" " category="inline-code"></block> opzione</block>
+  <block id="67bd5b443b9ddac4a285cad236c61734" category="list-text">Accedere al sistema ONTAP Select Deploy dopo aver attivato MFA. Si dovrebbe ricevere un output simile al seguente esempio.</block>
+  <block id="3dc7c42d1ccbe1be0c8a490a015c6fbd" category="section-title">Migrazione da autenticazione MFA a autenticazione a fattore singolo</block>
+  <block id="4a2e337dbdc20546fc566f3eccc5e32c" category="paragraph">MFA può essere disattivato per l'account amministratore di distribuzione utilizzando i seguenti metodi:</block>
+  <block id="d52c27f8bd38a7ef569052e521256588" category="list-text">Se è possibile accedere alla CLI Deploy come amministratore utilizzando Secure Shell (SSH), disattivare MFA eseguendo il<block ref="2348285222a19e68a4a4aa4df3c90622" prefix=" " category="inline-code"></block> Dall'interfaccia CLI di deploy.</block>
+  <block id="7cfa19a89f1daea3828b198bcfc36e59" category="list-text">Se non è possibile accedere alla CLI Deploy come amministratore utilizzando SSH:</block>
+  <block id="842bce6b18705a10804c5c82d94ba294" category="list-text">Connettersi alla console video Deploy Virtual Machine (VM) tramite vCenter o vSphere.</block>
+  <block id="094a1a8c17c096d2758f951380aa7b77" category="list-text">Accedere all'interfaccia CLI di deploy utilizzando l'account amministratore.</block>
+  <block id="ec2c1e6f88e6b7ce28d7e80767289832" category="list-text">Eseguire<block ref="2348285222a19e68a4a4aa4df3c90622" prefix=" " category="inline-code"></block> comando.</block>
+  <block id="4963c2f56ac00df8be35eec047756e7b" category="list-text">L'amministratore può eliminare la chiave pubblica con:<block ref="6edcef67fdbd494b424b5b6fe6ff3c33" prefix=" " category="inline-code"></block></block>
 </blocks>

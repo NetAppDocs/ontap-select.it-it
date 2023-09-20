@@ -25,6 +25,7 @@ NOTE: Le funzionalità di ONTAP con dipendenze specifiche dell'hardware non sono
 
 Le seguenti funzioni sono incluse in ONTAP Select e concesse in licenza per impostazione predefinita:
 
+* NVMe su TCP
 * NFS
 * CIFS
 * ISCSI

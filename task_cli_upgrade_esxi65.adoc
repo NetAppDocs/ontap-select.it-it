@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: task_cli_upgrade_esxi65.html 
 keywords: administer, administering, cli, esxi, upgrade, esxi 6.5 
-summary: 'Se si utilizza ONTAP Select su VMware ESXi, è possibile aggiornare il software ESXi da una versione precedente supportata a ESXi 6.5 o 6.7. Prima di eseguire l"aggiornamento, è necessario comprendere il processo e selezionare la procedura di aggiornamento appropriata.' 
+summary: 'Se si esegue ONTAP Select su VMware ESXi, è possibile aggiornare il software ESXi da una versione precedente supportata a ESXi 7,0 o versione successiva. Prima di eseguire l"aggiornamento, è necessario comprendere il processo e selezionare la procedura di aggiornamento appropriata.' 
 ---
-= Aggiornamento di VMware ESXi alla versione 6.5 e successive
+= Aggiornamento di VMware ESXi alla versione 7,0 o successiva
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: 'Se si utilizza ONTAP Select su VMware ESXi, è possibile aggiornare il
 
 
 [role="lead"]
-Se si utilizza ONTAP Select su VMware ESXi, è possibile aggiornare il software ESXi da una versione precedente supportata a ESXi 6.5 o 6.7. Prima di eseguire l'aggiornamento, è necessario comprendere il processo e selezionare la procedura di aggiornamento appropriata.
+Se si esegue ONTAP Select su VMware ESXi, è possibile aggiornare il software ESXi da una versione precedente supportata a ESXi 7,0 o versione successiva. Prima di eseguire l'aggiornamento, è necessario comprendere il processo e selezionare la procedura di aggiornamento appropriata.
 
 
 
@@ -44,7 +44,7 @@ Sono disponibili diverse procedure di aggiornamento. Selezionare la procedura ap
 
 TIP: Selezionare una procedura di aggiornamento che utilizzi l'utility di amministrazione di deploy.
 
-L'esecuzione di un aggiornamento ESXi con l'utility di amministrazione di Deploy è l'opzione più generale e resiliente. Tuttavia, potrebbero esserci delle istanze quando la distribuzione non è disponibile o non può essere utilizzata. Ad esempio, l'aggiornamento a ESXi 6.5 non è supportato con le versioni precedenti di ONTAP Select e l'utility di amministrazione di deploy.
+L'esecuzione di un aggiornamento ESXi con l'utility di amministrazione di Deploy è l'opzione più generale e resiliente. Tuttavia, potrebbero esserci delle istanze quando la distribuzione non è disponibile o non può essere utilizzata. Ad esempio, l'aggiornamento a ESXi 7,0 non è supportato dalle versioni precedenti di ONTAP Select e dall'utilità di amministrazione di distribuzione.
 
 Se si utilizzano queste versioni precedenti e si tenta di eseguire un aggiornamento, è possibile lasciare la macchina virtuale ONTAP Select in uno stato in cui non è possibile avviarla. In questo caso, è necessario selezionare una procedura di aggiornamento che non utilizza la distribuzione. Fare riferimento a *1172198* per ulteriori informazioni.
 
@@ -76,7 +76,7 @@ Se si seleziona una procedura di aggiornamento che utilizza l'utility di distrib
 Esempio
 `node stop --cluster-name <CLUSTERNAME> --node-name <NODENAME>`
 
-. Aggiornare l'host dell'hypervisor in cui è in esecuzione ONTAP Select a ESXi 6.5 o 6.7 utilizzando la procedura fornita da VMware.
+. Aggiornare l'host dell'hypervisor in cui ONTAP Select è in esecuzione a ESXi 7,0 o versioni successive utilizzando la procedura fornita da VMware.
 +
 Per ulteriori informazioni, fare riferimento a _before you begin_.
 
@@ -120,7 +120,7 @@ sdot-d200-011d true true
 Esempio
 `node stop --cluster-name <CLUSTERNAME> --node-name <NODENAME>`
 
-. Aggiornare l'host dell'hypervisor in cui è in esecuzione ONTAP Select a ESXi 6.5 o 6.7 utilizzando la procedura fornita da VMware.
+. Aggiornare l'host dell'hypervisor in cui ONTAP Select è in esecuzione a ESXi 7,0 o versioni successive utilizzando la procedura fornita da VMware.
 +
 Per ulteriori informazioni, consultare la sezione preparazione all'aggiornamento di VMware ESXi.
 
@@ -163,7 +163,7 @@ sdot-d200-012d true true
 .Fasi
 . Accedere all'interfaccia della riga di comando di ONTAP e arrestare il nodo.
 . Utilizzando VMware vSphere, verificare che la macchina virtuale ONTAP Select sia spenta.
-. Aggiornare l'host dell'hypervisor in cui è in esecuzione ONTAP Select a ESXi 6.5 o 6.7 utilizzando la procedura fornita da VMware.
+. Aggiornare l'host dell'hypervisor in cui ONTAP Select è in esecuzione a ESXi 7,0 o versioni successive utilizzando la procedura fornita da VMware.
 +
 Per ulteriori informazioni, consultare la sezione preparazione all'aggiornamento di VMware ESXi.
 
@@ -201,7 +201,7 @@ sdot-d200-011d true true
 .Fasi
 . Accedere all'interfaccia della riga di comando di ONTAP e arrestare il nodo.
 . Utilizzando VMware vSphere, verificare che la macchina virtuale ONTAP Select sia spenta.
-. Aggiornare l'host dell'hypervisor in cui è in esecuzione ONTAP Select a ESXi 6.5 o 6.7 utilizzando la procedura fornita da VMware.
+. Aggiornare l'host dell'hypervisor in cui ONTAP Select è in esecuzione a ESXi 7,0 o versioni successive utilizzando la procedura fornita da VMware.
 +
 Per ulteriori informazioni, fare riferimento a _before you begin_.
 
