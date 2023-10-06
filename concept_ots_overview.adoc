@@ -98,6 +98,7 @@ Qualsiasi modifica a Cluster IPSpace, inclusa l'aggiunta o la rimozione di porte
 * Copie Snapshot a prova di manomissione
 * Migrazione SVM
 * VMware HCX
+* Disaster recovery delle macchine virtuali storage (DR SVM)
 
 
 .Informazioni correlate
