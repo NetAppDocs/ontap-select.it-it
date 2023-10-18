@@ -874,7 +874,6 @@
   <block id="1b3537665f74d77bd14a7f35ea69a8f6" category="inline-link">Field Portal</block>
   <block id="fe31e162adece14e947931ec395b0f76" category="admonition">La release API v3 non è compatibile con le versioni precedenti dell'API. Una nuova guida API è disponibile sul<block ref="8abbc2033805a13177ac70a4f745bc5f" category="inline-link-rx"></block>.</block>
   <block id="2a07e658b19b1a46502dcaa156304d77" category="paragraph-title">È possibile eseguire il backup di ONTAP Select VM con snapshot VMware o di altri produttori?</block>
-  <block id="8574c34cb89a7035153d7bb68d64bc11" category="paragraph">No ONTAP Select VM utilizza dischi indipendenti e persistenti, esclusi dagli snapshot basati su VMware. L'unico metodo supportato per il backup di ONTAP Select è SnapMirror, SnapVault o DR SVM (dove applicabile).</block>
   <block id="9b837fd67d580207d87f58b37e1fefed" category="paragraph-title">Dove posso ottenere chiarimenti per domande non trattate in questa FAQ?</block>
   <block id="e94690a6bd2e3a6afb833fa13d4537cf" category="inline-link-macro">ng-ses-ontap-select@netapp.com</block>
   <block id="0376d45a7aa4df2f496c766df2ba6138" category="paragraph">Contatto <block ref="6ee1a7abfb73acadae70dd28dd795163" category="inline-link-macro-rx"></block>.</block>
@@ -3091,7 +3090,6 @@
   <block id="7718fb3bf518427efc070f44f598bda4" category="section-title">Funzionalità ONTAP non supportate in ONTAP Select</block>
   <block id="614a7784cfcb44e896f7945455f42f95" category="paragraph">Diverse funzionalità di ONTAP non sono supportate con ONTAP Select. Nella maggior parte dei casi, queste funzionalità richiedono hardware speciale che non è disponibile nell'ambiente ONTAP Select virtualizzato.</block>
   <block id="e400270296a47b2c68bd6e799fac399d" category="list-text">Fibre Channel Fibre Channel e Fibre Channel over Ethernet non sono supportati.</block>
-  <block id="d00e5e6179a113ecbf710d36aa88e4fd" category="list-text">Gruppi di interfacce i gruppi di interfacce (IFGRP) non sono supportati.</block>
   <block id="4980ffa00c517c7cc63e35e9bb2badc8" category="list-text">Monitoraggio dello stato di salute il monitoraggio tradizionale dello stato di salute utilizzato con un'implementazione ONTAP basata su hardware è specifico per i componenti hardware sottostanti. A causa dell'ambiente virtualizzato utilizzato con ONTAP Select, i monitor dello stato di salute non sono attivi.</block>
   <block id="00bbd977d1e0bcd12815512c500c80c0" category="list-text">Supporto dell'offload della scheda di rete a causa dell'ambiente virtualizzato utilizzato con ONTAP Select, la funzione di offload della scheda di rete non è supportata.</block>
   <block id="ae17b3d1f56509708706e25dfd3adfc7" category="list-text">Proprietà della porta ONTAP la modifica delle proprietà delle porte ONTAP, inclusi velocità, duplex e controllo del flusso, non è supportata.</block>
@@ -3651,55 +3649,6 @@ Qualsiasi modifica a Cluster IPSpace, inclusa l'aggiunta o la rimozione di porte
   <block id="d92261c550ee327019eb3a3ca7a78e30" category="paragraph">Verificare che la funzione ONTAP Select AutoSupport sia configurata e quindi eseguire il backup dei dati di configurazione di ONTAP Select Deploy.</block>
   <block id="7284a07b58626766b72ec946cfd845c9" category="admonition">Le informazioni sul supporto dello storage esterno sono riportate nella <block ref="e339e9377e7bf65a8e1fae3dee4b8697" category="inline-link-macro-rx"></block>.</block>
   <block id="8542ad0a9f97f96320929367de2b74cc" category="list-text">VMware ESXi 7,0 GA (build 15843807) o versione successiva</block>
-  <block id="8930a560533f598bac6dd3f7f9bfedb6" category="summary">Espandi un cluster esistente a nodo singolo in un cluster a due nodi configurando entrambi i nodi come coppia ha (high Availability).</block>
-  <block id="c0fa4ded01a6d24b2a77cd3a6b10e6e7" category="doc">Espandere il cluster</block>
-  <block id="9ee92687843ac50c08d2dcb3c75ec679" category="paragraph">A partire da ONTAP 9.13.1, puoi espandere un cluster a nodo singolo esistente in un cluster a due nodi configurando entrambi i nodi come coppia ha (high Availability). L'espansione a un cluster ha a due nodi offre high-Availability, che ti protegge dall'impatto dell'interruzione di un nodo sulla capacità di un cluster di erogare i dati.</block>
-  <block id="2e8a327b283fd50b16d1b5295d65b015" category="paragraph">La procedura viene automatizzata e avviata da ONTAP Select Deploy utilizzando l'interfaccia CLI o Web. Si tratta di una procedura distruttiva.</block>
-  <block id="0c76347c001891562a0f24f80b85e516" category="paragraph-title">Prerequisiti di espansione cluster</block>
-  <block id="e0fd129ed78300784653b377b8198dbb" category="paragraph">Prima di avviare la procedura di espansione del cluster, verificare di soddisfare i seguenti prerequisiti:</block>
-  <block id="44a3770a41ceabe41ad75ce81596fa56" category="list-text">Il nodo esistente è acceso.</block>
-  <block id="1f82de86080fe46e8a75ac3507754123" category="list-text">L'aggiornamento del cluster sul nodo esistente è stato eseguito correttamente.</block>
-  <block id="ecf4c2fcb52cc03a7c2d7b050f653f18" category="list-text">Gli host ESX per i nodi nuovi ed esistenti hanno la stessa configurazione.</block>
-  <block id="e493ed3a4bfea3ebf118f361ad92ba47" category="list-text">È stato eseguito correttamente il controllo della connettività di rete tra gli host ESX per i nodi esistenti e nuovi.</block>
-  <block id="eb0f08fae2c41a7793a912980295a2e5" category="list-text">Per utilizzare la procedura di espansione del cluster di implementazione di ONTAP Select, è necessario disporre di una licenza di valutazione (90 giorni) e di una licenza di produzione (Tier di capacità o pool di capacità). Verificare di soddisfare i seguenti requisiti di licenza:</block>
-  <block id="d994644aa0b2bc896cb4e64956675a0d" category="list-text">Disponi del Tier di capacità o della licenza pool di capacità necessari per il nuovo nodo.</block>
-  <block id="f704690c246db554ef6568a89bdff702" category="admonition">Per una licenza per pool di capacità, è possibile utilizzare la capacità inutilizzata di un pool esistente. Se necessario, è possibile aumentare la capacità aggiornando la licenza.</block>
-  <block id="305a476aa1b8f3372c65ac3346486cf2" category="list-text">Se entrambi i nodi hanno una licenza per pool di capacità, appartengono allo stesso pool di capacità.</block>
-  <block id="62ab77cacb864affe5ac1c6e259a142c" category="list-text">È stato applicato lo stesso tipo di licenza a entrambi i nodi.</block>
-  <block id="cd43d984bcc3a4f711cfa1af282b7455" category="paragraph">Il requisito di licenza per ogni nodo (nuovo ed esistente) in un cluster a due nodi è il doppio del requisito per un cluster a nodo singolo:</block>
-  <block id="1b6b2c9a82282029d8cd12086bc16748" category="list-text">Per un cluster a nodo singolo, è disponibile la licenza completa per gli aggregati di dati. Ad esempio, un singolo nodo con una licenza 1TB può ospitare 1TB TB di aggregati di dati.</block>
-  <block id="4fe400ca1b94c1aadc6481c02d68ee64" category="list-text">Per un cluster a due nodi, metà della capacità di licenza viene utilizzata per gli aggregati di dati su ciascun nodo, l'altra metà viene consumata dai dischi mirror degli aggregati di dati per il nodo partner corrispondente. Ad esempio, due nodi con un host di licenze da 2TB TB 1TB TB di aggregati di dati ciascuno per dare una capacità totale disponibile di 2TB TB combinata per gli aggregati di dati e 2TB TB per ospitare i dischi mirror degli aggregati.</block>
-  <block id="11f428ea307b5e86300719c1b6dc8fea" category="paragraph">Per ulteriori informazioni sulle licenze, vedere <block ref="9575ba7bfcdc84cc585701a17575801c" category="inline-link-macro-rx"></block> sezione.</block>
-  <block id="92ae53adefd2bce2616eabbc31ca99d6" category="list-text">Gli archivi dati collegati ai nodi soddisfano i seguenti criteri:</block>
-  <block id="ecfe3a20b4af8b63e0f7fd2223373048" category="list-text">Gli archivi dati del nodo esistente devono essere dello stesso tipo, ad esempio VMware Virtual Machine file System (VMFS)-5, VMFS-6 o NFS.</block>
-  <block id="e8534479a8ab3e9f651571dccdd016b9" category="list-text">Il datastore collegato al nuovo nodo deve essere dello stesso tipo del datastore predefinito per il nodo esistente.</block>
-  <block id="d41741a2b7d1a4249520e3eedfa415d3" category="list-text">Gli archivi dati sul nodo esistente devono avere uno spazio libero pari o superiore allo spazio utilizzato sul nodo.</block>
-  <block id="9d430f9d9bdca636bf2bd34d0ca10048" category="list-text">Lo spazio libero sul datastore collegato al nuovo nodo deve essere il doppio dello spazio occupato totale sul nodo esistente.</block>
-  <block id="f509b7af47ddc6f61e01296750db0a94" category="list-text">Entrambi i nodi ONTAP Select sono dello stesso tipo di istanza.</block>
-  <block id="630e5660de352108f57840f67c4ce73b" category="paragraph-title">Requisiti hardware e software</block>
-  <block id="1deab229dd7288feb521151130a73e51" category="paragraph">I nodi nuovi ed esistenti devono soddisfare diversi requisiti hardware e software:</block>
-  <block id="ab12d295318edecf8e697f5aa1e28b04" category="list-text">Il cluster a nodo singolo esistente esegue ONTAP 9.13.1 o versioni successive.</block>
-  <block id="571bab1b8c172b818850c083f2b7d219" category="list-text">Gli host ESX per i nodi nuovi ed esistenti soddisfano i seguenti criteri:</block>
-  <block id="b16daec5e991a4bdaff00495ee637ff3" category="list-text">Supportano vCenter Server 7,0 Update 3 o versione successiva. NetApp consiglia inoltre vCenter Server 7,0 o versione successiva.</block>
-  <block id="135e04137c0f3fc2a13414acc2f294fc" category="list-text">Dispongono di una rete interna per la connessione intercluster.</block>
-  <block id="3007f0b4c8fb013252aaf0d42faf5b5a" category="list-text">Il nodo esistente e il nuovo nodo sono tipi di RAID hardware.</block>
-  <block id="b1f291eee188a7c63f37b91bcf001a94" category="list-text">Per un tipo di istanza di piccole dimensioni, il nodo ha un minimo di 16GB GB di RAM e quattro CPU. Per un tipo di istanza di grandi dimensioni, il nodo ha un massimo di 128GB GB di RAM e 16 CPU.</block>
-  <block id="8237ba6c0c380781f49dc22af5f26bcf" category="paragraph-title">Limitazioni di espansione dei cluster</block>
-  <block id="b5355429781ee9ef7d73aa9f8fe3d3b3" category="paragraph">Sono da tenere presenti le seguenti limitazioni per un'espansione cluster ONTAP Select:</block>
-  <block id="3f3b17881e2b6e6eadaf34fd18c031cc" category="list-text">La procedura supporta solo l'espansione di un cluster a nodo singolo in un cluster a due nodi.</block>
-  <block id="cb33ce1462fe7e5b557f6db4425ece2e" category="list-text">L'espansione è limitata a 64TB TB di capacità totale del datastore; la capacità dello storage dei dati è di 32TB TB e i 32TB rimanenti sono spazio aggiuntivo per il mirroring dei dati.</block>
-  <block id="afa22359d4f3cf79284a0728560e7264" category="list-text">L'espansione del cluster è supportata solo per i tipi di cluster e nodi RAID hardware. L'espansione a tipi di RAID hardware e software misti non è supportata.</block>
-  <block id="27025ea85d4bc0d28bef7e51e8da61f3" category="inline-image-macro">diagramma di espansione del cluster da nodo singolo a due nodi</block>
-  <block id="3a42ded421b7b7328d29348b4f404e36" category="paragraph">La figura seguente illustra la configurazione a nodo singolo prima dell'espansione e la configurazione della coppia ha a due nodi dopo l'espansione.
-<block ref="6e6de549f8b72b049bce1f29ebacc7fc" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="287742be1329b1bd7bf7d7fb169b2fa6" category="paragraph-title">Avviare la procedura di espansione del cluster</block>
-  <block id="e3321a5f63313219081d62cede2f8ca2" category="paragraph">Per avviare l'implementazione di ONTAP Select ed eseguire la procedura di espansione del cluster, eseguire i seguenti comandi dall'interfaccia CLI:</block>
-  <block id="e0f45ff72f2d7d91d9e112f7c7b7e686" category="list-text"><block ref="f0489c17dde991a8954f812ebbe2a6c0" prefix="" category="inline-code"></block></block>
-  <block id="31792351955ddd5711877797e67e90e6" category="list-text"><block ref="66866e8e2f0d236b0f23317b92e3498d" prefix="" category="inline-code"></block></block>
-  <block id="c2187f782201a45ff7b8db0effd6da3e" category="list-text"><block ref="091de9b7e3eb6abf6d66ba8e5e98d03f" prefix="" category="inline-code"></block></block>
-  <block id="8ae8ceb1e3c34f71654ecd45e3edd18b" category="list-text"><block ref="1e50fe28b3ba1196bf5c7e0d1f4aa881" prefix="" category="inline-code"></block></block>
-  <block id="cc85e5e33f89d779593267f90f3de591" category="list-text"><block ref="2437f2194443c2e0de2deac482449798" prefix="" category="inline-code"></block></block>
-  <block id="492625061ab08d886a40d6113d7d5261" category="paragraph">Quando richiesto, inserire la password dell'amministratore ONTAP.</block>
   <block id="dd4c12bfc49beb3edaea04166917c887" category="paragraph">ONTAP Select 9.13.1 può essere implementato su VMware ESXi. Questo sito contiene la documentazione per ONTAP Select 9.13.1, 9.12.1, 9.11.1, 9.10.1, 9,9.1, 9,8 e 9,7 in esecuzione su VMware ESXi così come la documentazione indipendente dall'hypervisor (come l'API REST).</block>
   <block id="015a51a212cad15ae88ab6926256ef36" category="inline-link-macro">Avviso per ONTAP Select 9.13.1</block>
   <block id="e9deea859bf1ecf9513d6b6ff2f0d72b" category="list-text"><block ref="e9deea859bf1ecf9513d6b6ff2f0d72b" category="inline-link-macro-rx"></block></block>
@@ -3716,9 +3665,6 @@ Qualsiasi modifica a Cluster IPSpace, inclusa l'aggiunta o la rimozione di porte
   <block id="f87065c0eaa86d23a9d0bc62defec91b" category="list-text">Aggiornare l'host dell'hypervisor in cui ONTAP Select è in esecuzione a ESXi 7,0 o versioni successive utilizzando la procedura fornita da VMware.</block>
   <block id="1e2be71e8b4858c0b3e832cba35731d1" category="section-title">ONTAP Select 9.13.1</block>
   <block id="cdbcb12eafeb6cc1f6a058e9c52a7f8d" category="paragraph">ONTAP Select 9.13.1 include diverse nuove funzioni e miglioramenti.</block>
-  <block id="85c9296df6a3c9630ed684b4af8847a8" category="list-text">Espansione del cluster</block>
-  <block id="d59048f21fd887ad520398ce677be586" category="inline-link-macro">Scopri di più</block>
-  <block id="406ccb0f77a29335e34c2bfe9553fc82" category="list-text">ONTAP Select 9.13.1 introduce l'espansione del cluster, che offre protezione dall'alta disponibilità (ha) in caso di impatto di un'interruzione del nodo sulla capacità di un cluster di erogare i dati. A partire da ONTAP Select 9.13.1, puoi espandere un cluster a nodo singolo in un cluster a due nodi configurando entrambi i nodi come coppia ha. La procedura viene automatizzata e avviata da ONTAP Select Deploy utilizzando l'interfaccia CLI o Web. Per eseguire questa procedura, è necessario soddisfare determinati requisiti hardware e software. <block ref="42332fd9348b1caa61a2a7319c6d2c9d" category="inline-link-macro-rx"></block>.</block>
   <block id="58c277c116ff23ffb9879debb95b4968" category="list-text">Supporto di NVMe over TCP</block>
   <block id="db5f5d6e1e5a3e29724ce78258556ff1" category="list-text">Quando esegui l'upgrade a ONTAP Select 9.13.1, devi disporre della nuova licenza per supportare NVMe su TCP. Questa licenza viene inclusa automaticamente quando si distribuisce ONTAP Select per la prima volta dalla versione 9.13.1.</block>
   <block id="4d8daf3f51ebf7fefb4dfcf900e9b79d" category="list-text">A partire da ONTAP 9.13.1, VMware ESXi 8,0 GA (build 20513097) è supportato con la versione hardware 4 e successive.</block>
@@ -3801,4 +3747,8 @@ Qualsiasi modifica a Cluster IPSpace, inclusa l'aggiunta o la rimozione di porte
   <block id="ec2c1e6f88e6b7ce28d7e80767289832" category="list-text">Eseguire<block ref="2348285222a19e68a4a4aa4df3c90622" prefix=" " category="inline-code"></block> comando.</block>
   <block id="4963c2f56ac00df8be35eec047756e7b" category="list-text">L'amministratore può eliminare la chiave pubblica con:<block ref="6edcef67fdbd494b424b5b6fe6ff3c33" prefix=" " category="inline-code"></block></block>
   <block id="306a97cf9f5c4fb1198deb28baf7cf94" category="list-text">Disaster recovery delle macchine virtuali storage (DR SVM)</block>
+  <block id="f7ee707e6ddfc29288dbbbdf8cecd146" category="list-text">Gruppi di interfacce
+I gruppi di interfacce non sono supportati.</block>
+  <block id="c38c45e0a73411d375d048ee41944853" category="list-text">Conformità SnapLock</block>
+  <block id="b22e984a3a8e13089712aab13bd49e4f" category="paragraph">No ONTAP Select VM utilizza dischi indipendenti e persistenti, esclusi dagli snapshot basati su VMware. L'unico metodo supportato per il backup di ONTAP Select è SnapMirror o SnapVault.</block>
 </blocks>
