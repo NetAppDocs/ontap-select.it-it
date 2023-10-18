@@ -57,7 +57,7 @@ Cross Volume Background Deduplication:  true
 NOTE: Per gli aggiornamenti ONTAP Select dalla versione 9.6 e successive, è necessario installare ONTAP Select su storage SSD DAS con una licenza Premium. Inoltre, è necessario selezionare la casella di controllo *Enable Storage Efficiencies* (Abilita efficienza dello storage) durante l'installazione iniziale del cluster con l'implementazione di ONTAP. L'abilitazione di un aggiornamento post-ONTAP della personalità simile ad AFF quando le condizioni precedenti non sono state soddisfatte richiede la creazione manuale di un argomento di boot e il riavvio di un nodo. Per ulteriori informazioni, contatta il supporto tecnico.
 
 .Configurazioni per l'efficienza dello storage ONTAP Select
-La seguente tabella riassume le varie opzioni di efficienza dello storage disponibili, attivate per impostazione predefinita o non attivate per impostazione predefinita, ma consigliate, a seconda del tipo di supporto e della licenza software. Le informazioni contenute nella seguente tabella si riferiscono a ONTAP Select 9.6 e versioni successive. Per le release precedenti, fare riferimento alla sezione _supporto per l'efficienza dello storage ONTAP Select_ in https://www.netapp.com/media/10662-tr4517.pdf["TR-4517"^].
+La seguente tabella riassume le varie opzioni di efficienza dello storage disponibili, attivate per impostazione predefinita o non attivate per impostazione predefinita, ma consigliate, a seconda del tipo di supporto e della licenza software.
 
 [cols="4"]
 |===
@@ -123,6 +123,3 @@ Scenario 2:: Se alcune efficienze dello storage sono già abilitate su un volume
 
 --
 
-
-.Note sul comportamento dell'upgrade per la configurazione HDD DAS
-Le funzionalità di efficienza dello storage abilitate prima dell'aggiornamento vengono conservate dopo l'aggiornamento a ONTAP Select 9.6 o versione successiva. Se prima dell'aggiornamento non è stata abilitata alcuna efficienza dello storage, non è possibile ottenere alcuna efficienza dello storage dopo l'aggiornamento.

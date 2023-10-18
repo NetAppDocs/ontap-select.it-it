@@ -21,7 +21,7 @@ Utilizza il pass-through i/o VMDirectPath sui dispositivi NVMe per massimizzare 
 .Prima di iniziare
 Assicurarsi che l'ambiente di implementazione soddisfi i seguenti requisiti minimi:
 
-* ONTAP Select 9.7 o versione successiva con l'utility di amministrazione della distribuzione associata
+* ONTAP Select 9,7 o versione successiva con un'utilità di amministrazione di distribuzione supportata
 * Offerta di licenza per piattaforma Premium XL o licenza di valutazione per 90 giorni
 * VMware ESXi versione 6.7 o successiva
 * Dispositivi NVMe conformi alla specifica 1.0 o successiva
@@ -37,7 +37,7 @@ Questa procedura deve essere eseguita prima di creare un nuovo cluster ONTAP Sel
 * Un cluster a nodo singolo può subire downtime.
 
 
-Vedere link:concept_stor_capacity_inc.html["Aumento della capacità di storage"] per ulteriori informazioni.
+Vedere link:concept_stor_capacity_inc.html["Aumentare la capacità di storage"] per ulteriori informazioni.
 
 .Fasi
 . Accedere al menu *BIOS Configuration* (Configurazione del BIOS) sull'host per abilitare il supporto per la virtualizzazione i/O.

@@ -30,7 +30,7 @@ Gli script sono stati progettati con le seguenti caratteristiche comuni:
 
 
 
-== Creazione di un cluster
+== Creare un cluster
 
 È possibile creare un cluster ONTAP Select utilizzando lo script cluster.py. In base ai parametri CLI e al contenuto del file di input JSON, è possibile modificare lo script nell'ambiente di implementazione come segue:
 
@@ -56,7 +56,7 @@ I parametri di input CLI per lo script includono:
 
 
 
-== Aggiunta di una licenza per nodi
+== Aggiungere una licenza per nodi
 
 Se si sceglie di implementare un cluster di produzione, è necessario aggiungere una licenza per ciascun nodo utilizzando lo script _add_License.py_. È possibile aggiungere la licenza prima o dopo l'implementazione del cluster.
 
@@ -71,7 +71,7 @@ I parametri di input CLI per lo script includono:
 
 
 
-== Eliminazione di un cluster
+== Eliminare un cluster
 
 È possibile eliminare un cluster ONTAP Select esistente utilizzando lo script _delete_cluster.py_.
 

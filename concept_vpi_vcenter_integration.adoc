@@ -32,7 +32,7 @@ Esistono diversi modi per visualizzare le risorse VMware utilizzate da uno speci
 
 
 
-== Visualizzazione delle risorse VMware per un cluster tramite il plug-in
+== Visualizzare le risorse VMware per un cluster tramite il plug-in
 
 È possibile visualizzare le risorse VMware assegnate a un cluster ONTAP Select attraverso il plug-in di implementazione.
 
@@ -46,7 +46,7 @@ Esistono diversi modi per visualizzare le risorse VMware utilizzate da uno speci
 
 
 
-== Visualizzazione dei cluster ONTAP Select tramite una macchina virtuale ESXi
+== Visualizza i cluster ONTAP Select attraverso una macchina virtuale ESXi
 
 È possibile visualizzare il cluster ONTAP Select e le risorse del cluster associate accedendo a una macchina virtuale VMware.
 
@@ -60,7 +60,7 @@ Esistono diversi modi per visualizzare le risorse VMware utilizzate da uno speci
 
 
 
-== Creazione di un cluster a nodo singolo su un host ESXI
+== Creare un cluster a nodo singolo su un host ESXI
 
 È possibile selezionare un host hypervisor ESXI tramite l'interfaccia vSphere e implementare un cluster a nodo singolo ONTAP Select.
 
@@ -68,5 +68,5 @@ Esistono diversi modi per visualizzare le risorse VMware utilizzate da uno speci
 . Accedere al server vCenter tramite vSphere HTML5 utilizzando un browser.
 . Fare clic su *Menu* nella parte superiore, quindi su *host e cluster*.
 . Fare clic con il pulsante destro del mouse sull'host dell'hypervisor desiderato a sinistra, selezionare *ONTAP Select*, quindi fare clic su *New ONTAP Select* (nuovo hypervisor).
-. Completare il processo di implementazione seguendo i passaggi descritti in link:task_deploy_cluster.html["Implementazione di un cluster ONTAP Select"].
+. Completare il processo di implementazione seguendo i passaggi descritti in link:task_deploy_cluster.html["Implementare un cluster ONTAP Select"].
 

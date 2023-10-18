@@ -4,7 +4,7 @@ permalink: task_cli_upgrade_deploy.html
 keywords: administer, administering, cli, deploy, upgrade deploy 
 summary: 'È possibile aggiornare una macchina virtuale dell"utility di implementazione esistente in-place utilizzando l"interfaccia della riga di comando.' 
 ---
-= Aggiornamento di un'istanza di distribuzione
+= Aggiornare un'istanza di implementazione
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -23,11 +23,11 @@ summary: 'È possibile aggiornare una macchina virtuale dell"utility di implemen
 Assicurarsi che la distribuzione non venga utilizzata per eseguire altre attività durante l'aggiornamento. Per informazioni e restrizioni sull'aggiornamento dell'utility di distribuzione, consultare le note di rilascio correnti.
 
 
-NOTE: Se è installata un'istanza dell'utilità di amministrazione di ONTAP Select Deploy, è consigliabile eseguire l'aggiornamento alla release corrente. Il nodo ONTAP Select e il componente di implementazione ONTAP Select vengono aggiornati in modo indipendente. Vedere link:concept_adm_upgrading_nodes.html["Aggiornamento dei nodi ONTAP Select"^] per ulteriori dettagli.
+NOTE: Se è installata un'istanza precedente dell'utilità di amministrazione di distribuzione di ONTAP Select, è necessario eseguire l'aggiornamento alla versione corrente. Il nodo ONTAP Select e il componente di implementazione ONTAP Select vengono aggiornati in modo indipendente. Vedere link:concept_adm_upgrading_nodes.html["Aggiornare i nodi ONTAP Select"^] per ulteriori dettagli.
 
 
 
-== Download del pacchetto di aggiornamento
+== Scaricare il pacchetto di aggiornamento
 
 Per iniziare il processo di aggiornamento, è necessario scaricare il file di aggiornamento della macchina virtuale di implementazione appropriato dal sito del supporto NetApp. Il pacchetto di aggiornamento viene formattato come un singolo file compresso.
 
@@ -46,7 +46,7 @@ link:https://mysupport.netapp.com["Supporto NetApp"^]
 
 
 
-== Caricamento del pacchetto sulla macchina virtuale di implementazione
+== Caricare il pacchetto sulla macchina virtuale di distribuzione
 
 Dopo aver acquisito il pacchetto di aggiornamento, è necessario caricare il file sulla macchina virtuale di implementazione.
 
@@ -72,7 +72,7 @@ Il file di aggiornamento viene memorizzato nella home directory dell'utente ammi
 
 
 
-== Applicazione del pacchetto di aggiornamento
+== Applicare il pacchetto di aggiornamento
 
 Una volta caricato il file di aggiornamento sulla macchina virtuale di implementazione, è possibile applicare l'aggiornamento.
 

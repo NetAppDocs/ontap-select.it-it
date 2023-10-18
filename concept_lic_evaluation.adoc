@@ -38,9 +38,8 @@ La licenza di valutazione ONTAP Select presenta le seguenti caratteristiche:
 È possibile aggiornare un cluster di valutazione ONTAP Select per utilizzare una licenza di produzione. È necessario conoscere le seguenti restrizioni:
 
 * Per eseguire l'aggiornamento della licenza, è necessario utilizzare l'utility di amministrazione della distribuzione
-* L'aggiornamento della licenza è supportato solo con ONTAP Select 9.5P1 utilizzando Deploy 2.11 o versione successiva
 * È possibile utilizzare una licenza di livello di capacità, tuttavia le licenze di pool di capacità non sono supportate
 * Ogni nodo deve disporre di spazio di storage sufficiente per supportare il minimo richiesto per una licenza di produzione, in base alle dimensioni del cluster
 
 
-link:task_adm_licenses.html["Conversione di una licenza di valutazione in una licenza di produzione"] per ulteriori informazioni.
+Vedere link:task_adm_licenses.html["Convertire una licenza di valutazione in una licenza di produzione"] per ulteriori informazioni.

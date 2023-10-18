@@ -92,7 +92,7 @@ L'opzione di implementazione di ONTAP Select è approssimativamente equivalente 
 |===
 
 
-== Confronto tra il plug-in vCenter e l'interfaccia utente di implementazione nativa
+== Confronta il plug-in vCenter con l'interfaccia utente di deploy nativa
 
 La funzionalità fornita con il plug-in vCenter tramite vSphere equivale all'interfaccia utente nativa di implementazione. Tuttavia, alcune funzionalità non vengono fornite con il plug-in e sono disponibili solo con l'interfaccia utente di implementazione.
 
@@ -104,7 +104,7 @@ Non è possibile installare, aggiornare, rimuovere o verificare il plug-in vCent
 
 
 
-=== Gestione delle credenziali vCenter
+=== Gestire le credenziali vCenter
 
 Prima di installare il plug-in vCenter, è necessario aggiungere le credenziali vCenter necessarie per la distribuzione utilizzando l'interfaccia utente di distribuzione nativa.
 

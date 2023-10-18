@@ -4,7 +4,7 @@ permalink: task_deploy_cluster.html
 keywords: install, installing, deploy ontap select cluster, create cluster 
 summary: 'È possibile utilizzare l"interfaccia utente Web fornita con l"utility di amministrazione di ONTAP Select Deploy per implementare un cluster ONTAP Select a nodo singolo o a più nodi.' 
 ---
-= Implementazione di un cluster ONTAP Select
+= Implementare un cluster ONTAP Select
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -19,7 +19,7 @@ summary: 'È possibile utilizzare l"interfaccia utente Web fornita con l"utility
 Quando si crea un cluster ONTAP Select utilizzando l'interfaccia Web dell'utilità di implementazione, viene visualizzata una sequenza specifica di passaggi. Il processo esatto varia a seconda che si implementi un cluster a nodo singolo o a più nodi.
 
 
-TIP: È inoltre possibile implementare cluster ONTAP Select utilizzando l'utility di implementazione CLI.
+TIP: Puoi anche farlo link:https://docs.netapp.com/us-en/ontap-select/task_cli_deploy_cluster.html["Implementa i cluster ONTAP Select utilizzando la CLI dell'utility Deploy"].
 
 
 
@@ -49,8 +49,8 @@ Preparazione dell'host:: È necessario preparare gli host hypervisor in cui verr
 
 --
 File di licenza:: Se si prevede di implementare il cluster in un ambiente di produzione, è necessario acquisire i file di licenza dello storage in base al modello di licenza in uso.
-Implementare l'installazione e le credenziali dell'account:: È necessario installare l'utilità di amministrazione di deploy ed eseguire la configurazione iniziale. Vedere link:task_install_deploy.html["Installazione di ONTAP Select Deploy"] per ulteriori informazioni. È necessario disporre della password per l'account dell'amministratore di implementazione configurato come parte del processo di installazione.
-Installazione delle immagini dei nodi ONTAP Select precedenti:: Per impostazione predefinita, l'utility di amministrazione di distribuzione contiene la versione più recente di ONTAP Select al momento del rilascio. Se si desidera distribuire i cluster utilizzando una versione precedente di ONTAP Select, è necessario aggiungere l'immagine ONTAP Select all'istanza di distribuzione. Vedere link:task_cli_deploy_image_add.html["Aggiunta di un'immagine ONTAP Select da implementare"] per ulteriori informazioni.
+Implementare l'installazione e le credenziali dell'account:: È necessario installare l'utilità di amministrazione di deploy ed eseguire la configurazione iniziale. Vedere link:task_install_deploy.html["Installare ONTAP Select Deploy"] per ulteriori informazioni. È necessario disporre della password per l'account dell'amministratore di implementazione configurato come parte del processo di installazione.
+Installazione delle immagini dei nodi ONTAP Select precedenti:: Per impostazione predefinita, l'utility di amministrazione di distribuzione contiene la versione più recente di ONTAP Select al momento del rilascio. Se si desidera distribuire i cluster utilizzando una versione precedente di ONTAP Select, è necessario aggiungere l'immagine ONTAP Select all'istanza di distribuzione. Vedere link:task_cli_deploy_image_add.html["Aggiungere un'immagine ONTAP Select da distribuire"] per ulteriori informazioni.
 Pagina iniziale di lancio:: La pagina iniziale *Guida introduttiva a ONTAP Select Deploy* guida l'utente attraverso il processo multi-fase di creazione di un cluster. Sono disponibili cinque passaggi principali, tra cui:
 +
 --
@@ -73,7 +73,7 @@ Dopo l'implementazione di un cluster:: È necessario eseguire il backup dei dati
 
 
 
-== Creazione di un cluster a nodo singolo o a nodi multipli
+== Creare un cluster a nodo singolo o a nodi multipli
 
 È possibile utilizzare l'interfaccia utente Web ONTAP Select Deploy per implementare un cluster ONTAP Select a nodo singolo o multi-nodo.
 

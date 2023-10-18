@@ -18,7 +18,7 @@ Esistono diverse attività di diagnostica e supporto correlate che è possibile 
 
 
 
-== Configurazione del sistema di implementazione
+== Configurare il sistema di distribuzione
 
 È necessario impostare i parametri di configurazione di sistema di base che influiscono sul funzionamento dell'utilità di implementazione.
 
@@ -42,7 +42,7 @@ Esempio
 
 
 
-== Visualizzazione dei messaggi degli eventi di implementazione di ONTAP Select
+== Visualizzare i messaggi di evento distribuzione ONTAP Select
 
 L'utility ONTAP Select Deploy include una funzione di registrazione degli eventi che fornisce informazioni sull'attività del sistema. È necessario visualizzare il contenuto del registro eventi per eseguire il debug di qualsiasi problema o quando richiesto dal supporto.
 
@@ -66,7 +66,7 @@ L'utility ONTAP Select Deploy include una funzione di registrazione degli eventi
 
 
 
-== Abilitazione di AutoSupport
+== Abilitare AutoSupport
 
 È possibile attivare e disattivare la funzione AutoSupport in base alle esigenze.
 
@@ -82,7 +82,7 @@ AutoSupport è il principale strumento di troubleshooting utilizzato da NetApp p
 
 
 
-== Generazione e download di un pacchetto AutoSupport
+== Generare e scaricare un pacchetto AutoSupport
 
 ONTAP Select include la capacità di generare un pacchetto AutoSupport. Si consiglia di generare un pacchetto per eseguire il debug di qualsiasi problema o quando richiesto dal supporto.
 

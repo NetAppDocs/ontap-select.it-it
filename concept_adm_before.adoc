@@ -16,14 +16,10 @@ summary: Dopo aver creato un cluster ONTAP Select, è possibile supportare la di
 [role="lead"]
 Dopo aver creato un cluster ONTAP Select, è possibile supportare la distribuzione eseguendo varie attività amministrative. Ci sono alcune considerazioni di carattere generale da tenere presente.
 
-
-
-== Prima di iniziare
-
 In generale, le procedure che è possibile eseguire utilizzando l'interfaccia Web di implementazione sono suddivise in una delle tre categorie.
 
 .Implementare un cluster ONTAP Select
-È possibile implementare un cluster a nodo singolo o a più nodi. Vedere link:task_deploy_cluster.html["Implementazione di un cluster ONTAP Select"] per ulteriori informazioni.
+È possibile implementare un cluster a nodo singolo o a più nodi. Vedere link:task_deploy_cluster.html["Implementare un cluster ONTAP Select"] per ulteriori informazioni.
 
 .Eseguire una procedura con un cluster ONTAP Select esistente
 Le procedure amministrative sono organizzate in varie categorie, ad esempio _Security_ e _Clusters_.
@@ -33,32 +29,31 @@ Esistono diverse procedure specifiche per la distribuzione (ad esempio, la modif
 
 
 
-== Amministrazione di ONTAP Select
+== Amministrare ONTAP Select
 
-Nell'ambito del supporto di ONTAP Select sono disponibili numerose procedure amministrative. Inoltre, sono disponibili procedure specifiche per l'utilità di amministrazione di Deploy. Le procedure più importanti sono illustrate di seguito. In generale, tutti utilizzano l'interfaccia utente Web di implementazione. Un processo amministrativo può essere costituito da un singolo task passo per passo o da una sequenza di task multipli.
-
-
-NOTE: È inoltre possibile utilizzare l'interfaccia della riga di comando per amministrare ONTAP Select. Per ulteriori informazioni, consultare la sezione _utilizzo della CLI_.
+Nell'ambito del supporto di ONTAP Select sono disponibili numerose procedure amministrative. Inoltre, sono disponibili procedure specifiche per l'utilità di amministrazione di Deploy. Le procedure più importanti sono illustrate di seguito. In generale, tutti utilizzano l'interfaccia utente Web di implementazione.
 
 
+NOTE: Puoi anche farlo link:https://docs.netapp.com/us-en/ontap-select/task_cli_signing_in.html["utilizzare l'interfaccia della riga di comando"] Per amministrare ONTAP Select.
 
-== Esecuzione di una configurazione ONTAP aggiuntiva
 
-Dopo l'implementazione di un cluster ONTAP Select, è possibile configurare e gestire il cluster proprio come avviene per un sistema ONTAP basato su hardware. Ad esempio, è possibile utilizzare Gestore di sistema di OnCommand o l'interfaccia utente di ONTAP per configurare il cluster ONTAP Select.
+
+== Eseguire una configurazione ONTAP aggiuntiva
+
+Dopo l'implementazione di un cluster ONTAP Select, è possibile configurare e gestire il cluster proprio come avviene per un sistema ONTAP basato su hardware. Ad esempio, è possibile utilizzare ONTAP System Manager o l'interfaccia a riga di comando di ONTAP per configurare il cluster ONTAP Select.
 
 .Software client NetApp
 È possibile connettersi a ONTAP Select utilizzando il seguente software client NetApp supportato:
 
-* Gestore di sistema di OnCommand
-* Gestore unificato OnCommand
-* Gestore delle performance di OnCommand
+* Gestore di sistema di ONTAP
+* Active IQ Unified Manager
 * OnCommand Insight
 * OnCommand Workflow Automation
 * SnapCenter
 * Virtual Storage Console per VMware vSphere
 
 
-Per identificare le versioni supportate del software client, consultare il _NetApp Interoperability Matrix Tool_. Se il software client supporta ONTAP 9, la stessa versione è supportata anche con ONTAP Select.
+Per identificare le versioni supportate del software client, consultare link:https://mysupport.netapp.com/matrix/["Tool di matrice di interoperabilità NetApp"^]. Se il software client supporta ONTAP 9, la stessa versione è supportata anche con ONTAP Select.
 
 
 NOTE: L'utilizzo di SnapCenter e dei relativi plug-in richiede licenze basate su server. La licenza del sistema storage dei plug-in SnapCenter non è attualmente supportata con ONTAP Select.

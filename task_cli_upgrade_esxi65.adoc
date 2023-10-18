@@ -4,7 +4,7 @@ permalink: task_cli_upgrade_esxi65.html
 keywords: administer, administering, cli, esxi, upgrade, esxi 6.5 
 summary: 'Se si esegue ONTAP Select su VMware ESXi, è possibile aggiornare il software ESXi da una versione precedente supportata a ESXi 7,0 o versione successiva. Prima di eseguire l"aggiornamento, è necessario comprendere il processo e selezionare la procedura di aggiornamento appropriata.' 
 ---
-= Aggiornamento di VMware ESXi alla versione 7,0 o successiva
+= Aggiornare VMware ESXi alla versione 7,0 o successiva
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -29,11 +29,11 @@ CAUTION: Se si sceglie di eseguire l'aggiornamento a VMware ESXi 6.5, è necessa
 
 === Acquisire familiarità con l'aggiornamento di VMware ESXi
 
-L'aggiornamento del software ESXi è un processo descritto e supportato da VMware. Il processo di aggiornamento dell'hypervisor fa parte della procedura di aggiornamento più estesa quando si utilizza ONTAP Select. Per ulteriori informazioni, consultare il documento VMware aggiornamento degli host ESXi.
+L'aggiornamento del software ESXi è un processo descritto e supportato da VMware. Il processo di aggiornamento dell'hypervisor fa parte della procedura di aggiornamento più estesa quando si utilizza ONTAP Select. Per ulteriori informazioni, consultare la documentazione VMware.
 
 
 
-=== Selezione di una procedura di aggiornamento
+=== Selezionare una procedura di aggiornamento
 
 Sono disponibili diverse procedure di aggiornamento. Selezionare la procedura appropriata in base ai seguenti criteri:
 
@@ -46,13 +46,13 @@ TIP: Selezionare una procedura di aggiornamento che utilizzi l'utility di ammini
 
 L'esecuzione di un aggiornamento ESXi con l'utility di amministrazione di Deploy è l'opzione più generale e resiliente. Tuttavia, potrebbero esserci delle istanze quando la distribuzione non è disponibile o non può essere utilizzata. Ad esempio, l'aggiornamento a ESXi 7,0 non è supportato dalle versioni precedenti di ONTAP Select e dall'utilità di amministrazione di distribuzione.
 
-Se si utilizzano queste versioni precedenti e si tenta di eseguire un aggiornamento, è possibile lasciare la macchina virtuale ONTAP Select in uno stato in cui non è possibile avviarla. In questo caso, è necessario selezionare una procedura di aggiornamento che non utilizza la distribuzione. Fare riferimento a *1172198* per ulteriori informazioni.
+Se si utilizzano queste versioni precedenti e si tenta di eseguire un aggiornamento, è possibile lasciare la macchina virtuale ONTAP Select in uno stato in cui non è possibile avviarla. In questo caso, è necessario selezionare una procedura di aggiornamento che non utilizza la distribuzione. Fare riferimento a. link:https://mysupport.netapp.com/site/bugs-online/product/ONTAPSELECT/BURT/1172198["1172198"^] per ulteriori informazioni.
 
 
 
-=== Aggiornamento dell'utility di amministrazione di Deploy
+=== Aggiornare l'utilità di amministrazione distribuzione
 
-Prima di eseguire una procedura di aggiornamento utilizzando l'utility di distribuzione, potrebbe essere necessario aggiornare l'istanza di distribuzione. In generale, è necessario eseguire l'aggiornamento alla versione più recente di Deploy. È necessario utilizzare almeno Deploy 2.5 o versione successiva. L'utility di distribuzione deve supportare la versione di ONTAP Select in uso. Per ulteriori informazioni, consultare le note di rilascio di ONTAP Select.
+Prima di eseguire una procedura di aggiornamento utilizzando l'utility di distribuzione, potrebbe essere necessario aggiornare l'istanza di distribuzione. In generale, è necessario eseguire l'aggiornamento alla versione più recente di Deploy. L'utility di distribuzione deve supportare la versione di ONTAP Select in uso. Per ulteriori informazioni, consultare le note di rilascio di ONTAP Select.
 
 
 
@@ -62,12 +62,9 @@ Se si seleziona una procedura di aggiornamento che utilizza l'utility di distrib
 
 
 
-== Aggiornamento di un cluster a nodo singolo mediante Deploy
+== Aggiorna un cluster a nodo singolo utilizzando l'implementazione
 
 È possibile utilizzare l'utility di amministrazione di deploy come parte della procedura per aggiornare l'hypervisor VMware ESXi che ospita un cluster a nodo singolo ONTAP Select.
-
-.Prima di iniziare
-È necessario utilizzare la versione di distribuzione 2.5 o successiva.
 
 .Fasi
 . Accedere alla CLI dell'utility di implementazione utilizzando SSH con l'account amministratore.
@@ -77,9 +74,6 @@ Esempio
 `node stop --cluster-name <CLUSTERNAME> --node-name <NODENAME>`
 
 . Aggiornare l'host dell'hypervisor in cui ONTAP Select è in esecuzione a ESXi 7,0 o versioni successive utilizzando la procedura fornita da VMware.
-+
-Per ulteriori informazioni, fare riferimento a _before you begin_.
-
 . Spostare il nodo nello stato online.
 +
 Esempio
@@ -103,12 +97,9 @@ sdot-d200-011d true true
 
 
 
-== Aggiornamento di un cluster multi-nodo tramite Deploy
+== Aggiorna un cluster multi-nodo utilizzando l'implementazione
 
 È possibile utilizzare l'utility di amministrazione di Deploy come parte della procedura per aggiornare gli hypervisor VMware ESXi che ospitano un cluster multi-nodo ONTAP Select.
-
-.Prima di iniziare
-È necessario utilizzare la versione di distribuzione 2.5 o successiva.
 
 .A proposito di questa attività
 È necessario eseguire questa procedura di aggiornamento per ciascuno dei nodi del cluster, un nodo alla volta. Se il cluster contiene quattro o più nodi, è necessario aggiornare i nodi di ciascuna coppia ha in sequenza prima di passare alla coppia ha successiva.
@@ -156,7 +147,7 @@ sdot-d200-012d true true
 
 
 
-== Aggiornamento di un cluster a nodo singolo senza implementazione
+== Aggiorna un cluster a nodo singolo senza eseguire l'implementazione
 
 È possibile aggiornare l'hypervisor VMware ESXi che ospita un cluster a nodo singolo ONTAP Select senza utilizzare l'utility di amministrazione Deploy.
 
@@ -191,7 +182,7 @@ sdot-d200-011d true true
 
 
 
-== Aggiornamento di un cluster multi-nodo senza implementazione
+== Aggiorna un cluster multi-nodo senza eseguire l'implementazione
 
 È possibile aggiornare gli hypervisor VMware ESXi che ospitano un cluster multi-nodo ONTAP Select senza utilizzare l'utility di amministrazione Deploy.
 
@@ -202,9 +193,6 @@ sdot-d200-011d true true
 . Accedere all'interfaccia della riga di comando di ONTAP e arrestare il nodo.
 . Utilizzando VMware vSphere, verificare che la macchina virtuale ONTAP Select sia spenta.
 . Aggiornare l'host dell'hypervisor in cui ONTAP Select è in esecuzione a ESXi 7,0 o versioni successive utilizzando la procedura fornita da VMware.
-+
-Per ulteriori informazioni, fare riferimento a _before you begin_.
-
 . Utilizzando VMware vSphere, accedere a vCenter ed effettuare le seguenti operazioni:
 +
 .. Aggiungere un disco floppy alla macchina virtuale ONTAP Select.

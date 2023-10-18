@@ -18,7 +18,7 @@ Esistono diverse attività correlate che è possibile eseguire nell'ambito della
 
 
 
-== Modifica della password dell'amministratore di implementazione
+== Modificare la password dell'amministratore di distribuzione
 
 È possibile modificare la password per l'account Deploy virtual machine Administrator in base alle esigenze utilizzando l'interfaccia utente Web.
 
@@ -30,7 +30,7 @@ Esistono diverse attività correlate che è possibile eseguire nell'ambito della
 
 
 
-== Aggiunta di un account server di gestione
+== Aggiungere un account server di gestione
 
 È possibile aggiungere un account del server di gestione al database dell'archivio credenziali di implementazione.
 
@@ -119,7 +119,7 @@ Il reperimento della chiave pubblica dipende dal fatto che si sia un client Wind
 
 
 
-== Configurazione della chiave pubblica in ONTAP Select Deploy
+== Configurare la chiave pubblica in ONTAP Select Deploy
 
 SSH viene utilizzato dall'account amministratore per il metodo di autenticazione a chiave pubblica. Il comando utilizzato è lo stesso sia che il metodo di autenticazione sia l'autenticazione a chiave pubblica SSH standard o l'autenticazione YubiKey PIV o FIDO2.
 

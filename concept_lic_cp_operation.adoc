@@ -20,7 +20,7 @@ Il modello di licensing dei pool di capacità è diverso dal modello dei Tier di
 
 == Manager di licenza
 
-Il Manager di licenza è un componente software introdotto con ONTAP Select 9.5 utilizzando ONTAP Select Deploy 2.10. LM viene eseguito come processo separato all'interno di ogni istanza dell'utilità di amministrazione di Deploy. Alcune delle funzioni fornite da LM includono:
+Il Manager di licenza viene eseguito come un processo separato all'interno di ciascuna istanza dell'utilità di amministrazione distribuzione. Alcune delle funzioni fornite da LM includono:
 
 * Generare un numero di serie univoco di venti cifre per ciascun nodo in base al numero di serie della licenza del pool di capacità
 * Creare lease per la capacità dai pool di capacità condivisi in base alle richieste provenienti dai nodi ONTAP Select
@@ -68,7 +68,7 @@ Un nodo ONTAP Select deve individuare o richiedere un lease di capacità valido 
 
 
 
-== Restituzione della capacità di storage a un pool di capacità
+== Consente di restituire la capacità di storage a un pool di capacità
 
 La capacità dello storage viene allocata da un pool di capacità in base alle necessità e ogni nuova richiesta può ridurre lo storage disponibile nel pool. La capacità dello storage viene restituita al pool in diverse situazioni, tra cui:
 

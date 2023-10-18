@@ -18,7 +18,7 @@ Esistono diverse attività correlate che è possibile eseguire nell'ambito della
 
 
 
-= Modifica della password dell'amministratore di implementazione
+= Modificare la password dell'amministratore di distribuzione
 
 È possibile modificare la password per l'account di amministratore della macchina virtuale Deploy in base alle necessità utilizzando l'interfaccia della riga di comando.
 

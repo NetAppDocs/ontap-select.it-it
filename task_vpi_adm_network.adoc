@@ -4,7 +4,7 @@ permalink: task_vpi_adm_network.html
 keywords: vcenter, plug-in, vcenter plug-in, deploy plug-in, administer, administering, network, networking 
 summary: È possibile esplorare e visualizzare diversi aspetti della rete. 
 ---
-= Conferma della connettività di rete
+= Verificare la connettività di rete
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -18,7 +18,7 @@ summary: È possibile esplorare e visualizzare diversi aspetti della rete.
 
 
 
-== Conferma della connettività di rete
+== Verificare la connettività di rete
 
 È possibile verificare la connettività di rete tra due o più nodi ONTAP Select sulla rete cluster interna. In genere, è necessario eseguire questo test prima di implementare un cluster a più nodi per rilevare problemi che potrebbero causare un errore dell'operazione. È inoltre possibile eseguire il test di connettività dopo l'implementazione e la connessione in linea di un cluster.
 
@@ -37,7 +37,7 @@ Il test viene eseguito sempre in modalità rapida, che esegue un test di base se
 
 
 
-== Visualizzazione dello stato del servizio mediatore
+== Visualizzare lo stato del servizio mediatore
 
 Ogni cluster a due nodi ONTAP Select viene monitorato dal servizio mediatore, che assiste nella gestione della funzionalità ha condivisa dai nodi. È possibile visualizzare lo stato del servizio mediatore per ciascuno dei cluster a due nodi definiti nell'utilità di amministrazione della distribuzione.
 

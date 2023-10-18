@@ -1,7 +1,8 @@
 ---
+layout: landing-page 
 sidebar: sidebar 
 permalink: index.html 
-summary: Benvenuti nel portale di documentazione per ONTAP Select. 
+summary: 'NetApp ONTAP Select è un"appliance di storage software-defined che è possibile implementare su una vasta gamma di server hardware commodity che eseguono l"hypervisor VMware ESXi. Offre l"agilità necessaria per creare un"infrastruttura di cloud privato flessibile e scalabile. Questo sito contiene la documentazione per ONTAP Select 9.13.1, 9.12.1, 9.11.1, 9.10.1 e 9,9.1.' 
 ---
 = Documentazione ONTAP Select
 :hardbreaks:
@@ -11,35 +12,4 @@ summary: Benvenuti nel portale di documentazione per ONTAP Select.
 :linkattrs: 
 :imagesdir: ./media/
 
-
-[role="lead"]
-NetApp ONTAP Select è un'appliance di storage software-defined che è possibile implementare su una vasta gamma di server hardware commodity che eseguono l'hypervisor VMware ESXi. Offre l'agilità necessaria per creare un'infrastruttura di cloud privato flessibile e scalabile.
-
-
-
-== Scopri le novità
-
-* link:reference_new_ots.html["Novità di questa release"]
-
-
-[NOTE]
-====
-* A partire da ONTAP Select 9.10.1, non è più possibile implementare un nuovo cluster sull'hypervisor KVM.
-* A partire da ONTAP Select 9.11.1, tutte le funzionalità di gestibilità non sono più disponibili per i cluster e gli host KVM esistenti, ad eccezione delle funzioni take offline e delete.
-
-
-====
-
-
-== Consultare la documentazione del prodotto
-
-ONTAP Select 9.13.1 può essere implementato su VMware ESXi. Questo sito contiene la documentazione per ONTAP Select 9.13.1, 9.12.1, 9.11.1, 9.10.1, 9,9.1, 9,8 e 9,7 in esecuzione su VMware ESXi così come la documentazione indipendente dall'hypervisor (come l'API REST).
-
-È possibile trovare le note di rilascio e la documentazione per la versione KVM del prodotto, come supportato con le release precedenti, all'indirizzo https://mysupport.netapp.com/documentation/productlibrary/index.html?productID=62293["Libreria di prodotti ONTAP Select"^].
-
-
-
-== Ottieni maggiori informazioni e connettiti con i colleghi
-
-* link:reference_additional_info.html["Dove trovare assistenza e ulteriori informazioni"]
 

@@ -4,7 +4,7 @@ permalink: task_adm_resize.html
 keywords: administer, administering, web, resizing nodes, resizing 
 summary: 'Dopo aver implementato un cluster ONTAP Select, è possibile aggiornare il tipo di istanza dell"hypervisor dei nodi utilizzando l"utility di amministrazione di deploy.' 
 ---
-= Ridimensionamento dei nodi del cluster ONTAP Select
+= Ridimensionare i nodi del cluster ONTAP Select
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

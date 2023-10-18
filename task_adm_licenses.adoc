@@ -18,7 +18,7 @@ Esistono diverse attività correlate che è possibile eseguire nell'ambito dell'
 
 
 
-== Gestione delle licenze del Tier di capacità
+== Gestire le licenze dei Tier di capacità
 
 È possibile aggiungere, modificare ed eliminare le licenze del Tier di capacità ONTAP Select in base alle esigenze.
 
@@ -33,7 +33,7 @@ Esistono diverse attività correlate che è possibile eseguire nell'ambito dell'
 
 
 
-== Gestione delle licenze del pool di capacità
+== Gestire le licenze del pool di capacità
 
 È possibile aggiungere, modificare ed eliminare le licenze del pool di capacità ONTAP Select in base alle esigenze.
 
@@ -62,7 +62,7 @@ Esistono diverse attività correlate che è possibile eseguire nell'ambito dell'
 
 
 
-== Reinstallazione di una licenza del pool di capacità
+== Reinstallare una licenza del pool di capacità
 
 Ogni licenza di Capacity Pool attiva viene bloccata in una specifica istanza di License Manager, contenuta in un'istanza dell'utility di amministrazione di Deploy. Se si utilizza una licenza di Capacity Pool e quindi si ripristina o ripristina l'istanza di distribuzione, la licenza originale non è più valida. È necessario generare un nuovo file di licenza della capacità e installare la licenza nella nuova istanza di implementazione.
 
@@ -80,7 +80,7 @@ Ad un livello elevato, questo compito è composto da tre parti. È necessario ri
 . Contattare il supporto NetApp e ottenere tutte le licenze del pool di capacità per l'istanza di implementazione originale senza bound e senza registrazione.
 . Acquisire e scaricare un nuovo file di licenza per ciascuna licenza del pool di capacità.
 +
-Vedere link:task_lic_acquire_cp.html["Acquisizione di una licenza di Capacity Pool"] per ulteriori informazioni.
+Vedere link:task_lic_acquire_cp.html["Acquisire una licenza per pool di capacità"] per ulteriori informazioni.
 
 . Installare le licenze del pool di capacità nella nuova istanza di implementazione:
 +
@@ -126,12 +126,11 @@ Vedere link:task_lic_acquire_cp.html["Acquisizione di una licenza di Capacity Po
 
 
 
-== Conversione di una licenza di valutazione in una licenza di produzione
+== Convertire una licenza di valutazione in una licenza di produzione
 
 È possibile aggiornare un cluster di valutazione di ONTAP Select per utilizzare una licenza di livello di capacità di produzione con l'utility di amministrazione Deploy.
 
 .Prima di iniziare
-* È necessario utilizzare ONTAP Select 9.5P1 con Deploy 2.11 o versione successiva
 * Ogni nodo deve disporre di spazio di storage sufficiente per supportare il minimo richiesto per una licenza di produzione.
 * È necessario disporre di licenze di livello di capacità per ciascun nodo del cluster di valutazione.
 
@@ -158,6 +157,6 @@ I numeri di serie di nodi a venti cifre originariamente assegnati a ciascun nodo
 
 
 
-== Gestione di una licenza di Capacity Pool scaduta
+== Gestione di una licenza del pool di capacità scaduta
 
 In genere, quando una licenza scade, non accade nulla. Tuttavia, non è possibile installare una licenza diversa perché i nodi sono associati alla licenza scaduta. Fino al rinnovo della licenza, è necessario _non_ fare qualsiasi cosa che porti l'aggregato offline, come un riavvio o un'operazione di failover. Si consiglia di accelerare il rinnovo della licenza.

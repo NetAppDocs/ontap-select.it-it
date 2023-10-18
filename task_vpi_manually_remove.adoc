@@ -30,7 +30,7 @@ Esistono diversi casi in cui è necessario rimuovere manualmente il plug-in:
 
 
 
-== Utilizzo di VMware MOB per rimuovere il plug-in
+== Utilizzare VMware MOB per rimuovere il plug-in
 
 MOB è un'applicazione VMware che consente di visualizzare e gestire gli oggetti su un server VMware vCenter. È possibile utilizzare MOB per rimuovere il plug-in Deploy vCenter.
 
@@ -53,7 +53,7 @@ Il plug-in viene rimosso dall'elenco delle estensioni.
 
 
 
-== Rimozione del plug-in dalla cartella dell'interfaccia utente di vSphere
+== Rimuovere il plug-in dalla cartella dell'interfaccia utente di vSphere
 
 Esaminare la directory dell'interfaccia utente di vSphere sul server vCenter e rimuovere il plug-in di implementazione, se trovato.
 
@@ -93,7 +93,7 @@ Il riavvio e la disponibilità del plug-in di implementazione possono richiedere
 
 
 
-== Rimozione del plug-in dalla cartella del client vSphere
+== Rimuovere il plug-in dalla cartella del client vSphere
 
 Esaminare la directory vSphere Client nel server vCenter e rimuovere il plug-in di implementazione, se presente. Sebbene il plug-in di implementazione non utilizzi Flash, è consigliabile esaminare questa directory come parte della procedura di rimozione del plug-in.
 

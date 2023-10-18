@@ -47,7 +47,7 @@ perfstat8 –i N,m -t <sample time in minutes> --verbose --nodes=<filer IP> --di
 http://<Deploy-IP-Address/api/ui
 ----
 
-NOTE: La release API v3 non è compatibile con le versioni precedenti dell'API. Una nuova guida API è disponibile sul https://library.netapp.com/ecm/ecm_download_file/ECMLP2845694["Field Portal"].
+NOTE: La release API v3 non è compatibile con le versioni precedenti dell'API. Una nuova procedura API è disponibile sul https://library.netapp.com/ecm/ecm_download_file/ECMLP2845694["Field Portal"^].
 
 .È possibile eseguire il backup di ONTAP Select VM con snapshot VMware o di altri produttori?
 No ONTAP Select VM utilizza dischi indipendenti e persistenti, esclusi dagli snapshot basati su VMware. L'unico metodo supportato per il backup di ONTAP Select è SnapMirror o SnapVault.

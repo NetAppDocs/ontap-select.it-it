@@ -18,7 +18,7 @@ Esistono diverse attività correlate che è possibile eseguire nell'ambito dell'
 
 
 
-== Gestione delle licenze
+== Gestire le licenze
 
 È possibile aggiungere, modificare ed eliminare le licenze del Tier di capacità ONTAP Select in base alle esigenze.
 

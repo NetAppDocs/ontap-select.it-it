@@ -4,7 +4,7 @@ permalink: task_cli_deploy_cluster.html
 keywords: administer, administering, cli, create cluster, deploy cluster 
 summary: 'È possibile utilizzare l"interfaccia della riga di comando fornita con l"utilità di amministrazione di ONTAP Select Deploy per creare un cluster ONTAP Select a nodo singolo o a più nodi.' 
 ---
-= Implementazione di un cluster ONTAP Select utilizzando l'interfaccia CLI
+= Implementa un cluster ONTAP Select usando l'interfaccia a riga di comando
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -24,7 +24,7 @@ Prima di creare un cluster ONTAP Select su ESXi, è necessario comprendere la pr
 
 
 
-=== Preparazione per collegare lo storage al nodo ONTAP Select
+=== Preparazione per il collegamento dello storage al nodo ONTAP Select
 
 Se si utilizza un controller RAID hardware locale, è necessario creare almeno un pool di storage in ciascun nodo per i dati di sistema, nonché per gli aggregati root e di dati. È necessario collegare il pool di storage durante la configurazione del nodo ONTAP Select.
 
@@ -34,17 +34,17 @@ Se si utilizza il software RAID, è necessario creare un pool di storage per i d
 
 === Versioni ONTAP Select disponibili
 
-L'utility di amministrazione di Deploy contiene una singola versione di ONTAP Select. Se si desidera distribuire i cluster utilizzando una versione precedente di ONTAP Select, è necessario aggiungere prima l'immagine ONTAP Select all'istanza di distribuzione. Vedere link:task_cli_deploy_image_add.html["Aggiunta di un'immagine ONTAP Select da implementare"] per ulteriori informazioni.
+L'utility di amministrazione di Deploy contiene una singola versione di ONTAP Select. Se si desidera distribuire i cluster utilizzando una versione precedente di ONTAP Select, è necessario aggiungere prima l'immagine ONTAP Select all'istanza di distribuzione. Vedere link:task_cli_deploy_image_add.html["Aggiungere un'immagine ONTAP Select da distribuire"] per ulteriori informazioni.
 
 
 
-=== Licensing ONTAP Select per un'implementazione in produzione
+=== License ONTAP Select per una distribuzione in produzione
 
 Prima di implementare un cluster ONTAP Select in un ambiente di produzione, è necessario acquistare una licenza per la capacità dello storage e scaricare il file di licenza associato. È possibile concedere in licenza lo storage in ciascun nodo utilizzando il modello _Capacity Tier_ o concedere in licenza un pool condiviso utilizzando il modello _Capacity Pools_.
 
 
 
-== Caricamento e registrazione di un file di licenza
+== Caricare e registrare un file di licenza
 
 Dopo aver acquisito un file di licenza con capacità di storage, è necessario caricare il file contenente la licenza sulla macchina virtuale di implementazione e registrarlo.
 
@@ -81,7 +81,7 @@ Fornire la password dell'account amministratore quando richiesto.
 
 
 
-== Aggiunta di host hypervisor ESXi
+== Aggiunta di host dell'hypervisor ESXi
 
 È necessario registrare ciascun host hypervisor in cui verrà eseguito un nodo ONTAP Select. Come parte di questo, l'utility di amministrazione di deploy esegue l'autenticazione sul server vCenter che gestisce l'host o direttamente sull'host standalone di ESXi.
 
@@ -174,7 +174,7 @@ cluster modify -name test-cluster -mgmt-ip 10.234.81.20 -netmask 255.255.255.192
 
 
 
-== Configurazione di un nodo ONTAP Select
+== Configurare un nodo ONTAP Select
 
 È necessario configurare ciascuno dei nodi nel cluster ONTAP Select.
 
@@ -247,7 +247,7 @@ node show -name test-cluster-01 -cluster-name test-cluster -detailed
 
 
 
-== Collegamento dello storage ai nodi ONTAP Select
+== Collegare lo storage ai nodi ONTAP Select
 
 È necessario configurare lo storage utilizzato da ciascun nodo del cluster ONTAP Select. A ogni nodo deve sempre essere assegnato almeno un pool di storage. Quando si utilizza il RAID software, a ciascun nodo deve essere assegnata almeno un'unità disco.
 
@@ -330,7 +330,7 @@ node storage disk show -node-name sdot-smicro-009a -cluster-name NVME
 
 
 
-== Implementazione di un cluster ONTAP Select
+== Implementare un cluster ONTAP Select
 
 Una volta configurati il cluster e i nodi, è possibile implementarlo.
 

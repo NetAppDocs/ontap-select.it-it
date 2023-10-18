@@ -116,7 +116,7 @@ Ogni LUN viene considerato come un disco locale sull'host dell'hypervisor e può
 
 
 
-=== Gestione dei dischi virtuali
+=== Gestire i dischi virtuali
 
 Esistono diversi problemi relativi ai dischi virtuali di cui si dovrebbe essere a conoscenza durante la preparazione dell'implementazione di ONTAP Select.
 
@@ -167,7 +167,7 @@ image:ST_02.jpg["Cluster ESXi"]
 È possibile creare un datastore VMFS residente su un array di storage esterno. È possibile accedere allo storage utilizzando uno dei diversi protocolli di rete. La figura seguente illustra un datastore VMFS su un array di storage esterno a cui si accede utilizzando il protocollo iSCSI.
 
 
-NOTE: ONTAP Select supporta tutti gli storage array esterni descritti nella Guida alla compatibilità storage/SAN di VMware, inclusi iSCSI, Fibre Channel e Fibre Channel over Ethernet.
+NOTE: ONTAP Select supporta tutti gli array di storage esterni descritti nella documentazione relativa alla compatibilità di storage/SAN VMware, inclusi iSCSI, Fiber Channel e Fiber Channel over Ethernet.
 
 image:ST_03.jpg["Host hypervisor ESXi"]
 

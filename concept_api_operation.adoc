@@ -49,7 +49,7 @@ Esistono due modi principali in cui un server esegue una richiesta HTTP ricevuta
 
 
 
-== Conferma del completamento di un lavoro a lunga durata
+== Confermare il completamento di un lavoro a esecuzione prolungata
 
 In genere, tutte le operazioni che possono richiedere molto tempo vengono elaborate in modo asincrono utilizzando un'attività in background sul server. Con l'API di distribuzione REST, ogni attività in background viene ancorata da un oggetto Job che tiene traccia dell'attività e fornisce informazioni, ad esempio lo stato corrente. Un oggetto Job, incluso il relativo identificatore univoco, viene restituito nella risposta HTTP dopo la creazione di un'attività in background.
 

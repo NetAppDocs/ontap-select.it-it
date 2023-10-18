@@ -45,7 +45,7 @@ Le seguenti funzioni sono incluse in ONTAP Select e concesse in licenza per impo
 
 È necessario acquistare una licenza separata per qualsiasi funzione ONTAP non attivata per impostazione predefinita, tra cui:
 
-* Azienda SnapLock
+* SnapLock Enterprise (la conformità SnapLock non è supportata per ONTAP Select)
 * FabricPool
 * Servizio di disponibilità dei dati
 * FlexCache (costo zero)

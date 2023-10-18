@@ -18,7 +18,7 @@ Per amministrare un cluster ONTAP Select è possibile eseguire diverse attività
 
 
 
-== Spostamento di un cluster ONTAP Select negli stati offline e online
+== Spostare un cluster ONTAP Select negli stati offline e online
 
 Dopo aver creato un cluster, è possibile modificarne lo stato in offline o online in base alle necessità.
 
@@ -30,7 +30,7 @@ Dopo aver creato un cluster, è possibile modificarne lo stato in offline o onli
 
 
 
-== Eliminazione di un cluster ONTAP Select
+== Eliminare un cluster ONTAP Select
 
 È possibile eliminare un cluster ONTAP Select quando non è più necessario.
 

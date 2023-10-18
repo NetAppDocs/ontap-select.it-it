@@ -27,7 +27,7 @@ NOTE: Fare riferimento alla pagina della documentazione online di ONTAP Select D
 
 
 
-== Esecuzione di query sull'oggetto Job associato a una richiesta API
+== Eseguire una query sull'oggetto Job associato a una richiesta API
 
 L'oggetto Job restituito nella risposta HTTP contiene diverse proprietà. È possibile eseguire una query sulla proprietà state per determinare se la richiesta è stata completata correttamente. Un oggetto Job può trovarsi in uno dei seguenti stati:
 

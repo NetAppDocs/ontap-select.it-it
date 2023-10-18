@@ -4,7 +4,7 @@ permalink: task_vpi_deploy_cluster.html
 keywords: vcenter, plug-in, vcenter plug-in, deploy plug-in, deploy cluster, deploying cluster, create cluster, creating cluster 
 summary: 'È possibile utilizzare il plug-in Deploy vCenter tramite l"interfaccia utente Web di vSphere per implementare i cluster ONTAP Select.' 
 ---
-= Implementazione di un cluster ONTAP Select
+= Implementare un cluster ONTAP Select
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -71,7 +71,7 @@ Si consiglia di esaminare la preparazione per l'implementazione di un cluster ON
 
 
 
-== Creazione di un cluster a nodo singolo
+== Crea un cluster a nodo singolo
 
 È possibile utilizzare il plug-in VMware vCenter tramite il client Web vSphere per implementare un cluster ONTAP Select costituito da un singolo nodo.
 
@@ -121,7 +121,7 @@ TIP: Se l'operazione di creazione del cluster viene avviata ma non viene complet
 
 
 
-== Creazione di un cluster a più nodi
+== Creare un cluster multi-nodo
 
 È possibile utilizzare il plug-in VMware vCenter tramite il client Web vSphere per implementare un cluster ONTAP Select composto da più nodi.
 

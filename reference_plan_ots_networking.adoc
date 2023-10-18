@@ -29,10 +29,7 @@ NOTE: Per ulteriori informazioni su come configurare un vSwitch su un host hyper
 
 == Aggiornamento a VMXNET3
 
-A partire da ONTAP Select 9.5 con Deploy 2.10, VMXNET3 è il driver di rete predefinito incluso nelle nuove implementazioni cluster su VMware ESXi. Se si aggiorna un nodo ONTAP Select esistente alla versione 9.5 o successiva, il driver non viene aggiornato automaticamente.
-
-
-NOTE: Al momento non è necessario eseguire l'aggiornamento a VMXNET3. Tuttavia, se si sceglie di aggiornare il driver, è necessario eseguire l'aggiornamento manualmente. In questo caso, contattare il supporto NetApp per assistenza.
+A partire da ONTAP Select 9.5 con Deploy 2.10, VMXNET3 è il driver di rete predefinito incluso nelle nuove implementazioni cluster su VMware ESXi. Se si esegue l'upgrade di un nodo ONTAP Select meno recente alla versione 9,5 o successiva, il driver non viene aggiornato automaticamente.
 
 
 

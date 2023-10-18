@@ -4,7 +4,7 @@ permalink: task_adm_upgrade_vmfs6.html
 keywords: administer, administering, web, storage vmotion, upgrade vmfs6 
 summary: VMware non supporta un aggiornamento in-place da VMFS 5 a VMFS 6. È possibile utilizzare Storage vMotion per passare da un datastore VMFS 5 a un datastore VMFS 6 per un nodo ONTAP Select esistente. 
 ---
-= Aggiornamento a VMFS6 con Storage vMotion
+= Eseguire l'aggiornamento a VMFS6 utilizzando Storage vMotion
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

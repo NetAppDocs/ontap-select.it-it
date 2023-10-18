@@ -4,7 +4,7 @@ permalink: task_install_deploy.html
 keywords: install, installing, ontap select deploy, deploy administration utility, deploy utility 
 summary: 'È necessario installare l"utility di amministrazione di ONTAP Select Deploy e utilizzare l"utility per creare un cluster ONTAP Select.' 
 ---
-= Installazione di ONTAP Select Deploy
+= Installare ONTAP Select Deploy
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -65,7 +65,7 @@ Verificare che il sistema soddisfi i seguenti requisiti:
 | `csc-prod-ONTAP-Select-Deploy.pem` | Il certificato utilizzato per generare la chiave. 
 
 
-| `ONTAPdeploy.ova` | Il file eseguibile di installazione del prodotto per ONTAP Select 9.13.1. 
+| `ONTAPdeploy.ova` | Il file eseguibile di installazione del prodotto per ONTAP Select. 
 
 
 | `ONTAPdeploy.ova.sig` | L'algoritmo SHA-256 viene sottoposto a hash e quindi firmato dal Remote Support Agent (RSA) utilizzando `csc-prod` chiave e firma per il programma di installazione. 
@@ -159,4 +159,4 @@ Accedere all'interfaccia utente Web per verificare che l'utilità di implementaz
 
 
 .Informazioni correlate
-link:task_cli_signing_in.html["Accesso per la distribuzione tramite SSH"]
+link:task_cli_signing_in.html["Accedere per eseguire la distribuzione utilizzando SSH"]

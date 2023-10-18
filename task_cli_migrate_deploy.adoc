@@ -4,7 +4,7 @@ permalink: task_cli_migrate_deploy.html
 keywords: administer, administering, cli, deploy, deploy instance, migrate 
 summary: 'È possibile migrare un"istanza esistente dell"utilità di amministrazione di Deploy su una nuova macchina virtuale utilizzando l"interfaccia della riga di comando.' 
 ---
-= Migrazione di un'istanza di implementazione su una nuova macchina virtuale
+= Migrare un'istanza di distribuzione su una nuova macchina virtuale
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -20,7 +20,7 @@ Questa procedura si basa sulla creazione di una nuova macchina virtuale che util
 
 
 
-== Backup dei dati di configurazione di implementazione
+== Eseguire il backup dei dati di configurazione Deploy
 
 È necessario creare un backup dei dati di configurazione di implementazione durante la migrazione della macchina virtuale. È inoltre necessario creare un backup dopo aver implementato un cluster ONTAP Select. I dati vengono salvati in un singolo file crittografato che è possibile scaricare sulla workstation locale.
 
@@ -53,7 +53,7 @@ Il file di backup viene crittografato in base alla password.
 
 
 
-== Installazione di una nuova istanza della macchina virtuale di implementazione
+== Installare una nuova istanza della macchina virtuale di distribuzione
 
 È necessario creare una nuova istanza della macchina virtuale di implementazione che è possibile aggiornare con i dati di configurazione della macchina virtuale originale.
 
@@ -74,11 +74,11 @@ Questa attività viene descritta ad alto livello.
 
 
 .Informazioni correlate
-link:task_install_deploy.html["Installazione di ONTAP Select Deploy"]
+link:task_install_deploy.html["Installare ONTAP Select Deploy"]
 
 
 
-== Ripristino dei dati di configurazione dell'implementazione nella nuova macchina virtuale
+== Ripristinare i dati di configurazione di implementazione sulla nuova macchina virtuale
 
 È necessario ripristinare i dati di configurazione dalla macchina virtuale dell'utility di implementazione originale alla nuova macchina virtuale. I dati si trovano in un singolo file che è necessario caricare dalla workstation locale.
 

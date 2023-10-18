@@ -64,14 +64,6 @@ Quando si implementa un cluster ONTAP Select sull'hypervisor VMware ESXi, è pos
 L'ambiente per un'implementazione RAID software su VMware ESXi deve soddisfare i seguenti requisiti fondamentali:
 
 * VMware ESXi 7,0 GA (build 15843807) o versione successiva
-* ONTAP Select 9.5 o versione successiva
-* ONTAP Select Deploy 2.10 o versione successiva
-* Solo nuovi cluster ONTAP Select
-
-
-
-NOTE: È necessario implementare un nuovo cluster con ONTAP Select 9.5 o versione successiva, utilizzando l'utility di amministrazione di Deploy. Non è possibile utilizzare il RAID software con un nodo esistente che è stato aggiornato da una versione precedente a ONTAP Select 9.5.
-
 * Licenza Premium ONTAP Select o superiore
 * Solo unità SSD locali
 * Separazione dei dischi di sistema dagli aggregati root e dati
@@ -82,6 +74,7 @@ NOTE: È necessario implementare un nuovo cluster con ONTAP Select 9.5 o version
 NOTE: Se è presente un controller RAID hardware, consultare link:concept_stor_concepts_chars.html["Storage per immersioni profonde"] per ulteriori requisiti di configurazione.
 
 * VMware VMotion, ha e DRS non sono supportati
+* Non è possibile utilizzare RAID software con un nodo aggiornato da ONTAP Select 9,4 o versione precedente. In questo caso, è necessario creare un nuovo nodo per l'implementazione del RAID software.
 
 
 
@@ -100,14 +93,14 @@ Per separare i dischi di sistema dagli aggregati di dati e root, è necessario c
 
 Nell'ambito della pianificazione di un'implementazione di ONTAP Select, è necessario conoscere le restrizioni relative all'utilizzo e all'allocazione dello storage.
 
-Di seguito sono illustrate le principali restrizioni di storage. Per informazioni più dettagliate, consulta anche il _NetApp Interoperability Matrix Tool_.
+Di seguito sono illustrate le principali restrizioni di storage. È inoltre necessario esaminare link:https://mysupport.netapp.com/matrix/["Tool di matrice di interoperabilità NetApp"^] per informazioni più dettagliate.
 
 
-TIP: ONTAP Select applica diverse restrizioni relative all'allocazione e all'utilizzo dello storage. Prima di implementare un cluster ONTAP Select o di acquistare una licenza, è necessario conoscere tali limitazioni. Per ulteriori informazioni, consultare la sezione _licenza_.
+TIP: ONTAP Select applica diverse restrizioni relative all'allocazione e all'utilizzo dello storage. Prima di implementare un cluster ONTAP Select o di acquistare una licenza, è necessario conoscere tali limitazioni. Vedere link:https://docs.netapp.com/us-en/ontap-select/concept_lic_evaluation.html["Licenza"] per ulteriori informazioni.
 
 
 
-=== Calcolo della capacità di storage raw
+=== Calcola la capacità dello storage raw
 
 La capacità dello storage ONTAP Select corrisponde alla dimensione totale consentita dei dati virtuali e dei dischi root collegati alla macchina virtuale ONTAP Select. È necessario tenere in considerazione questo aspetto quando si assegna la capacità.
 
@@ -199,10 +192,10 @@ NOTE: Il RAID software con dischi DAS locali è supportato con la licenza Premiu
 
 È possibile configurare il RAID software per l'utilizzo di unità SSD NVMe. L'ambiente deve soddisfare i seguenti requisiti:
 
-* ONTAP Select 9.7 o versione successiva con l'utility di amministrazione della distribuzione associata
+* ONTAP Select 9,7 o versione successiva con un'utilità di amministrazione di distribuzione supportata
 * Offerta di licenza per piattaforma Premium XL o licenza di valutazione per 90 giorni
 * VMware ESXi versione 6.7 o successiva
 * Dispositivi NVMe conformi alla specifica 1.0 o successiva
 
 
-È necessario configurare manualmente i dischi NVMe prima di utilizzarli. Vedere link:task_chk_nvme_configure.html["Configurazione di un host per l'utilizzo di dischi NVMe"] per ulteriori informazioni.
+È necessario configurare manualmente i dischi NVMe prima di utilizzarli. Vedere link:task_chk_nvme_configure.html["Configurare un host per utilizzare unità NVMe"] per ulteriori informazioni.

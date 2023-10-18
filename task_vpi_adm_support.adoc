@@ -18,7 +18,7 @@ Esistono diverse attività di diagnostica e supporto correlate che è possibile 
 
 
 
-== Visualizzazione delle impostazioni di sistema
+== Consente di visualizzare le impostazioni di sistema
 
 È possibile visualizzare le impostazioni di base dell'utilità di amministrazione di deploy tramite il plugin vCenter.
 
@@ -31,7 +31,7 @@ Esistono diverse attività di diagnostica e supporto correlate che è possibile 
 
 
 
-== Visualizzazione dei messaggi degli eventi
+== Visualizzare i messaggi degli eventi
 
 L'utility di amministrazione di Deploy include una funzione di registrazione degli eventi che fornisce informazioni sull'attività del sistema. È possibile visualizzare il contenuto del registro eventi attraverso il plug-in di implementazione per eseguire il debug di qualsiasi problema o quando richiesto dal supporto.
 
@@ -53,7 +53,7 @@ L'utility di amministrazione di Deploy include una funzione di registrazione deg
 
 
 
-== Abilitazione di AutoSupport
+== Abilitare AutoSupport
 
 AutoSupport è il principale strumento di troubleshooting utilizzato da NetApp per supportare ONTAP Select. È possibile attivare o disattivare la funzione AutoSupport in base alle esigenze.
 
@@ -69,7 +69,7 @@ Dopo aver implementato un nuovo cluster, assicurarsi che AutoSupport sia attivat
 
 
 
-== Generazione di un pacchetto AutoSupport
+== Generare un pacchetto AutoSupport
 
 Il plug-in Deploy vCenter include la capacità di generare un pacchetto AutoSupport. Si consiglia di generare un pacchetto per il debug dei problemi o quando richiesto dal supporto.
 

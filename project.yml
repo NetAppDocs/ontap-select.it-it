@@ -11,7 +11,7 @@ settings:
   langs: it-it,us-en,ja-jp,ko-kr,zh-cn,zh-tw,de-de,es-es,fr-fr
 sidebar:
   entries:
-  - title: Documenti ONTAP Select
+  - title: Documentazione ONTAP Select
     url: "/index.html"
   - title: Note di rilascio
     entries:
@@ -141,9 +141,9 @@ sidebar:
       entries:
       - title: Console video VM
         url: "/task_adm_video_console.html"
-      - title: Ridimensionamento dei nodi del cluster
+      - title: Ridimensionare i nodi del cluster
         url: "/task_adm_resize.html"
-      - title: Sostituzione di unità SW RAID guaste
+      - title: Sostituire le unità RAID SW guaste
         url: "/task_adm_replace_drives_swraid.html"
       - title: Aggiornamento a VMFS6
         url: "/task_adm_upgrade_vmfs6.html"
@@ -161,7 +161,7 @@ sidebar:
         url: "/concept_stor_swraid_local.html"
       - title: Configurazioni di array esterno e VSAN
         url: "/concept_stor_vsan_external.html"
-      - title: Aumento della capacità di storage
+      - title: Aumentare la capacità di storage
         url: "/concept_stor_capacity_inc.html"
       - title: Supporto per l'efficienza dello storage
         url: "/concept_stor_eff_support.html"
@@ -197,13 +197,13 @@ sidebar:
         url: "/concept_perf_premium_ha_direct_ssd_96.html"
   - title: Integrazione con vCenter
     entries:
-    - title: Per iniziare
+    - title: Inizia subito
       entries:
       - title: Panoramica
         url: "/concept_vpi_overview.html"
       - title: Architettura
         url: "/concept_vpi_architecture.html"
-      - title: Pianificazione
+      - title: Pianificare
         url: "/concept_vpi_planning.html"
     - title: Gestire il plug-in
       entries:
@@ -255,19 +255,19 @@ sidebar:
         url: "/concept_api_before_browser.html"
       - title: Accedere alla pagina del documento
         url: "/task_api_access_doc_page.html"
-      - title: Informazioni su una chiamata API
+      - title: Comprendere una chiamata API
         url: "/task_api_understanding_call.html"
     - title: Processi di workflow
       entries:
       - title: Prima di iniziare
         url: "/concept_api_before_workflows.html"
-      - title: Workflow 1 creazione di un cluster
+      - title: Flusso di lavoro 1 creazione di un cluster
         url: "/reference_api_workflow01.html"
     - title: Accesso con Python
       entries:
       - title: Prima di iniziare
         url: "/concept_api_before_python.html"
-      - title: Comprensione degli script
+      - title: Comprendere gli script
         url: "/concept_api_understanding_scripts.html"
     - title: Esempi di codice Python
       entries:
@@ -287,8 +287,6 @@ sidebar:
     url: "/concept_automate_ansible.html"
   - title: Utilizzare la CLI
     entries:
-    - title: Prima di iniziare
-      url: "/concept_cli_before.html"
     - title: Accedi con SSH
       url: "/task_cli_signing_in.html"
     - title: Implementare un cluster
@@ -319,9 +317,5 @@ sidebar:
         url: "/task_cli_deploy_recover_two_node.html"
   - title: FAQ
     url: "/reference_faq.html"
-  - title: Ulteriori informazioni
-    url: "/reference_additional_info.html"
-  - title: Versioni precedenti
-    url: "/reference_earlier_versions.html"
   - title: Note legali
     url: "/reference_legal_notices.html"

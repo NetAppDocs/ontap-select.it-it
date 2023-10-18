@@ -45,7 +45,7 @@ Il contenuto del corpo della richiesta varia in base alla chiamata specifica. Il
 
 
 
-=== Filtraggio degli oggetti
+=== Filtra oggetti
 
 Quando si esegue una chiamata API che utilizza GET, è possibile limitare o filtrare gli oggetti restituiti in base a qualsiasi attributo. Ad esempio, è possibile specificare un valore esatto da associare:
 
@@ -99,7 +99,7 @@ TIP: Come Best practice, devi sempre identificare i campi specifici che desideri
 
 
 
-=== Ordinamento degli oggetti nel set di output
+=== Ordinare gli oggetti nel set di output
 
 I record di una raccolta di risorse vengono restituiti nell'ordine predefinito definito dall'oggetto. È possibile modificare l'ordine utilizzando il parametro di query Order_by con il nome del campo e la direzione di ordinamento come segue:
 `order_by=<field name> asc|desc`
@@ -123,7 +123,7 @@ Se necessario, è possibile combinare questo parametro con altri parametri di qu
 
 
 
-== Interpretazione di una risposta API
+== Interpretare una risposta API
 
 Ogni richiesta API genera una risposta al client. È possibile esaminare la risposta per determinare se è stata eseguita correttamente e recuperare dati aggiuntivi in base alle necessità.
 

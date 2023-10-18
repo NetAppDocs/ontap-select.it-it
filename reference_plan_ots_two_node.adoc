@@ -34,7 +34,7 @@ CAUTION: Se si dispone di uno o più cluster a due nodi attivi, la macchina virt
 .Ubicazione del servizio cluster e mediatore
 Poiché i cluster a due nodi vengono generalmente implementati in una sede remota o in una filiale, possono essere remoti dal data center aziendale e dall'utility di implementazione che fornisce supporto amministrativo. Con questa configurazione, il traffico di gestione tra l'utility di implementazione e il cluster passa attraverso la WAN. Per ulteriori informazioni su limitazioni e restrizioni, consulta le note sulla versione.
 
-.Backup dei dati di configurazione di implementazione
+.Eseguire il backup dei dati di configurazione Deploy
 È consigliabile eseguire regolarmente il backup dei dati di configurazione di implementazione, anche dopo la creazione di un cluster. Ciò diventa particolarmente importante con i cluster a due nodi, a causa dei dati di configurazione del mediatore inclusi nel backup.
 
 .Indirizzo IP statico assegnato per l'implementazione

@@ -4,7 +4,7 @@ permalink: task_cli_deploy_recover_two_node.html
 keywords: administer, administering, cli, two node cluster, recover, recovering 
 summary: 'Se l"utilità di implementazione di ONTAP Select non riesce o non è disponibile per qualche motivo, si perde la capacità di amministrare i nodi e i cluster ONTAP Select. Inoltre, tutti i cluster a due nodi perdono la funzionalità ha perché il servizio mediatore incluso con l"implementazione non è disponibile. Se si verifica un errore irreversibile, è necessario ripristinare l"istanza dell"utilità di implementazione per ripristinare la funzionalità amministrativa e ha.' 
 ---
-= Ripristino dell'utilità di implementazione per un cluster a due nodi
+= Ripristina l'utility di implementazione per un cluster a due nodi
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -51,14 +51,14 @@ A seconda della procedura di ripristino utilizzata, dovrebbe essere possibile ri
 | Si dispone di un backup di implementazione contenente il cluster a due nodi? | Procedura di ripristino da utilizzare 
 
 
-| Sì | Ripristino di un'istanza dell'utility di implementazione utilizzando un backup della configurazione 
+| Sì | Ripristinare un'istanza dell'utilità di distribuzione utilizzando un backup di configurazione 
 
 
-| No | Riconfigurazione e ripristino di un'istanza dell'utility di distribuzione 
+| No | Riconfigurare e ripristinare un'istanza dell'utilità di distribuzione 
 |===
 
 
-== Ripristino di un'istanza dell'utility di implementazione utilizzando un backup della configurazione
+== Ripristinare un'istanza dell'utilità di distribuzione utilizzando un backup di configurazione
 
 Se si dispone di un backup dell'istanza dell'utilità di implementazione non riuscita contenente il cluster a due nodi, è possibile ripristinare i dati di configurazione nella nuova istanza della macchina virtuale di implementazione. A questo punto, è necessario completare il ripristino eseguendo una configurazione aggiuntiva dei due nodi nel cluster ONTAP Select.
 
@@ -119,7 +119,7 @@ Se si utilizzano le licenze per i pool di capacità, è necessario reinstallare 
 
 
 
-== Riconfigurazione e ripristino di un'istanza dell'utility di distribuzione
+== Riconfigurare e ripristinare un'istanza dell'utilità di distribuzione
 
 Se non si dispone di un backup dell'istanza dell'utilità di implementazione non riuscita contenente il cluster a due nodi, è necessario configurare la destinazione iSCSI del mediatore e la mailbox nella nuova macchina virtuale di implementazione. A questo punto, è necessario completare il ripristino eseguendo una configurazione aggiuntiva dei due nodi nel cluster ONTAP Select.
 
@@ -210,7 +210,7 @@ disk assign -disk <mediator-disk2-name> -owner <node2-name>
 Se si utilizzano le licenze per i pool di capacità, è necessario reinstallare ciascuna licenza per il pool di capacità. Per ulteriori informazioni, vedere reinstallazione di una licenza di Capacity Pool.
 
 .Informazioni correlate
-* link:task_install_deploy.html["Installazione di ONTAP Select Deploy"]
-* link:task_cli_migrate_deploy.html#restoring-the-deploy-configuration-data-to-the-new-virtual-machine["Ripristino dei dati di configurazione dell'implementazione nella nuova macchina virtuale"]
-* link:task_adm_licenses.html#reinstalling-a-capacity-pool-license["Reinstallazione di una licenza del pool di capacità"]
+* link:task_install_deploy.html["Installare ONTAP Select Deploy"]
+* link:task_cli_migrate_deploy.html#restoring-the-deploy-configuration-data-to-the-new-virtual-machine["Ripristinare i dati di configurazione di implementazione sulla nuova macchina virtuale"]
+* link:task_adm_licenses.html#reinstalling-a-capacity-pool-license["Reinstallare una licenza del pool di capacità"]
 
