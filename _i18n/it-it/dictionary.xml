@@ -14,13 +14,10 @@
   <block id="67a5c1dd24ee56878ca59f7cbb4a6602" category="list-text">Accedere al NetApp Support Site utilizzando un browser Web e fare clic su *Support Quick Links*.</block>
   <block id="966c758e5fd0e52652aa5afbd8f22a24" category="list-text">Fare clic su *Download Software* sotto *Top Tasks* ed effettuare l'accesso.</block>
   <block id="d687fa799cb928d61ab8f8c42c50439d" category="list-text">Fare clic su *trova il prodotto*.</block>
-  <block id="bccf3e76ee48d8e82f2ceba72b62d7af" category="list-text">Scorrere verso il basso e fare clic su *ONTAP Select Deploy Upgrade*.</block>
   <block id="a8601f098fd28588686f1b5ce31da2a1" category="list-text">Selezionare la versione desiderata del pacchetto di aggiornamento.</block>
   <block id="9bf3ac5f4cb6341117598df735958bdf" category="list-text">Leggere il Contratto di licenza con l'utente finale (EULA) e fare clic su *Accept &amp; Continue* (Accetta e continua).</block>
   <block id="def8f653fff47640d3bcce40244c6331" category="list-text">Selezionare e scaricare il pacchetto appropriato, rispondendo a tutti i prompt necessari per il proprio ambiente.</block>
   <block id="30f60d67f457bb040dffde52197a54da" category="paragraph-title">Informazioni correlate</block>
-  <block id="09ea0908fbfc4cde85bf416e35dc55c8" category="inline-link-macro">Supporto NetApp</block>
-  <block id="256b9e5b7f511be2eea8558649199f73" category="paragraph"><block ref="256b9e5b7f511be2eea8558649199f73" category="inline-link-macro-rx"></block></block>
   <block id="e1592123d1df946558bd9bf257720d21" category="paragraph">Dopo aver acquisito il pacchetto di aggiornamento, è necessario caricare il file sulla macchina virtuale di implementazione.</block>
   <block id="d5d592c7eaf2cef1bd79103f367e703c" category="paragraph">Il file di aggiornamento deve essere disponibile sulla workstation locale. È inoltre necessario disporre della password per l'account utente amministratore.</block>
   <block id="f331fac6e9cf90cf6a3bc3b228554302" category="paragraph-title">A proposito di queste attività</block>
@@ -34,7 +31,6 @@
   <block id="ddd583d223b6cdfc7284a7d618756d41" category="list-text">Eseguire l'aggiornamento utilizzando il percorso di directory e il nome file appropriati:</block>
   <block id="f5fb71abd32be9bc904db11637b6b903" category="paragraph"><block ref="1299ca75bdbf03e068a6eb77561752df" prefix="" category="inline-code"></block></block>
   <block id="bd965e38a0c9cf27aa1bde099308e23f" category="paragraph-title">Al termine</block>
-  <block id="150fc0d33877571bc7e496a88e0dcdb5" category="paragraph">Al termine della procedura di aggiornamento, viene richiesto di creare un backup della configurazione della macchina virtuale di implementazione. Per visualizzare le pagine di distribuzione appena create, è inoltre necessario cancellare la cache del browser.</block>
   <block id="aca2fd87d8012efa91dbc6e6c912d7e7" category="summary">ONTAP Select offre opzioni di efficienza dello storage simili alle opzioni di efficienza dello storage presenti negli array FAS e AFF.</block>
   <block id="6b3850335452abbd46e2f81ea011d686" category="doc">Supporto per l'efficienza dello storage</block>
   <block id="abdc6cb968cabcf935a49935cb3457a8" category="paragraph">Le implementazioni di ONTAP Select Virtual NAS (vNAS) che utilizzano VSAN all-flash o array flash generici devono seguire le Best practice per ONTAP Select con DAS (Direct-Attached Storage) non SSD.</block>
@@ -2450,7 +2446,6 @@
   <block id="332fd48f854bf692aea555e091e1b3cc" category="paragraph"><block ref="332fd48f854bf692aea555e091e1b3cc" category="inline-link-rx"></block></block>
   <block id="eea1cec828c419810e082867558ec301" category="list-text">Fare clic su *aggiornamento nodo ONTAP Select*.</block>
   <block id="a864f71b844955db4e27746202712f1b" category="list-text">Selezionare e scaricare l'immagine di aggiornamento appropriata, rispondendo a tutti i prompt in base alle necessità.</block>
-  <block id="202772c1f92d500b0765ed04693d11e5" category="list-text">Aggiornare il nodo ONTAP Select utilizzando le procedure di aggiornamento standard di ONTAP con il file di aggiornamento di ONTAP Select.</block>
   <block id="c09b5be4c2da04f4040eef1878f258aa" category="inline-link">Documentazione di ONTAP 9</block>
   <block id="0f4f157087aaf0bd28aa76133fd9d2c3" category="summary">Configurazione di ONTAP Select vSwitch e policy di bilanciamento del carico per configurazioni a due e quattro NIC.</block>
   <block id="96600f2ed0fb970e508d5209faa2adc5" category="paragraph">ONTAP Select supporta l'utilizzo di configurazioni vSwitch standard e distribuite. I vSwitch distribuiti supportano i costrutti di aggregazione dei collegamenti (LACP). L'aggregazione dei collegamenti è una struttura di rete comune utilizzata per aggregare la larghezza di banda tra più adattatori fisici. LACP è uno standard indipendente dal vendor che fornisce un protocollo aperto per gli endpoint di rete che raggruppa gruppi di porte di rete fisiche in un singolo canale logico. ONTAP Select può funzionare con gruppi di porte configurati come gruppo di aggregazione di banda (LAG). Tuttavia, NetApp consiglia di utilizzare le singole porte fisiche come semplici porte di uplink (trunk) per evitare la configurazione LAG. In questi casi, le Best practice per vSwitch standard e distribuiti sono identiche.</block>
@@ -3526,7 +3521,6 @@ I gruppi di interfacce non sono supportati.</block>
   <block id="f300769ad7ade3ee1597c88f58750b97" category="doc">Aggiornare i nodi ONTAP Select</block>
   <block id="2e17a67d810d937603511ac8eb9044c5" category="paragraph">Prima di aggiornare un nodo ONTAP Select, consultare le Note di rilascio per ulteriori informazioni e le procedure necessarie.</block>
   <block id="2a883d1fe3d932e9f2fc25c99deaa4b9" category="inline-link-macro">Panoramica sull'aggiornamento di ONTAP</block>
-  <block id="c6747590f95713e2f203d616751eb4ea" category="paragraph"><block ref="c6747590f95713e2f203d616751eb4ea" category="inline-link-macro-rx"></block></block>
   <block id="46928a27773a23230df6e5bda4c3aeb9" category="section-title">Ripristinare un nodo ONTAP Select</block>
   <block id="140182c4500e816e4313b2abddef452d" category="paragraph">Non è possibile ripristinare un nodo ONTAP Select a una versione precedente a quella su cui è stato installato originariamente. Ad esempio:</block>
   <block id="f02e36d55b7d949e1003748824aa7ec6" category="list-text">ONTAP Select 9,7 viene installato inizialmente</block>
@@ -3708,4 +3702,10 @@ Per ulteriori informazioni, consultare la documentazione relativa all'installazi
   <block id="ba0ae169498601730046cfffe2523387" category="sidebar">Comprendere una chiamata API</block>
   <block id="20f67f07ed859b317730c48838666bb5" category="sidebar">Flusso di lavoro 1 creazione di un cluster</block>
   <block id="d95d85ec027f0d5da378060fe690a4ec" category="sidebar">Comprendere gli script</block>
+  <block id="9d2169c1c2855b78a7aeaa4f42d27dc7" category="inline-link-macro">Sito di supporto NetApp</block>
+  <block id="0f0e87daa63b5587a3d3f02aefb73403" category="list-text">Accedere a. <block ref="a42716fdd3c80ae75cadfb8024b65de0" category="inline-link-macro-rx"></block> Utilizzando un browser Web e scegliere *Download* dal menu Download.</block>
+  <block id="dce12db5fd853ebf9ecc2b9677234aa6" category="list-text">Scorrere verso il basso e selezionare *ONTAP Select Deploy Upgrade*.</block>
+  <block id="d3a9739a4d6cf4fc9efd4b7704905c48" category="list-text">Leggere il Contratto di licenza con l'utente finale (EULA) e selezionare *Accetta e continua*.</block>
+  <block id="3b21e87e0ddc0bee4fd0ebb1cd063173" category="paragraph">Prima del completamento della procedura di aggiornamento, viene richiesto di creare un backup della configurazione della macchina virtuale di distribuzione. Inoltre, è necessario cancellare la cache del browser in modo da poter visualizzare le pagine di distribuzione appena create.</block>
+  <block id="cb09c1543f3641ccb98ebd45cc63490d" category="list-text">Aggiornare il nodo ONTAP Select utilizzando le procedure di aggiornamento standard di ONTAP con il file di aggiornamento di ONTAP Select. Vedere <block ref="c6747590f95713e2f203d616751eb4ea" category="inline-link-macro-rx"></block> per la procedura di aggiornamento dettagliata.</block>
 </blocks>

@@ -34,10 +34,7 @@ https://mysupport.netapp.com/site/downloads["Download del supporto NetApp"^]
 +
 Prima di aggiornare un nodo ONTAP Select, consultare le Note di rilascio per ulteriori informazioni e le procedure necessarie.
 
-. Aggiornare il nodo ONTAP Select utilizzando le procedure di aggiornamento standard di ONTAP con il file di aggiornamento di ONTAP Select.
-+
-link:https://docs.netapp.com/us-en/ontap/upgrade/index.html["Panoramica sull'aggiornamento di ONTAP"^]
-
+. Aggiornare il nodo ONTAP Select utilizzando le procedure di aggiornamento standard di ONTAP con il file di aggiornamento di ONTAP Select. Vedere link:https://docs.netapp.com/us-en/ontap/upgrade/index.html["Panoramica sull'aggiornamento di ONTAP"^] per la procedura di aggiornamento dettagliata.
 
 
 

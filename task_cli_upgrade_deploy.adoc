@@ -32,17 +32,12 @@ NOTE: Se è installata un'istanza precedente dell'utilità di amministrazione di
 Per iniziare il processo di aggiornamento, è necessario scaricare il file di aggiornamento della macchina virtuale di implementazione appropriato dal sito del supporto NetApp. Il pacchetto di aggiornamento viene formattato come un singolo file compresso.
 
 .Fasi
-. Accedere al NetApp Support Site utilizzando un browser Web e fare clic su *Support Quick Links*.
-. Fare clic su *Download Software* sotto *Top Tasks* ed effettuare l'accesso.
-. Fare clic su *trova il prodotto*.
-. Scorrere verso il basso e fare clic su *ONTAP Select Deploy Upgrade*.
+. Accedere a. link:https://mysupport.netapp.com/site/["Sito di supporto NetApp"^] Utilizzando un browser Web e scegliere *Download* dal menu Download.
+. Scorrere verso il basso e selezionare *ONTAP Select Deploy Upgrade*.
 . Selezionare la versione desiderata del pacchetto di aggiornamento.
-. Leggere il Contratto di licenza con l'utente finale (EULA) e fare clic su *Accept & Continue* (Accetta e continua).
+. Leggere il Contratto di licenza con l'utente finale (EULA) e selezionare *Accetta e continua*.
 . Selezionare e scaricare il pacchetto appropriato, rispondendo a tutti i prompt necessari per il proprio ambiente.
 
-
-.Informazioni correlate
-link:https://mysupport.netapp.com["Supporto NetApp"^]
 
 
 
@@ -95,4 +90,4 @@ deploy upgrade -package-path /home/admin/ONTAPdeploy2.12_upgrade.tar.gz
 
 
 .Al termine
-Al termine della procedura di aggiornamento, viene richiesto di creare un backup della configurazione della macchina virtuale di implementazione. Per visualizzare le pagine di distribuzione appena create, è inoltre necessario cancellare la cache del browser.
+Prima del completamento della procedura di aggiornamento, viene richiesto di creare un backup della configurazione della macchina virtuale di distribuzione. Inoltre, è necessario cancellare la cache del browser in modo da poter visualizzare le pagine di distribuzione appena create.
