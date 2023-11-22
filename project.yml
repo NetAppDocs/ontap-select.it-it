@@ -49,8 +49,12 @@ sidebar:
         url: "/reference_plan_ots_hardware.html"
       - title: Storage e RAID
         url: "/reference_plan_ots_storage.html"
-      - title: ONTAP Select vNAS
-        url: "/reference_plan_ots_vnas.html"
+      - title: Requisiti di archiviazione esterna
+        entries:
+        - title: VMware ESXi
+          url: "/reference_plan_ots_vnas.html"
+        - title: KVM
+          url: "/reference_plan_ots_kvm.html"
       - title: Networking
         url: "/reference_plan_ots_networking.html"
       - title: Cluster a due nodi
@@ -59,10 +63,8 @@ sidebar:
         url: "/reference_plan_ots_robo.html"
       - title: Scheda di sicurezza MetroCluster
         url: "/reference_plan_ots_mcc_sds.html"
-      - title: VMware vCenter
+      - title: VMware vCenter su ESXi
         url: "/reference_plan_ots_vcenter.html"
-      - title: Plug-in VMware vCenter
-        url: "/reference_plan_ots_plugin.html"
     - title: Implementazione di ONTAP Select
       entries:
       - title: Requisiti generali
@@ -195,44 +197,6 @@ sidebar:
         url: "/concept_perf_general.html"
       - title: Performance di ONTAP Select 9.6
         url: "/concept_perf_premium_ha_direct_ssd_96.html"
-  - title: Integrazione con vCenter
-    entries:
-    - title: Inizia subito
-      entries:
-      - title: Panoramica
-        url: "/concept_vpi_overview.html"
-      - title: Architettura
-        url: "/concept_vpi_architecture.html"
-      - title: Pianificare
-        url: "/concept_vpi_planning.html"
-    - title: Gestire il plug-in
-      entries:
-      - title: Prima di iniziare
-        url: "/concept_vpi_manage_before.html"
-      - title: Installare
-        url: "/task_vpi_install.html"
-      - title: Accesso
-        url: "/task_vpi_access.html"
-      - title: Aggiornare e rimuovere
-        url: "/task_vpi_upgrade.html"
-    - title: Rimuovere manualmente il plug-in
-      url: "/task_vpi_manually_remove.html"
-    - title: Implementare un cluster
-      url: "/task_vpi_deploy_cluster.html"
-    - title: Integrazione di vCenter
-      url: "/concept_vpi_vcenter_integration.html"
-    - title: Amministrare
-      entries:
-      - title: Diagnostica e supporto
-        url: "/task_vpi_adm_support.html"
-      - title: Networking
-        url: "/task_vpi_adm_network.html"
-      - title: Cluster
-        url: "/task_vpi_adm_clusters.html"
-      - title: Licenze
-        url: "/task_vpi_adm_licenses.html"
-    - title: Risolvere i problemi
-      url: "/reference_vpi_troubleshooting.html"
   - title: Automatizza con RIPOSO
     entries:
     - title: Concetti

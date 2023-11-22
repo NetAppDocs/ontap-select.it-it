@@ -25,6 +25,266 @@ NOTE: L'utility di amministrazione di ONTAP Select Deploy non esegue la configur
 
 È necessario preparare gli host dell'hypervisor.
 
+
+
+== Hypervisor KVM
+
+.Preparare il server Linux
+È necessario preparare ciascuno dei server KVM Linux in cui viene implementato un nodo ONTAP Select. È inoltre necessario preparare il server in cui viene distribuita l'utilità di amministrazione di distribuzione di ONTAP Select.
+
+.Installare Red Hat Enterprise Linux
+È necessario installare il sistema operativo Red Hat Enterprise Linux (RHEL) utilizzando l'immagine ISO. Durante l'installazione, è necessario configurare il sistema come segue:
+
+* Selezionare predefinito come criterio di protezione
+* Scegliere la selezione software Virtualized host (host virtualizzato)
+* La destinazione deve essere il disco di avvio locale e non un LUN RAID utilizzato da ONTAP Select
+* Verificare che l'interfaccia di gestione host sia attiva dopo l'avvio del sistema
+
+
+
+NOTE: È possibile modificare il file di configurazione di rete corretto in /etc/sysconfig/network-scripts e quindi richiamare l'interfaccia utilizzando il `ifup` comando.
+
+.Installare pacchetti aggiuntivi necessari per ONTAP Select
+ONTAP Select richiede diversi pacchetti software aggiuntivi. L'elenco esatto dei pacchetti varia in base alla versione di Linux che si sta utilizzando. Come primo passo, verificare che l'archivio yum sia disponibile sul server. Se non è disponibile, è possibile recuperarla utilizzando `wget your_repository_location` comando:
+
+
+NOTE: Alcuni dei pacchetti richiesti potrebbero essere già installati se si sceglie Virtualized host per la selezione del software durante l'installazione del server Linux. Potrebbe essere necessario installare il pacchetto openvswitch dal codice sorgente come descritto nella link:https://docs.openvswitch.org/en/latest/intro/install/general/["Aprire la documentazione di vSwitch"^].
+
+ For additional information about the necessary packages and other configuration requirements, see the link:https://imt.netapp.com/matrix/#welcome[NetApp Interoperability Matrix Tool^].
+.Pacchetti aggiuntivi richiesti per RHEL 7,7
+Installare la stessa serie di pacchetti richiesti per RHEL 7,6.
+
+.Pacchetti aggiuntivi richiesti per RHEL 7,6
+Verificare che i seguenti pacchetti e dipendenze siano installati quando si utilizza RHEL 7,6 o CentOS 7,6. In ogni caso, sono inclusi il nome e la versione del pacchetto.
+
+* qemu-kvm (1,5.3-160)
++
+
+NOTE: Quando si utilizza RAID software, è necessario utilizzare la versione 2.9.0.
+
+* libvirt (4,5.0-10)
+* interruttore di apertura (2,7.3)
+* virt-install (1,5.0-1)
+* Lshw (B.02.18-12)
+* lsscsi (0,27-6)
+* lsof (4,87-6)
+
+
+Se si utilizza vNAS su KVM (storage esterno) e si prevede di migrare le macchine virtuali da un host all'altro, è necessario installare i seguenti pacchetti e dipendenze aggiuntivi:
+
+* agenti-recinzione-tutti (4,2.1-11)
+* lvm2 cluster (2.02.180-8)
+* pacemaker (1,1.19-8)
+* pcs (0,9.165-6)
+
+
+.Pacchetti aggiuntivi richiesti per RHEL 7,5
+Verificare che i seguenti pacchetti e dipendenze siano installati quando si utilizza RHEL 7,5 o CentOS 7,5. In ogni caso, sono inclusi il nome e la versione del pacchetto.
+
+* qemu-kvm (1,5.3-141)
++
+
+NOTE: Quando si utilizza RAID software, è necessario utilizzare la versione 2.9.0.
+
+* libvirt (3,9.0)
+* interruttore di apertura (2,7.3)
+* virt-install (1,4.1-7)
+* Lshw (B.02.18-12)
+* lsscsi (0,27-6)
+* lsof (4,87-5)
+
+
+Se si utilizza vNAS su KVM (storage esterno) e si prevede di migrare le macchine virtuali da un host all'altro, è necessario installare i seguenti pacchetti e dipendenze aggiuntivi:
+
+* agenti-recinzione-tutti (4,0.11-86)
+* lvm2 cluster (2.02.177-4)
+* pacemaker (1,1.18-11)
+* pcs (0,9.16205)
+
+
+.Pacchetti aggiuntivi richiesti per RHEL 7,4
+Verificare che i seguenti pacchetti e dipendenze siano installati quando si utilizza RHEL 7,4 o CentOS 7,4. In ogni caso sono inclusi il nome e la versione del pacchetto.
+
+* qemu-kvm (1,5.3-141)
++
+
+NOTE: Quando si utilizza RAID software, è necessario utilizzare la versione 2.9.0.
+
+* libvirt (3,2.0-14)
+* interruttore di apertura (2,7.3)
+* virt-install (1,4.1-7)
+* Lshw (B.02.18-7)
+* lsscsi (0,27-6)
+* lsof (4,87-4)
+
+
+Se si utilizza vNAS su KVM (storage esterno) e si prevede di migrare le macchine virtuali da un host all'altro, è necessario installare i seguenti pacchetti e dipendenze aggiuntivi:
+
+* agenti-recinzione-tutti (4,0.11-66)
+* lvm2 cluster (2.02.171-8)
+* pacemaker (1,1.16-12)
+* pcs (0,9.158-6)
+
+
+.Configurazione dei pool di storage
+Un pool di storage ONTAP Select è un contenitore di dati logico che astrae lo storage fisico sottostante. Occorre gestire i pool di storage sugli host KVM in cui viene implementato ONTAP Select.
+
+
+
+=== Creare un pool di storage
+
+È necessario creare almeno un pool di storage in ogni nodo ONTAP Select. Se si utilizza RAID software invece di un RAID hardware locale, i dischi storage sono collegati al nodo degli aggregati root e dati. In questo caso, è comunque necessario creare un pool di archiviazione per i dati di sistema.
+
+.Prima di iniziare
+Verificare che sia possibile accedere alla CLI di Linux sull'host in cui viene distribuito ONTAP Select.
+
+.A proposito di questa attività
+L'utility di amministrazione di distribuzione di ONTAP Select prevede che la posizione di destinazione del pool di storage venga specificata come /dev/<pool_name>, in cui <pool_name> è un nome di pool univoco sull'host.
+
+
+NOTE: L'intera capacità del LUN viene allocata quando viene creato un pool di storage.
+
+.Fasi
+. Visualizzare i dispositivi locali sull'host Linux e scegliere il LUN che conterrà il pool di archiviazione:
++
+[listing]
+----
+lsblk
+----
++
+È probabile che il LUN appropriato sia il dispositivo con la maggiore capacità di storage.
+
+. Definire il pool di archiviazione sul dispositivo:
++
+[listing]
+----
+virsh pool-define-as <pool_name> logical --source-dev <device_name> --target=/dev/<pool_name>
+----
++
+Ad esempio:
+
++
+[listing]
+----
+virsh pool-define-as select_pool logical --source-dev /dev/sdb --target=/dev/select_pool
+----
+. Creare il pool di storage:
++
+[listing]
+----
+virsh pool-build <pool_name>
+----
+. Avviare il pool di storage:
++
+[listing]
+----
+virsh pool-start <pool_name>
+----
+. Configurare il pool di storage in modo che venga avviato automaticamente all'avvio del sistema:
++
+[listing]
+----
+virsh pool-autostart <pool_name>
+----
+. Verificare che il pool di archiviazione sia stato creato:
++
+[listing]
+----
+virsh pool-list
+----
+
+
+
+
+=== Eliminazione di un pool di archiviazione
+
+Puoi eliminare un pool di storage quando non è più necessario.
+
+.Prima di iniziare
+Verificare di poter accedere alla CLI di Linux in cui viene distribuito ONTAP Select.
+
+.A proposito di questa attività
+L'utility di amministrazione di ONTAP Select Deploy prevede che la posizione di destinazione del pool di storage venga specificata come `/dev/<pool_name>`, dove `<pool_name>` è un nome di pool univoco sull'host.
+
+.Fasi
+. Verificare che il pool di storage sia definito:
++
+[listing]
+----
+virsh pool-list
+----
+. Distruggere il pool di storage:
++
+[listing]
+----
+virsh pool-destroy <pool_name>
+----
+. Annullare la definizione della configurazione per il pool di archiviazione inattivo:
++
+[listing]
+----
+virsh pool-undefine <pool_nanme>
+----
+. Verificare che il pool di archiviazione sia stato rimosso dall'host:
++
+[listing]
+----
+virsh pool-list
+----
+. Verificare che tutti i volumi logici per il gruppo di volumi del pool di archiviazione siano stati eliminati.
++
+.. Visualizzare i volumi logici:
++
+[listing]
+----
+lvs
+----
+.. Se sono presenti volumi logici per il pool, eliminarli:
++
+[listing]
+----
+lvremove <logical_volume_name>
+----
+
+
+. Verificare che il gruppo di volumi sia stato eliminato:
++
+.. Visualizzare i gruppi di volumi:
++
+[listing]
+----
+vgs
+----
+.. Se esiste un gruppo di volumi per il pool, eliminarlo:
++
+[listing]
+----
+vgremove <volume_group_name>
+----
+
+
+. Verificare che il volume fisico sia stato eliminato:
++
+.. Visualizzare i volumi fisici:
++
+[listing]
+----
+pvs
+----
+.. Se esiste un volume fisico per il pool, eliminarlo:
++
+[listing]
+----
+pvremove <physical_volume_name>
+----
+
+
+
+
+
+
+== Hypervisor ESXi
+
 Ciascun host deve essere configurato con i seguenti elementi:
 
 * Un hypervisor preinstallato e supportato
@@ -83,6 +343,95 @@ image:CHK_02.jpg["Cluster a quattro nodi che mostra due reti"]
 La figura seguente illustra la configurazione di rete tipica per una singola macchina virtuale ONTAP Select all'interno di un cluster a quattro nodi. Esistono due reti separate: ONTAP-Internal e ONTAP-External.
 
 image:CHK_03.jpg["Nodo singolo all'interno di un cluster a quattro nodi"]
+
+
+
+== Host KVM
+
+
+
+=== Configurare Open vSwitch su un host KVM
+
+È necessario configurare uno switch software-defined su ogni nodo ONTAP Select utilizzando Open vSwitch.
+
+.Prima di iniziare
+Verificare che Network Manager sia disattivato e che il servizio di rete Linux nativo sia attivato.
+
+.A proposito di questa attività
+ONTAP Select richiede due reti separate, entrambe che utilizzano il bonding delle porte per fornire funzionalità ha alle reti.
+
+.Fasi
+. Verificare che Open vSwitch sia attivo sull'host:
++
+.. Determinare se Open vSwitch è in esecuzione:
++
+[listing]
+----
+systemctl status openvswitch
+----
+.. Se Open vSwitch non è in esecuzione, avviarlo:
++
+[listing]
+----
+systemctl start openvswitch
+----
+
+
+. Visualizzare la configurazione Open vSwitch:
++
+[listing]
+----
+ovs-vsctl show
+----
++
+La configurazione appare vuota se Open vSwitch non è già stato configurato sull'host.
+
+. Aggiungere una nuova istanza vSwitch:
++
+[listing]
+----
+ovs-vsctl add-br <bridge_name>
+----
++
+Ad esempio:
+
++
+[listing]
+----
+ovs-vsctl add-br ontap-br
+----
+. Disattivare le interfacce di rete:
++
+[listing]
+----
+ifdown <interface_1>
+ifdown <interface_2>
+----
+. Combinare i collegamenti utilizzando LACP:
++
+[listing]
+----
+ovs-vsctl add-bond <internal_network> bond-br <interface_1> <interface_2> bond_mode=balance-slb lacp=active other_config:lacp-time=fast
+For example:
+ovs-vsctl add-bond ontap-internal bond-br enp18s0 enp19s0 bond_mode=balance-slb lacp=active other_config:lacp-time=fast
+----
+
+
+
+NOTE: È necessario configurare un collegamento solo se sono presenti più interfacce.
+
+. Attivare le interfacce di rete:
++
+[listing]
+----
+ifup <interface_1>
+ifup <interface_2>
+----
+
+
+
+
+== Host ESXi
 
 
 

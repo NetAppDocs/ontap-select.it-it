@@ -26,6 +26,10 @@ A differenza della versione multinodo del prodotto ONTAP Select, ogni macchina v
 
 Queste porte vengono utilizzate per fornire i seguenti servizi: LIF di gestione, dati e intercluster.
 
+.KVM
+ONTAP Select può essere implementato come cluster a nodo singolo. L'host dell'hypervisor include uno switch virtuale che fornisce l'accesso alla rete esterna.
+
+.ESXi
 La relazione tra queste porte e gli adattatori fisici sottostanti è illustrata nella seguente figura, che mostra un nodo del cluster ONTAP Select sull'hypervisor ESX.
 
 *Configurazione di rete del cluster ONTAP Select a nodo singolo*

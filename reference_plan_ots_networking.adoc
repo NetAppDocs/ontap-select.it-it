@@ -27,7 +27,7 @@ NOTE: Per ulteriori informazioni su come configurare un vSwitch su un host hyper
 
 
 
-== Aggiornamento a VMXNET3
+== Upgrade a VMXNET3 (solo ESXi)
 
 A partire da ONTAP Select 9.5 con Deploy 2.10, VMXNET3 è il driver di rete predefinito incluso nelle nuove implementazioni cluster su VMware ESXi. Se si esegue l'upgrade di un nodo ONTAP Select meno recente alla versione 9,5 o successiva, il driver non viene aggiornato automaticamente.
 
@@ -49,7 +49,7 @@ NOTE: È possibile impostare manualmente il valore MTU del cluster, se necessari
 
 
 
-== Host a due NIC con vSwitch standard
+== Host con due NIC con vSwitch standard (solo ESXi)
 
 Per migliorare le prestazioni della ONTAP Select in una configurazione a due NIC, è necessario isolare il traffico di rete interno ed esterno utilizzando due gruppi di porte. Questo suggerimento si applica alla seguente configurazione specifica:
 
@@ -76,7 +76,7 @@ Vedere link:concept_nw_concepts_chars.html["Networking di approfondimento"] Per 
 
 
 
-== Host a quattro NIC con vSwitch standard
+== Host con quattro NIC con vSwitch standard (solo ESXi)
 
 Per migliorare le prestazioni ONTAP Select in una configurazione a quattro NIC, è necessario isolare il traffico di rete interno ed esterno utilizzando quattro gruppi di porte. Questo suggerimento si applica alla seguente configurazione specifica:
 
@@ -123,8 +123,10 @@ Vedere link:concept_nw_concepts_chars.html["Networking di approfondimento"] Per 
 Esistono diversi partecipanti o entità che scambiano il traffico di rete come parte di un'implementazione ONTAP Select. Questi vengono introdotti e quindi utilizzati nella descrizione riepilogativa dei requisiti di traffico di rete.
 
 * Implementare l'utility di amministrazione di ONTAP Select Deploy
-* VSphere/ESXi è un server vSphere o un host ESXi, a seconda della modalità di gestione dell'host nell'implementazione del cluster
-* Host hypervisor ESXi del server hypervisor
+* VSphere (solo ESXi)
+Un server vSphere o un host ESXi, a seconda del modo in cui l'host viene gestito nella distribuzione del cluster
+* Server hypervisor
+Host dell'hypervisor ESXi o host KVM Linux
 * Nodo OTS un nodo ONTAP Select
 * Cluster OTS un cluster ONTAP Select
 * Admin WS Local amministrative workstation
@@ -133,31 +135,34 @@ Esistono diversi partecipanti o entità che scambiano il traffico di rete come p
 .Riepilogo dei requisiti di traffico di rete
 La seguente tabella descrive i requisiti di traffico di rete per un'implementazione ONTAP Select.
 
-[cols="20,45,35"]
+[cols="20,20,35,25"]
 |===
-| Protocollo/porta | Direzione | Descrizione 
+| Protocollo/porta | ESXi/KVM | Direzione | Descrizione 
 
 
-| TLS (443) | Implementazione su server vCenter (gestito) o ESXi (non gestito) | API VMware VIX 
+| TLS (443) | ESXi | Implementazione su server vCenter (gestito) o ESXi (gestito o non gestito) | API VMware VIX 
 
 
-| 902 | Implementazione su server vCenter (gestito) o ESXi (non gestito) | API VMware VIX 
+| 902 | ESXi | Implementazione su server vCenter (gestito) o ESXi (non gestito) | API VMware VIX 
 
 
-| ICMP | Implementazione sul server hypervisor | Ping 
+| ICMP | ESXi o KVM | Implementazione sul server hypervisor | Ping 
 
 
-| ICMP | Implementare su ciascun nodo OTS | Ping 
+| ICMP | ESXi o KVM | Implementare su ciascun nodo OTS | Ping 
 
 
-| SSH (22) | WS di amministrazione per ciascun nodo OTS | Amministrazione 
+| SSH (22) | ESXi o KVM | WS di amministrazione per ciascun nodo OTS | Amministrazione 
 
 
-| TLS (443) | Implementazione su nodi e cluster OTS | Accedere a ONTAP 
+| SSH (22) | KVM | Implementazione sui nodi server dell'hypervisor | Accedi al server dell'hypervisor 
 
 
-| TLS (443) | Ciascun nodo OTS da implementare | Implementazione dell'accesso 
+| TLS (443) | ESXi o KVM | Implementazione su nodi e cluster OTS | Accedere a ONTAP 
 
 
-| ISCSI (3260) | Ciascun nodo OTS da implementare | Disco mediatore/mailbox 
+| TLS (443) | ESXi o KVM | Ciascun nodo OTS da implementare | Access Deploy (Licensing Capacity Pool) 
+
+
+| ISCSI (3260) | ESXi o KVM | Ciascun nodo OTS da implementare | Disco mediatore/mailbox 
 |===

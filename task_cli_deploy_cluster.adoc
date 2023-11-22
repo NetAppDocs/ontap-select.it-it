@@ -20,7 +20,7 @@ summary: 'È possibile utilizzare l"interfaccia della riga di comando fornita co
 
 == Prima di iniziare
 
-Prima di creare un cluster ONTAP Select su ESXi, è necessario comprendere la preparazione richiesta.
+Prima di creare un cluster ONTAP Select su un hypervisor, è necessario comprendere la preparazione richiesta.
 
 
 
@@ -57,7 +57,7 @@ NOTE: Se si sta implementando un cluster solo per la valutazione, è possibile s
 .Fasi
 . In una shell di comandi sulla workstation locale, utilizzare l'utility sftp per caricare il file di licenza sulla macchina virtuale di implementazione.
 +
-Esempio
+Output di esempio
 
 +
 ....
@@ -81,9 +81,58 @@ Fornire la password dell'account amministratore quando richiesto.
 
 
 
-== Aggiunta di host dell'hypervisor ESXi
+== Aggiunta degli host dell'hypervisor
 
-È necessario registrare ciascun host hypervisor in cui verrà eseguito un nodo ONTAP Select. Come parte di questo, l'utility di amministrazione di deploy esegue l'autenticazione sul server vCenter che gestisce l'host o direttamente sull'host standalone di ESXi.
+È necessario registrare ciascun host hypervisor in cui verrà eseguito un nodo ONTAP Select.
+
+[role="tabbed-block"]
+====
+.KVM
+--
+È necessario registrare un host hypervisor in cui verrà eseguito il nodo ONTAP Select. Come parte di questo, l'utilità di amministrazione di deploy esegue l'autenticazione sull'host KVM.
+
+.A proposito di questa attività
+Se è necessario più di un host hypervisor, utilizzare questa procedura per aggiungere ciascun host.
+
+.Fasi
+. Accedere alla CLI dell'utility di implementazione utilizzando SSH con l'account amministratore.
+. Registrare l'host:
++
+[source, asciidoc]
+----
+`host register -name <FQDN|IP> -hypervisor-type KVM -username KVM_USERNAME`
+----
++
+Output di esempio
+
++
+[listing]
+----
+host register -name 10.234.81.14 -hypervisor-type KVM -username root
+----
++
+Fornire la password per l'account host quando richiesto.
+
+. Visualizzare lo stato dell'host e confermarne l'autenticazione:
++
+[source, asciidoc]
+----
+host show -name <FQDN|IP> -detailed
+----
++
+Output di esempio
+
++
+[listing]
+----
+host show -name 10.234.81.14 -detailed
+----
+
+
+--
+.ESXi
+--
+Come parte di questo, l'utility di amministrazione di deploy esegue l'autenticazione sul server vCenter che gestisce l'host o direttamente sull'host standalone di ESXi.
 
 .A proposito di questa attività
 Prima di registrare un host gestito da vCenter, è necessario aggiungere un account server di gestione per il server vCenter. Se l'host non è gestito da vCenter, è possibile fornire la credenziale host come parte della registrazione dell'host. Utilizzare questa procedura per aggiungere ciascun host.
@@ -95,7 +144,7 @@ Prima di registrare un host gestito da vCenter, è necessario aggiungere un acco
 `credential add -hostname <FQDN|IP> -type vcenter -username VCENTER_USERNAME`
 
 +
-Esempio
+Output di esempio
 
 +
 ....
@@ -108,7 +157,7 @@ credential add -hostname vc.select.company-demo.com -type vcenter -username admi
 ** Registrare un host gestito da vCenter:
 `host register -name <FQDN|IP> -hypervisor-type ESX -mgmt-server <FQDN|IP>`
 +
-Esempio
+Output di esempio
 
 +
 ....
@@ -121,7 +170,7 @@ host register -name 10.234.81.14 -hypervisor-type ESX -mgmt-server vc.select.com
 `host show -name <FQDN|IP> -detailed`
 
 +
-Esempio
+Output di esempio
 
 +
 ....
@@ -129,6 +178,8 @@ host show -name 10.234.81.14 -detailed
 ....
 
 
+--
+====
 
 
 == Creazione e configurazione di un cluster ONTAP Select
@@ -148,7 +199,7 @@ Quando si crea un cluster ONTAP Select, l'utilità di implementazione genera aut
 `cluster create -name CLUSTERNAME -node-count NODES`
 
 +
-Esempio
+Output di esempio
 
 +
 ....
@@ -159,7 +210,7 @@ cluster create -name test-cluster -node-count 1
 `cluster modify -name CLUSTERNAME -mgmt-ip IP_ADDRESS -netmask NETMASK -gateway IP_ADDRESS -dns-servers <FQDN|IP>_LIST -dns-domains DOMAIN_LIST`
 
 +
-Esempio
+Output di esempio
 
 +
 ....
@@ -193,7 +244,7 @@ Utilizzare questa procedura per configurare ciascun nodo. In questo esempio vien
 . Selezionare il nodo ed eseguire la configurazione di base:
 `node modify -name NODENAME -cluster-name CLUSTERNAME -host-name <FQDN|IP> -license-serial-number NUMBER -instance-type TYPE -passthrough-disks false`
 +
-Esempio
+Output di esempio
 
 +
 ....
@@ -211,7 +262,7 @@ Per il nodo ONTAP Select viene utilizzata una licenza di livello di capacità.
 `host network show -host-name <FQDN|IP> -detailed`
 
 +
-Esempio
+Output di esempio
 
 +
 ....
@@ -225,7 +276,7 @@ host network show -host-name 10.234.81.14 -detailed
 Quando si implementa un cluster a nodo singolo, non è necessaria una rete interna e si consiglia di rimuovere la rete interna.
 
 +
-Esempio
+Output di esempio
 
 +
 ....
@@ -237,7 +288,7 @@ node modify -name test-cluster-01 -cluster-name test-cluster -mgmt-ip 10.234.81.
 `node show -name NODENAME -cluster-name CLUSTERNAME -detailed`
 
 +
-Esempio
+Output di esempio
 
 +
 ....
@@ -264,7 +315,7 @@ Quando si utilizza un controller RAID hardware locale, è necessario eseguire i 
 `host storage pool show -host-name <FQDN|IP>`
 
 +
-Esempio
+Output di esempio
 
 +
 [listing]
@@ -282,7 +333,7 @@ host storage pool show -host-name 10.234.81.14
 Se si include il parametro -Capacity-Limit, specificare il valore in GB o TB.
 
 +
-Esempio
+Output di esempio
 
 +
 [listing]
@@ -295,7 +346,7 @@ node-name test-cluster-01 -capacity-limit 500GB
 `node storage pool show -cluster-name CLUSTERNAME -node-name NODENAME`
 
 +
-Esempio
+Output di esempio
 
 +
 [listing]
@@ -307,7 +358,7 @@ node storage pool show -cluster-name test-cluster -node-name testcluster-01
 `node storage disk attach -node-name NODENAME -cluster-name CLUSTERNAME -disks LIST_OF_DRIVES`
 
 +
-Esempio
+Output di esempio
 
 +
 [listing]
@@ -319,7 +370,7 @@ node storage disk attach -node-name NVME_SN-01 -cluster-name NVME_SN -disks 0000
 `node storage disk show -node-name NODENAME -cluster-name CLUSTERNAME`
 
 +
-Esempio
+Output di esempio
 
 +
 [listing]
@@ -344,7 +395,7 @@ Prima di implementare un cluster a più nodi, eseguire il controllo della connet
 `cluster deploy -name CLUSTERNAME`
 
 +
-Esempio
+Output di esempio
 
 +
 [listing]

@@ -23,7 +23,7 @@ summary: 'È necessario installare l"utility di amministrazione di ONTAP Select 
 È possibile scaricare il pacchetto ONTAP Select dal sito di supporto NetApp.
 
 .A proposito di questa attività
-L'utility di amministrazione di ONTAP Select Deploy viene fornita come macchina virtuale basata sullo standard OVF (Open Virtualization Format). Il singolo file compresso ha il suffisso `ova`.
+L'utility di amministrazione di ONTAP Select Deploy è predisposta come macchina virtuale (VM) basata sullo standard OVF (Open Virtualization Format). Il singolo file compresso ha il suffisso `ova`.
 
 .Fasi
 . Accedere al sito di supporto NetApp utilizzando un browser Web e fare clic su *link rapidi al supporto*.
@@ -83,18 +83,18 @@ openssl dgst  -sha256 -verify ONTAP-Select-Deploy-Production.pub -signature ONTA
 
 == Implementare la macchina virtuale
 
-È necessario installare e avviare la macchina virtuale ONTAP Select Deploy utilizzando l'immagine della macchina virtuale OVF. Nell'ambito del processo di installazione, è necessario configurare l'interfaccia di rete in modo che utilizzi DHCP o una configurazione IP statica.
+È necessario installare e avviare ONTAP Select Deploy VM utilizzando l'immagine OVF VM. Come parte del processo di installazione, l'interfaccia di rete viene configurata per l'utilizzo di DHCP o di una configurazione IP statica.
 
 .Prima di iniziare
-È necessario prepararsi per implementare la macchina virtuale ONTAP Select Deploy:
+Per un hypervisor ESXi, è necessario prepararsi a implementare ONTAP Select Deploy VM:
 
 * Abilitare la funzionalità OVF nel browser installando il plug-in di integrazione del client VMware o eseguendo una configurazione simile in base alle necessità
-* Abilitato DHCP nell'ambiente VMware se si assegna dinamicamente un indirizzo IP alla macchina virtuale di implementazione
+* Abilitare il DHCP nell'ambiente VMware se si assegna dinamicamente un indirizzo IP alla VM di distribuzione
 
 
-È necessario disporre delle informazioni di configurazione da utilizzare durante la creazione della macchina virtuale, inclusi il nome della macchina virtuale, la rete esterna e il nome host. Quando si definisce una configurazione di rete statica, sono necessarie le seguenti informazioni aggiuntive:
+Per gli hypervisor ESXi e KVM, è necessario disporre delle informazioni di configurazione da utilizzare durante la creazione della macchina virtuale, incluso il nome della macchina virtuale, della rete esterna e del nome host. Quando si definisce una configurazione di rete statica, sono necessarie le seguenti informazioni aggiuntive:
 
-* Indirizzo IP della macchina virtuale di implementazione
+* Indirizzo IP della macchina virtuale da implementare
 * Netmask
 * Indirizzo IP del gateway (router)
 * Indirizzo IP del server DNS primario
@@ -103,17 +103,23 @@ openssl dgst  -sha256 -verify ONTAP-Select-Deploy-Production.pub -signature ONTA
 
 
 .A proposito di questa attività
-Se si utilizza vSphere, la procedura guidata di implementazione dei modelli OVF include un modulo che fornisce tutte le informazioni di configurazione di implementazione, inclusa la configurazione di rete. Tuttavia, se si sceglie di non utilizzare questo modulo, è possibile utilizzare la console della macchina virtuale di implementazione per configurare la rete.
+Se si utilizza vSphere, la procedura guidata di implementazione dei modelli OVF include un modulo che fornisce tutte le informazioni di configurazione di implementazione, inclusa la configurazione di rete. Tuttavia, se si sceglie di non utilizzare questo modulo, è possibile utilizzare la console della macchina virtuale di distribuzione per configurare la rete.
 
 .Fasi
+I passaggi che segui dipendono dall'utilizzo di un hypervisor ESXi o KVM.
+
+[role="tabbed-block"]
+====
+.ESXi
+--
 . Accedere al client vSphere e accedere.
 . Individuare la posizione appropriata nella gerarchia e selezionare *Deploy OVF Template* (implementa modello OVF).
 . Selezionare il file OVA e completare la procedura guidata Deploy OVF Template, selezionando le opzioni appropriate per l'ambiente in uso.
 +
 È necessario definire la password per l'account amministratore. È necessario fornire questa password quando si effettua l'accesso all'utilità di implementazione.
 
-. Una volta implementata la macchina virtuale, selezionare la nuova macchina virtuale e accenderla se non è già accesa in base all'input fornito alla procedura guidata di implementazione.
-. Se necessario, è possibile configurare la rete di implementazione utilizzando la console della macchina virtuale:
+. Dopo l'implementazione della VM, selezionare la nuova VM e accenderla se non è già accesa in base all'input inviato alla procedura guidata di implementazione.
+. Se necessario, è possibile configurare la rete Deploy utilizzando la console VM:
 +
 .. Fare clic sulla scheda *Console* per accedere alla shell di configurazione dell'host ESXi e monitorare il processo di accensione.
 .. Attendere la seguente richiesta:
@@ -130,12 +136,65 @@ Inserire una password per l'utente amministratore:
 +
 Utilizzare DHCP per impostare le informazioni di rete? [n]:
 
-.. Digitare *n* per definire una configurazione IP statica o y per utilizzare DHCP, quindi premere *Invio*.
+.. Digitare *n* per definire una configurazione IP statica o *y* per utilizzare il DHCP, quindi selezionare *Invio*.
 .. Se si sceglie una configurazione statica, fornire tutte le informazioni di configurazione di rete necessarie.
 
 
 
 
+--
+.KVM
+--
+. Accedere alla CLI dal server Linux:
++
+[listing]
+----
+ssh root@<ip_address>
+----
+. Creare una nuova directory ed estrarre l'immagine di macchina virtuale non elaborata:
++
+[listing]
+----
+mkdir /home/select_deploy25
+cd /home/select_deploy25
+mv /root/<file_name> .
+tar -xzvf <file_name>
+----
+. Creare e avviare KVM VM con l'utilità di amministrazione Deploy:
++
+[listing]
+----
+virt-install --name=select-deploy --vcpus=2 --ram=4096 --os-variant=debian10 --controller=scsi,model=virtio-scsi --disk path=/home/deploy/ONTAPdeploy.raw,device=disk,bus=scsi,format=raw --network "type=bridge,source=ontap-br,model=virtio,virtualport_type=openvswitch" --console=pty --import --noautoconsole
+----
+. Se necessario, è possibile configurare la rete Deploy utilizzando la console VM:
++
+.. Collegamento alla console della macchina virtuale:
++
+[listing]
+----
+virsh console <vm_name>
+----
+.. Attendere la seguente richiesta:
++
+[listing]
+----
+Host name :
+----
+.. Digitare il nome host e selezionare *Invio*.
+.. Attendere la seguente richiesta:
++
+[listing]
+----
+Use DHCP to set networking information? [n]:
+----
+.. Digitare *n* per definire una configurazione IP statica o *y* per utilizzare il DHCP, quindi selezionare *Invio*.
+.. Se si sceglie una configurazione statica, fornire tutte le informazioni di configurazione di rete necessarie.
+
+
+
+
+--
+====
 
 
 == Accedere all'interfaccia Web di distribuzione

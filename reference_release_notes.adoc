@@ -20,11 +20,4 @@ Le Note di rilascio per ONTAP Select forniscono informazioni specifiche sulla re
 NOTE: Per accedere alle Note di rilascio, devi disporre di un account per accedere al NetApp Support Site.
 
 .Versione corrente di ONTAP Select
-È possibile accedere a. https://library.netapp.com/ecm/ecm_download_file/ECMLP2885795["Note sulla versione di ONTAP Select 9.13.1"^] per visualizzare i dettagli sulla versione corrente.
-
-.Versioni precedenti di ONTAP Select
-Per accedere alle Note di rilascio relative alle versioni precedenti del prodotto, vedere:
-
-* https://mysupport.netapp.com/documentation/productlibrary/index.html?productID=62293["Libreria di prodotti ONTAP Select"^]
-* https://mysupport.netapp.com/documentation/productlibrary/index.html?productID=62293&archive=true["Archivi della libreria di prodotti ONTAP Select"^]
-
+È possibile accedere a. https://library.netapp.com/ecm/ecm_download_file/ECMLP2886733["Note sulla versione di ONTAP Select 9.14.1"^] per visualizzare i dettagli sulla versione corrente.

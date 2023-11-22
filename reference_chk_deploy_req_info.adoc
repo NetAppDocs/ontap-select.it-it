@@ -14,7 +14,7 @@ summary: 'Prima di installare l"utility di amministrazione di deploy in un ambie
 
 
 [role="lead"]
-Prima di installare l'utilità di amministrazione di Deploy in un ambiente VMware, esaminare le informazioni di configurazione richieste e le informazioni di configurazione di rete opzionali per prepararsi alla corretta implementazione.
+Prima di installare l'utilità di amministrazione di distribuzione in un ambiente hypervisor, esaminare le informazioni di configurazione richieste e le informazioni di configurazione di rete opzionali per preparare la corretta distribuzione.
 
 
 
@@ -30,10 +30,10 @@ Nell'ambito della pianificazione della distribuzione, è necessario determinare 
 | Nome della macchina virtuale di implementazione | Identificatore da utilizzare per la macchina virtuale. 
 
 
-| Nome dell'host ESXi | Identificatore dell'host VMware ESXi in cui è installata l'utility di implementazione. 
+| Nome dell'host dell'hypervisor | Identificatore per l'host hypervisor VMware ESXi o KVM in cui è installata l'utilità di distribuzione. 
 
 
-| Nome dell'archivio dati | Identificatore del datastore VMware che contiene i file della macchina virtuale (sono necessari circa 40 GB). 
+| Nome dell'archivio dati | Identificatore dell'archivio dati dell'hypervisor che contiene i file della macchina virtuale (sono necessari circa 40GB MB). 
 
 
 | Rete per la macchina virtuale | Identificatore della rete a cui è connessa la macchina virtuale di implementazione. 

@@ -48,8 +48,7 @@ https://www.netapp.com/us/legal/privacypolicy/index.aspx[]
 
 == Open source
 
-Il file di avviso fornisce informazioni sul copyright e sulle licenze di terze parti utilizzate nel software NetApp.
+Il file di avviso fornisce informazioni sul copyright di terze parti e sulle licenze utilizzate nel software NetApp.
 
-* link:https://library.netapp.com/ecm/ecm_download_file/ECMLP2885796["Avviso per ONTAP Select 9.13.1"^]
-* link:https://library.netapp.com/ecm/ecm_download_file/ECMLP2884813["Avviso per ONTAP Select 9.12.1"^]
+* link:https://library.netapp.com/ecm/ecm_download_file/ECMLP2886734["Avviso per ONTAP Select 9.14.1"^]
 

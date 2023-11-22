@@ -26,7 +26,7 @@ NOTE: Le informazioni sul supporto dello storage esterno sono riportate nella li
 Il controller RAID sull'host dell'hypervisor in cui si implementa ONTAP Select deve soddisfare diversi requisiti.
 
 
-NOTE: Un host ESXi in cui viene eseguito ONTAP Select richiede dischi fisici locali quando si utilizza un controller RAID hardware o la funzionalità RAID software fornita con ONTAP Select. Se si utilizza la soluzione ONTAP Select vNAS per accedere allo storage esterno, non vengono utilizzati un controller RAID locale e la funzionalità RAID software.
+NOTE: Un host in cui è in esecuzione ONTAP Select richiede unità fisiche locali quando si utilizza un controller RAID hardware o la funzionalità RAID software fornita con ONTAP Select. Se si utilizza la soluzione ONTAP Select vNAS per accedere allo storage esterno, non vengono utilizzati un controller RAID locale e la funzionalità RAID software.
 
 I requisiti minimi per il controller RAID includono:
 
@@ -45,8 +45,8 @@ I requisiti minimi per il controller RAID includono:
 
 * La configurazione del LUN deve essere eseguita in base alle seguenti linee guida:
 +
-** Se la dimensione del gruppo RAID supera la dimensione massima del LUN ESXi di 64 TB, è necessario configurare più LUN di pari dimensioni che consumano tutto lo storage disponibile all'interno del gruppo RAID.
-** Se la dimensione del gruppo RAID è inferiore alla dimensione massima del LUN ESXi di 64 TB, è necessario configurare un LUN che utilizzi tutto lo storage disponibile all'interno del gruppo RAID.
+** Se le dimensioni del gruppo RAID superano le dimensioni LUN massime di 64TB GB, è necessario configurare più LUN di dimensioni uguali utilizzando tutto lo spazio di archiviazione disponibile all'interno del gruppo RAID.
+** Se le dimensioni del gruppo RAID sono inferiori alle dimensioni LUN massime di 64TB GB, è necessario configurare un solo LUN utilizzando tutto lo spazio di archiviazione disponibile all'interno del gruppo RAID.
 
 
 
@@ -55,13 +55,13 @@ I requisiti minimi per il controller RAID includono:
 
 == Requisiti RAID software
 
-Quando si implementa un cluster ONTAP Select sull'hypervisor VMware ESXi, è possibile utilizzare la funzionalità RAID software fornita da ONTAP Select invece di un controller RAID hardware locale. Prima di implementare un cluster utilizzando il RAID software, è necessario conoscere diversi requisiti e restrizioni.
+Quando si implementa un cluster ONTAP Select sull'hypervisor, è possibile utilizzare la funzionalità software RAID fornita da ONTAP Select anziché un controller RAID hardware locale. Prima di implementare un cluster utilizzando il RAID software, è necessario conoscere diversi requisiti e restrizioni.
 
 
 
 === Requisiti generali
 
-L'ambiente per un'implementazione RAID software su VMware ESXi deve soddisfare i seguenti requisiti fondamentali:
+L'ambiente per una distribuzione RAID software deve soddisfare i seguenti requisiti fondamentali:
 
 * VMware ESXi 7,0 GA (build 15843807) o versione successiva
 * Licenza Premium ONTAP Select o superiore
@@ -73,8 +73,49 @@ L'ambiente per un'implementazione RAID software su VMware ESXi deve soddisfare i
 
 NOTE: Se è presente un controller RAID hardware, consultare link:concept_stor_concepts_chars.html["Storage per immersioni profonde"] per ulteriori requisiti di configurazione.
 
+
+
+=== Requisiti specifici di ESXi
+
+* VMware ESXi 7,0 GA (build 15843807) o versione successiva
 * VMware VMotion, ha e DRS non sono supportati
 * Non è possibile utilizzare RAID software con un nodo aggiornato da ONTAP Select 9,4 o versione precedente. In questo caso, è necessario creare un nuovo nodo per l'implementazione del RAID software.
+
+
+
+
+=== Requisiti specifici di KVM
+
+Esistono anche requisiti specifici per la configurazione dei pacchetti software. Vedere link:https://docs.netapp.com/us-en/ontap-select/reference_chk_host_prep.html#kvm-hypervisor["Preparazione del server Linux"] per ulteriori informazioni.
+
+Aspettative dei media per KVM:: I dispositivi di storage flash SSD utilizzati devono soddisfare i seguenti requisiti aggiuntivi:
++
+--
+* I dispositivi SSD devono segnalare in modo accurato e permanente se stessi all'host Linux mediante i seguenti metodi:
++
+** # cat /sys/block/<device>/queue/rotational
++
+Il valore riportato per questi comandi deve essere '0'.
+
+
+
+* Si prevede che i dispositivi siano collegati a un HBA o, in alcuni casi, a un controller RAID configurato per funzionare in modalità JBOD. Quando si utilizza un controller RAID, la funzione del dispositivo deve essere passata attraverso l'host senza sovrapporre alcuna funzionalità RAID. Quando si utilizza un controller RAID in modalità JBOD, è necessario consultare la documentazione RAID o contattare il fornitore secondo necessità per assicurarsi che il dispositivo indichi la velocità di rotazione come '0'.
+* Esistono due componenti di storage separati:
++
+** Storage delle macchine virtuali
++
+Si tratta di un pool LVM (pool di storage) contenente i dati di sistema utilizzati per ospitare la macchina virtuale ONTAP Select. Il pool LVM deve essere supportato da un dispositivo flash ad alta resistenza e può essere SAS, SATA o NVMe. Per migliorare le performance si consiglia un dispositivo NVMe.
+
+** Dischi dati
++
+Si tratta di un set di unità SSD SAS o SATA utilizzate per la gestione dei dati. I dispositivi SSD devono essere di livello Enterprise e resistenti. L'interfaccia NVMe non è supportata.
+
+
+
+* Tutti i dispositivi devono essere formattati con 512BPS.
+
+
+--
 
 
 

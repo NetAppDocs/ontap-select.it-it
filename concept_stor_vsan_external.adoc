@@ -60,7 +60,7 @@ volume efficiency stop -all true -vserver * -volume * (all volumes in the affect
 ----
 
 
-== Collocazione dei nodi ONTAP Select quando si utilizza vNAS
+== Collocare i nodi ONTAP Select quando si utilizza vNAS su ESXi
 
 ONTAP Select include il supporto per cluster ONTAP Select a più nodi su storage condiviso. ONTAP Deploy consente la configurazione di più nodi ONTAP Select sullo stesso host ESX, purché tali nodi non facciano parte dello stesso cluster. Si noti che questa configurazione è valida solo per gli ambienti VNAS (datastore condivisi). Le istanze multiple di ONTAP Select per host non sono supportate quando si utilizza lo storage DAS perché queste istanze competono per lo stesso controller RAID hardware.
 

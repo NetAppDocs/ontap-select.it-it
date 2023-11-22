@@ -116,7 +116,7 @@ Ogni LUN viene considerato come un disco locale sull'host dell'hypervisor e può
 
 
 
-=== Gestire i dischi virtuali
+=== Gestire i dischi virtuali su ESXi
 
 Esistono diversi problemi relativi ai dischi virtuali di cui si dovrebbe essere a conoscenza durante la preparazione dell'implementazione di ONTAP Select.
 
@@ -141,7 +141,7 @@ I dischi virtuali sono gestiti da ONTAP Select. Vengono creati automaticamente q
 
 
 
-== Immagine dell'ambiente di storage esterno
+== Immagine dell'ambiente di storage esterno su ESXi
 
 La soluzione vNAS di ONTAP Select consente a ONTAP Select di utilizzare datastore che risiedono su storage esterno all'host dell'hypervisor. È possibile accedere agli archivi dati tramite la rete utilizzando VMware vSAN o direttamente da uno storage array esterno.
 

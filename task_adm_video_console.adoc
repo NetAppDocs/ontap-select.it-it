@@ -14,7 +14,7 @@ summary: È possibile accedere alla console video della macchina virtuale ESXi i
 
 
 [role="lead"]
-È possibile accedere alla console video della macchina virtuale ESXi in cui è in esecuzione ONTAP Select.
+Puoi accedere alla console video della macchina virtuale dell'hypervisor su cui è in esecuzione ONTAP Select.
 
 .A proposito di questa attività
 Potrebbe essere necessario accedere alla console della macchina virtuale per risolvere un problema o quando richiesto dal supporto NetApp.

@@ -97,7 +97,7 @@ I passaggi che segui dipendono dalla creazione di un cluster a nodo singolo o a 
 . Fare clic su *Refresh* (Aggiorna) e verificare che la licenza sia stata aggiunta.
 . Fare clic su *Avanti* per aggiungere un host hypervisor, quindi fare clic su *Aggiungi*.
 +
-È possibile aggiungere l'host ESXi direttamente o connettendosi a un server vCenter. Fornire le credenziali e i dettagli host appropriati in base alle necessità.
+Puoi aggiungere l'host hypervisor direttamente o collegandoti a un server vCenter. Fornire le credenziali e i dettagli host appropriati in base alle necessità.
 
 . Fare clic su *Refresh* (Aggiorna) e verificare che il valore *Type* dell'host sia *ESX*.
 +
@@ -146,7 +146,7 @@ TIP: Se l'operazione di creazione del cluster viene avviata ma non viene complet
 . Fare clic su *Aggiorna* e confermare che le licenze sono state aggiunte.
 . Fare clic su *Avanti* per aggiungere due host hypervisor, quindi fare clic su *Aggiungi*.
 +
-È possibile aggiungere gli host ESXi direttamente o collegandosi a un server vCenter. Fornire le credenziali e i dettagli host appropriati in base alle necessità.
+Puoi aggiungere gli host hypervisor direttamente o collegandoti a un server vCenter. Fornire le credenziali e i dettagli host appropriati in base alle necessità.
 
 . Fare clic su *Refresh* (Aggiorna) e verificare che il valore *Type* dell'host sia *ESX*.
 +

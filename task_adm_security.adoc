@@ -56,11 +56,9 @@ Esistono diverse attività correlate che è possibile eseguire nell'ambito della
 
 | Password | Inserire la password per il nome utente associato. 
 |===
-. Facoltativamente, è possibile registrare (installare) il plug-in Deploy vCenter.
 . Una volta aggiunto il nuovo server di gestione, è possibile fare clic su image:icon_kebab.gif["Opzioni"] e selezionare una delle seguenti opzioni:
 +
 ** Aggiornare le credenziali
-** Registrati come plug-in
 ** Verificare le credenziali
 ** Rimuovere il server di gestione
 

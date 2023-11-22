@@ -2,7 +2,7 @@
 layout: landing-page 
 sidebar: sidebar 
 permalink: index.html 
-summary: 'NetApp ONTAP Select è un"appliance di storage software-defined che è possibile implementare su una vasta gamma di server hardware commodity che eseguono l"hypervisor VMware ESXi. Offre l"agilità necessaria per creare un"infrastruttura di cloud privato flessibile e scalabile. Questo sito contiene la documentazione per ONTAP Select 9.13.1, 9.12.1, 9.11.1, 9.10.1 e 9,9.1.' 
+summary: 'NetApp ONTAP Select è un"appliance di storage software-defined che è possibile implementare su una vasta gamma di commodity server che eseguono VMware ESXi o hypervisor kernel-Based Virtual Machine (KVM). Offre l"agilità necessaria per creare un"infrastruttura di cloud privato flessibile e scalabile. Questo sito contiene la documentazione di ONTAP Select 9.14.1.' 
 ---
 = Documentazione ONTAP Select
 :hardbreaks:

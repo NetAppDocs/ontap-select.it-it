@@ -4,7 +4,7 @@ permalink: reference_plan_ots_vcenter.html
 keywords: plan, planning, vmware vcenter, vcenter server, vcenter 
 summary: Esistono diversi requisiti di pianificazione relativi a VMware vCenter da prendere in considerazione. 
 ---
-= Server VMware vCenter
+= Server VMware vCenter su ESXi
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

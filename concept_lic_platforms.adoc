@@ -73,4 +73,4 @@ L'offerta premium XL offre le seguenti funzionalità:
 
 
 
-NOTE: Il tipo di istanza di grandi dimensioni (che utilizza la licenza premium XL) è disponibile solo su VMware ESXi.
+NOTE: È possibile utilizzare il tipo di istanza di grandi dimensioni (utilizzando la licenza Premium XL) per qualsiasi configurazione, ma non è supportato su KVM a causa di problemi di prestazioni.
