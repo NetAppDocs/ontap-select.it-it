@@ -169,9 +169,15 @@ La dimensione minima del pool di storage allocato per ciascun nodo in un cluster
 
 L'allocazione minima per un'implementazione in produzione consiste di 2 TB per i dati utente, più circa 266 GB utilizzati da vari processi interni ONTAP Select, che viene considerato un overhead richiesto.
 
+[NOTE]
+====
+Ogni nodo di una coppia ha deve avere la stessa capacità di storage.
 
-NOTE: Ogni nodo di una coppia ha deve avere la stessa capacità di storage.
+Nel stimare la quantità di storage per una coppia ha, occorre valutare il mirroring di tutti gli aggregati (root e dati). Di conseguenza, ogni plesso dell'aggregato consuma altrettanta quantità di storage.
 
+Ad esempio, quando viene creato un aggregato da 2TB TB, vengono allocate 2TB GB in due istanze plex (2TB GB per plex0 GB e 2TB GB per plex1 GB) o 4TB GB della quantità totale di storage concessa in licenza.
+
+====
 
 
 === Capacità dello storage e più pool di storage

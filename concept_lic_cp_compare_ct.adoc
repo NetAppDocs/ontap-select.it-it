@@ -30,5 +30,26 @@ Nella tabella seguente vengono confrontati i due modelli di licenza di produzion
 | Durata della licenza | Perpetuo (non è richiesto alcun rinnovo) | Durata fissa in base all'acquisto (rinnovo obbligatorio) 
 
 
-| Durata del lease per l'aggregato di dati | Non applicabile da un'ora a sette giorni | Numero di serie del nodo 
+| Durata del lease per l'aggregato di dati | Non applicabile | Da un'ora a sette giorni 
+
+
+| Numero di serie del nodo | Nove cifre e uguale al numero di serie della licenza | Venti cifre e generato dal Manager di licenza 
+
+
+| Supporto | Componente aggiuntivo e limitato nel tempo | Incluso e co-chiamato 
+
+
+| Tipi di licenza | Standard, premium, premium XL | Standard, premium, premium XL 
+
+
+| Licenza di valutazione disponibile | Sì | Sì 
+
+
+| Valutazione all'aggiornamento di produzione | Sì | No 
+
+
+| Ridimensionamento delle macchine virtuali ONTAP Select (da piccole a medie, da medie a grandi) | Sì | Sì 
+
+
+| Applicazione: Licenza scaduta | N/A. | Sì (nessun Grace period) 
 |===

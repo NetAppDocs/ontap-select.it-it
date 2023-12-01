@@ -491,7 +491,6 @@
   <block id="209d48c97092139c09f12b8b898b3ebb" category="cell">Perpetuo (non è richiesto alcun rinnovo)</block>
   <block id="fdad6dbf8e8406dac26765af9059a3a1" category="cell">Durata fissa in base all'acquisto (rinnovo obbligatorio)</block>
   <block id="20e5e85bddb25cf1cf39977f4a5b8f1f" category="cell">Durata del lease per l'aggregato di dati</block>
-  <block id="6aade83f8151a6756008a80c389bef65" category="cell">Non applicabile da un'ora a sette giorni</block>
   <block id="a051cb6fe36d0d57186040136f51ded4" category="cell">Numero di serie del nodo</block>
   <block id="827fe6014df4dcd93529a1c8e73f3c37" category="summary">Prima di utilizzare la pagina di documentazione online di implementazione, è necessario conoscere diversi aspetti.</block>
   <block id="150a67adb932e1a6edc3581e48ffcd17" category="doc">Prima di accedere all'API con un browser</block>
@@ -3615,4 +3614,20 @@ dischi di ricambio dell'aggregato di storage</block>
   <block id="e289810d4028b10554ae6b447fa581ee" category="sidebar">Requisiti di archiviazione esterna</block>
   <block id="a9e831fb19f71068ebfd5cb9b303ea66" category="sidebar">VMware vCenter su ESXi</block>
   <block id="314c09ddbe5ce5a2ebc071a5ba939ef6" category="sidebar">Documentazione di ONTAP Select 9.14.1</block>
+  <block id="e681a3b45989b468533c4b90ee960bf9" category="cell">Non applicabile</block>
+  <block id="7ce9d272dad1050f5d215fea78fec004" category="cell">Da un'ora a sette giorni</block>
+  <block id="1106adf8812d775cf27b79c3606184f6" category="cell">Nove cifre e uguale al numero di serie della licenza</block>
+  <block id="cda405d8561cd2797065f70348fbe747" category="cell">Venti cifre e generato dal Manager di licenza</block>
+  <block id="db5eb84117d06047c97c9a0191b5fffe" category="cell">Supporto</block>
+  <block id="d7b5ad2c890d9e01c658dc9e1cc80af5" category="cell">Componente aggiuntivo e limitato nel tempo</block>
+  <block id="b055659deac2e10b8eadf9bae15af191" category="cell">Incluso e co-chiamato</block>
+  <block id="2b2fba693aacdb90002ef3efdb1f458b" category="cell">Tipi di licenza</block>
+  <block id="7c8735b3789d1d371da9c168d892b5b2" category="cell">Standard, premium, premium XL</block>
+  <block id="f6f75165e8287838950283461281ea99" category="cell">Licenza di valutazione disponibile</block>
+  <block id="c8ce06302aadd8032e956b943dce085c" category="cell">Valutazione all'aggiornamento di produzione</block>
+  <block id="cfc60e5db5da2e3856f4ae65f1b4493b" category="cell">Ridimensionamento delle macchine virtuali ONTAP Select (da piccole a medie, da medie a grandi)</block>
+  <block id="5afd324114e926d9bb06b382e5c6f40e" category="cell">Applicazione: Licenza scaduta</block>
+  <block id="71781f9ea0fb446c6a84f96eac4f474f" category="cell">Sì (nessun Grace period)</block>
+  <block id="ec9f3071a98530430c856aaab30c310b" category="paragraph">Nel stimare la quantità di storage per una coppia ha, occorre valutare il mirroring di tutti gli aggregati (root e dati). Di conseguenza, ogni plesso dell'aggregato consuma altrettanta quantità di storage.</block>
+  <block id="909cd2b5288a2ed7dfbc029a25ad991d" category="paragraph">Ad esempio, quando viene creato un aggregato da 2TB TB, vengono allocate 2TB GB in due istanze plex (2TB GB per plex0 GB e 2TB GB per plex1 GB) o 4TB GB della quantità totale di storage concessa in licenza.</block>
 </blocks>
