@@ -31,6 +31,7 @@ Le seguenti funzioni sono incluse in ONTAP Select e concesse in licenza per impo
 * ISCSI
 * SnapMirror
 * SnapVault
+* FlexCache
 * FlexClone
 * SnapRestore
 * Deduplica e compressione
