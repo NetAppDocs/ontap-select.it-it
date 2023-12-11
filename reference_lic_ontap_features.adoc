@@ -25,19 +25,20 @@ NOTE: Le funzionalità di ONTAP con dipendenze specifiche dell'hardware non sono
 
 Le seguenti funzioni sono incluse in ONTAP Select e concesse in licenza per impostazione predefinita:
 
-* NVMe su TCP
-* NFS
 * CIFS
-* ISCSI
-* SnapMirror
-* SnapVault
+* Deduplica e compressione
 * FlexCache
 * FlexClone
-* SnapRestore
-* Deduplica e compressione
+* ISCSI
+* NDMP
+* NetApp Volume Encryption (solo paesi non soggetti a restrizioni)
+* NFS
+* NVMe su TCP
 * Funzionalità di multi-tenancy ONTAP
 * ONTAP S3
-* NetApp Volume Encryption (solo paesi non soggetti a restrizioni)
+* SnapMirror
+* SnapRestore
+* SnapVault
 
 
 
@@ -46,12 +47,12 @@ Le seguenti funzioni sono incluse in ONTAP Select e concesse in licenza per impo
 
 È necessario acquistare una licenza separata per qualsiasi funzione ONTAP non attivata per impostazione predefinita, tra cui:
 
-* SnapLock Enterprise (la conformità SnapLock non è supportata per ONTAP Select)
-* FabricPool
 * Servizio di disponibilità dei dati
+* FabricPool
 * FlexCache (costo zero)
-* SyncMirror (costo zero)
 * SDS MetroCluster (offerta di licenze premium ONTAP Select)
+* SnapLock Enterprise (la conformità SnapLock non è supportata per ONTAP Select)
+* SyncMirror (costo zero)
 
 
 
