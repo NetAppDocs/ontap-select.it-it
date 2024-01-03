@@ -112,8 +112,6 @@
   <block id="0ffe501fe086c67c3769d18d093b040d" category="list-text">Scheda di sicurezza MetroCluster</block>
   <block id="68ed39572b6546b2a8f65e38fa4e4683" category="section-title">Premium XL</block>
   <block id="3df6de2a26f1404ca45737431d2a4afb" category="paragraph">L'offerta premium XL offre le seguenti funzionalità:</block>
-  <block id="5e1e35787d312440de294099e5a73814" category="list-text">Tipo di istanza piccolo, medio o grande.</block>
-  <block id="d72f431c4274d31e60a80915e200ced0" category="list-text">Controller RAID hardware locale o RAID software.</block>
   <block id="893c95c096fab305c703479243f6943c" category="summary">Esistono diverse attività correlate che è possibile eseguire nell'ambito dell'amministrazione delle licenze ONTAP Select.</block>
   <block id="9eb6b36f84e03f93cb360a15fa276ffb" category="doc">Licenze ONTAP Select</block>
   <block id="4d072981d0459a6e8dddc5e65d85a19d" category="paragraph">È possibile aggiungere, modificare ed eliminare le licenze del Tier di capacità ONTAP Select in base alle esigenze.</block>
@@ -785,7 +783,6 @@
   <block id="d1da5ae38aafefba216edae24c73845b" category="list-text">Accedere all'utilità di implementazione tramite l'interfaccia Web utilizzando l'account amministratore.</block>
   <block id="27de07fc9b7f932f0181131e79ec3569" category="list-text">Fare clic su *Licenses* (licenze) e su *Capacity Tier* (livello di capacità).</block>
   <block id="c1a597c101487100214a5f749a6f3e48" category="list-text">Facoltativamente, fare clic su *Filter* (filtro) e per limitare le licenze visualizzate.</block>
-  <block id="394aecca280e07533a3d7792d8e0bed1" category="list-text">Se si desidera, selezionare una licenza e fare clic su <block ref="8bad975decfb5a8958ec55339559e376" category="inline-image-macro-rx" type="image"></block> per gestire una licenza esistente</block>
   <block id="6ee0553d617caf0c18d95b731d38d14f" category="list-text">Per aggiungere una nuova licenza, fare clic su *Aggiungi* nella parte superiore della pagina, quindi fare clic su *carica licenze* e selezionare un file di licenza dalla workstation locale.</block>
   <block id="2a1af40a05dbd3e59e7040a6aba474e2" category="paragraph">È possibile aggiungere, modificare ed eliminare le licenze del pool di capacità ONTAP Select in base alle esigenze.</block>
   <block id="7be3eed19afb6e3f04dc4fe18d053f2c" category="list-text">Fare clic su *licenze* e su *Capacity Pools*.</block>
@@ -3291,7 +3288,6 @@ Host dell'hypervisor ESXi o host KVM Linux</block>
   <block id="27867a85560994e09ee616b37ec585de" category="cell">Implementazione sui nodi server dell'hypervisor</block>
   <block id="2d81002b634550a1e266341254a2d597" category="cell">Accedi al server dell'hypervisor</block>
   <block id="0c0158fd50f7612ddfb9136e3de8e2be" category="cell">Access Deploy (Licensing Capacity Pool)</block>
-  <block id="577362db3aa99018c35d90bc2a1f3fff" category="admonition">È possibile utilizzare il tipo di istanza di grandi dimensioni (utilizzando la licenza Premium XL) per qualsiasi configurazione, ma non è supportato su KVM a causa di problemi di prestazioni.</block>
   <block id="0777708201aec678f0082eec3aa98c10" category="list-text">Kernel-Based Virtual Machine</block>
   <block id="067c35f1ba98a705741486402c1dac18" category="list-text">Kernel-Based Virtual Machine (KVM) è una caratteristica di virtualizzazione del kernel Linux, che consente di agire come piattaforma hypervisor. È supportata un'ampia gamma di sistemi operativi guest.</block>
   <block id="f72371502203ff57c484242dbc67867e" category="list-text">Re-hosting del nodo sulla VM ESXi</block>
@@ -3636,4 +3632,9 @@ dischi di ricambio dell'aggregato di storage</block>
   <block id="8acb58cbd50ef1b468a020ee0bd351d3" category="inline-link-macro"><block ref="8acb58cbd50ef1b468a020ee0bd351d3" category="inline-link-rx"></block></block>
   <block id="2352c4e1f4d0024ade0869e00e6243f4" category="paragraph"><block ref="2352c4e1f4d0024ade0869e00e6243f4" category="inline-link-macro-rx"></block></block>
   <block id="aae155889087fca42368d9fab8b54ee6" category="list-text">NDMP</block>
+  <block id="1bacbb36e2afde0c7a93da85daa18ef1" category="list-text">Tipo di istanza piccolo, medio o grande</block>
+  <block id="4241d8a2662be78b68fdfaf8b9daec1a" category="list-text">HDD, SSD o dischi NVMe</block>
+  <block id="884fb5a94a98010f0044edb08adfd51e" category="admonition">L'utilizzo del tipo di istanza grande o di dischi NVMe in una configurazione SW-RAID non è supportato su KVM.</block>
+  <block id="4c1cad05d7febe049143598de4b3847d" category="list-text">Per sostituire una licenza esistente; selezionare una licenza, fare clic su <block ref="8bad975decfb5a8958ec55339559e376" category="inline-image-macro-rx" type="image"></block>E selezionare *Aggiorna*.</block>
+  <block id="22296b7841252645a75ccd1c4032738e" category="list-text">Se si desidera, selezionare una licenza e fare clic su <block ref="8bad975decfb5a8958ec55339559e376" category="inline-image-macro-rx" type="image"></block> per gestire una licenza esistente.</block>
 </blocks>

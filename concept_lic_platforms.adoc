@@ -65,12 +65,12 @@ L'offerta premium offre le seguenti funzionalità:
 
 L'offerta premium XL offre le seguenti funzionalità:
 
-* Tipo di istanza piccolo, medio o grande.
-* Dischi rigidi (HDD) o SSD (Solid state Drive)
-* Controller RAID hardware locale o RAID software.
+* Tipo di istanza piccolo, medio o grande
+* HDD, SSD o dischi NVMe
+* Controller RAID hardware locale o RAID software
 * VNAS
 * Scheda di sicurezza MetroCluster
 
 
 
-NOTE: È possibile utilizzare il tipo di istanza di grandi dimensioni (utilizzando la licenza Premium XL) per qualsiasi configurazione, ma non è supportato su KVM a causa di problemi di prestazioni.
+NOTE: L'utilizzo del tipo di istanza grande o di dischi NVMe in una configurazione SW-RAID non è supportato su KVM.

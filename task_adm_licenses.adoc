@@ -27,7 +27,7 @@ Esistono diverse attività correlate che è possibile eseguire nell'ambito dell'
 . Fare clic sulla scheda *Administration* nella parte superiore della pagina.
 . Fare clic su *Licenses* (licenze) e su *Capacity Tier* (livello di capacità).
 . Facoltativamente, fare clic su *Filter* (filtro) e per limitare le licenze visualizzate.
-. Se si desidera, selezionare una licenza e fare clic su image:icon_kebab.gif["Opzioni"] per gestire una licenza esistente
+. Per sostituire una licenza esistente; selezionare una licenza, fare clic su image:icon_kebab.gif["Opzioni"]E selezionare *Aggiorna*.
 . Per aggiungere una nuova licenza, fare clic su *Aggiungi* nella parte superiore della pagina, quindi fare clic su *carica licenze* e selezionare un file di licenza dalla workstation locale.
 
 
@@ -42,7 +42,7 @@ Esistono diverse attività correlate che è possibile eseguire nell'ambito dell'
 . Fare clic sulla scheda *Administration* nella parte superiore della pagina.
 . Fare clic su *licenze* e su *Capacity Pools*.
 . Facoltativamente, fare clic su *Filter* (filtro) e per limitare le licenze visualizzate.
-. Se si desidera, selezionare una licenza e fare clic su image:icon_kebab.gif["Opzioni"] per gestire una licenza esistente
+. Se si desidera, selezionare una licenza e fare clic su image:icon_kebab.gif["Opzioni"] per gestire una licenza esistente.
 . Per aggiungere una nuova licenza o rinnovare una licenza esistente, fare clic su *Aggiungi* nella parte superiore della pagina, quindi fare clic su *carica licenze* e selezionare un file di licenza dalla workstation locale.
 . Per visualizzare un elenco dei pool di capacità:
 +
