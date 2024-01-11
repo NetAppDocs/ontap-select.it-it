@@ -3637,4 +3637,8 @@ dischi di ricambio dell'aggregato di storage</block>
   <block id="884fb5a94a98010f0044edb08adfd51e" category="admonition">L'utilizzo del tipo di istanza grande o di dischi NVMe in una configurazione SW-RAID non è supportato su KVM.</block>
   <block id="4c1cad05d7febe049143598de4b3847d" category="list-text">Per sostituire una licenza esistente; selezionare una licenza, fare clic su <block ref="8bad975decfb5a8958ec55339559e376" category="inline-image-macro-rx" type="image"></block>E selezionare *Aggiorna*.</block>
   <block id="22296b7841252645a75ccd1c4032738e" category="list-text">Se si desidera, selezionare una licenza e fare clic su <block ref="8bad975decfb5a8958ec55339559e376" category="inline-image-macro-rx" type="image"></block> per gestire una licenza esistente.</block>
+  <block id="6d0db0daccb7db9a59bfff9fe2840721" category="section-title">Gestire le licenze aggiuntive</block>
+  <block id="85180b24dbd0c343b9c87bf144ede023" category="inline-link-macro">Panoramica sulla gestione delle licenze (solo amministratori del cluster)</block>
+  <block id="a9a72d6af23763d014760a444a6e414b" category="inline-link-macro">Abilitare le nuove funzioni aggiungendo le chiavi di licenza</block>
+  <block id="9737e258b60b8a3df4f9108391ab5366" category="paragraph">Per il prodotto ONTAP Select, le licenze aggiuntive vengono applicate direttamente all'interno di ONTAP e non vengono gestite tramite ONTAP Select Deploy. Vedere <block ref="ce1ae1f692dcc386afa95c6f51ac8788" category="inline-link-macro-rx"></block> e. <block ref="63870a99c743eac4250d67a3b291ca39" category="inline-link-macro-rx"></block> per ulteriori informazioni.</block>
 </blocks>

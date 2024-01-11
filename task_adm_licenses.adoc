@@ -160,3 +160,9 @@ I numeri di serie di nodi a venti cifre originariamente assegnati a ciascun nodo
 == Gestione di una licenza del pool di capacità scaduta
 
 In genere, quando una licenza scade, non accade nulla. Tuttavia, non è possibile installare una licenza diversa perché i nodi sono associati alla licenza scaduta. Fino al rinnovo della licenza, è necessario _non_ fare qualsiasi cosa che porti l'aggregato offline, come un riavvio o un'operazione di failover. Si consiglia di accelerare il rinnovo della licenza.
+
+
+
+== Gestire le licenze aggiuntive
+
+Per il prodotto ONTAP Select, le licenze aggiuntive vengono applicate direttamente all'interno di ONTAP e non vengono gestite tramite ONTAP Select Deploy. Vedere link:https://docs.netapp.com/us-en/ontap/system-admin/manage-licenses-concept.html["Panoramica sulla gestione delle licenze (solo amministratori del cluster)"^] e. link:https://docs.netapp.com/us-en/ontap/task_admin_enable_new_features.html["Abilitare le nuove funzioni aggiungendo le chiavi di licenza"^] per ulteriori informazioni.
