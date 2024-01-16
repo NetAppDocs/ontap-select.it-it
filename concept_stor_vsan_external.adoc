@@ -14,7 +14,7 @@ summary: 'Le implementazioni vNAS (Virtual NAS) supportano cluster ONTAP Select 
 
 
 [role="lead"]
-Le implementazioni vNAS (Virtual NAS) supportano cluster ONTAP Select su VSAN, alcuni prodotti HCI, tecnologia NetApp HCI e tipi di datastore di array esterni. L'infrastruttura sottostante di queste configurazioni fornisce resilienza del datastore.
+Le implementazioni di Virtual NAS (vNAS) supportano i cluster ONTAP Select su SAN virtuale (VSAN), alcuni prodotti HCI e tipi di datastore esterni. L'infrastruttura sottostante di queste configurazioni fornisce resilienza del datastore.
 
 Il requisito minimo è che la configurazione sottostante sia supportata da VMware e debba essere elencata nei rispettivi HCL VMware.
 

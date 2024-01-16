@@ -3641,4 +3641,5 @@ dischi di ricambio dell'aggregato di storage</block>
   <block id="85180b24dbd0c343b9c87bf144ede023" category="inline-link-macro">Panoramica sulla gestione delle licenze (solo amministratori del cluster)</block>
   <block id="a9a72d6af23763d014760a444a6e414b" category="inline-link-macro">Abilitare le nuove funzioni aggiungendo le chiavi di licenza</block>
   <block id="9737e258b60b8a3df4f9108391ab5366" category="paragraph">Per il prodotto ONTAP Select, le licenze aggiuntive vengono applicate direttamente all'interno di ONTAP e non vengono gestite tramite ONTAP Select Deploy. Vedere <block ref="ce1ae1f692dcc386afa95c6f51ac8788" category="inline-link-macro-rx"></block> e. <block ref="63870a99c743eac4250d67a3b291ca39" category="inline-link-macro-rx"></block> per ulteriori informazioni.</block>
+  <block id="b5150f2681f3eb5a5b6aab4cbdadad34" category="paragraph">Le implementazioni di Virtual NAS (vNAS) supportano i cluster ONTAP Select su SAN virtuale (VSAN), alcuni prodotti HCI e tipi di datastore esterni. L'infrastruttura sottostante di queste configurazioni fornisce resilienza del datastore.</block>
 </blocks>
