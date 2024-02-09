@@ -99,7 +99,6 @@ I gruppi di interfacce non sono supportati.
 * Migrazione SVM
 * Disaster recovery delle macchine virtuali storage (DR SVM)
 * Conformità SnapLock
-* Copie Snapshot a prova di manomissione
 * VMware HCX
 
 

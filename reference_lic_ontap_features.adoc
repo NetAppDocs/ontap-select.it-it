@@ -49,9 +49,12 @@ Le seguenti funzioni sono incluse in ONTAP Select e concesse in licenza per impo
 
 * Servizio di disponibilità dei dati
 * FabricPool
-* FlexCache (costo zero)
 * SDS MetroCluster (offerta di licenze premium ONTAP Select)
 * SnapLock Enterprise (la conformità SnapLock non è supportata per ONTAP Select)
++
+** Copie Snapshot a prova di manomissione
+
+
 * SyncMirror (costo zero)
 
 
