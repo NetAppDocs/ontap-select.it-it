@@ -161,6 +161,8 @@ I numeri di serie di nodi a venti cifre originariamente assegnati a ciascun nodo
 
 In genere, quando una licenza scade, non accade nulla. Tuttavia, non è possibile installare una licenza diversa perché i nodi sono associati alla licenza scaduta. Fino al rinnovo della licenza, è necessario _non_ fare qualsiasi cosa che porti l'aggregato offline, come un riavvio o un'operazione di failover. Si consiglia di accelerare il rinnovo della licenza.
 
+Per ulteriori informazioni su ONTAP Select e sul rinnovo della licenza, vedere la sezione licenze, installazione, aggiornamenti e revert nella link:https://docs.netapp.com/us-en/ontap-select/reference_faq.html#licenses-installation-upgrades-and-reverts["FAQ"].
+
 
 
 == Gestire le licenze aggiuntive
