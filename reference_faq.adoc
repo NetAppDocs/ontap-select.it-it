@@ -76,7 +76,7 @@ Sì, la procedura di revert per un cluster ONTAP Select è quasi identica alla p
 .L'SDS di ONTAP MetroCluster richiede almeno una licenza Premium?
 Sì.
 
-.È possibile modificare gli indirizzi IP di ONTAP Select Deploy e la gestione del cluster e dei nodi ONTAP Select dopo l'installazione?
+.È possibile modificare la configurazione di rete del cluster ONTAP Select dopo l'installazione?
 Le modifiche alle seguenti proprietà del cluster ONTAP Select vengono riconosciute dalla distribuzione di ONTAP Select utilizzando l'operazione di refresh del cluster disponibile tramite GUI, CLI o API REST:
 
 * Configurazione di rete (indirizzi IP, DNS, NTP, netmask e gateway)
@@ -89,10 +89,10 @@ Sono inoltre riconosciute le seguenti modifiche di ONTAP Select VM:
 * Modifiche del nome della rete host e del nome del pool di storage
 
 
-
-NOTE: La modifica dell'indirizzo IP della macchina virtuale ONTAP Select Deploy non è supportata.
-
 L'aggiornamento a ONTAP Select Deploy 2.6 consente di supportare queste modifiche per qualsiasi cluster ONTAP Select già implementato ma non modificato rispetto alla configurazione originale. In altre parole, se le proprietà del cluster ONTAP Select sopra menzionate sono state modificate utilizzando Gestione di sistema o vCenter, l'aggiornamento a ONTAP Select Deploy 2.6 non risolverà queste incoerenze. Prima di eseguire il rollback delle modifiche alle proprietà ONTAP Select per consentire a ONTAP Select Deploy di aggiungere i propri metadati univoci a ciascuna macchina virtuale ONTAP Select.
+
+.È possibile modificare la configurazione di rete di ONTAP Select Deploy dopo l'installazione?
+La modifica dei dettagli di rete dell'istanza di distribuzione dopo l'esecuzione in un ambiente non è supportata. Per ulteriori informazioni, consultare link:https://kb.netapp.com/onprem/ontap/ONTAP_Select/Modifying_DNS_configuration_of_ONTAP_Deploy_instance["Articolo della Knowledge base - Modifica della configurazione DNS dell'istanza di distribuzione di ONTAP"^].
 
 .In che modo deploy rileva il rinnovo delle licenze ONTAP Select?
 Il metodo è lo stesso per tutte le licenze, sebbene le specifiche variano a seconda che si tratti di una licenza per Tier di capacità o pool di capacità.
