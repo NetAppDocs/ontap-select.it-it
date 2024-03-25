@@ -97,7 +97,6 @@ I gruppi di interfacce non sono supportati.
 * Proprietà della porta ONTAP la modifica delle proprietà delle porte ONTAP, inclusi velocità, duplex e controllo del flusso, non è supportata.
 * Processori di servizio
 * Migrazione SVM
-* Disaster recovery delle macchine virtuali storage (DR SVM)
 * Conformità SnapLock
 * VMware HCX
 

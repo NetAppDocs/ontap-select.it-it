@@ -3658,4 +3658,5 @@ dischi di ricambio dell'aggregato di storage</block>
   <block id="6ffb75b64cf302e3f2f57c74d51f319d" category="paragraph-title">È possibile modificare la configurazione di rete di ONTAP Select Deploy dopo l'installazione?</block>
   <block id="7d43503b6c7e842cf0609c80d607e71e" category="inline-link-macro">Articolo della Knowledge base - Modifica della configurazione DNS dell'istanza di distribuzione di ONTAP</block>
   <block id="f749fbe2e5bf0cebd2b21a449646f930" category="paragraph">La modifica dei dettagli di rete dell'istanza di distribuzione dopo l'esecuzione in un ambiente non è supportata. Per ulteriori informazioni, consultare <block ref="46ce5e00458e90fd9337d10a66b64599" category="inline-link-macro-rx"></block>.</block>
+  <block id="8e59a8dddb8fd9611be1f2b3aca8c4fa" category="admonition">ONTAP Select 9.12.1 e versioni successive ora supporta DR SVM come origine con un massimo di 16 relazioni. Il supporto DR SVM è limitato all'utilizzo della versione ONTAP di origine alle versioni +2, ad esempio da 9.12.1 a 9.14.1.</block>
 </blocks>

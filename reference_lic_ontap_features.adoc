@@ -39,6 +39,11 @@ Le seguenti funzioni sono incluse in ONTAP Select e concesse in licenza per impo
 * SnapMirror
 * SnapRestore
 * SnapVault
+* Disaster recovery delle macchine virtuali storage (DR SVM)
++
+
+NOTE: ONTAP Select 9.12.1 e versioni successive ora supporta DR SVM come origine con un massimo di 16 relazioni. Il supporto DR SVM è limitato all'utilizzo della versione ONTAP di origine alle versioni +2, ad esempio da 9.12.1 a 9.14.1.
+
 
 
 
