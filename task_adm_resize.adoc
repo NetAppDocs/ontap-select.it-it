@@ -19,6 +19,9 @@ Dopo aver implementato un cluster ONTAP Select, è possibile aggiornare il tipo 
 
 NOTE: È possibile eseguire l'operazione di ridimensionamento dei nodi del cluster utilizzando il modello di licenza dei livelli di capacità e il modello di licenza dei pool di capacità.
 
+
+NOTE: Il ridimensionamento del tipo di istanza di grandi dimensioni è supportato solo su ESXi.
+
 .Prima di iniziare
 Il cluster deve essere nello stato online.
 
