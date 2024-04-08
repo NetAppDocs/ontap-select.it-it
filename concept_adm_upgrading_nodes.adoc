@@ -34,7 +34,7 @@ https://mysupport.netapp.com/site/downloads["Download del supporto NetApp"^]
 +
 Prima di aggiornare un nodo ONTAP Select, consultare le Note di rilascio per ulteriori informazioni e le procedure necessarie.
 
-. Aggiornare il nodo ONTAP Select utilizzando le procedure di aggiornamento standard di ONTAP con il file di aggiornamento di ONTAP Select. Per informazioni dettagliate sulla procedura di aggiornamento di ONTAP, incluse informazioni quali i percorsi di aggiornamento supportati, consultare la link:https://docs.netapp.com/us-en/ontap/upgrade/index.html["Panoramica sull'aggiornamento di ONTAP"^].
+. Aggiornare il nodo ONTAP Select utilizzando le procedure di aggiornamento standard di ONTAP con il file di aggiornamento di ONTAP Select. Per informazioni sui percorsi di aggiornamento supportati, vedere link:https://docs.netapp.com/us-en/ontap/upgrade/concept_upgrade_paths.html["Percorsi di aggiornamento ONTAP supportati"^].
 
 
 
@@ -52,3 +52,7 @@ ONTAP Select 9,8 viene installato inizialmente:: Non è possibile ripristinare l
 == Utilizzare il driver di rete VMXNET3
 
 VMXNET3 è il driver di rete predefinito incluso nelle nuove implementazioni del cluster su VMware ESXi. Se si aggiorna un nodo ONTAP Select esistente che esegue ONTAP Select 9,4 o versione precedente, il driver di rete non viene aggiornato automaticamente. È necessario eseguire l'aggiornamento manuale a VMXNET3. Contattare il supporto NetApp per assistenza con l'aggiornamento.
+
+.Informazioni correlate
+* link:https://docs.netapp.com/us-en/ontap/upgrade/index.html["Panoramica sull'aggiornamento di ONTAP"^]
+
