@@ -92,6 +92,7 @@ Qualsiasi modifica a Cluster IPSpace, inclusa l'aggiunta o la rimozione di porte
 * Monitoraggio dello stato di salute il monitoraggio tradizionale dello stato di salute utilizzato con un'implementazione ONTAP basata su hardware è specifico per i componenti hardware sottostanti. A causa dell'ambiente virtualizzato utilizzato con ONTAP Select, i monitor dello stato di salute non sono attivi.
 * Gruppi di interfacce
 I gruppi di interfacce non sono supportati.
+* MTKM (Multi-tenant Key Manager)
 * Supporto dell'offload della scheda di rete a causa dell'ambiente virtualizzato utilizzato con ONTAP Select, la funzione di offload della scheda di rete non è supportata.
 * Dischi di crittografia per lo storage NetApp
 * Proprietà della porta ONTAP la modifica delle proprietà delle porte ONTAP, inclusi velocità, duplex e controllo del flusso, non è supportata.
