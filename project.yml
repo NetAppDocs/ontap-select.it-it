@@ -9,20 +9,20 @@ settings:
     pdf_enabled: true
     harmony_enabled: false
   versions:
-  - version-number: 9.15.1
-    url: "/ontap-select"
   - version-number: 9.14.1
-    url: "/ontap-select-9141"
+    url: "/ontap-select"
   - version-number: 9.13.1
     url: "/ontap-select-9131"
   - version-number: 9.12.1
     url: "/ontap-select-9121"
   - version-number: 9.11.1
     url: "/ontap-select-9111"
+  - version-number: 9.10.1
+    url: "/ontap-select-9101"
   langs: it-it,us-en,ja-jp,ko-kr,zh-cn,zh-tw,de-de,es-es,fr-fr
 sidebar:
   entries:
-  - title: Documentazione di ONTAP Select 9.15.1
+  - title: Documentazione di ONTAP Select 9.14.1
     url: "/index.html"
   - title: Note di rilascio
     entries:
@@ -149,11 +149,7 @@ sidebar:
     - title: Mediatori
       url: "/task_adm_mediators.html"
     - title: Cluster
-      entries:
-      - title: Cluster ONTAP Select
-        url: "/task_adm_clusters.html"
-      - title: Espandere o contrarre il cluster
-        url: "/task_cluster_expansion_contraction.html"
+      url: "/task_adm_clusters.html"
     - title: Nodi e host
       entries:
       - title: Console video VM
