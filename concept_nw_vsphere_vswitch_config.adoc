@@ -34,6 +34,9 @@ Per i cluster a nodo singolo, ONTAP Deploy configura la macchina virtuale ONTAP 
 Per i cluster a più nodi, ONTAP Deploy configura ogni macchina virtuale ONTAP Select in modo che utilizzi uno o due gruppi di porte per la rete interna e, separatamente, uno o due gruppi di porte per la rete esterna. Il traffico di gestione del cluster e dei nodi può utilizzare lo stesso gruppo di porte del traffico esterno o, facoltativamente, un gruppo di porte separato. Il traffico di gestione del cluster e dei nodi non può condividere lo stesso gruppo di porte con il traffico interno.
 
 
+NOTE: ONTAP Select supporta un massimo di quattro VMNIC.
+
+
 
 == VSwitch standard o distribuito e quattro porte fisiche per nodo
 

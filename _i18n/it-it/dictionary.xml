@@ -1492,8 +1492,6 @@
   <block id="db88ef4d05292b05026992fe3ca193af" category="paragraph">ONTAP Select Deploy supporta solo IP versione 4 (IPv4). IP versione 6 (IPv6) non supportato. Questa restrizione interessa ONTAP Select nei seguenti modi:</block>
   <block id="a808fd43c31372cb5ef7ac1ac9224c52" category="list-text">È necessario assegnare un indirizzo IPv4 alla LIF di gestione della macchina virtuale di implementazione.</block>
   <block id="b3a288a6973caafe5e4ff191758f8b98" category="list-text">L'implementazione non può creare nodi ONTAP Select configurati per l'utilizzo di IPv6 sulle LIF ONTAP.</block>
-  <block id="8d0030231ca098991021200ebed892e9" category="section-title">Restrizione linguistica di VMware vCenter</block>
-  <block id="f3723501df4dfade0c26ca5e04290d9e" category="paragraph">Se si utilizza ONTAP Select Deploy per creare un cluster in esecuzione su ESXi con vCenter su un server Windows, è necessario utilizzare una versione in lingua inglese. ONTAP Select Deploy non supporta vCenter su versioni di Windows non in inglese.</block>
   <block id="ad302ee15c3654ff2341a130d6f2ef1d" category="doc">Conferma della connettività tra i nodi ONTAP Select</block>
   <block id="ef56942a9b652a5b39e1b0dad6f37fa8" category="list-text">Fare clic sulla scheda *Administration* nella parte superiore della pagina e fare clic su *Network Checker*.</block>
   <block id="f2f353da1661ba94dcbb3269b7980ee0" category="list-text">Fare clic su *Start New Run* (Avvia nuova esecuzione) e selezionare gli host e le reti per la coppia ha</block>
@@ -3727,4 +3725,5 @@ dischi di ricambio dell'aggregato di storage</block>
   <block id="ab88e927f8e0951fd63eee470e63e5db" category="list-text">Monitorare il processo di contrazione del cluster multi-step per confermare che il cluster si è contrattato correttamente.</block>
   <block id="526263eea2f04c1872d7038c1d10f65d" category="sidebar">Documentazione di ONTAP Select 9.15.1</block>
   <block id="f99bb666310fb365b4d0029c161a384b" category="admonition">ONTAP Select 9.12.1 (e versioni successive) ora supporta DR SVM come origine e destinazione, con un massimo di 16 relazioni. Il supporto DR SVM è limitato all'utilizzo della versione ONTAP di origine alle versioni +2. Ad esempio, l'origine ONTAP Select 9.12.1 può connettersi alle versioni di ONTAP di destinazione 9.12.1, 9.13.1 o 9.14.1.</block>
+  <block id="55c2a90a9fb6113abeb7e76c6cb0bfb0" category="admonition">ONTAP Select supporta un massimo di quattro VMNIC.</block>
 </blocks>
