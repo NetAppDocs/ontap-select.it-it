@@ -2307,7 +2307,6 @@
   <block id="82ef718f4ebe0c276814ee3d51e33361" category="list-text">SnapRestore</block>
   <block id="37f51edec96ed159381e4d3d076a8787" category="list-text">Deduplica e compressione</block>
   <block id="1effda8a28add2fb64ed5a7d4d67deae" category="list-text">Funzionalità di multi-tenancy ONTAP</block>
-  <block id="1716834171e243de0f898a67621b6624" category="list-text">ONTAP S3</block>
   <block id="f8f58e06b7004f2c9a02a8875d2bd10d" category="list-text">NetApp Volume Encryption (solo paesi non soggetti a restrizioni)</block>
   <block id="a56a12489213d10b531398efee448f95" category="section-title">Funzionalità ONTAP con licenza separata</block>
   <block id="585f4a038bba40a29999437c007446e9" category="paragraph">È necessario acquistare una licenza separata per qualsiasi funzione ONTAP non attivata per impostazione predefinita, tra cui:</block>
@@ -3724,4 +3723,7 @@ dischi di ricambio dell'aggregato di storage</block>
   <block id="f99bb666310fb365b4d0029c161a384b" category="admonition">ONTAP Select 9.12.1 (e versioni successive) ora supporta DR SVM come origine e destinazione, con un massimo di 16 relazioni. Il supporto DR SVM è limitato all'utilizzo della versione ONTAP di origine alle versioni +2. Ad esempio, l'origine ONTAP Select 9.12.1 può connettersi alle versioni di ONTAP di destinazione 9.12.1, 9.13.1 o 9.14.1.</block>
   <block id="55c2a90a9fb6113abeb7e76c6cb0bfb0" category="admonition">ONTAP Select supporta un massimo di quattro VMNIC.</block>
   <block id="28986937787872c11df39e20ca126e8d" category="admonition">ESXi 6,5 GA e ESXi 6,7 GA hanno raggiunto lo stato di disponibilità. Se si dispone di cluster ONTAP Select con queste versioni, è necessario eseguire l'aggiornamento alle versioni supportate in base a.<block ref="2b761b14db6e131ceb5a9ee87e5e085a" category="inline-link-rx"></block>.</block>
+  <block id="e1a514cdffca7e72189bc1b4d2b14cb1" category="list-text">ONTAP S3 (costo zero)</block>
+  <block id="ffa1963f0d0a25dfc04554dbe791a3b1" category="inline-link-macro">Chiavi di licenza master NetApp ONTAP</block>
+  <block id="16f9dd2af311dfdedd3814899d379c54" category="list-text"><block ref="16f9dd2af311dfdedd3814899d379c54" category="inline-link-macro-rx"></block></block>
 </blocks>
