@@ -37,8 +37,8 @@ Per implementare un cluster ONTAP Select, l'organizzazione deve disporre di una 
 
 ONTAP Select può essere implementato sui seguenti hypervisor:
 
-* KVM su RedHat Enterprise Linux 8,6, 8,7, 8,8, 9,0, 9,1, e 9,2
-* KVM su Rocky Linux 8 e 9
+* KVM su Red Hat Enterprise Linux 8,6, 8,7, 8,8, 9,0, 9,1, 9,2 e 9,4
+* KVM su Rocky Linux 8,6, 8,7, 8,8, 8,9, 9,0, 9,1, 9,2, 9,3 e 9,4
 * VMware ESXi 7.0 GA (build 15843807 o superiore) inclusi 7.0 U1, U2 e U3C
 * VMware ESXi 8,0 GA (build 20513097)
 * VMware ESXi 8,0 U1 (build 21495797)
