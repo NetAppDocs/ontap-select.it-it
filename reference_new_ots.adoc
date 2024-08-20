@@ -52,6 +52,7 @@ ONTAP Select 9.14.1 include diverse nuove funzioni e miglioramenti.
 Supporto dell'hypervisor KVM:: A partire da ONTAP Select 9.14.1, il supporto per l'hypervisor KVM è stato ripristinato. In precedenza, il supporto per l'implementazione di un nuovo cluster su un hypervisor KVM è stato rimosso in ONTAP Select 9.10.1 e il supporto per la gestione di cluster e host KVM esistenti, ad eccezione di quelli da mettere offline o eliminare, è stato rimosso in ONTAP Select 9.11.1.
 L'implementazione del plug-in VMware vCenter non è più supportata:: A partire da ONTAP Select 9.14.1, il plug-in Deploy VMware vCenter non è più supportato.
 Supporto di distribuzione ONTAP Select aggiornato:: Se si sta eseguendo una versione di ONTAP Select Deploy 9.14.1 inferiore a 9.14.1P2, è necessario eseguire l'aggiornamento a ONTAP Select Deploy 9.14.1P2 non appena possibile. Per ulteriori informazioni, consultare link:https://library.netapp.com/ecm/ecm_download_file/ECMLP2886733["Note sulla versione di ONTAP Select 9.14.1"^].
+Supporto migliorato di VMware ESXi:: ONTAP Select 9.14.1 include il supporto per VMware ESXi 8,0.2.
 
 
 
@@ -61,7 +62,7 @@ Supporto di distribuzione ONTAP Select aggiornato:: Se si sta eseguendo una vers
 ONTAP Select 9.13.1 include diverse nuove funzioni e miglioramenti.
 
 Supporto di NVMe over TCP:: Quando esegui l'upgrade a ONTAP Select 9.13.1, devi disporre della nuova licenza per supportare NVMe su TCP. Questa licenza viene inclusa automaticamente quando si distribuisce ONTAP Select per la prima volta dalla versione 9.13.1.
-Supporto VMware ESXi aggiornato:: A partire da ONTAP 9.13.1, VMware ESXi 8,0 GA (build 20513097) è supportato con la versione hardware 4 e successive.
+Supporto VMware ESXi aggiornato:: A partire da ONTAP 9.13,1, VMware ESXi 8.0.1 GA (build 20513097) è supportato con la versione hardware 4 e successive.
 Supporto di distribuzione ONTAP Select aggiornato:: A partire da aprile 2024, ONTAP Select Deployment 9.13.1 non sarà più disponibile sul sito di supporto NetApp. Se si esegue ONTAP Select Deploy 9.13.1, è necessario eseguire l'aggiornamento a ONTAP Select Deploy 9.14.1P2 il prima possibile. Per ulteriori informazioni, consultare link:https://library.netapp.com/ecm/ecm_download_file/ECMLP2886733["Note sulla versione di ONTAP Select 9.14.1"^].
 
 
