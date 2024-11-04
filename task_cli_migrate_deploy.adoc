@@ -25,7 +25,13 @@ Questa procedura si basa sulla creazione di una nuova macchina virtuale che util
 È necessario creare un backup dei dati di configurazione di implementazione durante la migrazione della macchina virtuale. È inoltre necessario creare un backup dopo aver implementato un cluster ONTAP Select. I dati vengono salvati in un singolo file crittografato che è possibile scaricare sulla workstation locale.
 
 .Prima di iniziare
-Assicurarsi che la distribuzione non stia eseguendo altre attività durante l'operazione di backup.
+* Assicurarsi che la distribuzione non stia eseguendo altre attività durante l'operazione di backup.
+* Salvare l'immagine della macchina virtuale di distribuzione originale.
++
+
+CAUTION: L'immagine originale della macchina virtuale di distribuzione è necessaria più avanti in questa procedura quando si ripristinano i dati di configurazione di distribuzione dall'originale alla nuova macchina virtuale.
+
+
 
 .A proposito di questa attività
 Il file di backup creato acquisisce tutti i dati di configurazione dalla macchina virtuale. Questi dati descrivono gli aspetti dell'ambiente di implementazione, inclusi i cluster ONTAP Select.
