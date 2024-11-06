@@ -29,11 +29,11 @@ Supporto dell'espansione e della contrazione dei cluster:: A partire da ONTAP Se
 --
 * Espansione del cluster da cluster a 6 nodi a 8 nodi
 +
-Grazie alla funzionalità di espansione del cluster, è possibile aumentare le dimensioni del cluster da un cluster a sei nodi a un cluster a otto nodi. link:task_cluster_expansion_contraction.html#expand-the-cluster["Scopri di più"].
+Grazie alla funzionalità di espansione del cluster, è possibile aumentare le dimensioni del cluster da un cluster a sei nodi a un cluster a otto nodi. Al momento non sono supportate le espansioni del cluster da uno, due o quattro nodi a cluster a sei o otto nodi. link:task_cluster_expansion_contraction.html#expand-the-cluster["Scopri di più"].
 
 * Cluster con contrazione da 8 nodi a 6 nodi
 +
-Grazie alla funzionalità di contrazione del cluster, è possibile diminuire le dimensioni del cluster da un cluster a otto nodi a un cluster a sei nodi. link:task_cluster_expansion_contraction.html#contract-the-cluster["Scopri di più"].
+Grazie alla funzionalità di contrazione del cluster, è possibile diminuire le dimensioni del cluster da un cluster a otto nodi a un cluster a sei nodi. Le contrazioni del cluster da cluster a sei o otto nodi a uno, due o quattro nodi non sono attualmente supportate. link:task_cluster_expansion_contraction.html#contract-the-cluster["Scopri di più"].
 
 
 

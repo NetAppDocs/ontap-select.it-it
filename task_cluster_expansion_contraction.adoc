@@ -20,7 +20,7 @@ La procedura viene avviata da ONTAP Select Deploy utilizzando l'interfaccia CLI,
 
 
 
-== Requisiti di hardware e storage
+== Considerazioni su hardware e storage
 
 Le funzionalità di espansione e contrazione del cluster sono limitate nei seguenti modi:
 
@@ -33,8 +33,12 @@ Le funzionalità di espansione e contrazione del cluster sono limitate nei segue
 ** ESXi 7,0
 
 
-* L'espansione è possibile solo da cluster a sei nodi a cluster a otto nodi.
-* La contrazione è possibile solo dai cluster a otto nodi ai cluster a sei nodi.
+
+
+Le seguenti espansioni e contrazioni del cluster non sono attualmente supportate:
+
+* Espansioni da cluster a uno, due o quattro nodi a cluster a sei o otto nodi.
+* Contrazioni da cluster a sei o otto nodi a cluster a uno, due o quattro nodi.
 
 
 
