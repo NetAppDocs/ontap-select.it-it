@@ -4,7 +4,7 @@ permalink: task_adm_replace_drives_swraid.html
 keywords: administer, administering, web, software raid, replace drive 
 summary: 'Quando un disco non funziona con il software RAID, ONTAP Select utilizza un disco libero (se disponibile) e avvia automaticamente il processo di ricostruzione. Questo è simile al funzionamento di ONTAP su FAS e AFF. Tuttavia, se non è disponibile alcun disco di riserva, è necessario aggiungerne uno al nodo ONTAP Select.' 
 ---
-= Sostituire un'unità guasta quando si utilizza SW RAID
+= Sostituire le unità RAID software guaste per ONTAP Select
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

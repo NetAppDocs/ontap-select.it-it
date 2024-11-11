@@ -4,7 +4,7 @@ permalink: concept_lic_cp_serial_number.html
 keywords: license, licensing, capacity pools, node serial numbers 
 summary: Con il modello di licenza Capacity Tier, il numero di serie del nodo a nove cifre corrisponde al numero di serie della licenza assegnato al nodo. Tuttavia, i numeri di serie assegnati ai nodi che utilizzano il modello di licenza dei pool di capacità hanno un formato diverso. 
 ---
-= Numeri di serie del nodo
+= Numeri di serie dei nodi per il modello di licenza di pool di capacità ONTAP Select
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

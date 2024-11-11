@@ -4,7 +4,7 @@ permalink: concept_lic_cp_operation.html
 keywords: license, licensing, capacity pools, operation details 
 summary: Il modello di licensing dei pool di capacità è diverso dal modello dei Tier di capacità. Invece di dedicare capacità di storage a ciascun nodo, la capacità di storage viene allocata a un pool e condivisa tra più nodi. Sono stati creati altri componenti e processi per supportare il modello dei pool di capacità. 
 ---
-= Dettagli operativi
+= Dettagli operativi per il modello di licensing di pool di capacità ONTAP Select
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

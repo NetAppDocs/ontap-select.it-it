@@ -4,7 +4,7 @@ permalink: concept_nw_single_multi_node.html
 keywords: ontap select, single node network configuration, multinode network configuration 
 summary: ONTAP Select supporta configurazioni di rete a nodo singolo e a più nodi. 
 ---
-= Configurazioni di rete a nodo singolo e multiplo
+= Configurazioni di rete a nodo singolo e multiplo di ONTAP Select
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

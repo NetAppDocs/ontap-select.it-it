@@ -4,7 +4,7 @@ permalink: reference_chk_deploy_req_info.html
 keywords: ontap select, deploy, pre-installation, vmware 
 summary: 'Prima di installare l"utility di amministrazione di deploy in un ambiente VMware, esaminare i requisiti di base e prepararsi per una corretta implementazione.' 
 ---
-= Informazioni richieste per l'installazione dell'utility di implementazione
+= Informazioni necessarie per l'installazione dell'utilità di distribuzione ONTAP Select
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

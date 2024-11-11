@@ -4,7 +4,7 @@ permalink: task_cli_migrate_deploy.html
 keywords: administer, administering, cli, deploy, deploy instance, migrate 
 summary: 'È possibile migrare un"istanza esistente dell"utilità di amministrazione di Deploy su una nuova macchina virtuale utilizzando l"interfaccia della riga di comando.' 
 ---
-= Migrare un'istanza di distribuzione su una nuova macchina virtuale
+= Migrare un'istanza di distribuzione ONTAP Select su una nuova macchina virtuale
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

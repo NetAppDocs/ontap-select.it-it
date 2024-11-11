@@ -85,18 +85,37 @@ Ogni nodo di un cluster ONTAP Select viene automaticamente concesso in licenza p
 
 Diverse funzionalità di ONTAP non sono supportate con ONTAP Select. Nella maggior parte dei casi, queste funzionalità richiedono hardware speciale che non è disponibile nell'ambiente ONTAP Select virtualizzato.
 
-* Protezione ransomware autonoma (ARP)
+* Aggiornamenti automatici per la protezione autonoma dal ransomware (ARP)
++
+
+NOTE: A partire da ONTAP Select 9.16.1, sono supportati gli aggiornamenti manuali per ARP e la licenza della funzione ARP è inclusa nel file di licenza NetApp (NLF).
+
 * IPSpace del cluster
++
 Qualsiasi modifica a Cluster IPSpace, inclusa l'aggiunta o la rimozione di porte, VLAN (Virtual LAN) o gruppi di aggregazione di collegamenti, non è supportata.
-* ESXi 8,0 U3
-* Fibre Channel Fibre Channel e Fibre Channel over Ethernet non sono supportati.
-* Monitoraggio dello stato di salute il monitoraggio tradizionale dello stato di salute utilizzato con un'implementazione ONTAP basata su hardware è specifico per i componenti hardware sottostanti. A causa dell'ambiente virtualizzato utilizzato con ONTAP Select, i monitor dello stato di salute non sono attivi.
+
+* Fibre Channel
++
+Fibre Channel e Fibre Channel over Ethernet non sono supportati.
+
+* Monitor dello stato
++
+Il tradizionale monitoraggio dello stato di salute utilizzato con un'implementazione ONTAP basata su hardware è specifico per i componenti hardware sottostanti. A causa dell'ambiente virtualizzato utilizzato con ONTAP Select, i monitor dello stato di salute non sono attivi.
+
 * Gruppi di interfacce
++
 I gruppi di interfacce non sono supportati.
+
 * MTKM (Multi-tenant Key Manager)
-* Supporto dell'offload della scheda di rete a causa dell'ambiente virtualizzato utilizzato con ONTAP Select, la funzione di offload della scheda di rete non è supportata.
+* Supporto per offload NIC
++
+A causa dell'ambiente virtualizzato utilizzato con ONTAP Select, la funzione di offload NIC non è supportata.
+
 * Dischi di crittografia per lo storage NetApp
-* Proprietà della porta ONTAP la modifica delle proprietà delle porte ONTAP, inclusi velocità, duplex e controllo del flusso, non è supportata.
+* Proprietà della porta ONTAP
++
+La modifica delle proprietà delle porte ONTAP, tra cui velocità, duplex e controllo di flusso, non è supportata.
+
 * Processori di servizio
 * Migrazione SVM
 * Conformità SnapLock
@@ -104,5 +123,4 @@ I gruppi di interfacce non sono supportati.
 
 
 .Informazioni correlate
-* link:reference_lic_ontap_features.html["Funzionalità ONTAP attivate per impostazione predefinita"]
-
+link:reference_lic_ontap_features.html#ontap-features-automatically-enabled-by-default["Funzionalità ONTAP attivate per impostazione predefinita"]

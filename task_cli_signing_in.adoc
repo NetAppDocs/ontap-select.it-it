@@ -4,7 +4,7 @@ permalink: task_cli_signing_in.html
 keywords: administer, administering, cli, deploy, sign in, signing in 
 summary: 'È necessario accedere alla shell di gestione della distribuzione utilizzando SSH. Dopo aver effettuato l"accesso, è possibile inviare comandi CLI per creare un cluster ONTAP Select ed eseguire le relative procedure amministrative.' 
 ---
-= Accedere per eseguire la distribuzione utilizzando SSH
+= Accedere a ONTAP Select Deploy utilizzando SSH
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

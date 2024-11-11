@@ -4,7 +4,7 @@ permalink: task_cli_deploy_recover_two_node.html
 keywords: administer, administering, cli, two node cluster, recover, recovering 
 summary: 'Se l"utilità di implementazione di ONTAP Select non riesce o non è disponibile per qualche motivo, si perde la capacità di amministrare i nodi e i cluster ONTAP Select. Inoltre, tutti i cluster a due nodi perdono la funzionalità ha perché il servizio mediatore incluso con l"implementazione non è disponibile. Se si verifica un errore irreversibile, è necessario ripristinare l"istanza dell"utilità di implementazione per ripristinare la funzionalità amministrativa e ha.' 
 ---
-= Ripristina l'utility di implementazione per un cluster a due nodi
+= Ripristinare l'utility ONTAP Select Deploy per un cluster a due nodi
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

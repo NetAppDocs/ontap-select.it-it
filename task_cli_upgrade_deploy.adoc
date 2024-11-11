@@ -4,7 +4,7 @@ permalink: task_cli_upgrade_deploy.html
 keywords: administer, administering, cli, deploy, upgrade deploy 
 summary: 'È possibile aggiornare una macchina virtuale dell"utility di implementazione esistente in-place utilizzando l"interfaccia della riga di comando.' 
 ---
-= Aggiornare un'istanza di implementazione
+= Aggiornare un'istanza di distribuzione di ONTAP Select
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

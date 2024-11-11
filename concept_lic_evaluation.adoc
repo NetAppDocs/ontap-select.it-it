@@ -14,7 +14,18 @@ summary: 'È possibile utilizzare una licenza di valutazione se si desidera valu
 
 
 [role="lead"]
-È possibile utilizzare una licenza di valutazione se si desidera valutare ONTAP Select prima di prendere la decisione di acquisto. La licenza di valutazione è inclusa nell'utility di amministrazione di ONTAP Select Deploy e viene applicata automaticamente a ciascun nodo ONTAP Select come parte di un'implementazione di valutazione.
+È possibile distribuire ONTAP Select con una licenza di valutazione o una licenza acquistata. La licenza scelta deve essere applicata a ciascun nodo del cluster ONTAP Select e quindi all'intero cluster. È possibile utilizzare una licenza di valutazione se si desidera valutare ONTAP Select prima di prendere la decisione di acquisto. La licenza di valutazione è inclusa nell'utility di amministrazione di ONTAP Select Deploy e viene applicata automaticamente a ciascun nodo ONTAP Select come parte di un'implementazione di valutazione.
+
+Per la distribuzione e il supporto di un cluster di valutazione, è necessario tenere in considerazione i seguenti fattori:
+
+* È possibile utilizzare il cluster solo per scopi di valutazione. Non è necessario utilizzare un cluster con una licenza di valutazione in un ambiente di produzione.
+* Per configurare ciascun host, è necessario utilizzare l'utilità di amministrazione di distribuzione di ONTAP Select nel modo seguente:
++
+** Non fornire un numero di serie
+** Configurare per utilizzare una licenza di valutazione
+
+
+
 
 
 

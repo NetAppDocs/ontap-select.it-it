@@ -4,7 +4,7 @@ permalink: reference_plan_ots_robo.html
 keywords: plan, planning, remote and branch office, robo 
 summary: 'È possibile implementare ONTAP Select in un ambiente ROBO (Remote Office/Branch Office). Nell"ambito della pianificazione di un"implementazione ROBO, è necessario selezionare la configurazione che supporta gli obiettivi.' 
 ---
-= Implementazioni remote e filiali
+= Implementazioni in uffici remoti e filiali ONTAP Select
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

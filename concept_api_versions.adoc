@@ -4,7 +4,7 @@ permalink: concept_api_versions.html
 keywords: rest api, deploy rest api, rest, version, versioning 
 summary: 'AlL"API REST inclusa nella distribuzione ONTAP Select viene assegnato un numero di versione. Il numero di versione dell"API è indipendente dal numero di release di implementazione. È necessario conoscere la versione dell"API inclusa nella release di deploy e il modo in cui questo potrebbe influire sull"utilizzo dell"API.' 
 ---
-= Implementare la versione delle API
+= ONTAP Select implementa la versione API
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

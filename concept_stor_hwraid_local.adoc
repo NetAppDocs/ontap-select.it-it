@@ -4,7 +4,7 @@ permalink: concept_stor_hwraid_local.html
 keywords: ontap select, hardware raid, performance boost, protection 
 summary: 'Quando è disponibile un controller RAID hardware, ONTAP Select può spostare i servizi RAID nel controller hardware per aumentare le performance di scrittura e proteggere dai guasti fisici dei dischi. Di conseguenza, la protezione RAID per tutti i nodi all"interno del cluster ONTAP Select viene fornita dal controller RAID collegato localmente e non dal software RAID ONTAP.' 
 ---
-= Servizi RAID hardware per lo storage locale collegato
+= Servizi RAID hardware per lo storage locale ONTAP Select
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -24,6 +24,9 @@ NOTE: Gli aggregati di dati ONTAP Select sono configurati per l'utilizzo di RAID
 == Configurazione del controller RAID per lo storage locale collegato
 
 Tutti i dischi collegati localmente che forniscono a ONTAP Select lo storage di backup devono essere posizionati dietro un controller RAID. La maggior parte dei server commodity è dotata di diverse opzioni di controller RAID in diversi prezzi, ciascuno con diversi livelli di funzionalità. L'intento è quello di supportare il maggior numero possibile di queste opzioni, purché soddisfino determinati requisiti minimi sul controller.
+
+
+NOTE: Non è possibile scollegare dischi virtuali dalle macchine virtuali ONTAP Select che utilizzano la configurazione RAID hardware. La rimozione dei dischi è supportata solo per le macchine virtuali ONTAP Select che utilizzano la configurazione RAID software. Per ulteriori informazioni, vedere link:task_adm_replace_drives_swraid.html["Sostituire un'unità guasta in una configurazione RAID software ONTAP Select"] .
 
 Il controller RAID che gestisce i dischi ONTAP Select deve soddisfare i seguenti requisiti:
 

@@ -4,7 +4,7 @@ permalink: task_adm_security.html
 keywords: administer, administering, web, security 
 summary: 'Esistono diverse attività correlate che è possibile eseguire nell"ambito della protezione di un"implementazione ONTAP Select.' 
 ---
-= Sicurezza
+= Proteggere un'implementazione ONTAP Select
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

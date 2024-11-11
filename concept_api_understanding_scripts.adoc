@@ -4,7 +4,7 @@ permalink: concept_api_understanding_scripts.html
 keywords: rest api, deploy rest api, rest, python, python scripts, understanding 
 summary: 'Gli script Python di esempio consentono di eseguire diverse attività. È necessario comprendere gli script prima di utilizzarli in un"istanza di distribuzione live.' 
 ---
-= Comprendere gli script Python
+= Comprendere gli script Python per l'implementazione di ONTAP Select
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

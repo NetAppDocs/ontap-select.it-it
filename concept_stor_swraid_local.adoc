@@ -4,7 +4,7 @@ permalink: concept_stor_swraid_local.html
 keywords: ontap select, software raid, local attached storage, protection 
 summary: 'Il RAID software è un livello di astrazione RAID implementato all"interno dello stack software ONTAP. Fornisce le stesse funzionalità del livello RAID all"interno di una piattaforma ONTAP tradizionale come FAS. Il livello RAID esegue i calcoli di parità dei dischi e fornisce protezione da guasti a singoli dischi all"interno di un nodo ONTAP Select.' 
 ---
-= Servizi RAID software per lo storage collegato in locale
+= Servizi di configurazione RAID del software ONTAP Select per lo storage locale collegato
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
