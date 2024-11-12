@@ -26,10 +26,11 @@ Le funzionalità di espansione e contrazione del cluster sono limitate nei segue
 
 * Il supporto è limitato ai cluster creati sugli host hypervisor ESX. Le seguenti versioni di ESX sono compatibili con ONTAP Select 9.15.1 e versioni successive:
 +
-** ESXi 8.0U2
-** ESXi 8.0U1
+** ESXi 8,0 U3
+** ESXi 8,0 U2
+** ESXi 8,0 U1
 ** ESXi 8,0GA
-** ESXi 7.0U3
+** ESXi 7,0 U3
 ** ESXi 7,0
 
 

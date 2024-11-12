@@ -3554,10 +3554,6 @@ dischi di ricambio dell'aggregato di storage</block>
   <block id="d6746c8c49fd9df73bbb168197689da8" category="paragraph">A partire da ONTAP Select 9.15.1 è possibile aumentare le dimensioni di un cluster esistente da sei a otto nodi e ridurre le dimensioni del cluster da otto a sei nodi. Non sono supportati altri scenari di espansione o contrazione del cluster.</block>
   <block id="f6ad6d358dd65a1da361069309b57e39" category="paragraph">La procedura viene avviata da ONTAP Select Deploy utilizzando l'interfaccia CLI, API o Web.</block>
   <block id="c9dd95ac8795512f2d676118ba8def1a" category="paragraph">Le funzionalità di espansione e contrazione del cluster sono limitate nei seguenti modi:</block>
-  <block id="ec65581eeb2dfa95316cf6a00d2ff593" category="list-text">ESXi 8.0U2</block>
-  <block id="43629b681eab8f23e6624067ec8d1fde" category="list-text">ESXi 8.0U1</block>
-  <block id="200d1894c9fd6ae53ee1224b58c879d1" category="list-text">ESXi 8,0GA</block>
-  <block id="83796d186e6e678e53d65b677d9068ca" category="list-text">ESXi 7.0U3</block>
   <block id="ef179550c4eb9da6a82350b32d807ed9" category="list-text">ESXi 7,0</block>
   <block id="c0fa4ded01a6d24b2a77cd3a6b10e6e7" category="section-title">Espandere il cluster</block>
   <block id="c117993f1e48f58c366f6fe0873d958b" category="paragraph">Con la funzionalità di espansione del cluster è possibile aumentare le dimensioni di un cluster esistente da sei a otto nodi.</block>
@@ -3598,7 +3594,6 @@ dischi di ricambio dell'aggregato di storage</block>
   <block id="bb64c7ceeafd189f9c0a2a7f1c32a914" category="list-text">A partire da ONTAP Select 9.15.1, l'hypervisor kernel-Based Virtual Machine (KVM) è supportato su Red Hat Enterprise Linux (RHEL) 9,4 e Rocky Linux 9,4.</block>
   <block id="8719161a4dfa5d820c98457ce5ca446a" category="list-text">KVM su Red Hat Enterprise Linux 8,6, 8,7, 8,8, 9,0, 9,1, 9,2 e 9,4</block>
   <block id="50ebec14d8a39fd9e4b4813019110499" category="list-text">KVM su Rocky Linux 8,6, 8,7, 8,8, 8,9, 9,0, 9,1, 9,2, 9,3 e 9,4</block>
-  <block id="78fb396e8c541b492002e6b94963fe83" category="list-text">ONTAP Select 9.14.1 include il supporto per VMware ESXi 8,0.2.</block>
   <block id="2908aba1afb68c480565ae68ebe3508c" category="list-text">A partire da ONTAP 9.13,1, VMware ESXi 8.0.1 GA (build 20513097) è supportato con la versione hardware 4 e successive.</block>
   <block id="066308395ea593f82277b09bef1304dc" category="list-text">Salvare l'immagine della macchina virtuale di distribuzione originale.</block>
   <block id="f3d42eb73da0b3db6a0beb04d2f78c68" category="admonition">L'immagine originale della macchina virtuale di distribuzione è necessaria più avanti in questa procedura quando si ripristinano i dati di configurazione di distribuzione dall'originale alla nuova macchina virtuale.</block>
@@ -3725,7 +3720,6 @@ dischi di ricambio dell'aggregato di storage</block>
   <block id="744c7aceadded1b7d2f7dbabcbe794a8" category="doc">Server ONTAP Select VMware vCenter su ESXi</block>
   <block id="634920e565b06acb85fcaff73d20a15d" category="doc">Requisiti di ONTAP Select VMware ESXi</block>
   <block id="0edc199faf78056856f9f042ee780e07" category="inline-link">Note sulla versione di ONTAP Select 9.16.1</block>
-  <block id="a1fe17f34ab508f2ef781ee6a7c0421b" category="paragraph">È possibile accedere a<block ref="dcda9204a0d7995e0d0246096082b5ee" category="inline-link-rx"></block> per visualizzare i dettagli sulla versione corrente.</block>
   <block id="023deab3a8c9b82a9bfd452c0b68af9b" category="doc">Verificare la connettività tra i nodi ONTAP Select</block>
   <block id="8a96228950f9c48cb7f24c3b98404d49" category="doc">Amministrare ONTAP Select distribuire servizi mediatori</block>
   <block id="d2bdabf740cddb35328041a6ee746b12" category="doc">Sostituire le unità RAID software guaste per ONTAP Select</block>
@@ -3753,4 +3747,11 @@ dischi di ricambio dell'aggregato di storage</block>
   <block id="9cc3c3055efc6fc5a45cfce6ac3eda87" category="sidebar">Accedere alla console video della VM</block>
   <block id="5a3a053ae34a79fb35028f001babbf25" category="sidebar">Sostituire le unità RAID software guaste</block>
   <block id="e2e19484d2146649c758acb6e826707f" category="sidebar">Aggiornare ESXi alla versione 6,5 e successive</block>
+  <block id="b374e4bbc5d3bd65f35605cc784ed685" category="list-text">ONTAP Select 9.14.1 include il supporto per VMware ESXi 8.0 U2.</block>
+  <block id="b7d2c3ffb4e7ab988d8422ff889440b1" category="paragraph">È possibile accedere a <block ref="cf1ab4e8632efa681982f5c2d85eebd4" category="inline-link-macro-rx"></block>per visualizzare i dettagli sulla versione corrente.</block>
+  <block id="37730150d6378b2a0b04f20595d2d65a" category="list-text">ESXi 8,0 U3</block>
+  <block id="3a13e6fcb6840db51e3e181c41dff37b" category="list-text">ESXi 8,0 U2</block>
+  <block id="084ef93eebe5fd52d657e556b4305619" category="list-text">ESXi 8,0 U1</block>
+  <block id="4ec8056f2f2bfb0ffa0104fc43edb1da" category="list-text">ESXi 8,0GA</block>
+  <block id="8d224631a5a87c64caecc71fee6fb612" category="list-text">ESXi 7,0 U3</block>
 </blocks>
