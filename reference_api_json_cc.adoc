@@ -167,13 +167,6 @@ Quando si crea o si elimina un cluster ONTAP Select utilizzando gli esempi di co
 
 == Cluster a nodo singolo su KVM
 
-[NOTE]
-====
-* A partire da ONTAP Select 9.10.1, non è più possibile implementare un nuovo cluster sull'hypervisor KVM.
-* A partire da ONTAP Select 9.11.1, tutte le funzionalità di gestibilità non sono più disponibili per i cluster e gli host KVM esistenti, ad eccezione delle funzioni take offline e delete.
-
-
-====
 [source, json]
 ----
 {
