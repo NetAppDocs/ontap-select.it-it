@@ -3752,12 +3752,9 @@ dischi di ricambio dell'aggregato di storage</block>
   <block id="084ef93eebe5fd52d657e556b4305619" category="list-text">ESXi 8,0 U1</block>
   <block id="4ec8056f2f2bfb0ffa0104fc43edb1da" category="list-text">ESXi 8,0GA</block>
   <block id="8d224631a5a87c64caecc71fee6fb612" category="list-text">ESXi 7,0 U3</block>
-  <block id="2541fca0ad59c8199b8bb08b5020de58" category="inline-link-macro">Guida rapida di ONTAP Select per le implementazioni dei modelli OVF</block>
-  <block id="eccbbc66ee95decf0d7c0595d219c92b" category="paragraph"><block ref="eccbbc66ee95decf0d7c0595d219c92b" category="inline-link-macro-rx"></block></block>
   <block id="563074de50ee7515467ef30a7a16a15d" category="paragraph">Esistono diversi requisiti hardware comuni che si applicano a tutte le piattaforme, indipendentemente dal tipo di istanza del nodo o dall'offerta di licenza.</block>
   <block id="f699f7e9ed69e5269a69fd9ec385c1ad" category="admonition">I processori AMD (Advanced Micro Devices) non sono supportati con ONTAP Select.</block>
   <block id="676477cfcc6ef4db97bbb95e9c75b57e" category="summary">È possibile implementare rapidamente un'istanza di valutazione di 90 giorni di un cluster ONTAP Select a nodo singolo utilizzando un modello OVF su VMware ESXi.</block>
-  <block id="08aeb5678ae03a8db1f16233a4a16070" category="paragraph">È possibile utilizzare la guida rapida per le implementazioni di modelli OVF (Open Virtualization Format) per implementare rapidamente un'istanza di valutazione di 90 giorni di un cluster ONTAP Select a nodo singolo utilizzando un modello OVF su VMware ESXi.</block>
   <block id="f9f5faecdbf3b023cf5652fa18b8c4ee" category="list-text">Non è necessario ottenere un numero di serie o una licenza per la capacità di archiviazione da NetApp.</block>
   <block id="591ba54105fed20bc4bc8e31cee68eb3" category="list-text">È possibile allocare la stessa quantità di spazio di archiviazione per i dati utente di una licenza acquistata.</block>
   <block id="10db4e06bde0886ecc0f97ce3a350d45" category="list-text">Non è possibile aggiornare il nodo da una licenza di valutazione a una licenza acquistata.</block>
@@ -3788,5 +3785,7 @@ dischi di ricambio dell'aggregato di storage</block>
   <block id="c56b5c777d1fbf5b3503afddde839f20" category="list-text">Selezionare *fine* per avviare il processo di distribuzione.</block>
   <block id="66723f6678d3dd5c1bae3c6838416d52" category="list-text">Una volta implementato il cluster di ONTAP Select, è possibile configurarlo usando System Manager o l'interfaccia della CLI. È necessario assegnare il disco utilizzando l'operazione standard ONTAP *disk assign*.</block>
   <block id="7c51cb770ac84a1429ed1cfe6c686aed" category="paragraph"><block ref="7c51cb770ac84a1429ed1cfe6c686aed" category="inline-link-macro-rx"></block></block>
-  <block id="fa0d249cd337d58b40ea3c7cc54de247" category="sidebar">Avvio rapido per le implementazioni dei modelli OVF</block>
+  <block id="8ca84893979a849d9d51eac372cc15a9" category="inline-link-macro">Implementazione di un'istanza di valutazione di 90 giorni di un cluster ONTAP Select</block>
+  <block id="cb5e9657db1221bb8eb7f5be5287d604" category="paragraph"><block ref="cb5e9657db1221bb8eb7f5be5287d604" category="inline-link-macro-rx"></block></block>
+  <block id="ac951fbceb082ef32560a291949a4015" category="sidebar">Implementazione di un'istanza di valutazione di 90 giorni di un cluster</block>
 </blocks>

@@ -1,10 +1,10 @@
 ---
 sidebar: sidebar 
-permalink: task_quick_start_for_ovf_template_deployments.html 
-keywords: ontap select, ovf, template, deployment, evaluation, license 
+permalink: deploy-evaluation-ontap-select-ovf-template.html 
+keywords: ontap, select, ovf, template, deployment, evaluation, license 
 summary: 'È possibile implementare rapidamente un"istanza di valutazione di 90 giorni di un cluster ONTAP Select a nodo singolo utilizzando un modello OVF su VMware ESXi.' 
 ---
-= Guida rapida di ONTAP Select per le implementazioni dei modelli OVF
+= Implementazione di un'istanza di valutazione di 90 giorni di un cluster ONTAP Select
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: 'È possibile implementare rapidamente un"istanza di valutazione di 90 
 
 
 [role="lead"]
-È possibile utilizzare la guida rapida per le implementazioni di modelli OVF (Open Virtualization Format) per implementare rapidamente un'istanza di valutazione di 90 giorni di un cluster ONTAP Select a nodo singolo utilizzando un modello OVF su VMware ESXi.
+È possibile implementare rapidamente un'istanza di valutazione di 90 giorni di un cluster ONTAP Select a nodo singolo utilizzando un modello OVF su VMware ESXi.
 
 .A proposito di questa attività
 * Non è necessario ottenere un numero di serie o una licenza per la capacità di archiviazione da NetApp.

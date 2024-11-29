@@ -19,7 +19,7 @@ settings:
     url: "/ontap-select-9131"
   - version-number: 9.12.1
     url: "/ontap-select-9121"
-  langs: it-it,us-en,ja-jp,ko-kr,zh-cn,zh-tw,de-de,es-es,fr-fr
+  langs: it-it,us-en,de-de,es-es,fr-fr,pt-br,ja-jp,ko-kr,zh-cn,zh-tw
 sidebar:
   entries:
   - title: Documentazione di ONTAP Select 9.16.1
@@ -294,8 +294,8 @@ sidebar:
         url: "/task_cli_deploy_image_remove.html"
       - title: Ripristinare l'implementazione per un cluster a due nodi
         url: "/task_cli_deploy_recover_two_node.html"
-  - title: Avvio rapido per le implementazioni dei modelli OVF
-    url: "/task_quick_start_for_ovf_template_deployments.html"
+  - title: Implementazione di un'istanza di valutazione di 90 giorni di un cluster
+    url: "/deploy-evaluation-ontap-select-ovf-template.html"
   - title: FAQ
     url: "/reference_faq.html"
   - title: Note legali
