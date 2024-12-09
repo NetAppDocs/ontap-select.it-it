@@ -72,4 +72,7 @@ Durante la configurazione del cluster sono disponibili diverse opzioni, tra cui:
 Se si decide di non installare i file di licenza con capacità di storage durante l'implementazione del cluster ONTAP Select, è necessario acquisire e installare i file di licenza prima della scadenza del periodo di tolleranza per i cluster eseguiti con una licenza acquistata.
 
 .Aggregati mirrorati
-Esistono dischi di riserva dati creati dall'utility di amministrazione di Deploy su ciascun nodo ONTAP Select dallo spazio datastore utilizzabile (ad esempio, Pool0 e Pool1). Per implementare la disponibilità elevata per i dati su un cluster a più nodi, è necessario creare un aggregato mirrorato utilizzando queste parti di ricambio.
+L'utility di amministrazione di deploy crea dischi di riserva dei dati su ciascun nodo ONTAP Select dallo spazio utilizzabile del datastore (come Pool0 e Pool1). Per implementare la disponibilità elevata per i dati su un cluster a più nodi, è necessario creare un aggregato mirrorato utilizzando queste parti di ricambio.
+
+
+NOTE: Il takeover della high Availability è supportato solo quando gli aggregati di dati sono configurati come aggregati con mirroring.
