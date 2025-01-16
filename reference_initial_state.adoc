@@ -19,7 +19,7 @@ summary: 'È necessario conoscere lo stato iniziale di un cluster dopo averlo im
 Dopo la creazione, un cluster ONTAP Select presenta diverse caratteristiche.
 
 
-NOTE: La limitazione dei ruoli e delle autorizzazioni per l'account amministratore di ONTAP può limitare la capacità di ONTAP Select Deploy di gestire il cluster. Per ulteriori informazioni, consulta l'articolo della Knowledge base link:https://kb.netapp.com/onprem/ontap/ONTAP_Select/OTS_Deploy_cluster_refresh_fails_with_error%3A_ONTAPSelectSysCLIVersionFailed_zapi_returned_bad_status_0%3A_None["L'aggiornamento del cluster di implementazione dell'OTS non riesce con un errore"^].
+NOTE: La limitazione dei ruoli e delle autorizzazioni per l'account amministratore di ONTAP può limitare la capacità di ONTAP Select Deploy di gestire il cluster. Per ulteriori informazioni, vedere l'articolo della Knowledge base link:https://kb.netapp.com/onprem/ontap/ONTAP_Select/OTS_Deploy_cluster_refresh_fails_with_error%3A_ONTAPSelectSysCLIVersionFailed_zapi_returned_bad_status_0%3A_None["L'aggiornamento del cluster di implementazione dell'OTS non riesce con un errore"^].
 
 .LIF
 Sono stati assegnati due tipi di LIF specificati dal cliente:
@@ -28,12 +28,19 @@ Sono stati assegnati due tipi di LIF specificati dal cliente:
 * Gestione dei nodi (uno per nodo)
 
 
+
+NOTE: Un cluster multi-nodo dispone di una rete interna con LIF generate automaticamente.
+
 .SVM
-Sono attive due SVM amministrative:
+Sono attive tre SVM:
 
-* SVM predefinito
-* SVM del cluster
+* Admin SVM. (WS amministratore
+* SVM nodo
+* SVM di sistema (cluster)
 
+
+
+NOTE: Le SVM dei dati non vengono create durante l'implementazione del cluster di ONTAP Select. Devono essere creati dall'amministratore del cluster dopo la distribuzione. Per ulteriori informazioni, vedere https://docs.netapp.com/us-en/ontap/nfs-config/create-svms-data-access-task.html["Creare un SVM"^].
 
 .Aggregati
 Viene creato l'aggregato root.
@@ -41,9 +48,7 @@ Viene creato l'aggregato root.
 .Caratteristiche
 Tutte le funzioni sono concesse in licenza e disponibili. Sia SnapLock che FabricPool richiedono licenze separate.
 
-
-NOTE: Non sono stati creati dati SVM. Inoltre, il cluster multi-nodo dispone di una rete interna con LIF autogenerate.
-
 .Informazioni correlate
+* link:https://docs.netapp.com/us-en/ontap/system-admin/types-svms-concept.html["Tipi di SVM contenute in un cluster"^]
 * link:reference_lic_ontap_features.html["Funzionalità ONTAP attivate per impostazione predefinita"]
 
