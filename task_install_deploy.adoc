@@ -22,6 +22,9 @@ summary: 'È necessario installare l"utility di amministrazione di ONTAP Select 
 
 È possibile scaricare il pacchetto ONTAP Select dal sito di supporto NetApp.
 
+.Prima di iniziare
+https://mysupport.netapp.com/site/user/registration["Hai un account registrato sul sito di supporto NetApp"^].
+
 .A proposito di questa attività
 L'utility di amministrazione di ONTAP Select Deploy è predisposta come macchina virtuale (VM) basata sullo standard OVF (Open Virtualization Format). Il singolo file compresso ha il suffisso `ova`. La VM fornisce le immagini di installazione e del server di implementazione per i nodi ONTAP Select.
 
@@ -118,7 +121,7 @@ I passaggi che segui dipendono dall'utilizzo di un hypervisor ESXi o KVM.
 +
 È necessario definire la password per l'account amministratore. È necessario fornire questa password quando si effettua l'accesso all'utilità di implementazione.
 
-. Dopo l'implementazione della VM, selezionare la nuova VM e accenderla se non è già accesa in base all'input inviato alla procedura guidata di implementazione.
+. Dopo l'implementazione della VM, selezionare la nuova VM. Se non è già acceso in base all'input ricevuto dalla procedura guidata di implementazione, accenderlo manualmente.
 . Se necessario, è possibile configurare la rete Deploy utilizzando la console VM:
 +
 .. Fare clic sulla scheda *Console* per accedere alla shell di configurazione dell'host ESXi e monitorare il processo di accensione.
@@ -208,7 +211,7 @@ Accedere all'interfaccia utente Web per verificare che l'utilità di implementaz
 
 . Fornire il nome e la password dell'account amministratore (admin) e accedere.
 . Se viene visualizzata la finestra a comparsa *Benvenuti in ONTAP Select*, esaminare i prerequisiti e selezionare *OK* per continuare.
-. Se è la prima volta che si effettua l'accesso e non si installa Deploy utilizzando la procedura guidata disponibile con vCenter, fornire le seguenti informazioni di configurazione quando richiesto:
+. Se è la prima volta che si accede e non si è installato Deploy utilizzando la procedura guidata disponibile con vCenter, fornire le seguenti informazioni di configurazione quando richiesto:
 +
 ** Nuova password per l'account amministratore (obbligatoria)
 ** AutoSupport (opzionale)

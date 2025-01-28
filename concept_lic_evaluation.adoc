@@ -4,7 +4,7 @@ permalink: concept_lic_evaluation.html
 keywords: license, licensing, evaluation, upgrade license 
 summary: 'È possibile utilizzare una licenza di valutazione se si desidera valutare ONTAP Select prima di prendere la decisione di acquisto. La licenza di valutazione è inclusa nell"utility di amministrazione di ONTAP Select Deploy e viene applicata automaticamente a ciascun nodo ONTAP Select come parte di un"implementazione di valutazione.' 
 ---
-= Licenze di valutazione
+= Licenze di valutazione per implementazioni ONTAP Select
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -16,6 +16,15 @@ summary: 'È possibile utilizzare una licenza di valutazione se si desidera valu
 [role="lead"]
 È possibile distribuire ONTAP Select con una licenza di valutazione o una licenza acquistata. La licenza scelta deve essere applicata a ciascun nodo del cluster ONTAP Select e quindi all'intero cluster. È possibile utilizzare una licenza di valutazione se si desidera valutare ONTAP Select prima di prendere la decisione di acquisto. La licenza di valutazione è inclusa nell'utility di amministrazione di ONTAP Select Deploy e viene applicata automaticamente a ciascun nodo ONTAP Select come parte di un'implementazione di valutazione.
 
+[NOTE]
+====
+Per scaricare l'utilità di amministrazione di distribuzione di ONTAP Select, è necessario disporre di quanto segue:
+
+* Un account registrato sul sito del supporto NetApp. Se non si dispone di un account, vedere https://mysupport.netapp.com/site/user/registration["Registrazione utente"^].
+*  https://mysupport.netapp.com/site/downloads/evaluation/ontap-select["Accettare il contratto di licenza per l'utente finale"^]Per una distribuzione ONTAP Select con una licenza di valutazione.
+
+
+====
 Per la distribuzione e il supporto di un cluster di valutazione, è necessario tenere in considerazione i seguenti fattori:
 
 * È possibile utilizzare il cluster solo per scopi di valutazione. Non è necessario utilizzare un cluster con una licenza di valutazione in un ambiente di produzione.
@@ -33,10 +42,10 @@ Per la distribuzione e il supporto di un cluster di valutazione, è necessario t
 
 La licenza di valutazione ONTAP Select presenta le seguenti caratteristiche:
 
-* Non è richiesta una licenza di produzione con capacità di storage
+* Non è necessaria una licenza di produzione con capacità di archiviazione
 * Il numero di serie del nodo è composto da venti cifre e viene generato automaticamente dall'implementazione di ONTAP Select
 +
-(Non lo acquisisci direttamente da NetApp)
+(Non lo acquisti direttamente da NetApp)
 
 * Il periodo di valutazione fornito dalla licenza può arrivare fino a 90 giorni
 * Lo storage massimo allocato da ciascun nodo è lo stesso di una licenza di produzione
@@ -49,7 +58,7 @@ La licenza di valutazione ONTAP Select presenta le seguenti caratteristiche:
 È possibile aggiornare un cluster di valutazione ONTAP Select per utilizzare una licenza di produzione. È necessario conoscere le seguenti restrizioni:
 
 * Per eseguire l'aggiornamento della licenza, è necessario utilizzare l'utility di amministrazione della distribuzione
-* È possibile utilizzare una licenza di livello di capacità, tuttavia le licenze di pool di capacità non sono supportate
+* È possibile utilizzare una licenza a livello di capacità, tuttavia la licenza per pool di capacità non è supportata
 * Ogni nodo deve disporre di spazio di storage sufficiente per supportare il minimo richiesto per una licenza di produzione, in base alle dimensioni del cluster
 
 

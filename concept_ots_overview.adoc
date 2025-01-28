@@ -51,7 +51,7 @@ NOTE: All'utilità di amministrazione distribuzione non è assegnato un numero d
 
 == Immagine di un'implementazione tipica
 
-La figura seguente illustra l'utility di amministrazione di ONTAP Select Deploy utilizzata per implementare e supportare un cluster ONTAP Select a quattro nodi. L'utility di implementazione e i nodi ONTAP Select vengono eseguiti come macchine virtuali separate su host hypervisor dedicati.
+La figura seguente illustra l'utilità di amministrazione di NetApp ONTAP Select Deploy utilizzata per implementare e supportare un cluster ONTAP Select a quattro nodi. L'utility di implementazione e i nodi ONTAP Select vengono eseguiti come macchine virtuali separate su host hypervisor dedicati.
 
 image:ots_architecture.png["Viene illustrato un cluster a quattro nodi ONTAP Select creato con l'utilità di amministrazione di Deploy."]
 
