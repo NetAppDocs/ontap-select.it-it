@@ -24,11 +24,11 @@ Esistono diverse attività correlate che è possibile eseguire nell'ambito dell'
 
 .Fasi
 . Accedere all'utilità di implementazione tramite l'interfaccia Web utilizzando l'account amministratore.
-. Fare clic sulla scheda *Administration* nella parte superiore della pagina.
-. Fare clic su *Licenses* (licenze) e su *Capacity Tier* (livello di capacità).
-. Facoltativamente, fare clic su *Filter* (filtro) e per limitare le licenze visualizzate.
-. Per sostituire una licenza esistente; selezionare una licenza, fare clic su image:icon_kebab.gif["Opzioni"]E selezionare *Aggiorna*.
-. Per aggiungere una nuova licenza, fare clic su *Aggiungi* nella parte superiore della pagina, quindi fare clic su *carica licenze* e selezionare un file di licenza dalla workstation locale.
+. Selezionare la scheda *Amministrazione* nella parte superiore della pagina.
+. Selezionare *licenze* e *livello di capacità*.
+. Se si desidera, selezionare *filtro* e per limitare le licenze visualizzate.
+. Per sostituire una licenza esistente, selezionare una licenza, selezionare image:icon_kebab.gif["Opzioni"], quindi selezionare *Aggiorna*.
+. Per aggiungere una nuova licenza, selezionare *Aggiungi* nella parte superiore della pagina, quindi selezionare *carica licenze* e selezionare un file di licenza dalla workstation locale.
 
 
 
@@ -39,14 +39,33 @@ Esistono diverse attività correlate che è possibile eseguire nell'ambito dell'
 
 .Fasi
 . Accedere all'utilità di implementazione tramite l'interfaccia Web utilizzando l'account amministratore.
-. Fare clic sulla scheda *Administration* nella parte superiore della pagina.
-. Fare clic su *licenze* e su *Capacity Pools*.
-. Facoltativamente, fare clic su *Filter* (filtro) e per limitare le licenze visualizzate.
-. Se si desidera, selezionare una licenza e fare clic su image:icon_kebab.gif["Opzioni"] per gestire una licenza esistente.
-. Per aggiungere una nuova licenza o rinnovare una licenza esistente, fare clic su *Aggiungi* nella parte superiore della pagina, quindi fare clic su *carica licenze* e selezionare un file di licenza dalla workstation locale.
+. Selezionare la scheda *Amministrazione* nella parte superiore della pagina.
+. Selezionare *licenze* e *Pool di capacità*.
+. In alternativa, selezionare *filtro* e per limitare le licenze visualizzate.
+. Facoltativamente, selezionare una licenza e scegliere image:icon_kebab.gif["Opzioni"] di gestire una licenza esistente.
+. Aggiungere una nuova licenza o rinnovare una licenza esistente:
++
+[role="tabbed-block"]
+====
+.Aggiungi nuova licenza
+--
+Per aggiungere una nuova licenza, selezionare *Aggiungi* nella parte superiore della pagina.
+
+--
+.Rinnovare la licenza esistente
+--
+Per rinnovare una licenza esistente:
+
+.. Selezionare image:icon_kebab.gif["Opzioni"] su una licenza esistente.
+.. Selezionare *carica licenze*.
+.. Selezionare un file di licenza dalla workstation locale.
+
+
+--
+====
 . Per visualizzare un elenco dei pool di capacità:
 +
-.. Fare clic su *Riepilogo*.
+.. Selezionare *Riepilogo*.
 .. Selezionare ed espandere un pool per visualizzare i cluster e i nodi in leasing dello storage dal pool.
 .. Visualizzare lo stato corrente della licenza in *informazioni sulla licenza*.
 .. È possibile modificare la durata dei leasing emessi per il pool in scadenza leasing.
@@ -54,7 +73,7 @@ Esistono diverse attività correlate che è possibile eseguire nell'ambito dell'
 
 . Per visualizzare un elenco dei cluster:
 +
-.. Fare clic su *Dettagli*.
+.. Selezionare *Dettagli*.
 .. Selezionare ed espandere il cluster per visualizzare l'utilizzo dello storage.
 
 
@@ -85,9 +104,9 @@ Vedere link:task_lic_acquire_cp.html["Acquisire una licenza per pool di capacit�
 . Installare le licenze del pool di capacità nella nuova istanza di implementazione:
 +
 .. Accedere all'interfaccia utente Web dell'utilità di implementazione utilizzando l'account amministratore.
-.. Fare clic sulla scheda *Administration* nella parte superiore della pagina.
-.. Fare clic su *licenze*, quindi su *Capacity Pool*.
-.. Fare clic su *Aggiungi*, quindi su *carica licenze* per selezionare e caricare le licenze.
+.. Selezionare la scheda *Amministrazione* nella parte superiore della pagina.
+.. Selezionare *licenze*, quindi *Pool di capacità*.
+.. Selezionare *Aggiungi*, quindi *carica licenze* per selezionare e caricare le licenze.
 
 
 . Se è stata creata la nuova istanza di distribuzione senza ripristinare un backup o se è stato utilizzato un backup non aggiornato e aggiornato, è necessario aggiornare il numero di sequenza seriale:
@@ -140,13 +159,13 @@ L'esecuzione di una modifica della licenza del cluster per un cluster a nodo sin
 
 .Fasi
 . Accedere all'interfaccia utente Web dell'utilità di implementazione utilizzando l'account amministratore.
-. Fare clic sulla scheda *Clusters* nella parte superiore della pagina e selezionare il cluster desiderato.
-. Nella parte superiore della pagina dei dettagli del cluster, fare clic su *fare clic qui* per modificare la licenza del cluster.
+. Selezionare la scheda *cluster* nella parte superiore della pagina e selezionare il cluster desiderato.
+. Nella parte superiore della pagina dei dettagli del cluster, selezionare *fare clic qui* per modificare la licenza del cluster.
 +
-È inoltre possibile fare clic su *Modify* (Modifica) accanto alla licenza di valutazione nella sezione *Cluster Details* (Dettagli cluster).
+È inoltre possibile selezionare *Modify* accanto alla licenza di valutazione nella sezione *Cluster Details*.
 
 . Selezionare una licenza di produzione disponibile per ciascun nodo o caricare licenze aggiuntive in base alle necessità.
-. Fornire le credenziali ONTAP e fare clic su *Modify* (Modifica).
+. Fornire le credenziali ONTAP e selezionare *Modifica*.
 +
 L'aggiornamento della licenza per il cluster può richiedere alcuni minuti. Consentire il completamento del processo prima di uscire dalla pagina o apportare altre modifiche.
 

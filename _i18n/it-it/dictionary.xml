@@ -762,19 +762,12 @@
   <block id="40910d9d6a3231bdd6eae7aec77b73aa" category="paragraph-title">ONTAP Select supporta cluster estesi con (o senza) il mediatore?</block>
   <block id="117d84c5d2c4c5d0965e55b844c0e46d" category="paragraph">Solo un cluster a due nodi con un Mediator è supportato in un modello di implementazione ha esteso.</block>
   <block id="d1da5ae38aafefba216edae24c73845b" category="list-text">Accedere all'utilità di implementazione tramite l'interfaccia Web utilizzando l'account amministratore.</block>
-  <block id="27de07fc9b7f932f0181131e79ec3569" category="list-text">Fare clic su *Licenses* (licenze) e su *Capacity Tier* (livello di capacità).</block>
-  <block id="c1a597c101487100214a5f749a6f3e48" category="list-text">Facoltativamente, fare clic su *Filter* (filtro) e per limitare le licenze visualizzate.</block>
-  <block id="6ee0553d617caf0c18d95b731d38d14f" category="list-text">Per aggiungere una nuova licenza, fare clic su *Aggiungi* nella parte superiore della pagina, quindi fare clic su *carica licenze* e selezionare un file di licenza dalla workstation locale.</block>
   <block id="2a1af40a05dbd3e59e7040a6aba474e2" category="paragraph">È possibile aggiungere, modificare ed eliminare le licenze del pool di capacità ONTAP Select in base alle esigenze.</block>
-  <block id="7be3eed19afb6e3f04dc4fe18d053f2c" category="list-text">Fare clic su *licenze* e su *Capacity Pools*.</block>
-  <block id="8e2791365de62e59e56b5d6fcdd0f3e2" category="list-text">Per aggiungere una nuova licenza o rinnovare una licenza esistente, fare clic su *Aggiungi* nella parte superiore della pagina, quindi fare clic su *carica licenze* e selezionare un file di licenza dalla workstation locale.</block>
   <block id="d26363bf70cc27dd1ba8f09739b8f116" category="list-text">Per visualizzare un elenco dei pool di capacità:</block>
-  <block id="b14052b3af7caf15ec0beb76766be24f" category="list-text">Fare clic su *Riepilogo*.</block>
   <block id="e034cc23606a54a163075931f70dbbab" category="list-text">Selezionare ed espandere un pool per visualizzare i cluster e i nodi in leasing dello storage dal pool.</block>
   <block id="8797856e9d86b8ee20026b14229ca29a" category="list-text">Visualizzare lo stato corrente della licenza in *informazioni sulla licenza*.</block>
   <block id="21b26341db1dfa394a993c5d152ccf13" category="list-text">È possibile modificare la durata dei leasing emessi per il pool in scadenza leasing.</block>
   <block id="a0d12512fae580ca38325fe122b9f447" category="list-text">Per visualizzare un elenco dei cluster:</block>
-  <block id="8ab91110ae01f9e5c2c34364ebb2da32" category="list-text">Fare clic su *Dettagli*.</block>
   <block id="31881fb30a812ef998d7f2111d7bcc44" category="list-text">Selezionare ed espandere il cluster per visualizzare l'utilizzo dello storage.</block>
   <block id="844c5fe8a900e62416848502a4af7fdf" category="paragraph">Ogni licenza di Capacity Pool attiva viene bloccata in una specifica istanza di License Manager, contenuta in un'istanza dell'utility di amministrazione di Deploy. Se si utilizza una licenza di Capacity Pool e quindi si ripristina o ripristina l'istanza di distribuzione, la licenza originale non è più valida. È necessario generare un nuovo file di licenza della capacità e installare la licenza nella nuova istanza di implementazione.</block>
   <block id="be0411c455172a2eece4547673c61675" category="list-text">Determinare tutte le licenze del pool di capacità utilizzate dall'istanza di implementazione originale.</block>
@@ -785,8 +778,6 @@
   <block id="6d46c419c8dde2ad4ea4d5623e1b4350" category="list-text">Contattare il supporto NetApp e ottenere tutte le licenze del pool di capacità per l'istanza di implementazione originale senza bound e senza registrazione.</block>
   <block id="dc94932a20b0a7c73d1e6aa60af35223" category="list-text">Acquisire e scaricare un nuovo file di licenza per ciascuna licenza del pool di capacità.</block>
   <block id="8018479e33974a2b0f774cf42ec399e5" category="list-text">Installare le licenze del pool di capacità nella nuova istanza di implementazione:</block>
-  <block id="99683d4e14f8df30b153000825273e2d" category="list-text">Fare clic su *licenze*, quindi su *Capacity Pool*.</block>
-  <block id="095bb96ffb3551a58960c96316107d76" category="list-text">Fare clic su *Aggiungi*, quindi su *carica licenze* per selezionare e caricare le licenze.</block>
   <block id="e05566aa3784020545c76d92dcb376ab" category="list-text">Se è stata creata la nuova istanza di distribuzione senza ripristinare un backup o se è stato utilizzato un backup non aggiornato e aggiornato, è necessario aggiornare il numero di sequenza seriale:</block>
   <block id="1c4bd3e7e2bc88b1415fade6249d5a46" category="list-text">Accedere all'interfaccia della riga di comando dell'utilità di implementazione utilizzando l'account amministratore.</block>
   <block id="1de9bd334d99fc24b79e751ee32ab23c" category="list-text">Visualizza il numero di serie di un nodo creato più di recente dall'istanza di implementazione originale:</block>
@@ -807,11 +798,7 @@
   <block id="bc882e7be43ec2480a6be229d77c8eaf" category="list-text">Ogni nodo deve disporre di spazio di storage sufficiente per supportare il minimo richiesto per una licenza di produzione.</block>
   <block id="b94a9bad5ae121ac9e7cd292197b59e1" category="list-text">È necessario disporre di licenze di livello di capacità per ciascun nodo del cluster di valutazione.</block>
   <block id="f5d5a8d93d0ff3b80b514c776adc3d06" category="paragraph">L'esecuzione di una modifica della licenza del cluster per un cluster a nodo singolo è un'interruzione. Tuttavia, questo non è il caso di un cluster a più nodi perché il processo di conversione riavvia ogni nodo uno alla volta per applicare la licenza.</block>
-  <block id="2bb59383631b39d52464741628ce0ca4" category="list-text">Fare clic sulla scheda *Clusters* nella parte superiore della pagina e selezionare il cluster desiderato.</block>
-  <block id="2b92ba791b5d35e9921e9be06d12553c" category="list-text">Nella parte superiore della pagina dei dettagli del cluster, fare clic su *fare clic qui* per modificare la licenza del cluster.</block>
-  <block id="3ec0b37e2f174766469a343ec8265983" category="paragraph">È inoltre possibile fare clic su *Modify* (Modifica) accanto alla licenza di valutazione nella sezione *Cluster Details* (Dettagli cluster).</block>
   <block id="5a3b7bb229a1d7655341b191f93fef35" category="list-text">Selezionare una licenza di produzione disponibile per ciascun nodo o caricare licenze aggiuntive in base alle necessità.</block>
-  <block id="36d90e9baa4dfd0dda8eeaac2623f12c" category="list-text">Fornire le credenziali ONTAP e fare clic su *Modify* (Modifica).</block>
   <block id="7d7d0d771e408e152fe9f59aa783a245" category="paragraph">L'aggiornamento della licenza per il cluster può richiedere alcuni minuti. Consentire il completamento del processo prima di uscire dalla pagina o apportare altre modifiche.</block>
   <block id="58c19e610497280d55686885113b1e5a" category="paragraph">I numeri di serie di nodi a venti cifre originariamente assegnati a ciascun nodo per l'implementazione di valutazione sono sostituiti dai numeri di serie a nove cifre delle licenze di produzione utilizzate per l'aggiornamento.</block>
   <block id="724b8ee7bdeb6d5c74de82dc7e6c2e83" category="paragraph">In genere, quando una licenza scade, non accade nulla. Tuttavia, non è possibile installare una licenza diversa perché i nodi sono associati alla licenza scaduta. Fino al rinnovo della licenza, è necessario _non_ fare qualsiasi cosa che porti l'aggregato offline, come un riavvio o un'operazione di failover. Si consiglia di accelerare il rinnovo della licenza.</block>
@@ -3424,8 +3411,6 @@ dischi di ricambio dell'aggregato di storage</block>
   <block id="1bacbb36e2afde0c7a93da85daa18ef1" category="list-text">Tipo di istanza piccolo, medio o grande</block>
   <block id="4241d8a2662be78b68fdfaf8b9daec1a" category="list-text">HDD, SSD o dischi NVMe</block>
   <block id="884fb5a94a98010f0044edb08adfd51e" category="admonition">L'utilizzo del tipo di istanza grande o di dischi NVMe in una configurazione SW-RAID non è supportato su KVM.</block>
-  <block id="4c1cad05d7febe049143598de4b3847d" category="list-text">Per sostituire una licenza esistente; selezionare una licenza, fare clic su <block ref="8bad975decfb5a8958ec55339559e376" category="inline-image-macro-rx" type="image"></block>E selezionare *Aggiorna*.</block>
-  <block id="22296b7841252645a75ccd1c4032738e" category="list-text">Se si desidera, selezionare una licenza e fare clic su <block ref="8bad975decfb5a8958ec55339559e376" category="inline-image-macro-rx" type="image"></block> per gestire una licenza esistente.</block>
   <block id="6d0db0daccb7db9a59bfff9fe2840721" category="section-title">Gestire le licenze aggiuntive</block>
   <block id="85180b24dbd0c343b9c87bf144ede023" category="inline-link-macro">Panoramica sulla gestione delle licenze (solo amministratori del cluster)</block>
   <block id="a9a72d6af23763d014760a444a6e414b" category="inline-link-macro">Abilitare le nuove funzioni aggiungendo le chiavi di licenza</block>
@@ -3771,4 +3756,28 @@ dischi di ricambio dell'aggregato di storage</block>
   <block id="914500048ffed1428cdb2b9c357cc238" category="paragraph"><block ref="a25ad1701b82327b9cc6269d54c24597" category="inline-link-rx"></block>.</block>
   <block id="6e0cb8704cabb0eb79ea7580ba166b3e" category="list-text">Dopo l'implementazione della VM, selezionare la nuova VM. Se non è già acceso in base all'input ricevuto dalla procedura guidata di implementazione, accenderlo manualmente.</block>
   <block id="28258323eaa4732b0beafbc8b083a5ab" category="list-text">Se è la prima volta che si accede e non si è installato Deploy utilizzando la procedura guidata disponibile con vCenter, fornire le seguenti informazioni di configurazione quando richiesto:</block>
+  <block id="c2fffdb7e5db1a96deec5901fd1a882b" category="list-text">Selezionare la scheda *Amministrazione* nella parte superiore della pagina.</block>
+  <block id="7f73b891b6f89493a9a42f78c96dfbde" category="list-text">Selezionare *licenze* e *livello di capacità*.</block>
+  <block id="ac058bee21b19fb7d5683b470b430bce" category="list-text">Se si desidera, selezionare *filtro* e per limitare le licenze visualizzate.</block>
+  <block id="f76e9a144df7cb5bf308e94a6e908da4" category="list-text">Per sostituire una licenza esistente, selezionare una licenza, selezionare <block ref="8bad975decfb5a8958ec55339559e376" category="inline-image-macro-rx" type="image"></block>, quindi selezionare *Aggiorna*.</block>
+  <block id="2a312f34de3de288696c20c1e8fdab8c" category="list-text">Per aggiungere una nuova licenza, selezionare *Aggiungi* nella parte superiore della pagina, quindi selezionare *carica licenze* e selezionare un file di licenza dalla workstation locale.</block>
+  <block id="e138becae13ca9b3317ae72cd807b7ed" category="list-text">Selezionare *licenze* e *Pool di capacità*.</block>
+  <block id="e4dbf5646ea0f3591d85a89dcc220112" category="list-text">In alternativa, selezionare *filtro* e per limitare le licenze visualizzate.</block>
+  <block id="0238150d48dcbb89f61418a79faf879c" category="list-text">Facoltativamente, selezionare una licenza e scegliere <block ref="8bad975decfb5a8958ec55339559e376" category="inline-image-macro-rx" type="image"></block> di gestire una licenza esistente.</block>
+  <block id="f675b264e07a6d56cc74839352166e25" category="list-text">Aggiungere una nuova licenza o rinnovare una licenza esistente:</block>
+  <block id="e1ff67a9ee704536271bf20bae768184" category="open-title">Aggiungi nuova licenza</block>
+  <block id="85c89e836071c9255062f2c7b147db6a" category="paragraph">Per aggiungere una nuova licenza, selezionare *Aggiungi* nella parte superiore della pagina.</block>
+  <block id="bbb047a51418944f835ae59b4e145de5" category="open-title">Rinnovare la licenza esistente</block>
+  <block id="612b39eeafbac7f4962e5513903d070d" category="paragraph">Per rinnovare una licenza esistente:</block>
+  <block id="6e1121544cd3144bdf088e3fc4c6d58e" category="list-text">Selezionare <block ref="8bad975decfb5a8958ec55339559e376" category="inline-image-macro-rx" type="image"></block> su una licenza esistente.</block>
+  <block id="1f20356b85cdefac297216209ca2bcb1" category="list-text">Selezionare *carica licenze*.</block>
+  <block id="7d2e20d8c3e5ebfbdbd81ec85b9c313e" category="list-text">Selezionare un file di licenza dalla workstation locale.</block>
+  <block id="3e4b3d97ed721fa6c588b33d67e7327a" category="list-text">Selezionare *Riepilogo*.</block>
+  <block id="522aeaf73b031c733a2277fe9eadd494" category="list-text">Selezionare *Dettagli*.</block>
+  <block id="055dab4754e0e1d62a339ad80dcac225" category="list-text">Selezionare *licenze*, quindi *Pool di capacità*.</block>
+  <block id="8ad539dc195e039c5437c07b3d810ad8" category="list-text">Selezionare *Aggiungi*, quindi *carica licenze* per selezionare e caricare le licenze.</block>
+  <block id="1a9274360bc45212a6a014b4c6df1e9c" category="list-text">Selezionare la scheda *cluster* nella parte superiore della pagina e selezionare il cluster desiderato.</block>
+  <block id="e951843bb1ba0912165bd527e8312bec" category="list-text">Nella parte superiore della pagina dei dettagli del cluster, selezionare *fare clic qui* per modificare la licenza del cluster.</block>
+  <block id="17d9cc4f645deac6e5e367f0ef6fd4ee" category="paragraph">È inoltre possibile selezionare *Modify* accanto alla licenza di valutazione nella sezione *Cluster Details*.</block>
+  <block id="380ce7f967546f46005a7cb8b03e358c" category="list-text">Fornire le credenziali ONTAP e selezionare *Modifica*.</block>
 </blocks>
