@@ -32,7 +32,7 @@ sidebar:
       url: "/reference_new_ots.html"
   - title: Concetti
     entries:
-    - title: Panoramica di ONTAP Select
+    - title: Scopri ONTAP Select
       url: "/concept_ots_overview.html"
     - title: Implementazione di ONTAP Select
       url: "/concept_ots_deploy.html"
@@ -44,8 +44,8 @@ sidebar:
         url: "/concept_usecase_robo.html"
       - title: Cloud privato e data center
         url: "/concept_usecase_private_cloud.html"
-      - title: Scheda di sicurezza MetroCluster
-        url: "/concept_usecase_mc_sds.html"
+      - title: Data Protection ed efficienza
+        url: "/concept-data-protection-and-efficiency.html"
     - title: Terminologia
       url: "/concept_terminology.html"
   - title: Pianificare
@@ -94,7 +94,7 @@ sidebar:
         url: "/concept_lic_production.html"
       - title: Offerte di licenze per la piattaforma
         url: "/concept_lic_platforms.html"
-    - title: Modello di licensing dei pool di capacità
+    - title: Modello di licensing basato sulla capacità
       entries:
       - title: Dettagli operativi
         url: "/concept_lic_cp_operation.html"
@@ -102,7 +102,7 @@ sidebar:
         url: "/concept_lic_cp_serial_number.html"
       - title: Restrizioni
         url: "/concept_lic_cp_restrictions.html"
-      - title: Pool di capacità rispetto ai Tier di capacità
+      - title: Pool di capacità rispetto a Tier di capacità
         url: "/concept_lic_cp_compare_ct.html"
       - title: Riepilogo dei benefici
         url: "/concept_lic_cp_benefits.html"

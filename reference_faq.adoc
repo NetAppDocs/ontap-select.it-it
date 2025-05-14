@@ -95,12 +95,12 @@ L'aggiornamento a ONTAP Select Deploy 2.6 consente di supportare queste modifich
 La modifica dei dettagli di rete dell'istanza di distribuzione dopo l'esecuzione in un ambiente non è supportata. Per ulteriori informazioni, consultare link:https://kb.netapp.com/onprem/ontap/ONTAP_Select/Modifying_DNS_configuration_of_ONTAP_Deploy_instance["Articolo della Knowledge base - Modifica della configurazione DNS dell'istanza di distribuzione di ONTAP"^].
 
 .In che modo deploy rileva il rinnovo delle licenze ONTAP Select?
-Il metodo è lo stesso per tutte le licenze, sebbene le specifiche variano a seconda che si tratti di una licenza per Tier di capacità o pool di capacità.
+Il metodo è lo stesso per tutte le licenze, anche se le specifiche variano a seconda che si tratti di una licenza di livello di capacità o di Capacity Pool.
 
 * ONTAP Select Deploy rileva se le licenze e i contratti di supporto vengono rinnovati con l'acquisto di un file di licenza aggiornato da NetApp. Il file di licenza (.NLF) include le date di capacità, inizio e fine e viene generato in link:https://mysupport.netapp.com/site/["Sito di supporto NetApp"^], E quindi aggiornato sul server di distribuzione.
 +
 
-NOTE: È possibile caricare l'NLF nel server di distribuzione utilizzando le funzioni *Add* e *Update*. *Aggiungi* aggiunge nuove licenze al server e *Aggiorna* aggiorna i file esistenti con informazioni quali capacità, licenza nodo (standard, premium, premium XL), date di inizio e fine del supporto (licenza livello capacità) o date di inizio e fine dell'abbonamento (licenza pool di capacità).
+NOTE: È possibile caricare l'NLF nel server di distribuzione utilizzando le funzioni *Add* e *Update*. *Aggiungi* aggiunge nuove licenze al server e *Aggiorna* aggiorna i file esistenti con informazioni quali capacità, licenza nodo (standard, premium, premium XL), date di inizio e fine supporto (licenza livello capacità) o date di inizio e fine abbonamento (licenza Capacity Pool).
 
 +
 
@@ -108,20 +108,20 @@ CAUTION: Non tentare di modificare il file di licenza. In questo modo, la chiave
 
 * Una licenza *livello di capacità* è una licenza permanente per nodo legata al numero di serie del nodo ONTAP Select. Viene venduto con un contratto di supporto separato. Sebbene la licenza sia permanente, il contratto di supporto deve essere rinnovato per accedere agli aggiornamenti ONTAP Select e ricevere assistenza dal supporto tecnico NetApp. Inoltre, per modificare i parametri della licenza, ad esempio la capacità o le dimensioni del nodo, è necessario un contratto di supporto corrente.
 +
-L'acquisto di un aggiornamento della licenza del livello di capacità, di una modifica dei parametri o di un rinnovo del contratto di supporto richiede il numero di serie del nodo come parte dell'ordine. I numeri di serie del nodo del livello di capacità sono composti da nove cifre e iniziano con il numero '32'.
+L'acquisto di un aggiornamento della licenza del livello di capacità, di una modifica dei parametri o di un rinnovo del contratto di supporto richiede il numero di serie del nodo come parte dell'ordine. I numeri di serie dei nodi del livello di capacità sono composti da nove cifre e iniziano con il numero '32'.
 
 +
 Una volta completato l'acquisto e generato il file di licenza, questo viene caricato sul server di distribuzione utilizzando la funzione *Aggiorna*.
 
-* Una *licenza pool di capacità* è un abbonamento per il diritto di utilizzare un pool specifico di capacità e dimensioni dei nodi (standard, premium, premium XL) per distribuire uno o più cluster. L'abbonamento include il diritto di utilizzare una licenza e il supporto per un periodo specificato. Il diritto di utilizzare una licenza e il contratto di supporto hanno specificato le date di inizio e di fine.
+* Una licenza *Capacity Pool* è un abbonamento che consente di utilizzare un pool specifico di capacità e dimensioni dei nodi (standard, premium, premium XL) per distribuire uno o più cluster. L'abbonamento include il diritto di utilizzare una licenza e il supporto per un periodo specificato. Il diritto di utilizzare una licenza e il contratto di supporto hanno specificato le date di inizio e di fine.
 
 
 .In che modo deploy rileva se i nodi hanno rinnovato licenze o contratto di supporto?
 Acquistare, generare e caricare un file di licenza aggiornato è il modo in cui Deploy rileva le licenze rinnovate e i contratti di supporto.
 
-Se la data di fine del contratto di supporto del livello di capacità è passata, il nodo può continuare a funzionare, ma non sarà possibile scaricare e installare gli aggiornamenti ONTAP, o chiamare il supporto tecnico NetApp per assistenza senza prima aggiornare il contratto di supporto.
+Se una data di fine del contratto di supporto del livello di capacità è superata, il nodo può continuare a funzionare, ma non sarà possibile scaricare e installare gli aggiornamenti ONTAP, o chiamare il supporto tecnico NetApp per assistenza senza prima aggiornare il contratto di supporto.
 
-Se un abbonamento al pool di capacità scade, il sistema avvisa l'utente prima, ma dopo 30 giorni, se il sistema si spegne, non si riavvia finché non viene installata una sottoscrizione aggiornata sul server di distribuzione.
+Se un abbonamento a Capacity Pool scade, il sistema avvisa l'utente prima, ma dopo 30 giorni, se il sistema si spegne, non verrà riavviato fino a quando non verrà installata una sottoscrizione aggiornata sul server di distribuzione.
 
 
 

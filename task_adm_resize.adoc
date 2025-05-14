@@ -17,7 +17,7 @@ summary: 'Dopo aver implementato un cluster ONTAP Select, è possibile aggiornar
 Dopo aver implementato un cluster ONTAP Select, è possibile aggiornare il tipo di istanza dell'hypervisor dei nodi utilizzando l'utility di amministrazione di deploy.
 
 
-NOTE: È possibile eseguire l'operazione di ridimensionamento dei nodi del cluster utilizzando il modello di licenza dei livelli di capacità e il modello di licenza dei pool di capacità.
+NOTE: È possibile eseguire l'operazione di ridimensionamento dei nodi del cluster utilizzando il modello di licenza per Tier di capacità e il modello di licenza per pool di capacità.
 
 
 NOTE: Il ridimensionamento del tipo di istanza di grandi dimensioni è supportato solo su ESXi.

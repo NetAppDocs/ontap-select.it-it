@@ -41,7 +41,7 @@ A seconda della procedura di ripristino utilizzata, dovrebbe essere possibile ri
 È necessario conoscere l'indirizzo IP della macchina virtuale dell'utility di implementazione originale che ha avuto esito negativo.
 
 .Licenze per la capacità dello storage
-È necessario determinare se vengono utilizzati i pool di capacità o i livelli di capacità delle licenze. Se si utilizzano le licenze per i pool di capacità, è necessario reinstallare ogni licenza del pool di capacità dopo il ripristino o il ripristino dell'istanza di distribuzione.
+Devi determinare se utilizzare la licenza per pool di capacità o Tier di capacità. Se si utilizza la licenza di Capacity Pool, è necessario reinstallare ciascuna licenza di Capacity Pool dopo il ripristino o il ripristino dell'istanza di distribuzione.
 
 .Scelta della procedura di ripristino da utilizzare
 È necessario decidere quale procedura utilizzare per il ripristino di un'istanza dell'utilità di distribuzione di ONTAP Select. La decisione dipende dalla disponibilità o meno di un backup dei dati di configurazione dall'utilità di implementazione non riuscita originale che contiene il cluster a due nodi ONTAP Select.
@@ -115,7 +115,7 @@ disk assign -disk <mediator-disk2-name> -owner <node2-name>
 
 
 .Al termine
-Se si utilizzano le licenze per i pool di capacità, è necessario reinstallare ciascuna licenza per il pool di capacità. Per ulteriori informazioni, consulta la sezione _reinstallazione di una licenza per il pool di capacità_.
+Se si utilizza la licenza di Capacity Pool, è necessario reinstallare ciascuna licenza di Capacity Pool. Per ulteriori dettagli, vedere _reinstallazione di una licenza di Capacity Pool_.
 
 
 
@@ -207,10 +207,10 @@ disk assign -disk <mediator-disk2-name> -owner <node2-name>
 
 
 .Al termine
-Se si utilizzano le licenze per i pool di capacità, è necessario reinstallare ciascuna licenza per il pool di capacità. Per ulteriori informazioni, vedere reinstallazione di una licenza di Capacity Pool.
+Se si utilizza la licenza di Capacity Pool, è necessario reinstallare ciascuna licenza di Capacity Pool. Per ulteriori informazioni, vedere reinstallazione di una licenza Capacity Pool.
 
 .Informazioni correlate
 * link:task_install_deploy.html["Installare ONTAP Select Deploy"]
 * link:task_cli_migrate_deploy.html#restoring-the-deploy-configuration-data-to-the-new-virtual-machine["Ripristinare i dati di configurazione di implementazione sulla nuova macchina virtuale"]
-* link:task_adm_licenses.html#reinstalling-a-capacity-pool-license["Reinstallare una licenza del pool di capacità"]
+* link:task_adm_licenses.html#reinstalling-a-capacity-pool-license["Reinstallare una licenza di Capacity Pool"]
 

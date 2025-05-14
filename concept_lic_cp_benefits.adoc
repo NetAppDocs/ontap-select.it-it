@@ -1,10 +1,10 @@
 ---
 sidebar: sidebar 
 permalink: concept_lic_cp_benefits.html 
-keywords: license, licensing, capacity pools, benefits 
-summary: 'L"utilizzo del modello di licensing dei pool di capacità offre diversi vantaggi invece del modello di licensing dei Tier di capacità.' 
+keywords: license, licensing, Capacity Pools, benefits 
+summary: 'L"utilizzo del modello di licenza Capacity Pool comporta diversi vantaggi rispetto al modello di licenza Capacity Tiers.' 
 ---
-= Riepilogo dei benefici offerti dalla licenza ONTAP Select Capacity Pool
+= Riepilogo dei benefici offerti dalle licenze ONTAP Select Capacity Pool
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,13 +14,13 @@ summary: 'L"utilizzo del modello di licensing dei pool di capacità offre divers
 
 
 [role="lead"]
-L'utilizzo del modello di licensing dei pool di capacità offre diversi vantaggi invece del modello di licensing dei Tier di capacità.
+L'utilizzo del modello di licenza Capacity Pool comporta diversi vantaggi rispetto al modello di licenza Capacity Tiers.
 
 
 
 == Utilizzo più efficiente della capacità di storage
 
-Quando si utilizzano i livelli di licenza della capacità, viene allocata una capacità di storage fissa a ciascun nodo. Qualsiasi spazio inutilizzato non può essere condiviso con gli altri nodi e viene effettivamente sprecato. Con le licenze per i pool di capacità, ogni nodo consuma solo la capacità necessaria, in base alle dimensioni degli aggregati di dati.
+Utilizzando la licenza Capacity Tier, viene allocata una capacità dello storage fissa a ciascun nodo. Qualsiasi spazio inutilizzato non può essere condiviso con gli altri nodi e viene effettivamente sprecato. Con la licenza Capacity Pools, ogni nodo consuma solo la capacità di cui ha bisogno, in base alle dimensioni degli aggregati di dati.
 
 Inoltre, poiché la capacità è ancorata in un pool centrale, può essere condivisa tra molti nodi dell'organizzazione.
 
@@ -28,10 +28,10 @@ Inoltre, poiché la capacità è ancorata in un pool centrale, può essere condi
 
 == Riduzione significativa dell'overhead amministrativo con conseguente riduzione dei costi
 
-Se si utilizzano licenze di livello di capacità, è necessario ottenere e installare una licenza per ciascun nodo. Quando si utilizzano i pool di capacità, è disponibile una licenza per ciascun pool condiviso. Ciò può ridurre drasticamente l'overhead amministrativo e ridurre i costi.
+Se si utilizzano le licenze Capacity Tier, è necessario ottenere e installare una licenza per ciascun nodo. Quando si utilizzano i pool di capacità, esiste una sola licenza per ogni pool condiviso. Ciò può ridurre drasticamente l'overhead amministrativo e ridurre i costi.
 
 
 
 == Metriche di utilizzo migliorate
 
-L'interfaccia utente Web di implementazione fornisce informazioni di utilizzo avanzate per i pool di capacità. È possibile determinare rapidamente la quantità di storage utilizzata e disponibile in un pool di capacità, i nodi che utilizzano lo storage di un pool e i pool da cui un cluster sta allocando la capacità.
+L'interfaccia utente Web Deploy fornisce informazioni sull'utilizzo avanzate per i pool di capacità. È possibile determinare rapidamente la quantità di storage utilizzata e disponibile in un Capacity Pool, i nodi che utilizzano lo storage di un pool e i pool dai quali un cluster alloca capacità.

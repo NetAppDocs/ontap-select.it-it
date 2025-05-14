@@ -53,7 +53,7 @@ Dopo l'implementazione di un cluster ONTAP Select, è possibile configurare e ge
 * Virtual Storage Console per VMware vSphere
 
 
-Per identificare le versioni supportate del software client, consultare link:https://mysupport.netapp.com/matrix/["Tool di matrice di interoperabilità NetApp"^]. Se il software client supporta ONTAP 9, la stessa versione è supportata anche con ONTAP Select.
+Per identificare le versioni supportate del software client, consultare link:https://mysupport.netapp.com/matrix/["Tool di matrice di interoperabilità"^]. Se il software client supporta ONTAP 9, la stessa versione è supportata anche con ONTAP Select.
 
 
 NOTE: L'utilizzo di SnapCenter e dei relativi plug-in richiede licenze basate su server. La licenza del sistema storage dei plug-in SnapCenter non è attualmente supportata con ONTAP Select.

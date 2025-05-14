@@ -58,7 +58,7 @@ La licenza di valutazione ONTAP Select presenta le seguenti caratteristiche:
 È possibile aggiornare un cluster di valutazione ONTAP Select per utilizzare una licenza di produzione. È necessario conoscere le seguenti restrizioni:
 
 * Per eseguire l'aggiornamento della licenza, è necessario utilizzare l'utility di amministrazione della distribuzione
-* È possibile utilizzare una licenza a livello di capacità, tuttavia la licenza per pool di capacità non è supportata
+* È possibile utilizzare una licenza per il livello di capacità, tuttavia la licenza per i pool di capacità non è supportata
 * Ogni nodo deve disporre di spazio di storage sufficiente per supportare il minimo richiesto per una licenza di produzione, in base alle dimensioni del cluster
 
 

@@ -151,7 +151,7 @@ Stima dello storage necessario:: È necessario determinare la quantità di stora
 
 NOTE: La capacità dello storage ONTAP Select corrisponde alla dimensione totale consentita dei dischi dati collegati alla macchina virtuale ONTAP Select.
 
-Modello di licensing per l'implementazione in produzione:: È necessario selezionare i livelli di capacità o il modello di licenza dei pool di capacità per ciascun cluster ONTAP Select implementato in un ambiente di produzione. Per ulteriori informazioni, consultare la sezione _licenza_.
+Modello di licensing per l'implementazione in produzione:: Devi selezionare il modello di licenza per Tier di capacità o pool di capacità per ogni cluster ONTAP Select distribuito in un ambiente di produzione. Per ulteriori informazioni, consultare la sezione _licenza_.
 
 
 

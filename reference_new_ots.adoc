@@ -31,6 +31,7 @@ Per una nuova implementazione di ONTAP Select 9.16.1, viene applicato automatica
 --
 Supporto per la protezione autonoma da ransomware:: ONTAP Select 9.16.1 introduce il supporto per la protezione autonoma dal ransomware (ARP). ONTAP Select 9.16.1 supporta solo gli aggiornamenti manuali per ARP, gli aggiornamenti automatici non sono supportati. La licenza della funzione ARP è inclusa nell'NLF per ONTAP Select 9.16.1. link:reference_lic_ontap_features.html#ontap-features-automatically-enabled-by-default["Scopri di più"].
 Supporto migliorato di VMware ESXi:: ONTAP Select 9.16.1 include il supporto per VMware ESXi 8.0 U3.
+Supporto aggiornato dell'hypervisor KVM:: A partire da ONTAP Select 9.16.1, l'hypervisor kernel-Based Virtual Machine (KVM) è supportato su Red Hat Enterprise Linux (RHEL) 9,5 e Rocky Linux 9,5.
 
 
 
@@ -39,7 +40,7 @@ Supporto migliorato di VMware ESXi:: ONTAP Select 9.16.1 include il supporto per
 
 ONTAP Select 9.15.1 include diverse nuove funzioni e miglioramenti.
 
-Supporto aggiornato dell'hypervisor KVM:: A partire da ONTAP Select 9.15.1, l'hypervisor kernel-Based Virtual Machine (KVM) è supportato su Red Hat Enterprise Linux (RHEL) 9,4 e Rocky Linux 9,4.
+Supporto aggiornato dell'hypervisor KVM:: A partire da ONTAP Select 9.15.1, l'hypervisor kernel-Based Virtual Machine (KVM) è supportato su RHEL 9,4 e Rocky Linux 9,4.
 Supporto dell'espansione e della contrazione dei cluster:: A partire da ONTAP Select 9.15.1 sono supportate l'espansione e la contrazione del cluster.
 +
 --

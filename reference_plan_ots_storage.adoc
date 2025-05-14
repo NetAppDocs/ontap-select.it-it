@@ -134,7 +134,7 @@ Per separare i dischi di sistema dagli aggregati di dati e root, è necessario c
 
 Nell'ambito della pianificazione di un'implementazione di ONTAP Select, è necessario conoscere le restrizioni relative all'utilizzo e all'allocazione dello storage.
 
-Di seguito sono illustrate le principali restrizioni di storage. È inoltre necessario esaminare link:https://mysupport.netapp.com/matrix/["Tool di matrice di interoperabilità NetApp"^] per informazioni più dettagliate.
+Di seguito sono illustrate le principali restrizioni di storage. Per informazioni più dettagliate, consultare anche la link:https://mysupport.netapp.com/matrix/["Tool di matrice di interoperabilità"^].
 
 
 TIP: ONTAP Select applica diverse restrizioni relative all'allocazione e all'utilizzo dello storage. Prima di implementare un cluster ONTAP Select o di acquistare una licenza, è necessario conoscere tali limitazioni. Vedere link:https://docs.netapp.com/us-en/ontap-select/concept_lic_evaluation.html["Licenza"] per ulteriori informazioni.

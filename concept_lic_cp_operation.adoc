@@ -1,10 +1,10 @@
 ---
 sidebar: sidebar 
 permalink: concept_lic_cp_operation.html 
-keywords: license, licensing, capacity pools, operation details 
-summary: Il modello di licensing dei pool di capacità è diverso dal modello dei Tier di capacità. Invece di dedicare capacità di storage a ciascun nodo, la capacità di storage viene allocata a un pool e condivisa tra più nodi. Sono stati creati altri componenti e processi per supportare il modello dei pool di capacità. 
+keywords: license, licensing, Capacity Pools, operation details 
+summary: Il modello di licenza Capacity Pool è diverso dal modello di Tier di capacità. Invece di dedicare capacità di storage a ciascun nodo, la capacità di storage viene allocata a un pool e condivisa tra più nodi. Sono stati creati ulteriori componenti e processi per supportare il modello dei pool di capacità. 
 ---
-= Dettagli operativi per il modello di licensing di pool di capacità ONTAP Select
+= Dettagli operativi per il modello di licensing di ONTAP Select Capacity Pool
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: Il modello di licensing dei pool di capacità è diverso dal modello de
 
 
 [role="lead"]
-Il modello di licensing dei pool di capacità è diverso dal modello dei Tier di capacità. Invece di dedicare capacità di storage a ciascun nodo, la capacità di storage viene allocata a un pool e condivisa tra più nodi. Sono stati creati altri componenti e processi per supportare il modello dei pool di capacità.
+Il modello di licenza Capacity Pool è diverso dal modello di Tier di capacità. Invece di dedicare capacità di storage a ciascun nodo, la capacità di storage viene allocata a un pool e condivisa tra più nodi. Sono stati creati ulteriori componenti e processi per supportare il modello dei pool di capacità.
 
 
 
@@ -22,8 +22,8 @@ Il modello di licensing dei pool di capacità è diverso dal modello dei Tier di
 
 Il Manager di licenza viene eseguito come un processo separato all'interno di ciascuna istanza dell'utilità di amministrazione distribuzione. Alcune delle funzioni fornite da LM includono:
 
-* Generare un numero di serie univoco di venti cifre per ciascun nodo in base al numero di serie della licenza del pool di capacità
-* Creare lease per la capacità dai pool di capacità condivisi in base alle richieste provenienti dai nodi ONTAP Select
+* Genera un numero di serie univoco di venti cifre per ogni nodo in base al numero di serie della licenza Capacity Pool
+* Creare leasing per la capacità dai pool di capacità condivisi in base alle richieste provenienti dai nodi ONTAP Select
 * Report sulle informazioni di utilizzo del pool tramite l'interfaccia utente di implementazione
 
 
@@ -31,7 +31,7 @@ Il Manager di licenza viene eseguito come un processo separato all'interno di ci
 
 == Caratteristiche del leasing
 
-Lo storage allocato per ogni aggregato di dati in un nodo che utilizza una licenza per il pool di capacità deve avere un lease associato. Il nodo richiede un lease dello storage e, se la capacità è disponibile, il Manager di licenza risponde con un lease. Ogni lease ha i seguenti attributi espliciti o impliciti:
+Lo storage allocato per ogni aggregato di dati in un nodo utilizzando una licenza Capacity Pool deve avere un leasing associato. Il nodo richiede un lease dello storage e, se la capacità è disponibile, il Manager di licenza risponde con un lease. Ogni lease ha i seguenti attributi espliciti o impliciti:
 
 * Manager di licenza ogni nodo ONTAP Select è associato a un'istanza del Manager di licenza
 * Pool di capacità ogni nodo ONTAP Select è associato a un pool di capacità
@@ -43,7 +43,7 @@ Lo storage allocato per ogni aggregato di dati in un nodo che utilizza una licen
 
 == ID blocco licenza
 
-Ogni istanza del Manager di licenza, e quindi ogni istanza dell'utility di implementazione corrispondente, viene identificata con un numero univoco a 128 bit. Questo numero viene combinato con il numero seriale a nove cifre della licenza del pool di capacità per bloccare il pool in una specifica istanza del Manager di licenza (che in effetti è un'istanza di implementazione). È necessario fornire entrambi i valori nel sito di supporto NetApp come parte della generazione del file di licenza NetApp (NLF).
+Ogni istanza del Manager di licenza, e quindi ogni istanza dell'utility di implementazione corrispondente, viene identificata con un numero univoco a 128 bit. Questo numero è combinato con il numero seriale della licenza Capacity Pool a nove cifre per bloccare il pool in una specifica istanza di License Manager (che è effettivamente un'istanza di distribuzione). È necessario fornire entrambi i valori nel sito di supporto NetApp come parte della generazione del file di licenza NetApp (NLF).
 
 È possibile determinare l'ID del blocco di licenza per l'istanza di implementazione utilizzando l'interfaccia utente Web nei seguenti modi:
 
@@ -55,7 +55,7 @@ Ogni istanza del Manager di licenza, e quindi ogni istanza dell'utility di imple
 
 == Operazioni di leasing di base
 
-Un nodo ONTAP Select deve individuare o richiedere un lease di capacità valido ogni volta che un aggregato di dati viene creato, espanso o modificato. È possibile utilizzare un lease ottenuto da una richiesta precedente ancora valida oppure richiedere un nuovo lease, se necessario. Il nodo ONTAP Select deve eseguire le seguenti operazioni per individuare un lease del pool di capacità:
+Un nodo ONTAP Select deve individuare o richiedere un lease di capacità valido ogni volta che un aggregato di dati viene creato, espanso o modificato. È possibile utilizzare un lease ottenuto da una richiesta precedente ancora valida oppure richiedere un nuovo lease, se necessario. Il nodo ONTAP Select esegue i seguenti passaggi per individuare un leasing di Capacity Pool:
 
 . Se un lease esistente si trova nel nodo, viene utilizzato purché siano vere tutte le seguenti condizioni:
 +
@@ -68,7 +68,7 @@ Un nodo ONTAP Select deve individuare o richiedere un lease di capacità valido 
 
 
 
-== Consente di restituire la capacità di storage a un pool di capacità
+== Consente di restituire la capacità dello storage a un pool di capacità
 
 La capacità dello storage viene allocata da un pool di capacità in base alle necessità e ogni nuova richiesta può ridurre lo storage disponibile nel pool. La capacità dello storage viene restituita al pool in diverse situazioni, tra cui:
 

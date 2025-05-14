@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: concept_lic_platforms.html 
 keywords: license, licensing, platform license offerings, license offerings, standard, premium, premium xl 
-summary: È possibile acquistare una licenza ONTAP Select Capacity Tier o Capacity Pool in uno dei tre livelli di capacità della piattaforma. Queste offerte di licenza determinano le funzionalità degli host in cui si implementa ONTAP Select. 
+summary: Puoi acquistare una licenza ONTAP Select Tier di capacità o Capacity Pool con uno dei tre livelli di capacità della piattaforma. Queste offerte di licenza determinano le funzionalità degli host in cui si implementa ONTAP Select. 
 ---
-= Conoscere le offerte di licenza della piattaforma per ONTAP Select
+= Scopri le offerte di licenza della piattaforma per ONTAP Select
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,13 +14,13 @@ summary: È possibile acquistare una licenza ONTAP Select Capacity Tier o Capaci
 
 
 [role="lead"]
-È possibile acquistare una licenza ONTAP Select Capacity Tier o Capacity Pool in uno dei tre livelli di capacità della piattaforma. Queste offerte di licenza determinano le funzionalità degli host in cui si implementa ONTAP Select.
+Puoi acquistare una licenza ONTAP Select Tier di capacità o Capacity Pool a livello standard, premium o premium di XL. Queste offerte di licenza determinano le funzionalità degli host in cui si implementa ONTAP Select.
 
 
 
 == Cosa offre una licenza per piattaforma
 
-Un'offerta di licenza specifica definisce e restrizione le funzionalità dell'host hypervisor in due aree:
+Un'offerta di licenza specifica definisce e limita le funzionalità dell'host hypervisor in due aree:
 
 * Tipo di istanza (CPU, memoria)
 * Funzionalità aggiuntive
@@ -53,7 +53,7 @@ L'offerta standard offre le seguenti funzionalità:
 L'offerta premium offre le seguenti funzionalità:
 
 * Tipo di istanza piccola o media
-* Dischi rigidi (HDD) o SSD (Solid state Drive)
+* Unità disco rigido (HDD) o unità a stato solido (SSD)
 * Controller RAID hardware locale o RAID software
 * VNAS
 * Scheda di sicurezza MetroCluster
@@ -73,4 +73,112 @@ L'offerta premium XL offre le seguenti funzionalità:
 
 
 
-NOTE: L'utilizzo del tipo di istanza grande o di dischi NVMe in una configurazione SW-RAID non è supportato su KVM.
+NOTE: L'utilizzo del tipo di istanza di grandi dimensioni o dei dischi NVMe in una configurazione SW-RAID non è supportato dal kernel-Based Virtual Machine (KVM).
+
+
+
+== Confrontare il supporto hardware per le offerte di licenza della piattaforma
+
+Le offerte di licenza XL standard, premium e premium supportano un'ampia gamma di hardware e software. Per informazioni aggiornate sulle versioni hardware e software, vedere link:https://mysupport.netapp.com/matrix/["Tool di matrice di interoperabilità"^].
+
+[role="tabbed-block"]
+====
+.Elemento principale
+--
+[cols="5"30"]
+|===
+
+
+2+| Tipo di elemento principale 3+| Descrizione 
+
+
+2+| Protocolli host 3+| NFS, SMB/CIFS, iSCSI e NVMe over TCP 
+
+
+2+| Opzioni di implementazione 3+| Cluster single node two-node (coppia ha), cluster a quattro, sei o otto nodi 
+
+
+2+| Capacità supportata (per nodo) 3+| Fino a 400TB dati raw (ESXi e KVM) 
+|===
+--
+.Hardware
+--
+[cols="5"30"]
+|===
+
+
+2+| Tipo di hardware 3+| Descrizione 
+
+
+2+| Dimensione dell'istanza | Piccolo | Medio | Grande 
+
+
+2+| Famiglia CPU | Intel Xeon E5-26xx v3 (Haswell) o versione successiva | Intel Xeon E5-26xx v3 (Haswell) o versione successiva | Intel Xeon E5-26xx v3 (Haswell) o versione successiva 
+
+
+2+| CPU/memoria ONTAP Select | 4 CPU virtuali (vCPU) / 16GB GB di RAM | 8 vCPU/64GB GB di RAM | 16 vCPU/128GB GB di RAM 
+
+
+2+| Requisiti minimi di memoria/CPU host ^1^ | 6 core / 24GB GB di RAM | 10 core / 72GB GB di RAM | 18 core / 136GB GB di RAM 
+
+
+2+| Rete (per nodo) 3+| Minimo due porte 1GbE per un cluster a nodo singolo minimo di quattro porte 1GbE per un cluster a due nodi (coppia ha) minimo di due porte 10GbE per un cluster a quattro, sei o otto nodi 
+|===
+^1^ presuppone due core e 8Gb GB di RAM per l'hypervisor.
+
+--
+.Tipo di storage
+--
+La tabella seguente fornisce il tipo di licenza minimo richiesto per lo spazio di archiviazione specificato. 
+
+[cols="5"30"]
+|===
+
+
+2+| Tipo di storage 3+| Descrizione 
+
+
+2+| Tipo di licenza | Standard | Premium | Pemium XL 
+
+
+2+| Dimensione dell'istanza | Piccolo | Piccola e media | Piccola, media e grande 
+
+
+2+| Das locale con controller RAID hardware | 8 - 60 dischi | 8 - 60 dischi | 8 - 60 dischi 
+
+
+2+| HDD (SAS, NL-SAS, SATA) | Non applicabile | 4 – 60 dischi | 4 – 60 dischi 
+
+
+2+| SSD (SAS) | Non applicabile | 4 – 60 dischi (solo SSD) | 4 – 60 dischi (solo SSD) 
+
+
+2+| Das locale con RAID software | Non applicabile | Non applicabile | 4 - 14 dischi (solo NVMe) 
+
+
+2+| Array esterni ^1^ 3+| Gli archivi dati ospitati su array esterni sono collegati tramite FC, FCoE, iSCSI e NFS (NFS non è supportato per KVM). Questi datastore offrono elevata disponibilità e resilienza. 
+|===
+^1^ il supporto del protocollo array esterno riflette la connettività dello storage di rete.
+
+--
+.Software
+--
+[cols="5"30"]
+|===
+
+
+2+| Tipo di software 3+| Descrizione 
+
+
+2+| Supporto Hypervisor (VMware) 3+| VMware vSphere 7,0GA e aggiorna da 1 a 3C VMware vSphere 8,0GA e aggiorna da 1 a 3 
+
+
+2+| Supporto hypervisor (KVM) 3+| RedHat Enterprise Linux a 64 bit (KVM) 9,5, 9,4, 9,3, 9,2, 9,1, 9,0, 8,9, 8,8, 8,7 e 8,6 Rocky Linux (KVM) 9 e 8 
+
+
+2+| Software di gestione 3+| Suite di gestione NetApp Active IQ Unified Manager ONTAP Select Deploy Utility SnapCenter (opzionale) 
+|===
+--
+====
+.Informazioni correlate
+link:concept_lic_production.html["Ottieni ulteriori informazioni sui tipi di licenza per Tier di capacità e Capacity Pool"].

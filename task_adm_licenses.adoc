@@ -18,9 +18,9 @@ Esistono diverse attività correlate che è possibile eseguire nell'ambito dell'
 
 
 
-== Gestire le licenze dei Tier di capacità
+== Gestire le licenze del livello di capacità
 
-È possibile aggiungere, modificare ed eliminare le licenze del Tier di capacità ONTAP Select in base alle esigenze.
+È possibile aggiungere, modificare ed eliminare le licenze del livello di capacità ONTAP Select in base alle necessità.
 
 .Fasi
 . Accedere all'utilità di implementazione tramite l'interfaccia Web utilizzando l'account amministratore.
@@ -33,9 +33,9 @@ Esistono diverse attività correlate che è possibile eseguire nell'ambito dell'
 
 
 
-== Gestire le licenze del pool di capacità
+== Gestire le licenze di Capacity Pool
 
-È possibile aggiungere, modificare ed eliminare le licenze del pool di capacità ONTAP Select in base alle esigenze.
+Puoi aggiungere, modificare ed eliminare le licenze di ONTAP Select Capacity Pool in base alle tue esigenze.
 
 .Fasi
 . Accedere all'utilità di implementazione tramite l'interfaccia Web utilizzando l'account amministratore.
@@ -81,27 +81,27 @@ Per rinnovare una licenza esistente:
 
 
 
-== Reinstallare una licenza del pool di capacità
+== Reinstallare una licenza di Capacity Pool
 
-Ogni licenza di Capacity Pool attiva viene bloccata in una specifica istanza di License Manager, contenuta in un'istanza dell'utility di amministrazione di Deploy. Se si utilizza una licenza di Capacity Pool e quindi si ripristina o ripristina l'istanza di distribuzione, la licenza originale non è più valida. È necessario generare un nuovo file di licenza della capacità e installare la licenza nella nuova istanza di implementazione.
+Ogni licenza attiva di Capacity Pool è bloccata su una specifica istanza di License Manager, contenuta in un'istanza dell'utilità di amministrazione di distribuzione. Se stai utilizzando una licenza Capacity Pool per poi ripristinare o ripristinare l'istanza di implementazione, la licenza originale non è più valida. È necessario generare un nuovo file di licenza della capacità e installare la licenza nella nuova istanza di implementazione.
 
 .Prima di iniziare
-* Determinare tutte le licenze del pool di capacità utilizzate dall'istanza di implementazione originale.
+* Determinare tutte le licenze Capacity Pool utilizzate dall'istanza di implementazione originale.
 * Se si ripristina un backup come parte della creazione della nuova istanza di distribuzione, determinare se il backup è aggiornato e aggiornato.
 * Individuare i nodi ONTAP Select creati più di recente dall'istanza di distribuzione originale (solo se un backup aggiornato dall'istanza di distribuzione originale non viene ripristinato nella nuova istanza di distribuzione).
 * Ripristinare o ricreare l'istanza di distribuzione
 
 
 .A proposito di questa attività
-Ad un livello elevato, questo compito è composto da tre parti. È necessario rigenerare e installare tutte le licenze del pool di capacità utilizzate dall'istanza di distribuzione. Una volta reinstallate tutte le licenze nella nuova istanza di distribuzione, è possibile reimpostare il numero di sequenza seriale, se necessario. Infine, se l'indirizzo IP di implementazione è stato modificato, è necessario aggiornare ogni nodo ONTAP Select che utilizza una licenza di Capacity Pools.
+Ad un livello elevato, questo compito è composto da tre parti. È necessario rigenerare e installare tutte le licenze Capacity Pool utilizzate dall'istanza di distribuzione. Una volta reinstallate tutte le licenze nella nuova istanza di distribuzione, è possibile reimpostare il numero di sequenza seriale, se necessario. Infine, se l'indirizzo IP di deploy è stato modificato, è necessario aggiornare ogni nodo ONTAP Select che utilizza una licenza di pool di capacità.
 
 .Fasi
-. Contattare il supporto NetApp e ottenere tutte le licenze del pool di capacità per l'istanza di implementazione originale senza bound e senza registrazione.
-. Acquisire e scaricare un nuovo file di licenza per ciascuna licenza del pool di capacità.
+. Contattare il supporto NetApp e disporre di tutte le licenze del pool di capacità per l'istanza di distribuzione originale unbounded e unregistered.
+. Acquisire e scaricare un nuovo file di licenza per ciascuna licenza di Capacity Pool.
 +
-Vedere link:task_lic_acquire_cp.html["Acquisire una licenza per pool di capacità"] per ulteriori informazioni.
+Per ulteriori informazioni, vedere link:task_lic_acquire_cp.html["Acquisire una licenza Capacity Pool"] .
 
-. Installare le licenze del pool di capacità nella nuova istanza di implementazione:
+. Installare le licenze di Capacity Pool nella nuova istanza di implementazione:
 +
 .. Accedere all'interfaccia utente Web dell'utilità di implementazione utilizzando l'account amministratore.
 .. Selezionare la scheda *Amministrazione* nella parte superiore della pagina.
@@ -124,7 +124,7 @@ Vedere link:task_lic_acquire_cp.html["Acquisire una licenza per pool di capacit�
 
 
 
-. Se l'indirizzo IP assegnato alla nuova istanza di implementazione è diverso dall'indirizzo IP dell'istanza di implementazione originale, è necessario aggiornare l'indirizzo IP in ogni nodo ONTAP Select che utilizza una licenza di Capacity Pools:
+. Se l'indirizzo IP assegnato alla nuova istanza di distribuzione è diverso dall'indirizzo IP dell'istanza di distribuzione originale, è necessario aggiornare l'indirizzo IP in ogni nodo ONTAP Select che utilizza una licenza di pool di capacità:
 +
 .. Accedere all'interfaccia della riga di comando ONTAP del nodo ONTAP Select.
 .. Accedere alla modalità avanzata dei privilegi:
@@ -147,11 +147,11 @@ Vedere link:task_lic_acquire_cp.html["Acquisire una licenza per pool di capacit�
 
 == Convertire una licenza di valutazione in una licenza di produzione
 
-È possibile aggiornare un cluster di valutazione di ONTAP Select per utilizzare una licenza di livello di capacità di produzione con l'utility di amministrazione Deploy.
+È possibile aggiornare un cluster di valutazione ONTAP Select per utilizzare una licenza livello capacità di produzione con l'utility di amministrazione distribuzione.
 
 .Prima di iniziare
 * Ogni nodo deve disporre di spazio di storage sufficiente per supportare il minimo richiesto per una licenza di produzione.
-* È necessario disporre di licenze di livello di capacità per ciascun nodo del cluster di valutazione.
+* Devi disporre delle licenze Capacity Tier per ogni nodo del cluster di valutazione.
 
 
 .A proposito di questa attività
@@ -176,7 +176,7 @@ I numeri di serie di nodi a venti cifre originariamente assegnati a ciascun nodo
 
 
 
-== Gestione di una licenza del pool di capacità scaduta
+== Gestione di una licenza Capacity Pool scaduta
 
 In genere, quando una licenza scade, non accade nulla. Tuttavia, non è possibile installare una licenza diversa perché i nodi sono associati alla licenza scaduta. Fino al rinnovo della licenza, è necessario _non_ fare qualsiasi cosa che porti l'aggregato offline, come un riavvio o un'operazione di failover. Si consiglia di accelerare il rinnovo della licenza.
 

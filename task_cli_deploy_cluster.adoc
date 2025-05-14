@@ -40,7 +40,7 @@ L'utility di amministrazione di Deploy contiene una singola versione di ONTAP Se
 
 === License ONTAP Select per una distribuzione in produzione
 
-Prima di implementare un cluster ONTAP Select in un ambiente di produzione, è necessario acquistare una licenza per la capacità dello storage e scaricare il file di licenza associato. È possibile concedere in licenza lo storage in ciascun nodo utilizzando il modello _Capacity Tier_ o concedere in licenza un pool condiviso utilizzando il modello _Capacity Pools_.
+Prima di implementare un cluster ONTAP Select in un ambiente di produzione, è necessario acquistare una licenza per la capacità dello storage e scaricare il file di licenza associato. È possibile concedere in licenza lo storage di ciascun nodo utilizzando il modello _Capacity Tiers_ o concedere in licenza un pool condiviso utilizzando il modello _Capacity Pool_.
 
 
 
@@ -230,10 +230,10 @@ cluster modify -name test-cluster -mgmt-ip 10.234.81.20 -netmask 255.255.255.192
 È necessario configurare ciascuno dei nodi nel cluster ONTAP Select.
 
 .Prima di iniziare
-È necessario disporre delle informazioni di configurazione per il nodo. Il file di licenza del Tier di capacità deve essere caricato e installato nell'utility di implementazione.
+È necessario disporre delle informazioni di configurazione per il nodo. Il file di licenza del livello di capacità deve essere caricato e installato nell'utility di distribuzione.
 
 .A proposito di questa attività
-Utilizzare questa procedura per configurare ciascun nodo. In questo esempio viene applicata una licenza di livello di capacità al nodo.
+Utilizzare questa procedura per configurare ciascun nodo. In questo esempio, al nodo viene applicata una licenza di livello di capacità.
 
 .Fasi
 . Accedere alla CLI dell'utility di implementazione utilizzando SSH con l'account amministratore.
@@ -255,7 +255,7 @@ node modify -name test-cluster-01 -cluster-name test-cluster -host-name 10.234.8
 La configurazione RAID per il nodo è indicata dal parametro _passthrough-disks_. Se si utilizza un controller RAID hardware locale, questo valore deve essere falso. Se si utilizza RAID software, questo valore deve essere true.
 
 +
-Per il nodo ONTAP Select viene utilizzata una licenza di livello di capacità.
+Per il nodo ONTAP Select viene utilizzata una licenza del livello di capacità.
 
 . Visualizzare la configurazione di rete disponibile sull'host:
 +
