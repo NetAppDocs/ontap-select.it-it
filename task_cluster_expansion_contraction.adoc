@@ -14,9 +14,24 @@ summary: A partire da ONTAP Select 9.15.1 è possibile aumentare le dimensioni d
 
 
 [role="lead"]
-A partire da ONTAP Select 9.15.1 è possibile aumentare le dimensioni di un cluster esistente da sei a otto nodi e ridurre le dimensioni del cluster da otto a sei nodi. Non sono supportati altri scenari di espansione o contrazione del cluster.
+A partire da ONTAP Select 9.15.1 è possibile aumentare le dimensioni di un cluster esistente da sei a otto nodi e ridurre le dimensioni del cluster da otto a sei nodi.
 
-La procedura viene avviata da ONTAP Select Deploy utilizzando l'interfaccia CLI, API o Web.
+Le seguenti espansioni e contrazioni dei cluster non sono supportate:
+
+* Espansioni da cluster a uno, due o quattro nodi a cluster a sei o otto nodi.
+* Contrazioni da cluster a sei o otto nodi a cluster a uno, due o quattro nodi.
+
+
+[NOTE]
+====
+Per modificare il numero di nodi in un cluster in una dimensione non supportata dall'espansione o dalla contrazione del cluster, è necessario eseguire le seguenti attività:
+
+. Distribuisci un nuovo cluster multi-nodo utilizzando link:task_cli_deploy_cluster.html["CLI"] o il link:task_deploy_cluster.html["interfaccia utente web"] fornito con l'utilità di amministrazione ONTAP Select Deploy.
+. Se applicabile, migrare i dati al nuovo cluster utilizzando link:https://docs.netapp.com/us-en/ontap/data-protection/snapmirror-disaster-recovery-concept.html["Replica SnapMirror"^] .
+
+
+====
+È possibile avviare le procedure di espansione e contrazione del cluster da ONTAP Select Deploy tramite CLI, API o interfaccia Web.
 
 
 
@@ -36,12 +51,6 @@ Le funzionalità di espansione e contrazione del cluster sono limitate nei segue
 
 
 
-Le seguenti espansioni e contrazioni del cluster non sono attualmente supportate:
-
-* Espansioni da cluster a uno, due o quattro nodi a cluster a sei o otto nodi.
-* Contrazioni da cluster a sei o otto nodi a cluster a uno, due o quattro nodi.
-
-
 
 
 == Espandere il cluster
@@ -52,7 +61,7 @@ Con la funzionalità di espansione del cluster è possibile aumentare le dimensi
 In preparazione alla procedura di espansione del cluster, vengono aggiunti all'inventario nuovi host ESX e vengono assegnati i dettagli dei nuovi nodi. Prima di avviare il processo di espansione del cluster, un controllo preliminare della rete verifica la rete interna selezionata.
 
 .Prima di iniziare
-* Quando si implementa un cluster multi-nodo, è necessario conoscere link:https://docs.netapp.com/us-en/ontap-select/task_adm_connectivity.html["controllo della connettività di rete"].
+* Quando si distribuisce un cluster multi-nodo, è necessario avere familiarità con il controllo della connettività di rete. È possibile eseguire il controllo della connettività di rete utilizzando link:task_adm_connectivity.html["interfaccia utente web"] o il link:task_cli_connectivity.html["CLI"] .
 * Verificare di disporre dei dettagli di licenza per i nuovi nodi.
 
 

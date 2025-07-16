@@ -1,0 +1,321 @@
+---
+sidebar: sidebar 
+permalink: kvm-host-configuration-and-preparation-checklist.html 
+keywords: ontap select, pre-installation checklist, kvm, host preparation 
+summary: 'Preparare ogni host hypervisor KVM in cui verrà distribuito un nodo ONTAP Select . Durante la preparazione degli host, valutare attentamente l"ambiente di distribuzione per assicurarsi che siano correttamente configurati e pronti a supportare la distribuzione di un cluster ONTAP Select .' 
+---
+= Checklist di configurazione e preparazione dell'host KVM per ONTAP Select
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Preparare ogni host hypervisor KVM in cui verrà distribuito un nodo ONTAP Select . Durante la preparazione degli host, valutare attentamente l'ambiente di distribuzione per assicurarsi che siano configurati correttamente e pronti a supportare la distribuzione di un cluster ONTAP Select .
+
+
+NOTE: L'utility di amministrazione ONTAP Select Deploy non esegue la configurazione di rete e storage richiesta per gli host hypervisor. È necessario preparare manualmente ciascun host prima di distribuire un cluster ONTAP Select .
+
+
+
+== Passaggio 1: preparare l'host dell'hypervisor KVM
+
+È necessario preparare ciascuno dei server Linux KVM in cui è distribuito un nodo ONTAP Select . È inoltre necessario preparare il server in cui viene distribuita l'utilità di amministrazione di distribuzione di ONTAP Select.
+
+.Fasi
+. Installa Red Hat Enterprise Linux (RHEL).
++
+Installare il sistema operativo RHEL utilizzando l'immagine ISO. Per un elenco delle versioni RHEL supportate, vedere la link:reference_plan_ots_hardware.html#software-compatibility["informazioni sulla compatibilità software per gli hypervisor"]. Durante l'installazione, configurare il sistema come segue:
+
++
+.. Selezionare Predefinito come criterio di sicurezza.
+.. Selezionare la selezione software Host virtualizzato.
+.. Verificare che la destinazione sia il disco di avvio locale e non un RAID LUN utilizzato da ONTAP Select.
+.. Verificare che l'interfaccia di gestione host sia attiva dopo l'avvio del sistema.
++
+
+NOTE: È possibile modificare il file di configurazione di rete corretto in /etc/sysconfig/network-scripts e quindi richiamare l'interfaccia utilizzando il `ifup` comando.
+
+
+
+. Installare i pacchetti aggiuntivi richiesti per ONTAP Select.
++
+ONTAP Select richiede diversi pacchetti software aggiuntivi. L'elenco esatto dei pacchetti varia a seconda della versione di Linux in uso. Come primo passo, verificare che l'archivio yum sia disponibile sul server. Se non è disponibile, è possibile recuperarlo utilizzando  `wget your_repository_location` comando.
+
++
+
+NOTE: Alcuni dei pacchetti richiesti potrebbero essere già installati se si sceglie Virtualized host per la selezione del software durante l'installazione del server Linux. Potrebbe essere necessario installare il pacchetto openvswitch dal codice sorgente come descritto nella link:https://docs.openvswitch.org/en/latest/intro/install/general/["Aprire la documentazione di vSwitch"^].
+
++
+Per ulteriori informazioni sui pacchetti necessari e sugli altri requisiti di configurazione, vedere link:https://imt.netapp.com/matrix/#welcome["Tool di matrice di interoperabilità"^].
+
+. Configurare i pool di archiviazione.
++
+Un pool di storage ONTAP Select è un contenitore di dati logico che astrae lo storage fisico sottostante. Occorre gestire i pool di storage sugli host KVM in cui viene implementato ONTAP Select.
+
+
+
+
+
+== Passaggio 2: creare un pool di archiviazione
+
+Creare almeno uno storage pool in ogni nodo ONTAP Select . Se si utilizza RAID software invece di un RAID hardware locale, i dischi storage sono collegati al nodo degli aggregati root e dati. In questo caso, è comunque necessario creare un pool di archiviazione per i dati di sistema.
+
+.Prima di iniziare
+Verificare che sia possibile accedere alla CLI di Linux sull'host in cui viene distribuito ONTAP Select.
+
+.A proposito di questa attività
+L'utility di amministrazione di ONTAP Select Deploy prevede che la posizione di destinazione del pool di storage venga specificata come `/dev/<pool_name>`, dove `<pool_name>` è un nome di pool univoco sull'host.
+
+
+NOTE: L'intera capacità del LUN viene allocata quando viene creato un pool di storage.
+
+.Fasi
+. Visualizzare i dispositivi locali sull'host Linux e scegliere il LUN che conterrà il pool di archiviazione:
++
+[source, cli]
+----
+lsblk
+----
++
+È probabile che il LUN appropriato sia il dispositivo con la maggiore capacità di storage.
+
+. Definire il pool di archiviazione sul dispositivo:
++
+[source, cli]
+----
+virsh pool-define-as <pool_name> logical --source-dev <device_name> --target=/dev/<pool_name>
+----
++
+Ad esempio:
+
++
+[listing]
+----
+virsh pool-define-as select_pool logical --source-dev /dev/sdb --target=/dev/select_pool
+----
+. Creare il pool di storage:
++
+[source, cli]
+----
+virsh pool-build <pool_name>
+----
+. Avviare il pool di storage:
++
+[source, cli]
+----
+virsh pool-start <pool_name>
+----
+. Configurare il pool di storage in modo che venga avviato automaticamente all'avvio del sistema:
++
+[source, cli]
+----
+virsh pool-autostart <pool_name>
+----
+. Verificare che il pool di archiviazione sia stato creato:
++
+[source, cli]
+----
+virsh pool-list
+----
+
+
+
+
+== Passaggio 3: facoltativamente, eliminare un pool di archiviazione
+
+È possibile eliminare un pool di archiviazione quando non è più necessario.
+
+.Prima di iniziare
+Verificare di poter accedere alla CLI di Linux in cui viene distribuito ONTAP Select.
+
+.A proposito di questa attività
+L'utility di amministrazione di ONTAP Select Deploy prevede che la posizione di destinazione del pool di storage venga specificata come `/dev/<pool_name>`, dove `<pool_name>` è un nome di pool univoco sull'host.
+
+.Fasi
+. Verificare che il pool di storage sia definito:
++
+[source, cli]
+----
+virsh pool-list
+----
+. Distruggere il pool di storage:
++
+[source, cli]
+----
+virsh pool-destroy <pool_name>
+----
+. Annullare la definizione della configurazione per il pool di archiviazione inattivo:
++
+[source, cli]
+----
+virsh pool-undefine <pool_nanme>
+----
+. Verificare che il pool di archiviazione sia stato rimosso dall'host:
++
+[source, cli]
+----
+virsh pool-list
+----
+. Verificare che tutti i volumi logici per il gruppo di volumi del pool di archiviazione siano stati eliminati.
++
+.. Visualizzare i volumi logici:
++
+[source, cli]
+----
+lvs
+----
+.. Se sono presenti volumi logici per il pool, eliminarli:
++
+[source, cli]
+----
+lvremove <logical_volume_name>
+----
+
+
+. Verificare che il gruppo di volumi sia stato eliminato:
++
+.. Visualizzare i gruppi di volumi:
++
+[source, cli]
+----
+vgs
+----
+.. Se esiste un gruppo di volumi per il pool, eliminarlo:
++
+[source, cli]
+----
+vgremove <volume_group_name>
+----
+
+
+. Verificare che il volume fisico sia stato eliminato:
++
+.. Visualizzare i volumi fisici:
++
+[source, cli]
+----
+pvs
+----
+.. Se esiste un volume fisico per il pool, eliminarlo:
++
+[source, cli]
+----
+pvremove <physical_volume_name>
+----
+
+
+
+
+
+
+== Passaggio 4: rivedere la configurazione del cluster ONTAP Select
+
+È possibile implementare ONTAP Select come cluster a più nodi o come cluster a nodo singolo. In molti casi, un cluster multi-nodo è preferibile per la maggiore capacità di archiviazione e per la funzionalità di elevata disponibilità (HA).
+
+Le figure seguenti illustrano le reti ONTAP Select utilizzate con un cluster a nodo singolo e un cluster a quattro nodi per un host ESXi.
+
+[role="tabbed-block"]
+====
+.Cluster a nodo singolo
+--
+La figura seguente illustra un cluster a nodo singolo. La rete esterna supporta il traffico di replica client, gestione e cross-cluster (SnapMirror/SnapVault).
+
+image:CHK_01.jpg["Cluster a nodo singolo che mostra una rete"]
+
+--
+.Cluster a quattro nodi
+--
+La figura seguente illustra un cluster a quattro nodi che mostra due reti. La rete interna consente la comunicazione tra i nodi a supporto dei servizi di rete del cluster ONTAP. La rete esterna supporta il traffico di replica client, gestione e cross-cluster (SnapMirror/SnapVault).
+
+image:CHK_02.jpg["Cluster a quattro nodi che mostra due reti"]
+
+--
+.Nodo singolo all'interno di un cluster a quattro nodi
+--
+La figura seguente illustra la configurazione di rete tipica per una singola macchina virtuale ONTAP Select all'interno di un cluster a quattro nodi. Esistono due reti separate: ONTAP-Internal e ONTAP-External.
+
+image:CHK_03.jpg["Nodo singolo all'interno di un cluster a quattro nodi"]
+
+--
+====
+
+
+== Passaggio 5: configurare Open vSwitch
+
+Utilizzare Open vSwitch per configurare uno switch definito dal software su ciascun nodo host KVM.
+
+.Prima di iniziare
+Verificare che Network Manager sia disattivato e che il servizio di rete Linux nativo sia attivato.
+
+.A proposito di questa attività
+ONTAP Select richiede due reti separate, entrambe che utilizzano il bonding delle porte per fornire funzionalità ha alle reti.
+
+.Fasi
+. Verificare che Open vSwitch sia attivo sull'host:
++
+.. Determinare se Open vSwitch è in esecuzione:
++
+[source, cli]
+----
+systemctl status openvswitch
+----
+.. Se Open vSwitch non è in esecuzione, avviarlo:
++
+[source, cli]
+----
+systemctl start openvswitch
+----
+
+
+. Visualizzare la configurazione Open vSwitch:
++
+[source, cli]
+----
+ovs-vsctl show
+----
++
+La configurazione appare vuota se Open vSwitch non è già stato configurato sull'host.
+
+. Aggiungere una nuova istanza vSwitch:
++
+[source, cli]
+----
+ovs-vsctl add-br <bridge_name>
+----
++
+Ad esempio:
+
++
+[source, cli]
+----
+ovs-vsctl add-br ontap-br
+----
+. Disattivare le interfacce di rete:
++
+[source, cli]
+----
+ifdown <interface_1>
+ifdown <interface_2>
+----
+. Combina i collegamenti utilizzando il protocollo LACP (Link Aggregation Control Protocol):
++
+[source, cli]
+----
+ovs-vsctl add-bond <internal_network> bond-br <interface_1> <interface_2> bond_mode=balance-slb lacp=active other_config:lacp-time=fast
+----
++
+
+NOTE: È necessario configurare un collegamento solo se sono presenti più interfacce.
+
+. Attivare le interfacce di rete:
++
+[source, cli]
+----
+ifup <interface_1>
+ifup <interface_2>
+----
+

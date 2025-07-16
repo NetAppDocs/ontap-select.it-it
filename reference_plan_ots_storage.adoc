@@ -86,7 +86,7 @@ NOTE: Se è presente un controller RAID hardware, consultare link:concept_stor_c
 
 === Requisiti specifici di KVM
 
-Esistono anche requisiti specifici per la configurazione dei pacchetti software. Vedere link:https://docs.netapp.com/us-en/ontap-select/reference_chk_host_prep.html#kvm-hypervisor["Preparazione del server Linux"] per ulteriori informazioni.
+Esistono anche requisiti specifici per la configurazione dei pacchetti software. Vedi il link:https://docs.netapp.com/us-en/ontap-select/kvm-host-configuration-and-preparation-checklist.html#prepare-linux-server["preparazione del server Linux"] passaggio per maggiori informazioni.
 
 Aspettative dei media per KVM:: I dispositivi di storage flash SSD utilizzati devono soddisfare i seguenti requisiti aggiuntivi:
 +

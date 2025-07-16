@@ -18,33 +18,39 @@ summary: 'È possibile utilizzare l"interfaccia della riga di comando fornita co
 
 
 
-== Prima di iniziare
+== Fase 1: Prepararsi per la distribuzione
 
 Prima di creare un cluster ONTAP Select su un hypervisor, è necessario comprendere la preparazione richiesta.
 
+.Fasi
+. Preparazione per il collegamento dello storage al nodo ONTAP Select
++
+[role="tabbed-block"]
+====
+.RAID hardware
+--
+Se si utilizza un controller RAID hardware locale, è necessario creare almeno un datastore (ESX) o uno link:reference_chk_host_prep.html#create-storage-pool["pool di archiviazione (KVM)"] in ogni nodo per i dati di sistema, nonché per gli aggregati radice e dati. È necessario collegare il pool di storage durante la configurazione del nodo ONTAP Select.
+
+--
+.RAID software
+--
+Se si utilizza il software RAID, è necessario creare almeno un datastore (ESX) o uno link:reference_chk_host_prep.html#create-storage-pool["pool di archiviazione (KVM)"] per i dati di sistema e assicurarsi che le unità SSD siano disponibili per la radice e gli aggregati di dati. È necessario collegare il pool di storage e i dischi durante la configurazione del nodo ONTAP Select.
+
+--
+====
+. Versioni ONTAP Select disponibili
++
+L'utility di amministrazione di Deploy contiene una singola versione di ONTAP Select. Se si desidera distribuire cluster utilizzando una versione precedente di ONTAP Select, è necessario prima link:task_cli_deploy_image_add.html["aggiungere l'immagine ONTAP Select"] alla tua istanza di Deploy.
+
+. License ONTAP Select per una distribuzione in produzione
++
+Prima di implementare un cluster ONTAP Select in un ambiente di produzione, è necessario acquistare una licenza per la capacità dello storage e scaricare il file di licenza associato. Puoi link:concept_lic_production.html["concedere in licenza l'archiviazione su ogni nodo"] utilizzando il modello _Capacity Tiers_ oppure ottenere la licenza di un pool condiviso utilizzando il modello _Capacity Pools_.
 
 
-=== Preparazione per il collegamento dello storage al nodo ONTAP Select
-
-Se si utilizza un controller RAID hardware locale, è necessario creare almeno un pool di storage in ciascun nodo per i dati di sistema, nonché per gli aggregati root e di dati. È necessario collegare il pool di storage durante la configurazione del nodo ONTAP Select.
-
-Se si utilizza il software RAID, è necessario creare un pool di storage per i dati di sistema e assicurarsi che le unità SSD siano disponibili per gli aggregati root e di dati. È necessario collegare il pool di storage e i dischi durante la configurazione del nodo ONTAP Select.
 
 
 
-=== Versioni ONTAP Select disponibili
-
-L'utility di amministrazione di Deploy contiene una singola versione di ONTAP Select. Se si desidera distribuire i cluster utilizzando una versione precedente di ONTAP Select, è necessario aggiungere prima l'immagine ONTAP Select all'istanza di distribuzione. Vedere link:task_cli_deploy_image_add.html["Aggiungere un'immagine ONTAP Select da distribuire"] per ulteriori informazioni.
-
-
-
-=== License ONTAP Select per una distribuzione in produzione
-
-Prima di implementare un cluster ONTAP Select in un ambiente di produzione, è necessario acquistare una licenza per la capacità dello storage e scaricare il file di licenza associato. È possibile concedere in licenza lo storage di ciascun nodo utilizzando il modello _Capacity Tiers_ o concedere in licenza un pool condiviso utilizzando il modello _Capacity Pool_.
-
-
-
-== Caricare e registrare un file di licenza
+== Passaggio 2: caricare e registrare un file di licenza
 
 Dopo aver acquisito un file di licenza con capacità di storage, è necessario caricare il file contenente la licenza sulla macchina virtuale di implementazione e registrarlo.
 
@@ -68,20 +74,24 @@ exit
 . Accedere alla CLI dell'utility di implementazione con l'account amministratore utilizzando SSH.
 . Registrare la licenza:
 +
-`license add -file-name FILENAME`
-
+[source, cli]
+----
+license add -file-name <file_name>
+----
 +
 Fornire la password dell'account amministratore quando richiesto.
 
 . Visualizzare le licenze nel sistema per confermare che la licenza è stata aggiunta correttamente:
 +
-`license show`
+[source, cli]
+----
+license show
+----
 
 
 
 
-
-== Aggiunta degli host dell'hypervisor
+== Passaggio 3: aggiungere host hypervisor
 
 È necessario registrare ciascun host hypervisor in cui verrà eseguito un nodo ONTAP Select.
 
@@ -98,9 +108,9 @@ Se è necessario più di un host hypervisor, utilizzare questa procedura per agg
 . Accedere alla CLI dell'utility di implementazione utilizzando SSH con l'account amministratore.
 . Registrare l'host:
 +
-[source, asciidoc]
+[source, cli]
 ----
-`host register -name <FQDN|IP> -hypervisor-type KVM -username KVM_USERNAME`
+host register -name <FQDN|IP> -hypervisor-type KVM -username <KVM_username>
 ----
 +
 Output di esempio
@@ -115,7 +125,7 @@ Fornire la password per l'account host quando richiesto.
 
 . Visualizzare lo stato dell'host e confermarne l'autenticazione:
 +
-[source, asciidoc]
+[source, cli]
 ----
 host show -name <FQDN|IP> -detailed
 ----
@@ -141,8 +151,10 @@ Prima di registrare un host gestito da vCenter, è necessario aggiungere un acco
 . Accedere alla CLI dell'utility di implementazione utilizzando SSH con l'account amministratore.
 . Se l'host è gestito da un server vCenter, aggiungere la credenziale dell'account vCenter:
 +
-`credential add -hostname <FQDN|IP> -type vcenter -username VCENTER_USERNAME`
-
+[source, cli]
+----
+credential add -hostname <FQDN|IP> -type vcenter -username <vcenter_username>
+----
 +
 Output di esempio
 
@@ -153,9 +165,17 @@ credential add -hostname vc.select.company-demo.com -type vcenter -username admi
 . Registrare l'host:
 +
 ** Registrare un host standalone non gestito da vCenter:
-`host register -name <FQDN|IP> -hypervisor-type ESX -username ESX_USERNAME`
++
+[source, cli]
+----
+host register -name <FQDN|IP> -hypervisor-type ESX -username <esx_username>
+----
 ** Registrare un host gestito da vCenter:
-`host register -name <FQDN|IP> -hypervisor-type ESX -mgmt-server <FQDN|IP>`
++
+[source, cli]
+----
+host register -name <FQDN|IP> -hypervisor-type ESX -mgmt-server <FQDN|IP>
+----
 +
 Output di esempio
 
@@ -165,10 +185,12 @@ host register -name 10.234.81.14 -hypervisor-type ESX -mgmt-server vc.select.com
 ....
 
 
-. Visualizzare lo stato dell'host e confermare che è autenticato.
+. Visualizza lo stato dell'host e conferma che è autenticato.
 +
-`host show -name <FQDN|IP> -detailed`
-
+[source, cli]
+----
+host show -name <FQDN|IP> -detailed
+----
 +
 Output di esempio
 
@@ -182,12 +204,12 @@ host show -name 10.234.81.14 -detailed
 ====
 
 
-== Creazione e configurazione di un cluster ONTAP Select
+== Passaggio 4: creare e configurare un cluster ONTAP Select
 
 È necessario creare e configurare il cluster ONTAP Select. Una volta configurato il cluster, è possibile configurare i singoli nodi.
 
 .Prima di iniziare
-È necessario decidere quanti nodi contiene il cluster e disporre delle informazioni di configurazione associate.
+Stabilire quanti nodi contiene il cluster e disporre delle informazioni di configurazione associate.
 
 .A proposito di questa attività
 Quando si crea un cluster ONTAP Select, l'utilità di implementazione genera automaticamente i nomi dei nodi in base al nome del cluster e al numero di nodi forniti. Deploy genera anche gli identificatori di nodo univoci.
@@ -196,8 +218,10 @@ Quando si crea un cluster ONTAP Select, l'utilità di implementazione genera aut
 . Accedere alla CLI dell'utility di implementazione utilizzando SSH con l'account amministratore.
 . Creare il cluster:
 +
-`cluster create -name CLUSTERNAME -node-count NODES`
-
+[source, cli]
+----
+cluster create -name <cluster_name> -node-count <count>
+----
 +
 Output di esempio
 
@@ -207,8 +231,10 @@ cluster create -name test-cluster -node-count 1
 ....
 . Configurare il cluster:
 +
-`cluster modify -name CLUSTERNAME -mgmt-ip IP_ADDRESS -netmask NETMASK -gateway IP_ADDRESS -dns-servers <FQDN|IP>_LIST -dns-domains DOMAIN_LIST`
-
+[source, cli]
+----
+cluster modify -name <cluster_name> -mgmt-ip <IP_address> -netmask <netmask> -gateway <IP_address> -dns-servers <FQDN|IP>_LIST -dns-domains <domain_list>
+----
 +
 Output di esempio
 
@@ -219,18 +245,22 @@ cluster modify -name test-cluster -mgmt-ip 10.234.81.20 -netmask 255.255.255.192
 ....
 . Visualizzare la configurazione e lo stato del cluster:
 +
-`cluster show -name CLUSTERNAME -detailed`
+[source, cli]
+----
+cluster show -name <cluster_name> -detailed
+----
 
 
 
 
-
-== Configurare un nodo ONTAP Select
+== Passaggio 5: configurare un nodo ONTAP Select
 
 È necessario configurare ciascuno dei nodi nel cluster ONTAP Select.
 
 .Prima di iniziare
-È necessario disporre delle informazioni di configurazione per il nodo. Il file di licenza del livello di capacità deve essere caricato e installato nell'utility di distribuzione.
+* Verificare di disporre delle informazioni di configurazione per il nodo.
+* Verificare che il file di licenza Capacity Tier o Capacity Pool sia caricato e installato nell'utilità Deploy.
+
 
 .A proposito di questa attività
 Utilizzare questa procedura per configurare ciascun nodo. In questo esempio, al nodo viene applicata una licenza di livello di capacità.
@@ -239,10 +269,16 @@ Utilizzare questa procedura per configurare ciascun nodo. In questo esempio, al 
 . Accedere alla CLI dell'utility di implementazione utilizzando SSH con l'account amministratore.
 . Determinare i nomi assegnati ai nodi del cluster:
 +
-`node show -cluster-name CLUSTERNAME`
-
+[source, cli]
+----
+node show -cluster-name <cluster_name>
+----
 . Selezionare il nodo ed eseguire la configurazione di base:
-`node modify -name NODENAME -cluster-name CLUSTERNAME -host-name <FQDN|IP> -license-serial-number NUMBER -instance-type TYPE -passthrough-disks false`
++
+[source, cli]
+----
+node modify -name <node_name> -cluster-name <cluster_name> -host-name <FQDN|IP> -license-serial-number <number> -instance-type TYPE -passthrough-disks false
+----
 +
 Output di esempio
 
@@ -252,15 +288,17 @@ node modify -name test-cluster-01 -cluster-name test-cluster -host-name 10.234.8
 -license-serial-number 320000nnnn -instance-type small -passthrough-disks false
 ....
 +
-La configurazione RAID per il nodo è indicata dal parametro _passthrough-disks_. Se si utilizza un controller RAID hardware locale, questo valore deve essere falso. Se si utilizza RAID software, questo valore deve essere true.
+La configurazione RAID per il nodo è indicata dal parametro _passthrough-disks_. Se si utilizza un controller RAID hardware locale, questo valore deve essere "false". Se si utilizza un RAID software, questo valore deve essere "true".
 
 +
 Per il nodo ONTAP Select viene utilizzata una licenza del livello di capacità.
 
 . Visualizzare la configurazione di rete disponibile sull'host:
 +
-`host network show -host-name <FQDN|IP> -detailed`
-
+[source, cli]
+----
+host network show -host-name <FQDN|IP> -detailed
+----
 +
 Output di esempio
 
@@ -270,10 +308,25 @@ host network show -host-name 10.234.81.14 -detailed
 ....
 . Eseguire la configurazione di rete del nodo:
 +
-`node modify -name NODENAME -cluster-name CLUSTERNAME -mgmt-ip IP -management-networks NETWORK_NAME -data-networks NETWORK_NAME -internal-network NETWORK_NAME`
-
+[role="tabbed-block"]
+====
+.Host ESXi
+--
+[source, cli]
+----
+node modify -name <node_name> -cluster-name <cluster_name> -mgmt-ip IP -management-networks <network_name> -data-networks <network_name> -internal-network <network_name>
+----
+--
+.Host KVM
+--
+[source, cli]
+----
+node modify -name <node_name> -cluster-name <cluster_name> -mgmt-ip IP -management-vlans <vlan_id> -data-vlans <vlan_id> -internal-vlans <vlad_id>
+----
+--
+====
 +
-Quando si implementa un cluster a nodo singolo, non è necessaria una rete interna e si consiglia di rimuovere la rete interna.
+Quando si distribuisce un cluster a nodo singolo, non è necessaria una rete interna e si dovrebbe rimuovere "-internal-network".
 
 +
 Output di esempio
@@ -285,8 +338,10 @@ node modify -name test-cluster-01 -cluster-name test-cluster -mgmt-ip 10.234.81.
 ....
 . Visualizzare la configurazione del nodo:
 +
-`node show -name NODENAME -cluster-name CLUSTERNAME -detailed`
-
+[source, cli]
+----
+node show -name <node_name> -cluster-name <cluster_name> -detailed
+----
 +
 Output di esempio
 
@@ -298,12 +353,12 @@ node show -name test-cluster-01 -cluster-name test-cluster -detailed
 
 
 
-== Collegare lo storage ai nodi ONTAP Select
+== Passaggio 6: collegare l'archiviazione ai nodi ONTAP Select
 
-È necessario configurare lo storage utilizzato da ciascun nodo del cluster ONTAP Select. A ogni nodo deve sempre essere assegnato almeno un pool di storage. Quando si utilizza il RAID software, a ciascun nodo deve essere assegnata almeno un'unità disco.
+Configurare lo storage utilizzato da ciascun nodo nel cluster ONTAP Select . A ogni nodo deve sempre essere assegnato almeno un pool di storage. Quando si utilizza il RAID software, a ciascun nodo deve essere assegnata almeno un'unità disco.
 
 .Prima di iniziare
-È necessario creare il pool di storage utilizzando VMware vSphere. Se si utilizza il RAID software, è necessario disporre di almeno un disco.
+Creare il pool di archiviazione utilizzando VMware vSphere. Se si utilizza il RAID software, è necessario disporre di almeno un disco.
 
 .A proposito di questa attività
 Quando si utilizza un controller RAID hardware locale, è necessario eseguire i passaggi da 1 a 4. Quando si utilizza il software RAID, è necessario eseguire i passaggi da 1 a 6.
@@ -312,8 +367,10 @@ Quando si utilizza un controller RAID hardware locale, è necessario eseguire i 
 . Accedere alla CLI dell'utility di implementazione utilizzando SSH con le credenziali dell'account amministratore.
 . Visualizzare i pool di storage disponibili sull'host:
 +
-`host storage pool show -host-name <FQDN|IP>`
-
+[source, cli]
+----
+host storage pool show -host-name <FQDN|IP>
+----
 +
 Output di esempio
 
@@ -327,10 +384,12 @@ host storage pool show -host-name 10.234.81.14
 
 . Collegare un pool di storage disponibile al nodo ONTAP Select:
 +
-`node storage pool attach -name POOLNAME -cluster-name CLUSTERNAME -node-name NODENAME -capacity-limit LIMIT`
-
+[source, cli]
+----
+node storage pool attach -name <pool_name> -cluster-name <cluster_name> -node-name <node_name> -capacity-limit <limit>
+----
 +
-Se si include il parametro -Capacity-Limit, specificare il valore in GB o TB.
+Se si include il parametro "-capacity-limit", specificare il valore come GB o TB.
 
 +
 Output di esempio
@@ -343,8 +402,10 @@ node-name test-cluster-01 -capacity-limit 500GB
 ----
 . Visualizzare i pool di storage collegati al nodo:
 +
-`node storage pool show -cluster-name CLUSTERNAME -node-name NODENAME`
-
+[source, cli]
+----
+node storage pool show -cluster-name <cluster_name> -node-name <node_name>
+----
 +
 Output di esempio
 
@@ -355,8 +416,10 @@ node storage pool show -cluster-name test-cluster -node-name testcluster-01
 ----
 . Se si utilizza un RAID software, collegare il disco o i dischi disponibili:
 +
-`node storage disk attach -node-name NODENAME -cluster-name CLUSTERNAME -disks LIST_OF_DRIVES`
-
+[source, cli]
+----
+node storage disk attach -node-name <node_name> -cluster-name <cluster_name> -disks <list_of_drives>
+----
 +
 Output di esempio
 
@@ -367,8 +430,10 @@ node storage disk attach -node-name NVME_SN-01 -cluster-name NVME_SN -disks 0000
 ----
 . Se si utilizza il software RAID, visualizzare i dischi collegati al nodo:
 +
-`node storage disk show -node-name NODENAME -cluster-name CLUSTERNAME`
-
+[source, cli]
+----
+node storage disk show -node-name <node_name> -cluster-name <cluster_name>`
+----
 +
 Output di esempio
 
@@ -381,19 +446,21 @@ node storage disk show -node-name sdot-smicro-009a -cluster-name NVME
 
 
 
-== Implementare un cluster ONTAP Select
+== Passaggio 7: distribuire un cluster ONTAP Select
 
 Una volta configurati il cluster e i nodi, è possibile implementarlo.
 
 .Prima di iniziare
-Prima di implementare un cluster a più nodi, eseguire il controllo della connettività di rete per confermare la connettività tra i nodi del cluster sulla rete interna.
+Eseguire il controllo della connettività di rete utilizzando link:task_adm_connectivity.html["interfaccia utente web"] o il link:task_cli_connectivity.html["CLI"] per confermare la connettività tra i nodi del cluster sulla rete interna.
 
 .Fasi
 . Accedere alla CLI dell'utility di implementazione utilizzando SSH con l'account amministratore.
 . Implementare il cluster ONTAP Select:
 +
-`cluster deploy -name CLUSTERNAME`
-
+[source, cli]
+----
+cluster deploy -name <cluster_name>
+----
 +
 Output di esempio
 
@@ -407,8 +474,10 @@ Specificare la password da utilizzare per l'account amministratore di ONTAP quan
 
 . Visualizzare lo stato del cluster per determinare quando è stato implementato correttamente:
 +
-`cluster show -name CLUSTERNAME`
-
+[source, cli]
+----
+cluster show -name <cluster_name>
+----
 
 
 .Al termine

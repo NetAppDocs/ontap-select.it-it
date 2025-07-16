@@ -4,7 +4,7 @@ permalink: task_adm_clusters.html
 keywords: administer, administering, web, clusters 
 summary: Per amministrare un cluster ONTAP Select è possibile eseguire diverse attività correlate. 
 ---
-= Cluster ONTAP Select
+= Gestisci i cluster ONTAP Select
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

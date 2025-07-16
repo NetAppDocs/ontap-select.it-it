@@ -244,7 +244,7 @@ Ci sono diverse domande e risposte che riguardano le coppie e i cluster ha.
 A differenza dei cluster a quattro nodi, sei nodi e otto nodi in cui la macchina virtuale ONTAP Select Deploy viene utilizzata principalmente per creare il cluster, un cluster a due nodi si affida continuamente alla macchina virtuale ONTAP Select Deploy per il quorum ad alta disponibilità. Se la macchina virtuale ONTAP Select Deploy non è disponibile, i servizi di failover vengono disattivati.
 
 .Che cos'è MetroCluster SDS?
-MetroCluster SDS è un'opzione di replica sincrona a basso costo che rientra nella categoria delle soluzioni di business continuity MetroCluster di NetApp. È disponibile solo con ONTAP Select, a differenza di NetApp MetroCluster, disponibile su flash ibrida FAS, AFF, storage privato NetApp per il cloud e tecnologia NetApp FlexArray®.
+MetroCluster SDS è un'opzione di replica sincrona a basso costo che rientra nella categoria delle soluzioni di business continuity MetroCluster di NetApp. È disponibile solo con ONTAP Select, a differenza di NetApp MetroCluster che è disponibile su FAS Hybrid Flash, AFF e NetApp Private Storage for Cloud.
 
 .Quali sono le differenze tra le schede di sicurezza MetroCluster e NetApp MetroCluster?
 MetroCluster offre una soluzione di replica sincrona e rientra nelle soluzioni NetApp MetroCluster. Tuttavia, le differenze principali riguardano le distanze supportate (~10 km rispetto a 300 km) e il tipo di connettività (sono supportate solo le reti IP anziché FC e IP).

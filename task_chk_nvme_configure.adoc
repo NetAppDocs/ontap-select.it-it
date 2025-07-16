@@ -27,7 +27,7 @@ Assicurarsi che l'ambiente di implementazione soddisfi i seguenti requisiti mini
 * Dispositivi NVMe conformi alla specifica 1.0 o successiva
 
 
-Seguire la link:reference_chk_host_prep.html["checklist per la preparazione dell'host"], consultare link:reference_chk_deploy_req_info.html["Informazioni richieste per l'installazione dell'utility di implementazione"]e il link:reference_chk_select_req_info.html["Informazioni richieste per l'installazione di ONTAP Select"] argomenti per ulteriori informazioni.
+Per ulteriori informazionilink:kvm-host-configuration-and-preparation-checklist.html["checklist per la preparazione dell'host"], seguire la link:reference_chk_deploy_req_info.html["Informazioni richieste per l'installazione dell'utility di implementazione"], la e gli link:reference_chk_select_req_info.html["Informazioni richieste per l'installazione di ONTAP Select"] argomenti .
 
 .A proposito di questa attività
 Questa procedura deve essere eseguita prima di creare un nuovo cluster ONTAP Select. È inoltre possibile eseguire la procedura per configurare ulteriori unità NVMe per un cluster NVMe SW-RAID esistente. In questo caso, dopo aver configurato i dischi, è necessario aggiungerli attraverso l'implementazione come se fossero dischi SSD aggiuntivi. La differenza principale è che l'implementazione rileva i dischi NVMe e riavvia i nodi. Quando si aggiungono dischi NVMe a un cluster esistente, tenere presente quanto segue per il processo di riavvio:
