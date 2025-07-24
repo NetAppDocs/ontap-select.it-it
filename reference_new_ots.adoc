@@ -19,6 +19,47 @@ Scopri le nuove funzioni e i miglioramenti delle versioni supportate di ONTAP Se
 
 
 
+== ONTAP Select 9.17.1
+
+ONTAP Select 9.17.1 include numerose nuove funzionalità e miglioramenti.
+
+Supporto RAID software per dischi NVMe collegati localmente su host KVM:: ONTAP Select 9.17.1 introduce il supporto RAID software per i dischi NVMe ONTAP Select collegati localmente su un host hypervisor KVM (Kernel-Based Virtual Machine).
++
+--
+Per utilizzare il RAID software per i dischi NVMe collegati localmente, è necessario link:kvm-host-configuration-and-preparation-checklist.html["configurare il passthrough PCI (DirectPath IO)"] durante la preparazione dell'host KVM. Ciò fornisce all'host KVM l'accesso diretto ai dischi NVMe collegati localmente, necessario per le seguenti attività:
+
+* Configurazione dell'host KVM per l'utilizzo di unità NVMe
+* Utilizzo del software RAID dopo aver distribuito il cluster
+
+
+link:concept_stor_swraid_local.html["Scopri di più sui servizi di configurazione RAID software per l'archiviazione locale collegata"] .
+
+--
+Supporto per l'espansione e la contrazione del cluster sugli host KVM:: A partire da ONTAP Select 9.17.1, la funzionalità di espansione e contrazione dei cluster è supportata sia per gli host KVM (Kernel-Based Virtual Machine) che per gli host hypervisor ESXi. Per ONTAP Select 9.16.1 e 9.15.1, l'espansione e la contrazione dei cluster sono supportate solo per gli host hypervisor ESXi.
++
+--
+È possibile utilizzare la funzionalità di espansione e contrazione del cluster su un cluster ONTAP Select esistente per aumentare le dimensioni da un cluster a sei nodi a uno a otto nodi o per ridurle da un cluster a otto nodi a uno a sei nodi.
+
+link:task_cluster_expansion_contraction.html["Scopri di più sull'espansione e la contrazione del cluster e sulle versioni supportate degli hypervisor KVM ed ESXi"] .
+
+--
+Supporto per il cloud SnapMirror:: A partire da ONTAP Select 9.17.1, SnapMirror Cloud è supportato da ONTAP Select. SnapMirror Cloud è una funzionalità ONTAP concessa in licenza, abilitata per impostazione predefinita quando si distribuisce un cluster ONTAP Select 9.17.1 o si aggiorna un cluster ONTAP Select esistente alla versione 9.17.1.
++
+--
+https://docs.netapp.com/us-en/ontap/concepts/snapmirror-cloud-backups-object-store-concept.html["Scopri di più sui backup cloud SnapMirror su storage di oggetti"^] .
+
+--
+Supporto driver NDA aggiornato:: A partire da ONTAP Select 9.17.1, il driver di dispositivo NDA (NVMe Direct Access) di FreeBSD sostituisce il driver NVD (NVMe Express Disk Driver). Il driver di FreeBSD fornisce supporto per i dispositivi ad accesso diretto implementando il protocollo di comando NVMe. Quando si distribuisce un cluster ONTAP Select 9.17.1 o si aggiorna un cluster ONTAP Select esistente alla versione 9.17.1, il driver di FreeBSD viene avviato per impostazione predefinita durante la configurazione dei dispositivi NVMe.
++
+--
+Per ONTAP Select 9.16.1 e versioni precedenti, NVD continua a fornire supporto per i dispositivi NVMe nella distribuzione ONTAP Select .
+
+--
+Supporto aggiornato dell'hypervisor KVM:: A partire da ONTAP Select 9.17.1, l'hypervisor KVM è supportato su Red Hat Enterprise Linux (RHEL) 9.6 e Rocky Linux 9.6.
+
+
+
+
 == ONTAP Select 9.16.1
 
 ONTAP Select 9.16.1 include diverse nuove funzioni e miglioramenti.
@@ -31,7 +72,7 @@ Per una nuova implementazione di ONTAP Select 9.16.1, viene applicato automatica
 --
 Supporto per la protezione autonoma da ransomware:: ONTAP Select 9.16.1 introduce il supporto per la protezione autonoma dal ransomware (ARP). ONTAP Select 9.16.1 supporta solo gli aggiornamenti manuali per ARP, gli aggiornamenti automatici non sono supportati. La licenza della funzione ARP è inclusa nell'NLF per ONTAP Select 9.16.1. link:reference_lic_ontap_features.html#ontap-features-automatically-enabled-by-default["Scopri di più"].
 Supporto migliorato di VMware ESXi:: ONTAP Select 9.16.1 include il supporto per VMware ESXi 8.0 U3.
-Supporto aggiornato dell'hypervisor KVM:: A partire da ONTAP Select 9.16.1, l'hypervisor kernel-Based Virtual Machine (KVM) è supportato su Red Hat Enterprise Linux (RHEL) 9,5 e Rocky Linux 9,5.
+Supporto aggiornato dell'hypervisor KVM:: A partire da ONTAP Select 9.16.1, l'hypervisor KVM è supportato su RHEL 9.5 e Rocky Linux 9.5.
 
 
 

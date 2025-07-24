@@ -35,15 +35,28 @@ Per implementare un cluster ONTAP Select, l'organizzazione deve disporre di una 
 
 === Compatibilità software
 
-ONTAP Select può essere implementato sui seguenti hypervisor:
+È possibile distribuire ONTAP Select sugli hypervisor KVM ed ESXi.
 
-* KVM su Red Hat Enterprise Linux 8,6, 8,7, 8,8, 9,0, 9,1, 9,2, 9,4 e 9,5
-* KVM su Rocky Linux 8,6, 8,7, 8,8, 8,9, 9,0, 9,1, 9,2, 9,3, 9,4 e 9,5
-* VMware ESXi 7.0 GA (build 15843807 o superiore) inclusi 7.0 U1, U2 e U3C
-* VMware ESXi 8,0 GA (build 20513097)
-* VMware ESXi 8,0 U1 (build 21495797)
-* VMware ESXi 8,0 U2
+[role="tabbed-block"]
+====
+.KVM
+--
+ONTAP Select supporta le seguenti versioni dell'hypervisor KVM:
+
+* KVM su Red Hat Enterprise Linux 9.6, 9.5, 9.4, 9.2, 9.1, 9.0, 8.8, 8.7 e 8.6
+* KVM su Rocky Linux 9.6, 9.5, 9.4, 9.3, 9.2, 9.1, 9.0, 8.9, 8.8, 8.7 e 8.6
+
+
+--
+.ESXi
+--
+ONTAP Select supporta le seguenti versioni dell'hypervisor ESXi:
+
 * VMware ESXi 8,0 U3
+* VMware ESXi 8,0 U2
+* VMware ESXi 8,0 U1 (build 21495797)
+* VMware ESXi 8,0 GA (build 20513097)
+* VMware ESXi 7.0 GA (build 15843807 o successiva) inclusi 7.0 U3C, U2 e U1
 
 
 
@@ -52,6 +65,8 @@ NOTE: NetApp supporta ONTAP Select sulle versioni identificate di ESXi, a condiz
 
 NOTE: ESXi 6,5 GA e ESXi 6,7 GA hanno raggiunto lo stato di disponibilità. Se si dispone di cluster ONTAP Select con queste versioni, è necessario eseguire l'aggiornamento alle versioni supportate in base a. https://mysupport.netapp.com/matrix["Tool di matrice di interoperabilità (IMT)"^].
 
+--
+====
 
 
 === VMware vCenter e host ESXi standalone
@@ -76,10 +91,7 @@ Per ulteriori informazioni, fare riferimento alla https://mysupport.netapp.com/m
 Esistono diversi requisiti hardware comuni che si applicano a tutte le piattaforme, indipendentemente dal tipo di istanza del nodo o dall'offerta di licenza.
 
 .Del processore
-I microprocessori supportati includono:
-
-* Processori Intel Xeon per server (vedere link:https://www.intel.com/content/www/us/en/products/processors/xeon/view-all.html?Processor+Type=1003["Processori Intel Xeon,window=_blank"] per ulteriori informazioni)
-
+I microprocessori supportati includono i processori Intel Xeon per Server, vedere link:https://www.intel.com/content/www/us/en/products/processors/xeon/view-all.html?Processor+Type=1003["Processori Intel Xeon,window=_blank"] per maggiori informazioni.
 
 
 NOTE: I processori AMD (Advanced Micro Devices) non sono supportati con ONTAP Select.
@@ -87,10 +99,8 @@ NOTE: I processori AMD (Advanced Micro Devices) non sono supportati con ONTAP Se
 .Configurazione Ethernet
 Sono supportate diverse configurazioni Ethernet in base alle dimensioni del cluster.
 
-[cols="30,35,35"]
+[cols="2,3,3"]
 |===
-
-
 | Dimensione del cluster | Requisiti minimi | Requisiti consigliati 
 
 
@@ -110,23 +120,18 @@ Esistono diversi requisiti hardware aggiuntivi in base al tipo di istanza del no
 
 Fare riferimento a. link:concept_lic_platforms.html["Comprendere le offerte di licenza della piattaforma"] per ulteriori informazioni.
 
-.Piccolo
-* Core CPU sei core fisici o superiori, con quattro riservati a ONTAP Select.
-* Memoria 24 GB o superiore con 16 GB riservati a ONTAP Select.
-* Licenza di piattaforma richiesta con standard, premium o premium XL
+[cols="a1,a2,a2,a2"]
+|===
+| Dimensione del nodo | Core della CPU | Memoria | Offerta di licenza della piattaforma richiesta 
 
 
-.Medio
-* Core CPU dieci core fisici o superiori, con otto riservati per ONTAP Select.
-* Memoria da 72 GB o superiore con 64 GB riservati a ONTAP Select
-* Licenza di piattaforma richiesta con Premium o Premium XL
+| Piccolo | Sei core fisici o più, di cui quattro riservati per ONTAP Select | 24 GB o più, con 16 GB riservati per ONTAP Select | Standard, premium o premium XL 
 
 
-.Grande
-* Core CPU: Diciotto core fisici o superiori, sedici riservati a ONTAP Select.
-* Memoria 136 GB o superiore con 128 GB riservati a ONTAP Select
-* Licenza di piattaforma richiesta con Premium XL
+| Medio | Dieci core fisici o più, di cui otto riservati per ONTAP Select | 72 GB o superiore, con 64 GB riservati per ONTAP Select | Premium o premium XL 
 
 
+| Grande | Diciotto core fisici o più, di cui sedici riservati per ONTAP Select | 136 GB o superiore, con 128 GB riservati per ONTAP Select | Premium XL 
+|===
 
 NOTE: Esistono requisiti aggiuntivi per i dischi in base alla licenza della piattaforma. Vedere link:reference_plan_ots_storage.html["Storage e RAID"] per ulteriori informazioni.
