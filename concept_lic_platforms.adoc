@@ -73,7 +73,7 @@ L'offerta premium XL offre le seguenti funzionalità:
 
 
 
-NOTE: L'utilizzo del tipo di istanza di grandi dimensioni in una configurazione RAID software non è supportato su una macchina virtuale basata sul kernel (KVM).
+NOTE: L'uso del tipo di istanza di grandi dimensioni non è supportato su una macchina virtuale basata sul kernel (KVM).
 
 
 
