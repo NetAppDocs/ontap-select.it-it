@@ -9,23 +9,16 @@
   <block id="82127225cef946e77040d2fd1420db6f" category="list-text">Rispondere a tutte le richieste in base all'ambiente in uso.</block>
   <block id="c9732055d20960435002cec722852b3e" category="summary">È possibile aggiornare una macchina virtuale dell'utility di implementazione esistente in-place utilizzando l'interfaccia della riga di comando.</block>
   <block id="135b308ed83c53f1516b7c754566d1c4" category="section-title">Prima di iniziare</block>
-  <block id="a0352e441ba04fb28d070a715c9d2ff2" category="paragraph">Assicurarsi che la distribuzione non venga utilizzata per eseguire altre attività durante l'aggiornamento. Per informazioni e restrizioni sull'aggiornamento dell'utility di distribuzione, consultare le note di rilascio correnti.</block>
-  <block id="eb75a7c0dc84d14c47a84e436b8082cc" category="paragraph">Per iniziare il processo di aggiornamento, è necessario scaricare il file di aggiornamento della macchina virtuale di implementazione appropriato dal sito del supporto NetApp. Il pacchetto di aggiornamento viene formattato come un singolo file compresso.</block>
   <block id="67a5c1dd24ee56878ca59f7cbb4a6602" category="list-text">Accedere al NetApp Support Site utilizzando un browser Web e fare clic su *Support Quick Links*.</block>
   <block id="d687fa799cb928d61ab8f8c42c50439d" category="list-text">Fare clic su *trova il prodotto*.</block>
   <block id="a8601f098fd28588686f1b5ce31da2a1" category="list-text">Selezionare la versione desiderata del pacchetto di aggiornamento.</block>
   <block id="9bf3ac5f4cb6341117598df735958bdf" category="list-text">Leggere il Contratto di licenza con l'utente finale (EULA) e fare clic su *Accept &amp; Continue* (Accetta e continua).</block>
   <block id="def8f653fff47640d3bcce40244c6331" category="list-text">Selezionare e scaricare il pacchetto appropriato, rispondendo a tutti i prompt necessari per il proprio ambiente.</block>
   <block id="30f60d67f457bb040dffde52197a54da" category="paragraph-title">Informazioni correlate</block>
-  <block id="e1592123d1df946558bd9bf257720d21" category="paragraph">Dopo aver acquisito il pacchetto di aggiornamento, è necessario caricare il file sulla macchina virtuale di implementazione.</block>
-  <block id="d5d592c7eaf2cef1bd79103f367e703c" category="paragraph">Il file di aggiornamento deve essere disponibile sulla workstation locale. È inoltre necessario disporre della password per l'account utente amministratore.</block>
-  <block id="f331fac6e9cf90cf6a3bc3b228554302" category="paragraph-title">A proposito di queste attività</block>
   <block id="2b4b559d53be4bdb64aeeae26870beb2" category="paragraph">Questa attività descrive un metodo per caricare il file sulla macchina virtuale di implementazione. Potrebbero essere disponibili altre opzioni più adatte al proprio ambiente.</block>
   <block id="0a52730597fb4ffa01fc117d9e71e3a9" category="paragraph">Esempio</block>
   <block id="8eea62084ca7e541d918e823422bd82e" category="paragraph-title">Risultato</block>
   <block id="4d31142bb7c8f427942e83be227bb1f0" category="paragraph">Il file di aggiornamento viene memorizzato nella home directory dell'utente amministratore.</block>
-  <block id="baa4f96e18f8e9fced4eec3f5a81a23a" category="paragraph">Una volta caricato il file di aggiornamento sulla macchina virtuale di implementazione, è possibile applicare l'aggiornamento.</block>
-  <block id="dbb14ca7f13323519486701e4b502763" category="paragraph">È necessario conoscere la directory in cui è stato inserito il file di aggiornamento nella macchina virtuale dell'utility di implementazione. Inoltre, assicurarsi che l'implementazione non venga utilizzata per eseguire altre attività durante l'aggiornamento.</block>
   <block id="c1f1fdaeb1fc7d288d9969efdd963bcc" category="list-text">Accedere alla CLI dell'utility di implementazione utilizzando SSH con l'account amministratore.</block>
   <block id="ddd583d223b6cdfc7284a7d618756d41" category="list-text">Eseguire l'aggiornamento utilizzando il percorso di directory e il nome file appropriati:</block>
   <block id="f5fb71abd32be9bc904db11637b6b903" category="paragraph"><block ref="1299ca75bdbf03e068a6eb77561752df" prefix="" category="inline-code"></block></block>
@@ -2638,7 +2631,6 @@
   <block id="0a15f7ba73868a32304fdf52855463c9" category="sidebar">Rimuovere le immagini ONTAP Select</block>
   <block id="afc9d68a1be701598b5ef94dc0be2844" category="sidebar">Ripristinare l'implementazione per un cluster a due nodi</block>
   <block id="1fe917b01f9a3f87fa2d7d3b7643fac1" category="sidebar">FAQ</block>
-  <block id="92cbe224b663d28b8dd457992abcd653" category="list-text">In una shell di comandi sulla workstation locale, utilizzare l'utility SCP per caricare il file di immagine sulla macchina virtuale di implementazione.</block>
   <block id="690f3dfc132299176ff75952d43e8d9d" category="list-text">Copie Snapshot a prova di manomissione</block>
   <block id="363ac709cba54fea743eb36bb06d23c7" category="list-text">Migrazione SVM</block>
   <block id="b7e93a737ead6d7716c8af57ebde241a" category="list-text">VMware HCX</block>
@@ -2816,9 +2808,6 @@
   <block id="a576bfb8d18800b15b695bc702167ec1" category="admonition">È necessario aggiungere un'immagine ONTAP Select con una versione precedente alla versione originale inclusa nell'istanza di distribuzione. L'aggiunta di versioni successive di ONTAP Select senza aggiornare anche la distribuzione non è supportata.</block>
   <block id="2d7ef53b88b3d50ad2fb9bc27da95ee9" category="paragraph"><block ref="2d7ef53b88b3d50ad2fb9bc27da95ee9" category="inline-link-macro-rx"></block></block>
   <block id="298707edb3b539391aec5a5a89670001" category="admonition">Se è installata un'istanza precedente dell'utilità di amministrazione di distribuzione di ONTAP Select, è necessario eseguire l'aggiornamento alla versione corrente. Il nodo ONTAP Select e il componente di implementazione ONTAP Select vengono aggiornati in modo indipendente. Vedere <block ref="fb380fde33185400cd8ee6587621860d" category="inline-link-macro-rx"></block> per ulteriori dettagli.</block>
-  <block id="dded0118bab7e4547129d9826a3a53bf" category="section-title">Scaricare il pacchetto di aggiornamento</block>
-  <block id="295a9acceaedaed57f5a69a9e9479d14" category="section-title">Caricare il pacchetto sulla macchina virtuale di distribuzione</block>
-  <block id="89a9fa7a63f2114c1852ebceaf021995" category="section-title">Applicare il pacchetto di aggiornamento</block>
   <block id="4d0baad02721160fc108f9d6af73fec0" category="doc">Consente di accedere alla console video ONTAP Select</block>
   <block id="ae8d825236a3f7c43af8b7a2dcd40918" category="doc">Verificare la connettività di rete tra i nodi ONTAP Select</block>
   <block id="b58c5f0cafd2de6e2a43174f49b5fb62" category="paragraph">La creazione iniziale del cluster può essere utilizzata per creare un cluster ONTAP Select che occupa parte o tutto lo spazio nel datastore iniziale. Una seconda fase consiste nell'eseguire una o più operazioni di aggiunta di capacità utilizzando datastore aggiuntivi fino a raggiungere la capacità totale desiderata. Questa funzionalità è illustrata in dettaglio nella sezione <block ref="707976c9d65fe867eaf11be0a6ab721e" category="inline-link-macro-rx"></block>.</block>
@@ -2878,7 +2867,6 @@
   <block id="0f0e87daa63b5587a3d3f02aefb73403" category="list-text">Accedere a. <block ref="a42716fdd3c80ae75cadfb8024b65de0" category="inline-link-macro-rx"></block> Utilizzando un browser Web e scegliere *Download* dal menu Download.</block>
   <block id="dce12db5fd853ebf9ecc2b9677234aa6" category="list-text">Scorrere verso il basso e selezionare *ONTAP Select Deploy Upgrade*.</block>
   <block id="d3a9739a4d6cf4fc9efd4b7704905c48" category="list-text">Leggere il Contratto di licenza con l'utente finale (EULA) e selezionare *Accetta e continua*.</block>
-  <block id="3b21e87e0ddc0bee4fd0ebb1cd063173" category="paragraph">Prima del completamento della procedura di aggiornamento, viene richiesto di creare un backup della configurazione della macchina virtuale di distribuzione. Inoltre, è necessario cancellare la cache del browser in modo da poter visualizzare le pagine di distribuzione appena create.</block>
   <block id="3a2bb6601ae9e99d12a365a40b604d74" category="paragraph">Puoi accedere alla console video della macchina virtuale dell'hypervisor su cui è in esecuzione ONTAP Select.</block>
   <block id="decbc79b694df69cef4879e861d5bbe4" category="list-text">Facoltativamente, rimuovere l'immagine ONTAP Select con l'host hypervisor.</block>
   <block id="7460f05e2350b8a56240561f0787e129" category="open-title">Esempio ESXi</block>
@@ -3906,4 +3894,21 @@ dischi di ricambio dell'aggregato di storage</block>
   <block id="e6ed9ac65d6ce64c42573257cebe103e" category="paragraph">Utilizzare la funzionalità di contrazione del cluster per ridurre le dimensioni di un cluster esistente da otto a sei nodi.</block>
   <block id="7cf2e3fec3d1629805de3aab60343896" category="sidebar">Documentazione ONTAP Select 9.17.1</block>
   <block id="968414ab46d3b1a79f89163fe1c9a955" category="admonition">L'uso del tipo di istanza di grandi dimensioni non è supportato su una macchina virtuale basata sul kernel (KVM).</block>
+  <block id="aee852b160915b647628e7eef82ecf7e" category="paragraph">È possibile aggiornare sul posto una macchina virtuale dell'utilità ONTAP Select Deploy esistente utilizzando la CLI dell'utilità ONTAP Select Deploy.</block>
+  <block id="37d4c938e6c31c7ec9166448ac3458f3" category="paragraph">Assicurarsi che ONTAP Select Deploy non venga utilizzato per eseguire altre attività durante l'aggiornamento.  Per informazioni e limitazioni sull'aggiornamento dell'utilità ONTAP Select Deploy, consultare le note sulla versione corrente.</block>
+  <block id="a59e9f814fd25c07ec74e51d966be96f" category="paragraph">È possibile aggiornare ONTAP Select Deploy 9.17.1 da ONTAP Select Deploy 9.16.1 o 9.15.1.  Per eseguire l'aggiornamento da ONTAP Select Deploy 9.14.1 o versioni precedenti, consultare le note di rilascio per la versione ONTAP Select .</block>
+  <block id="db1b7c6bff7b0da47260c4e758478bf5" category="section-title">Passaggio 1: Scarica il pacchetto</block>
+  <block id="c81ba5c62604d6722d8975fb55e13972" category="paragraph">Per iniziare il processo di aggiornamento, scaricare il file di aggiornamento della macchina virtuale ONTAP Select Deploy appropriato da<block ref="a42716fdd3c80ae75cadfb8024b65de0" category="inline-link-macro-rx"></block> . Il pacchetto di aggiornamento è formattato come un singolo file compresso.</block>
+  <block id="1bd278b7a759195dc2c65f644c38efc6" category="section-title">Passaggio 2: caricare il pacchetto sulla macchina virtuale ONTAP Select Deploy</block>
+  <block id="58d35d75d5ec4b24d42607d4bf519bb0" category="paragraph">Dopo aver scaricato il pacchetto, è necessario caricare il file sulla macchina virtuale ONTAP Select Deploy.</block>
+  <block id="f210391b7941f9a4198928bc79fcba09" category="paragraph">Questa attività descrive un metodo per caricare il file sulla macchina virtuale ONTAP Select Deploy.  Potrebbero esserci altre opzioni più adatte al tuo ambiente.</block>
+  <block id="c99ab6326cfb96cafe5cf69a39bf5e79" category="list-text">Verificare che il file di aggiornamento sia disponibile sulla workstation locale.</block>
+  <block id="e2a672c847bad2863e57f277c323553c" category="list-text">Verificare di disporre della password per l'account utente amministratore.</block>
+  <block id="e60c1aa35e0fea0a6ef96ddaa4b018f8" category="list-text">In una shell di comando sulla workstation locale, utilizzare<block ref="8a444a43bdf534c0c6338bb7809659b3" prefix=" " category="inline-code"></block> Utilità (Secure Copy Protocol) per caricare il file immagine sulla macchina virtuale ONTAP Select Deploy.</block>
+  <block id="fc979b5c6d5eef1f824052719f508095" category="section-title">Passaggio 3: applicare il pacchetto di aggiornamento</block>
+  <block id="8b24796d99b30623379a77021195b47e" category="paragraph">Dopo aver caricato il file di aggiornamento sulla macchina virtuale ONTAP Select Deploy, è possibile applicare l'aggiornamento.</block>
+  <block id="91aa908b0f2003054a80626907b7d18a" category="list-text">Verificare in quale directory è stato inserito il file di aggiornamento nella macchina virtuale dell'utilità ONTAP Select Deploy.</block>
+  <block id="b2fb3f45f259e44e136bed021ae55392" category="list-text">Verificare che ONTAP Select Deploy non venga utilizzato per eseguire altre attività durante l'aggiornamento.</block>
+  <block id="abb9205c97b7f267bd63f25baa86e729" category="list-text">Sign in all'utility CLI ONTAP Select Deploy tramite SSH con l'account amministratore.</block>
+  <block id="87a5212e058c62281b89455df9a32603" category="paragraph">Prima di completare la procedura di aggiornamento, ti verrà chiesto di creare un backup della configurazione della macchina virtuale ONTAP Select Deploy.  Inoltre, è necessario cancellare la cache del browser in modo da poter visualizzare le pagine ONTAP Select Deploy appena create.</block>
 </blocks>
