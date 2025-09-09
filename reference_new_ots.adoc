@@ -43,11 +43,59 @@ Supporto per l'espansione e la contrazione del cluster sugli host KVM:: A partir
 link:task_cluster_expansion_contraction.html["Scopri di più sull'espansione e la contrazione del cluster e sulle versioni supportate degli hypervisor KVM ed ESXi"] .
 
 --
-Supporto per il cloud SnapMirror:: A partire da ONTAP Select 9.17.1, SnapMirror Cloud è supportato da ONTAP Select. SnapMirror Cloud è una funzionalità ONTAP concessa in licenza, abilitata per impostazione predefinita quando si distribuisce un cluster ONTAP Select 9.17.1 o si aggiorna un cluster ONTAP Select esistente alla versione 9.17.1.
+Supporto migliorato per l'espansione e la contrazione del cluster sugli host ESXi:: A partire da ONTAP Select 9.17.1, l'espansione e la contrazione del cluster sono supportate per cluster da sei a dodici nodi su host ESXi:
 +
 --
+--
+È possibile aumentare le dimensioni del cluster per un cluster ESXi esistente nei seguenti incrementi:
+
+* Da sei nodi a otto, dieci o dodici nodi
+* Da otto nodi a dieci o dodici nodi
+* Da dieci a dodici nodi
+
+
+È possibile ridurre le dimensioni del cluster per un cluster ESXi esistente nei seguenti incrementi:
+
+* Da dodici nodi a dieci, otto o sei nodi
+* Da dieci nodi a otto o sei nodi
+* Da otto a sei nodi
+
+
+--
+link:task_cluster_expansion_contraction.html["Scopri di più sull'espansione e la contrazione del cluster e sulle versioni supportate degli hypervisor KVM ed ESXi"] .
+
+--
+Supporto per le funzionalità ONTAP:: A partire da ONTAP Select 9.17.1, le seguenti funzionalità ONTAP con licenza sono supportate da ONTAP Select:
++
+--
+* Selezione SnapLock
++
+A partire da ONTAP Select 9.17.1, le nuove distribuzioni avranno SnapLock Select automaticamente concesso in licenza.  Per gli aggiornamenti da ONTAP Select 9.16.1 e versioni precedenti, sarà necessario scaricare la licenza SnapLock Select dalink:https://mysupport.netapp.com/site/["Sito di supporto NetApp"^] e applicarlo manualmente.
+
+* Cloud SnapMirror
++
+A partire da ONTAP Select 9.17.1, SnapMirror Cloud è supportato da ONTAP Select. SnapMirror Cloud è una funzionalità ONTAP concessa in licenza, abilitata per impostazione predefinita quando si distribuisce un cluster ONTAP Select 9.17.1 o si aggiorna un cluster ONTAP Select esistente alla versione 9.17.1.
+
++
 https://docs.netapp.com/us-en/ontap/concepts/snapmirror-cloud-backups-object-store-concept.html["Scopri di più sui backup cloud SnapMirror su storage di oggetti"^] .
 
+
+
+--
+Supporto per vSAN ESA su cluster multi-nodo:: A partire da ONTAP Select 9.17.1, il supporto per vSAN Express Storage Architecture (ESA) è esteso per distribuire cluster multi-nodo.  Questo miglioramento consente di distribuire configurazioni vSAN ESA.
++
+--
+vSAN ESA è una configurazione specifica di ESX e una nuova architettura per VMware vSAN introdotta in vSphere 8. vSAN ESA è progettato per offrire maggiore efficienza, scalabilità e prestazioni, in particolare quando si utilizzano dispositivi flash TLC basati su NVMe.
+
+ONTAP Select Deploy e ONTAP Select per ESX supportano la configurazione di un cluster ONTAP Select a nodo singolo e multi-nodo, utilizzando un vSAN o un tipo di datastore di array esterno per il suo pool di archiviazione.
+
+[NOTE]
+====
+Per eseguire operazioni sulla libreria dei contenuti, è necessario accedere a livelli di autorizzazione aggiuntivi.  Questa operazione è necessaria per le distribuzioni vSAN ESA se si lavora con ruoli limitati.
+
+link:https://docs.netapp.com/us-en/ontap-select/reference_plan_dep_vmware.html["Scopri come accedere ai livelli di autorizzazione per le operazioni della libreria di contenuti"^] .
+
+====
 --
 Supporto driver NDA aggiornato:: A partire da ONTAP Select 9.17.1, il driver di dispositivo NDA (NVMe Direct Access) di FreeBSD sostituisce il driver NVD (NVMe Express Disk Driver). Il driver di FreeBSD fornisce supporto per i dispositivi ad accesso diretto implementando il protocollo di comando NVMe. Quando si distribuisce un cluster ONTAP Select 9.17.1 o si aggiorna un cluster ONTAP Select esistente alla versione 9.17.1, il driver di FreeBSD viene avviato per impostazione predefinita durante la configurazione dei dispositivi NVMe.
 +

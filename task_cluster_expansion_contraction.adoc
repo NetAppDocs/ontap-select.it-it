@@ -4,7 +4,7 @@ permalink: task_cluster_expansion_contraction.html
 keywords: cluster, expand, expansion, contract, contraction, six, eight, node deployment workflow, workflow, deployment steps 
 summary: A partire da ONTAP Select 9.15.1 è possibile aumentare le dimensioni di un cluster esistente da sei a otto nodi e ridurre le dimensioni del cluster da otto a sei nodi. 
 ---
-= Espansione o contrazione di un cluster ONTAP Select
+= Espandi o contrai un cluster ONTAP Select ESXi o KVM
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,9 +14,9 @@ summary: A partire da ONTAP Select 9.15.1 è possibile aumentare le dimensioni d
 
 
 [role="lead"]
-È possibile aumentare la dimensione del cluster di un cluster ONTAP Select esistente da un cluster a sei nodi a un cluster a otto nodi e ridurne la dimensione da un cluster a otto nodi a un cluster a sei nodi
+È possibile aumentare le dimensioni del cluster di un cluster ONTAP Select esistente per gli host hypervisor ESXi e KVM.  Per gli host KVM, è possibile aumentare le dimensioni del cluster da sei a otto nodi e ridurle da otto a sei nodi.  Per gli host ESXi, è possibile aumentare e diminuire la dimensione del cluster con incrementi compresi tra sei e dodici nodi.
 
-Le seguenti espansioni e contrazioni dei cluster non sono supportate:
+Le seguenti espansioni e contrazioni del cluster non sono supportate per gli host ESXi e KVM:
 
 * Espansioni da cluster a uno, due o quattro nodi a cluster a sei o otto nodi.
 * Contrazioni da cluster a sei o otto nodi a cluster a uno, due o quattro nodi.
@@ -37,21 +37,10 @@ Per modificare il numero di nodi in un cluster in una dimensione non supportata 
 
 == Considerazioni su hardware e storage
 
-La funzionalità di espansione e contrazione del cluster è supportata sugli host hypervisor KVM ed ESXi.
+La funzionalità di espansione e contrazione del cluster è supportata sui seguenti host hypervisor KVM ed ESXi.
 
 [role="tabbed-block"]
 ====
-.KVM
---
-A partire da ONTAP Select 9.17.1, l'espansione e la contrazione dei cluster sono supportate sugli host hypervisor KVM.
-
-L'espansione e la contrazione del cluster sono supportate dalle seguenti versioni dell'hypervisor KVM:
-
-* Red Hat Enterprise Linux a 64 bit 9.6, 9.5, 9.4, 9.3, 9.2, 9.1, 9.0, 8.8, 8.7 e 8.6
-* Rocky Linux 9.6, 9.5, 9.4, 9.3, 9.2, 9.1, 9.0, 8.9, 8.8, 8.7 e 8.6
-
-
---
 .ESXi
 --
 A partire da ONTAP Select 9.15.1, l'espansione e la contrazione dei cluster sono supportate sugli host hypervisor ESXi.
@@ -67,13 +56,42 @@ L'espansione e la contrazione dei cluster sono supportate dalle seguenti version
 
 
 --
+.KVM
+--
+A partire da ONTAP Select 9.17.1, l'espansione e la contrazione dei cluster sono supportate sugli host hypervisor KVM.
+
+L'espansione e la contrazione del cluster sono supportate dalle seguenti versioni dell'hypervisor KVM:
+
+* Red Hat Enterprise Linux a 64 bit 9.6, 9.5, 9.4, 9.3, 9.2, 9.1, 9.0, 8.8, 8.7 e 8.6
+* Rocky Linux 9.6, 9.5, 9.4, 9.3, 9.2, 9.1, 9.0, 8.9, 8.8, 8.7 e 8.6
+
+
+--
 ====
 
 
 == Espandere il cluster
 
-Utilizzare la funzionalità di espansione del cluster per aumentare le dimensioni di un cluster esistente da sei a otto nodi.
+Utilizzare la funzionalità di espansione del cluster per aumentare le dimensioni di un cluster ESXi o KVM esistente.
 
+[role="tabbed-block"]
+====
+.ESXi
+--
+È possibile aumentare le dimensioni di un cluster ESXi esistente nei seguenti incrementi:
+
+* Da sei nodi a otto, dieci o dodici nodi
+* Da otto nodi a dieci o dodici nodi
+* Da dieci a dodici nodi
+
+
+--
+.KVM
+--
+È possibile aumentare le dimensioni di un cluster KVM esistente da sei a otto nodi.
+
+--
+====
 .A proposito di questa attività
 In preparazione all'espansione del cluster, nuovi host ESXi e KVM vengono aggiunti all'inventario e vengono assegnati i dettagli dei nuovi nodi. Prima di avviare il processo di espansione del cluster, un pre-controllo di rete verifica la rete interna selezionata.
 
@@ -119,8 +137,26 @@ Dopo aver espanso il cluster, è necessario eseguire il backup dei dati di confi
 
 == Contrarre il cluster
 
-Utilizzare la funzionalità di contrazione del cluster per ridurre le dimensioni di un cluster esistente da otto a sei nodi.
+Utilizzare la funzionalità di contrazione del cluster per ridurre le dimensioni di un cluster ESXi o KVM esistente.
 
+[role="tabbed-block"]
+====
+.ESXi
+--
+È possibile ridurre le dimensioni di un cluster ESXi esistente nei seguenti incrementi:
+
+* Da dodici nodi a dieci, otto o sei nodi
+* Da dieci nodi a otto o sei nodi
+* Da otto a sei nodi
+
+
+--
+.KVM
+--
+È possibile ridurre le dimensioni di un cluster esistente da otto a sei nodi.
+
+--
+====
 .A proposito di questa attività
 La coppia ha desiderata di nodi nel cluster viene selezionata per prepararsi alla contrazione del cluster durante la procedura.
 

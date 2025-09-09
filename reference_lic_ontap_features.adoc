@@ -57,11 +57,16 @@ NOTE: ONTAP Select supporta DR SVM come origine e destinazione, con un massimo d
 
 * FabricPool
 * SDS MetroCluster (offerta di licenze premium ONTAP Select)
-* SnapLock Enterprise (la conformità SnapLock non è supportata per ONTAP Select)
+* SnapLock Enterprise per ONTAP Select 9.16.1 e versioni precedenti (disponibile dalink:https://mysupport.netapp.com/site/["Sito di supporto NetApp"^] )
++
+
+NOTE: La SnapLock Compliance non è supportata per ONTAP Select.
+
 +
 ** Copie Snapshot a prova di manomissione
 
 
+* Selezione SnapLock
 
 
 

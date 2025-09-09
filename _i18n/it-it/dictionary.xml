@@ -2812,7 +2812,6 @@
   <block id="ae8d825236a3f7c43af8b7a2dcd40918" category="doc">Verificare la connettività di rete tra i nodi ONTAP Select</block>
   <block id="b58c5f0cafd2de6e2a43174f49b5fb62" category="paragraph">La creazione iniziale del cluster può essere utilizzata per creare un cluster ONTAP Select che occupa parte o tutto lo spazio nel datastore iniziale. Una seconda fase consiste nell'eseguire una o più operazioni di aggiunta di capacità utilizzando datastore aggiuntivi fino a raggiungere la capacità totale desiderata. Questa funzionalità è illustrata in dettaglio nella sezione <block ref="707976c9d65fe867eaf11be0a6ab721e" category="inline-link-macro-rx"></block>.</block>
   <block id="6f79f88c3d3696fcca3ac6e4f78fd71f" category="admonition">L'aggiunta di capacità a una macchina virtuale ONTAP Select probabilmente comporta VMDK di dimensioni diverse. Per ulteriori informazioni, consultare la sezione <block ref="707976c9d65fe867eaf11be0a6ab721e" category="inline-link-macro-rx"></block>. A differenza dei sistemi FAS, nello stesso aggregato possono esistere VMDK di dimensioni diverse. ONTAP Select utilizza uno stripe RAID 0 in tutti questi VMDK, il che consente di utilizzare completamente tutto lo spazio in ogni VMDK indipendentemente dalle sue dimensioni.</block>
-  <block id="5498e86ddbc371087e391d7f3cae5701" category="list-text">SnapLock Enterprise (la conformità SnapLock non è supportata per ONTAP Select)</block>
   <block id="18249feda4b97af2b71cdf46188e1e4c" category="section-title">Modificare la password dell'amministratore di distribuzione</block>
   <block id="39c422f1ba6768584ce2b5ea65c4f569" category="doc">Implementa un cluster ONTAP Select usando l'interfaccia a riga di comando</block>
   <block id="6f78f7cef2637ad960245873ccb009cc" category="section-title">Preparazione per il collegamento dello storage al nodo ONTAP Select</block>
@@ -3352,7 +3351,6 @@ dischi di ricambio dell'aggregato di storage</block>
   <block id="43e827b042cf746a0442b15558031d99" category="doc">Accedere a ONTAP Select Deploy utilizzando SSH</block>
   <block id="6a72bf96d9b994589542338ffd146590" category="doc">Aggiornare un'istanza di distribuzione di ONTAP Select</block>
   <block id="c71000b965f24ab9f5c3995026415d28" category="doc">Aggiornare ONTAP Select VMware ESXi alla versione 7,0 o successiva</block>
-  <block id="bd633f5da3bfc77af90d4c908e9bf8ac" category="doc">Espansione o contrazione di un cluster ONTAP Select</block>
   <block id="10094bc8718a18a18fcc32e3cd50df4c" category="sidebar">Secure ONTAP Select (accesso protetto)</block>
   <block id="70ea48dd9234010492aec1d6e7a0d297" category="sidebar">Verificare la connettività di rete</block>
   <block id="4ce7782445b66c31b4b4d786806ae7a1" category="sidebar">Amministrare i servizi mediatori</block>
@@ -3753,7 +3751,6 @@ dischi di ricambio dell'aggregato di storage</block>
   <block id="deb20e04b6a7cd797c67d023a7919cc9" category="inline-link-macro">interfaccia utente web</block>
   <block id="91af5705f16502125e8b2187e64202c0" category="inline-link-macro">CLI</block>
   <block id="9b7a3cef1d3f98a8d89d5d50af86ae90" category="paragraph">Eseguire il controllo della connettività di rete utilizzando <block ref="8b785c8234405c591fd2ca6b43d87925" category="inline-link-macro-rx"></block> o il <block ref="d445e69ec86af9bb8b6f10e8a87603f1" category="inline-link-macro-rx"></block> per confermare la connettività tra i nodi del cluster sulla rete interna.</block>
-  <block id="3e7c1c2f4ff8e34c82dbce131bf96f39" category="paragraph">Le seguenti espansioni e contrazioni dei cluster non sono supportate:</block>
   <block id="399ac94f70d77c6189cd7c4808326bdd" category="list-text">Espansioni da cluster a uno, due o quattro nodi a cluster a sei o otto nodi.</block>
   <block id="f7dcf9444b81db6d7f05c66ad816c0fe" category="paragraph">Per modificare il numero di nodi in un cluster in una dimensione non supportata dall'espansione o dalla contrazione del cluster, è necessario eseguire le seguenti attività:</block>
   <block id="f878a51040555cefe376b9b5a963ff25" category="list-text">Distribuisci un nuovo cluster multi-nodo utilizzando <block ref="e244d19d71425b6ce1016edcf4f160e2" category="inline-link-macro-rx"></block> o il <block ref="e7b95b44ed2cf30f5122b04d3c4d28be" category="inline-link-macro-rx"></block> fornito con l'utilità di amministrazione ONTAP Select Deploy.</block>
@@ -3828,7 +3825,6 @@ dischi di ricambio dell'aggregato di storage</block>
   <block id="0a0cc9b2212847ba1af46f41c160bb46" category="paragraph">È possibile utilizzare la funzionalità di espansione e contrazione del cluster su un cluster ONTAP Select esistente per aumentare le dimensioni da un cluster a sei nodi a uno a otto nodi o per ridurle da un cluster a otto nodi a uno a sei nodi.</block>
   <block id="22cb6accb0a27ceffd521fb74834c16a" category="inline-link-macro">Scopri di più sull'espansione e la contrazione del cluster e sulle versioni supportate degli hypervisor KVM ed ESXi</block>
   <block id="3c14c9e8cb33411708f168ddc9b0d40c" category="paragraph"><block ref="f426c2cadf7fc519436e151211954c8a" category="inline-link-macro-rx"></block> .</block>
-  <block id="8c4c7ec85ddc20b785383c7e3b83aaf3" category="list-text">Supporto per il cloud SnapMirror</block>
   <block id="8e6364cfe908f51088b3ba968ff3a1ef" category="list-text">A partire da ONTAP Select 9.17.1, SnapMirror Cloud è supportato da ONTAP Select. SnapMirror Cloud è una funzionalità ONTAP concessa in licenza, abilitata per impostazione predefinita quando si distribuisce un cluster ONTAP Select 9.17.1 o si aggiorna un cluster ONTAP Select esistente alla versione 9.17.1.</block>
   <block id="138c7cd45c4194bbbdcc248c8d717a95" category="inline-link">Scopri di più sui backup cloud SnapMirror su storage di oggetti</block>
   <block id="a674f1954e78adeee48a68d3b46f7329" category="paragraph"><block ref="e78089da9b0e2900996a3bebc3fd1588" category="inline-link-rx"></block> .</block>
@@ -3880,18 +3876,14 @@ dischi di ricambio dell'aggregato di storage</block>
   <block id="a19233fed380d5b231b023ea93dbe258" category="list-text">Selezionare *Riavvia questo host*.</block>
   <block id="26fe0a3b24674c6c3152ba4fb0ee4ed3" category="paragraph">Il seguente output di esempio è per un host ESXi:</block>
   <block id="1055142d0c7647a07a5e1422110286e5" category="paragraph">Dopo aver preparato gli host, è possibile installare l'utility ONTAP Select Deploy. Deploy guida l'utente nella creazione di cluster di storage ONTAP Select sugli host appena preparati. Durante questo processo, Deploy rileva la presenza delle unità NVMe configurate per il pass-through e le seleziona automaticamente per l'utilizzo come dischi dati ONTAP . È possibile modificare la selezione predefinita, se necessario.</block>
-  <block id="d36012a6f1af06ad2e32fd0380ecd688" category="paragraph">È possibile aumentare la dimensione del cluster di un cluster ONTAP Select esistente da un cluster a sei nodi a un cluster a otto nodi e ridurne la dimensione da un cluster a otto nodi a un cluster a sei nodi</block>
-  <block id="1337ed24c95634be31bc604f5d1e6297" category="paragraph">La funzionalità di espansione e contrazione del cluster è supportata sugli host hypervisor KVM ed ESXi.</block>
   <block id="9c33111b54c52c9fcb0abaf82c9004f8" category="paragraph">A partire da ONTAP Select 9.17.1, l'espansione e la contrazione dei cluster sono supportate sugli host hypervisor KVM.</block>
   <block id="342972daa4f7bc941a67318ae7af313b" category="paragraph">L'espansione e la contrazione del cluster sono supportate dalle seguenti versioni dell'hypervisor KVM:</block>
   <block id="e05b0c53b1a0c5711591f986de5de129" category="list-text">Red Hat Enterprise Linux a 64 bit 9.6, 9.5, 9.4, 9.3, 9.2, 9.1, 9.0, 8.8, 8.7 e 8.6</block>
   <block id="a60b141bdd70b40e77bf0e83f56ade8d" category="paragraph">A partire da ONTAP Select 9.15.1, l'espansione e la contrazione dei cluster sono supportate sugli host hypervisor ESXi.</block>
   <block id="1062164d3bf1751bfb605324bcaf3e29" category="paragraph">L'espansione e la contrazione dei cluster sono supportate dalle seguenti versioni dell'hypervisor ESXi:</block>
-  <block id="e86abbb4089bb949221427ad94aa636a" category="paragraph">Utilizzare la funzionalità di espansione del cluster per aumentare le dimensioni di un cluster esistente da sei a otto nodi.</block>
   <block id="305009997eb17ffe0901beb32fdc2040" category="paragraph">In preparazione all'espansione del cluster, nuovi host ESXi e KVM vengono aggiunti all'inventario e vengono assegnati i dettagli dei nuovi nodi. Prima di avviare il processo di espansione del cluster, un pre-controllo di rete verifica la rete interna selezionata.</block>
   <block id="1c53d6d4916415921dddecf6128580f3" category="list-text">Selezionare i seguenti dettagli di configurazione della coppia ad alta disponibilità (HA) per la quarta coppia HA:</block>
   <block id="1baec4831214642ebba2ccfdd8a785df" category="list-text">Fornire le credenziali ONTAP e selezionare *Espandi cluster*.</block>
-  <block id="e6ed9ac65d6ce64c42573257cebe103e" category="paragraph">Utilizzare la funzionalità di contrazione del cluster per ridurre le dimensioni di un cluster esistente da otto a sei nodi.</block>
   <block id="7cf2e3fec3d1629805de3aab60343896" category="sidebar">Documentazione ONTAP Select 9.17.1</block>
   <block id="968414ab46d3b1a79f89163fe1c9a955" category="admonition">L'uso del tipo di istanza di grandi dimensioni non è supportato su una macchina virtuale basata sul kernel (KVM).</block>
   <block id="aee852b160915b647628e7eef82ecf7e" category="paragraph">È possibile aggiornare sul posto una macchina virtuale dell'utilità ONTAP Select Deploy esistente utilizzando la CLI dell'utilità ONTAP Select Deploy.</block>
@@ -3912,4 +3904,49 @@ dischi di ricambio dell'aggregato di storage</block>
   <block id="abb9205c97b7f267bd63f25baa86e729" category="list-text">Sign in all'utility CLI ONTAP Select Deploy tramite SSH con l'account amministratore.</block>
   <block id="87a5212e058c62281b89455df9a32603" category="paragraph">Prima di completare la procedura di aggiornamento, ti verrà chiesto di creare un backup della configurazione della macchina virtuale ONTAP Select Deploy.  Inoltre, è necessario cancellare la cache del browser in modo da poter visualizzare le pagine ONTAP Select Deploy appena create.</block>
   <block id="c0b79db5f258f0c991a383cbdbf001dd" category="list-text">Sincronizzazione attiva SnapMirror</block>
+  <block id="4d9c10203def873e1c71f3e63344c26f" category="list-text">SnapLock Enterprise per ONTAP Select 9.16.1 e versioni precedenti (disponibile da<block ref="a42716fdd3c80ae75cadfb8024b65de0" category="inline-link-macro-rx"></block> )</block>
+  <block id="2f6bbdcc3a16c2d18a29e52e65bcab80" category="admonition">La SnapLock Compliance non è supportata per ONTAP Select.</block>
+  <block id="047fc3d7b951880ca6749f6433cfe2bf" category="list-text">Selezione SnapLock</block>
+  <block id="eb35a2f875dfa96447c622fdb66d279e" category="list-text">Supporto migliorato per l'espansione e la contrazione del cluster sugli host ESXi</block>
+  <block id="2654d7a70d79a555a3d2a067d08ca074" category="list-text">A partire da ONTAP Select 9.17.1, l'espansione e la contrazione del cluster sono supportate per cluster da sei a dodici nodi su host ESXi:</block>
+  <block id="983f8945aaf0213b99984eb7d1654484" category="paragraph">È possibile aumentare le dimensioni del cluster per un cluster ESXi esistente nei seguenti incrementi:</block>
+  <block id="1ba5d5a69c22e4227b754eb7f598a6fc" category="list-text">Da sei nodi a otto, dieci o dodici nodi</block>
+  <block id="32f41e079924563332d58835bc015a2a" category="list-text">Da otto nodi a dieci o dodici nodi</block>
+  <block id="10edaf0aa7c8fb32db8c46287cc0d719" category="list-text">Da dieci a dodici nodi</block>
+  <block id="e2853d368ec6d993d5cfe565327e81ea" category="paragraph">È possibile ridurre le dimensioni del cluster per un cluster ESXi esistente nei seguenti incrementi:</block>
+  <block id="be51a9b186841f2d88f0b97954d5bb75" category="list-text">Da dodici nodi a dieci, otto o sei nodi</block>
+  <block id="9b08665180caa1c2f681ecd893474c76" category="list-text">Da dieci nodi a otto o sei nodi</block>
+  <block id="fb6ec34800c58ebc5bb6517ce0db74b8" category="list-text">Da otto a sei nodi</block>
+  <block id="1cee57b3ea5529f5b9a7c47c1ca78952" category="list-text">Supporto per le funzionalità ONTAP</block>
+  <block id="61016eff3249741d1200f508768ca397" category="list-text">A partire da ONTAP Select 9.17.1, le seguenti funzionalità ONTAP con licenza sono supportate da ONTAP Select:</block>
+  <block id="cf17614f3329e90d510d18602d4ce8db" category="paragraph">A partire da ONTAP Select 9.17.1, le nuove distribuzioni avranno SnapLock Select automaticamente concesso in licenza.  Per gli aggiornamenti da ONTAP Select 9.16.1 e versioni precedenti, sarà necessario scaricare la licenza SnapLock Select da<block ref="a42716fdd3c80ae75cadfb8024b65de0" category="inline-link-macro-rx"></block> e applicarlo manualmente.</block>
+  <block id="e9d1284d8df9151f9bec7a163cd5c363" category="list-text">Supporto per vSAN ESA su cluster multi-nodo</block>
+  <block id="4ba59a7efee785c52f70cdae7fca55c3" category="list-text">A partire da ONTAP Select 9.17.1, il supporto per vSAN Express Storage Architecture (ESA) è esteso per distribuire cluster multi-nodo.  Questo miglioramento consente di distribuire configurazioni vSAN ESA.</block>
+  <block id="e9c8709140b0de62f90e930862c6b06a" category="paragraph">vSAN ESA è una configurazione specifica di ESX e una nuova architettura per VMware vSAN introdotta in vSphere 8. vSAN ESA è progettato per offrire maggiore efficienza, scalabilità e prestazioni, in particolare quando si utilizzano dispositivi flash TLC basati su NVMe.</block>
+  <block id="ea6c62adffdf9ab5a61acdbc4608592e" category="paragraph">ONTAP Select Deploy e ONTAP Select per ESX supportano la configurazione di un cluster ONTAP Select a nodo singolo e multi-nodo, utilizzando un vSAN o un tipo di datastore di array esterno per il suo pool di archiviazione.</block>
+  <block id="9f2987dffbb8cc07dc722392ca553e1e" category="paragraph">Per eseguire operazioni sulla libreria dei contenuti, è necessario accedere a livelli di autorizzazione aggiuntivi.  Questa operazione è necessaria per le distribuzioni vSAN ESA se si lavora con ruoli limitati.</block>
+  <block id="6146fd29f571a044684d201d9c796583" category="inline-link-macro">Scopri come accedere ai livelli di autorizzazione per le operazioni della libreria di contenuti</block>
+  <block id="23add99dd3b98f3716a4830bf3524c6e" category="paragraph"><block ref="0338668b24eba8707cba4da17831f4b6" category="inline-link-macro-rx"></block> .</block>
+  <block id="2e4143d0df24451229cbcf21d106b6c5" category="section-title">Considerazioni sul server VMware vCenter ONTAP Select Deploy</block>
+  <block id="0cdb970631a712b516a9779c1d127d32" category="section-title">Privilegi VMware vSphere per ESA</block>
+  <block id="fe2a57ed0ddb8d9b57b737aff59f340b" category="paragraph">Di seguito sono elencati i privilegi specifici per la libreria di contenuti vSphere necessari per creare e gestire vSAN Express Storage Architecture (ESA) in vCenter:</block>
+  <block id="7fda80facd4b5302f2a2c887c2ecb595" category="list-text">Aggiungi elemento alla libreria</block>
+  <block id="5ac2b813625b685d2cd86e5bbd2e2259" category="list-text">Crea una libreria locale</block>
+  <block id="036e7b8c4bda5955184609f09f458e15" category="list-text">Elimina elemento della libreria</block>
+  <block id="7ae429c7f415cbd07d1b30147ee76846" category="list-text">Elimina la libreria locale</block>
+  <block id="bf0d559fc72e2b15ec4b32db14be07ad" category="list-text">Leggi l'archiviazione</block>
+  <block id="693401b7881f3c546e1c1e7ac9f6c7e7" category="list-text">Aggiorna i file</block>
+  <block id="cbec5c675188a8b88f95c1615c33fb39" category="list-text">Aggiorna la libreria</block>
+  <block id="cbbbf9758b7ac41123821f7ea427538f" category="list-text">Aggiorna elemento della libreria</block>
+  <block id="845b12256749d66531d9afd69bc3a33c" category="list-text">Aggiorna la biblioteca locale</block>
+  <block id="26f7069f09ce96914fa8e8c3a68a4191" category="doc">Espandi o contrai un cluster ONTAP Select ESXi o KVM</block>
+  <block id="b6901598f11464666113bfe479efe49f" category="paragraph">È possibile aumentare le dimensioni del cluster di un cluster ONTAP Select esistente per gli host hypervisor ESXi e KVM.  Per gli host KVM, è possibile aumentare le dimensioni del cluster da sei a otto nodi e ridurle da otto a sei nodi.  Per gli host ESXi, è possibile aumentare e diminuire la dimensione del cluster con incrementi compresi tra sei e dodici nodi.</block>
+  <block id="936ee35c221853e402fecb3657e726ba" category="paragraph">Le seguenti espansioni e contrazioni del cluster non sono supportate per gli host ESXi e KVM:</block>
+  <block id="ca069be0eeb72c96905b0cdbf504214d" category="paragraph">La funzionalità di espansione e contrazione del cluster è supportata sui seguenti host hypervisor KVM ed ESXi.</block>
+  <block id="e408638ff8e3e34af8feb723461e1722" category="paragraph">Utilizzare la funzionalità di espansione del cluster per aumentare le dimensioni di un cluster ESXi o KVM esistente.</block>
+  <block id="3678d282a88e095e0e76381ffa83ff7c" category="paragraph">È possibile aumentare le dimensioni di un cluster ESXi esistente nei seguenti incrementi:</block>
+  <block id="ba14db9083442c41643b3455693e3ee2" category="paragraph">È possibile aumentare le dimensioni di un cluster KVM esistente da sei a otto nodi.</block>
+  <block id="dbdf8658126f3cab82aa007ed31794d3" category="paragraph">Utilizzare la funzionalità di contrazione del cluster per ridurre le dimensioni di un cluster ESXi o KVM esistente.</block>
+  <block id="419d991bb53188641539fa8dfe55b258" category="paragraph">È possibile ridurre le dimensioni di un cluster ESXi esistente nei seguenti incrementi:</block>
+  <block id="50261774776b49c62695c35def3230b0" category="paragraph">È possibile ridurre le dimensioni di un cluster esistente da otto a sei nodi.</block>
 </blocks>
