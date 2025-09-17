@@ -3153,7 +3153,6 @@ dischi di ricambio dell'aggregato di storage</block>
   <block id="8acb58cbd50ef1b468a020ee0bd351d3" category="inline-link-macro"><block ref="8acb58cbd50ef1b468a020ee0bd351d3" category="inline-link-rx"></block></block>
   <block id="2352c4e1f4d0024ade0869e00e6243f4" category="paragraph"><block ref="2352c4e1f4d0024ade0869e00e6243f4" category="inline-link-macro-rx"></block></block>
   <block id="aae155889087fca42368d9fab8b54ee6" category="list-text">NDMP</block>
-  <block id="1bacbb36e2afde0c7a93da85daa18ef1" category="list-text">Tipo di istanza piccolo, medio o grande</block>
   <block id="4241d8a2662be78b68fdfaf8b9daec1a" category="list-text">HDD, SSD o dischi NVMe</block>
   <block id="6d0db0daccb7db9a59bfff9fe2840721" category="section-title">Gestire le licenze aggiuntive</block>
   <block id="85180b24dbd0c343b9c87bf144ede023" category="inline-link-macro">Panoramica sulla gestione delle licenze (solo amministratori del cluster)</block>
@@ -3545,10 +3544,8 @@ dischi di ricambio dell'aggregato di storage</block>
   <block id="e73d640a676c83c4510d0212e506bb38" category="cell">18 core / 136GB GB di RAM</block>
   <block id="522c4ec4d9d59e1a992d989c8d770589" category="cell">Rete (per nodo)</block>
   <block id="d5fda742cbaf307ce4ca202b12335858" category="cell">Minimo due porte 1GbE per un cluster a nodo singolo minimo di quattro porte 1GbE per un cluster a due nodi (coppia ha) minimo di due porte 10GbE per un cluster a quattro, sei o otto nodi</block>
-  <block id="c65eee5a4810d852ee01a79b87c993f3" category="paragraph">^1^ presuppone due core e 8Gb GB di RAM per l'hypervisor.</block>
   <block id="f0cb6783b152b19ceab16227ca3976a2" category="open-title">Tipo di storage</block>
   <block id="5939197c86f855d26c9639db3b9a29d6" category="paragraph">La tabella seguente fornisce il tipo di licenza minimo richiesto per lo spazio di archiviazione specificato. </block>
-  <block id="1138bbb83d6525f914cbce8dccc4a874" category="cell">Pemium XL</block>
   <block id="e629ab9880aae245163ce498ab9e1389" category="cell">Piccola e media</block>
   <block id="a09a88160dc1591cac42ba911581e599" category="cell">Piccola, media e grande</block>
   <block id="93c34d5f173f74aeed0b64401f2a6edc" category="cell">Das locale con controller RAID hardware</block>
@@ -3569,7 +3566,6 @@ dischi di ricambio dell'aggregato di storage</block>
   <block id="049f7d1a5b523b8230ca21c727474d11" category="cell">Software di gestione</block>
   <block id="f1680d42c94acc804fddda46a7e4602d" category="cell">Suite di gestione NetApp Active IQ Unified Manager ONTAP Select Deploy Utility SnapCenter (opzionale)</block>
   <block id="bbf6609978bbf45921ea0dae059fde72" category="inline-link-macro">Ottieni ulteriori informazioni sui tipi di licenza per Tier di capacità e Capacity Pool</block>
-  <block id="10aa5d1416b41ba5cd05d276a6c13328" category="paragraph"><block ref="6799f681592f9a0a7cf264c2b7bcd3d7" category="inline-link-macro-rx"></block>.</block>
   <block id="91d83e84a03b1a016f22b6743fa4a929" category="summary">Una volta stabilito che ONTAP Select è adatto alla tua organizzazione, puoi acquistare le licenze necessarie per supportare un'implementazione in produzione. Devi scegliere il modello di licenza per Tier di capacità o pool di capacità, nonché la capacità dello storage per ogni implementazione.</block>
   <block id="580ede122197eca33afea87d209746f9" category="paragraph">I modelli di licenza _Capacity Tiers_ e _Capacity Pool_ sono molto diversi sotto vari aspetti. Tuttavia, i due modelli di licenza condividono diverse caratteristiche comuni, tra cui:</block>
   <block id="8e8e728e920aef8a8e61276592f8f07a" category="section-title">Modello di licensing basato su Tier di capacità</block>
@@ -3949,4 +3945,8 @@ dischi di ricambio dell'aggregato di storage</block>
   <block id="dbdf8658126f3cab82aa007ed31794d3" category="paragraph">Utilizzare la funzionalità di contrazione del cluster per ridurre le dimensioni di un cluster ESXi o KVM esistente.</block>
   <block id="419d991bb53188641539fa8dfe55b258" category="paragraph">È possibile ridurre le dimensioni di un cluster ESXi esistente nei seguenti incrementi:</block>
   <block id="50261774776b49c62695c35def3230b0" category="paragraph">È possibile ridurre le dimensioni di un cluster esistente da otto a sei nodi.</block>
+  <block id="64f27557c7c3169a5053aaf03c554939" category="list-text">Tipi di istanza piccoli, medi o grandi</block>
+  <block id="4e59a04163b76608c718d51a77e0ab85" category="paragraph">^1^ Presuppone due core e 8 GB di RAM per l'hypervisor.</block>
+  <block id="8b8284ef1bc414b0568b54a0a11232ad" category="cell">Applicabile</block>
+  <block id="6799f681592f9a0a7cf264c2b7bcd3d7" category="list-text"><block ref="6799f681592f9a0a7cf264c2b7bcd3d7" category="inline-link-macro-rx"></block></block>
 </blocks>
