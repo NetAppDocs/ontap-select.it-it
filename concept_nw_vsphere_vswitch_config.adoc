@@ -66,7 +66,7 @@ L'ordine delle porte nell'elenco di standby è importante. La tabella seguente f
 
 | Standby 3 | vmnic3 | vmnic2 | vmnic1 | vmnic0 
 |===
-Le seguenti figure mostrano le configurazioni dei gruppi di porte di rete esterne dalla GUI di vCenter (ONTAP-External e ONTAP-External2). Si noti che gli adattatori attivi provengono da schede di rete diverse. In questa configurazione, vmnic 4 e vmnic 5 sono porte doppie sulla stessa scheda NIC fisica, mentre vmnic 6 e vminc 7 sono analogamente porte doppie su una scheda NIC separata (in questo esempio non vengono utilizzate le porte da 0 a 3). L'ordine degli adattatori di standby fornisce un failover gerarchico con le ultime porte della rete interna. L'ordine delle porte interne nell'elenco di standby viene similmente scambiato tra i due gruppi di porte esterne.
+Le figure seguenti mostrano le configurazioni dei gruppi di porte di rete esterne dalla UI di vCenter (ONTAP-External e ONTAP-External2). Si noti che gli adattatori attivi provengono da schede di rete diverse. In questa configurazione, vmnic 4 e vmnic 5 sono porte doppie sulla stessa scheda di rete fisica, mentre vmnic 6 e vminc 7 sono porte doppie su una scheda di rete separata (le schede vnmic da 0 a 3 non vengono utilizzate in questo esempio). L'ordine delle schede di standby fornisce un failover gerarchico, con le porte della rete interna posizionate per ultime. L'ordine delle porte interne nell'elenco di standby viene analogamente scambiato tra i due gruppi di porte esterne.
 
 *Parte 1: Configurazioni del gruppo di porte esterne ONTAP Select*
 

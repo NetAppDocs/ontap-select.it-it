@@ -83,7 +83,7 @@ Dopo una migrazione delle macchine virtuali:: Dopo la migrazione di una macchina
 È possibile eseguire un aggiornamento del cluster per aggiornare il database di configurazione di implementazione utilizzando l'interfaccia utente Web.
 
 
-NOTE: Invece di utilizzare la GUI di distribuzione, è possibile utilizzare il comando di refresh del cluster nella shell di distribuzione della CLI per aggiornare un cluster.
+NOTE: Invece di utilizzare l'interfaccia utente di Deploy, è possibile utilizzare il comando di aggiornamento del cluster nella shell Deploy CLI per aggiornare un cluster.
 
 Configurazione di cluster e macchine virtuali:: Alcuni dei valori di configurazione che possono cambiare e causare la mancata sincronizzazione del database di implementazione includono:
 +

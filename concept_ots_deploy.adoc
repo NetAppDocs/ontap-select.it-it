@@ -41,7 +41,7 @@ Sono disponibili diverse opzioni per l'accesso all'utilità di amministrazione d
 
 === Interfaccia grafica utente Web
 
-È possibile accedere all'utilità di implementazione tramite un moderno browser Web. La GUI web fornisce un'interfaccia intuitiva e facile da usare e, nella maggior parte dei casi, sarà l'interfaccia principale quando si utilizza l'utility.
+È possibile accedere all'utilità Deploy tramite un browser web moderno. L'interfaccia utente grafica (UI) web offre un'interfaccia intuitiva e facile da usare e, nella maggior parte dei casi, costituirà l'interfaccia principale durante l'utilizzo dell'utilità.
 
 
 
