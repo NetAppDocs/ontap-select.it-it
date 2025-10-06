@@ -20,7 +20,7 @@ Puoi acquistare una licenza ONTAP Select Tier di capacità o Capacity Pool a liv
 
 == Cosa offre una licenza per piattaforma
 
-Un'offerta di licenza specifica definisce e limita le funzionalità dell'host hypervisor in due aree:
+Un'offerta di licenza specifica determina le capacità dell'host hypervisor in due aree:
 
 * Tipo di istanza (CPU, memoria)
 * Funzionalità aggiuntive
@@ -28,52 +28,44 @@ Un'offerta di licenza specifica definisce e limita le funzionalità dell'host hy
 
 Le offerte di licenza sono organizzate in ordine crescente di funzionalità, da standard a premium XL. In generale, l'opzione di licenza scelta garantisce le funzionalità di quel livello e di tutti i livelli inferiori. Ad esempio, il livello premium offre funzionalità sia premium che standard.
 
+Nella tabella seguente vengono confrontate le funzionalità delle licenze standard, premium e premium XL.
+
+[cols="25,25,25,25,25"]
+|===
+2+| La licenza supporta ... | Standard | Premium | Premium XL 
 
 
-== Offerte di licenze per la piattaforma
-
-Sono disponibili tre offerte di licenze per piattaforme.
+2+| Tipo di istanza | Solo piccolo | Piccola o media | Piccola, media o grande 
 
 
-
-=== Standard
-
-L'offerta standard offre le seguenti funzionalità:
-
-* Solo tipo di istanza di piccole dimensioni
-* Solo dischi rigidi (HDD)
-* Solo controller RAID hardware locale
-* VNAS
+.2+| Unità disco rigido (HDD) in un ... | Configurazione RAID hardware | Sì | Sì | Sì 
 
 
+| Configurazione vNAS | Sì | Sì | Sì 
 
 
-=== Premium
-
-L'offerta premium offre le seguenti funzionalità:
-
-* Tipo di istanza piccola o media
-* Unità disco rigido (HDD) o unità a stato solido (SSD)
-* Controller RAID hardware locale o RAID software
-* VNAS
-* Scheda di sicurezza MetroCluster
+.3+| Unità a stato solido (SSD) in un ... | Configurazione RAID hardware | No | Sì | Sì 
 
 
+| Configurazione RAID software | No | Sì | Sì 
 
 
-=== Premium XL
-
-L'offerta premium XL offre le seguenti funzionalità:
-
-* Tipi di istanza piccoli, medi o grandi
-* HDD, SSD o dischi NVMe
-* Controller RAID hardware locale o RAID software
-* VNAS
-* Scheda di sicurezza MetroCluster
+| Configurazione vNAS | Sì | Sì | Sì 
 
 
+.3+| Unità NVMe in un ... | Configurazione RAID hardware | No | No | Sì 
 
-NOTE: L'uso del tipo di istanza di grandi dimensioni non è supportato su una macchina virtuale basata sul kernel (KVM).
+
+| Configurazione RAID software | No | No | Sì 
+
+
+| Configurazione vNAS | Sì | Sì | Sì 
+
+
+2+| Scheda di sicurezza MetroCluster | No | Sì | Sì 
+|===
+
+NOTE: Le macchine virtuali basate sul kernel (KVM) non supportano il tipo di istanza di grandi dimensioni.
 
 
 

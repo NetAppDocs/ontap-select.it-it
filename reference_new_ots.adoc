@@ -65,23 +65,13 @@ Supporto migliorato per l'espansione e la contrazione del cluster sugli host ESX
 link:task_cluster_expansion_contraction.html["Scopri di più sull'espansione e la contrazione del cluster e sulle versioni supportate degli hypervisor KVM ed ESXi"] .
 
 --
-Supporto per le funzionalità ONTAP:: A partire da ONTAP Select 9.17.1, le seguenti funzionalità ONTAP con licenza sono supportate da ONTAP Select:
+Supporto per il cloud SnapMirror:: A partire da ONTAP Select 9.17.1, SnapMirror Cloud è supportato da ONTAP Select. SnapMirror Cloud è una funzionalità ONTAP concessa in licenza, abilitata per impostazione predefinita quando si distribuisce un cluster ONTAP Select 9.17.1 o si aggiorna un cluster ONTAP Select esistente alla versione 9.17.1.
 +
 --
-* Selezione SnapLock
-+
-A partire da ONTAP Select 9.17.1, le nuove distribuzioni avranno SnapLock Select automaticamente concesso in licenza.  Per gli aggiornamenti da ONTAP Select 9.16.1 e versioni precedenti, sarà necessario scaricare la licenza SnapLock Select dalink:https://mysupport.netapp.com/site/["Sito di supporto NetApp"^] e applicarlo manualmente.
-
-* Cloud SnapMirror
-+
-A partire da ONTAP Select 9.17.1, SnapMirror Cloud è supportato da ONTAP Select. SnapMirror Cloud è una funzionalità ONTAP concessa in licenza, abilitata per impostazione predefinita quando si distribuisce un cluster ONTAP Select 9.17.1 o si aggiorna un cluster ONTAP Select esistente alla versione 9.17.1.
-
-+
 https://docs.netapp.com/us-en/ontap/concepts/snapmirror-cloud-backups-object-store-concept.html["Scopri di più sui backup cloud SnapMirror su storage di oggetti"^] .
 
-
-
 --
+Supporto per SnapLock Select Enterprise:: A partire da ONTAP Select 9.17.1, le nuove distribuzioni dispongono automaticamente della licenza SnapLock Select Enterprise (incluso il blocco snapshot antimanomissione).  Per gli aggiornamenti da ONTAP Select 9.16.1 e versioni precedenti, è necessario scaricare la licenza SnapLock Select dalink:https://mysupport.netapp.com/site/["Sito di supporto NetApp"^] e applicarlo manualmente.
 Supporto per vSAN ESA su cluster multi-nodo:: A partire da ONTAP Select 9.17.1, il supporto per vSAN Express Storage Architecture (ESA) è esteso per distribuire cluster multi-nodo.  Questo miglioramento consente di distribuire configurazioni vSAN ESA.
 +
 --

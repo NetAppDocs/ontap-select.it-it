@@ -132,4 +132,6 @@ La modifica delle proprietà delle porte ONTAP, tra cui velocità, duplex e cont
 
 
 .Informazioni correlate
-link:reference_lic_ontap_features.html#ontap-features-automatically-enabled-by-default["Ulteriori informazioni sulle funzioni di ONTAP attivate per impostazione predefinita"] link:concept_lic_evaluation.html["Scopri le opzioni di licenza di ONTAP Select"]
+* link:reference_lic_ontap_features.html#ontap-features-automatically-enabled-by-default["Ulteriori informazioni sulle funzioni di ONTAP attivate per impostazione predefinita"]
+* link:concept_lic_evaluation.html["Scopri le opzioni di licenza di ONTAP Select"]
+
