@@ -196,15 +196,15 @@ La pagina viene aggiornata automaticamente a intervalli regolari.
 ====
 
 
-== Passaggio 3: Dopo aver terminato
+== Fase 3: Completare la distribuzione
 
-Verificare che la funzione ONTAP Select AutoSupport sia configurata e quindi eseguire il backup dei dati di configurazione di ONTAP Select Deploy.
+Dopo aver distribuito il cluster, confermare che la funzionalità ONTAP Select AutoSupport sia configurata e quindilink:task_cli_clusters.html["eseguire il backup dei dati di configurazione ONTAP Select Deploy"] .
 
 [TIP]
 ====
 Se l'operazione di creazione del cluster viene avviata ma non viene completata, la password amministrativa di ONTAP definita potrebbe non essere applicata. In tal caso, è possibile determinare la password amministrativa temporanea per il cluster ONTAP Select utilizzando il seguente comando CLI:
 
-[listing]
+[source, cli]
 ----
 (ONTAPdeploy) !/opt/netapp/tools/get_cluster_temp_credentials --cluster-name my_cluster
 ----

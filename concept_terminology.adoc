@@ -98,7 +98,7 @@ RAID software:: Quando si utilizza lo storage DAS (Direct-Attached Storage), la 
 
 
 [[ontap-select-image-install]]
-Installazione dell'immagine ONTAP Select:: A partire da ONTAP Select Deploy 2.8, l'utility di amministrazione di deploy contiene solo una singola versione di ONTAP Select. La versione inclusa è la più recente disponibile al momento del rilascio. La funzionalità di installazione dell'immagine ONTAP Select consente di aggiungere versioni precedenti di ONTAP Select all'istanza dell'utilità di distribuzione, che può essere utilizzata durante la distribuzione di un cluster ONTAP Select. Vedere link:task_cli_deploy_image_add.html["Aggiungi immagini ONTAP Select per ulteriori informazioni"].
+Installazione dell'immagine ONTAP Select:: L'utilità di amministrazione Deploy contiene una sola versione di ONTAP Select. La versione inclusa è la più recente disponibile al momento del rilascio. La funzionalità di installazione dell'immagine ONTAP Select consente di aggiungere versioni precedenti di ONTAP Select all'istanza dell'utility Deploy, che possono quindi essere utilizzate durante la distribuzione di un cluster ONTAP Select . Vederelink:task_cli_deploy_image_add.html["Aggiungi immagini ONTAP Select per ulteriori informazioni"] .
 
 
 

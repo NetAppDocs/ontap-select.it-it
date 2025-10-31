@@ -29,13 +29,12 @@ NOTE: Sebbene sia progettato principalmente per l'ambiente di filiali e filiali,
 Quando un cluster è costituito da due nodi, non è possibile ottenere il quorum richiesto quando un nodo non riesce o perde la comunicazione. Per risolvere questi tipi di situazioni di split-brain, ogni istanza dell'utilità di implementazione di ONTAP Select include un servizio di mediazione. Questo servizio si connette a ciascun nodo dei cluster a due nodi attivi per monitorare le coppie ha e assistere nella gestione degli errori. Il servizio mediatore mantiene le informazioni sullo stato ha in corrispondenza di una destinazione iSCSI dedicata associata a ciascun cluster a due nodi.
 
 
-CAUTION: Se si dispone di uno o più cluster a due nodi attivi, la macchina virtuale ONTAP Select Deploy che amministra i cluster deve essere sempre in esecuzione. Se la macchina virtuale di implementazione viene arrestata o non funziona, il servizio mediatore non è disponibile e la funzionalità ha viene persa per i cluster a due nodi.
+CAUTION: Se si dispone di uno o più cluster a due nodi attivi, la macchina virtuale ONTAP Select Deploy che amministra i cluster deve essere sempre in esecuzione. Se la macchina virtuale ONTAP Select Deploy viene arrestata o non funziona correttamente, il servizio mediatore non è disponibile e la funzionalità HA viene persa per i cluster a due nodi.
 
 .Ubicazione del servizio cluster e mediatore
-Poiché i cluster a due nodi vengono generalmente implementati in una sede remota o in una filiale, possono essere remoti dal data center aziendale e dall'utility di implementazione che fornisce supporto amministrativo. Con questa configurazione, il traffico di gestione tra l'utility di implementazione e il cluster passa attraverso la WAN. Per ulteriori informazioni su limitazioni e restrizioni, consulta le note sulla versione.
+Poiché i cluster a due nodi vengono in genere distribuiti in una filiale o in un ufficio remoto, possono essere distanti dal data center aziendale e dall'utilità ONTAP Select Deploy che fornisce supporto amministrativo.  Con questa configurazione, il traffico di gestione tra l'utilità ONTAP Select Deploy e il cluster scorre sulla WAN. Consultare le note di rilascio per ulteriori informazioni su limitazioni e restrizioni.
 
-.Eseguire il backup dei dati di configurazione Deploy
-È consigliabile eseguire regolarmente il backup dei dati di configurazione di implementazione, anche dopo la creazione di un cluster. Ciò diventa particolarmente importante con i cluster a due nodi, a causa dei dati di configurazione del mediatore inclusi nel backup.
+. Indirizzo IP statico assegnato a ONTAP Select Distribuisci
 
-.Indirizzo IP statico assegnato per l'implementazione
-È necessario assegnare un indirizzo IP statico all'utilità di amministrazione di Deploy. Questo requisito si applica a tutte le istanze di implementazione che gestiscono uno o più cluster a due nodi ONTAP Select.
+
+È necessario assegnare un indirizzo IP statico all'utilità di amministrazione ONTAP Select Deploy.  Questo requisito si applica a tutte le istanze ONTAP Select Deploy che gestiscono uno o più cluster a due nodi ONTAP Select .

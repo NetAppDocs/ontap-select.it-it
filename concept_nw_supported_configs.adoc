@@ -34,7 +34,7 @@ Sono supportate diverse configurazioni Ethernet in base alle dimensioni del clus
 | Cluster a due nodi o SDS MetroCluster | 4 x 1 GbE o 1 x 10 GbE | 2 x 10 GbE 
 
 
-| cluster a 4/6/8 nodi | 2 x 10 GbE | 4 x 10 GbE o 2 x 25/40 GbE 
+| Cluster a quattro, sei o otto nodi | 2 x 10 GbE | 4 x 10 GbE o 2 x 25/40 GbE 
 |===
 
 NOTE: La conversione tra topologie di collegamento singolo e di collegamento multiplo in un cluster in esecuzione non è supportata a causa della possibile necessità di convertire tra diverse configurazioni di raggruppamento NIC richieste per ciascuna topologia.

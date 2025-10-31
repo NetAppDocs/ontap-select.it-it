@@ -17,6 +17,9 @@ summary: 'Grazie alla flessibilità intrinseca dei servizi web REST, è possibil
 Grazie alla flessibilità intrinseca dei servizi web REST, è possibile accedere all'API di implementazione ONTAP Select in diversi modi.
 
 
+NOTE: All'API REST inclusa in ONTAP Select Deploy viene assegnato un numero di versione. Il numero di versione dell'API è indipendente dal numero di release di Deploy. L'utilità di amministrazione ONTAP Select 9.17.1 Deploy include la versione 3 dell'API REST.
+
+
 
 == Implementare l'interfaccia utente nativa dell'utility
 

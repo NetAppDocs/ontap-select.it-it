@@ -480,5 +480,5 @@ cluster show -name <cluster_name>
 ----
 
 
-.Al termine
-È necessario eseguire il backup dei dati di configurazione di ONTAP Select Deploy.
+.Cosa succederà ora?
+link:task_cli_clusters.html["Eseguire il backup dei dati di configurazione ONTAP Select Deploy"].

@@ -148,9 +148,9 @@ Per l'alta disponibilità, è necessario prendere in considerazione le seguenti 
 
 === Implementare i backup
 
-È consigliabile eseguire regolarmente il backup dei dati di configurazione di implementazione, anche dopo la creazione di un cluster. Ciò diventa particolarmente importante con i cluster a due nodi, perché i dati di configurazione del mediatore sono inclusi nel backup.
+È buona norma eseguire regolarmente il backup dei dati di configurazione di Deploy, anche dopo aver creato un cluster. Questo diventa particolarmente importante con i cluster a due nodi, perché i dati di configurazione del mediatore sono inclusi nel backup.
 
-Dopo aver creato o implementato un cluster, è necessario eseguire il backup dei dati di configurazione di ONTAP Select Deploy.
+Dopo aver creato o distribuito un cluster, dovrestilink:task_cli_clusters.html["eseguire il backup dei dati di configurazione ONTAP Select Deploy"] .
 
 
 
