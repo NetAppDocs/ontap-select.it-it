@@ -40,16 +40,20 @@ Il file di backup creato acquisisce tutti i dati di configurazione dalla macchin
 . Accedere alla CLI dell'utility di implementazione utilizzando SSH con l'account amministratore.
 . Creare un backup dei dati di configurazione di implementazione, che viene memorizzato in una directory interna nel server di implementazione:
 +
-`deploy backup create`
-
+[source, cli]
+----
+deploy backup create
+----
 . Fornire una password per il backup quando richiesto.
 +
 Il file di backup viene crittografato in base alla password.
 
 . Visualizzare i backup disponibili nel sistema:
 +
-`deploy backup show -detailed`
-
+[source, cli]
+----
+deploy backup show -detailed
+----
 . Selezionare il file di backup in base alla data nel campo *created* e registrare il valore *Download URL*.
 +
 È possibile accedere al file di backup tramite l'URL.
@@ -92,10 +96,7 @@ link:task_install_deploy.html["Installare ONTAP Select Deploy"]
 È necessario disporre dei dati di configurazione di un backup precedente. I dati sono contenuti in un singolo file e devono essere disponibili sulla workstation locale.
 
 .Fasi
-. In una shell di comandi sulla workstation locale, utilizzare l'utility sftp per caricare il file di backup sulla macchina virtuale di implementazione.
-+
-Esempio
-
+. In una shell dei comandi sulla workstation locale, utilizzare l'utilità sftp per caricare il file di backup sulla macchina virtuale Deploy, come mostrato nell'esempio seguente:
 +
 ....
 sftp admin@10.234.81.101 (provide password when prompted)
@@ -103,12 +104,14 @@ put deploy_backup_20190601162151.tar.gz
 exit
 ....
 . Accedere alla CLI dell'utility di implementazione utilizzando SSH con l'account amministratore.
-. Ripristinare i dati di configurazione.
+. Ripristinare i dati di configurazione:
 +
-`deploy backup restore -path PATHNAME -filename FILENAME`
-
+[source, cli]
+----
+deploy backup restore -path <path_name> -filename <file_name>
+----
 +
-Esempio
+Comando di esempio
 
 +
 `deploy backup restore -path /home/admin -filename deploy_backup_20180601162151.tar.gz`

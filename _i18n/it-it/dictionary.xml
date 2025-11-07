@@ -9,8 +9,6 @@
   <block id="82127225cef946e77040d2fd1420db6f" category="list-text">Rispondere a tutte le richieste in base all'ambiente in uso.</block>
   <block id="c9732055d20960435002cec722852b3e" category="summary">È possibile aggiornare una macchina virtuale dell'utility di implementazione esistente in-place utilizzando l'interfaccia della riga di comando.</block>
   <block id="135b308ed83c53f1516b7c754566d1c4" category="section-title">Prima di iniziare</block>
-  <block id="67a5c1dd24ee56878ca59f7cbb4a6602" category="list-text">Accedere al NetApp Support Site utilizzando un browser Web e fare clic su *Support Quick Links*.</block>
-  <block id="d687fa799cb928d61ab8f8c42c50439d" category="list-text">Fare clic su *trova il prodotto*.</block>
   <block id="a8601f098fd28588686f1b5ce31da2a1" category="list-text">Selezionare la versione desiderata del pacchetto di aggiornamento.</block>
   <block id="9bf3ac5f4cb6341117598df735958bdf" category="list-text">Leggere il Contratto di licenza con l'utente finale (EULA) e fare clic su *Accept &amp; Continue* (Accetta e continua).</block>
   <block id="def8f653fff47640d3bcce40244c6331" category="list-text">Selezionare e scaricare il pacchetto appropriato, rispondendo a tutti i prompt necessari per il proprio ambiente.</block>
@@ -21,7 +19,6 @@
   <block id="4d31142bb7c8f427942e83be227bb1f0" category="paragraph">Il file di aggiornamento viene memorizzato nella home directory dell'utente amministratore.</block>
   <block id="c1f1fdaeb1fc7d288d9969efdd963bcc" category="list-text">Accedere alla CLI dell'utility di implementazione utilizzando SSH con l'account amministratore.</block>
   <block id="ddd583d223b6cdfc7284a7d618756d41" category="list-text">Eseguire l'aggiornamento utilizzando il percorso di directory e il nome file appropriati:</block>
-  <block id="f5fb71abd32be9bc904db11637b6b903" category="paragraph"><block ref="1299ca75bdbf03e068a6eb77561752df" prefix="" category="inline-code"></block></block>
   <block id="bd965e38a0c9cf27aa1bde099308e23f" category="paragraph-title">Al termine</block>
   <block id="aca2fd87d8012efa91dbc6e6c912d7e7" category="summary">ONTAP Select offre opzioni di efficienza dello storage simili alle opzioni di efficienza dello storage presenti negli array FAS e AFF.</block>
   <block id="6b3850335452abbd46e2f81ea011d686" category="doc">Supporto per l'efficienza dello storage</block>
@@ -389,11 +386,9 @@
   <block id="a2223560f3daace4da811f50f2f76708" category="paragraph">Assicurarsi che la distribuzione non stia eseguendo altre attività durante l'operazione di backup.</block>
   <block id="28026b3bb14f3c97b11f481645caf565" category="paragraph">Il file di backup creato acquisisce tutti i dati di configurazione dalla macchina virtuale. Questi dati descrivono gli aspetti dell'ambiente di implementazione, inclusi i cluster ONTAP Select.</block>
   <block id="c4e676380560c2d76ac3009addaa66eb" category="list-text">Creare un backup dei dati di configurazione di implementazione, che viene memorizzato in una directory interna nel server di implementazione:</block>
-  <block id="d52ea963a3560a70eafe6249384cad0e" category="paragraph"><block ref="c04ef71f0ec53cbd28f30e0f5aa2ac96" prefix="" category="inline-code"></block></block>
   <block id="5a6f96ad4278c1232327847e0020aeca" category="list-text">Fornire una password per il backup quando richiesto.</block>
   <block id="57049f039b8ba3ed7da7870227bf63cf" category="paragraph">Il file di backup viene crittografato in base alla password.</block>
   <block id="5a9fe4be7a45fa497ce5ed098b3a3aff" category="list-text">Visualizzare i backup disponibili nel sistema:</block>
-  <block id="08df971d378fcae2bcfc934ca648d17c" category="paragraph"><block ref="a3ca903aa8d2fde0f9c067db9170491f" prefix="" category="inline-code"></block></block>
   <block id="1a5cb9ce2867d3b5aa027c79d38b9b4c" category="list-text">Selezionare il file di backup in base alla data nel campo *created* e registrare il valore *Download URL*.</block>
   <block id="cf3583e0957dd7c033dd10fc82650d20" category="paragraph">È possibile accedere al file di backup tramite l'URL.</block>
   <block id="aeb4d606f61c7fabca15a3d3661cc539" category="list-text">Utilizzando un browser Web o un'utility come Curl, scaricare il file di backup sulla workstation locale con l'URL.</block>
@@ -406,9 +401,6 @@
   <block id="bc53d5b8393b0e7bd459582f7c4fe869" category="list-text">Accedere all'utility di implementazione utilizzando SSH.</block>
   <block id="0354884312c6d9734c8ccd7979edbee9" category="paragraph">È necessario ripristinare i dati di configurazione dalla macchina virtuale dell'utility di implementazione originale alla nuova macchina virtuale. I dati si trovano in un singolo file che è necessario caricare dalla workstation locale.</block>
   <block id="1b364349b93e82578cfe461dabadd928" category="paragraph">È necessario disporre dei dati di configurazione di un backup precedente. I dati sono contenuti in un singolo file e devono essere disponibili sulla workstation locale.</block>
-  <block id="f81fbf9d5f689fab977e68417016783a" category="list-text">In una shell di comandi sulla workstation locale, utilizzare l'utility sftp per caricare il file di backup sulla macchina virtuale di implementazione.</block>
-  <block id="61606c32a4feee098448dfcafda7350b" category="list-text">Ripristinare i dati di configurazione.</block>
-  <block id="b69a9048a49045497e1363c3dd4d30a0" category="paragraph"><block ref="74c713f958b82dddd97e0c5ae0f28649" prefix="" category="inline-code"></block></block>
   <block id="3d76d8ade4be6a0fa76347dff9a10a88" category="paragraph"><block ref="20fb4c52f9dde2eeefb1e3073fdd8d15" prefix="" category="inline-code"></block></block>
   <block id="ffc775822cbd19e463401855c97e8181" category="summary">SDS di ONTAP Select MetroCluster offre una protezione avanzata e un'implementazione conveniente.</block>
   <block id="468c7067a5232ce7f7b5f71d1c6e1685" category="paragraph">Un cluster a due nodi può essere allungato tra due posizioni se vengono soddisfatti determinati requisiti minimi. Questa architettura si adatta perfettamente tra MetroCluster basato su hardware e singoli cluster di data center (definiti tramite hardware o software). I requisiti per le schede di sicurezza ONTAP Select MetroCluster evidenziano la flessibilità generale delle soluzioni di storage software-defined e le differenze tra l'IT e le schede di sicurezza MetroCluster basate su hardware. Non è richiesto hardware proprietario.</block>
@@ -1191,35 +1183,19 @@
   <block id="52759f63bdfc1fb77d852c8854912b25" category="section-title">Programma personalizzato</block>
   <block id="3cb957d5ee7865143f204bb3ad62948d" category="paragraph">È possibile accedere all'API di distribuzione utilizzando uno dei diversi linguaggi e tool di programmazione. Le scelte più popolari includono Python, Java e CURL. Un programma, uno script o uno strumento che utilizza l'API agisce come un client di servizi Web REST. L'utilizzo di un linguaggio di programmazione consente di comprendere meglio l'API e offre l'opportunità di automatizzare le implementazioni di ONTAP Select.</block>
   <block id="6738f098cd2bba79a1109b07a6b3a4e3" category="summary">È possibile aggiungere un'immagine ONTAP Select all'istanza dell'utilità di amministrazione della distribuzione. Una volta installata l'immagine, è possibile utilizzarla per l'implementazione di un cluster ONTAP Select.</block>
-  <block id="7f7382cd875100edcc778a758c7b1209" category="paragraph">Ad alto livello, il processo utilizzato per aggiungere un'immagine ONTAP Select a un'istanza di distribuzione consiste in quattro fasi:</block>
-  <block id="4270b6b39fbe76ef4939c93514f88e51" category="list-text">Download dell'immagine di installazione</block>
-  <block id="0142950d64779e553d9f91719bd60ead" category="list-text">Caricamento dell'immagine di installazione sulla macchina virtuale di implementazione</block>
-  <block id="a1383adc5e3ac160ba2699050ca39978" category="list-text">Aggiunta dell'immagine di installazione</block>
-  <block id="aa8c9595fedf9966773a268dbec612aa" category="list-text">Visualizzazione delle immagini di installazione disponibili</block>
   <block id="ff2a9bd49048e73baaf69d5e3097f161" category="paragraph">Prima di aggiungere nuove immagini ONTAP Select da implementare, è necessario rimuovere tutte le immagini non necessarie.</block>
   <block id="7e0a8cfbb81693d645b2e510efe248df" category="admonition">Aggiungere un'immagine ONTAP Select con una versione precedente alla versione originale inclusa nell'istanza dell'utilità di distribuzione. L'aggiunta di versioni più recenti di ONTAP Select non è una configurazione supportata.</block>
   <block id="807ad9e65833a6b39b8d8286e8b783f8" category="paragraph">Per iniziare il processo di aggiunta di un'immagine ONTAP Select a un'istanza dell'utilità di implementazione, è necessario scaricare l'immagine di installazione dal sito del supporto NetApp. L'immagine di installazione di ONTAP Select viene formattata come singolo file compresso.</block>
-  <block id="3778083b3c866c64222ea90c43b33055" category="list-text">Fare clic su *Download Software* sotto *Top Tasks* e accedere al sito.</block>
-  <block id="da5ed6f3275aa7228f65de977570f140" category="list-text">Scorrere verso il basso e fare clic su *ONTAP Select*.</block>
-  <block id="5f76f77f8f2d50493666c4d9eb015d66" category="list-text">In *Other Available Select Software* (Altro software disponibile), fare clic su *Deploy Upgrade (implementa aggiornamento), Node Upgrade (aggiornamento nodo), Image Inst</block>
   <block id="219698a1df9fbd3c16f4a498102fbc3e" category="paragraph">Dopo aver acquisito l'immagine di installazione di ONTAP Select, è necessario caricare il file sulla macchina virtuale di implementazione.</block>
   <block id="2a5d9f3f5564baf37e1d1a8cf1a3b68c" category="paragraph">Il file dell'immagine di installazione deve essere disponibile sulla workstation locale. È inoltre necessario disporre della password per l'account utente dell'amministratore di implementazione.</block>
   <block id="48c7c41b72e1d678923ce3571aa65b2d" category="list-title">Fase</block>
-  <block id="63b64c746e35843656c2e5ab351a6058" category="list-text">In una shell di comandi sulla workstation locale, caricare il file immagine sulla macchina virtuale di implementazione.</block>
   <block id="1c654c4358e2d4003c74f40926274452" category="paragraph">Il file di installazione del nodo viene memorizzato nella home directory dell'utente amministratore.</block>
-  <block id="16fc31448477212537b6e77370eb37c1" category="paragraph">È possibile aggiungere l'immagine di installazione di ONTAP Select alla directory Deploy Images in modo che sia disponibile durante l'implementazione di un nuovo cluster.</block>
   <block id="1c6a034b63f5d95f8ce563a77103fb05" category="paragraph">È necessario conoscere la directory in cui è stato inserito il file dell'immagine di installazione nella macchina virtuale dell'utility di implementazione. Si presuppone che il file si trovi nella home directory dell'amministratore.</block>
   <block id="782ecd049df8bffe850b977d8d9ef2dd" category="list-text">Accedere alla CLI dell'utility di implementazione utilizzando SSH con l'account amministratore (admin).</block>
   <block id="8b7bd3ee934f35f730dee72837b5aee2" category="list-text">Avvia la shell Bash:</block>
-  <block id="34eaf92501247fea4a9be97412cef6df" category="paragraph"><block ref="7ea53773f57b4efef06ea52e892ada40" prefix="" category="inline-code"></block></block>
-  <block id="418076c036187fc2b385bdd1281ce8bc" category="list-text">Inserire il file dell'immagine di installazione nella directory delle immagini.</block>
-  <block id="c0549956556109e315a844c123220537" category="paragraph">Esempio<block ref="a424c72865fc5e3d7ef425ffe24358a0" prefix=" " category="inline-code"></block></block>
-  <block id="9ef896581aaec3297fd8373103d43cef" category="paragraph">È possibile visualizzare le immagini ONTAP Select disponibili durante l'implementazione di un nuovo cluster.</block>
   <block id="723658df342d95ccbf42a5f9c876dfee" category="list-text">Accedere alla pagina Web della documentazione online dalla macchina virtuale dell'utility di implementazione e accedere utilizzando l'account Administrator (admin):</block>
   <block id="dc43755d370f894f2f9d7a9da08ce7e2" category="paragraph"><block ref="90144a917fbc75e957bda4bdfd99d74c" prefix="" category="inline-code"></block></block>
   <block id="cc95115e3088d1f2d90bf48fa98be3d5" category="paragraph">Utilizzare il nome di dominio o l'indirizzo IP della macchina virtuale di implementazione.</block>
-  <block id="a80b761ab06a4ff6731297d4de180b0b" category="list-text">Andare in fondo alla pagina e fare clic su *Deploy*, quindi fare clic su *GET /images*.</block>
-  <block id="d7053ec6f3f2e9697233f406d33a87fb" category="list-text">Fare clic su *Provalo!* per visualizzare le immagini ONTAP Select disponibili.</block>
   <block id="c5db03c3f05f8d27a033a2f8f7fbf211" category="list-text">Verificare che l'immagine desiderata sia disponibile.</block>
   <block id="24204c997b3d030f4d9ce5fcea7002fe" category="list-text">Un hypervisor preinstallato e supportato</block>
   <block id="411cd9469768abc767a0d3bac2cdf6a7" category="list-text">Una licenza VMware vSphere</block>
@@ -1695,10 +1671,8 @@
   <block id="44f3dc9f001188ee5a7b34cbdc80486f" category="admonition">Non rimuovere le immagini ONTAP Select utilizzate da un cluster.</block>
   <block id="bdcc30baa721ccd0a5acff90c91be1eb" category="paragraph">È possibile rimuovere le immagini ONTAP Select meno recenti che non sono attualmente in uso in un cluster o che sono pianificate per l'utilizzo con una futura implementazione del cluster.</block>
   <block id="fa1108d6713a8e964a0091afacde76b4" category="list-text">Visualizzare i cluster gestiti da Deploy e registrare le immagini ONTAP in uso:</block>
-  <block id="494cb4f7976c64f111b74e9089d5bbd5" category="paragraph"><block ref="639161158d7426b3865ce9c5a6f648b3" prefix="" category="inline-code"></block></block>
   <block id="bc51625a3fe6a0e7ccf7a1059630b41c" category="paragraph">Annotare il numero di versione e la piattaforma dell'hypervisor in ogni caso.</block>
   <block id="75c67769109540e212db27715ac58ee9" category="list-text">Visualizzare tutte le immagini ONTAP Select disponibili:</block>
-  <block id="bac8e85676787adaae3dcc2dd52d64fa" category="paragraph"><block ref="7aee42c90493e9c5d79bbb47b52b690f" prefix="" category="inline-code"></block></block>
   <block id="dc70eb9d82aec891b52c1c2a03dfea96" category="summary">Acquisire familiarità con i concetti generali di rete applicabili all'ambiente ONTAP Select. Quindi, esplora le caratteristiche e le opzioni specifiche disponibili con i cluster a nodo singolo e multi-nodo.</block>
   <block id="5835673e7d17b0c7e15036e16b1efe5f" category="section-title">Rete fisica</block>
   <block id="2ded6502ab49fd8b23f16e584e9fea94" category="paragraph">La rete fisica supporta un'implementazione del cluster ONTAP Select principalmente fornendo l'infrastruttura di switching di livello due sottostante. La configurazione relativa alla rete fisica include sia l'host dell'hypervisor che l'ambiente di rete con switch più ampio.</block>
@@ -1921,19 +1895,11 @@
   <block id="65691488761a7747318eb7ff73d74467" category="paragraph">È possibile utilizzare ONTAP Select per implementare storage aggiuntivo in grado di aumentare le funzionalità dello storage primario. Lo storage aggiuntivo può essere utilizzato per supportare le attività di disaster recovery e i piani di backup dei dati della tua organizzazione.</block>
   <block id="201682dba6c42f044edb1fb3b72e26dd" category="section-title">Sviluppo e test</block>
   <block id="72baaefd6e8827d0e29d5eccbe87eb9d" category="paragraph">Durante la distribuzione di varie applicazioni all'interno dell'organizzazione, è possibile utilizzare ONTAP Select come parte integrante del processo generale di sviluppo e test delle applicazioni. Ad esempio, potrebbe essere necessario uno storage temporaneo per memorizzare i dati di input o output di test. La lunghezza di questi tipi di implementazioni può variare in base alle caratteristiche e ai requisiti dell'applicazione.</block>
-  <block id="ce78f638c1329fc432323298fd5ab053" category="paragraph">Prima di aggiornare il software ESXi sugli hypervisor che ospitano un cluster ONTAP Select, è necessario preparare e selezionare la procedura di aggiornamento appropriata per il proprio ambiente.</block>
-  <block id="a74a74cc9eac206cd17b389aebee1edf" category="admonition">Se si sceglie di eseguire l'aggiornamento a VMware ESXi 6.5, è necessario eseguire l'aggiornamento a ESXi U2 (build 8294253) o superiore. L'utilizzo di ESXi 6.5 U1 può esporre l'utente a un guasto di una macchina virtuale dovuto a un bug noto di VMware.</block>
   <block id="a06d958d7c1e780db3a597737559b331" category="paragraph">Sono disponibili diverse procedure di aggiornamento. Selezionare la procedura appropriata in base ai seguenti criteri:</block>
   <block id="d98bf1b619a94ca49b2cf4e249269541" category="list-text">Le dimensioni del cluster ONTAP Select sono supportate sia cluster a nodo singolo che cluster a nodo multiplo.</block>
-  <block id="c9a714bea6de08f5989eee603a121dae" category="list-text">L'utilizzo dell'aggiornamento ONTAP Select Deploy è possibile sia con che senza l'utility di implementazione.</block>
   <block id="649ae0572dea5b8bc6208820d18b8e73" category="admonition">Selezionare una procedura di aggiornamento che utilizzi l'utility di amministrazione di deploy.</block>
-  <block id="0fca1939c8c0500fa2f3ed6bfce03d40" category="section-title">Al termine della procedura di aggiornamento</block>
   <block id="3020c5e4f7e244ad0af7d9b1e1c3f9cc" category="paragraph">Se si seleziona una procedura di aggiornamento che utilizza l'utility di distribuzione, è necessario eseguire un'operazione di refresh del cluster utilizzando Deploy dopo che tutti i nodi sono stati aggiornati. Per ulteriori informazioni, vedere aggiornamento della configurazione del cluster di implementazione.</block>
   <block id="2b02207ef454c2c6aeeedf7644fa1821" category="paragraph">È possibile utilizzare l'utility di amministrazione di deploy come parte della procedura per aggiornare l'hypervisor VMware ESXi che ospita un cluster a nodo singolo ONTAP Select.</block>
-  <block id="681dd84e331133125fc528e3066ea4b7" category="list-text">Spostare il nodo nello stato offline.</block>
-  <block id="3a5d7f86dd219466ffbcb0e2f8ffd034" category="paragraph">Esempio<block ref="1d9004e86530b1ab04f3876007089fa3" prefix=" " category="inline-code"></block></block>
-  <block id="d1c1e91e03c71fa9882b17583973d0c4" category="list-text">Spostare il nodo nello stato online.</block>
-  <block id="fb373c881fd0931abd6943e8bcf86440" category="paragraph">Esempio<block ref="7f4a244ceab3e93b8a7b88a17bb9bde0" prefix=" " category="inline-code"></block></block>
   <block id="2bcdcfed9ba53c3c8ca4e481e1451e94" category="list-text">Una volta attivato il nodo, verificare che il cluster funzioni correttamente.</block>
   <block id="bba96a171c35e11e4bf7eb548e322d78" category="paragraph">È necessario eseguire un'operazione di refresh del cluster utilizzando l'utility di amministrazione di deploy.</block>
   <block id="c924506282a3ae2065b516094cff9672" category="paragraph">È possibile utilizzare l'utility di amministrazione di Deploy come parte della procedura per aggiornare gli hypervisor VMware ESXi che ospitano un cluster multi-nodo ONTAP Select.</block>
@@ -2020,7 +1986,6 @@
   <block id="55449fd175613962d882ab450cfc5f3c" category="list-text">FabricPool</block>
   <block id="eab10597f9ef50e8058170729878869e" category="list-text">SDS MetroCluster (offerta di licenze premium ONTAP Select)</block>
   <block id="c3c1ba002ed4d0d1ae23559793a734bd" category="inline-link-macro">Confronto tra ONTAP Select e ONTAP 9</block>
-  <block id="77aaedb7dde5f69b11a5683a958edbfc" category="list-text"><block ref="77aaedb7dde5f69b11a5683a958edbfc" category="inline-link-macro-rx"></block></block>
   <block id="18d733133eb14f6d577f2d278fac37a1" category="summary">È possibile utilizzare il comando host modify per modificare un server di gestione host con questa istanza di ONTAP Select Deploy.</block>
   <block id="35f41fa38694b23a0654a4a8c0dd359b" category="doc">Modificare un server di gestione host</block>
   <block id="88f06314571793a45376bea0a67c1684" category="paragraph">È possibile utilizzare<block ref="efefae9f89e157498d052edf2886fd00" prefix=" " category="inline-code"></block> Comando per modificare un server di gestione host con questa istanza di ONTAP Select Deploy.</block>
@@ -2040,60 +2005,31 @@
   <block id="830e3840fa2bc88cc12b99cba76ee4d3" category="paragraph"><block ref="82aa9c15f1551f89eb92d3d4b0470f4c" prefix="" category="inline-code"></block></block>
   <block id="6766f7a2e53a40ab3efd050bec084512" category="paragraph">Il nome utente che ha accesso a questo host. Questo è necessario solo se l'host non è gestito da un server di gestione (ovvero un host ESX gestito da un vCenter).</block>
   <block id="4497c744476a3b6774a7e4659e36bb37" category="summary">Se l'utilità di implementazione di ONTAP Select non riesce o non è disponibile per qualche motivo, si perde la capacità di amministrare i nodi e i cluster ONTAP Select. Inoltre, tutti i cluster a due nodi perdono la funzionalità ha perché il servizio mediatore incluso con l'implementazione non è disponibile. Se si verifica un errore irreversibile, è necessario ripristinare l'istanza dell'utilità di implementazione per ripristinare la funzionalità amministrativa e ha.</block>
-  <block id="732fff5218e24bea555b4f8de50d2d22" category="paragraph">È necessario prepararsi prima di tentare di ripristinare un'istanza dell'utilità di distribuzione per garantire il successo.</block>
-  <block id="201d6cf1ba171c49bcdcb0766d20f3f9" category="paragraph-title">Competenze e informazioni richieste</block>
-  <block id="4e5bd66d05ea6e0425032aae26d54f07" category="paragraph">È necessario conoscere diverse procedure amministrative e disporre delle informazioni necessarie.</block>
-  <block id="7322a68bf06479e293387c20bf0f3e8e" category="paragraph-title">Installazione della macchina virtuale di implementazione</block>
-  <block id="e9b71fd1c3e60cd227138ff80d4b34dd" category="paragraph">È necessario essere in grado di installare una nuova istanza dell'utilità di implementazione di ONTAP Select nell'ambiente hypervisor.</block>
-  <block id="816d0d92458bc1f7a68303a845228dde" category="paragraph-title">Interfaccia a riga di comando di ONTAP</block>
-  <block id="d9b585388e199d807960be00480d9c37" category="paragraph">È necessario essere in grado di accedere all'interfaccia utente di ONTAP del cluster ONTAP Select e utilizzare l'interfaccia della shell.</block>
-  <block id="fe8a09bfef8f50e4e72bec1b0f9c18db" category="paragraph-title">Disponibilità del backup della configurazione dell'utility di implementazione</block>
-  <block id="92a71e755753127bb017bb1fe9bad028" category="paragraph">È necessario determinare se si dispone di un backup dei dati di configurazione dall'istanza dell'utilità di implementazione non riuscita che contiene il cluster a due nodi ONTAP Select. Potrebbe essere presente un backup che non contiene il cluster.</block>
-  <block id="8fbcf0a0690f2df2d9b37ca23e0733f5" category="paragraph-title">Ripristino di un backup della configurazione di implementazione</block>
-  <block id="618988b1c7baef58636565874807619a" category="paragraph">A seconda della procedura di ripristino utilizzata, dovrebbe essere possibile ripristinare un backup dei dati di configurazione di implementazione.</block>
-  <block id="d929d228dc7d6e05fe2b30f1a5826c49" category="paragraph-title">Indirizzo IP della macchina virtuale di implementazione originale</block>
-  <block id="88178796123172aa042c2352197e09e0" category="paragraph">È necessario conoscere l'indirizzo IP della macchina virtuale dell'utility di implementazione originale che ha avuto esito negativo.</block>
-  <block id="b957b13a65ee2e9c4a639a76b0b7cce7" category="paragraph-title">Licenze per la capacità dello storage</block>
-  <block id="ed67f205040bfaf568fb57e318f22a15" category="paragraph-title">Scelta della procedura di ripristino da utilizzare</block>
-  <block id="378cdb3591ae498a782312834334c853" category="paragraph">È necessario decidere quale procedura utilizzare per il ripristino di un'istanza dell'utilità di distribuzione di ONTAP Select. La decisione dipende dalla disponibilità o meno di un backup dei dati di configurazione dall'utilità di implementazione non riuscita originale che contiene il cluster a due nodi ONTAP Select.</block>
   <block id="11530c57a897d905bc943331e58f56b0" category="cell">Si dispone di un backup di implementazione contenente il cluster a due nodi?</block>
-  <block id="b42236ddc43aefb700714337ec5fe465" category="cell">Procedura di ripristino da utilizzare</block>
   <block id="4780c03db443ef1fccbe9971eeda0df0" category="paragraph">Se si dispone di un backup dell'istanza dell'utilità di implementazione non riuscita contenente il cluster a due nodi, è possibile ripristinare i dati di configurazione nella nuova istanza della macchina virtuale di implementazione. A questo punto, è necessario completare il ripristino eseguendo una configurazione aggiuntiva dei due nodi nel cluster ONTAP Select.</block>
-  <block id="50f2c67c1d54b1604865c0785336a1bf" category="paragraph">È necessario disporre di un backup dei dati di configurazione dalla macchina virtuale di implementazione non riuscita originale che contiene il cluster a due nodi. È necessario essere in grado di accedere alla CLI ONTAP del cluster a due nodi e conoscere i nomi ONTAP dei due nodi.</block>
   <block id="04707b3ca56ea70a35e5f72497444b18" category="paragraph">Poiché il backup della configurazione ripristinato contiene il cluster a due nodi, le destinazioni iSCSI del mediatore e le caselle postali vengono ricreate nella nuova macchina virtuale dell'utility di implementazione.</block>
   <block id="10d3454e4067c478fcd215352578896c" category="list-text">Preparare una nuova istanza dell'utilità di implementazione di ONTAP Select:</block>
   <block id="392ad4630b9353f5418297f40a2e9465" category="list-text">Installare una nuova macchina virtuale dell'utility di implementazione.</block>
   <block id="a5817a7120ba5c7f40fbeec33918b40c" category="list-text">Ripristinare la configurazione di implementazione da un backup precedente alla nuova macchina virtuale.</block>
   <block id="2a0f6c83e2e8656a3009a7768b3bac83" category="paragraph">Fare riferimento alle attività correlate per informazioni più dettagliate sulle procedure di installazione e ripristino.</block>
   <block id="3edf4cb19512d4630e64407fdbfacf0f" category="list-text">Accedere all'interfaccia della riga di comando ONTAP del cluster a due nodi ONTAP Select.</block>
-  <block id="232499f93d4af76d76aa851010a3d601" category="list-text">Se l'indirizzo IP della nuova macchina virtuale di implementazione è diverso da quello della macchina virtuale di implementazione originale, è necessario rimuovere le vecchie destinazioni iSCSI del mediatore e aggiungere nuove destinazioni:</block>
   <block id="59375550d620fe069d214b870c7e2f34" category="paragraph">Il<block ref="1d5b49082eab54fe0b7b8eb41e559029" prefix=" " category="inline-code"></block> Il parametro è l'indirizzo IP della nuova macchina virtuale di implementazione.</block>
   <block id="2cc23b20b088fcaa02f28b1f9267a13e" category="paragraph">Questi comandi consentono ai nodi ONTAP Select di rilevare i dischi della mailbox sulla nuova macchina virtuale dell'utility di implementazione.</block>
   <block id="3718a86363802a2f1f5a36285c76206a" category="list-text">Determinare i nomi dei dischi del mediatore:</block>
-  <block id="bd0690415958671ed80cf4e26c22e637" category="paragraph"><block ref="455079588bb9073c15b7e0f40f11afd6" prefix="" category="inline-code"></block></block>
   <block id="1146fee0eb880f0892a23e726ca0a4d2" category="list-text">Assegnare i dischi della mailbox ai due nodi:</block>
   <block id="9d070d121ee26abdb5d314d6fff4c15c" category="list-text">Verificare che il failover dello storage sia attivato:</block>
-  <block id="751035e5db88d172e881299c202d9b13" category="paragraph"><block ref="ddf400f1cb6b8b9330ed6c79c508123c" prefix="" category="inline-code"></block></block>
-  <block id="569f883a1fcdb29c5aa5e29f182e9dd9" category="paragraph">Se non si dispone di un backup dell'istanza dell'utilità di implementazione non riuscita contenente il cluster a due nodi, è necessario configurare la destinazione iSCSI del mediatore e la mailbox nella nuova macchina virtuale di implementazione. A questo punto, è necessario completare il ripristino eseguendo una configurazione aggiuntiva dei due nodi nel cluster ONTAP Select.</block>
-  <block id="1b8f191261c89384d2a9550aaac5eac0" category="paragraph">È necessario disporre del nome della destinazione del mediatore per la nuova istanza dell'utilità di implementazione. È necessario essere in grado di accedere alla CLI ONTAP del cluster a due nodi e conoscere i nomi ONTAP dei due nodi.</block>
   <block id="b641370bc8479ac609268e5b798181a7" category="paragraph">È possibile ripristinare un backup della configurazione sulla nuova macchina virtuale di implementazione anche se non contiene il cluster a due nodi. Poiché il cluster a due nodi non viene ricreato con il ripristino, è necessario aggiungere manualmente la destinazione iSCSI del mediatore e la mailbox alla nuova istanza dell'utilità di implementazione attraverso la pagina Web della documentazione online di ONTAP Select nella distribuzione. È necessario essere in grado di accedere al cluster a due nodi e conoscere i nomi ONTAP dei due nodi.</block>
   <block id="a4e19764a9b0a95876226c599e6aab9a" category="admonition">L'obiettivo della procedura di ripristino è ripristinare il cluster a due nodi in uno stato integro, in cui è possibile eseguire normali operazioni di Takeover e giveback di ha.</block>
   <block id="f5eb374c041ad769f9b37edbfcfdc016" category="list-text">Se si desidera, ripristinare la configurazione di implementazione da un backup precedente alla nuova macchina virtuale.</block>
   <block id="1a811df4dc00792e0b4812c49edd60bc" category="paragraph">Se si ripristina un backup precedente, la nuova istanza di implementazione non conterrà il cluster a due nodi. Per informazioni più dettagliate sulle procedure di installazione e ripristino, consultare la sezione relativa alle informazioni correlate.</block>
   <block id="ccade42401bf54d1ace0721ed8894959" category="list-text">Accedere alla modalità avanzata con privilegi:</block>
   <block id="cffcfc00e24ed8ca2b18bf4a888e0070" category="list-text">Ottenere il nome di destinazione iSCSI del mediatore:</block>
-  <block id="0b8eead8cff957b1221c528cc5815b22" category="paragraph"><block ref="cff0ff1938ab819ebd8763765466e4ec" prefix="" category="inline-code"></block></block>
   <block id="6beda81a8ccb785c3706cadbcacf79db" category="list-text">Accedere alla pagina Web della documentazione online sulla nuova macchina virtuale dell'utility di implementazione e accedere utilizzando l'account admin:</block>
   <block id="5bdffc33624cf554ff99229cfbc8bc1c" category="paragraph"><block ref="65b6906201e24740d3ed28588ffd2826" prefix="" category="inline-code"></block></block>
   <block id="9cf0c17a75f430132839d17e4cdf2734" category="paragraph">È necessario utilizzare l'indirizzo IP della macchina virtuale di implementazione.</block>
-  <block id="c30d588450ec2670c8abb4c5bdfcf92a" category="list-text">Fare clic su *Mediator*, quindi su *GET /mediators*.</block>
-  <block id="896a10bc0a8946569552955f1a8b3e4c" category="list-text">Fare clic su *Provalo!* per visualizzare un elenco di mediatori gestiti da Deploy.</block>
   <block id="7e1f9afbb0146bf2210d834ead709d47" category="paragraph">Annotare l'ID dell'istanza del mediatore desiderata.</block>
-  <block id="deaae3056bff3505c8cf3c3e5f9394f4" category="list-text">Fare clic su *Mediator*, quindi su *POST*.</block>
   <block id="040012e13bef5621713bec788252ef98" category="list-text">Fornire il valore per mediator_ID.</block>
-  <block id="f256ba989ef4bd8aa23530c93ff59b5e" category="list-text">Fare clic su *Model* accanto a.<block ref="afd1be8124115a780c2ac5cb3db1f36d" prefix=" " category="inline-code"></block> e completare il valore del nome.</block>
   <block id="e11663ca33d9f0461cabf12f56a8c381" category="paragraph">Utilizzare il nome di destinazione per il parametro iqn_NAME.</block>
-  <block id="109c8e36bc942c26365dbf0801f87f3d" category="list-text">Fare clic su *Provalo!* per creare la destinazione iSCSI del mediatore.</block>
   <block id="3d85b7e0ce2983da3c1d066243516254" category="paragraph">Se la richiesta ha esito positivo, si riceverà il codice di stato HTTP 200.</block>
   <block id="4da2af2783b38d64f7ad51f0188043f0" category="list-text">Se l'indirizzo IP della nuova macchina virtuale di implementazione è diverso da quello della macchina virtuale di implementazione originale, è necessario utilizzare la CLI ONTAP per rimuovere le destinazioni iSCSI del mediatore precedente e aggiungere nuove destinazioni:</block>
   <block id="2e872cc50863e55fb4478e06d9231f07" category="summary">È necessario installare l'utility di amministrazione di ONTAP Select Deploy e utilizzare l'utility per creare un cluster ONTAP Select.</block>
@@ -2603,7 +2539,6 @@
   <block id="9702dfddce9ca846a20b21815bd5bf71" category="list-text">VMware ESXi 8,0 U1 (build 21495797)</block>
   <block id="c9dd6bad4c7d561872f2e2d498a990bf" category="inline-link">Tool di matrice di interoperabilità (IMT)</block>
   <block id="be89bf0bd68c0f721ab7e25e408b6fa7" category="summary">Se si esegue ONTAP Select su VMware ESXi, è possibile aggiornare il software ESXi da una versione precedente supportata a ESXi 7,0 o versione successiva. Prima di eseguire l'aggiornamento, è necessario comprendere il processo e selezionare la procedura di aggiornamento appropriata.</block>
-  <block id="817a2297c74a908c3261968059682b32" category="paragraph">L'esecuzione di un aggiornamento ESXi con l'utility di amministrazione di Deploy è l'opzione più generale e resiliente. Tuttavia, potrebbero esserci delle istanze quando la distribuzione non è disponibile o non può essere utilizzata. Ad esempio, l'aggiornamento a ESXi 7,0 non è supportato dalle versioni precedenti di ONTAP Select e dall'utilità di amministrazione di distribuzione.</block>
   <block id="f87065c0eaa86d23a9d0bc62defec91b" category="list-text">Aggiornare l'host dell'hypervisor in cui ONTAP Select è in esecuzione a ESXi 7,0 o versioni successive utilizzando la procedura fornita da VMware.</block>
   <block id="1e2be71e8b4858c0b3e832cba35731d1" category="section-title">ONTAP Select 9.13.1</block>
   <block id="cdbcb12eafeb6cc1f6a058e9c52a7f8d" category="paragraph">ONTAP Select 9.13.1 include diverse nuove funzioni e miglioramenti.</block>
@@ -2721,8 +2656,6 @@
   <block id="acac68a1e439a88d2d2599418fc3ace8" category="cell">Ripristinare un'istanza dell'utilità di distribuzione utilizzando un backup di configurazione</block>
   <block id="e46ac92a715b42bd2cfc9c8c53a2230c" category="cell">Riconfigurare e ripristinare un'istanza dell'utilità di distribuzione</block>
   <block id="06a53967f62b6ebf8a1fba55cabdfecf" category="list-text"><block ref="06a53967f62b6ebf8a1fba55cabdfecf" category="inline-link-macro-rx"></block></block>
-  <block id="89ac05efab2228e74e12191efccdf85c" category="inline-link-macro">Ripristinare i dati di configurazione di implementazione sulla nuova macchina virtuale</block>
-  <block id="9731a2aaf926f5fd46b5a7343839efb4" category="list-text"><block ref="9731a2aaf926f5fd46b5a7343839efb4" category="inline-link-macro-rx"></block></block>
   <block id="47546bf1e2847e2d81e73bde93926649" category="section-title">Spostare un cluster ONTAP Select offline e online</block>
   <block id="60458f1485d61e13b322742ae9f0113a" category="section-title">Fare un refresh della configurazione del cluster Deploy</block>
   <block id="24c77c4c999a67b38b8910008fcbf84a" category="paragraph">Il Manager di licenza viene eseguito come un processo separato all'interno di ciascuna istanza dell'utilità di amministrazione distribuzione. Alcune delle funzioni fornite da LM includono:</block>
@@ -2762,21 +2695,13 @@
   <block id="7616bc7ca1d0f5d08301e0593d0e18ca" category="section-title">Confrontare ONTAP Select e ONTAP 9</block>
   <block id="811d71286df166f702ec9b42c249d145" category="section-title">Comprendere le chiamate API utilizzate nei flussi di lavoro</block>
   <block id="494bbba02a6f83c76ae18eeba756eafc" category="section-title">Creare un URL per accedere direttamente all'API REST</block>
-  <block id="84bee6f12ed24b78dc6e3d711f489517" category="section-title">Acquisire familiarità con l'aggiornamento di VMware ESXi</block>
   <block id="879d008da9e1adcaebd71393252b5f05" category="paragraph">L'aggiornamento del software ESXi è un processo descritto e supportato da VMware. Il processo di aggiornamento dell'hypervisor fa parte della procedura di aggiornamento più estesa quando si utilizza ONTAP Select. Per ulteriori informazioni, consultare la documentazione VMware.</block>
-  <block id="9fb992cde692e6edf5e0ff97d5e5f2f8" category="section-title">Selezionare una procedura di aggiornamento</block>
   <block id="7040c3ccc544e203d76cb7ffe82f6911" category="inline-link-macro">1172198</block>
   <block id="2e6761a6be39f375b42a759a4e5b2ce9" category="paragraph">Se si utilizzano queste versioni precedenti e si tenta di eseguire un aggiornamento, è possibile lasciare la macchina virtuale ONTAP Select in uno stato in cui non è possibile avviarla. In questo caso, è necessario selezionare una procedura di aggiornamento che non utilizza la distribuzione. Fare riferimento a. <block ref="45788d744a81e57f6ed35cd7105ed791" category="inline-link-macro-rx"></block> per ulteriori informazioni.</block>
-  <block id="eb09ec92cf869be7597c08b1ed36d886" category="section-title">Aggiornare l'utilità di amministrazione distribuzione</block>
-  <block id="684106fd704b339617fbc6743afe92b6" category="paragraph">Prima di eseguire una procedura di aggiornamento utilizzando l'utility di distribuzione, potrebbe essere necessario aggiornare l'istanza di distribuzione. In generale, è necessario eseguire l'aggiornamento alla versione più recente di Deploy. L'utility di distribuzione deve supportare la versione di ONTAP Select in uso. Per ulteriori informazioni, consultare le note di rilascio di ONTAP Select.</block>
   <block id="5b8325e442ddd32629c86630fde418de" category="section-title">Aggiorna un cluster a nodo singolo utilizzando l'implementazione</block>
   <block id="2863feac8b058188a45f49deaf504ce8" category="section-title">Aggiorna un cluster multi-nodo utilizzando l'implementazione</block>
   <block id="77313127f25a198a72521f0ce3437025" category="section-title">Aggiorna un cluster a nodo singolo senza eseguire l'implementazione</block>
   <block id="4724841b242993261d4bc5bf0b22e4da" category="section-title">Aggiorna un cluster multi-nodo senza eseguire l'implementazione</block>
-  <block id="e4384ef53374e50c408aa4f320771fc7" category="section-title">Scaricare l'immagine di installazione</block>
-  <block id="ae5dce558cc0a937c60691c0f0837ca5" category="section-title">Caricare l'immagine di installazione da distribuire</block>
-  <block id="df16cb9f82c152af98cbdb57cc06f0d9" category="section-title">Aggiungere l'immagine di installazione</block>
-  <block id="5b9b5bb226a6c70daff9ed71955c175e" category="section-title">Visualizzare le immagini di installazione disponibili</block>
   <block id="f47ad6e4bc9bad323a7e49da78e990bc" category="doc">Ridimensionare i nodi del cluster ONTAP Select</block>
   <block id="afe2fb2999af41d32655dc1f20500f66" category="list-text">A partire da ONTAP Select 9,9.1, per ONTAP Select sono supportati solo i modelli di CPU di Intel Xeon Sandy Bridge o versioni successive.</block>
   <block id="0fa9a0b98f503373d1e8310c7c58315c" category="cell">Il file eseguibile di installazione del prodotto per ONTAP Select.</block>
@@ -3132,7 +3057,6 @@ dischi di ricambio dell'aggregato di storage</block>
   <block id="d59048f21fd887ad520398ce677be586" category="inline-link-macro">Scopri di più</block>
   <block id="5638b273dc7505c1415d93d081293984" category="list-text">Cluster con contrazione da 8 nodi a 6 nodi</block>
   <block id="e1ecf9e1ce05084dbe89253dda1abf54" category="admonition">Il supporto per l'espansione e la contrazione dei cluster è limitato solo ai cluster ESX.</block>
-  <block id="e35a91dc5473bf4a53204a2bd1366d7e" category="summary">A partire da ONTAP Select 9.15.1 è possibile aumentare le dimensioni di un cluster esistente da sei a otto nodi e ridurre le dimensioni del cluster da otto a sei nodi.</block>
   <block id="ef179550c4eb9da6a82350b32d807ed9" category="list-text">ESXi 7,0</block>
   <block id="c0fa4ded01a6d24b2a77cd3a6b10e6e7" category="section-title">Espandere il cluster</block>
   <block id="30230ebf7e780c11cfcde8274fc17934" category="list-text">Verificare di disporre dei dettagli di licenza per i nuovi nodi.</block>
@@ -3286,7 +3210,6 @@ dischi di ricambio dell'aggregato di storage</block>
   <block id="697112fb0ffb252e40d60a5a007943a2" category="sidebar">Espandere o contrarre un cluster</block>
   <block id="9cc3c3055efc6fc5a45cfce6ac3eda87" category="sidebar">Accedere alla console video della VM</block>
   <block id="5a3a053ae34a79fb35028f001babbf25" category="sidebar">Sostituire le unità RAID software guaste</block>
-  <block id="e2e19484d2146649c758acb6e826707f" category="sidebar">Aggiornare ESXi alla versione 6,5 e successive</block>
   <block id="b374e4bbc5d3bd65f35605cc784ed685" category="list-text">ONTAP Select 9.14.1 include il supporto per VMware ESXi 8.0 U2.</block>
   <block id="37730150d6378b2a0b04f20595d2d65a" category="list-text">ESXi 8,0 U3</block>
   <block id="3a13e6fcb6840db51e3e181c41dff37b" category="list-text">ESXi 8,0 U2</block>
@@ -3568,10 +3491,6 @@ dischi di ricambio dell'aggregato di storage</block>
   <block id="235d833d1553c6ac3ef4b59a69b7709d" category="admonition">È possibile eseguire l'operazione di ridimensionamento dei nodi del cluster utilizzando il modello di licenza per Tier di capacità e il modello di licenza per pool di capacità.</block>
   <block id="751e45429506270501500591ecf71f63" category="paragraph">Utilizzare questa procedura per configurare ciascun nodo. In questo esempio, al nodo viene applicata una licenza di livello di capacità.</block>
   <block id="f5eacefd45f87cad9eca589aeba17364" category="paragraph">Per il nodo ONTAP Select viene utilizzata una licenza del livello di capacità.</block>
-  <block id="70c6ed94827afcf20125ed21cfa0d45d" category="paragraph">Devi determinare se utilizzare la licenza per pool di capacità o Tier di capacità. Se si utilizza la licenza di Capacity Pool, è necessario reinstallare ciascuna licenza di Capacity Pool dopo il ripristino o il ripristino dell'istanza di distribuzione.</block>
-  <block id="29f5b284a6c121e6b86e23d26c5492d7" category="paragraph">Se si utilizza la licenza di Capacity Pool, è necessario reinstallare ciascuna licenza di Capacity Pool. Per ulteriori dettagli, vedere _reinstallazione di una licenza di Capacity Pool_.</block>
-  <block id="ad8df021d39702efa54a5c4a58d4c408" category="paragraph">Se si utilizza la licenza di Capacity Pool, è necessario reinstallare ciascuna licenza di Capacity Pool. Per ulteriori informazioni, vedere reinstallazione di una licenza Capacity Pool.</block>
-  <block id="907984c60dd3b3b1d06b28812739f3a3" category="list-text"><block ref="907984c60dd3b3b1d06b28812739f3a3" category="inline-link-macro-rx"></block></block>
   <block id="b28ceb45f344ed12e54e3531ae0bac88" category="summary">È necessario acquisire un file di licenza per ogni pool di capacità utilizzato dai nodi ONTAP Select. Il file di licenza definisce la capacità di storage e la scadenza del pool. Viene bloccato nel Manager di licenza mediante una combinazione del numero di serie univoco della licenza assegnato da NetApp e dell'ID di blocco della licenza associato all'istanza di implementazione.</block>
   <block id="b06635debd20e5d8f23e5fd54016e095" category="doc">Acquisire una licenza ONTAP Select Capacity Pool</block>
   <block id="332320e6473eb55e261b81cf0938cfbc" category="paragraph">È necessario avere il numero di serie della licenza di nove cifre assegnato al pool di capacità da NetApp. Prima di tentare di acquisire un file di licenza, attendere almeno ventiquattro ore dopo la data di spedizione dell'ordine di acquisto.</block>
@@ -3646,8 +3565,6 @@ dischi di ricambio dell'aggregato di storage</block>
   <block id="b43dccc6180e02d25b94d717af59c5d5" category="section-title">Fase 1: Prepararsi per la distribuzione</block>
   <block id="14ce7f56600ce32dd333637eed98cd8f" category="open-title">RAID hardware</block>
   <block id="66ef34be992df3691380b5f366935c14" category="inline-link-macro">pool di archiviazione (KVM)</block>
-  <block id="e6590b92b825641d452dbbfa0d4cf1d1" category="paragraph">Se si utilizza un controller RAID hardware locale, è necessario creare almeno un datastore (ESX) o uno <block ref="a828881b33208a7c4812d178d14998a2" category="inline-link-macro-rx"></block> in ogni nodo per i dati di sistema, nonché per gli aggregati radice e dati. È necessario collegare il pool di storage durante la configurazione del nodo ONTAP Select.</block>
-  <block id="19d8e46deea8d239f3274a92f88038ab" category="paragraph">Se si utilizza il software RAID, è necessario creare almeno un datastore (ESX) o uno <block ref="a828881b33208a7c4812d178d14998a2" category="inline-link-macro-rx"></block> per i dati di sistema e assicurarsi che le unità SSD siano disponibili per la radice e gli aggregati di dati. È necessario collegare il pool di storage e i dischi durante la configurazione del nodo ONTAP Select.</block>
   <block id="908272d4cd58c61b9a3bc042f376ee86" category="inline-link-macro">aggiungere l'immagine ONTAP Select</block>
   <block id="e037f6aae5e648de44fa07863c350701" category="paragraph">L'utility di amministrazione di Deploy contiene una singola versione di ONTAP Select. Se si desidera distribuire cluster utilizzando una versione precedente di ONTAP Select, è necessario prima <block ref="6403b9b63d70488e119e79bd63bd10d8" category="inline-link-macro-rx"></block> alla tua istanza di Deploy.</block>
   <block id="2d9d6efa5bb5baaf1e0bfc7ac2970b34" category="inline-link-macro">concedere in licenza l'archiviazione su ogni nodo</block>
@@ -3814,7 +3731,6 @@ dischi di ricambio dell'aggregato di storage</block>
   <block id="f210391b7941f9a4198928bc79fcba09" category="paragraph">Questa attività descrive un metodo per caricare il file sulla macchina virtuale ONTAP Select Deploy.  Potrebbero esserci altre opzioni più adatte al tuo ambiente.</block>
   <block id="c99ab6326cfb96cafe5cf69a39bf5e79" category="list-text">Verificare che il file di aggiornamento sia disponibile sulla workstation locale.</block>
   <block id="e2a672c847bad2863e57f277c323553c" category="list-text">Verificare di disporre della password per l'account utente amministratore.</block>
-  <block id="e60c1aa35e0fea0a6ef96ddaa4b018f8" category="list-text">In una shell di comando sulla workstation locale, utilizzare<block ref="8a444a43bdf534c0c6338bb7809659b3" prefix=" " category="inline-code"></block> Utilità (Secure Copy Protocol) per caricare il file immagine sulla macchina virtuale ONTAP Select Deploy.</block>
   <block id="fc979b5c6d5eef1f824052719f508095" category="section-title">Passaggio 3: applicare il pacchetto di aggiornamento</block>
   <block id="8b24796d99b30623379a77021195b47e" category="paragraph">Dopo aver caricato il file di aggiornamento sulla macchina virtuale ONTAP Select Deploy, è possibile applicare l'aggiornamento.</block>
   <block id="91aa908b0f2003054a80626907b7d18a" category="list-text">Verificare in quale directory è stato inserito il file di aggiornamento nella macchina virtuale dell'utilità ONTAP Select Deploy.</block>
@@ -3852,7 +3768,6 @@ dischi di ricambio dell'aggregato di storage</block>
   <block id="cbec5c675188a8b88f95c1615c33fb39" category="list-text">Aggiorna la libreria</block>
   <block id="cbbbf9758b7ac41123821f7ea427538f" category="list-text">Aggiorna elemento della libreria</block>
   <block id="845b12256749d66531d9afd69bc3a33c" category="list-text">Aggiorna la biblioteca locale</block>
-  <block id="26f7069f09ce96914fa8e8c3a68a4191" category="doc">Espandi o contrai un cluster ONTAP Select ESXi o KVM</block>
   <block id="b6901598f11464666113bfe479efe49f" category="paragraph">È possibile aumentare le dimensioni del cluster di un cluster ONTAP Select esistente per gli host hypervisor ESXi e KVM.  Per gli host KVM, è possibile aumentare le dimensioni del cluster da sei a otto nodi e ridurle da otto a sei nodi.  Per gli host ESXi, è possibile aumentare e diminuire la dimensione del cluster con incrementi compresi tra sei e dodici nodi.</block>
   <block id="936ee35c221853e402fecb3657e726ba" category="paragraph">Le seguenti espansioni e contrazioni del cluster non sono supportate per gli host ESXi e KVM:</block>
   <block id="ca069be0eeb72c96905b0cdbf504214d" category="paragraph">La funzionalità di espansione e contrazione del cluster è supportata sui seguenti host hypervisor KVM ed ESXi.</block>
@@ -3913,7 +3828,6 @@ dischi di ricambio dell'aggregato di storage</block>
   <block id="a72643a79ec8e9d1d5c61ff835cabbeb" category="list-text">ONTAP Select 9.16.1 è inizialmente installato</block>
   <block id="588a4431a3d49dda029dcc4161fc2be3" category="list-text">È possibile aggiornare il nodo alla versione 9.17.1 e poi tornare alla versione 9.16.1, se necessario.</block>
   <block id="c762418e7ca866adad88c4350fc20ef0" category="list-text">ONTAP Select 9.17.1 è inizialmente installato</block>
-  <block id="02214bce8cef8e578251dc5cdd19f814" category="list-text">Il ripristino non è possibile poiché non era stata installata alcuna versione precedente.</block>
   <block id="0bb5222a5975edbdfb5210abc7bbc0d5" category="admonition">All'API REST inclusa in ONTAP Select Deploy viene assegnato un numero di versione. Il numero di versione dell'API è indipendente dal numero di release di Deploy. L'utilità di amministrazione ONTAP Select 9.17.1 Deploy include la versione 3 dell'API REST.</block>
   <block id="7b5019dce3bb835acb62c31388f47aef" category="cell">VMware vSphere 9.0 VMware vSphere 8.0GA e aggiornamenti da 1 a 3 VMware vSphere 7.0GA e aggiornamenti da 1 a 3C</block>
   <block id="98a200153c1be0c16d526cf021fc6c2c" category="cell">Cluster a quattro, sei o otto nodi</block>
@@ -3928,7 +3842,6 @@ dischi di ricambio dell'aggregato di storage</block>
   <block id="aea2ef463d548798da986814b7163a65" category="list-text">ONTAP Select con un'utilità di amministrazione Deploy supportata</block>
   <block id="26a1590332f300c4ec3aa0f686d62125" category="admonition">Se si dispone di uno o più cluster a due nodi attivi, la macchina virtuale ONTAP Select Deploy che amministra i cluster deve essere sempre in esecuzione. Se la macchina virtuale ONTAP Select Deploy viene arrestata o non funziona correttamente, il servizio mediatore non è disponibile e la funzionalità HA viene persa per i cluster a due nodi.</block>
   <block id="0657a1213e1f6d89d22c78ddc4608384" category="paragraph">Poiché i cluster a due nodi vengono in genere distribuiti in una filiale o in un ufficio remoto, possono essere distanti dal data center aziendale e dall'utilità ONTAP Select Deploy che fornisce supporto amministrativo.  Con questa configurazione, il traffico di gestione tra l'utilità ONTAP Select Deploy e il cluster scorre sulla WAN. Consultare le note di rilascio per ulteriori informazioni su limitazioni e restrizioni.</block>
-  <block id="b83e9ae7e9a3ccc11cef740f2d5aa5f2" category="list-text">Indirizzo IP statico assegnato a ONTAP Select Distribuisci</block>
   <block id="ed89295e41e84f73a1840cf9d0bc49c6" category="paragraph">È necessario assegnare un indirizzo IP statico all'utilità di amministrazione ONTAP Select Deploy.  Questo requisito si applica a tutte le istanze ONTAP Select Deploy che gestiscono uno o più cluster a due nodi ONTAP Select .</block>
   <block id="ee1aadb3a9fa619eb12db5d1e58032b4" category="inline-link-macro">Scopri di più sui privilegi VMware vSphere per vSAN ESA in vCenter</block>
   <block id="653a421852b6e9fc7e8da536351d6d57" category="paragraph"><block ref="653a421852b6e9fc7e8da536351d6d57" category="inline-link-macro-rx"></block></block>
@@ -3952,8 +3865,79 @@ dischi di ricambio dell'aggregato di storage</block>
   <block id="2dd89f547668d42e92b18453b0fc2db7" category="section-title">Passaggio 2: installare una nuova istanza della macchina virtuale Deploy</block>
   <block id="20db79ddbcecf961179a8654cf93bdfa" category="section-title">Passaggio 3: ripristinare i dati di configurazione di distribuzione nella nuova macchina virtuale</block>
   <block id="35767fb08a64b94abf91d7c25ea1b1d5" category="paragraph">È possibile effettuare l'aggiornamento direttamente a ONTAP Select Deploy 9.17.1 da ONTAP Select Deploy 9.16.1 o 9.15.1. Per eseguire l'aggiornamento da ONTAP Select Deploy 9.14.1 o versioni precedenti, consultare le note di rilascio per la versione ONTAP Select .</block>
-  <block id="f8828e764d46e46d1990e6a2dec9744f" category="doc">Aggiorna VMware ESXi alla versione 7.0 o successiva per ONTAP Select</block>
   <block id="4c2a7675fb89ee6113fb93327fabd5f6" category="list-text">ESXi 9.0</block>
   <block id="90facdbe61c2fda7ac079c021778069e" category="section-title">Fase 3: Completare la distribuzione</block>
-  <block id="0ccf5aad6da0b37b9ee3f6128be956c7" category="paragraph">Dopo aver distribuito il cluster, confermare che la funzionalità ONTAP Select AutoSupport sia configurata e quindi<block ref="530c589d5a11589fc0cbd2126b61e792" category="inline-link-macro-rx"></block> .</block>
+  <block id="7a0165449b5773328368f60f5c262ddd" category="doc">Aggiorna a VMware ESXi 7.0 o versione successiva per ONTAP Select</block>
+  <block id="dd1789a087eda271d0e3deee49558019" category="section-title">Preparati all'aggiornamento di VMware ESXi</block>
+  <block id="82c36f45db475277ee2310dec3c1e939" category="paragraph">Preparare e selezionare la procedura di aggiornamento più adatta al proprio ambiente prima di aggiornare il software ESXi sugli hypervisor che ospitano un cluster ONTAP Select .</block>
+  <block id="0926feade48ead905fb59c610b0ac7fd" category="list-text">*Impara a conoscere come aggiornare VMware ESXi*</block>
+  <block id="1ca1aaf5b842ffb10893e476d56ee6d7" category="list-text">*Seleziona una procedura di aggiornamento*</block>
+  <block id="8378d8bf20941add9c4df91829cd0827" category="list-text">Utilizzo di ONTAP Select Deploy</block>
+  <block id="4057b7ca0c19f851f63420c9ec32a889" category="paragraph">L'aggiornamento è possibile sia con che senza l'utilità Deploy.</block>
+  <block id="017c62abcb9c0a7a31f008ff45eca54a" category="paragraph">Eseguire un aggiornamento ESXi tramite l'utility di amministrazione Deploy è l'opzione più generale e resiliente. Tuttavia, potrebbero verificarsi casi in cui Deploy non è disponibile o non può essere utilizzato. Ad esempio, l'aggiornamento a ESXi 7.0 non è supportato con le versioni precedenti di ONTAP Select e dell'utility di amministrazione Deploy.</block>
+  <block id="2e0e9d07ffda2d85422b14435c592a64" category="list-text">*Aggiornare l'utilità di amministrazione Deploy*</block>
+  <block id="c3a59d3a6472b3e407374a73000fa2d0" category="inline-link-macro">Note sulla versione ONTAP Select</block>
+  <block id="f5d84950dbef357c088050b223201054" category="paragraph">Prima di eseguire una procedura di aggiornamento tramite l'utilità Deploy, potrebbe essere necessario aggiornare l'istanza di Deploy. In generale, è consigliabile aggiornare alla versione più recente di Deploy. L'utility Deploy deve supportare la versione di ONTAP Select in uso.  Fare riferimento al<block ref="d849cafcad7044085f0bad0e874b53aa" category="inline-link-macro-rx"></block> per maggiori informazioni.</block>
+  <block id="652257fc3daae6b4fad2e2bd425ff0e3" category="list-text">*Dopo il completamento della procedura di aggiornamento*</block>
+  <block id="20f9850b56f2eecea40a57c75ab5c890" category="list-text">Sposta il nodo nello stato offline:</block>
+  <block id="13cc9f6fa9c854f457ba342b6ca56703" category="list-text">Sposta il nodo nello stato online:</block>
+  <block id="81eeab9506186e2dca8faefa78d54067" category="paragraph">Esempio:</block>
+  <block id="6015ee0c3c4dbc37f534783a65239e72" category="example-title">Mostra esempio</block>
+  <block id="fc0aa017cb8518a7c70f2a39ae6553c1" category="list-text">Non è possibile ripristinare la versione precedente perché non è stata installata alcuna versione precedente.</block>
+  <block id="6e1243914ebc1fc5867ce44540c39b39" category="list-text"><block ref="6e1243914ebc1fc5867ce44540c39b39" category="inline-link-macro-rx"></block></block>
+  <block id="7df4c22f834073378cbc7bda2a69e5d8" category="paragraph-title">Eseguire il backup dei dati di configurazione di Deploy</block>
+  <block id="92a0bc38a55c8986f72a9e2f38fb2581" category="paragraph">È una buona pratica<block ref="530c589d5a11589fc0cbd2126b61e792" category="inline-link-macro-rx"></block> regolarmente, anche dopo aver creato un cluster. Questo diventa particolarmente importante con i cluster a due nodi, a causa dei dati di configurazione del mediatore inclusi nel backup.</block>
+  <block id="12702c2f8c71548bcc7c156da7d7e810" category="paragraph">Se si utilizza un controller RAID hardware locale, è necessario creare almeno un datastore (ESX) o uno<block ref="7f40b177101a60800b4ff488a68c2a27" category="inline-link-macro-rx"></block> in ogni nodo per i dati di sistema, nonché per gli aggregati radice e dati. È necessario collegare lo storage pool durante la configurazione del nodo ONTAP Select .</block>
+  <block id="d79e665d74455e96fa5fff08009d57ce" category="paragraph">Se si utilizza il software RAID, è necessario creare almeno un datastore (ESX) o uno<block ref="7f40b177101a60800b4ff488a68c2a27" category="inline-link-macro-rx"></block> per i dati di sistema e assicurarsi che le unità SSD siano disponibili per la radice e gli aggregati di dati. È necessario collegare il pool di archiviazione e i dischi durante la configurazione del nodo ONTAP Select .</block>
+  <block id="374fcbe92413e77c7fc7cda40bfb3be6" category="section-title">Passaggio 1: scarica l'immagine di installazione</block>
+  <block id="42cd2a8efe7c9aac811d923637a0f193" category="list-text">Accedi al sito di supporto NetApp tramite un browser Web e seleziona *Collegamenti rapidi al supporto*.</block>
+  <block id="6168f6eb3f1b81ec759f515fdd7bab98" category="list-text">Seleziona *Scarica software* in *Attività principali* e accedi al sito.</block>
+  <block id="84791eb50904d5d426f95112ce50d397" category="list-text">Seleziona *Trova il tuo prodotto*.</block>
+  <block id="676522edf33055c4e8da85feed945dc5" category="list-text">In *Altro software disponibile* seleziona *Distribuisci aggiornamento, Aggiornamento nodo, Installazione immagine*.</block>
+  <block id="4ec4ff4105057abcf44071cf2a8f84b6" category="section-title">Passaggio 2: carica l'immagine di installazione su Deploy</block>
+  <block id="3ad5852905f7d86a4b551630b78bec6f" category="list-text">In una shell dei comandi sulla workstation locale, carica il file immagine sulla macchina virtuale Deploy, come mostrato negli esempi seguenti:</block>
+  <block id="9c0d19167b1e62192d344c74670ab607" category="section-title">Passaggio 3: aggiungere l'immagine di installazione</block>
+  <block id="b9f4869d7f31d53b61f29fe4bedd37d1" category="paragraph">Aggiungere l'immagine di installazione ONTAP Select alla directory Deploy images in modo che sia disponibile quando si distribuisce un nuovo cluster.</block>
+  <block id="461e33e15d96d32a3253838cc3faf280" category="list-text">Inserire il file immagine di installazione nella directory images, come mostrato nell'esempio seguente:</block>
+  <block id="152d8684d752984c61ac93dd6e93ca75" category="paragraph"><block ref="a424c72865fc5e3d7ef425ffe24358a0" prefix="" category="inline-code"></block></block>
+  <block id="55a1dda936b17c10bd6fe08210028b1d" category="section-title">Passaggio 4: visualizzare le immagini di installazione disponibili</block>
+  <block id="bd721bab2f4844ced6ea0eeba243f8d3" category="paragraph">Visualizza le immagini ONTAP Select disponibili durante la distribuzione di un nuovo cluster.</block>
+  <block id="0130d1c399b188129dee9e6cb685faf8" category="list-text">Vai in fondo alla pagina e seleziona *Distribuisci*, quindi seleziona *OTTIENI /immagini*.</block>
+  <block id="9e4d41c6ecc4cf9937f573e802d657c6" category="list-text">Selezionare *Provalo!* per visualizzare le immagini ONTAP Select disponibili.</block>
+  <block id="7237d8c12d94e5a5d31950f37ac0bf7a" category="section-title">Prepararsi a ripristinare l'utilità Deploy</block>
+  <block id="d0d9ebbdf3a513d091f96cf877073d3f" category="paragraph">Per garantire il successo dell'operazione, è necessario prepararsi prima di tentare di ripristinare un'istanza dell'utilità Deploy.  È necessario avere familiarità con diverse procedure amministrative e disporre delle informazioni richieste.</block>
+  <block id="97987a90b942fca343d336e1e3407ce1" category="list-text">Verificare di poter installare una nuova istanza dell'utilità ONTAP Select Deploy nel proprio ambiente hypervisor.</block>
+  <block id="de7a4f435396962b2c5793b09e623040" category="inline-link-macro">Scopri come installare l'utilità ONTAP Select Deploy</block>
+  <block id="931c4bc1734c8552932d13706ff5d778" category="paragraph"><block ref="931c4bc1734c8552932d13706ff5d778" category="inline-link-macro-rx"></block></block>
+  <block id="a7e32b3c69ec3a084438d9fdb77bc17c" category="list-text">Verificare di poter accedere al cluster ONTAP Select e alla shell del cluster ONTAP (CLI).</block>
+  <block id="18a7df977db43c60a4c6a47400953591" category="list-text">Determinare se si dispone di un backup dei dati di configurazione dall'istanza dell'utilità Deploy non riuscita che contiene il cluster a due nodi ONTAP Select . È possibile che il backup non contenga il cluster.</block>
+  <block id="01db345147b0b1e4da305d7ddea3f030" category="list-text">Verificare che sia possibile ripristinare un backup dei dati di configurazione di Deploy, a seconda della procedura di ripristino utilizzata.</block>
+  <block id="783e545e51986edbc17afe85eea0faa9" category="inline-link-macro">Scopri come ripristinare i dati di configurazione di distribuzione sulla nuova macchina virtuale</block>
+  <block id="eec0b20b3b13caf4c707ba03e2af8e20" category="paragraph"><block ref="eec0b20b3b13caf4c707ba03e2af8e20" category="inline-link-macro-rx"></block></block>
+  <block id="aafccebf49ebd86d0297ed3c4cb4bcf8" category="list-text">Hai l'indirizzo IP della macchina virtuale dell'utilità Deploy originale che ha generato un errore.</block>
+  <block id="b5d76ca91cc6a4bfaa8e7bf5e92bb436" category="list-text">Determinare se si utilizza la licenza Capacity Pools o Capacity Tiers. Se si utilizza la licenza Capacity Pools, è necessario reinstallare ciascuna licenza Capacity Pool dopo aver ripristinato o ripristinato l'istanza di Deploy.</block>
+  <block id="256f2b5a82e33e1addfa3baf312579ad" category="list-text">Decidere quale procedura utilizzare per ripristinare un'istanza dell'utilità ONTAP Select Deploy. La decisione dipende dalla disponibilità o meno di un backup dei dati di configurazione dell'utility Deploy originale non riuscita, contenente il cluster a due nodi ONTAP Select .</block>
+  <block id="231f652ef60095cb1f5635c5883bc6be" category="cell">Utilizzare la procedura di recupero...</block>
+  <block id="da5f86a9d9885a0a4f3fae17be5714c1" category="cell"><block ref="a667be25a78a5bb37fad6661b93342ca" category="inline-xref-macro-rx"></block></block>
+  <block id="254bdc26db86eb9026bb2f2a17bdfb96" category="cell"><block ref="05da0447e48edcc2947b385468da9d92" category="inline-xref-macro-rx"></block></block>
+  <block id="fa044af206f38606c388f360f301e4ae" category="paragraph">Eseguire il backup dei dati di configurazione dalla macchina virtuale Deploy originale non riuscita che contiene il cluster a due nodi. È necessario poter accedere alla CLI ONTAP del cluster a due nodi e conoscere i nomi ONTAP dei due nodi.</block>
+  <block id="e8a314dd4d9f7c33b9bbed1a31bce762" category="list-text">Se l'indirizzo IP della nuova macchina virtuale Deploy è diverso da quello della macchina virtuale Deploy originale, rimuovere le vecchie destinazioni iSCSI del mediatore e aggiungere nuove destinazioni:</block>
+  <block id="6b23d5e89df595635ec3a54090e64fa9" category="paragraph">Se si utilizza la licenza Capacity Pools, reinstallare ogni licenza Capacity Pool.  Vedere<block ref="241b4315fc3c4e6905896340939f6270" category="inline-link-macro-rx"></block> per ulteriori dettagli.</block>
+  <block id="9b5fe6a20fe2a058892201f5f80f1856" category="paragraph">Se non si dispone di un backup dell'istanza dell'utilità Deploy non riuscita contenente il cluster a due nodi, configurare la destinazione iSCSI del mediatore e la cassetta postale nella nuova macchina virtuale Deploy.  È quindi possibile completare il ripristino eseguendo un'ulteriore configurazione dei due nodi nel cluster ONTAP Select .</block>
+  <block id="f1c1b76c2a435830bd391c2c408efc67" category="paragraph">Verificare di disporre del nome della destinazione del mediatore per la nuova istanza dell'utilità di distribuzione. È necessario poter accedere alla CLI ONTAP del cluster a due nodi e conoscere i nomi ONTAP dei due nodi.</block>
+  <block id="87ccb73575035c302ba7c38920d907ae" category="list-text">Selezionare *Mediatore* e poi *GET /mediators*.</block>
+  <block id="eb39326ecb8194aed00f77063e484a57" category="list-text">Seleziona *Provalo!* per visualizzare un elenco dei mediatori gestiti da Deploy.</block>
+  <block id="a78d26c86f8e1bc3f99deea85ab123e3" category="list-text">Selezionare *Mediatore* e poi *POST*.</block>
+  <block id="5c9d811abf74644dc7a5840670a2323a" category="list-text">Seleziona il *Modello* accanto a<block ref="afd1be8124115a780c2ac5cb3db1f36d" prefix=" " category="inline-code"></block> e completa il valore del nome.</block>
+  <block id="69c2330b72fdbb0f24306b5344fc83ca" category="list-text">Selezionare *Provalo!* per creare la destinazione iSCSI del mediatore.</block>
+  <block id="e2cd7ceedce46e4ea3fd8396ef4baa97" category="list-text">In una shell dei comandi sulla workstation locale, utilizzare l'utilità sftp per caricare il file di backup sulla macchina virtuale Deploy, come mostrato nell'esempio seguente:</block>
+  <block id="5c7a95e189e375455d7a7bdc02ec54ba" category="list-text">Ripristinare i dati di configurazione:</block>
+  <block id="662385e6e7c81bc5868ecc810d1b4419" category="paragraph">Comando di esempio</block>
+  <block id="86069ab716d4c2ffd77a81bd3827427f" category="list-text">In una shell di comando sulla workstation locale, utilizzare<block ref="8a444a43bdf534c0c6338bb7809659b3" prefix=" " category="inline-code"></block> (Secure Copy Protocol) per caricare il file immagine sulla macchina virtuale ONTAP Select Deploy, come mostrato nell'esempio seguente:</block>
+  <block id="52396dafee59debc72b8fccab2acb4c5" category="paragraph">Comando di esempio:</block>
+  <block id="3817e5dd56e94cb6952f7eb0ab2a6acd" category="summary">A partire da ONTAP Select 9.15.1, è possibile aumentare o diminuire le dimensioni di un cluster esistente.</block>
+  <block id="b4ec4e16d52cf8a4ab8bd5925fba2631" category="doc">Espandi o contrai un cluster ONTAP Select su host ESXi o KVM</block>
+  <block id="7e6bf0ef053af206603d7df47832fbd5" category="inline-link-macro">confermare che la funzionalità ONTAP Select AutoSupport è configurata</block>
+  <block id="785cc01cf7efbfd5a1fd1d4863d9b83a" category="paragraph">Dopo aver distribuito il cluster,<block ref="af0babf33c9640eb381afcb6484c80f3" category="inline-link-macro-rx"></block> poi<block ref="530c589d5a11589fc0cbd2126b61e792" category="inline-link-macro-rx"></block> .</block>
+  <block id="b7f5f41e99a6f8c3c3a0c1843b24c17b" category="sidebar">Aggiorna ESXi</block>
 </blocks>

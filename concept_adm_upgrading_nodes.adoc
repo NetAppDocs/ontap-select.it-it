@@ -44,7 +44,7 @@ Prima di aggiornare un nodo ONTAP Select, consultare le Note di rilascio per ult
 Non è possibile ripristinare un nodo ONTAP Select a una versione precedente a quella su cui è stato installato originariamente. Ad esempio:
 
 ONTAP Select 9.16.1 è inizialmente installato:: È possibile aggiornare il nodo alla versione 9.17.1 e poi tornare alla versione 9.16.1, se necessario.
-ONTAP Select 9.17.1 è inizialmente installato:: Il ripristino non è possibile poiché non era stata installata alcuna versione precedente.
+ONTAP Select 9.17.1 è inizialmente installato:: Non è possibile ripristinare la versione precedente perché non è stata installata alcuna versione precedente.
 
 
 

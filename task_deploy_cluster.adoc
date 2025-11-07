@@ -198,7 +198,7 @@ La pagina viene aggiornata automaticamente a intervalli regolari.
 
 == Fase 3: Completare la distribuzione
 
-Dopo aver distribuito il cluster, confermare che la funzionalità ONTAP Select AutoSupport sia configurata e quindilink:task_cli_clusters.html["eseguire il backup dei dati di configurazione ONTAP Select Deploy"] .
+Dopo aver distribuito il cluster,link:https://docs.netapp.com/us-en/ontap/system-admin/setup-autosupport-task.html["confermare che la funzionalità ONTAP Select AutoSupport è configurata"^] poilink:task_cli_clusters.html["eseguire il backup dei dati di configurazione ONTAP Select Deploy"] .
 
 [TIP]
 ====

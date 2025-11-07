@@ -34,7 +34,8 @@ CAUTION: Se si dispone di uno o più cluster a due nodi attivi, la macchina virt
 .Ubicazione del servizio cluster e mediatore
 Poiché i cluster a due nodi vengono in genere distribuiti in una filiale o in un ufficio remoto, possono essere distanti dal data center aziendale e dall'utilità ONTAP Select Deploy che fornisce supporto amministrativo.  Con questa configurazione, il traffico di gestione tra l'utilità ONTAP Select Deploy e il cluster scorre sulla WAN. Consultare le note di rilascio per ulteriori informazioni su limitazioni e restrizioni.
 
-. Indirizzo IP statico assegnato a ONTAP Select Distribuisci
+.Eseguire il backup dei dati di configurazione di Deploy
+È una buona praticalink:task_cli_clusters.html["eseguire il backup dei dati di configurazione ONTAP Select Deploy"] regolarmente, anche dopo aver creato un cluster. Questo diventa particolarmente importante con i cluster a due nodi, a causa dei dati di configurazione del mediatore inclusi nel backup.
 
-
+.Indirizzo IP statico assegnato per l'implementazione
 È necessario assegnare un indirizzo IP statico all'utilità di amministrazione ONTAP Select Deploy.  Questo requisito si applica a tutte le istanze ONTAP Select Deploy che gestiscono uno o più cluster a due nodi ONTAP Select .
