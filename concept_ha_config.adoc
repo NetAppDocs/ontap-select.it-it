@@ -23,7 +23,7 @@ Gran parte del mercato SDS si basa sul concetto di storage shared-nothing, con l
 
 NOTE: In un cluster ONTAP Select, la funzionalità di replica sincrona è una funzione dell'implementazione ha, non una sostituzione dei motori di replica asincroni SnapMirror o SnapVault. La replica sincrona non può essere utilizzata indipendentemente da ha.
 
-Esistono due modelli di implementazione di ONTAP Select ha: I cluster a più nodi (quattro, sei o otto nodi) e i cluster a due nodi. La caratteristica principale di un cluster ONTAP Select a due nodi è l'utilizzo di un servizio di mediatore esterno per risolvere gli scenari split-brain. La macchina virtuale ONTAP Deploy funge da mediatore predefinito per tutte le coppie ha a due nodi configurate.
+Esistono due modelli di distribuzione ONTAP Select HA: i cluster multinodo (quattro, sei, otto, dieci o dodici nodi) e i cluster a due nodi. La caratteristica saliente di un cluster ONTAP Select a due nodi è l'utilizzo di un servizio di mediazione esterno per risolvere scenari split-brain.  La VM ONTAP Deploy funge da mediatore predefinito per tutte le coppie HA a due nodi che configura.
 
 Le due architetture sono rappresentate nelle seguenti figure.
 
@@ -36,7 +36,7 @@ NOTE: Il cluster ONTAP Select a due nodi è composto da una coppia ha e da un me
 
 *Cluster ONTAP Select a quattro nodi con storage locale*image:DDHA_02.jpg["Cluster ONTAP Select a quattro nodi che utilizza storage locale collegato"]
 
-* Il cluster ONTAP Select a quattro nodi è composto da due coppie ha. I cluster a sei e otto nodi sono composti rispettivamente da tre e quattro coppie ha. All'interno di ciascuna coppia ha, gli aggregati di dati su ciascun nodo del cluster vengono sottoposti a mirroring sincrono e, in caso di failover, non si verifica alcuna perdita di dati.
+* Il cluster ONTAP Select a quattro nodi è composto da due coppie di HA. I cluster a sei, otto, dieci e dodici nodi sono composti rispettivamente da tre, quattro, cinque e sei coppie HA. All'interno di ciascuna coppia di HA, gli aggregati di dati su ciascun nodo del cluster vengono sottoposti a mirroring sincrono e, in caso di failover, non si verifica alcuna perdita di dati.
 * Quando si utilizza lo storage DAS, su un server fisico può essere presente una sola istanza di ONTAP Select. ONTAP Select richiede un accesso non condiviso al controller RAID locale del sistema ed è progettato per gestire i dischi collegati in locale, il che sarebbe impossibile senza la connettività fisica allo storage.
 
 

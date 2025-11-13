@@ -14,7 +14,7 @@ summary: 'SDS di ONTAP Select MetroCluster offre una protezione avanzata e un"im
 
 
 [role="lead"]
-ONTAP Select, basato sul software per lo storage ONTAP, fornisce servizi storage Enterprise in modo efficiente e con un'architettura altamente disponibile e scale-out senza elementi condivisi. Puoi implementare una soluzione con uno, due, quattro, sei o otto nodi con un massimo di 400TB TB di capacità raw per storage connesso NFS, SMB/CIFS e iSCSI per nodo. Puoi sfruttare la deduplica e la compressione native per ridurre i costi legati allo storage e allo stesso tempo aumentare la capacità effettiva. L'architettura scale-out offre high Availability e mobilità dei dati senza interruzioni per il bilanciamento del carico o la manutenzione hardware.
+ONTAP Select è basato sul software di storage ONTAP per offrire servizi di storage aziendali in modo efficiente con un'architettura scale-out ad alta disponibilità e senza condivisione. È possibile distribuire una soluzione con uno, due, quattro, sei, otto, dieci o dodici nodi con una capacità raw fino a 400 TB per storage connesso a NFS, SMB/CIFS e iSCSI per nodo. È possibile sfruttare la deduplicazione e la compressione native per ridurre i costi di storage aumentando la capacità effettiva. L'architettura scale-out consente elevata disponibilità e mobilità dei dati senza interruzioni per il bilanciamento del carico o per la manutenzione dell'hardware.
 
 
 

@@ -5,7 +5,7 @@ indexpage:
     distribuita su una varietà di server hardware di fascia bassa che eseguono l'hypervisor
     VMware ESXi o Kernel-based Virtual Machine (KVM). Offre l'agilità necessaria per
     creare un'infrastruttura cloud privata flessibile e scalabile. Questo sito contiene
-    la documentazione di ONTAP Select 9.17.1.
+    la documentazione di ONTAP Select 9.18.1.
   tiles:
   - title: Inizia subito
     links:

@@ -21,7 +21,7 @@ summary: 'È possibile implementare rapidamente un"istanza di valutazione di 90 
 * È possibile allocare la stessa quantità di spazio di archiviazione per i dati utente di una licenza acquistata.
 * Non è possibile aggiornare il nodo da una licenza di valutazione a una licenza acquistata.
 * È possibile utilizzare solo un account vCenter per implementare il modello OVF. L'installazione diretta su un host ESXi non è attualmente supportata.
-* È necessario installare il modello OVF (contenuto in un file ova) utilizzando il client standalone vSphere o il client web vSphere (l'unica opzione per ESXi 6,5 e versioni successive). Non si utilizza l'utilità di amministrazione di distribuzione di ONTAP Select.
+* È necessario installare il modello OVF (contenuto in un file ova) utilizzando il client autonomo vSphere o il client Web vSphere (l'unica opzione per ESXi 8.0 e versioni successive). Non è necessario utilizzare l'utility di amministrazione ONTAP Select Deploy.
 
 
 

@@ -5,8 +5,11 @@ keywords: administer, administering, cli, two node cluster, recover, recovering
 summary: 'Se l"utilità di implementazione di ONTAP Select non riesce o non è disponibile per qualche motivo, si perde la capacità di amministrare i nodi e i cluster ONTAP Select. Inoltre, tutti i cluster a due nodi perdono la funzionalità ha perché il servizio mediatore incluso con l"implementazione non è disponibile. Se si verifica un errore irreversibile, è necessario ripristinare l"istanza dell"utilità di implementazione per ripristinare la funzionalità amministrativa e ha.' 
 ---
 = Ripristinare l'utility ONTAP Select Deploy per un cluster a due nodi
-:hardbreaks:
 :allow-uri-read: 
+:firstname: :hardbreaks:reints
+:author: :hardbreaks:reints
+:authorinitials: :
+:authors: :hardbreaks:reints
 :nofooter: 
 :icons: font
 :linkattrs: 
@@ -211,7 +214,7 @@ Questi comandi consentono ai nodi ONTAP Select di rilevare i dischi della mailbo
 +
 [source, cli]
 ----
-disk show -container-type mediator
+disk show -container-type mediator`
 ----
 . Assegnare i dischi della mailbox ai due nodi:
 +

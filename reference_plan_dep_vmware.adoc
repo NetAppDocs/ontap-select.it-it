@@ -118,9 +118,11 @@ Di seguito sono elencati i privilegi specifici per la libreria di contenuti vSph
 * Crea una libreria locale
 * Elimina elemento della libreria
 * Elimina la libreria locale
+* Scarica i file
 * Leggi l'archiviazione
 * Aggiorna i file
 * Aggiorna la libreria
 * Aggiorna elemento della libreria
 * Aggiorna la biblioteca locale
+* Visualizza le impostazioni di configurazione
 

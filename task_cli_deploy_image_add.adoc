@@ -32,10 +32,10 @@ Per iniziare il processo di aggiunta di un'immagine ONTAP Select a un'istanza de
 . Accedi al sito di supporto NetApp tramite un browser Web e seleziona *Collegamenti rapidi al supporto*.
 . Seleziona *Scarica software* in *Attività principali* e accedi al sito.
 . Seleziona *Trova il tuo prodotto*.
-. Scorrere verso il basso e selezionare *ONTAP Select*.
+. Scorri verso il basso e clicca su * ONTAP Select*.
 . In *Altro software disponibile* seleziona *Distribuisci aggiornamento, Aggiornamento nodo, Installazione immagine*.
 . Selezionare la versione desiderata del pacchetto di aggiornamento.
-. Leggere il Contratto di licenza con l'utente finale (EULA) e fare clic su *Accept & Continue* (Accetta e continua).
+. Leggere il Contratto di licenza con l'utente finale (EULA) e selezionare *Accetta e continua*.
 . Selezionare e scaricare il pacchetto appropriato, rispondendo a tutti i prompt necessari per il proprio ambiente.
 
 
@@ -80,9 +80,8 @@ Aggiungere l'immagine di installazione ONTAP Select alla directory Deploy images
 .Fasi
 . Accedere alla CLI dell'utility di implementazione utilizzando SSH con l'account amministratore (admin).
 . Avvia la shell Bash:
-
-
-[listing]
++
+[source, cli]
 ----
 shell bash
 ----

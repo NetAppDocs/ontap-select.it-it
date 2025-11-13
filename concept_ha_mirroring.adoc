@@ -28,7 +28,7 @@ Un cluster a due nodi con un mediatore può comprendere due data center. Per ult
 
 == Aggregati mirrorati
 
-Un cluster ONTAP Select è composto da due a otto nodi. Ogni coppia ha contiene due copie dei dati utente, con mirroring sincrono tra i nodi su una rete IP. Questo mirroring è trasparente per l'utente ed è una proprietà dell'aggregato di dati, configurato automaticamente durante il processo di creazione dell'aggregato di dati.
+Un cluster ONTAP Select è composto da due a dodici nodi. Ogni coppia HA contiene due copie dei dati utente, replicate in modo sincrono tra i nodi tramite una rete IP.  Questo mirroring è trasparente per l'utente ed è una proprietà dell'aggregato di dati, che viene configurato automaticamente durante il processo di creazione dell'aggregato di dati.
 
 Tutti gli aggregati di un cluster ONTAP Select devono essere sottoposti a mirroring per la disponibilità dei dati in caso di failover di un nodo e per evitare un SPOF in caso di guasto hardware. Gli aggregati in un cluster ONTAP Select sono costruiti dai dischi virtuali forniti da ciascun nodo della coppia ha e utilizzano i seguenti dischi:
 

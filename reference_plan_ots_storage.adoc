@@ -63,7 +63,7 @@ Quando si implementa un cluster ONTAP Select sull'hypervisor, è possibile utili
 
 L'ambiente per una distribuzione RAID software deve soddisfare i seguenti requisiti fondamentali:
 
-* VMware ESXi 7,0 GA (build 15843807) o versione successiva
+* VMware ESXi 8.0 GA (build 20513097) o versione successiva
 * Licenza Premium ONTAP Select o superiore
 * Solo unità SSD locali
 * Separazione dei dischi di sistema dagli aggregati root e dati
@@ -77,7 +77,7 @@ NOTE: Se è presente un controller RAID hardware, consultare link:concept_stor_c
 
 === Requisiti specifici di ESXi
 
-* VMware ESXi 7,0 GA (build 15843807) o versione successiva
+* VMware ESXi 8.0 GA (build 20513097) o versione successiva
 * VMware VMotion, ha e DRS non sono supportati
 * Non è possibile utilizzare RAID software con un nodo aggiornato da ONTAP Select 9,4 o versione precedente. In questo caso, è necessario creare un nuovo nodo per l'implementazione del RAID software.
 
@@ -241,7 +241,7 @@ NOTE: Il RAID software con dischi DAS locali è supportato con la licenza Premiu
 
 * ONTAP Select con un'utilità di amministrazione Deploy supportata
 * Offerta di licenza per piattaforma Premium XL o licenza di valutazione per 90 giorni
-* VMware ESXi versione 6.7 o successiva
+* VMware ESXi versione 8.0 o successiva
 * Dispositivi NVMe conformi alla specifica 1.0 o successiva
 
 

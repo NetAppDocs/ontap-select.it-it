@@ -23,7 +23,7 @@ Assicurarsi che ONTAP Select Deploy non venga utilizzato per eseguire altre atti
 ====
 Se è installata un'istanza precedente dell'utilità di amministrazione di distribuzione di ONTAP Select, è necessario eseguire l'aggiornamento alla versione corrente. Il nodo ONTAP Select e il componente di implementazione ONTAP Select vengono aggiornati in modo indipendente. Vedere link:concept_adm_upgrading_nodes.html["Aggiornare i nodi ONTAP Select"^] per ulteriori dettagli.
 
-È possibile effettuare l'aggiornamento direttamente a ONTAP Select Deploy 9.17.1 da ONTAP Select Deploy 9.16.1 o 9.15.1. Per eseguire l'aggiornamento da ONTAP Select Deploy 9.14.1 o versioni precedenti, consultare le note di rilascio per la versione ONTAP Select .
+È possibile effettuare l'aggiornamento direttamente a ONTAP Select Deploy 9.18.1 da ONTAP Select Deploy 9.17.1 o 9.16.1. Per eseguire l'aggiornamento da ONTAP Select Deploy 9.15.1 o versioni precedenti, consultare le note di rilascio per la versione ONTAP Select .
 
 ====
 

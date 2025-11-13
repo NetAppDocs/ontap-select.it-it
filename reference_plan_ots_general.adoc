@@ -65,7 +65,7 @@ Configurazione di rete e Open vSwitch:: È necessario conoscere i concetti di re
 
 Esistono diversi problemi di pianificazione relativi alle dimensioni del cluster che è necessario prendere in considerazione.
 
-Numero di nodi nel cluster:: Un cluster ONTAP Select è composto da uno, due, quattro, sei o otto nodi. È necessario determinare le dimensioni del cluster in base ai requisiti dell'applicazione. Ad esempio, se è necessaria la funzionalità ha per un'implementazione aziendale, è necessario utilizzare un cluster multi-nodo.
+Numero di nodi nel cluster:: Un cluster ONTAP Select è composto da uno, due, quattro, sei, otto, dieci o dodici nodi. È necessario determinare la dimensione del cluster in base ai requisiti dell'applicazione. Ad esempio, se è necessaria la funzionalità HA per un'implementazione aziendale, è consigliabile utilizzare un cluster multi-nodo.
 Dedicato e collocato:: In base al tipo di applicazione, è necessario determinare se l'implementazione segue il modello dedicato o collocato. Si noti che il modello collocato può essere più complesso a causa della diversità dei carichi di lavoro e di una maggiore integrazione.
 
 

@@ -160,7 +160,7 @@ I sistemi NetApp FAS sono tradizionalmente dotati di una scheda PCI NVRAM fisica
 
 I sistemi commodity in genere non sono dotati di questo tipo di apparecchiatura. Pertanto, la funzionalità di questa scheda NVRAM è stata virtualizzata e inserita in una partizione sul disco di avvio del sistema ONTAP Select. È per questo motivo che il posizionamento del disco virtuale di sistema dell'istanza è estremamente importante. Questo è anche il motivo per cui il prodotto richiede la presenza di un controller RAID fisico con una cache resiliente per le configurazioni di storage locale collegato.
 
-La NVRAM viene inserita nel proprio VMDK. La suddivisione della NVRAM nel proprio VMDK consente alla VM ONTAP Select di utilizzare il driver vNVMe per comunicare con il VMDK NVRAM. Richiede inoltre che la macchina virtuale ONTAP Select utilizzi la versione hardware 13, che è compatibile con ESX 6.5 e versioni successive.
+La NVRAM è posizionata su un proprio VMDK. La suddivisione della NVRAM in un proprio VMDK consente alla VM ONTAP Select di utilizzare il driver vNVMe per comunicare con il proprio VMDK NVRAM . Richiede inoltre che la VM ONTAP Select utilizzi la versione hardware 13, compatibile con ESX 8.0 e versioni successive.
 
 
 
@@ -184,4 +184,4 @@ NOTE: Sebbene i blocchi modificati nella NVRAM VMDK siano memorizzati nella cach
 image:ST_13.jpg["Scritture in entrata su ONTAP Select VM"]
 
 
-NOTE: La partizione NVRAM è separata sul proprio VMDK. Che VMDK sia collegato utilizzando il driver vNVME disponibile nelle versioni ESX della versione 6.5 o successiva. Questa modifica è più significativa per le installazioni ONTAP Select con RAID software, che non beneficiano della cache del controller RAID.
+NOTE: La partizione NVRAM è separata sul proprio VMDK. Tale VMDK è collegato tramite il driver vNVME disponibile nelle versioni ESX 8.0 o successive. Questa modifica è particolarmente significativa per le installazioni ONTAP Select con RAID software, che non beneficiano della cache del controller RAID.

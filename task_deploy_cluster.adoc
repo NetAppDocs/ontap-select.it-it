@@ -98,7 +98,7 @@ Verificare di aver installato l'amministrazione Deploy e completato la configura
 Viene creato un cluster ONTAP Select con uno o più nodi per un'implementazione in produzione.
 
 .Fasi
-I passaggi che segui dipendono dalla creazione di un cluster a nodo singolo o a più nodi. Un cluster multi-nodo può avere due, quattro, sei o otto nodi.
+I passaggi da seguire variano a seconda che si desideri creare un cluster a nodo singolo o multi-nodo. Un cluster multi-nodo può avere due, quattro, sei, otto, dieci o dodici nodi.
 
 [role="tabbed-block"]
 ====

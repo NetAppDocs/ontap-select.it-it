@@ -87,7 +87,7 @@ Le offerte di licenza XL standard, premium e premium supportano un'ampia gamma d
 2+| Protocolli host 3+| NFS, SMB/CIFS, iSCSI e NVMe over TCP 
 
 
-2+| Opzioni di implementazione 3+| Cluster single node two-node (coppia ha), cluster a quattro, sei o otto nodi 
+2+| Opzioni di implementazione 3+| Nodo singolo Cluster a due nodi (coppia HA) Cluster a quattro, sei, otto, dieci o dodici nodi 
 
 
 2+| Capacità supportata (per nodo) 3+| Fino a 400TB dati raw (ESXi e KVM) 
@@ -114,7 +114,7 @@ Le offerte di licenza XL standard, premium e premium supportano un'ampia gamma d
 2+| Requisiti minimi di memoria/CPU host ^1^ | 6 core / 24GB GB di RAM | 10 core / 72GB GB di RAM | 18 core / 136GB GB di RAM 
 
 
-2+| Rete (per nodo) 3+| Minimo due porte 1GbE per un cluster a nodo singolo minimo di quattro porte 1GbE per un cluster a due nodi (coppia ha) minimo di due porte 10GbE per un cluster a quattro, sei o otto nodi 
+2+| Rete (per nodo) 3+| Minimo due porte 1GbE per un cluster a nodo singolo Minimo quattro porte 1GbE per un cluster a due nodi (coppia HA) Minimo due porte 10GbE per un cluster a quattro, sei, otto, dieci o dodici nodi 
 |===
 ^1^ Presuppone due core e 8 GB di RAM per l'hypervisor.
 
