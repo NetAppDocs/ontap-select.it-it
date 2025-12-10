@@ -1,0 +1,13 @@
+= 
+:allow-uri-read: 
+
+
+[NOTE]
+====
+Esistono limitazioni del flusso di lavoro RAID software per gli hypervisor KVM sugli host RHEL 10.0 e Rocky Linux 10.0. Per ulteriori informazioni, consultare i seguenti articoli della Knowledge Base:
+
+* link:https://kb.netapp.com/on-prem/ontap/ontap-select/Select-Issues/CDEPLOY-4020["CDEPLOY-4020: ONTAP Select Deploy: messaggio di avviso durante la creazione del Cluster HWR utilizzando RHEL 10 e ROCKY 10"^]
+* link:https://kb.netapp.com/on-prem/ontap/ontap-select/Select-Issues/CDEPLOY-4025["CDEPLOY-4025: ONTAP Select DeployGUI: pool di archiviazione e dischi di archiviazione non visibili per SWR nella pagina di creazione del cluster su host con RHEL10/Rocky 10"^]
+
+
+====
