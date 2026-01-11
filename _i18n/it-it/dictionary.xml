@@ -2019,7 +2019,6 @@
   <block id="3d85b7e0ce2983da3c1d066243516254" category="paragraph">Se la richiesta ha esito positivo, si riceverà il codice di stato HTTP 200.</block>
   <block id="4da2af2783b38d64f7ad51f0188043f0" category="list-text">Se l'indirizzo IP della nuova macchina virtuale di implementazione è diverso da quello della macchina virtuale di implementazione originale, è necessario utilizzare la CLI ONTAP per rimuovere le destinazioni iSCSI del mediatore precedente e aggiungere nuove destinazioni:</block>
   <block id="2e872cc50863e55fb4478e06d9231f07" category="summary">È necessario installare l'utility di amministrazione di ONTAP Select Deploy e utilizzare l'utility per creare un cluster ONTAP Select.</block>
-  <block id="4457cc766e233dbf5bfec7006eded349" category="paragraph">È possibile scaricare il pacchetto ONTAP Select dal sito di supporto NetApp.</block>
   <block id="49f3378bb78e3d9783ddf1d56b07097e" category="list-text">Selezionare la versione desiderata del pacchetto.</block>
   <block id="a0ce89b8db68d7f3e4fb721f6bf6c751" category="list-text">Selezionare e scaricare il pacchetto appropriato, rispondendo a tutte le richieste in base alle necessità.</block>
   <block id="780f7110b279a0cc42242a48431ab5bd" category="list-text">Abilitare la funzionalità OVF nel browser installando il plug-in di integrazione del client VMware o eseguendo una configurazione simile in base alle necessità</block>
@@ -2039,7 +2038,6 @@
   <block id="8a356d5d6d9521b33479b519cca56a90" category="list-text">Digitare la password e premere *Invio*.</block>
   <block id="c5d6ff59e8e5595e5fc323f4237b333c" category="paragraph">Utilizzare DHCP per impostare le informazioni di rete? [n]:</block>
   <block id="79a72de3f5191386741777dd0441f591" category="list-text">Se si sceglie una configurazione statica, fornire tutte le informazioni di configurazione di rete necessarie.</block>
-  <block id="887ee30caedf2bee91979565f5ddf01e" category="paragraph">Accedere all'interfaccia utente Web per verificare che l'utilità di implementazione sia disponibile ed eseguire la configurazione iniziale.</block>
   <block id="32be4d152f2326423c990dde583d8768" category="list-text">Puntare il browser verso l'utility di implementazione utilizzando l'indirizzo IP o il nome di dominio:</block>
   <block id="cc0e719d3ebda123b94502d26d56a7eb" category="paragraph"><block ref="5ecf8b6869afd2efb46edbb07a649207" prefix="" category="inline-code"></block></block>
   <block id="533f8108cde4f7f1af2f1fb435cc4710" category="list-text">Fornire il nome e la password dell'account amministratore (admin) e accedere.</block>
@@ -2520,9 +2518,6 @@
   <block id="1e2be71e8b4858c0b3e832cba35731d1" category="section-title">ONTAP Select 9.13.1</block>
   <block id="58c277c116ff23ffb9879debb95b4968" category="list-text">Supporto di NVMe over TCP</block>
   <block id="db5f5d6e1e5a3e29724ce78258556ff1" category="list-text">Quando esegui l'upgrade a ONTAP Select 9.13.1, devi disporre della nuova licenza per supportare NVMe su TCP. Questa licenza viene inclusa automaticamente quando si distribuisce ONTAP Select per la prima volta dalla versione 9.13.1.</block>
-  <block id="da691cb71c1f879ed7bf93a9a845601a" category="section-title">Scaricare l'immagine della macchina virtuale</block>
-  <block id="8435c401e57e043b0c57edfb0a00c774" category="section-title">Verificare la firma ONTAP Select Deploy OVA</block>
-  <block id="ab07c13a31893a6c9ee2547e7b9df643" category="paragraph">È necessario verificare la firma OVA (Open Virtualization Appliance) di ONTAP Select prima di installare il pacchetto di installazione.</block>
   <block id="cfa6562e428e1a648631dac061567897" category="paragraph">Verificare che il sistema soddisfi i seguenti requisiti:</block>
   <block id="80c9c2739b6086de81c8ec7262f87af8" category="list-text">OpenSSL versioni da 1.0.2 a 3,0 per la verifica di base</block>
   <block id="03018e3ee63fad9b70308ee5184022f9" category="list-text">Accesso Internet pubblico per la verifica OCSP (Online Certificate Status Protocol)</block>
@@ -2539,8 +2534,6 @@
   <block id="51efe37fbdc37f9d0c55c657a430d296" category="cell">L'algoritmo SHA-256 viene sottoposto a hash e quindi firmato dal Remote Support Agent (RSA) utilizzando<block ref="b6ad60ee94a07b2ba8c24c883ec70503" prefix=" " category="inline-code"></block> chiave e firma per il programma di installazione.</block>
   <block id="1f463ad70f232a0c4114c51cb2a44a5a" category="list-text">Verificare che il<block ref="20db26963ac3dc0b119aa4c781855701" prefix=" " category="inline-code"></block> il file utilizza i certificati e i comandi di convalida associati.</block>
   <block id="134cfba28fd247854afe7ce4d31767ad" category="list-text">Verificare la firma con il seguente comando:</block>
-  <block id="0ba1987cb555e519f115071e917656fc" category="section-title">Implementare la macchina virtuale</block>
-  <block id="25775c61c3281e6d412f48371102d8b3" category="section-title">Accedere all'interfaccia Web di distribuzione</block>
   <block id="db05ec33127afb72e99fdef2dd7e222b" category="section-title">Configurare MFA</block>
   <block id="aef6d7448e31d21fcd5e57734fa1fb88" category="paragraph">A partire da ONTAP Select 9.13.1, l'autenticazione multifattore (MFA) è supportata per l'account amministratore dell'implementazione di ONTAP Select:</block>
   <block id="b43e5dc621bb5f7a6746a0bf53636924" category="inline-link-macro">ONTAP Select implementa il login CLI MFA utilizzando l'autenticazione YubiKey Personal Identity Verification (PIV) o Fast Identity Online (FIDO2)</block>
@@ -2854,7 +2847,6 @@ Host dell'hypervisor ESXi o host KVM Linux</block>
   <block id="d337df11b3ebf63c5a2171392491798f" category="cell">Identificatore per l'host hypervisor VMware ESXi o KVM in cui è installata l'utilità di distribuzione.</block>
   <block id="e827723eb84c3ca87c21fd4dbca2ccda" category="cell">Nome dell'archivio dati</block>
   <block id="d8ca36c2c2dd21202d873bdf26e7ec79" category="cell">Identificatore dell'archivio dati dell'hypervisor che contiene i file della macchina virtuale (sono necessari circa 40GB MB).</block>
-  <block id="1eadabe4e39cf3ae5ce71caf6ddc8447" category="paragraph">È necessario installare e avviare ONTAP Select Deploy VM utilizzando l'immagine OVF VM. Come parte del processo di installazione, l'interfaccia di rete viene configurata per l'utilizzo di DHCP o di una configurazione IP statica.</block>
   <block id="a295d719442375039396c1ff541e8a8f" category="paragraph">Per un hypervisor ESXi, è necessario prepararsi a implementare ONTAP Select Deploy VM:</block>
   <block id="171890587c5a7811013eb0e4f687968f" category="list-text">Abilitare il DHCP nell'ambiente VMware se si assegna dinamicamente un indirizzo IP alla VM di distribuzione</block>
   <block id="4ecc6637981131c676cdedcda970a661" category="paragraph">Per gli hypervisor ESXi e KVM, è necessario disporre delle informazioni di configurazione da utilizzare durante la creazione della macchina virtuale, incluso il nome della macchina virtuale, della rete esterna e del nome host. Quando si definisce una configurazione di rete statica, sono necessarie le seguenti informazioni aggiuntive:</block>
@@ -3187,17 +3179,14 @@ dischi di ricambio dell'aggregato di storage</block>
   <block id="4ec8056f2f2bfb0ffa0104fc43edb1da" category="list-text">ESXi 8,0GA</block>
   <block id="563074de50ee7515467ef30a7a16a15d" category="paragraph">Esistono diversi requisiti hardware comuni che si applicano a tutte le piattaforme, indipendentemente dal tipo di istanza del nodo o dall'offerta di licenza.</block>
   <block id="f699f7e9ed69e5269a69fd9ec385c1ad" category="admonition">I processori AMD (Advanced Micro Devices) non sono supportati con ONTAP Select.</block>
-  <block id="676477cfcc6ef4db97bbb95e9c75b57e" category="summary">È possibile implementare rapidamente un'istanza di valutazione di 90 giorni di un cluster ONTAP Select a nodo singolo utilizzando un modello OVF su VMware ESXi.</block>
   <block id="f9f5faecdbf3b023cf5652fa18b8c4ee" category="list-text">Non è necessario ottenere un numero di serie o una licenza per la capacità di archiviazione da NetApp.</block>
   <block id="591ba54105fed20bc4bc8e31cee68eb3" category="list-text">È possibile allocare la stessa quantità di spazio di archiviazione per i dati utente di una licenza acquistata.</block>
   <block id="10db4e06bde0886ecc0f97ce3a350d45" category="list-text">Non è possibile aggiornare il nodo da una licenza di valutazione a una licenza acquistata.</block>
   <block id="de68e769353f85803d50af3ad5192201" category="list-text">È possibile utilizzare solo un account vCenter per implementare il modello OVF. L'installazione diretta su un host ESXi non è attualmente supportata.</block>
-  <block id="324b9a453c1c067658adca4be37dbae0" category="section-title">Preparare l'host del cluster ONTAP Select</block>
   <block id="1ec19b1e234462f154c2312b865baa14" category="paragraph">Utilizzare i seguenti requisiti per preparare l'host ESXi in cui viene implementato il cluster ONTAP Select. La descrizione della piattaforma si basa sulla configurazione del tipo di istanza standard o di piccole dimensioni con DAS (Direct-Attached Storage) locale formattato utilizzando il file system VMFS-5 o VMFS-6.</block>
   <block id="7564075dd4184b322f666087a8172ae7" category="inline-image-macro">Requisiti per preparare l'host ESXi</block>
   <block id="40500d60ce10678b5afdd4398f493978" category="paragraph"><block ref="40500d60ce10678b5afdd4398f493978" category="inline-image-macro-rx" type="image"></block></block>
   <block id="a9d35c0cb060ab36e25ffd3d93795556" category="inline-link-macro">Documentazione di installazione di ONTAP Select</block>
-  <block id="246320dc101bf0e3be5986b0320159e6" category="section-title">Implementa un cluster ONTAP Select a nodo singolo utilizzando un modello OVF</block>
   <block id="a50cac13360eacf7961596b190047155" category="paragraph">Completare i seguenti passaggi su un server host ESXi a 64 bit supportato.</block>
   <block id="e7c78d04f4c3c4a7d36c59b9d2c2b9f7" category="list-text">Vai alla pagina del programma prodotti di valutazione NetApp e seleziona *ONTAP Select* per scaricare il modello OVF ONTAP Select sulla tua workstation locale.</block>
   <block id="04b1e5dd71a31edd4beba2e075fb1a5e" category="list-text">Accedere al client web VMware vSphere utilizzando un account con Administrative Privileges.</block>
@@ -3945,4 +3934,57 @@ dischi di ricambio dell'aggregato di storage</block>
   <block id="c5a8db185a9f4a35ad276638f9533ab6" category="list-text">Red Hat Enterprise Linux (RHEL) 10.0, 9.6, 9.5, 9.4, 9.2, 9.1, 9.0, 8.8, 8.7 e 8.6</block>
   <block id="5701e65b5391163c34edb9efc807ee5f" category="list-text">Rocky Linux 10.0, 9.6, 9.5, 9.4, 9.3, 9.2, 9.1, 9.0, 8.9, 8.8, 8.7 e 8.6</block>
   <block id="77be5fd15bdb7705f2988a237003df51" category="list-text">Red Hat Enterprise Linux (RHEL) a 64 bit 10.0, 9.6, 9.5, 9.4, 9.3, 9.2, 9.1, 9.0, 8.8, 8.7 e 8.6</block>
+  <block id="1d635a2bfb4e1fe570efdeb7e95a39b1" category="summary">Richiedi l'accesso per scaricare il software di valutazione ONTAP Select .</block>
+  <block id="14a6da11ffa9cf53251b9ff57d86f2e3" category="doc">Software di valutazione Access ONTAP Select</block>
+  <block id="fe359189fa4d670313b3429fe242de5a" category="inline-link-macro">Software di valutazione ONTAP Select</block>
+  <block id="bd6461517f6e69368dd81c758db22e68" category="paragraph">Puoi accedere al <block ref="ea17960d6170723022eb4d5de3e60125" category="inline-link-macro-rx"></block> se sei un cliente attuale di ONTAP Select e hai un diritto attivo o sei un partner NetApp e desideri scaricare una nuova licenza di valutazione Capacity Tiers.</block>
+  <block id="2505b030dbef17ccefc751c6bd407012" category="paragraph">Se non rientri in nessuna delle due categorie sopra elencate e desideri provare ONTAP Select per una valutazione, puoi seguire questi passaggi per richiedere l'accesso per scaricare il software di valutazione.</block>
+  <block id="0984c1edd8b74672c83f621be7c2371d" category="list-text">Queste istruzioni sono rivolte ai venditori, ai partner e ai potenziali clienti NetApp che interagiscono con NetApp.</block>
+  <block id="95eebd9bfcccb9d681b457f9e5950b9d" category="list-text">Le licenze di valutazione ONTAP Select Capacity Tiers sono limitate a 90 giorni dalla data di installazione.</block>
+  <block id="b8b1507fe73d7d86ba34a071cf9c893e" category="admonition">Non è possibile estendere una licenza di valutazione. Al termine dei 90 giorni la licenza non sarà più funzionante e non sarà più possibile accedere ai dati associati.</block>
+  <block id="b59b9153304861fe03d53ff01629500a" category="list-text">Il software di valutazione contiene tutte le informazioni necessarie per scaricare l'utilità di amministrazione ONTAP Select Deploy e distribuire un cluster.</block>
+  <block id="c8a43c95edf40f955992f2d6490e817e" category="section-title">Passaggio 1: registra un account</block>
+  <block id="52019818028f8847218f1bbd1674d2d5" category="paragraph">Se necessario, completa la registrazione dell'account NetApp e richiedi l'accesso ai potenziali clienti.</block>
+  <block id="89ca1aefb6dc8a80385671197f92b2c0" category="list-text">Crea un nuovo account o esci da un account esistente.</block>
+  <block id="1aa668d559a3a32a44796aeee6978a59" category="open-title">Crea un nuovo account</block>
+  <block id="e0de4e570fbdf7cd1204bf43e4569031" category="paragraph">Registrati per un account su <block ref="884c90a723b514d4db68b7829e2037e5" category="inline-link-macro-rx"></block> utilizzando la tua email aziendale.</block>
+  <block id="e72c5fc7da39949d0eca4ed8d5b33c5f" category="admonition">Non sono accettabili account di posta elettronica gratuiti come Gmail o Yahoo.</block>
+  <block id="45d98cb0c4dacd6be68da4095e1fa5f2" category="paragraph">Assicurati di non aver effettuato l'accesso con l'account appena creato.</block>
+  <block id="bffee0a20448efe5e1af0e3c2a7b3eed" category="open-title">Account esistente</block>
+  <block id="36076d78a016dd13b5826e0f1b98ff99" category="paragraph">Se hai già un account, vai su <block ref="49b4f755ae136a93a19c82bfba9113cf" category="inline-link-macro-rx"></block> e assicurati di non aver effettuato l'accesso.</block>
+  <block id="73b271af3218cfeb87a3b893f67319c5" category="list-text">Creare un caso di supporto non tecnico per elevare i livelli di accesso a "prospetti".</block>
+  <block id="621bfdc9de339de870581c0c5ab7f5ac" category="list-text">Seleziona la scheda *CASI*, quindi seleziona *Crea casi non tecnici*</block>
+  <block id="021cb8754bcb517b5e2da0b479f6b87f" category="list-text">Seleziona *Problema di registrazione utente* come categoria di feedback.</block>
+  <block id="9a2b44a070cd576a7900b8d977c23d32" category="list-text">Seleziona *Crea caso*.</block>
+  <block id="c8253ddac731d7f5c7cd042418ea0344" category="paragraph">Compila tutte le informazioni richieste e nella sezione commenti scrivi: "Il mio indirizzo email aziendale è &lt;il-tuo-indirizzo-email&gt;. Vorrei ottenere l'accesso per scaricare il software di valutazione ONTAP Select ."</block>
+  <block id="69caffff95dcb99d1b140cf8c7e2233d" category="paragraph">Includi il nome del tuo contatto NetApp .</block>
+  <block id="b623e6ded9a852f4e7cd9765578d0c08" category="list-text">Seleziona *Invia*.</block>
+  <block id="cd5539c344a39b5b21aa6386fb7f43b4" category="section-title">Passaggio 2: Scarica il software di valutazione ONTAP Select</block>
+  <block id="86338176a0b992e43f21e99312c31686" category="paragraph">Dopo che il tuo caso di supporto sarà stato esaminato e approvato, il supporto NetApp ti invierà una notifica tramite l'indirizzo e-mail fornito.</block>
+  <block id="bfd7797955c8d625272041af5917b9f1" category="inline-link">Scarica il software di valutazione ONTAP Select</block>
+  <block id="295eb5017e1bdbd4983bade2d38ed4bf" category="list-text"><block ref="1a62f0f0111db8cadb4b705107e76f14" category="inline-link-rx"></block>.</block>
+  <block id="67c5a52d5c97ff013e91119d354cf46c" category="paragraph">Il file della licenza di valutazione si trova all'interno del file zip.</block>
+  <block id="708b56859c2409a451122056263cefe6" category="inline-link-macro">aprire un caso di supporto</block>
+  <block id="1009d81db421db34fbc45926ab8f8191" category="list-text">Per ottemperare ai requisiti legali, è necessario <block ref="3f943e080571fe2dbda7051678ab1855" category="inline-link-macro-rx"></block> prima di ottenere l'accesso. Ciò aiuta NetApp a mantenere il controllo e la documentazione corretti, fornendoti al contempo il software pronto per la produzione di cui hai bisogno.</block>
+  <block id="adb988ac2aaf4e14c65785d0a38de873" category="admonition">NetApp fornisce la versione "pronta per la produzione" di ONTAP Select, che non è una versione open source o alternativa. Il supporto è disponibile solo se si esegue l'upgrade a una licenza di produzione.</block>
+  <block id="7d984f4f58da5149b9f3de1a58142fc0" category="paragraph">Una volta completato il download del software di valutazione, seguire le istruzioni per scaricare l'utilità di amministrazione ONTAP Select Deploy e distribuire un cluster.</block>
+  <block id="81b88157ccf03378cbd42db625f92b27" category="inline-link-macro">Scopri di più sulle licenze di valutazione per le distribuzioni ONTAP Select</block>
+  <block id="3e0aeb759942dd62b97d1e0e9a6a0536" category="list-text"><block ref="3e0aeb759942dd62b97d1e0e9a6a0536" category="inline-link-macro-rx"></block></block>
+  <block id="05bccdd9a59f22e26e09213cf2d2dbff" category="list-text"><block ref="05bccdd9a59f22e26e09213cf2d2dbff" category="inline-link-macro-rx"></block></block>
+  <block id="7c480331728387279e0e8575b8f70765" category="inline-link-macro">Accedi al software di valutazione ONTAP Select</block>
+  <block id="7e457290f77b37c32546152d0c55879f" category="list-text"><block ref="7e457290f77b37c32546152d0c55879f" category="inline-link-macro-rx"></block></block>
+  <block id="43c2c693f16be58596e5267f1b4d6c8b" category="summary">È possibile distribuire un'istanza di valutazione di 90 giorni di un cluster ONTAP Select a nodo singolo.</block>
+  <block id="f6dbfcdd0f076283f4df3208ab633467" category="paragraph">È possibile distribuire un'istanza di valutazione di 90 giorni di un cluster ONTAP Select di dimensioni variabili da un singolo nodo fino a 99 nodi utilizzando un modello OVF su VMware ESXi. Puoi scaricare una licenza di valutazione se sei un cliente nuovo o esistente. Ad esempio, sei un cliente esistente e vuoi provare una nuova configurazione prima di acquistare una licenza.</block>
+  <block id="ced8179cabed6ee9f3127b0c5fafd2db" category="section-title">Fase 1: preparare l'host del cluster ONTAP Select</block>
+  <block id="9e25ed83bcf0bc2a794367ec640f2549" category="section-title">Passaggio 2: distribuire un cluster ONTAP Select a nodo singolo utilizzando un modello OVF</block>
+  <block id="916c12b3fbccb1ff32e8a4776708798e" category="section-title">Passaggio 1: scaricare l'immagine della macchina virtuale</block>
+  <block id="b6754a68a857ab2b2389816249373a57" category="paragraph">Scarica il pacchetto ONTAP Select dal sito di supporto NetApp .</block>
+  <block id="0230ee7e6071858ebc377c057e5e603e" category="section-title">Passaggio 2: verificare la firma ONTAP Select Deploy OVA</block>
+  <block id="9e0015dd89b19bd3443ad4f4a14527ab" category="paragraph">Verificare la firma ONTAP Select Open Virtualization Appliance (OVA) prima di installare il pacchetto di installazione.</block>
+  <block id="35f9f1c9a9790bd3fc497db798819083" category="section-title">Passaggio 3: distribuire la macchina virtuale</block>
+  <block id="a84a05d08c99af325673887887ed8fdb" category="paragraph">Installare e avviare ONTAP Select Deploy VM utilizzando l'immagine OVF VM. Come parte del processo di installazione, è necessario configurare l'interfaccia di rete per utilizzare DHCP o una configurazione IP statica.</block>
+  <block id="7e5f2ca43da3004f8d3d7bae3edb7bae" category="section-title">Passaggio 4: Sign in all'interfaccia web di Deploy</block>
+  <block id="619fea79d54cac08622de23d5f1d57d5" category="paragraph">Sign in all'interfaccia utente Web per confermare che l'utilità Deploy sia disponibile ed esegui la configurazione iniziale.</block>
+  <block id="97b3aadab6e4066f1f4afb183a83298c" category="sidebar">Prova ONTAP Select</block>
+  <block id="3ff87e54e9b20339b68f24cf241f05b0" category="sidebar">Software di valutazione dell'accesso</block>
 </blocks>

@@ -18,9 +18,9 @@ summary: 'È necessario installare l"utility di amministrazione di ONTAP Select 
 
 
 
-== Scaricare l'immagine della macchina virtuale
+== Passaggio 1: scaricare l'immagine della macchina virtuale
 
-È possibile scaricare il pacchetto ONTAP Select dal sito di supporto NetApp.
+Scarica il pacchetto ONTAP Select dal sito di supporto NetApp .
 
 .Prima di iniziare
 https://mysupport.netapp.com/site/user/registration["Hai un account registrato sul sito di supporto NetApp"^].
@@ -40,9 +40,9 @@ L'utility di amministrazione di ONTAP Select Deploy è predisposta come macchina
 
 
 
-== Verificare la firma ONTAP Select Deploy OVA
+== Passaggio 2: verificare la firma ONTAP Select Deploy OVA
 
-È necessario verificare la firma OVA (Open Virtualization Appliance) di ONTAP Select prima di installare il pacchetto di installazione.
+Verificare la firma ONTAP Select Open Virtualization Appliance (OVA) prima di installare il pacchetto di installazione.
 
 .Prima di iniziare
 Verificare che il sistema soddisfi i seguenti requisiti:
@@ -84,9 +84,9 @@ openssl dgst  -sha256 -verify ONTAP-Select-Deploy-Production.pub -signature ONTA
 
 
 
-== Implementare la macchina virtuale
+== Passaggio 3: distribuire la macchina virtuale
 
-È necessario installare e avviare ONTAP Select Deploy VM utilizzando l'immagine OVF VM. Come parte del processo di installazione, l'interfaccia di rete viene configurata per l'utilizzo di DHCP o di una configurazione IP statica.
+Installare e avviare ONTAP Select Deploy VM utilizzando l'immagine OVF VM. Come parte del processo di installazione, è necessario configurare l'interfaccia di rete per utilizzare DHCP o una configurazione IP statica.
 
 .Prima di iniziare
 Per un hypervisor ESXi, è necessario prepararsi a implementare ONTAP Select Deploy VM:
@@ -200,9 +200,9 @@ Use DHCP to set networking information? [n]:
 ====
 
 
-== Accedere all'interfaccia Web di distribuzione
+== Passaggio 4: Sign in all'interfaccia web di Deploy
 
-Accedere all'interfaccia utente Web per verificare che l'utilità di implementazione sia disponibile ed eseguire la configurazione iniziale.
+Sign in all'interfaccia utente Web per confermare che l'utilità Deploy sia disponibile ed esegui la configurazione iniziale.
 
 .Fasi
 . Puntare il browser verso l'utility di implementazione utilizzando l'indirizzo IP o il nome di dominio:

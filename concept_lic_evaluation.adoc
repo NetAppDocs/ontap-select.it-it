@@ -64,7 +64,11 @@ La licenza di valutazione ONTAP Select presenta le seguenti caratteristiche:
 
 Vedere link:task_adm_licenses.html["Convertire una licenza di valutazione in una licenza di produzione"] per ulteriori informazioni.
 
+.Cosa succederà ora?
+* link:access-evaluation-software.html["Accedi al software di valutazione ONTAP Select"]
+* link:deploy-evaluation-ontap-select-ovf-template.html["Implementazione di un'istanza di valutazione di 90 giorni di un cluster ONTAP Select"]
+
+
 .Informazioni correlate
 * link:concept_lic_production.html["Scopri di più sulle licenze per le distribuzioni di produzione"]
-* link:deploy-evaluation-ontap-select-ovf-template.html["Implementazione di un'istanza di valutazione di 90 giorni di un cluster ONTAP Select"]
 

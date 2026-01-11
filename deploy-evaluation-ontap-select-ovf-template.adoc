@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: deploy-evaluation-ontap-select-ovf-template.html 
 keywords: ontap, select, ovf, template, deployment, evaluation, license 
-summary: 'È possibile implementare rapidamente un"istanza di valutazione di 90 giorni di un cluster ONTAP Select a nodo singolo utilizzando un modello OVF su VMware ESXi.' 
+summary: 'È possibile distribuire un"istanza di valutazione di 90 giorni di un cluster ONTAP Select a nodo singolo.' 
 ---
 = Implementazione di un'istanza di valutazione di 90 giorni di un cluster ONTAP Select
 :hardbreaks:
@@ -14,7 +14,7 @@ summary: 'È possibile implementare rapidamente un"istanza di valutazione di 90 
 
 
 [role="lead"]
-È possibile implementare rapidamente un'istanza di valutazione di 90 giorni di un cluster ONTAP Select a nodo singolo utilizzando un modello OVF su VMware ESXi.
+È possibile distribuire un'istanza di valutazione di 90 giorni di un cluster ONTAP Select di dimensioni variabili da un singolo nodo fino a 99 nodi utilizzando un modello OVF su VMware ESXi. Puoi scaricare una licenza di valutazione se sei un cliente nuovo o esistente. Ad esempio, sei un cliente esistente e vuoi provare una nuova configurazione prima di acquistare una licenza.
 
 .A proposito di questa attività
 * Non è necessario ottenere un numero di serie o una licenza per la capacità di archiviazione da NetApp.
@@ -26,7 +26,7 @@ summary: 'È possibile implementare rapidamente un"istanza di valutazione di 90 
 
 
 
-== Preparare l'host del cluster ONTAP Select
+== Fase 1: preparare l'host del cluster ONTAP Select
 
 Utilizzare i seguenti requisiti per preparare l'host ESXi in cui viene implementato il cluster ONTAP Select. La descrizione della piattaforma si basa sulla configurazione del tipo di istanza standard o di piccole dimensioni con DAS (Direct-Attached Storage) locale formattato utilizzando il file system VMFS-5 o VMFS-6.
 
@@ -36,7 +36,7 @@ Per ulteriori informazioni sulle opzioni di configurazione degli host, consultar
 
 
 
-== Implementa un cluster ONTAP Select a nodo singolo utilizzando un modello OVF
+== Passaggio 2: distribuire un cluster ONTAP Select a nodo singolo utilizzando un modello OVF
 
 Completare i seguenti passaggi su un server host ESXi a 64 bit supportato.
 
@@ -63,4 +63,6 @@ Completare i seguenti passaggi su un server host ESXi a 64 bit supportato.
 
 
 .Informazioni correlate
-link:http://mysupport.netapp.com/matrix["Tool di matrice di interoperabilità"^]
+* link:concept_lic_evaluation.html["Scopri di più sulle licenze di valutazione per le distribuzioni ONTAP Select"]
+* link:http://mysupport.netapp.com/matrix["Tool di matrice di interoperabilità"^]
+
