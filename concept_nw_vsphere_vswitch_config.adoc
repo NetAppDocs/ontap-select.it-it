@@ -16,20 +16,20 @@ summary: Configurazione di ONTAP Select vSwitch e policy di bilanciamento del ca
 [role="lead"]
 Configurazione di ONTAP Select vSwitch e policy di bilanciamento del carico per configurazioni a due e quattro NIC.
 
-ONTAP Select supporta l'utilizzo di configurazioni vSwitch standard e distribuite. I vSwitch distribuiti supportano i costrutti di aggregazione dei collegamenti (LACP). L'aggregazione dei collegamenti è una struttura di rete comune utilizzata per aggregare la larghezza di banda tra più adattatori fisici. LACP è uno standard indipendente dal vendor che fornisce un protocollo aperto per gli endpoint di rete che raggruppa gruppi di porte di rete fisiche in un singolo canale logico. ONTAP Select può funzionare con gruppi di porte configurati come gruppo di aggregazione di banda (LAG). Tuttavia, NetApp consiglia di utilizzare le singole porte fisiche come semplici porte di uplink (trunk) per evitare la configurazione LAG. In questi casi, le Best practice per vSwitch standard e distribuiti sono identiche.
+ONTAP Select supporta l'utilizzo di configurazioni vSwitch sia standard che distribuite. Gli switch virtuali distribuiti supportano i costrutti di aggregazione dei link (LACP). L'aggregazione di link è una struttura di rete comune utilizzata per aggregare la larghezza di banda su più adattatori fisici. LACP è uno standard indipendente dal fornitore. Fornisce un protocollo aperto per gli endpoint di rete che raggruppano gruppi di porte di rete fisiche in un singolo canale logico. ONTAP Select può funzionare con gruppi di porte configurati come Link Aggregation Group (LAG). Tuttavia, NetApp consiglia di utilizzare le singole porte fisiche come semplici porte uplink (trunk) per evitare la configurazione LAG. In questi casi, le best practice per vSwitch standard e distribuiti sono identiche.
 
 Questa sezione descrive la configurazione di vSwitch e i criteri di bilanciamento del carico da utilizzare nelle configurazioni a due NIC e a quattro NIC.
 
-Quando si configurano i gruppi di porte per l'utilizzo da parte di ONTAP Select, è necessario seguire le seguenti Best practice: Il criterio di bilanciamento del carico a livello di gruppo di porte è instradamento basato sull'ID della porta virtuale di origine. VMware consiglia di impostare STP su Portfast sulle porte dello switch collegate agli host ESXi.
+Quando si configurano i gruppi di porte per ONTAP Select, seguire queste best practice; la politica di bilanciamento del carico a livello di gruppo di porte è Route Based on Originating Virtual Port ID. VMware consiglia di impostare STP su Portfast sulle porte dello switch connesse agli host ESXi.
 
-Tutte le configurazioni vSwitch richiedono un minimo di due schede di rete fisiche raggruppate in un singolo raggruppamento di schede di rete. ONTAP Select supporta un singolo collegamento da 10 GB per cluster a due nodi. Tuttavia, è una Best practice di NetApp garantire la ridondanza hardware attraverso l'aggregazione NIC.
+Tutte le configurazioni vSwitch richiedono un minimo di due schede di rete fisiche raggruppate in un unico team NIC. ONTAP Select supporta un singolo collegamento da 10 Gb per cluster a due nodi. Tuttavia, NetApp consiglia di utilizzare l'aggregazione NIC per garantire la ridondanza hardware.
 
 Su un server vSphere, i raggruppamenti NIC sono il costrutto di aggregazione utilizzato per raggruppare più adattatori di rete fisici in un singolo canale logico, consentendo la condivisione del carico di rete tra tutte le porte membri. È importante ricordare che i team NIC possono essere creati senza il supporto dello switch fisico. I criteri di bilanciamento del carico e failover possono essere applicati direttamente a un team NIC, che non conosce la configurazione dello switch upstream. In questo caso, i criteri vengono applicati solo al traffico in uscita.
 
 
-NOTE: I canali delle porte statiche non sono supportati con ONTAP Select. I canali abilitati LACP sono supportati con vSwitch distribuiti, ma l'utilizzo di LAG LACP può comportare una distribuzione del carico non uniforme tra i membri LAG.
+NOTE: I canali porta statici non sono supportati con ONTAP Select. I canali abilitati LACP sono supportati con vSwitch distribuiti, ma l'utilizzo di LAG LACP potrebbe comportare una distribuzione non uniforme del carico tra i membri del LAG.
 
-Per i cluster a nodo singolo, ONTAP Deploy configura la macchina virtuale ONTAP Select in modo che utilizzi un gruppo di porte per la rete esterna e lo stesso gruppo di porte o, facoltativamente, un gruppo di porte diverso per il traffico di gestione del cluster e dei nodi. Per i cluster a nodo singolo, è possibile aggiungere il numero desiderato di porte fisiche al gruppo di porte esterne come adattatori attivi.
+Per i cluster a nodo singolo, ONTAP Deploy configura la VM ONTAP Select in modo che utilizzi un gruppo di porte per la rete esterna e lo stesso gruppo di porte o, facoltativamente, un gruppo di porte diverso per il traffico di gestione del cluster e dei nodi. Per i cluster a nodo singolo, è possibile aggiungere il numero desiderato di porte fisiche al gruppo di porte esterne come adattatori attivi.
 
 Per i cluster a più nodi, ONTAP Deploy configura ogni macchina virtuale ONTAP Select in modo che utilizzi uno o due gruppi di porte per la rete interna e, separatamente, uno o due gruppi di porte per la rete esterna. Il traffico di gestione del cluster e dei nodi può utilizzare lo stesso gruppo di porte del traffico esterno o, facoltativamente, un gruppo di porte separato. Il traffico di gestione del cluster e dei nodi non può condividere lo stesso gruppo di porte con il traffico interno.
 
@@ -40,7 +40,7 @@ NOTE: ONTAP Select supporta un massimo di quattro VMNIC.
 
 == VSwitch standard o distribuito e quattro porte fisiche per nodo
 
-È possibile assegnare quattro gruppi di porte a ciascun nodo di un cluster a più nodi. Ciascun gruppo di porte dispone di una singola porta fisica attiva e di tre porte fisiche di standby, come illustrato nella figura seguente.
+È possibile assegnare quattro gruppi di porte a ciascun nodo in un cluster multinodo. Ogni gruppo di porte ha una singola porta fisica attiva e tre porte fisiche in standby, come nella figura seguente.
 
 *VSwitch con quattro porte fisiche per nodo*
 
@@ -108,7 +108,7 @@ Per la leggibilità, le attività sono le seguenti:
 
 == VSwitch standard o distribuito e due porte fisiche per nodo
 
-Quando si utilizzano due schede di rete ad alta velocità (25 GB), la configurazione consigliata del gruppo di porte è concettualmente molto simile alla configurazione con quattro schede di rete da 10 GB. È necessario utilizzare quattro gruppi di porte anche quando si utilizzano solo due adattatori fisici. Le assegnazioni dei gruppi di porte sono le seguenti:
+Quando si utilizzano due schede di rete ad alta velocità (25/40 Gb), la configurazione del gruppo di porte consigliata è concettualmente molto simile alla configurazione con quattro adattatori da 10 Gb. È opportuno utilizzare quattro gruppi di porte anche quando si utilizzano solo due adattatori fisici. Le assegnazioni dei gruppi di porte sono le seguenti:
 
 [cols="5*"]
 |===
@@ -126,7 +126,7 @@ image:DDN_17.jpg["VSwitch con due porte fisiche ad alta velocità (25 GB) per no
 
 Quando si utilizzano due porte fisiche (10 GB o meno), ciascun gruppo di porte deve disporre di un adattatore attivo e di un adattatore di standby configurati uno di fronte all'altro. La rete interna è presente solo per i cluster ONTAP Select a più nodi. Per i cluster a nodo singolo, entrambi gli adattatori possono essere configurati come attivi nel gruppo di porte esterne.
 
-Nell'esempio seguente viene illustrata la configurazione di vSwitch e dei due gruppi di porte responsabili della gestione dei servizi di comunicazione interni ed esterni per un cluster ONTAP Select multinodo. La rete esterna può utilizzare LA RETE interna VMNIC in caso di interruzione della rete, in quanto le VMNIC della rete interna fanno parte di questo gruppo di porte e sono configurate in modalità standby. Il contrario è il caso della rete esterna. L'alternanza delle VMNIC attive e di standby tra i due gruppi di porte è fondamentale per il corretto failover delle VM ONTAP Select durante le interruzioni di rete.
+L'esempio seguente mostra la configurazione di un vSwitch e dei due gruppi di porte responsabili della gestione dei servizi di comunicazione interna ed esterna per un cluster ONTAP Select multinodo. In caso di interruzione della rete, la rete esterna può utilizzare la VMNIC della rete interna, poiché le VMNIC della rete interna fanno parte di questo gruppo di porte e sono configurate in modalità standby. Per la rete esterna avviene il contrario. L'alternanza delle VMNIC attive e di standby tra i due gruppi di porte è fondamentale per il corretto failover delle VM ONTAP Select durante le interruzioni di rete.
 
 *VSwitch con due porte fisiche (10 GB o meno) per nodo*
 
@@ -153,4 +153,4 @@ image:DDN_15.jpg["Configurazioni di gruppi di porte esterne che utilizzano un vS
 image:DDN_16.jpg["Configurazioni di gruppi di porte interne che utilizzano un vSwitch distribuito con LACP attivato"]
 
 
-NOTE: LACP richiede di configurare le porte dello switch upstream come canale di porta. Prima di attivare questa opzione su vSwitch distribuito, assicurarsi che un canale di porta abilitato LACP sia configurato correttamente.
+NOTE: LACP richiede di configurare le porte dello switch upstream come un canale porta. Prima di abilitare questa configurazione sul vSwitch distribuito, assicurarsi che un canale porta abilitato per LACP sia configurato correttamente.
