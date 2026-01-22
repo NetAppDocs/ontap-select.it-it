@@ -121,12 +121,12 @@ Supporto driver NDA aggiornato:: A partire da ONTAP Select 9.17.1, il driver di 
 Per ONTAP Select 9.16.1 e versioni precedenti, NVD continua a fornire supporto per i dispositivi NVMe nella distribuzione ONTAP Select .
 
 --
-Supporto aggiornato dell'hypervisor KVM:: A partire da ONTAP Select 9.17.1, l'hypervisor KVM è supportato su Red Hat Enterprise Linux (RHEL) 10.0 e 9.6 e Rocky Linux 10.0 e 9.6.
+Supporto aggiornato dell'hypervisor KVM:: A partire da ONTAP Select 9.17.1, l'hypervisor KVM è supportato su Red Hat Enterprise Linux (RHEL) 10.1, 10.0, 9.7 e 9.6 e Rocky Linux 10.0 e 9.6.
 +
 --
 [NOTE]
 ====
-Esistono limitazioni del flusso di lavoro RAID software per gli hypervisor KVM sugli host RHEL 10.0 e Rocky Linux 10.0. Per ulteriori informazioni, consultare i seguenti articoli della Knowledge Base:
+Esistono limitazioni al flusso di lavoro RAID software per gli hypervisor KVM su host RHEL 10.1 e 10.0 e Rocky Linux 10.0. Per ulteriori informazioni, consultare i seguenti articoli della Knowledge Base:
 
 * link:https://kb.netapp.com/on-prem/ontap/ontap-select/Select-Issues/CDEPLOY-4020["CDEPLOY-4020: ONTAP Select Deploy: messaggio di avviso durante la creazione del Cluster HWR utilizzando RHEL 10 e ROCKY 10"^]
 * link:https://kb.netapp.com/on-prem/ontap/ontap-select/Select-Issues/CDEPLOY-4025["CDEPLOY-4025: ONTAP Select DeployGUI: pool di archiviazione e dischi di archiviazione non visibili per SWR nella pagina di creazione del cluster su host con RHEL10/Rocky 10"^]
