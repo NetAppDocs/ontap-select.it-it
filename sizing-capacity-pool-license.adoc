@@ -1,0 +1,47 @@
+---
+sidebar: sidebar 
+permalink: sizing-capacity-pool-license.html 
+keywords: license, licensing, Capacity Tiers, usable, space 
+summary: La licenza Capacity Tiers si basa sulla capacità del disco sottostante gestita da ciascun nodo e non sulla capacità utilizzabile del nodo, della coppia HA o del cluster. Ogni licenza Capacity Tiers è assegnata a un singolo numero di serie di nodo per una capacità specifica e richiede un contratto di supporto allegato. 
+---
+= Considerazioni sul dimensionamento di una licenza ONTAP Select Capacity Pools
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+La capacità concessa in licenza per una licenza Capacity Pool è espressa in TiB completi, con un minimo di 2 TiB. La capacità concessa in licenza si calcola moltiplicando la quantità di spazio utilizzabile per il fattore di overhead. Il fattore di overhead varia tra un cluster a nodo singolo e cluster multi-nodo (basati su coppia HA):
+
+* Fattore di overhead per cluster a nodo singolo è 1.13
+* Fattore di overhead per i cluster multi-nodo è 2,67
+
+
+È necessario calcolare la capacità concessa in licenza in base allo spazio utilizzabile per assicurarsi di avere abbastanza spazio per la distribuzione.
+
+[cols="25,30,45"]
+|===
+| Descrizione | Nodo singolo | coppia HA o mix di HA e cluster a nodo singolo 
+
+
+| Spazio utilizzabile | 20 TiB | 10 TiB per cluster a nodo singolo 20 TiB per coppia HA 
+
+
+| Spazio concesso in licenza | 23 TiB (20 x 1,13 = 22,6, arrotonda al TiB intero successivo) | 54 TiB (20 x 2,67 = 53,4, arrotonda al TiB intero successivo) 
+
+
+| Spazio massimo utilizzabile per nodo *Nota*: lo spazio massimo gestito per nodo o coppia HA è 400 TiB | 353 TiB (400 / 1,13)  a| 
+Per cluster a nodo singolo:
+
+74 TiB [(400 / 2) / 2,67]
+
+Per cluster a coppia HA:
+
+148 TiB (2 x 74)
+
+|===
+.Cosa c'è dopo
+link:task_lic_acquire_cp.html["Acquisisci una licenza Capacity Pools per ONTAP Select"]

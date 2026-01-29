@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: concept_lic_cp_compare_ct.html 
 keywords: license, licensing, Capacity Pools, Capacity Tiers, comparing 
-summary: Esistono diverse differenze tra i modelli di licenza dei pool di capacità e dei Tier di capacità. 
+summary: Esistono diverse differenze tra i modelli di licensing Capacity Tiers e Capacity Pools. 
 ---
-= Confronta le licenze per pool di capacità e Tier di capacità di ONTAP Select
+= Confronta il modello di licensing ONTAP Select Capacity Tiers e Capacity Pools
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -21,13 +21,13 @@ Nella tabella seguente vengono confrontati i due modelli di licenza di produzion
 |  | Tier di capacità | Pool di capacità 
 
 
-| Numero di serie della licenza | Nove cifre generate da NetApp e assegnate a un nodo | Nove cifre generate dal NetApp e assegnate a un pool di capacità 
+| Numero di serie della licenza | NetApp genera nove cifre e le assegna a un nodo | NetApp genera nove cifre e le assegna a un Capacity Pool 
 
 
 | Blocco della licenza | Bloccato sul nodo ONTAP Select | Bloccato sull'istanza del Manager di licenza 
 
 
-| Durata della licenza | Perpetuo (non è richiesto alcun rinnovo) | Durata fissa in base all'acquisto (rinnovo obbligatorio) 
+| Durata della licenza | Perpetuo (non è richiesto alcun rinnovo) | Durata fissa in base all'acquisto (rinnovo richiesto) 
 
 
 | Durata del lease per l'aggregato di dati | Non applicabile | Da un'ora a sette giorni 
@@ -52,4 +52,10 @@ Nella tabella seguente vengono confrontati i due modelli di licenza di produzion
 
 
 | Applicazione: Licenza scaduta | N/A. | Sì (nessun Grace period) 
+
+
+| Licenza minima | 1 TiB | 2 TiB 
+
+
+| Spazio massimo gestito | 400 TiB per nodo | 400 TiB per nodo 
 |===

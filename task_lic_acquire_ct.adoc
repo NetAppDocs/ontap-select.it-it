@@ -17,23 +17,26 @@ summary: Quando si utilizzano le licenze per i Tier di capacità, è necessario 
 Quando si utilizzano le licenze per i Tier di capacità, è necessario acquisire un file di licenza per ogni nodo ONTAP Select. Il file di licenza definisce la capacità di storage per il nodo e viene bloccato nel nodo tramite il numero di serie univoco a nove cifre assegnato da NetApp.
 
 .Prima di iniziare
-Il numero di serie della licenza a nove cifre deve essere assegnato al nodo da NetApp. Prima di tentare di acquisire un file di licenza, attendere almeno ventiquattro ore dopo la data di spedizione dell'ordine di acquisto.
+* È necessario disporre del numero di serie della licenza a nove cifre assegnato al nodo ONTAP Select da NetApp.
+* Dovresti attendere almeno 24 ore dalla data di spedizione dell'ordine di acquisto prima di acquisire un file di licenza.
+* Hai esaminato il link:sizing-capacity-tier-license.html["considerazioni per il dimensionamento di una licenza Capacity Tiers"].
+
 
 .A proposito di questa attività
-Questa attività deve essere eseguita per ogni nodo ONTAP Select che richiede una licenza di livello capacità.
+È necessario eseguire questa attività per ogni nodo ONTAP Select che richiede una licenza Capacity Tiers.
 
 .Fasi
-. Accedere al sito di licenza ONTAP Select utilizzando un browser Web:
-+
-`https://register.netapp.com/register/getlicensefile`
-
+. link:https://register.netapp.com/register/getlicensefile["Accedi al sito delle licenze ONTAP Select"^].
 . Accedi utilizzando le credenziali del tuo account NetApp.
 . Nella pagina *License Generator*, selezionare l'offerta di licenza desiderata dal menu a discesa.
-. Compilare i campi rimanenti della stessa pagina, compreso il numero di serie del prodotto *, che corrisponde al numero di serie del nodo ONTAP Select.
-. Fare clic su *Invia*.
+. Compila i campi rimanenti nella pagina *License Generator*, incluso il *Product Serial #*.
++
+Il "numero di serie del prodotto" è il numero di serie del nodo ONTAP Select.
+
+. Seleziona *Invia*.
 . Una volta convalidata la richiesta, selezionare il metodo di consegna della licenza.
 +
-È possibile fare clic su *Download License* (Scarica licenza) o *Email License* (Invia licenza).
+È possibile selezionare *Scarica licenza* o *Invia licenza*.
 
 . Confermare di aver ricevuto il file di licenza in base al metodo di consegna selezionato.
 

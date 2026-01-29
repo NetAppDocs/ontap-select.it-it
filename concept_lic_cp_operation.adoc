@@ -33,10 +33,22 @@ Il Manager di licenza viene eseguito come un processo separato all'interno di ci
 
 Lo storage allocato per ogni aggregato di dati in un nodo utilizzando una licenza Capacity Pool deve avere un leasing associato. Il nodo richiede un lease dello storage e, se la capacità è disponibile, il Manager di licenza risponde con un lease. Ogni lease ha i seguenti attributi espliciti o impliciti:
 
-* Manager di licenza ogni nodo ONTAP Select è associato a un'istanza del Manager di licenza
-* Pool di capacità ogni nodo ONTAP Select è associato a un pool di capacità
-* Allocazione dello storage Nel lease viene assegnato un valore di capacità specifico
-* Data e ora di scadenza i leases hanno una durata compresa tra un'ora e sette giorni, a seconda della configurazione dell'utente.
+* Manager di licenza
++
+Ogni nodo ONTAP Select è associato a un'istanza di License Manager
+
+* Pool di capacità
++
+Ogni nodo ONTAP Select è associato a un Capacity Pool
+
+* Allocazione dello storage
++
+Un valore di capacità specifico viene assegnato nel contratto di locazione
+
+* Data e ora di scadenza
++
+I contratti di locazione hanno una durata compresa tra un'ora e sette giorni a seconda della configurazione per l'utente.
+
 
 
 
@@ -47,15 +59,20 @@ Ogni istanza del Manager di licenza, e quindi ogni istanza dell'utility di imple
 
 È possibile determinare l'ID del blocco di licenza per l'istanza di implementazione utilizzando l'interfaccia utente Web nei seguenti modi:
 
-* Getting Started page questa pagina viene visualizzata quando si effettua il primo accesso per la distribuzione. È inoltre possibile visualizzare la pagina facendo clic sulla casella a discesa in alto a destra della pagina e selezionando Guida introduttiva. L'LLID viene visualizzato nella sezione Add Licenses (Aggiungi licenze).
-* Amministrazione fare clic sulla scheda *Amministrazione* nella parte superiore della pagina, quindi fare clic su *sistemi* e *Impostazioni*.
+* Pagina iniziale
++
+Deploy visualizza questa pagina quando accedi per la prima volta. Puoi anche aprire il menu a discesa in alto a destra della pagina e selezionare *Getting Started* per visualizzare questa pagina. Il LLID viene visualizzato nella sezione Add Licenses.
+
++
+Selezionare la scheda *Administration* nella parte superiore della pagina, quindi selezionare *Systems* e *Settings*.
+
 
 
 
 
 == Operazioni di leasing di base
 
-Un nodo ONTAP Select deve individuare o richiedere un lease di capacità valido ogni volta che un aggregato di dati viene creato, espanso o modificato. È possibile utilizzare un lease ottenuto da una richiesta precedente ancora valida oppure richiedere un nuovo lease, se necessario. Il nodo ONTAP Select esegue i seguenti passaggi per individuare un leasing di Capacity Pool:
+Un nodo ONTAP Select deve individuare o richiedere un lease di capacità valido ogni volta che un aggregato di dati viene creato, espanso o modificato. È possibile utilizzare un lease ottenuto da una richiesta precedente ancora valido oppure richiederne uno nuovo, se necessario. Il nodo ONTAP Select esegue i seguenti passaggi per individuare un lease di Capacity Pool:
 
 . Se un lease esistente si trova nel nodo, viene utilizzato purché siano vere tutte le seguenti condizioni:
 +

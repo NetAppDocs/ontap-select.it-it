@@ -23,7 +23,7 @@ Il numero di serie di un nodo che utilizza la licenza Capacity Pools ha il segue
 
 NOTE: Gli spazi sono stati aggiunti per maggiore chiarezza, ma non fanno parte del numero di serie effettivo.
 
-Ciascuna sezione del numero di serie del nodo è descritta nella seguente tabella, da sinistra a destra.
+La tabella seguente descrive ogni sezione del numero di serie del nodo da sinistra a destra.
 
 [cols="15,85"]
 |===
@@ -39,4 +39,4 @@ Ciascuna sezione del numero di serie del nodo è descritta nella seguente tabell
 | nnnnnnnn | Valore variabile a otto cifre generato dal Manager di licenza per ciascun nodo che utilizza il pool di capacità 
 |===
 
-NOTE: Attenzione: Quando si apre un caso con supporto NetApp relativo a un nodo che utilizza una licenza Capacity Pool, non è possibile fornire il numero seriale completo del nodo a venti cifre. Fornire invece il numero di serie della licenza Capacity Pool a nove cifre. È possibile ricavare il numero seriale della licenza dal numero seriale del nodo come mostrato sopra. Saltare le prime tre cifre del numero di serie del nodo ('999') ed estrarre le nove cifre successive (ppppppppp).
+CAUTION: Quando si apre un caso con NetApp support relativo a un nodo che utilizza una licenza Capacity Pool, è necessario fornire il numero di serie della licenza Capacity Pool a nove cifre. Non è possibile fornire il numero di serie completo del nodo a venti cifre. È possibile ricavare il numero di serie della licenza dal numero di serie del nodo saltando le prime tre cifre del numero di serie del nodo ('999') ed estraendo le nove cifre successive (ppppppppp).

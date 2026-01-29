@@ -20,7 +20,7 @@ Di seguito sono presentate le limitazioni applicabili all'utilizzo del modello d
 Tutti i nodi di un singolo cluster ONTAP Select devono utilizzare lo stesso modello di licenza, sia per Tier di capacità che per pool di capacità. Non è possibile combinare i tipi di licenza per i nodi all'interno di un singolo cluster.
 
 .Tutti i nodi di un cluster utilizzano la stessa istanza del Manager di licenza
-Tutti i nodi con una licenza Capacity Pool in un cluster ONTAP Select devono utilizzare la stessa istanza del Manager di licenza. Poiché esiste un'istanza di Manager di licenza all'interno di ogni istanza di distribuzione, questa restrizione rappresenta un ripristino del requisito esistente secondo cui tutti i nodi di un cluster devono essere gestiti dalla stessa istanza di distribuzione.
+Tutti i nodi con una licenza Capacity Pool in un cluster ONTAP Select devono utilizzare la stessa istanza di License Manager. Poiché all'interno di ogni istanza di Deploy è presente un'istanza di License Manager, questa restrizione ribadisce il requisito esistente secondo cui la stessa istanza di Deploy deve gestire tutti i nodi in un cluster.
 
 .Un pool di capacità per nodo
 Ciascun nodo può in leasing lo storage da un esatto pool di capacità. Un nodo non può utilizzare due o più pool.

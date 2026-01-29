@@ -22,7 +22,7 @@ L'utilizzo del modello di licenza Capacity Pool comporta diversi vantaggi rispet
 
 Utilizzando la licenza Capacity Tier, viene allocata una capacità dello storage fissa a ciascun nodo. Qualsiasi spazio inutilizzato non può essere condiviso con gli altri nodi e viene effettivamente sprecato. Con la licenza Capacity Pools, ogni nodo consuma solo la capacità di cui ha bisogno, in base alle dimensioni degli aggregati di dati.
 
-Inoltre, poiché la capacità è ancorata in un pool centrale, può essere condivisa tra molti nodi dell'organizzazione.
+La capacità è ancorata a un pool centrale dove può essere condivisa tra molti nodi della tua organizzazione.
 
 
 

@@ -1,0 +1,54 @@
+---
+sidebar: sidebar 
+permalink: sizing-capacity-tier-license.html 
+keywords: license, licensing, Capacity Tiers, usable, space 
+summary: La licenza Capacity Tiers si basa sulla capacità del disco sottostante gestita da ciascun nodo e non sulla capacità utilizzabile del nodo, della coppia HA o del cluster. Ogni licenza Capacity Tiers è assegnata a un singolo numero di serie di nodo per una capacità specifica e richiede un contratto di supporto allegato. 
+---
+= Considerazioni sul dimensionamento di una licenza ONTAP Select Capacity Tiers
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+La licenza Capacity Tiers si basa sulla capacità del disco sottostante gestita da ciascun nodo ONTAP Select e non sulla capacità utilizzabile del nodo, della coppia HA o del cluster. Ogni licenza Capacity Tiers è assegnata a un singolo numero di serie di nodo per una capacità specifica e richiede un contratto di supporto allegato.
+
+La capacità concessa in licenza per una licenza Capacity Tiers è espressa in TiB interi, con un minimo di 1 TiB. La capacità concessa in licenza si calcola moltiplicando la quantità di spazio utilizzabile per il fattore di overhead. Il fattore di overhead varia tra un cluster a nodo singolo e un cluster multi-nodo (basato su coppia HA):
+
+* Fattore di overhead per cluster a nodo singolo è 1.13
+* Fattore di overhead per i cluster multi-nodo è 2,67
+
+
+Calcola la capacità concessa in licenza in base allo spazio utilizzabile per assicurarti di averne a sufficienza per il tuo deployment.
+
+[cols="25,30,45"]
+|===
+| Descrizione | Nodo singolo | Coppia HA 
+
+
+| Spazio utilizzabile | 10 TiB | 5 TiB per nodo 10 TiB per coppia HA 
+
+
+| Spazio concesso in licenza | 12 TiB (10 x 1.13 = 11.3, arrotondato al TiB intero successivo) | Due licenze da 14 TiB (5 x 2.67 = 13.35, arrotondato al TiB intero successivo) 
+
+
+| Spazio massimo utilizzabile per nodo *Nota*: lo spazio massimo gestito per nodo o coppia HA è 400 TiB | 353 TiB (400 / 1,13)  a| 
+Per nodo in una coppia HA:
+
+* 74 TiB [(400 / 2) / 2,67]
+
+
+Per coppia HA in un cluster multi-nodo:
+
+* Cluster a due nodi: 148 TiB (2 x 74)
+* Quattro nodi: 296 TiB (4 x 74)
+* Sei nodi: 444 TiB (6 x 74)
+* Otto nodi: 592 TiB (8 x 74)
+
+
+|===
+.Cosa c'è dopo
+link:task_lic_acquire_ct.html["Acquisisci una licenza Capacity Tier per ONTAP Select"]
