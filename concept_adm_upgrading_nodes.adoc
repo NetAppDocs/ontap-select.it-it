@@ -25,14 +25,14 @@ CAUTION: Non è possibile utilizzare l'utility di amministrazione di Deploy per 
 
 Per aggiornare un nodo ONTAP Select esistente, attenersi alla procedura descritta di seguito.
 
-. Accedere alla pagina dei download nel NetApp Support Site.
+.Fasi
+. Accedi alla link:https://mysupport.netapp.com/site/downloads/["Download dal sito di supporto NetApp"^] page.
+. Scorri verso il basso e seleziona *ONTAP Select Image*.
+. Seleziona la versione desiderata dell'immagine di installazione.
+. Leggere il Contratto di licenza con l'utente finale (EULA) e selezionare *Accetta e continua*.
+. Seleziona e scarica il pacchetto *ONTAP Select Image Upgrade* appropriato. Rispondi a tutte le richieste secondo necessità.
 +
-https://mysupport.netapp.com/site/downloads["Download del supporto NetApp"^]
-
-. Fare clic su *aggiornamento nodo ONTAP Select*.
-. Selezionare e scaricare l'immagine di aggiornamento appropriata, rispondendo a tutti i prompt in base alle necessità.
-+
-Prima di aggiornare un nodo ONTAP Select, consultare le Note di rilascio per ulteriori informazioni e le procedure necessarie.
+Esaminare la link:reference_release_notes.html["note di rilascio"] per ulteriori informazioni e per eventuali procedure richieste prima di aggiornare un nodo ONTAP Select.
 
 . Aggiornare il nodo ONTAP Select utilizzando le procedure di aggiornamento standard di ONTAP con il file di aggiornamento di ONTAP Select. Per informazioni sui percorsi di aggiornamento supportati, vedere link:https://docs.netapp.com/us-en/ontap/upgrade/concept_upgrade_paths.html["Percorsi di aggiornamento ONTAP supportati"^].
 
