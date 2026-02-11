@@ -88,9 +88,9 @@ Ogni disco dati è suddiviso in tre parti: una piccola partizione root (stripe) 
 
 image:ST_19.jpg["Partizione dei dischi RDD per cluster a nodo singolo"]
 
-*Partizione dei dischi RDD per cluster a più nodi (coppie ha)*
+*Partizionamento del disco RDD per cluster multi-nodo (coppia HA)*
 
-image:ST_20.jpg["Partizione dei dischi RDD per cluster a più nodi (coppie ha)"]
+image:ST_20.jpg["Partizionamento del disco RDD per cluster multi-nodo (coppia HA)"]
 
 Il software RAID ONTAP supporta i seguenti tipi di RAID: RAID 4, RAID-DP e RAID-TEC. Si tratta degli stessi costrutti RAID utilizzati dalle piattaforme FAS e AFF . Per il provisioning della root, ONTAP Select supporta solo RAID 4 e RAID-DP. Quando si utilizza RAID-TEC per l'aggregazione dei dati, la protezione complessiva è RAID-DP. ONTAP Select HA utilizza un'architettura shared-nothing che replica la configurazione di ciascun nodo sull'altro nodo. Ciò significa che ogni nodo deve memorizzare la propria partizione root e una copia della partizione root del suo peer. Un disco dati ha una singola partizione root. Ciò significa che il numero minimo di dischi dati varia a seconda che il nodo ONTAP Select faccia parte di una coppia HA.
 
@@ -100,7 +100,7 @@ Per i cluster a nodo singolo, tutte le partizioni dei dati vengono utilizzate pe
 
 == Dispositivi Passthrough (io DirectPath) vs RDM (Raw Device Maps)
 
-Gli hypervisor ESX e KVM non supportano i dischi NVMe come Raw Device Map (RDM). Per consentire a ONTAP Select di assumere il controllo diretto dei dischi NVMe, è necessario configurare queste unità come dispositivi passthrough in ESX o KVM. Quando si configura un dispositivo NVMe come dispositivo passthrough, è necessario il supporto del BIOS del server e potrebbe essere necessario riavviare l'host. Inoltre, esistono limiti al numero di dispositivi passthrough che possono essere assegnati a ciascun host, che possono variare a seconda della piattaforma. Tuttavia, ONTAP Deploy limita questo numero a 14 dispositivi NVMe per nodo ONTAP Select . Ciò significa che la configurazione NVMe offre una densità di IOP (IOP/TB) molto elevata a scapito della capacità totale. In alternativa, se si desidera una configurazione ad alte prestazioni con maggiore capacità di storage, la configurazione consigliata prevede una VM ONTAP Select grandi dimensioni, una scheda INTEL Optane per il disco di sistema e un numero nominale di unità SSD per l'archiviazione dei dati.
+Gli hypervisor ESXi e KVM non supportano i dischi NVMe come Raw Device Maps (RDM). Per consentire a ONTAP Select di assumere il controllo diretto dei dischi NVMe, è necessario configurare queste unità come dispositivi passthrough all'interno di ESXi o KVM. Quando si configura un dispositivo NVMe come dispositivo passthrough, è richiesto il supporto dal BIOS del server e potrebbe essere necessario riavviare l'host. Inoltre, esistono limiti al numero di dispositivi passthrough che possono essere assegnati per host, che possono variare a seconda della piattaforma. Tuttavia, ONTAP Deploy limita questo a 14 dispositivi NVMe per nodo ONTAP Select. Ciò significa che la configurazione NVMe offre una densità IOPS (IOPS/TB) molto elevata a scapito della capacità totale. In alternativa, se si desidera una configurazione ad alte prestazioni con maggiore capacità di storage, la configurazione consigliata è una ONTAP Select VM di grandi dimensioni, una scheda INTEL Optane per il disco di sistema e un numero nominale di unità SSD per l'archiviazione dei dati.
 
 
 NOTE: Per trarre il massimo vantaggio dalle performance di NVMe, prendere in considerazione le grandi dimensioni delle macchine virtuali ONTAP Select.
@@ -124,7 +124,7 @@ Analogamente ai sistemi FAS e AFF , è possibile aggiungere solo unità con capa
 
 
 
-== Abbina un disco ONTAP Select al disco ESX o KVM corrispondente
+== Abbina un disco ONTAP Select al disco ESXi o KVM corrispondente
 
 I dischi ONTAP Select sono generalmente etichettati NET x.y. È possibile utilizzare il seguente comando ONTAP per ottenere l'UUID del disco:
 
@@ -142,7 +142,7 @@ Checksum Compatibility: advanced_zoned
 Aggregate: -
 Plex: -This UID can be matched with the device UID displayed in the ‘storage devices’ tab for the ESX host
 ----
-image:ST_21.jpg["Corrispondenza di un disco ONTAP Select con il disco ESX corrispondente"]
+image:ST_21.jpg["Abbinamento di un disco ONTAP Select al disco ESXi corrispondente"]
 
 Nella shell ESXi o KVM, è possibile immettere il seguente comando per far lampeggiare il LED di un determinato disco fisico (identificato dal suo naa.unique-id).
 

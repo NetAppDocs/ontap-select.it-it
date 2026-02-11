@@ -54,8 +54,8 @@ Nella tabella seguente vengono confrontati i due modelli di licenza di produzion
 | Applicazione: Licenza scaduta | N/A. | Sì (nessun Grace period) 
 
 
-| Licenza minima | 1 TiB | 2 TiB 
+| Licenza minima | 1 TB | 2 TB 
 
 
-| Spazio massimo gestito | 400 TiB per nodo | 400 TiB per nodo 
+| Spazio massimo gestito | 400 TB per nodo | 400 TB per nodo 
 |===

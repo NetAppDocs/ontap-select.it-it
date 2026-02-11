@@ -31,7 +31,7 @@ NOTE: I canali porta statici non sono supportati con ONTAP Select. I canali abil
 
 Per i cluster a nodo singolo, ONTAP Deploy configura la VM ONTAP Select in modo che utilizzi un gruppo di porte per la rete esterna e lo stesso gruppo di porte o, facoltativamente, un gruppo di porte diverso per il traffico di gestione del cluster e dei nodi. Per i cluster a nodo singolo, è possibile aggiungere il numero desiderato di porte fisiche al gruppo di porte esterne come adattatori attivi.
 
-Per i cluster a più nodi, ONTAP Deploy configura ogni macchina virtuale ONTAP Select in modo che utilizzi uno o due gruppi di porte per la rete interna e, separatamente, uno o due gruppi di porte per la rete esterna. Il traffico di gestione del cluster e dei nodi può utilizzare lo stesso gruppo di porte del traffico esterno o, facoltativamente, un gruppo di porte separato. Il traffico di gestione del cluster e dei nodi non può condividere lo stesso gruppo di porte con il traffico interno.
+Per i cluster multi-nodo, ONTAP Deploy configura ogni ONTAP Select VM per utilizzare uno o due gruppi di porte per la rete interna e, separatamente, uno o due gruppi di porte per la rete esterna. Il traffico di gestione del cluster e dei nodi può utilizzare lo stesso gruppo di porte del traffico esterno o, facoltativamente, un gruppo di porte separato. Il traffico di gestione del cluster e dei nodi non può condividere lo stesso gruppo di porte con il traffico interno.
 
 
 NOTE: ONTAP Select supporta un massimo di quattro VMNIC.
@@ -40,7 +40,7 @@ NOTE: ONTAP Select supporta un massimo di quattro VMNIC.
 
 == VSwitch standard o distribuito e quattro porte fisiche per nodo
 
-È possibile assegnare quattro gruppi di porte a ciascun nodo in un cluster multinodo. Ogni gruppo di porte ha una singola porta fisica attiva e tre porte fisiche in standby, come nella figura seguente.
+È possibile assegnare quattro gruppi di porte a ciascun nodo in un cluster multi-nodo. Ogni gruppo di porte ha una singola porta fisica attiva e tre porte fisiche in standby come nella figura seguente.
 
 *VSwitch con quattro porte fisiche per nodo*
 
@@ -124,9 +124,9 @@ Quando si utilizzano due schede di rete ad alta velocità (25/40 Gb), la configu
 
 image:DDN_17.jpg["VSwitch con due porte fisiche ad alta velocità (25 GB) per nodo"]
 
-Quando si utilizzano due porte fisiche (10 GB o meno), ciascun gruppo di porte deve disporre di un adattatore attivo e di un adattatore di standby configurati uno di fronte all'altro. La rete interna è presente solo per i cluster ONTAP Select a più nodi. Per i cluster a nodo singolo, entrambi gli adattatori possono essere configurati come attivi nel gruppo di porte esterne.
+Quando si utilizzano due porte fisiche (10Gb o meno), ogni gruppo di porte deve avere un adattatore attivo e un adattatore di standby configurati in modo opposto tra loro. La rete interna è presente solo per i cluster ONTAP Select multi-nodo. Per i cluster a nodo singolo, entrambi gli adattatori possono essere configurati come attivi nel gruppo di porte esterno.
 
-L'esempio seguente mostra la configurazione di un vSwitch e dei due gruppi di porte responsabili della gestione dei servizi di comunicazione interna ed esterna per un cluster ONTAP Select multinodo. In caso di interruzione della rete, la rete esterna può utilizzare la VMNIC della rete interna, poiché le VMNIC della rete interna fanno parte di questo gruppo di porte e sono configurate in modalità standby. Per la rete esterna avviene il contrario. L'alternanza delle VMNIC attive e di standby tra i due gruppi di porte è fondamentale per il corretto failover delle VM ONTAP Select durante le interruzioni di rete.
+L'esempio seguente mostra la configurazione di un vSwitch e dei due gruppi di porte responsabili della gestione dei servizi di comunicazione interna ed esterna per un cluster ONTAP Select multi-nodo. La rete esterna può utilizzare la VMNIC della rete interna in caso di interruzione di rete, poiché le VMNIC della rete interna fanno parte di questo gruppo di porte e sono configurate in modalità standby. Per la rete interna avviene il contrario. L'alternanza delle VMNIC attive e di standby tra i due gruppi di porte è fondamentale per il corretto failover delle VM ONTAP Select durante le interruzioni di rete.
 
 *VSwitch con due porte fisiche (10 GB o meno) per nodo*
 

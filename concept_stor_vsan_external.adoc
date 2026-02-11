@@ -22,7 +22,7 @@ Il requisito minimo è che l'hypervisor utilizzato (VMware ESXi o KVM su un host
 
 == Architettura vNAS
 
-La nomenclatura vNAS viene utilizzata per tutte le configurazioni che non utilizzano DAS. Per i cluster ONTAP Select a più nodi, sono incluse le architetture per le quali i due nodi ONTAP Select nella stessa coppia ha condividono un singolo datastore (inclusi i datastore vSAN). I nodi possono anche essere installati su datastore separati dallo stesso array esterno condiviso. Ciò consente di ottenere efficienze dello storage lato array per ridurre l'impatto complessivo dell'intera coppia ONTAP Select ha. L'architettura delle soluzioni ONTAP Select vNAS è molto simile a quella di ONTAP Select su DAS con un controller RAID locale. Vale a dire che ogni nodo ONTAP Select continua a disporre di una copia dei dati del partner ha. Le policy di efficienza dello storage ONTAP hanno un ambito di nodo. Di conseguenza, è preferibile l'efficienza dello storage lato array, in quanto potenzialmente possono essere applicati tra set di dati da entrambi i nodi ONTAP Select.
+La nomenclatura vNAS viene utilizzata per tutte le configurazioni che non utilizzano DAS. Per i cluster ONTAP Select multi-nodo, ciò include le architetture in cui i due nodi ONTAP Select nella stessa coppia HA condividono un singolo datastore (inclusi i datastore vSAN). I nodi possono anche essere installati su datastore separati dello stesso array esterno condiviso. Ciò consente di ottenere efficienze di storage lato array per ridurre l'ingombro complessivo dell'intera coppia HA ONTAP Select. L'architettura delle soluzioni ONTAP Select vNAS è molto simile a quella di ONTAP Select su DAS con un controller RAID locale. Ciò significa che ogni nodo ONTAP Select continua ad avere una copia dei dati del partner HA. Le policy di efficienza dello storage ONTAP sono limitate al nodo. Pertanto, le efficienze di storage lato array sono preferibili perché possono potenzialmente essere applicate a set di dati provenienti da entrambi i nodi ONTAP Select.
 
 È anche possibile che ogni nodo ONTAP Select in una coppia ha utilizzi un array esterno separato. Si tratta di una scelta comune quando si utilizza ONTAP Select MetroCluster SDS con storage esterno.
 
@@ -52,7 +52,8 @@ La funzione SIDL non è compatibile con tutte le funzioni di efficienza dello st
 ----
 storage aggregate modify -aggregate aggr-name -single-instance-data-logging off
 ----
-Si noti che le prestazioni di scrittura sono influenzate se la funzione SIDL è disattivata. È possibile riattivare la funzione SIDL dopo aver disattivato tutte le policy di efficienza dello storage su tutti i volumi dell'aggregato:
+
+NOTE: Le prestazioni di scrittura sono compromesse se la funzionalità SIDL è disattivata. È possibile riattivare la funzionalità SIDL dopo che tutte le policy di efficienza di archiviazione su tutti i volumi in quell'aggregato sono state disabilitate:
 
 [listing]
 ----
@@ -62,18 +63,21 @@ volume efficiency stop -all true -vserver * -volume * (all volumes in the affect
 
 == Collocare i nodi ONTAP Select quando si utilizza vNAS su ESXi
 
-ONTAP Select include il supporto per cluster ONTAP Select a più nodi su storage condiviso. ONTAP Deploy consente la configurazione di più nodi ONTAP Select sullo stesso host ESX, purché tali nodi non facciano parte dello stesso cluster. Si noti che questa configurazione è valida solo per gli ambienti VNAS (datastore condivisi). Le istanze multiple di ONTAP Select per host non sono supportate quando si utilizza lo storage DAS perché queste istanze competono per lo stesso controller RAID hardware.
+ONTAP Select include il supporto per cluster ONTAP Select multi-nodo su storage condiviso. ONTAP Deploy consente la configurazione di più nodi ONTAP Select sullo stesso host ESXi, purché questi nodi non facciano parte dello stesso cluster.
+
+
+NOTE: Questa configurazione è valida solo per ambienti VNAS (datastore condivisi). Non sono supportate più istanze ONTAP Select per host quando si utilizza lo storage DAS, perché queste istanze competono per lo stesso controller RAID.
 
 ONTAP Deploy assicura che la distribuzione iniziale del cluster VNAS multinodo non posizioni più istanze ONTAP Select dello stesso cluster sullo stesso host. La figura seguente illustra un esempio di distribuzione corretta di due cluster a quattro nodi che si intersecano su due host.
 
-*Implementazione iniziale di cluster VNAS multinazionali*
+*Implementazione iniziale di cluster VNAS multi-node*
 
-image:ST_14.jpg["Implementazione iniziale di cluster VNAS a più nodi"]
+image:ST_14.jpg["Distribuzione iniziale di cluster VNAS multi-node"]
 
 Dopo l'implementazione, è possibile migrare i nodi ONTAP Select tra gli host. Ciò potrebbe causare configurazioni non ottimali e non supportate per le quali due o più nodi ONTAP Select dello stesso cluster condividono lo stesso host sottostante. NetApp consiglia di creare manualmente le regole di affinità delle macchine virtuali in modo che VMware mantenga automaticamente la separazione fisica tra i nodi dello stesso cluster, non solo i nodi della stessa coppia ha.
 
 
-NOTE: Le regole di anti-affinità richiedono che DRS sia attivato sul cluster ESX.
+NOTE: Le regole anti-affinità richiedono che DRS sia abilitato sul cluster ESXi.
 
 Vedere l'esempio seguente su come creare una regola anti-affinità per le macchine virtuali ONTAP Select. Se il cluster ONTAP Select contiene più di una coppia ha, tutti i nodi del cluster devono essere inclusi in questa regola.
 
@@ -81,12 +85,13 @@ image:ST_15.jpg["Regole VM/host"]
 
 image:ST_16.jpg["Modifica regola VM/host"]
 
-È possibile trovare due o più nodi ONTAP Select dello stesso cluster ONTAP Select sullo stesso host ESX per uno dei seguenti motivi:
+Due o più nodi ONTAP Select dello stesso cluster ONTAP Select potrebbero potenzialmente trovarsi sullo stesso host ESXi per uno dei seguenti motivi:
 
 * DRS non è presente a causa delle limitazioni di licenza di VMware vSphere o se DRS non è abilitato.
 * La regola di affinità DRS viene ignorata perché ha la precedenza su un'operazione VMware ha o su una migrazione VM avviata dall'amministratore.
 
 
-Tenere presente che ONTAP Deploy non esegue il monitoraggio proattivo delle posizioni delle macchine virtuali ONTAP Select. Tuttavia, un'operazione di refresh del cluster riflette questa configurazione non supportata nei log di implementazione di ONTAP:
+
+NOTE: ONTAP Deploy non monitora in modo proattivo le posizioni delle VM ONTAP Select. Tuttavia, un'operazione di aggiornamento del cluster riflette questa configurazione non supportata nei log di ONTAP Deploy:
 
 image:ST_17.PNG["Log di implementazione di ONTAP"]

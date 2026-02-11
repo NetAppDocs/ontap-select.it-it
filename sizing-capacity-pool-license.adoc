@@ -14,7 +14,7 @@ summary: La licenza Capacity Tiers si basa sulla capacità del disco sottostante
 
 
 [role="lead"]
-La capacità concessa in licenza per una licenza Capacity Pool è espressa in TiB completi, con un minimo di 2 TiB. La capacità concessa in licenza si calcola moltiplicando la quantità di spazio utilizzabile per il fattore di overhead. Il fattore di overhead varia tra un cluster a nodo singolo e cluster multi-nodo (basati su coppia HA):
+La capacità concessa in licenza per una licenza Capacity Pool è espressa in TB interi, con un minimo di 2 TB. La capacità concessa in licenza si calcola moltiplicando la quantità di spazio utilizzabile per il fattore di overhead. Il fattore di overhead varia tra un cluster a nodo singolo e un cluster multi-nodo (basato su coppia HA):
 
 * Fattore di overhead per cluster a nodo singolo è 1.13
 * Fattore di overhead per i cluster multi-nodo è 2,67
@@ -27,20 +27,20 @@ La capacità concessa in licenza per una licenza Capacity Pool è espressa in Ti
 | Descrizione | Nodo singolo | coppia HA o mix di HA e cluster a nodo singolo 
 
 
-| Spazio utilizzabile | 20 TiB | 10 TiB per cluster a nodo singolo 20 TiB per coppia HA 
+| Spazio utilizzabile | 20 TB | 10 TB per cluster a nodo singolo 20 TB per coppia HA 
 
 
-| Spazio concesso in licenza | 23 TiB (20 x 1,13 = 22,6, arrotonda al TiB intero successivo) | 54 TiB (20 x 2,67 = 53,4, arrotonda al TiB intero successivo) 
+| Spazio concesso in licenza | 23 TB (20 x 1,13 = 22,6, arrotonda al TB intero successivo) | 54 TB (20 x 2,67 = 53,4, arrotonda al TB intero successivo) 
 
 
-| Spazio massimo utilizzabile per nodo *Nota*: lo spazio massimo gestito per nodo o coppia HA è 400 TiB | 353 TiB (400 / 1,13)  a| 
+| Spazio massimo utilizzabile per nodo *Nota*: lo spazio massimo gestito per nodo o coppia HA è 400 TB | 353 TB (400 / 1,13)  a| 
 Per cluster a nodo singolo:
 
-74 TiB [(400 / 2) / 2,67]
+74 TB [(400 / 2) / 2,67]
 
 Per cluster a coppia HA:
 
-148 TiB (2 x 74)
+148 TB (2 x 74)
 
 |===
 .Cosa c'è dopo

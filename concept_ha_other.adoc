@@ -36,7 +36,7 @@ Tuttavia, all'interno dell'architettura shared-nothing di un cluster ONTAP Selec
 Sebbene non sia possibile utilizzare il metodo esistente di rilevamento ed evasione del cervello diviso, è comunque necessario un metodo di mediazione che rientri nei limiti di un ambiente senza condivisione. ONTAP Select estende ulteriormente l'infrastruttura di caselle postali esistente, consentendo all'IT di agire come metodo di mediazione in caso di partizione della rete. Poiché lo storage condiviso non è disponibile, la mediazione viene eseguita attraverso l'accesso ai dischi della mailbox su NAS. Questi dischi sono distribuiti in tutto il cluster, incluso il mediatore in un cluster a due nodi, utilizzando il protocollo iSCSI. Pertanto, un nodo del cluster può prendere decisioni di failover intelligenti in base all'accesso a questi dischi. Se un nodo può accedere ai dischi della mailbox di altri nodi al di fuori del proprio partner ha, è probabile che sia funzionante.
 
 
-NOTE: L'architettura della mailbox e il metodo di heartbeat basato su disco per risolvere i problemi di quorum del cluster e di split-brain sono i motivi per cui la variante multinodo di ONTAP Select richiede quattro nodi separati o un mediatore per un cluster a due nodi.
+NOTE: L'architettura della casella di posta e il metodo heartbeating basato su disco per risolvere i problemi di quorum e split-brain del cluster sono i motivi per cui la variante multi-nodo di ONTAP Select richiede quattro nodi separati o un mediatore per un cluster a due nodi.
 
 
 

@@ -113,19 +113,19 @@ Supporto migliorato per l'espansione e la contrazione del cluster sugli host ESX
 link:task_cluster_expansion_contraction.html["Scopri di più sull'espansione e la contrazione del cluster e sulle versioni supportate degli hypervisor KVM ed ESXi"] .
 
 --
-Supporto per il cloud SnapMirror:: A partire da ONTAP Select 9.17.1, SnapMirror Cloud è supportato da ONTAP Select. SnapMirror Cloud è una funzionalità ONTAP concessa in licenza, abilitata per impostazione predefinita quando si distribuisce un cluster ONTAP Select 9.17.1 o si aggiorna un cluster ONTAP Select esistente alla versione 9.17.1.
+Supporto per SnapMirror Cloud:: A partire da ONTAP Select 9.17.1, SnapMirror Cloud è supportato con ONTAP Select. SnapMirror Cloud è una funzionalità ONTAP concessa in licenza che viene abilitata per impostazione predefinita quando si distribuisce un cluster ONTAP Select 9.17.1 o si aggiorna un cluster ONTAP Select esistente alla versione 9.17.1.
 +
 --
-https://docs.netapp.com/us-en/ontap/concepts/snapmirror-cloud-backups-object-store-concept.html["Scopri di più sui backup cloud SnapMirror su storage di oggetti"^] .
+https://docs.netapp.com/us-en/ontap/concepts/snapmirror-cloud-backups-object-store-concept.html["Scopri i backup SnapMirror Cloud su storage a oggetti"^].
 
 --
-Supporto per SnapLock Select Enterprise:: A partire da ONTAP Select 9.17.1, le nuove distribuzioni dispongono automaticamente della licenza SnapLock Select Enterprise (incluso il blocco snapshot antimanomissione).  Per gli aggiornamenti da ONTAP Select 9.16.1 e versioni precedenti, è necessario scaricare la licenza SnapLock Select dalink:https://mysupport.netapp.com/site/["Sito di supporto NetApp"^] e applicarlo manualmente.
+Supporto per SnapLock Select:: A partire da ONTAP Select 9.17.1, le nuove distribuzioni dispongono della licenza SnapLock Select (incluso il blocco snapshot antimanomissione) automaticamente. Per gli aggiornamenti da ONTAP Select 9.16.1 e versioni precedenti, puoi scaricare la licenza SnapLock Select gratuitamente dal link:https://mysupport.netapp.com/site/["Sito di supporto NetApp"^] e applicarla manualmente. Per ulteriori informazioni, vedi link:reference_lic_ontap_features.html#enabled-ontap-features["Le funzioni ONTAP sono attivate automaticamente per impostazione predefinita"].
 Supporto per vSAN ESA su cluster multi-nodo:: A partire da ONTAP Select 9.17.1, il supporto per vSAN Express Storage Architecture (ESA) è esteso per distribuire cluster multi-nodo.  Questo miglioramento consente di distribuire configurazioni vSAN ESA.
 +
 --
-vSAN ESA è una configurazione specifica di ESX e una nuova architettura per VMware vSAN introdotta in vSphere 8. vSAN ESA è progettato per offrire maggiore efficienza, scalabilità e prestazioni, in particolare quando si utilizzano dispositivi flash TLC basati su NVMe.
+vSAN ESA è una configurazione specifica di ESXi e una nuova architettura per VMware vSAN introdotta in vSphere 8. vSAN ESA è progettato per offrire maggiore efficienza, scalabilità e prestazioni, in particolare quando si utilizzano dispositivi flash TLC basati su NVMe.
 
-ONTAP Select Deploy e ONTAP Select per ESX supportano la configurazione di un cluster ONTAP Select a nodo singolo e multi-nodo, utilizzando un vSAN o un tipo di datastore di array esterno per il suo pool di archiviazione.
+ONTAP Select Deploy e ONTAP Select per ESXi supportano la configurazione di un cluster ONTAP Select a nodo singolo e multi-nodo, utilizzando un vSAN o un tipo di datastore di array esterno per il suo pool di storage.
 
 [NOTE]
 ====
@@ -194,7 +194,7 @@ Grazie alla funzionalità di contrazione del cluster, è possibile diminuire le 
 
 
 
-NOTE: Il supporto per l'espansione e la contrazione dei cluster è limitato solo ai cluster ESX.
+NOTE: Il supporto per l'espansione e la contrazione del cluster è limitato ai soli cluster ESXi.
 
 
 

@@ -28,7 +28,7 @@ Hardware ONTAP Select (Premium XL) (per nodo)
 ** 32 core fisici (16 x 2 socket), 64 logici
 ** 256 GB DI RAM
 ** Unità per host: 24 SSD da 960 GB
-** ESX 6.5U1
+** ESXi 6.5U1
 
 
 

@@ -4,7 +4,7 @@ permalink: reference_plan_ots_kvm.html
 keywords: plan, planning, vnas, kvm 
 summary: 'Ci sono diversi problemi di pianificazione correlati all"utilizzo dell"hypervisor KVM che è necessario prendere in considerazione.' 
 ---
-= Requisiti KVM di ONTAP Select
+= Requisiti di storage esterno KVM per ONTAP Select
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -35,7 +35,7 @@ CAUTION: La capacità di archiviazione specificata deve rientrare nei limiti di 
 
 == Best practice
 
-Attenersi alle seguenti raccomandazioni:
+Dovresti seguire queste best practice:
 
 * Definire porte di rete dedicate, larghezza di banda e configurazioni vSwitch per le reti ONTAP Select e lo storage esterno
 * Configurare l'opzione relativa alla capacità per limitare l'utilizzo dello storage (ONTAP Select non può consumare l'intera capacità di un pool di storage esterno)

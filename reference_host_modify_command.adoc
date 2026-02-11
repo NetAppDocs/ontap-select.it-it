@@ -74,6 +74,6 @@ Questo parametro controlla il comportamento dei comandi a esecuzione prolungata.
  a| 
 `-username _username_`
  a| 
-Il nome utente che ha accesso a questo host. Questo è necessario solo se l'host non è gestito da un server di gestione (ovvero un host ESX gestito da un vCenter).
+Il nome utente che ha accesso a questo host. Questo è obbligatorio solo se l'host non è gestito da un server di gestione (cioè, un host ESXi gestito da un vCenter).
 
 |===
