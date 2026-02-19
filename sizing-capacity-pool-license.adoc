@@ -24,7 +24,7 @@ La capacità concessa in licenza per una licenza Capacity Pool è espressa in TB
 
 [cols="25,30,45"]
 |===
-| Descrizione | Nodo singolo | coppia HA o mix di HA e cluster a nodo singolo 
+| Descrizione | Nodo singolo | coppia HA o mix di coppia HA e nodo singolo 
 
 
 | Spazio utilizzabile | 20 TB | 10 TB per cluster a nodo singolo 20 TB per coppia HA 
@@ -34,13 +34,13 @@ La capacità concessa in licenza per una licenza Capacity Pool è espressa in TB
 
 
 | Spazio massimo utilizzabile per nodo *Nota*: lo spazio massimo gestito per nodo o coppia HA è 400 TB | 353 TB (400 / 1,13)  a| 
-Per cluster a nodo singolo:
+Per single-node in un cluster:
 
-74 TB [(400 / 2) / 2,67]
+149 TB (400 / 2,67)
 
-Per cluster a coppia HA:
+Per coppia HA in un cluster:
 
-148 TB (2 x 74)
+298 TB (2 x 149)
 
 |===
 .Cosa c'è dopo

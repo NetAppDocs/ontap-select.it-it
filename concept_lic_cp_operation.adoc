@@ -63,9 +63,7 @@ Ogni istanza del Manager di licenza, e quindi ogni istanza dell'utility di imple
 +
 Deploy visualizza questa pagina quando accedi per la prima volta. Puoi anche aprire il menu a discesa in alto a destra della pagina e selezionare *Getting Started* per visualizzare questa pagina. Il LLID viene visualizzato nella sezione Add Licenses.
 
-+
-Selezionare la scheda *Administration* nella parte superiore della pagina, quindi selezionare *Systems* e *Settings*.
-
+* Selezionare la scheda *Administration* nella parte superiore della pagina, quindi selezionare *Systems & AutoSupport*.
 
 
 

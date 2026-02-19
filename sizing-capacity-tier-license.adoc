@@ -38,15 +38,17 @@ Calcola la capacità concessa in licenza in base allo spazio utilizzabile per as
 | Spazio massimo utilizzabile per nodo *Nota*: lo spazio massimo gestito per nodo o coppia HA è 400 TB | 353 TB (400 / 1,13)  a| 
 Per nodo in una coppia HA:
 
-* 74 TB [(400 / 2) / 2,67]
+* 149 TB (400 / 2,67)
 
 
 Per coppia HA in un cluster multi-nodo:
 
-* Due nodi: 148 TB (2 x 74)
-* Quattro nodi: 296 TB (4 x 74)
-* Sei nodi: 444 TB (6 x 74)
-* Otto nodi: 592 TB (8 x 74)
+* Due nodi: 298 TB (2 x 149)
+* Quattro nodi: 596 TB (4 x 149)
+* Sei nodi: 894 TB (6 x 149)
+* Otto nodi: 1.192 TB (8 x 149)
+* Ten-node: 1.490 TB (10 x 149)
+* Dodici nodi: 1,788 TB (12 x 149)
 
 
 |===
