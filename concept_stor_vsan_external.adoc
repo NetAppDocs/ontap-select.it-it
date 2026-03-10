@@ -79,7 +79,7 @@ Dopo l'implementazione, è possibile migrare i nodi ONTAP Select tra gli host. C
 
 NOTE: Le regole anti-affinità richiedono che DRS sia abilitato sul cluster ESXi.
 
-Vedere l'esempio seguente su come creare una regola anti-affinità per le macchine virtuali ONTAP Select. Se il cluster ONTAP Select contiene più di una coppia ha, tutti i nodi del cluster devono essere inclusi in questa regola.
+Fare riferimento al seguente esempio su come creare una regola anti-affinità per le VM ONTAP Select. Se il cluster ONTAP Select contiene più di una coppia HA, tutti i nodi del cluster devono essere inclusi in questa regola.
 
 image:ST_15.jpg["Regole VM/host"]
 

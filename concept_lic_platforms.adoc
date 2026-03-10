@@ -71,7 +71,7 @@ NOTE: Le macchine virtuali basate sul kernel (KVM) non supportano il tipo di ist
 
 == Confrontare il supporto hardware per le offerte di licenza della piattaforma
 
-Le licenze standard, premium e premium XL supportano un'ampia gamma di hardware e software. Per informazioni aggiornate sulle versioni hardware e software, vedere il link:https://mysupport.netapp.com/matrix/["Tool di matrice di interoperabilità"^].
+Le licenze standard, premium e premium XL supportano un'ampia gamma di hardware e software. Per informazioni aggiornate sulle versioni hardware e software, consultare il link:https://mysupport.netapp.com/matrix/["Tool di matrice di interoperabilità"^].
 
 [role="tabbed-block"]
 ====

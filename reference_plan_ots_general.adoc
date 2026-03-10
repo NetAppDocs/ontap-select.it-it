@@ -33,7 +33,7 @@ Distribuzione server Linux:: Si dovrebbe avere esperienza con la distribuzione L
 --
 
 
-Per ulteriori informazioni sulla preparazione del server Linux, inclusi i pacchetti di configurazione e software richiesti, consultare l'elenco di controllo per la configurazione dell'host. Fare riferimento ai requisiti dell'hypervisor per le distribuzioni Linux attualmente supportate.
+Per ulteriori informazioni sulla preparazione del server Linux, inclusa la configurazione richiesta e i pacchetti software, fare riferimento a link:kvm-host-configuration-and-preparation-checklist.html["lista di controllo della configurazione host"]. Consultare i requisiti dell'hypervisor per le distribuzioni Linux attualmente supportate.
 
 Implementazione e amministrazione di KVM:: È necessario acquisire familiarità con i concetti generali di virtualizzazione. Inoltre, ci sono diversi comandi CLI di Linux che è necessario utilizzare come parte dell'installazione e dell'amministrazione di ONTAP Select in un ambiente KVM:
 +
@@ -91,7 +91,7 @@ Indipendente dall'hypervisor:: Sia ONTAP Select che l'utility di amministrazione
 
 NOTE: A partire da ONTAP Select 9.14.1, il supporto per l'hypervisor KVM è stato ripristinato. In precedenza, il supporto per l'implementazione di un nuovo cluster su un hypervisor KVM è stato rimosso in ONTAP Select 9.10.1 e il supporto per la gestione di cluster e host KVM esistenti, ad eccezione di quelli da mettere offline o eliminare, è stato rimosso in ONTAP Select 9.11.1.
 
-Fare riferimento alle informazioni di pianificazione specifiche dell'hypervisor e alle note sulla versione per ulteriori dettagli sulle piattaforme supportate.
+Fare riferimento alle informazioni di pianificazione specifiche dell'hypervisor e link:reference_release_notes.html["note di rilascio"] per ulteriori dettagli sulle piattaforme supportate.
 
 Hypervisor per nodi ONTAP Select e utility di amministrazione:: Sia l'utility di amministrazione di Deploy che i nodi ONTAP Select vengono eseguiti come macchine virtuali. L'hypervisor scelto per l'utility di implementazione è indipendente dall'hypervisor scelto per i nodi ONTAP Select. Si dispone di una flessibilità completa per l'associazione dei due elementi:
 +

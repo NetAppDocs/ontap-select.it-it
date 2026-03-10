@@ -47,10 +47,11 @@ TIP: Selezionare una procedura di aggiornamento che utilizzi l'utility di ammini
 +
 Eseguire un aggiornamento ESXi tramite l'utility di amministrazione Deploy è l'opzione più generale e resiliente. Tuttavia, potrebbero verificarsi casi in cui Deploy non è disponibile o non può essere utilizzato. Ad esempio, l'aggiornamento a ESXi 8.0 non è supportato con le versioni precedenti di ONTAP Select e dell'utility di amministrazione Deploy.
 
-+
-Se si utilizzano queste versioni precedenti e si tenta di eseguire un aggiornamento, è possibile lasciare la macchina virtuale ONTAP Select in uno stato in cui non è possibile avviarla. In questo caso, è necessario selezionare una procedura di aggiornamento che non utilizza la distribuzione. Fare riferimento a. link:https://mysupport.netapp.com/site/bugs-online/product/ONTAPSELECT/BURT/1172198["1172198"^] per ulteriori informazioni.
 
 
+
+
+Se si utilizzano queste versioni precedenti e si tenta un aggiornamento, è possibile lasciare la macchina virtuale ONTAP Select in uno stato in cui non può essere avviata. In questo caso, è necessario selezionare una procedura di aggiornamento che non utilizzi Deploy.
 
 . *Aggiornare l'utilità di amministrazione Deploy*
 +

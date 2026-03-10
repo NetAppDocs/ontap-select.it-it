@@ -136,7 +136,7 @@ NOTE: Non è possibile assegnare un indirizzo IP statico a queste interfacce e n
 
 Il traffico di rete del cluster deve fluire attraverso una rete di livello 2 a bassa latenza e non instradata. A causa dei requisiti di throughput e latenza del cluster, è necessario posizionare fisicamente il cluster ONTAP Select nelle vicinanze (ad esempio, multipack, singolo data center). La creazione di configurazioni di cluster estesi a quattro, sei, otto, dieci o dodici nodi separando i nodi HA su una WAN o su distanze geografiche significative non è supportata. È supportata una configurazione estesa a due nodi con un mediatore.
 
-Per ulteriori informazioni, consultare la sezione link:reference_plan_best_practices.html#two-node-stretched-ha-metrocluster-sds-best-practices["Best practice di ha (MetroCluster SDS) con due nodi estesi"].
+Per i dettagli, consultare la sezione link:reference_plan_best_practices.html#two-node-stretched-ha-metrocluster-sds-best-practices["Best practice di ha (MetroCluster SDS) con due nodi estesi"].
 
 
 NOTE: Per garantire il massimo throughput per il traffico di rete del cluster, questa porta di rete è configurata per utilizzare frame jumbo (da 7500 a 9000 MTU). Per il corretto funzionamento del cluster, verificare che i frame jumbo siano abilitati su tutti gli switch virtuali e fisici upstream che forniscono servizi di rete interni ai nodi del cluster ONTAP Select.

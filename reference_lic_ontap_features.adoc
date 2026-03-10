@@ -37,13 +37,13 @@ Le seguenti funzioni di ONTAP sono supportate con ONTAP Select e concesse in lic
 * NVMe su TCP
 * Funzionalità di multi-tenancy ONTAP
 * ONTAP S3
+* S3 SnapMirror
 * SnapLock Select
 +
 SnapLock Select è l'implementazione di ONTAP SnapLock progettata per ONTAP Select e include SnapLock Enterprise. Non include SnapLock Compliance. Per ulteriori informazioni, consultare il link:https://docs.netapp.com/us-en/ontap/snaplock/index.html["Documentazione ONTAP SnapLock"^].
 
-* S3 SnapMirror
 * SnapMirror
-* SnapMirror Cloud
+* SnapMirror cloud
 * SnapRestore
 * SnapVault
 * Disaster recovery delle macchine virtuali storage (DR SVM)

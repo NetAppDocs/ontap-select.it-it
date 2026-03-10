@@ -34,7 +34,7 @@ Per aggiornare un nodo ONTAP Select esistente, attenersi alla procedura descritt
 +
 Esaminare la link:reference_release_notes.html["note di rilascio"] per ulteriori informazioni e per eventuali procedure richieste prima di aggiornare un nodo ONTAP Select.
 
-. Aggiornare il nodo ONTAP Select utilizzando le procedure di aggiornamento standard di ONTAP con il file di aggiornamento di ONTAP Select. Per informazioni sui percorsi di aggiornamento supportati, vedere link:https://docs.netapp.com/us-en/ontap/upgrade/concept_upgrade_paths.html["Percorsi di aggiornamento ONTAP supportati"^].
+. Aggiorna il nodo ONTAP Select utilizzando le procedure standard di aggiornamento ONTAP con il file di aggiornamento ONTAP Select. Per informazioni sui percorsi di aggiornamento supportati, fare riferimento al link:https://docs.netapp.com/us-en/ontap/upgrade/concept_upgrade_paths.html["Percorsi di aggiornamento ONTAP supportati"^].
 
 
 

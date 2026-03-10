@@ -32,7 +32,7 @@ I seguenti hypervisor sono supportati sia per ONTAP Select che per l'amministraz
 
 
 
-NOTE: Fare riferimento alle informazioni di pianificazione specifiche dell'hypervisor e alle note sulla versione per ulteriori dettagli sulle piattaforme supportate.
+NOTE: Fare riferimento alle informazioni di pianificazione specifiche dell'hypervisor e link:reference_release_notes.html["note di rilascio"] per ulteriori dettagli sulle piattaforme supportate.
 
 .Hypervisor per nodi ONTAP Select e utility di amministrazione
 Sia l'utilità di amministrazione di distribuzione che i nodi ONTAP Select vengono eseguiti come macchine virtuali. L'hypervisor scelto per l'utility di implementazione è indipendente dall'hypervisor scelto per i nodi ONTAP Select. Si dispone di una flessibilità completa per l'associazione dei due elementi:

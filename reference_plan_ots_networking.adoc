@@ -23,7 +23,7 @@ summary: 'È necessario configurare correttamente la rete dell"hypervisor prima 
 È necessario configurare uno switch virtuale su ciascuno degli host ONTAP Select per supportare la rete esterna e la rete interna (solo cluster multi-nodo). Nell'ambito dell'implementazione di un cluster a più nodi, è necessario verificare la connettività di rete sulla rete cluster interna.
 
 
-NOTE: Per ulteriori informazioni su come configurare un vSwitch su un host hypervisor e sulla funzione di interfaccia ad alta velocità, vedere link:concept_nw_concepts_chars.html["Networking di approfondimento"] sezione.
+NOTE: Per saperne di più su come configurare un vSwitch su un host hypervisor e sulla funzionalità dell'interfaccia ad alta velocità, fare riferimento alla sezione link:concept_nw_concepts_chars.html["Networking di approfondimento"].
 
 
 
@@ -72,7 +72,7 @@ In questo ambiente, è necessario configurare il traffico utilizzando due gruppi
 * NIC2 in attivo
 
 
-Vedere link:concept_nw_concepts_chars.html["Networking di approfondimento"] Per ulteriori informazioni sulle implementazioni a due NIC.
+Fare riferimento alla sezione link:concept_nw_concepts_chars.html["Networking di approfondimento"] per ulteriori informazioni sulle distribuzioni con due NIC.
 
 
 
@@ -111,7 +111,7 @@ In questo ambiente, è necessario configurare il traffico utilizzando quattro gr
 * NIC1, NIC2, NIC3 in standby
 
 
-Vedere link:concept_nw_concepts_chars.html["Networking di approfondimento"] Per ulteriori informazioni sulle implementazioni a quattro NIC.
+Fare riferimento alla sezione link:concept_nw_concepts_chars.html["Networking di approfondimento"] per ulteriori informazioni sulle distribuzioni con quattro NIC.
 
 
 

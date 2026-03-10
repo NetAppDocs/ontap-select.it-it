@@ -150,7 +150,7 @@ ONTAP Select suddivide lo storage collegato sottostante in dischi virtuali di ug
 Ad esempio, un ONTAP Select può assegnare un datastore o un LUN pari a 31 TB (lo spazio rimanente dopo l'implementazione della macchina virtuale e il provisioning dei dischi di sistema e root). Vengono quindi creati quattro dischi virtuali da ~7,75 TB e assegnati al plesso locale e mirror ONTAP appropriato.
 
 
-NOTE: L'aggiunta di capacità a una macchina virtuale ONTAP Select probabilmente comporta VMDK di dimensioni diverse. Per ulteriori informazioni, consultare la sezione link:concept_stor_capacity_inc.html["Aumentare la capacità di storage"]. A differenza dei sistemi FAS, nello stesso aggregato possono esistere VMDK di dimensioni diverse. ONTAP Select utilizza uno stripe RAID 0 in tutti questi VMDK, il che consente di utilizzare completamente tutto lo spazio in ogni VMDK indipendentemente dalle sue dimensioni.
+NOTE: L'aggiunta di capacità a una ONTAP Select VM probabilmente genera VMDK di dimensioni diverse. Per dettagli, consultare la sezione link:concept_stor_capacity_inc.html["Aumentare la capacità di storage"]. A differenza dei sistemi FAS, VMDK di dimensioni diverse possono coesistere nello stesso aggregato. ONTAP Select utilizza una stripe RAID 0 su questi VMDK, il che consente di utilizzare completamente tutto lo spazio in ciascun VMDK indipendentemente dalle sue dimensioni.
 
 
 

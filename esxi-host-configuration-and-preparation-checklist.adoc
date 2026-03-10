@@ -56,7 +56,7 @@ Per impostazione predefinita, VMware consente l'accesso alle seguenti porte:
 --
 ====
 +
-Per ulteriori informazioni, vedere link:https://techdocs.broadcom.com/us/en/vmware-cis/vsphere/vsphere/8-0/vsphere-security-8-0/securing-esxi-hosts/customizing-hosts-with-the-security-profile/esxi-firewall-configuration.html["Documentazione di Broadcom VMware vSphere"^].
+Per ulteriori informazioni, consultare il link:https://techdocs.broadcom.com/us/en/vmware-cis/vsphere/vsphere/8-0/vsphere-security-8-0/securing-esxi-hosts/customizing-hosts-with-the-security-profile/esxi-firewall-configuration.html["Documentazione di Broadcom VMware vSphere"^].
 
 . Familiarizzare con i diritti vCenter richiesti. Per ulteriori informazioni, vedere link:reference_plan_ots_vcenter.html["Server VMware vCenter"] .
 

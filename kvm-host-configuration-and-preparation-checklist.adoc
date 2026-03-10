@@ -28,7 +28,7 @@ NOTE: L'utility di amministrazione ONTAP Select Deploy non esegue la configurazi
 .Fasi
 . Installa Red Hat Enterprise Linux (RHEL).
 +
-Installare il sistema operativo RHEL utilizzando l'immagine ISO. Per un elenco delle versioni RHEL supportate, vedere la link:reference_plan_ots_hardware.html#software-compatibility["informazioni sulla compatibilità software per gli hypervisor"]. Durante l'installazione, configurare il sistema come segue:
+Installare il sistema operativo RHEL utilizzando l'immagine ISO. Consultare il link:reference_plan_ots_hardware.html#software-compatibility["informazioni sulla compatibilità software per gli hypervisor"] per un elenco delle versioni RHEL supportate. Durante l'installazione, configurare il sistema come segue:
 
 +
 .. Selezionare Predefinito come criterio di sicurezza.
@@ -50,7 +50,7 @@ ONTAP Select richiede diversi pacchetti software aggiuntivi. L'elenco esatto dei
 NOTE: Alcuni dei pacchetti richiesti potrebbero essere già installati se si sceglie Virtualized host per la selezione del software durante l'installazione del server Linux. Potrebbe essere necessario installare il pacchetto openvswitch dal codice sorgente come descritto nella link:https://docs.openvswitch.org/en/latest/intro/install/general/["Aprire la documentazione di vSwitch"^].
 
 +
-Per ulteriori informazioni sui pacchetti necessari e sugli altri requisiti di configurazione, vedere link:https://imt.netapp.com/matrix/#welcome["Tool di matrice di interoperabilità"^].
+Per ulteriori informazioni sui pacchetti necessari e altri requisiti di configurazione, fare riferimento a link:https://imt.netapp.com/matrix/#welcome["Tool di matrice di interoperabilità"^].
 
 . Configurare il passthrough PCI per i dischi NVMe.
 +
@@ -62,7 +62,7 @@ Se si utilizzano dischi NVMe nella configurazione, è necessario configurare il 
 
 
 +
-Vedi il link:https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/5/html/virtualization/chap-virtualization-pci_passthrough#sect-Virtualization-PCI_passthrough-AI_device_to_a_host["Documentazione di Red Hat"^] per istruzioni su come configurare il passthrough PCI (DirectPath IO) per un hypervisor KVM.
+Fare riferimento a link:https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/5/html/virtualization/chap-virtualization-pci_passthrough#sect-Virtualization-PCI_passthrough-AI_device_to_a_host["Documentazione di Red Hat"^] per le istruzioni su come configurare il passthrough PCI (DirectPath IO) per un hypervisor KVM.
 
 . Configurare i pool di archiviazione.
 +

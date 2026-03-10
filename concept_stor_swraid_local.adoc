@@ -148,7 +148,7 @@ Nella shell ESXi o KVM, è possibile immettere il seguente comando per far lampe
 
 [role="tabbed-block"]
 ====
-.ESX
+.ESXi
 --
 [source, cli]
 ----
