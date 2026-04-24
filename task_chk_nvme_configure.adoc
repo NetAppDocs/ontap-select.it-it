@@ -59,7 +59,7 @@ KVM è supportato dalle seguenti versioni dell'hypervisor:
 * Dispositivi NVMe conformi alla specifica 1.0 o successiva
 
 
-Segui il link:kvm-host-configuration-and-preparation-checklist["checklist per la preparazione dell'host"] e rivedere le informazioni richieste per il link:reference_chk_deploy_req_info.html["distribuire l'installazione dell'utilità"] e il link:reference_chk_select_req_info.html["Installazione ONTAP Select"] per maggiori informazioni.
+Segui le link:kvm-host-configuration-and-preparation-checklist.html["checklist per la preparazione dell'host"] e rivedi le informazioni richieste per il link:reference_chk_deploy_req_info.html["distribuire l'installazione dell'utilità"] e il link:reference_chk_select_req_info.html["Installazione ONTAP Select"] per ulteriori informazioni.
 
 .A proposito di questa attività
 È necessario eseguire questa procedura prima di creare un nuovo cluster ONTAP Select . È anche possibile eseguire la procedura per configurare unità NVMe aggiuntive per un cluster NVMe RAID software esistente. In questo caso, dopo aver configurato le unità, è necessario aggiungerle tramite Deploy, come si farebbe con le unità SSD aggiuntive. La differenza principale è che Deploy rileva le unità NVMe e riavvia i nodi. Quando si aggiungono unità NVMe a un cluster esistente, tenere presente quanto segue in merito al processo di riavvio:

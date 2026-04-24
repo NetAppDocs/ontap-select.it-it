@@ -63,7 +63,7 @@ Se è necessario modificare la posizione del mediatore originale, è necessario 
 
 Il cluster a due nodi è definito come un cluster per il quale entrambi i nodi si trovano nello stesso data center entro una distanza di 300 m. In generale, entrambi i nodi hanno uplink verso lo stesso switch di rete o insieme di switch di rete ISL (Interswitch link).
 
-Per SDS MetroCluster a due nodi si intende un cluster per il quale i nodi sono fisicamente separati (stanze diverse, edifici diversi e data center diversi) di oltre 300 m. Inoltre, le connessioni uplink di ciascun nodo sono collegate a switch di rete separati. L'SDS MetroCluster non richiede hardware dedicato. Tuttavia, l'ambiente deve rispettare i requisiti di latenza (massimo 5 ms per RTT e 5 ms per jitter, per un totale di 10 ms) e distanza fisica (massimo 10 km).
+Un cluster MetroCluster SDS a due nodi è definito come un cluster con nodi fisicamente separati (stanze diverse, edifici diversi e data center diversi) da più di 300 m. Inoltre, le connessioni uplink di ciascun nodo sono collegate a switch di rete separati. Il MetroCluster SDS non richiede hardware dedicato. Tuttavia, l'ambiente deve rispettare i requisiti di latenza (un massimo di 5 ms per RTT e 5 ms per jitter, per un totale di 10 ms).
 
 MetroCluster SDS è una funzione premium e richiede una licenza Premium o Premium XL. La licenza Premium supporta la creazione di macchine virtuali di piccole e medie dimensioni, oltre a supporti HDD e SSD. La licenza Premium XL supporta anche la creazione di dischi NVMe.
 

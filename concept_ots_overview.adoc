@@ -65,6 +65,23 @@ image:ots_architecture.png["Viene illustrato un cluster a quattro nodi ONTAP Sel
 
 
 
+== FlexCache write-back con ONTAP Select
+
+ONTAP Select supporta i volumi di cache FlexCache con write-back. Le prestazioni complessive di un'istanza ONTAP Select sono paragonabili a quelle di un sistema ONTAP entry-level.
+
+FlexCache cache volumi cache con write-back hanno i seguenti requisiti con ONTAP Select:
+
+* Utilizzare ONTAP Select su un'istanza di medie dimensioni (8-core) o di grandi dimensioni (16-core).
+* Utilizzare unità a stato solido con supporto NVMe. Lo storage con supporto SAS ha prestazioni inferiori rispetto allo storage con supporto NVMe per ONTAP Select.
+* Testare ONTAP Select per la funzionalità di write-back di FlexCache prima di avviare la distribuzione. La funzionalità di write-back di FlexCache non è consigliata per un numero elevato di file di piccole dimensioni.
+
+
+ONTAP Select non supporta FlexCache cache volumi cache con write-back su istanze di piccole dimensioni (4-core). Inoltre, ONTAP Select non supporta FlexCache origin volumi con write-back su istanze di piccole, medie o grandi dimensioni.
+
+link:https://docs.netapp.com/us-en/ontap/flexcache-writeback/flexcache-write-back-guidelines.html["Scopri la funzionalità di scrittura ONTAP FlexCache"^]
+
+
+
 == Confrontare ONTAP Select e ONTAP 9
 
 ONTAP e ONTAP Select basati su hardware offrono soluzioni storage di livello Enterprise. Tuttavia, poiché sono progettati e implementati in modo diverso, ciascuno può soddisfare diversi requisiti di business e scenari di utilizzo. Prima di pianificare un'implementazione di ONTAP Select, è necessario acquisire familiarità con le principali differenze tra le piattaforme.
