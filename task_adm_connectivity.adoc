@@ -33,10 +33,10 @@ NOTE: Si consiglia di eseguire sempre un test rapido prima di creare un cluster 
 
 .Fasi
 . Accedere all'interfaccia utente Web dell'utilità di implementazione utilizzando l'account amministratore.
-. Fare clic sulla scheda *Administration* nella parte superiore della pagina e fare clic su *Network Checker*.
-. Fare clic su *Start New Run* (Avvia nuova esecuzione) e selezionare gli host e le reti per la coppia ha
+. Seleziona la scheda *Amministrazione* nella parte superiore della pagina, quindi seleziona *Network Checker*.
+. Seleziona *Avvia nuova esecuzione*, quindi seleziona gli host e le reti per la coppia HA
 +
 È possibile aggiungere e configurare coppie ha aggiuntive in base alle esigenze.
 
-. Fare clic su *Start* per avviare il test di connettività di rete.
+. Seleziona *Avvia* per iniziare il test di connettività di rete.
 

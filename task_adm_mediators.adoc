@@ -27,6 +27,6 @@ Ogni cluster a due nodi ONTAP Select viene monitorato dal servizio mediatore, ch
 
 .Fasi
 . Accedere all'interfaccia utente Web dell'utilità di implementazione utilizzando l'account amministratore.
-. Fare clic sulla scheda *Administration* (Amministrazione) nella parte superiore della pagina e fare clic su *mediatori*.
-. Facoltativamente, fare clic su *Filter* (filtro) per personalizzare la visualizzazione dei cluster a due nodi monitorati dal servizio di mediatore.
+. Seleziona la scheda *Amministrazione* nella parte superiore della pagina, quindi seleziona *Mediatori*.
+. Facoltativamente, seleziona *Filtro* per personalizzare la visualizzazione dei cluster a due nodi monitorati dal servizio mediatore.
 

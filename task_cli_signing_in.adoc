@@ -31,5 +31,5 @@ summary: 'È necessario accedere alla shell di gestione della distribuzione util
 ** URL proxy (opzionale)
 
 
-. Digitare *?* e premere *Invio* per visualizzare un elenco dei comandi della shell di gestione disponibili.
+. Digita *?* e premi *Invio* per visualizzare un elenco dei comandi della shell di gestione disponibili.
 

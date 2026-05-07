@@ -26,7 +26,7 @@ Esistono diverse attività correlate che è possibile eseguire nell'ambito dell'
 . Accedere all'utilità di implementazione tramite l'interfaccia Web utilizzando l'account amministratore.
 . Selezionare la scheda *Amministrazione* nella parte superiore della pagina.
 . Selezionare *licenze* e *livello di capacità*.
-. Se si desidera, selezionare *filtro* e per limitare le licenze visualizzate.
+. Facoltativamente, seleziona *Filtro* per limitare le licenze visualizzate.
 . Per sostituire una licenza esistente, selezionare una licenza, selezionare image:icon_kebab.gif["Opzioni"], quindi selezionare *Aggiorna*.
 . Per aggiungere una nuova licenza, selezionare *Aggiungi* nella parte superiore della pagina, quindi selezionare *carica licenze* e selezionare un file di licenza dalla workstation locale.
 

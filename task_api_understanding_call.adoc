@@ -23,6 +23,6 @@ I dettagli di tutte le chiamate API vengono documentati e visualizzati in un for
 È possibile recuperare le informazioni di configurazione che descrivono un cluster ONTAP Select utilizzando il relativo identificatore univoco. In questo esempio, vengono restituiti tutti i campi classificati come economici. Tuttavia, come Best practice, è necessario richiedere solo i campi specifici necessari.
 
 .Fasi
-. Nella pagina principale, scorrere fino in fondo e fare clic su *Cluster*.
-. Fare clic su *GET /clusters/{cluster_id}* per visualizzare i dettagli della chiamata API utilizzata per restituire informazioni su un cluster ONTAP Select.
+. Nella pagina principale, scorri fino in fondo e seleziona *Cluster*.
+. Seleziona *GET /clusters/{cluster_id}* per visualizzare i dettagli della chiamata API utilizzata per restituire informazioni su un ONTAP Select cluster.
 

@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: concept_usecase_robo.html 
-keywords: ontap select, ROBO, remote office/branch office 
+keywords: ontap select, ROBO, remote office, branch office 
 summary: 'Implementazione di ONTAP Select in situazioni di uffici remoti/filiali (ROBO) per supportare uffici di piccole dimensioni mantenendo al contempo amministrazione e controllo centralizzati.' 
 ---
 = USA ONTAP Select in filiali e uffici remoti

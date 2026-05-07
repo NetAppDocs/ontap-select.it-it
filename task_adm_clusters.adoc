@@ -27,15 +27,15 @@ Una volta creato, il cluster si trova inizialmente nello stato online.
 
 .Fasi
 . Accedere all'interfaccia utente Web dell'utilità di implementazione utilizzando l'account amministratore.
-. Fare clic sulla scheda *Clusters* nella parte superiore della pagina e selezionare il cluster desiderato dall'elenco.
-. Fare clic su image:icon_kebab.gif["Opzioni"] A destra del cluster e selezionare *take Offline*.
+. Selezionare la scheda *cluster* nella parte superiore della pagina e selezionare il cluster desiderato dall'elenco.
+. Seleziona image:icon_kebab.gif["Opzioni"] a destra del cluster e seleziona *Porta offline*.
 +
 Se l'opzione offline non è disponibile, il cluster è già in stato offline.
 
-. Fare clic su *Sì* nella finestra a comparsa per confermare la richiesta.
-. Fare clic su *Refresh* saltuariamente per confermare che il cluster non è in linea.
-. Per riportare il cluster in linea, fare clic su image:icon_kebab.gif["Opzioni"] E selezionare *Bring Online*.
-. Fare clic su *Refresh* occasionalmente per confermare che il cluster è in linea.
+. Seleziona *Sì* nella finestra a comparsa per confermare la richiesta.
+. Seleziona *Aggiorna* di tanto in tanto per verificare che il cluster sia offline.
+. Per rimettere online il cluster, selezionare image:icon_kebab.gif["Opzioni"] e selezionare *Riporta online*.
+. Seleziona *Aggiorna* di tanto in tanto per verificare che il cluster sia online.
 
 
 
@@ -49,12 +49,12 @@ Il cluster deve essere in stato offline.
 
 .Fasi
 . Accedere all'interfaccia utente Web dell'utilità di implementazione utilizzando l'account amministratore.
-. Fare clic sulla scheda *Clusters* nella parte superiore della pagina e selezionare il cluster desiderato dall'elenco.
-. Fare clic su image:icon_kebab.gif["Opzioni"] A destra del cluster e selezionare *Delete* (Elimina).
+. Selezionare la scheda *cluster* nella parte superiore della pagina e selezionare il cluster desiderato dall'elenco.
+. Seleziona image:icon_kebab.gif["Opzioni"] a destra del cluster e seleziona *Elimina*.
 +
 Se l'opzione di eliminazione non è disponibile, il cluster non si trova in uno stato offline.
 
-. Fare clic su *Refresh* saltuariamente per confermare la rimozione del cluster dall'elenco.
+. Seleziona *Aggiorna* di tanto in tanto per confermare che il cluster sia stato rimosso dall'elenco.
 
 
 
@@ -109,10 +109,10 @@ Cluster e stati dei nodi:: Un cluster o nodo ONTAP Select può trovarsi in uno s
 
 .Fasi
 . Accedere all'interfaccia utente Web dell'utilità di implementazione utilizzando l'account amministratore.
-. Fare clic sulla scheda *Clusters* nella parte superiore sinistra della pagina e selezionare il cluster desiderato dall'elenco.
-. Fare clic su image:icon_kebab.gif["Opzioni"] Sul lato destro della pagina e selezionare *Cluster Refresh* (aggiornamento cluster).
+. Seleziona la scheda *Cluster* in alto a sinistra della pagina e seleziona il cluster desiderato dall'elenco.
+. Seleziona image:icon_kebab.gif["Opzioni"] sul lato destro della pagina e scegli *Aggiorna cluster*.
 . Nella sezione *credenziali cluster*, fornire la password dell'amministratore ONTAP per il cluster.
-. Fare clic su *Aggiorna*.
+. Seleziona *Aggiorna*.
 
 
 .Al termine

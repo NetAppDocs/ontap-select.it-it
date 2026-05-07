@@ -24,8 +24,8 @@ Esistono diverse attività correlate che è possibile eseguire nell'ambito della
 
 .Fasi
 . Accedere all'interfaccia utente Web dell'utilità di implementazione utilizzando l'account amministratore.
-. Fare clic sull'icona a forma di figura nella parte superiore destra della pagina e selezionare *Change Password* (Modifica password).
-. Inserire la password corrente e la nuova password come richiesto e fare clic su *Invia*.
+. Seleziona l'icona a forma di omino in alto a destra della pagina, quindi seleziona *Cambia password*.
+. Inserisci la password attuale e quella nuova quando richiesto e seleziona *Invia*.
 
 
 
@@ -39,9 +39,9 @@ Esistono diverse attività correlate che è possibile eseguire nell'ambito della
 
 .Fasi
 . Accedere all'interfaccia utente Web dell'utilità di implementazione utilizzando l'account amministratore.
-. Fare clic sulla scheda *Administration* nella parte superiore della pagina.
-. Fare clic su *Server di gestione*, quindi su *Aggiungi vCenter*.
-. Inserire le seguenti informazioni e fare clic su *Aggiungi*.
+. Selezionare la scheda *Amministrazione* nella parte superiore della pagina.
+. Selezionare *Server di gestione* > *Aggiungi vCenter*.
+. Inserisci le seguenti informazioni e seleziona *Aggiungi*.
 +
 [cols="30,70"]
 |===
@@ -56,7 +56,7 @@ Esistono diverse attività correlate che è possibile eseguire nell'ambito della
 
 | Password | Inserire la password per il nome utente associato. 
 |===
-. Una volta aggiunto il nuovo server di gestione, è possibile fare clic su image:icon_kebab.gif["Opzioni"] e selezionare una delle seguenti opzioni:
+. Facoltativamente, selezionare image:icon_kebab.gif["Opzioni"] dopo aver aggiunto il nuovo server di gestione, quindi selezionare una delle seguenti opzioni:
 +
 ** Aggiornare le credenziali
 ** Verificare le credenziali
@@ -166,7 +166,7 @@ MFA enabled Successfully
 . Accedi dal tuo dispositivo con YubiKey collegato.
 
 
-.Output di esempio
+.Esempio output:
 [listing]
 ----
 login as: admin
@@ -194,7 +194,7 @@ Il `ssh-keygen` command supporta diversi algoritmi a chiave pubblica per le chia
 * La dimensione della chiave viene selezionata con `-b` opzione
 
 
-.Output di esempio
+.Esempio output:
 [listing]
 ----
 ssh-keygen -t ecdsa -b 521

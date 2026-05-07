@@ -28,8 +28,8 @@ Se si intende effettuare chiamate API nell'ambito dell'esecuzione di attività a
 
 Ogni chiamata API viene descritta nella pagina della documentazione utilizzando un formato coerente. Il contenuto include note di implementazione, parametri di query e codici di stato HTTP. Inoltre, è possibile visualizzare i dettagli relativi al JSON utilizzato con le richieste e le risposte API come segue:
 
-* Valore di esempio se si fa clic su _valore di esempio_ in una chiamata API, viene visualizzata una struttura JSON tipica per la chiamata. È possibile modificare l'esempio in base alle esigenze e utilizzarlo come input per la richiesta.
-* Modello facendo clic su _Model_, viene visualizzato un elenco completo dei parametri JSON, con una descrizione per ciascun parametro.
+* Esempio di valore Se si seleziona _Esempio di valore_ in una chiamata API, viene visualizzata una tipica struttura JSON per la chiamata. È possibile modificare l'esempio secondo necessità e utilizzarlo come input per la richiesta.
+* Modello Se si seleziona _Modello_, viene visualizzato un elenco completo dei parametri JSON, con una descrizione per ciascun parametro.
 
 
 

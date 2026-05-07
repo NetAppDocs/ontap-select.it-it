@@ -22,5 +22,5 @@ Potrebbe essere necessario accedere alla console della macchina virtuale per ris
 .Fasi
 . Accedere al client vSphere e accedere.
 . Accedere alla posizione appropriata nella gerarchia per individuare la macchina virtuale ONTAP Select.
-. Fare clic con il pulsante destro del mouse sulla macchina virtuale e selezionare *Open Console*.
+. Fai clic con il pulsante destro del mouse sulla macchina virtuale e seleziona *Apri console*.
 

@@ -21,13 +21,17 @@ NOTE: Le funzionalità di ONTAP con dipendenze specifiche dell'hardware non sono
 
 
 
-== Le funzioni ONTAP sono attivate automaticamente per impostazione predefinita
+== Funzionalità ONTAP con licenza predefinita
 
 Le seguenti funzioni di ONTAP sono supportate con ONTAP Select e concesse in licenza per impostazione predefinita:
 
 * Protezione autonoma dal ransomware (ARP) (aggiornamenti manuali)
 * CIFS
 * Deduplica e compressione
+* Gestione delle chiavi esterne utilizzando il Key Management Interoperability Protocol (KMIP)
++
+La gestione delle chiavi esterne è l'unica gestione delle chiavi supportata da ONTAP Select. Scopri di più link:https://docs.netapp.com/us-en/ontap/encryption-at-rest/configure-netapp-volume-encryption-concept.html["abilitazione e configurazione della gestione delle chiavi esterne"^].
+
 * FlexCache
 +
 ONTAP Select supporta i volumi cache FlexCache con write-back. I volumi origin FlexCache con write-back non sono supportati.
@@ -57,7 +61,7 @@ link:https://docs.netapp.com/us-en/ontap/snaplock/index.html["Scopri ONTAP SnapL
 * SnapVault
 * Disaster recovery delle macchine virtuali storage (DR SVM)
 +
-ONTAP Select supporta DR SVM come origine e destinazione, con un massimo di 16 relazioni. Il supporto DR SVM è limitato all'utilizzo della versione ONTAP di origine alle versioni +2. Ad esempio, l'origine ONTAP Select 9.12.1 può connettersi alle versioni di ONTAP di destinazione 9.12.1, 9.13.1 o 9.14.1.
+ONTAP Select supporta SVM DR sia come sorgente che come destinazione, con un massimo di 16 relazioni. Il supporto SVM DR è limitato all'utilizzo della versione di ONTAP sorgente fino a versioni +2. Ad esempio, la sorgente ONTAP Select 9.16.1 può connettersi alle destinazioni ONTAP versioni 9.16.1, 9.17.1 o 9.18.1.
 
 
 
@@ -65,7 +69,7 @@ ONTAP Select supporta DR SVM come origine e destinazione, con un massimo di 16 r
 
 == Funzionalità ONTAP con licenza separata
 
-È necessario acquistare una licenza separata per qualsiasi funzionalità ONTAP non abilitata per impostazione predefinita, tra cui:
+È necessario acquisire una licenza separata per qualsiasi funzionalità di ONTAP non inclusa nella licenza predefinita, tra cui:
 
 * FabricPool
 +
@@ -77,5 +81,5 @@ NOTE: Non è necessaria una licenza FabricPool quando si utilizza StorageGRID.
 
 .Informazioni correlate
 * link:concept_ots_overview.html#compare-ontap-select-and-ontap-9["Confrontare ONTAP Select e ONTAP 9"]
-* link:https://mysupport.netapp.com/site/systems/master-license-keys["Scopri le chiavi di licenza master di NetApp ONTAP"^]
+* link:https://mysupport.netapp.com/site/systems/master-license-keys["Scopri le chiavi di licenza master NetApp ONTAP"^]
 

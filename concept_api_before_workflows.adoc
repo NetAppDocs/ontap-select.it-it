@@ -24,7 +24,7 @@ La pagina della documentazione online di ONTAP Select include i dettagli di ogni
 
 Le seguenti informazioni sono incluse per ogni chiamata API all'interno di un flusso di lavoro per facilitare l'individuazione della chiamata nella pagina della documentazione:
 
-* Categoria le chiamate API sono organizzate nella pagina della documentazione in aree o categorie correlate alla funzionalità. Per individuare una chiamata API specifica, scorrere fino alla fine della pagina e fare clic sulla categoria API appropriata.
+* Categoria Le chiamate API sono organizzate nella pagina della documentazione in aree o categorie funzionalmente correlate. Per individuare una chiamata API specifica, scorri fino in fondo alla pagina e seleziona la categoria API corrispondente.
 * Verbo HTTP il verbo HTTP identifica l'azione eseguita su una risorsa. Ogni chiamata API viene eseguita tramite un singolo verbo HTTP.
 * Percorso il percorso determina la risorsa specifica a cui si applica l'azione durante l'esecuzione di una chiamata. La stringa del percorso viene aggiunta all'URL principale per formare l'URL completo che identifica la risorsa.
 

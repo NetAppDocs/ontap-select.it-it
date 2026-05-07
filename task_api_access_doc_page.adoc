@@ -24,7 +24,7 @@ summary: È necessario accedere alla pagina della documentazione online di ONTAP
 
 
 .Fasi
-. Digitare l'URL nel browser e premere *Invio*:
+. Digita l'URL nel tuo browser e seleziona *Invio*:
 +
 `\https://<ip_address>/api/ui`
 

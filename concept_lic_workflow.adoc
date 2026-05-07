@@ -20,7 +20,7 @@ La procedura esatta varia in base all'utilizzo di una licenza a livello di capac
 
 Numero di serie della licenza a nove cifre:: Il numero di serie si applica a un nodo (Tier di capacità) o a un pool di storage (pool di capacità)
 ID blocco licenza:: È necessario disporre dell'ID blocco licenza per l'istanza di distribuzione quando si utilizza una licenza Capacity Pool
-Sito Web per le licenze:: È possibile ottenere una licenza per Tier di capacità e pool di capacità in diversi siti Web
+Sito Web per le licenze:: È possibile ottenere una licenza Capacity Tier e una licenza Capacity Pool su siti web diversi.
 
 
 image:purchased_license_workflow.png["Descrive il processo utilizzato per acquistare e installare una licenza storage per un'implementazione ONTAP Select in produzione."]

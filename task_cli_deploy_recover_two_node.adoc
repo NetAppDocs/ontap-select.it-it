@@ -144,7 +144,7 @@ NOTE: L'obiettivo della procedura di ripristino è ripristinare il cluster a due
 . Preparare una nuova istanza dell'utilità di implementazione di ONTAP Select:
 +
 .. Installare una nuova macchina virtuale dell'utility di implementazione.
-.. Se si desidera, ripristinare la configurazione di implementazione da un backup precedente alla nuova macchina virtuale.
+.. Facoltativamente, è possibile ripristinare la configurazione di Deploy da un backup precedente sulla nuova macchina virtuale.
 +
 Se si ripristina un backup precedente, la nuova istanza di implementazione non conterrà il cluster a due nodi. Per informazioni più dettagliate sulle procedure di installazione e ripristino, consultare la sezione relativa alle informazioni correlate.
 

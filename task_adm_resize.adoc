@@ -30,9 +30,9 @@ Questa attività descrive come utilizzare l'interfaccia utente Web di implementa
 
 .Fasi
 . Accedere all'interfaccia utente Web dell'utilità di implementazione utilizzando l'account amministratore.
-. Fare clic sulla scheda *Cluster* nella parte superiore della pagina e selezionare il cluster desiderato dall'elenco.
-. Nella pagina dei dettagli del cluster, fare clic sull'icona a forma di ingranaggio a destra della pagina e selezionare *Instance Resize* (Ridimensiona istanza).
-. Selezionare *tipo di istanza* e fornire le credenziali ONTAP, quindi fare clic su *Modifica*.
+. Seleziona la scheda *Cluster* nella parte superiore della pagina, quindi seleziona il cluster desiderato dall'elenco.
+. Nella pagina dei dettagli del cluster, seleziona l'icona a forma di ingranaggio a destra della pagina e seleziona *Ridimensiona istanza*.
+. Seleziona il *Tipo di istanza* e inserisci le credenziali ONTAP, quindi seleziona *Modifica*.
 
 
 .Al termine

@@ -50,5 +50,5 @@ Tutte le funzioni sono concesse in licenza e disponibili. Sia SnapLock che Fabri
 
 .Informazioni correlate
 * link:https://docs.netapp.com/us-en/ontap/system-admin/types-svms-concept.html["Tipi di SVM contenute in un cluster"^]
-* link:reference_lic_ontap_features.html["Funzionalità ONTAP attivate per impostazione predefinita"]
+* link:reference_lic_ontap_features.html["Funzionalità ONTAP con licenza predefinita"]
 

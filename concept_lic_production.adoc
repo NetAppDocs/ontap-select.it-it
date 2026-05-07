@@ -64,8 +64,3 @@ Il modello di licenza Capacity Pool presenta diverse caratteristiche, tra cui:
 * Tutti i nodi ONTAP Select in un cluster condividono la stessa capacità di licenza. Ciò significa che la licenza deve essere sufficientemente grande da fornire lo storage allocato a tutti i nodi del cluster.
 * Ogni nodo concede in leasing automatico la capacità dello storage per gli aggregati di dati locali da un pool di capacità condiviso.
 
-
-.Cosa succederà ora?
-* link:concept_lic_platforms.html["Scopri le offerte di licenza della piattaforma per ONTAP Select"]
-* link:concept_lic_cp_operation.html["Scopri di più sul modello di licensing ONTAP Select"]
-

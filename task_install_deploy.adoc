@@ -127,12 +127,12 @@ I passaggi che segui dipendono dall'utilizzo di un hypervisor ESXi o KVM.
 +
 Nome host:
 
-.. Digitare il nome host e premere *Invio*.
+.. Digitare il nome host e selezionare *Invio*.
 .. Attendere la seguente richiesta:
 +
 Inserire una password per l'utente amministratore:
 
-.. Digitare la password e premere *Invio*.
+.. Inserisci la password e seleziona *Invio*.
 .. Attendere la seguente richiesta:
 +
 Utilizzare DHCP per impostare le informazioni di rete? [n]:

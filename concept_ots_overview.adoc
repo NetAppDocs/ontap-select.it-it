@@ -115,6 +115,7 @@ Diverse funzionalità di ONTAP non sono supportate con ONTAP Select. Nella maggi
 
 NOTE: A partire da ONTAP Select 9.16.1, sono supportati gli aggiornamenti manuali per ARP e la licenza della funzione ARP è inclusa nel file di licenza NetApp (NLF).
 
+* Gestori di chiavi cloud
 * IPSpace del cluster
 +
 Qualsiasi modifica a Cluster IPSpace, inclusa l'aggiunta o la rimozione di porte, VLAN (Virtual LAN) o gruppi di aggregazione di collegamenti, non è supportata.
@@ -131,12 +132,12 @@ Il tradizionale monitoraggio dello stato di salute utilizzato con un'implementaz
 +
 I gruppi di interfacce non sono supportati.
 
-* MTKM (Multi-tenant Key Manager)
 * Supporto per offload NIC
 +
 A causa dell'ambiente virtualizzato utilizzato con ONTAP Select, la funzione di offload NIC non è supportata.
 
 * Dischi di crittografia per lo storage NetApp
+* Onboard Key Manager
 * Proprietà della porta ONTAP
 +
 La modifica delle proprietà delle porte ONTAP, tra cui velocità, duplex e controllo di flusso, non è supportata.
@@ -149,6 +150,6 @@ La modifica delle proprietà delle porte ONTAP, tra cui velocità, duplex e cont
 
 
 .Informazioni correlate
-* link:reference_lic_ontap_features.html#enabled-ontap-features["Ulteriori informazioni sulle funzioni di ONTAP attivate per impostazione predefinita"]
+* link:reference_lic_ontap_features.html#licensed-ontap-features["Scopri le funzionalità di ONTAP con licenza predefinita"]
 * link:concept_lic_evaluation.html["Scopri le opzioni di licenza di ONTAP Select"]
 

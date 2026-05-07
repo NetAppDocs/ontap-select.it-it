@@ -19,6 +19,19 @@ Scopri le nuove funzioni e i miglioramenti delle versioni supportate di ONTAP Se
 
 
 
+== ONTAP Select 9.19.1
+
+Supporto per la gestione delle chiavi esterne (KMIP):: A partire da ONTAP Select 9.19.1, ONTAP Select supporta la gestione esterna delle chiavi tramite il Key Management Interoperability Protocol (KMIP). È possibile abilitare la gestione esterna delle chiavi dopo aver distribuito un cluster ONTAP Select 9.19.1 o dopo aver aggiornato un cluster esistente a ONTAP Select 9.19.1. La gestione esterna delle chiavi è l'unica modalità di gestione delle chiavi supportata da ONTAP Select 9.19.1. Per ulteriori informazioni, vedere link:reference_lic_ontap_features.html#licensed-ontap-features["Funzionalità ONTAP con licenza predefinita"].
++
+--
+ONTAP Select non supporta i gestori di chiavi cloud né ONTAP Onboard Key Manager.
+
+--
+Supporto per processori Advanced Micro Devices (AMD):: A partire da ONTAP Select 9.19.1, ONTAP Select supporta i processori AMD su host Kernel-Based Virtual Machine (KVM) e hypervisor ESXi. Per ulteriori informazioni, consultare link:reference_plan_ots_hardware.html["Considerazioni sull'hypervisor VMware e sull'hardware"].
+
+
+
+
 == ONTAP Select 9.18.1
 
 Aggiornamenti alle opzioni di download del prodotto ONTAP Select:: Le opzioni di download del prodotto ONTAP Select sul NetApp sito di supporto stanno cambiando con il rilascio di ONTAP Select 9.18.1 in *ONTAP Select Deploy* e *ONTAP Select Image*. Queste due nuove opzioni di download del prodotto sostituiscono le precedenti quattro opzioni, come mostrato nella tabella seguente:
@@ -72,7 +85,7 @@ Supporto aggiornato dell'hypervisor KVM:: A partire da ONTAP Select 9.18.1, l'hy
 
 == ONTAP Select 9.17.1
 
-Supporto RAID software per dischi NVMe collegati localmente su host KVM:: ONTAP Select 9.17.1 introduce il supporto RAID software per i dischi NVMe ONTAP Select collegati localmente su un host hypervisor KVM (Kernel-Based Virtual Machine).
+Supporto RAID software per dischi NVMe collegati localmente su host KVM:: ONTAP Select 9.17.1 introduce il supporto RAID software per i dischi NVMe collegati localmente su un host hypervisor KVM in ONTAP Select.
 +
 --
 Per utilizzare il RAID software per i dischi NVMe collegati localmente, è necessario link:kvm-host-configuration-and-preparation-checklist.html["configurare il passthrough PCI (DirectPath IO)"] durante la preparazione dell'host KVM. Ciò fornisce all'host KVM l'accesso diretto ai dischi NVMe collegati localmente, necessario per le seguenti attività:
@@ -120,7 +133,7 @@ Supporto per SnapMirror cloud:: A partire da ONTAP Select 9.17.1, SnapMirror clo
 https://docs.netapp.com/us-en/ontap/concepts/snapmirror-cloud-backups-object-store-concept.html["Scopri i backup cloud SnapMirror su storage a oggetti"^].
 
 --
-Supporto per SnapLock Select:: A partire da ONTAP Select 9.17.1, le nuove distribuzioni dispongono della licenza SnapLock Select (incluso il blocco snapshot antimanomissione) automaticamente. Per gli aggiornamenti da ONTAP Select 9.16.1 e versioni precedenti, puoi scaricare la licenza SnapLock Select gratuitamente dal link:https://mysupport.netapp.com/site/["Sito di supporto NetApp"^] e applicarla manualmente. Per ulteriori informazioni, vedi link:reference_lic_ontap_features.html#enabled-ontap-features["Le funzioni ONTAP sono attivate automaticamente per impostazione predefinita"].
+Supporto per SnapLock Select:: A partire da ONTAP Select 9.17.1, le nuove distribuzioni dispongono della licenza SnapLock Select (incluso il blocco snapshot antimanomissione) automaticamente. Per gli aggiornamenti da ONTAP Select 9.16.1 e versioni precedenti, puoi scaricare la licenza SnapLock Select gratuitamente dal link:https://mysupport.netapp.com/site/["Sito di supporto NetApp"^] e applicarla manualmente. Per ulteriori informazioni, consultare link:reference_lic_ontap_features.html#licensed-ontap-features["Funzionalità ONTAP con licenza predefinita"].
 Supporto per vSAN ESA su cluster multi-nodo:: A partire da ONTAP Select 9.17.1, il supporto per vSAN Express Storage Architecture (ESA) è esteso per distribuire cluster multi-nodo.  Questo miglioramento consente di distribuire configurazioni vSAN ESA.
 +
 --
@@ -162,13 +175,13 @@ Supporto migliorato di VMware ESXi:: ONTAP Select 9.17.1 include il supporto per
 
 == ONTAP Select 9.16.1
 
-Supporto file di licenza NetApp aggiornato:: A partire da ONTAP Select 9.16.1, il supporto per il NetApp License File (NLF) è stato aggiornato. Il nuovo formato NLF include le licenze per le funzionalità ARP, ONTAP S3 e S3 SnapMirror. link:reference_lic_ontap_features.html#enabled-ontap-features["Scopri di più"].
+Supporto file di licenza NetApp aggiornato:: A partire da ONTAP Select 9.16.1, il supporto per il NetApp License File (NLF) è stato aggiornato. Il nuovo formato NLF include le licenze per le funzionalità ARP, ONTAP S3 e S3 SnapMirror. link:reference_lic_ontap_features.html#licensed-ontap-features["Scopri di più"].
 +
 --
 Per una nuova implementazione di ONTAP Select 9.16.1, viene applicato automaticamente il nuovo formato NLF. Quando si aggiorna una distribuzione ONTAP Select esistente a 9.16.1, il nuovo formato NLF non viene applicato. Per ottenere le licenze ARP, ONTAP S3 e S3 SnapMirror Feature, è necessario scaricare l'NLF aggiornato dopo l'aggiornamento. Se si torna a ONTAP Select 9.15.1 o versioni precedenti, è necessario reinstallare le licenze delle funzioni prima dell'aggiornamento.
 
 --
-Supporto per la protezione autonoma da ransomware:: ONTAP Select 9.16.1 introduce il supporto per Autonomous Ransomware Protection (ARP). ONTAP Select 9.16.1 supporta solo aggiornamenti manuali per ARP, gli aggiornamenti automatici non sono supportati. La licenza della funzionalità ARP è inclusa nel NLF per ONTAP Select 9.16.1. link:reference_lic_ontap_features.html#enabled-ontap-features["Scopri di più"].
+Supporto per la protezione autonoma da ransomware:: ONTAP Select 9.16.1 introduce il supporto per Autonomous Ransomware Protection (ARP). ONTAP Select 9.16.1 supporta solo aggiornamenti manuali per ARP, gli aggiornamenti automatici non sono supportati. La licenza della funzionalità ARP è inclusa nel NLF per ONTAP Select 9.16.1. link:reference_lic_ontap_features.html#licensed-ontap-features["Scopri di più"].
 Supporto migliorato di VMware ESXi:: ONTAP Select 9.16.1 include il supporto per VMware ESXi 8.0 U3.
 Supporto aggiornato dell'hypervisor KVM:: A partire da ONTAP Select 9.16.1, l'hypervisor KVM è supportato su RHEL 9.5 e Rocky Linux 9.5.
 

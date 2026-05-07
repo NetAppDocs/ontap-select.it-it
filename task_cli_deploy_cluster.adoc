@@ -63,7 +63,7 @@ NOTE: Se si sta implementando un cluster solo per la valutazione, è possibile s
 .Fasi
 . In una shell di comandi sulla workstation locale, utilizzare l'utility sftp per caricare il file di licenza sulla macchina virtuale di implementazione.
 +
-Output di esempio
+Esempio output:
 
 +
 ....
@@ -113,7 +113,7 @@ Se è necessario più di un host hypervisor, utilizzare questa procedura per agg
 host register -name <FQDN|IP> -hypervisor-type KVM -username <KVM_username>
 ----
 +
-Output di esempio
+Esempio output:
 
 +
 [listing]
@@ -130,7 +130,7 @@ Fornire la password per l'account host quando richiesto.
 host show -name <FQDN|IP> -detailed
 ----
 +
-Output di esempio
+Esempio output:
 
 +
 [listing]
@@ -156,7 +156,7 @@ Prima di registrare un host gestito da vCenter, è necessario aggiungere un acco
 credential add -hostname <FQDN|IP> -type vcenter -username <vcenter_username>
 ----
 +
-Output di esempio
+Esempio output:
 
 +
 ....
@@ -177,7 +177,7 @@ host register -name <FQDN|IP> -hypervisor-type ESX -username <esx_username>
 host register -name <FQDN|IP> -hypervisor-type ESX -mgmt-server <FQDN|IP>
 ----
 +
-Output di esempio
+Esempio output:
 
 +
 ....
@@ -192,7 +192,7 @@ host register -name 10.234.81.14 -hypervisor-type ESX -mgmt-server vc.select.com
 host show -name <FQDN|IP> -detailed
 ----
 +
-Output di esempio
+Esempio output:
 
 +
 ....
@@ -223,7 +223,7 @@ Quando si crea un cluster ONTAP Select, l'utilità di implementazione genera aut
 cluster create -name <cluster_name> -node-count <count>
 ----
 +
-Output di esempio
+Esempio output:
 
 +
 ....
@@ -236,7 +236,7 @@ cluster create -name test-cluster -node-count 1
 cluster modify -name <cluster_name> -mgmt-ip <IP_address> -netmask <netmask> -gateway <IP_address> -dns-servers <FQDN|IP>_LIST -dns-domains <domain_list>
 ----
 +
-Output di esempio
+Esempio output:
 
 +
 ....
@@ -280,7 +280,7 @@ node show -cluster-name <cluster_name>
 node modify -name <node_name> -cluster-name <cluster_name> -host-name <FQDN|IP> -license-serial-number <number> -instance-type TYPE -passthrough-disks false
 ----
 +
-Output di esempio
+Esempio output:
 
 +
 ....
@@ -300,7 +300,7 @@ Per il nodo ONTAP Select viene utilizzata una licenza del livello di capacità.
 host network show -host-name <FQDN|IP> -detailed
 ----
 +
-Output di esempio
+Esempio output:
 
 +
 ....
@@ -329,7 +329,7 @@ node modify -name <node_name> -cluster-name <cluster_name> -mgmt-ip IP -manageme
 Quando si distribuisce un cluster a nodo singolo, non è necessaria una rete interna e si dovrebbe rimuovere "-internal-network".
 
 +
-Output di esempio
+Esempio output:
 
 +
 ....
@@ -343,7 +343,7 @@ node modify -name test-cluster-01 -cluster-name test-cluster -mgmt-ip 10.234.81.
 node show -name <node_name> -cluster-name <cluster_name> -detailed
 ----
 +
-Output di esempio
+Esempio output:
 
 +
 ....
@@ -372,7 +372,7 @@ Quando si utilizza un controller RAID hardware locale, è necessario eseguire i 
 host storage pool show -host-name <FQDN|IP>
 ----
 +
-Output di esempio
+Esempio output:
 
 +
 [listing]
@@ -392,7 +392,7 @@ node storage pool attach -name <pool_name> -cluster-name <cluster_name> -node-na
 Se si include il parametro "-capacity-limit", specificare il valore come GB o TB.
 
 +
-Output di esempio
+Esempio output:
 
 +
 [listing]
@@ -407,7 +407,7 @@ node-name test-cluster-01 -capacity-limit 500GB
 node storage pool show -cluster-name <cluster_name> -node-name <node_name>
 ----
 +
-Output di esempio
+Esempio output:
 
 +
 [listing]
@@ -421,7 +421,7 @@ node storage pool show -cluster-name test-cluster -node-name testcluster-01
 node storage disk attach -node-name <node_name> -cluster-name <cluster_name> -disks <list_of_drives>
 ----
 +
-Output di esempio
+Esempio output:
 
 +
 [listing]
@@ -435,7 +435,7 @@ node storage disk attach -node-name NVME_SN-01 -cluster-name NVME_SN -disks 0000
 node storage disk show -node-name <node_name> -cluster-name <cluster_name>`
 ----
 +
-Output di esempio
+Esempio output:
 
 +
 [listing]
@@ -462,7 +462,7 @@ Eseguire il controllo della connettività di rete utilizzando link:task_adm_conn
 cluster deploy -name <cluster_name>
 ----
 +
-Output di esempio
+Esempio output:
 
 +
 [listing]
