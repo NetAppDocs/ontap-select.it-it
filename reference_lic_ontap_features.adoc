@@ -30,7 +30,7 @@ Le seguenti funzioni di ONTAP sono supportate con ONTAP Select e concesse in lic
 * Deduplica e compressione
 * Gestione delle chiavi esterne utilizzando il Key Management Interoperability Protocol (KMIP)
 +
-La gestione delle chiavi esterne è l'unica gestione delle chiavi supportata da ONTAP Select. Scopri di più link:https://docs.netapp.com/us-en/ontap/encryption-at-rest/configure-netapp-volume-encryption-concept.html["abilitazione e configurazione della gestione delle chiavi esterne"^].
+Scopri di più link:https://docs.netapp.com/us-en/ontap/encryption-at-rest/configure-netapp-volume-encryption-concept.html["abilitazione e configurazione della gestione delle chiavi esterne"^].
 
 * FlexCache
 +

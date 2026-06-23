@@ -137,7 +137,6 @@ I gruppi di interfacce non sono supportati.
 A causa dell'ambiente virtualizzato utilizzato con ONTAP Select, la funzione di offload NIC non è supportata.
 
 * Dischi di crittografia per lo storage NetApp
-* Onboard Key Manager
 * Proprietà della porta ONTAP
 +
 La modifica delle proprietà delle porte ONTAP, tra cui velocità, duplex e controllo di flusso, non è supportata.
