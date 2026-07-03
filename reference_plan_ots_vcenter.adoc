@@ -83,4 +83,4 @@ Provisioning:: Tutti i privilegi della categoria.
 Tutti i privilegi della categoria.
 
 .Informazioni correlate
-link:https://docs.netapp.com/us-en/ontap-select/reference_plan_dep_vmware.html#ontap-select-deploy-vmware-vcenter-server-considerations["Scopri di più sui privilegi VMware vSphere per vSAN ESA in vCenter"]
+link:reference_plan_dep_vmware.html#vmware-vcenter-server-considerations["Scopri di più sui privilegi VMware vSphere per vSAN ESA in vCenter"]
