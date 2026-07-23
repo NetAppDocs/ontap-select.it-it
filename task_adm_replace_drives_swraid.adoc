@@ -21,6 +21,7 @@ NOTE: La rimozione del disco guasto e l'aggiunta di un nuovo disco (contrassegna
 
 
 
+[[identify-the-failed-drive]]
 == Identificare il disco guasto
 
 In caso di guasto a un disco, è necessario utilizzare l'interfaccia utente di ONTAP per identificare il disco guasto.
@@ -87,6 +88,7 @@ NET-1.4 893.3GB - - SSD broken - sti-rx2540-346a'
 ====
 
 
+[[remove-the-failed-drive]]
 == Rimuovere il disco guasto
 
 Una volta identificato il disco guasto, rimuoverlo.
@@ -212,6 +214,7 @@ image:ST_26.jpg["Attenzione"]
 ====
 
 
+[[add-the-new-spare-drive]]
 == Aggiungere il nuovo disco di riserva
 
 Dopo aver rimosso il disco guasto, aggiungere il disco libero.

@@ -20,6 +20,7 @@ Alcune delle informazioni raccolte si applicano al cluster stesso, mentre altre 
 
 
 
+[[cluster-level-information]]
 == Informazioni a livello di cluster
 
 È necessario raccogliere informazioni relative al cluster ONTAP Select.
@@ -39,6 +40,7 @@ Alcune delle informazioni raccolte si applicano al cluster stesso, mentre altre 
 |===
 
 
+[[host-level-information]]
 == Informazioni a livello di host
 
 È necessario raccogliere informazioni relative a ciascuno dei nodi nel cluster ONTAP Select.

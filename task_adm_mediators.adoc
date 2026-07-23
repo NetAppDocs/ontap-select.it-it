@@ -18,6 +18,7 @@ Ogni cluster a due nodi ONTAP Select viene monitorato dal servizio mediatore, ch
 
 
 
+[[view-the-status-of-the-mediator-service]]
 == Visualizzare lo stato del servizio mediatore
 
 È possibile visualizzare lo stato del servizio mediatore rispetto a ciascuno dei cluster a due nodi definiti nell'utilità di implementazione di ONTAP Select.

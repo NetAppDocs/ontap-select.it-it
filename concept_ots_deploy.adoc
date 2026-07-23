@@ -18,6 +18,7 @@ ONTAP Select Deploy è l'utility di amministrazione utilizzata per implementare 
 
 
 
+[[core-functionality]]
 == Funzionalità di base
 
 L'utility di amministrazione di Deploy esegue le seguenti funzioni principali:
@@ -33,18 +34,21 @@ L'utility di amministrazione di Deploy esegue le seguenti funzioni principali:
 
 
 
+[[ways-you-can-access-the-deploy-utility]]
 == Modalità di accesso all'utilità di implementazione
 
 Sono disponibili diverse opzioni per l'accesso all'utilità di amministrazione della distribuzione. Tutte le interfacce esterne sono funzionalmente equivalenti. È necessario selezionare l'opzione di accesso più adatta agli obiettivi e ai requisiti di implementazione specifici. In tutti i casi, è necessario accedere utilizzando l'account amministratore con una password valida.
 
 
 
+[[web-graphical-user-interface]]
 === Interfaccia grafica utente Web
 
 È possibile accedere all'utilità Deploy tramite un browser web moderno. L'interfaccia utente grafica (UI) web offre un'interfaccia intuitiva e facile da usare e, nella maggior parte dei casi, costituirà l'interfaccia principale durante l'utilizzo dell'utilità.
 
 
 
+[[command-line-interface]]
 === Interfaccia della riga di comando
 
 Tramite la shell di gestione è disponibile un'interfaccia a riga di comando basata su testo. È possibile accedere alla shell di gestione CLI nei seguenti modi:
@@ -57,6 +61,7 @@ Generalmente, la console della macchina virtuale viene utilizzata come parte del
 
 
 
+[[rest-web-services-api]]
 === API dei servizi web REST
 
 L'API DEI servizi web REST esposta ai client esterni offre un'altra opzione quando ci si connette all'utility di distribuzione. È possibile accedere all'API utilizzando qualsiasi linguaggio di programmazione mainstream o tool che supporti i servizi Web REST. Le scelte più popolari includono:
@@ -70,6 +75,7 @@ L'utilizzo di un linguaggio di programmazione o di scripting offre l'opportunit�
 
 
 
+[[ontap-select-online-documentation-web-page]]
 === Pagina Web della documentazione online di ONTAP Select
 
 La visualizzazione della pagina Web della documentazione online nell'utility di implementazione è un metodo alternativo per accedere all'API DEI servizi Web REST. Tuttavia, invece di utilizzare un linguaggio di programmazione, è possibile accedere all'API di gestione tramite la pagina utilizzando un browser. Sono disponibili le seguenti funzionalità:

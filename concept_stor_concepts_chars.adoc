@@ -18,6 +18,7 @@ Scopri i concetti di storage generali applicabili all'ambiente ONTAP Select prim
 
 
 
+[[phases-of-storage-configuration]]
 == Fasi della configurazione dello storage
 
 Le principali fasi di configurazione dello storage host ONTAP Select includono:
@@ -51,12 +52,14 @@ Le principali fasi di configurazione dello storage host ONTAP Select includono:
 
 
 
+[[managed-versus-unmanaged-storage]]
 == Storage gestito e non gestito
 
 Lo storage accessibile e controllato direttamente da ONTAP Select è lo storage gestito. Qualsiasi altro storage sullo stesso host hypervisor è uno storage non gestito.
 
 
 
+[[homogeneous-physical-storage]]
 === Storage fisico omogeneo
 
 Tutti i dischi fisici che costituiscono lo storage gestito da ONTAP Select devono essere omogenei. Vale a dire che tutto l'hardware deve essere lo stesso per quanto riguarda le seguenti caratteristiche:
@@ -67,6 +70,7 @@ Tutti i dischi fisici che costituiscono lo storage gestito da ONTAP Select devon
 
 
 
+[[illustration-of-the-local-storage-environment]]
 == Immagine dell'ambiente di storage locale
 
 Ogni host hypervisor contiene dischi locali e altri componenti di storage logico che possono essere utilizzati da ONTAP Select. Questi componenti di storage sono disposti in una struttura a più livelli, dal disco fisico.
@@ -75,6 +79,7 @@ image:ST_01.jpg["ambiente di storage locale"]
 
 
 
+[[characteristics-of-the-local-storage-components]]
 === Caratteristiche dei componenti dello storage locale
 
 Esistono diversi concetti che si applicano ai componenti dello storage locale utilizzati in un ambiente ONTAP Select. Prima di prepararsi per un'implementazione di ONTAP Select, è necessario acquisire familiarità con questi concetti. Questi concetti sono organizzati in base alla categoria: Gruppi RAID e LUN, pool di storage e dischi virtuali.
@@ -99,6 +104,7 @@ Ogni host ONTAP Select deve disporre di un singolo controller RAID. Creare un si
 
 
 
+[[storage-pool-considerations]]
 === Considerazioni sul pool di storage
 
 Esistono diversi problemi relativi ai pool di storage di cui si dovrebbe essere a conoscenza durante la preparazione all'implementazione di ONTAP Select.
@@ -116,6 +122,7 @@ Ogni LUN viene considerato come un disco locale sull'host dell'hypervisor e può
 
 
 
+[[manage-the-virtual-disks-on-esxi]]
 === Gestire i dischi virtuali su ESXi
 
 Esistono diversi problemi relativi ai dischi virtuali di cui si dovrebbe essere a conoscenza durante la preparazione dell'implementazione di ONTAP Select.
@@ -141,6 +148,7 @@ I dischi virtuali sono gestiti da ONTAP Select. Vengono creati automaticamente q
 
 
 
+[[illustration-of-the-external-storage-environment-on-esxi]]
 == Immagine dell'ambiente di storage esterno su ESXi
 
 La soluzione vNAS di ONTAP Select consente a ONTAP Select di utilizzare datastore che risiedono su storage esterno all'host dell'hypervisor. È possibile accedere agli archivi dati tramite la rete utilizzando VMware vSAN o direttamente da uno storage array esterno.
@@ -154,6 +162,7 @@ ONTAP Select può essere configurato per utilizzare i seguenti tipi di datastore
 
 
 
+[[vsan-datastores]]
 === Datastore VSAN
 
 Ogni host ESXi può disporre di uno o più datastore VMFS locali. Normalmente questi datastore sono accessibili solo all'host locale. Tuttavia, VMware vSAN consente a ciascuno degli host di un cluster ESXi di condividere tutti i datastore del cluster come se fossero locali. La figura seguente illustra come vSAN crea un pool di datastore condivisi tra gli host nel cluster ESXi.
@@ -162,6 +171,7 @@ image:ST_02.jpg["Cluster ESXi"]
 
 
 
+[[vmfs-datastore-on-external-storage-array]]
 === Datastore VMFS su storage array esterno
 
 È possibile creare un datastore VMFS residente su un array di storage esterno. È possibile accedere allo storage utilizzando uno dei diversi protocolli di rete. La figura seguente illustra un datastore VMFS su un array di storage esterno a cui si accede utilizzando il protocollo iSCSI.
@@ -173,6 +183,7 @@ image:ST_03.jpg["Host hypervisor ESXi"]
 
 
 
+[[nfs-datastore-on-external-storage-array]]
 === Datastore NFS su storage array esterno
 
 È possibile creare un datastore NFS che risiede su uno storage array esterno. L'accesso allo storage avviene tramite il protocollo di rete NFS. La figura seguente illustra un datastore NFS su storage esterno a cui si accede tramite l'appliance server NFS.

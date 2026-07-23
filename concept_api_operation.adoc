@@ -18,12 +18,14 @@ Mentre REST stabilisce un insieme comune di tecnologie e Best practice, i dettag
 
 
 
+[[hypervisor-host-versus-ontap-select-node]]
 == Host hypervisor rispetto al nodo ONTAP Select
 
 Un _host hypervisor_ è la piattaforma hardware principale che ospita una macchina virtuale ONTAP Select. Quando una macchina virtuale ONTAP Select viene implementata e attiva su un host hypervisor, la macchina virtuale viene considerata un _nodo ONTAP Select_. Con la versione 3 dell'API REST di implementazione, gli oggetti host e nodo sono separati e distinti. Ciò consente una relazione uno-a-molti, in cui uno o più nodi ONTAP Select possono essere eseguiti sullo stesso host hypervisor.
 
 
 
+[[object-identifiers]]
 == Identificatori di oggetti
 
 A ogni istanza o oggetto di risorsa viene assegnato un identificatore univoco al momento della creazione. Questi identificatori sono univoci a livello globale all'interno di una specifica istanza di ONTAP Select Deploy. Dopo aver eseguito una chiamata API che crea una nuova istanza di oggetto, il valore id associato viene restituito al chiamante in `location` Intestazione della risposta HTTP. È possibile estrarre l'identificatore e utilizzarlo nelle chiamate successive quando si fa riferimento all'istanza della risorsa.
@@ -33,12 +35,14 @@ NOTE: Il contenuto e la struttura interna degli identificatori di oggetti posson
 
 
 
+[[request-identifiers]]
 == Richiedi identificatori
 
 A ogni richiesta API riuscita viene assegnato un identificatore univoco. L'identificatore viene restituito in `request-id` Intestazione della risposta HTTP associata. È possibile utilizzare un identificatore di richiesta per fare riferimento collettivamente alle attività di una singola transazione richiesta-risposta API specifica. Ad esempio, è possibile recuperare tutti i messaggi di evento per una transazione in base all'ID della richiesta.
 
 
 
+[[synchronous-and-asynchronous-calls]]
 == Chiamate sincrone e asincrone
 
 Esistono due modi principali in cui un server esegue una richiesta HTTP ricevuta da un client:
@@ -49,6 +53,7 @@ Esistono due modi principali in cui un server esegue una richiesta HTTP ricevuta
 
 
 
+[[confirm-the-completion-of-a-long-running-job]]
 == Confermare il completamento di un lavoro a esecuzione prolungata
 
 In genere, tutte le operazioni che possono richiedere molto tempo vengono elaborate in modo asincrono utilizzando un'attività in background sul server. Con l'API di distribuzione REST, ogni attività in background viene ancorata da un oggetto Job che tiene traccia dell'attività e fornisce informazioni, ad esempio lo stato corrente. Un oggetto Job, incluso il relativo identificatore univoco, viene restituito nella risposta HTTP dopo la creazione di un'attività in background.
@@ -63,6 +68,7 @@ Oltre all'utilizzo dell'oggetto Job, esistono altri modi per determinare il succ
 
 
 
+[[security]]
 == Sicurezza
 
 L'API di implementazione utilizza le seguenti tecnologie di sicurezza:

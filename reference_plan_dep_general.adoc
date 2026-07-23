@@ -18,6 +18,7 @@ Nell'ambito della pianificazione dell'installazione dell'utilità di amministraz
 
 
 
+[[pairing-the-deploy-utility-with-the-ontap-select-clusters]]
 == Associazione dell'utility di implementazione con i cluster ONTAP Select
 
 Sono disponibili diverse opzioni per l'associazione di un'istanza dell'utilità di implementazione con i cluster ONTAP Select.
@@ -36,6 +37,7 @@ NOTE: Un'istanza dell'utilità di implementazione può amministrare fino a 400 n
 
 
 
+[[requirements-related-to-the-kvm-environment]]
 == Requisiti relativi all'ambiente KVM
 
 Prima di installare l'utilità di amministrazione di deploy in un ambiente hypervisor KVM, è necessario esaminare i requisiti di base e prepararsi per la distribuzione.
@@ -70,6 +72,7 @@ ONTAP Select Deploy supporta solo IP versione 4 (IPv4). IP versione 6 (IPv6) non
 
 
 
+[[required-configuration-information]]
 == Informazioni di configurazione richieste
 
 Nell'ambito della pianificazione della distribuzione, è necessario determinare le informazioni di configurazione richieste prima di installare l'utilità di amministrazione di ONTAP Select Deploy.
@@ -88,6 +91,7 @@ La rete in cui è connessa la VM di implementazione.
 
 
 
+[[optional-network-configuration-information]]
 == Informazioni opzionali sulla configurazione di rete
 
 Per impostazione predefinita, la macchina virtuale da distribuire viene configurata utilizzando il protocollo DHCP. Tuttavia, se necessario, è possibile configurare manualmente l'interfaccia di rete per la VM.
@@ -115,6 +119,7 @@ I domini di ricerca da utilizzare.
 
 
 
+[[authentication-using-the-credential-store]]
 == Autenticazione mediante l'archivio delle credenziali
 
 L'archivio credenziali ONTAP Select Deploy è un database che contiene le informazioni sull'account. L'implementazione utilizza le credenziali dell'account per eseguire l'autenticazione host come parte della creazione e della gestione del cluster. È necessario conoscere il modo in cui l'archivio di credenziali viene utilizzato per pianificare un'implementazione di ONTAP Select.

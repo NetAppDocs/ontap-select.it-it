@@ -18,6 +18,7 @@ summary: 'È possibile utilizzare l"interfaccia della riga di comando fornita co
 
 
 
+[[step-1-prepare-for-the-deployment]]
 == Fase 1: Prepararsi per la distribuzione
 
 Prima di creare un cluster ONTAP Select su un hypervisor, è necessario comprendere la preparazione richiesta.
@@ -50,6 +51,7 @@ Prima di implementare un cluster ONTAP Select in un ambiente di produzione, è n
 
 
 
+[[step-2-upload-and-register-a-license-file]]
 == Passaggio 2: caricare e registrare un file di licenza
 
 Dopo aver acquisito un file di licenza con capacità di storage, è necessario caricare il file contenente la licenza sulla macchina virtuale di implementazione e registrarlo.
@@ -91,6 +93,7 @@ license show
 
 
 
+[[step-3-add-hypervisor-hosts]]
 == Passaggio 3: aggiungere host hypervisor
 
 È necessario registrare ciascun host hypervisor in cui verrà eseguito un nodo ONTAP Select.
@@ -204,6 +207,7 @@ host show -name 10.234.81.14 -detailed
 ====
 
 
+[[step-4-create-and-configure-an-ontap-select-cluster]]
 == Passaggio 4: creare e configurare un cluster ONTAP Select
 
 È necessario creare e configurare il cluster ONTAP Select. Una volta configurato il cluster, è possibile configurare i singoli nodi.
@@ -253,6 +257,7 @@ cluster show -name <cluster_name> -detailed
 
 
 
+[[step-5-configure-an-ontap-select-node]]
 == Passaggio 5: configurare un nodo ONTAP Select
 
 È necessario configurare ciascuno dei nodi nel cluster ONTAP Select.
@@ -353,6 +358,7 @@ node show -name test-cluster-01 -cluster-name test-cluster -detailed
 
 
 
+[[step-6-attach-storage-to-the-ontap-select-nodes]]
 == Passaggio 6: collegare l'archiviazione ai nodi ONTAP Select
 
 Configurare lo storage utilizzato da ciascun nodo nel cluster ONTAP Select . A ogni nodo deve sempre essere assegnato almeno un pool di storage. Quando si utilizza il RAID software, a ciascun nodo deve essere assegnata almeno un'unità disco.
@@ -446,6 +452,7 @@ node storage disk show -node-name sdot-smicro-009a -cluster-name NVME
 
 
 
+[[step-7-deploy-an-ontap-select-cluster]]
 == Passaggio 7: distribuire un cluster ONTAP Select
 
 Una volta configurati il cluster e i nodi, è possibile implementarlo.

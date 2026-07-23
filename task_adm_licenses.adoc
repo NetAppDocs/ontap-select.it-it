@@ -18,6 +18,7 @@ Esistono diverse attività correlate che è possibile eseguire nell'ambito dell'
 
 
 
+[[manage-the-capacity-tier-licenses]]
 == Gestire le licenze del livello di capacità
 
 È possibile aggiungere, modificare ed eliminare le licenze del livello di capacità ONTAP Select in base alle necessità.
@@ -33,6 +34,7 @@ Esistono diverse attività correlate che è possibile eseguire nell'ambito dell'
 
 
 
+[[manage-the-capacity-pool-licenses]]
 == Gestire le licenze di Capacity Pool
 
 Puoi aggiungere, modificare ed eliminare le licenze di ONTAP Select Capacity Pool in base alle tue esigenze.
@@ -81,6 +83,7 @@ Per rinnovare una licenza esistente:
 
 
 
+[[reinstall-a-capacity-pool-license]]
 == Reinstallare una licenza di Capacity Pool
 
 Ogni licenza attiva di Capacity Pool è bloccata su una specifica istanza di License Manager, contenuta in un'istanza dell'utilità di amministrazione di distribuzione. Se stai utilizzando una licenza Capacity Pool per poi ripristinare o ripristinare l'istanza di implementazione, la licenza originale non è più valida. È necessario generare un nuovo file di licenza della capacità e installare la licenza nella nuova istanza di implementazione.
@@ -145,6 +148,8 @@ Per ulteriori informazioni, vedere link:task_lic_acquire_cp.html["Acquisire una 
 
 
 
+[[convert-an-evaluation-license-to-a-production-license]]
+[[convert-license]]
 == Convertire una licenza di valutazione in una licenza di produzione
 
 È possibile aggiornare un cluster di valutazione ONTAP Select per utilizzare una licenza livello capacità di produzione con l'utility di amministrazione distribuzione.
@@ -176,6 +181,7 @@ I numeri di serie di nodi a venti cifre originariamente assegnati a ciascun nodo
 
 
 
+[[manage-an-expired-capacity-pool-license]]
 == Gestione di una licenza Capacity Pool scaduta
 
 In genere, quando una licenza scade, non accade nulla. Tuttavia, non è possibile installare una licenza diversa perché i nodi sono associati alla licenza scaduta. Fino al rinnovo della licenza, è necessario _non_ fare qualsiasi cosa che porti l'aggregato offline, come un riavvio o un'operazione di failover. Si consiglia di accelerare il rinnovo della licenza.
@@ -184,6 +190,7 @@ Per ulteriori informazioni su ONTAP Select e sul rinnovo delle licenze, fare rif
 
 
 
+[[manage-add-on-licenses]]
 == Gestire le licenze aggiuntive
 
 Per il prodotto ONTAP Select, le licenze aggiuntive vengono applicate direttamente all'interno di ONTAP e non vengono gestite tramite ONTAP Select Deploy. Vedere link:https://docs.netapp.com/us-en/ontap/system-admin/manage-licenses-concept.html["Panoramica sulla gestione delle licenze (solo amministratori del cluster)"^] e. link:https://docs.netapp.com/us-en/ontap/task_admin_enable_new_features.html["Abilitare le nuove funzioni aggiungendo le chiavi di licenza"^] per ulteriori informazioni.

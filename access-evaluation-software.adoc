@@ -30,6 +30,7 @@ NOTE: Non è possibile estendere una licenza di valutazione. Al termine dei 90 g
 
 
 
+[[step-1-register-for-an-account]]
 == Passaggio 1: registra un account
 
 Se necessario, completa la registrazione dell'account NetApp e richiedi l'accesso ai potenziali clienti.
@@ -73,6 +74,7 @@ Includi il nome del tuo contatto NetApp .
 
 
 
+[[step-2-download-ontap-select-evaluation-software]]
 == Passaggio 2: Scarica il software di valutazione ONTAP Select
 
 Dopo che il tuo caso di supporto sarà stato esaminato e approvato, il supporto NetApp ti invierà una notifica tramite l'indirizzo e-mail fornito.

@@ -26,6 +26,7 @@ Il flusso di lavoro per la creazione del cluster è diverso nelle seguenti situa
 
 
 
+[[1-register-vcenter-server-credential]]
 == 1. Registrare le credenziali del server vCenter
 
 Durante la distribuzione su un host ESXi gestito da un server vCenter, è necessario aggiungere una credenziale prima di registrare l'host. L'utility di amministrazione di deploy può quindi utilizzare la credenziale per l'autenticazione in vCenter.
@@ -69,6 +70,7 @@ Output::
 
 
 
+[[2-register-a-hypervisor-host]]
 == 2. Registrare un host hypervisor
 
 È necessario aggiungere un host hypervisor in cui verrà eseguita la macchina virtuale contenente il nodo ONTAP Select.
@@ -115,6 +117,7 @@ Output::
 
 
 
+[[3-create-a-cluster]]
 == 3. Creare un cluster
 
 Quando si crea un cluster ONTAP Select, la configurazione di base del cluster viene registrata e i nomi dei nodi vengono generati automaticamente da Deploy.
@@ -154,6 +157,7 @@ Output::
 
 
 
+[[4-configure-the-cluster]]
 == 4. Configurare il cluster
 
 Durante la configurazione del cluster, è necessario fornire diversi attributi.
@@ -195,6 +199,7 @@ Output:: Nessuno
 
 
 
+[[5-retrieve-the-node-name]]
 == 5. Recuperare il nome del nodo
 
 L'utility di amministrazione di deploy genera automaticamente gli identificatori e i nomi dei nodi quando viene creato un cluster. Prima di poter configurare un nodo, è necessario recuperare l'ID assegnato.
@@ -225,6 +230,7 @@ Output::
 
 
 
+[[6-configure-the-nodes]]
 == 6. Configurare i nodi
 
 È necessario fornire la configurazione di base per il nodo, che è la prima delle tre chiamate API utilizzate per configurare un nodo.
@@ -263,6 +269,7 @@ Output:: Nessuno
 
 
 
+[[7-retrieve-the-node-networks]]
 == 7. Recuperare le reti di nodi
 
 È necessario identificare le reti di dati e di gestione utilizzate dal nodo nel cluster a nodo singolo. La rete interna non viene utilizzata con un cluster a nodo singolo.
@@ -293,6 +300,7 @@ Output::
 
 
 
+[[8-configure-the-node-networking]]
 == 8. Configurare la rete del nodo
 
 È necessario configurare le reti dati e di gestione. La rete interna non viene utilizzata con un cluster a nodo singolo.
@@ -329,6 +337,7 @@ Output:: Nessuno
 
 
 
+[[9-configure-the-node-storage-pool]]
 == 9. Configurare il pool di storage del nodo
 
 La fase finale della configurazione di un nodo consiste nell'associare un pool di storage. È possibile determinare i pool di storage disponibili tramite il client Web vSphere o, facoltativamente, tramite l'API REST di implementazione.
@@ -367,6 +376,7 @@ Output:: Nessuno
 
 
 
+[[10-deploy-the-cluster]]
 == 10. Implementare il cluster
 
 Una volta configurati il cluster e il nodo, è possibile implementarlo.

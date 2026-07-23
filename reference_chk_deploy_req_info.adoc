@@ -18,6 +18,7 @@ Prima di installare l'utilità di amministrazione di distribuzione in un ambient
 
 
 
+[[required-configuration-information]]
 == Informazioni di configurazione richieste
 
 Nell'ambito della pianificazione della distribuzione, è necessario determinare le informazioni di configurazione richieste prima di installare l'utilità di amministrazione di ONTAP Select Deploy.
@@ -40,6 +41,7 @@ Nell'ambito della pianificazione della distribuzione, è necessario determinare 
 |===
 
 
+[[optional-network-configuration-information]]
 == Informazioni opzionali sulla configurazione di rete
 
 Per impostazione predefinita, la macchina virtuale di implementazione viene configurata utilizzando DHCP. Tuttavia, se necessario, è possibile configurare manualmente l'interfaccia di rete per la macchina virtuale.

@@ -18,6 +18,7 @@ Se l'utilità di implementazione di ONTAP Select non riesce o non è disponibile
 
 
 
+[[prepare-to-recover-the-deploy-utility]]
 == Prepararsi a ripristinare l'utilità Deploy
 
 Per garantire il successo dell'operazione, è necessario prepararsi prima di tentare di ripristinare un'istanza dell'utilità Deploy.  È necessario avere familiarità con diverse procedure amministrative e disporre delle informazioni richieste.
@@ -51,6 +52,8 @@ link:task_cli_migrate_deploy.html#step-3-restore-the-deploy-configuration-data-t
 
 
 
+[[restore-a-deploy-utility-instance-using-a-configuration-backup]]
+[[restore-deploy-backup]]
 == Ripristinare un'istanza dell'utilità di distribuzione utilizzando un backup di configurazione
 
 Se si dispone di un backup dell'istanza dell'utilità di implementazione non riuscita contenente il cluster a due nodi, è possibile ripristinare i dati di configurazione nella nuova istanza della macchina virtuale di implementazione. A questo punto, è necessario completare il ripristino eseguendo una configurazione aggiuntiva dei due nodi nel cluster ONTAP Select.
@@ -127,6 +130,8 @@ Se si utilizza la licenza Capacity Pools, reinstallare ogni licenza Capacity Poo
 
 
 
+[[reconfigure-and-recover-a-deploy-utility-instance]]
+[[restore-and-recover-deploy]]
 == Riconfigurare e ripristinare un'istanza dell'utilità di distribuzione
 
 Se non si dispone di un backup dell'istanza dell'utilità Deploy non riuscita contenente il cluster a due nodi, configurare la destinazione iSCSI del mediatore e la cassetta postale nella nuova macchina virtuale Deploy.  È quindi possibile completare il ripristino eseguendo un'ulteriore configurazione dei due nodi nel cluster ONTAP Select .

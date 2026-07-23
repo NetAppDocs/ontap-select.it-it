@@ -18,6 +18,7 @@ ONTAP Select supporta sia cluster a nodo singolo che configurazioni di rete mult
 
 
 
+[[single-node-network-configuration]]
 == Configurazione di rete a nodo singolo
 
 Le configurazioni ONTAP Select a nodo singolo non richiedono la rete interna ONTAP, in quanto non esiste traffico cluster, ha o mirror.
@@ -41,6 +42,7 @@ NOTE: Anche se due adattatori sono sufficienti per un cluster a nodo singolo, è
 
 
 
+[[lif-assignment]]
 === Assegnazione LIF
 
 Come spiegato nella sezione sull'assegnazione LIF multi-nodo di questo documento, ONTAP utilizza gli IPspaces per mantenere il traffico di rete del cluster separato dal traffico dati e di gestione. La variante a nodo singolo di questa piattaforma non contiene una rete cluster. Pertanto, non sono presenti porte nell'IPspace del cluster.
@@ -50,6 +52,7 @@ NOTE: I LIF di gestione del cluster e dei nodi vengono creati automaticamente du
 
 
 
+[[management-and-data-lifs-e0a-e0b-and-e0c]]
 === LIF di gestione e dati (e0a, e0b e e0c)
 
 Le porte ONTAP e0a, e0b e e0c sono delegate come porte candidate per i LIF che trasportano i seguenti tipi di traffico:
@@ -61,6 +64,7 @@ Le porte ONTAP e0a, e0b e e0c sono delegate come porte candidate per i LIF che t
 
 
 
+[[multi-node-network-configuration]]
 == Configurazione di rete multi-nodo
 
 La configurazione di rete multi-nodo ONTAP Select consiste in due reti.
@@ -102,6 +106,7 @@ NOTE: Sia il gruppo di porte di rete esterna che quello di rete interna contengo
 
 
 
+[[lif-assignment]]
 === Assegnazione LIF
 
 Con l'introduzione di IPspaces, i ruoli delle porte ONTAP sono stati deprecati. Come gli array FAS, i cluster ONTAP Select contengono sia un IPSpace predefinito che un IPSpace cluster. Posizionando le porte di rete e0a, e0b e e0g nell'IPSpace predefinito e le porte e0c e e0d nell'IPSpace del cluster, queste porte sono state sostanzialmente estruse dall'hosting di LIF che non appartengono. Le restanti porte all'interno del cluster ONTAP Select vengono utilizzate attraverso l'assegnazione automatica delle interfacce che forniscono servizi interni. Non sono esposti attraverso la shell ONTAP, come nel caso delle interfacce di interconnessione RSM e ha.
@@ -113,6 +118,7 @@ Le porte di rete e i LIF sono illustrati in dettaglio nelle sezioni seguenti.
 
 
 
+[[management-and-data-lifs-e0a-e0b-and-e0g]]
 === LIF di gestione e dati (e0a, e0b e e0g)
 
 Le porte ONTAP e0a, e0b e e0g sono delegate come porte candidate per i LIF che trasportano i seguenti tipi di traffico:
@@ -127,6 +133,7 @@ NOTE: I LIF di gestione del cluster e dei nodi vengono creati automaticamente du
 
 
 
+[[cluster-network-lifs-e0c-e0d]]
 === LIF di rete del cluster (e0c, e0d)
 
 Le porte ONTAP e0c e e0d sono delegate come porte home per le interfacce cluster. All'interno di ciascun nodo del cluster ONTAP Select, durante l'installazione di ONTAP vengono generate automaticamente due interfacce del cluster utilizzando gli indirizzi IP locali di collegamento (169.254.x.x).
@@ -143,6 +150,7 @@ NOTE: Per garantire il massimo throughput per il traffico di rete del cluster, q
 
 
 
+[[raid-syncmirror-traffic-e0e]]
 === Traffico RAID SyncMirror (e0e)
 
 La replica sincrona dei blocchi nei nodi partner ha avviene utilizzando un'interfaccia di rete interna che risiede sulla porta di rete e0e. Questa funzionalità si verifica automaticamente, utilizzando le interfacce di rete configurate da ONTAP durante l'installazione del cluster e non richiede alcuna configurazione da parte dell'amministratore.
@@ -152,6 +160,7 @@ NOTE: La porta e0e è riservata da ONTAP per il traffico di replicazione interno
 
 
 
+[[ha-interconnect-e0f]]
 === Interconnessione HA (e0f)
 
 Gli array NetApp FAS utilizzano hardware specializzato per trasferire le informazioni tra coppie ha in un cluster ONTAP. Tuttavia, gli ambienti software-defined non tendono a disporre di questo tipo di apparecchiatura (come i dispositivi InfiniBand o iWARP), pertanto è necessaria una soluzione alternativa. Sebbene siano state prese in considerazione diverse possibilità, i requisiti ONTAP inseriti nel trasporto di interconnessione richiedevano che questa funzionalità fosse emulata nel software. Di conseguenza, all'interno di un cluster ONTAP Select, la funzionalità dell'interconnessione ha (tradizionalmente fornita dall'hardware) è stata progettata nel sistema operativo, utilizzando Ethernet come meccanismo di trasporto.

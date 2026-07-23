@@ -18,6 +18,7 @@ Informazioni sulle performance per la piattaforma di riferimento.
 
 
 
+[[reference-platform]]
 == Piattaforma di riferimento
 
 Hardware ONTAP Select (Premium XL) (per nodo)
@@ -67,6 +68,7 @@ NOTE: Questi dati sulle performance si basano su ONTAP Select 9.6.
 |===
 
 
+[[64k-sequential-read]]
 === 64 K di lettura sequenziale
 
 Dettagli:
@@ -82,6 +84,7 @@ Dettagli:
 
 
 
+[[64k-sequential-write]]
 === 64 K di scrittura sequenziale
 
 Dettagli:
@@ -97,6 +100,7 @@ Dettagli:
 
 
 
+[[8k-random-read]]
 === 8K di lettura casuale
 
 Dettagli:
@@ -112,6 +116,7 @@ Dettagli:
 
 
 
+[[8k-random-write]]
 === 8K di scrittura casuale
 
 Dettagli:
@@ -127,6 +132,7 @@ Dettagli:
 
 
 
+[[8k-random-50-write-50-read]]
 === 8K random 50% write 50% Read
 
 Dettagli:

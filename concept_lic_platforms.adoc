@@ -18,6 +18,7 @@ Puoi acquistare una licenza ONTAP Select Tier di capacità o Capacity Pool a liv
 
 
 
+[[what-a-platform-license-offering-provides]]
 == Cosa offre una licenza per piattaforma
 
 Un'offerta di licenza specifica determina le capacità dell'host hypervisor in due aree:
@@ -69,6 +70,7 @@ NOTE: Le macchine virtuali basate sul kernel (KVM) non supportano il tipo di ist
 
 
 
+[[compare-hardware-support-for-platform-license-offerings]]
 == Confrontare il supporto hardware per le offerte di licenza della piattaforma
 
 Le licenze standard, premium e premium XL supportano un'ampia gamma di hardware e software. Per informazioni aggiornate sulle versioni hardware e software, consultare il link:https://mysupport.netapp.com/matrix/["Tool di matrice di interoperabilità"^].

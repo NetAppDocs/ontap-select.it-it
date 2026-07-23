@@ -42,6 +42,7 @@ NOTE: Il cluster ONTAP Select a due nodi è composto da una coppia ha e da un me
 
 
 
+[[two-node-ha-versus-multi-node-ha]]
 == Ha a due nodi rispetto a ha a più nodi
 
 A differenza degli array FAS, i nodi ONTAP Select in una coppia HA comunicano esclusivamente tramite la rete IP. Ciò significa che la rete IP rappresenta un single point of failure (SPOF) e la protezione da partizioni di rete e scenari split-brain diventa un aspetto importante della progettazione. Il cluster multi-nodo può supportare guasti a nodo singolo perché il quorum del cluster può essere stabilito dai tre o più nodi superstiti. Il cluster a due nodi si affida al servizio di mediazione ospitato dalla VM ONTAP Deploy per ottenere lo stesso risultato.
@@ -57,6 +58,7 @@ Se è necessario modificare la posizione del mediatore originale, è necessario 
 
 
 
+[[two-node-ha-versus-two-node-stretched-ha-metrocluster-sds]]
 == Ha a due nodi rispetto a ha a due nodi allungato (SDS MetroCluster)
 
 È possibile estendere un cluster ha attivo/attivo a due nodi su distanze maggiori e potenzialmente posizionare ciascun nodo in un data center diverso. L'unica distinzione tra un cluster a due nodi e un cluster a due nodi (noto anche come SDS MetroCluster) è la distanza di connettività di rete tra i nodi.

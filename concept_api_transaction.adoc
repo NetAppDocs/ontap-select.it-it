@@ -18,12 +18,14 @@ Ogni chiamata API di implementazione viene eseguita come richiesta HTTP alla mac
 
 
 
+[[input-variables-controlling-an-api-request]]
 == Variabili di input che controllano una richiesta API
 
 È possibile controllare la modalità di elaborazione di una chiamata API tramite i parametri impostati nella richiesta HTTP.
 
 
 
+[[request-headers]]
 === Intestazioni delle richieste
 
 È necessario includere diverse intestazioni nella richiesta HTTP, tra cui:
@@ -35,6 +37,7 @@ Ogni chiamata API di implementazione viene eseguita come richiesta HTTP alla mac
 
 
 
+[[request-body]]
 === Corpo della richiesta
 
 Il contenuto del corpo della richiesta varia in base alla chiamata specifica. Il corpo della richiesta HTTP è costituito da uno dei seguenti elementi:
@@ -45,6 +48,7 @@ Il contenuto del corpo della richiesta varia in base alla chiamata specifica. Il
 
 
 
+[[filter-objects]]
 === Filtra oggetti
 
 Quando si esegue una chiamata API che utilizza GET, è possibile limitare o filtrare gli oggetti restituiti in base a qualsiasi attributo. Ad esempio, è possibile specificare un valore esatto da associare:
@@ -85,6 +89,7 @@ Oltre a una corrispondenza esatta, sono disponibili altri operatori per restitui
 
 
 
+[[selecting-object-fields]]
 === Selezione dei campi oggetto
 
 Per impostazione predefinita, l'emissione di una chiamata API utilizzando GET restituisce solo gli attributi che identificano in modo univoco lo o gli oggetti. Questo insieme minimo di campi funge da chiave per ciascun oggetto e varia in base al tipo di oggetto. È possibile selezionare ulteriori proprietà dell'oggetto utilizzando il parametro di query dei campi nei seguenti modi:
@@ -99,6 +104,7 @@ TIP: Come Best practice, devi sempre identificare i campi specifici che desideri
 
 
 
+[[sort-objects-in-the-output-set]]
 === Ordinare gli oggetti nel set di output
 
 I record di una raccolta di risorse vengono restituiti nell'ordine predefinito definito dall'oggetto. È possibile modificare l'ordine utilizzando il parametro di query Order_by con il nome del campo e la direzione di ordinamento come segue:
@@ -111,6 +117,7 @@ Quando si includono più parametri, è necessario separare i campi con una virgo
 
 
 
+[[pagination]]
 === Impaginazione
 
 Quando si esegue una chiamata API utilizzando GET per accedere a un insieme di oggetti dello stesso tipo, vengono restituiti tutti gli oggetti corrispondenti per impostazione predefinita. Se necessario, è possibile limitare il numero di record restituiti utilizzando il parametro di query max_records con la richiesta. Ad esempio:
@@ -123,12 +130,14 @@ Se necessario, è possibile combinare questo parametro con altri parametri di qu
 
 
 
+[[interpret-an-api-response]]
 == Interpretare una risposta API
 
 Ogni richiesta API genera una risposta al client. È possibile esaminare la risposta per determinare se è stata eseguita correttamente e recuperare dati aggiuntivi in base alle necessità.
 
 
 
+[[http-status-code]]
 === Codice di stato HTTP
 
 I codici di stato HTTP utilizzati dall'API DI DISTRIBUZIONE REST sono descritti di seguito.
@@ -169,6 +178,7 @@ I codici di stato HTTP utilizzati dall'API DI DISTRIBUZIONE REST sono descritti 
 |===
 
 
+[[response-headers]]
 === Intestazioni delle risposte
 
 Nella risposta HTTP generata dal server di implementazione sono incluse diverse intestazioni, tra cui:
@@ -179,6 +189,7 @@ Nella risposta HTTP generata dal server di implementazione sono incluse diverse 
 
 
 
+[[response-body]]
 === Corpo di risposta
 
 Il contenuto della risposta associata a una richiesta API varia in base all'oggetto, al tipo di elaborazione e all'esito positivo o negativo della richiesta. Il rendering del corpo di risposta viene eseguito in JSON.

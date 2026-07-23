@@ -21,12 +21,14 @@ NOTE: È inoltre necessario disporre del nome di dominio completo o dell'indiriz
 
 
 
+[[administrative-privileges]]
 == Privilegi amministrativi
 
 Di seguito sono illustrati i privilegi amministrativi minimi necessari per creare e gestire un cluster ONTAP Select.
 
 
 
+[[datastore]]
 === Datastore
 
 * Allocare spazio
@@ -38,6 +40,7 @@ Di seguito sono illustrati i privilegi amministrativi minimi necessari per crear
 
 
 
+[[host]]
 === Host
 
 Configurazione::
@@ -61,6 +64,7 @@ Operazioni locali::
 
 
 
+[[network]]
 === Rete
 
 * Assegnare la rete
@@ -68,6 +72,7 @@ Operazioni locali::
 
 
 
+[[virtual-machine]]
 === Macchina virtuale
 
 Configurazione:: Tutti i privilegi della categoria.
@@ -78,6 +83,7 @@ Provisioning:: Tutti i privilegi della categoria.
 
 
 
+[[vapp]]
 === VApp
 
 Tutti i privilegi della categoria.

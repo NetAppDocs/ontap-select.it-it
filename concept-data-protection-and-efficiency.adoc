@@ -14,16 +14,18 @@ summary: 'SDS di ONTAP Select MetroCluster offre una protezione avanzata e un"im
 
 
 [role="lead"]
-ONTAP Select è basato sul software di storage ONTAP per offrire servizi di storage aziendali in modo efficiente con un'architettura scale-out ad alta disponibilità e senza condivisione. È possibile distribuire una soluzione con uno, due, quattro, sei, otto, dieci o dodici nodi con una capacità raw fino a 400 TB per storage connesso a NFS, SMB/CIFS e iSCSI per nodo. È possibile sfruttare la deduplicazione e la compressione native per ridurre i costi di storage aumentando la capacità effettiva. L'architettura scale-out consente elevata disponibilità e mobilità dei dati senza interruzioni per il bilanciamento del carico o per la manutenzione dell'hardware.
+ONTAP Select si basa sul software di storage ONTAP per offrire servizi di storage enterprise in modo efficiente, con un'architettura scale-out ad alta disponibilità e senza condivisione di risorse. Puoi implementare una soluzione con uno, due, quattro, sei, otto, dieci o dodici nodi, con una capacità raw fino a 400TB per lo storage connesso tramite NFS, SMB/CIFS e iSCSI per nodo. Puoi sfruttare la deduplicazione e la compressione native per ridurre i costi di storage aumentando la tua capacità effettiva. L'architettura scale-out garantisce alta disponibilità e accesso ai dati senza interruzioni per il bilanciamento del carico o per la manutenzione dell'hardware.
 
 
 
+[[snapshot-data-protection]]
 == Protezione dei dati Snapshot
 
 ONTAP Select include funzionalità di protezione dei dati, tra cui software Snapshot e SnapMirror. Puoi replicare rapidamente i dati su altro storage ONTAP on-premise, in un sito remoto o nel cloud. Per ripristinare rapidamente i dati, il software SnapRestore può utilizzare le snapshot locali per recuperare interi file system o volumi di dati in pochi secondi, indipendentemente dalla capacità o dal numero dei file.
 
 
 
+[[metrocluster-software-defined-storage]]
 == Storage definito dal software MetroCluster
 
 Il software defined storage (SDS) di ONTAP Select MetroCluster offre protezione migliorata e un'implementazione conveniente.

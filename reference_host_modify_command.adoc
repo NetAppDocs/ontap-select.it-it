@@ -18,12 +18,14 @@ summary: È possibile utilizzare il comando host modify per modificare un server
 
 
 
+[[syntax]]
 == Sintassi
 
 `host modify [-help] [-foreground] -name _name_ -mgmt-server _management_server_ [-username _username_]`
 
 
 
+[[required-parameters]]
 == Parametri richiesti
 
 [cols="35,65"]
@@ -48,6 +50,7 @@ L'indirizzo IP o FQDN del server di gestione host da impostare sull'host. Specif
 |===
 
 
+[[optional-parameters]]
 == Parametri opzionali
 
 [cols="35,65"]

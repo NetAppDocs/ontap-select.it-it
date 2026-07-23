@@ -18,6 +18,7 @@ L'utilizzo del modello di licenza Capacity Pool comporta diversi vantaggi rispet
 
 
 
+[[more-efficient-use-of-storage-capacity]]
 == Utilizzo più efficiente della capacità di storage
 
 Utilizzando la licenza Capacity Tier, viene allocata una capacità dello storage fissa a ciascun nodo. Qualsiasi spazio inutilizzato non può essere condiviso con gli altri nodi e viene effettivamente sprecato. Con la licenza Capacity Pools, ogni nodo consuma solo la capacità di cui ha bisogno, in base alle dimensioni degli aggregati di dati.
@@ -26,12 +27,14 @@ La capacità è ancorata a un pool centrale dove può essere condivisa tra molti
 
 
 
+[[significantly-reduced-administrative-overhead-resulting-in-lower-cost]]
 == Riduzione significativa dell'overhead amministrativo con conseguente riduzione dei costi
 
 Se si utilizzano le licenze Capacity Tier, è necessario ottenere e installare una licenza per ciascun nodo. Quando si utilizzano i pool di capacità, esiste una sola licenza per ogni pool condiviso. Ciò può ridurre drasticamente l'overhead amministrativo e ridurre i costi.
 
 
 
+[[improved-usage-metrics]]
 == Metriche di utilizzo migliorate
 
 L'interfaccia utente Web Deploy fornisce informazioni sull'utilizzo avanzate per i pool di capacità. È possibile determinare rapidamente la quantità di storage utilizzata e disponibile in un Capacity Pool, i nodi che utilizzano lo storage di un pool e i pool dai quali un cluster alloca capacità.

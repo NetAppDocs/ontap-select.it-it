@@ -54,6 +54,7 @@ La dimensione massima del VMDK utilizzata durante le operazioni di aggiunta di c
 
 
 
+[[increase-capacity-for-ontap-select-with-software-raid]]
 == Aumenta la capacità di ONTAP Select con il software RAID
 
 La procedura guidata storage-add può essere utilizzata in modo analogo per aumentare la capacità di gestione dei nodi ONTAP Select utilizzando il RAID software. La procedura guidata presenta solo i dischi DAS SDD disponibili e possono essere mappati come RDM alla macchina virtuale ONTAP Select.

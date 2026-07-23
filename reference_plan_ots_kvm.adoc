@@ -18,6 +18,7 @@ summary: 'Ci sono diversi problemi di pianificazione correlati all"utilizzo dell
 
 
 
+[[basic-requirements-and-restrictions]]
 == Requisiti e limitazioni di base
 
 Se utilizzi un array esterno per i pool di storage ONTAP Select, si applicano le seguenti restrizioni di configurazione:
@@ -33,6 +34,7 @@ CAUTION: La capacità di archiviazione specificata deve rientrare nei limiti di 
 
 
 
+[[best-practices]]
 == Best practice
 
 Dovresti seguire queste best practice:

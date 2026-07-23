@@ -35,6 +35,7 @@ Per modificare il numero di nodi in un cluster in una dimensione non supportata 
 
 
 
+[[hardware-and-storage-considerations]]
 == Considerazioni su hardware e storage
 
 La funzionalità di espansione e contrazione del cluster è supportata sui seguenti host hypervisor KVM ed ESXi.
@@ -69,6 +70,7 @@ L'espansione e la contrazione del cluster sono supportate dalle seguenti version
 ====
 
 
+[[expand-the-cluster]]
 == Espandere il cluster
 
 Utilizzare la funzionalità di espansione del cluster per aumentare le dimensioni di un cluster ONTAP Select esistente.
@@ -124,6 +126,7 @@ Dopo aver espanso il cluster, dovrestilink:task_cli_clusters.html["eseguire il b
 
 
 
+[[contract-the-cluster]]
 == Contrarre il cluster
 
 Utilizzare la funzionalità di contrazione del cluster per ridurre le dimensioni di un cluster ONTAP Select esistente.

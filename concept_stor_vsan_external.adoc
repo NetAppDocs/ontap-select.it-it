@@ -20,6 +20,7 @@ Il requisito minimo è che l'hypervisor utilizzato (VMware ESXi o KVM su un host
 
 
 
+[[vnas-architecture]]
 == Architettura vNAS
 
 La nomenclatura vNAS viene utilizzata per tutte le configurazioni che non utilizzano DAS. Per i cluster ONTAP Select multi-nodo, ciò include le architetture in cui i due nodi ONTAP Select nella stessa coppia HA condividono un singolo datastore (inclusi i datastore vSAN). I nodi possono anche essere installati su datastore separati dello stesso array esterno condiviso. Ciò consente di ottenere efficienze di storage lato array per ridurre l'ingombro complessivo dell'intera coppia HA ONTAP Select. L'architettura delle soluzioni ONTAP Select vNAS è molto simile a quella di ONTAP Select su DAS con un controller RAID locale. Ciò significa che ogni nodo ONTAP Select continua ad avere una copia dei dati del partner HA. Le policy di efficienza dello storage ONTAP sono limitate al nodo. Pertanto, le efficienze di storage lato array sono preferibili perché possono potenzialmente essere applicate a set di dati provenienti da entrambi i nodi ONTAP Select.
@@ -30,6 +31,7 @@ Quando si utilizzano array esterni separati per ciascun nodo ONTAP Select, è mo
 
 
 
+[[vnas-architectures-versus-local-das-with-hardware-raid-controllers]]
 === Architetture vNAS rispetto a DAS locale con controller RAID hardware
 
 L'architettura vNAS è logicamente più simile all'architettura di un server con DAS e un controller RAID. In entrambi i casi, ONTAP Select consuma spazio datastore. Lo spazio del datastore viene intagliato nei VMDK e questi VMDK formano i tradizionali aggregati di dati ONTAP. L'implementazione di ONTAP garantisce che le VMDK siano dimensionate correttamente e assegnate al plesso corretto (nel caso di coppie ha) durante le operazioni di creazione del cluster e aggiunta dello storage.
@@ -38,6 +40,7 @@ Esistono due differenze principali tra vNAS e DAS con un controller RAID. La dif
 
 
 
+[[vnas-nvram]]
 == NVRAM vNAS
 
 La NVRAM ONTAP Select è un VMDK. Ciò significa che ONTAP Select emula uno spazio indirizzabile tramite byte ( NVRAM tradizionale) su un dispositivo indirizzabile tramite blocchi (VMDK). Tuttavia, le prestazioni della NVRAM sono assolutamente fondamentali per le prestazioni complessive del nodo ONTAP Select .
@@ -61,6 +64,7 @@ volume efficiency stop -all true -vserver * -volume * (all volumes in the affect
 ----
 
 
+[[collocate-ontap-select-nodes-when-using-vnas-on-esxi]]
 == Collocare i nodi ONTAP Select quando si utilizza vNAS su ESXi
 
 ONTAP Select include il supporto per cluster ONTAP Select multi-nodo su storage condiviso. ONTAP Deploy consente la configurazione di più nodi ONTAP Select sullo stesso host ESXi, purché questi nodi non facciano parte dello stesso cluster.
