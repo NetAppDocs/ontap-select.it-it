@@ -1324,71 +1324,6 @@
   <block id="8a216da865f34a3eccf3ce7160a2a744" category="paragraph">*Separazione di dati e gestione con VGT*</block>
   <block id="929f7d27410370d9a4c34db726705783" category="inline-image-macro">Separazione di dati e gestione con VGT</block>
   <block id="f1f2f2af828f49b4c7eaa8f521667e90" category="paragraph"><block ref="f1f2f2af828f49b4c7eaa8f521667e90" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="f601b21fb8e0d97eaf4f9b6866a264f6" category="summary">Informazioni sulle performance di ONTAP Select 9.6 - storage SSD high-high ha direct-attached.</block>
-  <block id="2d1e1ff5065ae8a1f3c889ed2101b09c" category="paragraph">Informazioni sulle performance per la piattaforma di riferimento.</block>
-  <block id="e4491605377fcc65eaedf127cb13bb15" category="section-title">Piattaforma di riferimento</block>
-  <block id="1046c015c70060135ed38c7cc90d8b86" category="paragraph">Hardware ONTAP Select (Premium XL) (per nodo)</block>
-  <block id="bb0064a43bb00378129d1ac5e83e43bf" category="list-text">FUJITSU PRIMERGY RX2540 M4:</block>
-  <block id="9dbfeafb0252249e9084dd194033f966" category="list-text">CPU Intel(R) Xeon(R) Gold 6142b a 2.6 GHz</block>
-  <block id="1412e1f8c4d7128be7fcb48c7ef515ec" category="list-text">32 core fisici (16 x 2 socket), 64 logici</block>
-  <block id="2907b386b6969a2dd1b7d5b358e4ef78" category="list-text">256 GB DI RAM</block>
-  <block id="f47dfc5af3acf2b805371be41d3a8fb8" category="list-text">Unità per host: 24 SSD da 960 GB</block>
-  <block id="2526f2963a36a530588c55a6e858c9ea" category="paragraph">Hardware del client</block>
-  <block id="d70f3d88adda420e79658dc52e515383" category="list-text">5 client NFSv3 IBM 3550m4</block>
-  <block id="8b9a96e40ebcda35ce12190b41789b64" category="paragraph">Informazioni di configurazione</block>
-  <block id="644583ef81af3657d263540fe36659df" category="list-text">SW RAID 1 x 9 + 2 RAID-DP (11 dischi)</block>
-  <block id="42eab3ef64ce236896a31222c04ddcb1" category="list-text">22+1 RAID-5 (RAID-0 in ONTAP) / NVRAM cache RAID</block>
-  <block id="417cf38711a7b90410407706cc8becb3" category="list-text">Nessuna funzionalità di efficienza dello storage in uso (compressione, deduplica, copie Snapshot, SnapMirror e così via)</block>
-  <block id="8b753111757d995e14e8b502f0b060f5" category="paragraph">La seguente tabella elenca il throughput misurato rispetto ai carichi di lavoro di lettura/scrittura su una coppia di nodi ONTAP Select ad alta disponibilità (ha) che utilizzano sia RAID software che RAID hardware. Le misurazioni delle performance sono state effettuate utilizzando il tool per la generazione del carico SIO.</block>
-  <block id="8f0b44fb88a1368b40ccf845bb51b622" category="admonition">Questi dati sulle performance si basano su ONTAP Select 9.6.</block>
-  <block id="5f0987d7c836e13b5c975378b71cb33d" category="paragraph">*Risultati delle prestazioni per un cluster ONTAP Select a nodo singolo (parte di un'istanza di supporto a quattro nodi) su un SSD DAS (Direct-Attached Storage), con RAID software e RAID hardware*</block>
-  <block id="f85fbc2afc4c94e602061bdba197fe30" category="cell">Lettura sequenziale 64 KiB</block>
-  <block id="b744fd78ba8f25a68adbe10e05a26b83" category="cell">Scrittura sequenziale 64 KiB</block>
-  <block id="1a6235b566ae1675e7cad6ac984c685e" category="cell">Lettura casuale 8 KiB</block>
-  <block id="5b12bccfe0f07270acf93f4031d373f1" category="cell">Scrittura casuale 8 KiB</block>
-  <block id="e78425925b16cdbe3107734a56031c80" category="cell">WR/ RD random (50/50) 8 KiB</block>
-  <block id="b9f7179a485f0a08d3f620ea3027bc01" category="cell">ONTAP Select Large instance con RAID software DAS (SSD)</block>
-  <block id="2007f3de4fd76c0e193542767d4effc7" category="cell">2171 MiBps</block>
-  <block id="886d5bb2e31ec3b29b47bde33f33ab35" category="cell">559 MiBps</block>
-  <block id="04b957821e0e9aaeddab7defcb730f2f" category="cell">954 MiBps</block>
-  <block id="33f3d2c18291e3e31d92f624e5d6fc94" category="cell">394 MiBps</block>
-  <block id="e68ffca78bd9ae750e095401b76ab77b" category="cell">564 MiBps</block>
-  <block id="729966193ad3771980bdca3507a1eaaf" category="cell">Media istanza di ONTAP Select con RAID software DAS (SSD)</block>
-  <block id="90c72b2cc73b17ddc733acde371321d3" category="cell">2090 MiBps</block>
-  <block id="53db68f311ff8fbb9f8fef66f62313e5" category="cell">592 MiBps</block>
-  <block id="7bbb1b1c0cf0b7b3631b2c01d6ddcaf3" category="cell">677 MiBps</block>
-  <block id="51a0447c2e07541855854e57a4fd6609" category="cell">335 MiBps</block>
-  <block id="276f86f46c58000ab83f7a81f3e1ac40" category="cell">441 3 MiBps</block>
-  <block id="e4475fda14f8565f7c25947659d1c3d9" category="cell">Media istanza di ONTAP Select con RAID hardware DAS (SSD)</block>
-  <block id="6974008be6157ab7da440e5a88cd72d1" category="cell">2038 MiBps</block>
-  <block id="cb52eb73b63cc7f2910e3bfb2b2d354a" category="cell">520 MiBps</block>
-  <block id="9d7e909c3efb2e3288aa3ec2c6d24f71" category="cell">578 MiBps</block>
-  <block id="cdbbaf4862a8ab2f6b371a9be781a4cb" category="cell">325 MiBps</block>
-  <block id="a65e3663e8513b684e6d94125f4e11f5" category="cell">399 MiBps</block>
-  <block id="44607c8f3709be606339fc490a5b45c3" category="section-title">64 K di lettura sequenziale</block>
-  <block id="2babe53026309ed1bc4d26626dbaf9b3" category="paragraph">Dettagli:</block>
-  <block id="1c565cb1ef40fca7276174f53620ea60" category="list-text">I/o diretto SIO attivato</block>
-  <block id="47957b19a7354408ab1556b6c86baf29" category="list-text">2 nodi</block>
-  <block id="dc6520d5a009ec5f940d658ec28adabd" category="list-text">2 NIC dati per nodo</block>
-  <block id="4bcdc16a8f6fec0919f4bfd39504533f" category="list-text">1 aggregato di dati per nodo (RAID hardware da 2 TB), (RAID software da 8 TB)</block>
-  <block id="1eec63dddc28c105e19e99a28e53426c" category="list-text">64 processi SIO, 1 thread per processo</block>
-  <block id="217f0d39a6dd36c24aa44ac1d6a1978f" category="list-text">32 volumi per nodo</block>
-  <block id="df5b44ae62b5b5de9a6c68ef74b8631f" category="list-text">1 x file per processo; i file sono da 12000MB ciascuno</block>
-  <block id="6a054d687d8afaf7ec67dbc99b543066" category="section-title">64 K di scrittura sequenziale</block>
-  <block id="0f298226345a9b3c58f0c3df3b00ab51" category="list-text">2 schede di interfaccia di rete dati (NIC) per nodo</block>
-  <block id="f0d309eaf86b429045988bce455aacb3" category="list-text">1 aggregato di dati per nodo (RAID hardware da 2 TB), (RAID software da 4 TB)</block>
-  <block id="af5bc1c073864156b93943dba0eb0a17" category="list-text">128 processi SIO, 1 thread per processo</block>
-  <block id="ebfa598c2ae4ecaca547d57ec9bcebda" category="list-text">Volumi per nodo: 32 (RAID hardware), 16 (RAID software)</block>
-  <block id="64e33af903cb7246c7d6049d95b81855" category="list-text">1 x file per processo; i file sono da 30720 MB ciascuno</block>
-  <block id="f6285a044a1b4d88a9e7fb351cf9e8c1" category="section-title">8K di lettura casuale</block>
-  <block id="06f2713882df7e7a8c3ec49774af3f5d" category="list-text">2 schede di rete dati per nodo</block>
-  <block id="5432662d6c3f66b86011e5482fd1b013" category="list-text">64 processi SIO, 8 thread per processo</block>
-  <block id="37b92a84c96cf144d3d2f1ddd9e668dc" category="list-text">Volumi per nodo: 32</block>
-  <block id="4af562d52353844c11ed213dc9654510" category="list-text">1 x file per processo; i file sono da 12228 MB ciascuno</block>
-  <block id="c85b30614082693f9ffcec7ecb79fb0a" category="section-title">8K di scrittura casuale</block>
-  <block id="c19f2ae8c94be0ce03b44a63782498a1" category="list-text">1 x file per processo; i file sono 8192 MB ciascuno</block>
-  <block id="c177226dbb26cef0a4f5eff0b87d5d44" category="section-title">8K random 50% write 50% Read</block>
-  <block id="5e9d95d213033fcb57aae50adca56cb0" category="list-text">64 thread SIO proc208 per processo</block>
   <block id="cb16e4169a6cbd9a9f3a8db2dbd3c515" category="summary">Caratteristiche delle reti ONTAP Select interne ed esterne.</block>
   <block id="0aaccaa465e5456cbf8bc83d5fb5620a" category="paragraph">Caratteristiche delle reti interne ed esterne ONTAP Select.</block>
   <block id="506c7123ecf1cbba165386abd36670a3" category="section-title">Rete interna ONTAP Select</block>
@@ -2248,8 +2183,6 @@
   <block id="2ae32cce8d9e1bdcb0478c5f14d4be9c" category="sidebar">Configurazione HA</block>
   <block id="7590e9173880f1e9732bf635a6fdd451" category="sidebar">Replica sincrona e aggregati mirrorati</block>
   <block id="4ad4ca6d00f55818bc64af3e5a3ec6fb" category="sidebar">Altre funzioni ad alta disponibilità</block>
-  <block id="f264455563ca8b26d0daffb627e42c00" category="sidebar">Panoramica delle performance</block>
-  <block id="651f22f695c187057a5de6dca3a72108" category="sidebar">Performance di ONTAP Select 9.6</block>
   <block id="c06d0f2a681f188a39ff836da376742f" category="sidebar">Automatizza con RIPOSO</block>
   <block id="c0471368cdc5da09455ecd80f16c96c7" category="sidebar">Servizi web REST</block>
   <block id="17f920baf3e4cbfe41aa6bba8f5012df" category="sidebar">Accedere all'API di implementazione</block>
@@ -2838,7 +2771,6 @@ dischi di ricambio dell'aggregato di storage</block>
   <block id="6c9348bc5d04685460e6acda750ab989" category="list-text">Proprietà della porta ONTAP</block>
   <block id="b360fb78c737d920cd251b2f7358f606" category="paragraph">La modifica delle proprietà delle porte ONTAP, tra cui velocità, duplex e controllo di flusso, non è supportata.</block>
   <block id="fcc22b4e3de45bbac50b32226efb8e8c" category="doc">Panoramica delle performance di ONTAP Select</block>
-  <block id="40bfcfb823eef6d953345bec6901d94b" category="doc">Performance di ONTAP Select 9,6: Storage SSD direct-attached Premium ha</block>
   <block id="5b7b913b9183b40db3cdac93dcffe3d9" category="doc">Aumentare la capacità dello storage ONTAP Select</block>
   <block id="180d14e1cfcab830c1ec4fafd5097838" category="doc">Storage ONTAP Select: Concetti e caratteristiche generali</block>
   <block id="4c09693df54f78ec01dcfce83626b988" category="doc">Supporto dell'efficienza dello storage ONTAP Select</block>
@@ -2912,7 +2844,6 @@ dischi di ricambio dell'aggregato di storage</block>
   <block id="563074de50ee7515467ef30a7a16a15d" category="paragraph">Esistono diversi requisiti hardware comuni che si applicano a tutte le piattaforme, indipendentemente dal tipo di istanza del nodo o dall'offerta di licenza.</block>
   <block id="f9f5faecdbf3b023cf5652fa18b8c4ee" category="list-text">Non è necessario ottenere un numero di serie o una licenza per la capacità di archiviazione da NetApp.</block>
   <block id="591ba54105fed20bc4bc8e31cee68eb3" category="list-text">È possibile allocare la stessa quantità di spazio di archiviazione per i dati utente di una licenza acquistata.</block>
-  <block id="10db4e06bde0886ecc0f97ce3a350d45" category="list-text">Non è possibile aggiornare il nodo da una licenza di valutazione a una licenza acquistata.</block>
   <block id="de68e769353f85803d50af3ad5192201" category="list-text">È possibile utilizzare solo un account vCenter per implementare il modello OVF. L'installazione diretta su un host ESXi non è attualmente supportata.</block>
   <block id="1ec19b1e234462f154c2312b865baa14" category="paragraph">Utilizzare i seguenti requisiti per preparare l'host ESXi in cui viene implementato il cluster ONTAP Select. La descrizione della piattaforma si basa sulla configurazione del tipo di istanza standard o di piccole dimensioni con DAS (Direct-Attached Storage) locale formattato utilizzando il file system VMFS-5 o VMFS-6.</block>
   <block id="7564075dd4184b322f666087a8172ae7" category="inline-image-macro">Requisiti per preparare l'host ESXi</block>
@@ -3654,7 +3585,6 @@ dischi di ricambio dell'aggregato di storage</block>
   <block id="120dfe55114bd18d238461d392d2851f" category="doc">Considerazioni sul dimensionamento di una licenza ONTAP Select Capacity Pools</block>
   <block id="18bea776141012ab15d569765a0801f0" category="list-text">Fattore di overhead per cluster a nodo singolo è 1.13</block>
   <block id="50e947c808b914257cb5209da74fa627" category="list-text">Fattore di overhead per i cluster multi-nodo è 2,67</block>
-  <block id="249a516ff48049712229714792dc7131" category="paragraph">È necessario calcolare la capacità concessa in licenza in base allo spazio utilizzabile per assicurarsi di avere abbastanza spazio per la distribuzione.</block>
   <block id="3d1317b428299aa3785275ff6eb8e119" category="cell">Nodo singolo</block>
   <block id="ee77295963ed13bed36e924ed72f669e" category="cell">Spazio utilizzabile</block>
   <block id="686d2bd292fa941724920d9f5764926c" category="cell">Spazio concesso in licenza</block>
@@ -3663,9 +3593,7 @@ dischi di ricambio dell'aggregato di storage</block>
   <block id="349097419d01aa81b07916c8f94601e6" category="paragraph"><block ref="349097419d01aa81b07916c8f94601e6" category="inline-link-macro-rx"></block></block>
   <block id="32f9dc8bfa4ac02c770716ebf1eaf2df" category="doc">Considerazioni sul dimensionamento di una licenza ONTAP Select Capacity Tiers</block>
   <block id="c5915502bf73930e10d7d62d217a0adc" category="paragraph">La licenza Capacity Tiers si basa sulla capacità del disco sottostante gestita da ciascun nodo ONTAP Select e non sulla capacità utilizzabile del nodo, della coppia HA o del cluster. Ogni licenza Capacity Tiers è assegnata a un singolo numero di serie di nodo per una capacità specifica e richiede un contratto di supporto allegato.</block>
-  <block id="d7af2ad49563ae7106d8189ee369825b" category="paragraph">Calcola la capacità concessa in licenza in base allo spazio utilizzabile per assicurarti di averne a sufficienza per il tuo deployment.</block>
   <block id="5aabc9069557be7e4aeff466605cbc75" category="cell">Nodo singolo</block>
-  <block id="23561a5c65d75192f0c089566ae29f4a" category="paragraph">Per nodo in una coppia HA:</block>
   <block id="754bc948e75e62a589ebb57f97b00d1a" category="paragraph">Per coppia HA in un cluster multi-nodo:</block>
   <block id="68a88e5fe4c22c1950c0f9b28b07d5c6" category="inline-link-macro">Acquisisci una licenza Capacity Tier per ONTAP Select</block>
   <block id="a3da07f3b51f418f1d1a05b62b272ccb" category="paragraph"><block ref="a3da07f3b51f418f1d1a05b62b272ccb" category="inline-link-macro-rx"></block></block>
@@ -3788,7 +3716,6 @@ dischi di ricambio dell'aggregato di storage</block>
   <block id="a5fdda4a32aaa656687dc3ed4336767b" category="paragraph">È possibile assegnare quattro gruppi di porte a ciascun nodo in un cluster multi-nodo. Ogni gruppo di porte ha una singola porta fisica attiva e tre porte fisiche in standby come nella figura seguente.</block>
   <block id="383749e0c2b6120b7d3219465c253e8d" category="paragraph">Quando si utilizzano due porte fisiche (10Gb o meno), ogni gruppo di porte deve avere un adattatore attivo e un adattatore di standby configurati in modo opposto tra loro. La rete interna è presente solo per i cluster ONTAP Select multi-nodo. Per i cluster a nodo singolo, entrambi gli adattatori possono essere configurati come attivi nel gruppo di porte esterno.</block>
   <block id="fd5410072ea2a4b129708a2e752af2fb" category="paragraph">L'esempio seguente mostra la configurazione di un vSwitch e dei due gruppi di porte responsabili della gestione dei servizi di comunicazione interna ed esterna per un cluster ONTAP Select multi-nodo. La rete esterna può utilizzare la VMNIC della rete interna in caso di interruzione di rete, poiché le VMNIC della rete interna fanno parte di questo gruppo di porte e sono configurate in modalità standby. Per la rete interna avviene il contrario. L'alternanza delle VMNIC attive e di standby tra i due gruppi di porte è fondamentale per il corretto failover delle VM ONTAP Select durante le interruzioni di rete.</block>
-  <block id="df46fd1cc3592c160ce26bd78c3e9761" category="list-text">ESXi 6.5U1</block>
   <block id="358d64cf39b6c9eced01e45fdfd7e797" category="paragraph">La dimensione massima del VMDK utilizzata durante le operazioni di aggiunta di capacità è di 16TB. La dimensione massima del VMDK utilizzata durante le operazioni di creazione del cluster continua a essere di 8TB. ONTAP Deploy crea VMDK di dimensioni corrette a seconda della configurazione (cluster a nodo singolo o multi-nodo) e della quantità di capacità aggiunta. Tuttavia, la dimensione massima di ciascun VMDK non deve superare 8TB durante le operazioni di creazione del cluster e 16TB durante le operazioni di aggiunta di storage.</block>
   <block id="a7c2d78e472b2fbe1b7627532aec0745" category="admonition">In una coppia HA, l'aggiunta di storage al nodo 1 richiede che un numero identico di unità sia disponibile anche sul nodo HA (nodo 2). Sia le unità locali che i dischi remoti vengono utilizzati da un'operazione di aggiunta di storage sul nodo 1. Vale a dire, le unità remote vengono utilizzate per garantire che il nuovo storage sul nodo 1 sia replicato e protetto sul nodo 2. Per aggiungere storage utilizzabile localmente sul nodo 2, è necessaria un'operazione di aggiunta di storage separata e un numero separato e uguale di unità disponibili su entrambi i nodi.</block>
   <block id="90e04b1522b6ea952b583f994c8d3c8b" category="admonition">La dimensione massima dell'estensione e del datastore per le versioni precedenti di ESXi è di 64TB, il che può influire sul numero di LUN necessarie per supportare la capacità raw totale fornita da queste unità di grande capacità.</block>
@@ -3853,14 +3780,12 @@ dischi di ricambio dell'aggregato di storage</block>
   <block id="324bea2f11169e67c398f52f2473e586" category="doc">Requisiti di storage esterno VMware ESXi per ONTAP Select</block>
   <block id="75a86bcbac7e603bc4f5c0065d1a3a07" category="paragraph">Consultare la documentazione VMware e seguire le best practice applicabili identificate per gli host ESXi. Inoltre:</block>
   <block id="84a80a698e14acfb3da1da2ebe7ef8c2" category="list-text">Verificare che tutti gli array di storage esterni generici utilizzino le funzionalità di ridondanza e HA disponibili ove possibile</block>
-  <block id="d29cfb45957918aefdd8d5c4b6faa886" category="paragraph">La capacità concessa in licenza per una licenza Capacity Pool è espressa in TB interi, con un minimo di 2 TB. La capacità concessa in licenza si calcola moltiplicando la quantità di spazio utilizzabile per il fattore di overhead. Il fattore di overhead varia tra un cluster a nodo singolo e un cluster multi-nodo (basato su coppia HA):</block>
   <block id="b4c21a84e70314772f63f682c92e2bd5" category="cell">20 TB</block>
   <block id="f53c95b0502281ef3f4bc5968b571b0f" category="cell">10 TB per cluster a nodo singolo 20 TB per coppia HA</block>
   <block id="3860ef90e12d15d0420cb040ee51a64c" category="cell">23 TB (20 x 1,13 = 22,6, arrotonda al TB intero successivo)</block>
   <block id="598d217f06b9250ad27a8198bb5c2a4b" category="cell">54 TB (20 x 2,67 = 53,4, arrotonda al TB intero successivo)</block>
   <block id="6694602e4cd7d0b05713de6bd31c888e" category="cell">Spazio massimo utilizzabile per nodo *Nota*: lo spazio massimo gestito per nodo o coppia HA è 400 TB</block>
   <block id="0ff836b729a9f331160a37a804c5f502" category="cell">353 TB (400 / 1,13)</block>
-  <block id="9ed860bf7c910e8f72592e603158fb1a" category="paragraph">La capacità concessa in licenza per una licenza Capacity Tiers è espressa in TB interi, con un minimo di 1 TB. La capacità concessa in licenza si calcola moltiplicando la quantità di spazio utilizzabile per il fattore di overhead. Il fattore di overhead varia tra un cluster a nodo singolo e cluster multi-nodo (basati su coppia HA):</block>
   <block id="1191f788083da9194f8eef9400d10898" category="cell">10 TB</block>
   <block id="f515aabc5719e9815156a5bba11b0271" category="cell">5 TB per nodo 10 TB per coppia HA</block>
   <block id="8ef83a850a4c3f98639c08c641ced5a0" category="cell">12 TB (10 x 1,13 = 11,3, arrotondato al TB intero successivo)</block>
@@ -4070,4 +3995,14 @@ dischi di ricambio dell'aggregato di storage</block>
   <block id="972cc139ce081218935961184ceb872f" category="list-text">Gruppi di coerenza in Asynchronous SnapMirror</block>
   <block id="2dd64bd29dd925332151bac56daee54d" category="list-text">SVM-Migrate</block>
   <block id="191cca9b69f6675fd704265efaee5cd4" category="paragraph">ONTAP Select non supporta i gruppi di coerenza in Asynchronous SnapMirror.</block>
+  <block id="4b24c4ea95509e5cbdbe193ec75f463e" category="paragraph">La capacità concessa in licenza per una Capacity Pool license è espressa in TB interi, con un minimo di 2 TB. Calcoli la capacità concessa in licenza moltiplicando la quantità di spazio utilizzabile per il fattore di overhead. Il fattore di overhead stima la capacità di overhead del software ONTAP Select da prelevare dallo spazio utilizzabile e si applica alla determinazione della capacità ONTAP Select per unità NVMe, SSD, HDD o virtuali. Il fattore di overhead varia tra cluster a nodo singolo e cluster multi-nodo (basati su coppia HA):</block>
+  <block id="b3a8f80cb2ce78cbbf07a7817fabad7d" category="paragraph">Devi calcolare la capacità concessa in licenza in base allo spazio utilizzabile per assicurarti di averne abbastanza per la tua implementazione. Ad esempio, vuoi 20 TB di capacità utilizzabile per una coppia HA (10 TB per nodo):</block>
+  <block id="863cc3c84b4e89fdd7579f92bb937ebc" category="list-text">Con una coppia HA, i dati vengono duplicati tra entrambi i nodi per ridondanza, quindi per 20 TB di dati utilizzabili in una coppia HA, devi avere 20 TB per nodo, nel caso in cui uno dei nodi vada offline.</block>
+  <block id="3e0455dedd9dea9911d6347cfe0aee63" category="list-text">Il fattore 2,67 raddoppia la capacità di ciascun nodo e aggiunge la capacità di overhead (0,67) necessaria per il funzionamento di ONTAP Select.</block>
+  <block id="e1b77540ab30a2b9d111bb1c6ae9524f" category="list-text">La capacità di licenza per nodo è di 27 TB (10 x 2,67 = 26,7). Per la coppia HA, ti servono due licenze da 27 TB per avere 20 TB di capacità utilizzabile.</block>
+  <block id="60a2cd8b21b5abdd1f9f570f98aead06" category="paragraph">La capacità concessa in licenza per una licenza Capacity Tiers è espressa in TB interi, con un minimo di 1 TB. Calcoli la capacità concessa in licenza moltiplicando la quantità di spazio utilizzabile per il fattore di overhead. Il fattore di overhead stima la capacità di overhead del software ONTAP Select da prelevare dallo spazio utilizzabile e si applica per determinare la capacità ONTAP Select per unità NVMe, SSD, HDD o virtuali. Il fattore di overhead differisce tra cluster a nodo singolo e cluster multi-nodo (basati su coppia HA):</block>
+  <block id="ab9e259cd278dabfae81423ce071874c" category="paragraph">Devi calcolare la capacità concessa in licenza in base allo spazio utilizzabile per assicurarti di averne abbastanza per la tua implementazione. Ad esempio, vuoi 10 TB di capacità utilizzabile per una coppia HA (5 TB per nodo):</block>
+  <block id="bd88bf77fede236871bbdaecddefca53" category="list-text">Con una coppia HA, i dati vengono duplicati tra entrambi i nodi per ridondanza, quindi per 10 TB di dati utilizzabili in una coppia HA, ti servono 10 TB per nodo, nel caso in cui uno dei nodi vada offline.</block>
+  <block id="c0945522d1f6ae9ba28c16c4d8e24c38" category="list-text">La capacità di licenza per nodo è di 14 TB (5 x 2,67 = 13,35). Per la coppia HA, ti servono due licenze da 14 TB per avere 10 TB di capacità utilizzabile.</block>
+  <block id="74b1b9052c3c702d9cea5b8cd980a547" category="paragraph">Per nodo in una coppia HA:</block>
 </blocks>
