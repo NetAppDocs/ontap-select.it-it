@@ -4,7 +4,7 @@ permalink: concept_stor_hwraid_local.html
 keywords: ontap select, hardware raid, performance boost, protection 
 summary: 'Quando è disponibile un controller RAID hardware, ONTAP Select può spostare i servizi RAID nel controller hardware per aumentare le performance di scrittura e proteggere dai guasti fisici dei dischi. Di conseguenza, la protezione RAID per tutti i nodi all"interno del cluster ONTAP Select viene fornita dal controller RAID collegato localmente e non dal software RAID ONTAP.' 
 ---
-= Servizi RAID hardware per lo storage locale ONTAP Select
+= Servizi RAID hardware per ONTAP Select con storage locale collegato
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

@@ -4,7 +4,7 @@ permalink: concept_ha_other.html
 keywords: ontap select, ha, high availability, disk heartbeating, heartbeating, mailbox, failover, giveback 
 summary: Heartbeat del disco HA, mailbox ha, heartbeat ha, failover ha e Giveback lavorano per migliorare la protezione dei dati. 
 ---
-= ONTAP Select ha migliora la data Protection
+= Miglioramenti alla protezione dei dati con ONTAP Select HA
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

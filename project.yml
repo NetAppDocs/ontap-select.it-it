@@ -32,7 +32,7 @@ sidebar:
       url: "/reference_new_ots.html"
   - title: Concetti
     entries:
-    - title: Scopri ONTAP Select
+    - title: ONTAP Select
       url: "/concept_ots_overview.html"
     - title: Implementazione di ONTAP Select
       url: "/concept_ots_deploy.html"
@@ -80,7 +80,7 @@ sidebar:
       entries:
       - title: Requisiti generali
         url: "/reference_plan_dep_general.html"
-      - title: Ambiente VMware
+      - title: Ambienti host Hypervisor
         url: "/reference_plan_dep_vmware.html"
     - title: Best practice
       url: "/reference_plan_best_practices.html"
@@ -88,7 +88,7 @@ sidebar:
     entries:
     - title: Opzioni
       entries:
-      - title: Scopri le licenze di valutazione
+      - title: Licenze di valutazione
         url: "/concept_lic_evaluation.html"
       - title: Licenze di produzione
         entries:
@@ -114,13 +114,13 @@ sidebar:
         url: "/concept_lic_workflow.html"
       - title: Tier di capacità
         entries:
-        - title: Considerazioni per il dimensionamento di una licenza
+        - title: Determina la dimensione della licenza Capacity Tiers
           url: "/sizing-capacity-tier-license.html"
         - title: Acquisire una licenza
           url: "/task_lic_acquire_ct.html"
       - title: Pool di capacità
         entries:
-        - title: Considerazioni per il dimensionamento di una licenza
+        - title: Determina la dimensione della licenza dei pool di capacità
           url: "/sizing-capacity-pool-license.html"
         - title: Acquisire una licenza
           url: "/task_lic_acquire_cp.html"
@@ -164,13 +164,13 @@ sidebar:
       url: "/task_adm_mediators.html"
     - title: Cluster
       entries:
-      - title: Cluster ONTAP Select
+      - title: Gestisci i cluster
         url: "/task_adm_clusters.html"
       - title: Espandere o contrarre un cluster
         url: "/task_cluster_expansion_contraction.html"
     - title: Nodi e host
       entries:
-      - title: Accedere alla console video della VM
+      - title: Accedi alla console video della macchina virtuale
         url: "/task_adm_video_console.html"
       - title: Ridimensionare i nodi del cluster
         url: "/task_adm_resize.html"
@@ -178,7 +178,7 @@ sidebar:
         url: "/task_adm_replace_drives_swraid.html"
       - title: Aggiornamento a VMFS6
         url: "/task_adm_upgrade_vmfs6.html"
-    - title: Licenze
+    - title: Gestisci le licenze
       url: "/task_adm_licenses.html"
   - title: Immersione profonda
     entries:
@@ -248,7 +248,7 @@ sidebar:
       entries:
       - title: Prima di iniziare
         url: "/concept_api_before_workflows.html"
-      - title: Flusso di lavoro 1 creazione di un cluster
+      - title: Crea un cluster su ESXi
         url: "/reference_api_workflow01.html"
     - title: Accesso con Python
       entries:
@@ -258,7 +258,7 @@ sidebar:
         url: "/concept_api_understanding_scripts.html"
     - title: Esempi di codice Python
       entries:
-      - title: Creare un cluster
+      - title: Crea un cluster utilizzando uno script
         url: "/reference_api_script_cc.html"
       - title: JSON per creare un cluster
         url: "/reference_api_json_cc.html"
@@ -280,7 +280,7 @@ sidebar:
       url: "/task_cli_security.html"
     - title: Connettività di rete
       url: "/task_cli_connectivity.html"
-    - title: Cluster
+    - title: Gestisci i cluster
       url: "/task_cli_clusters.html"
     - title: Nodi e host
       entries:

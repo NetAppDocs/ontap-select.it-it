@@ -4,7 +4,7 @@ permalink: legal-notices.html
 keywords: copyrights, notices, trademarks, patents, privacy 
 summary: 'Le note legali forniscono l"accesso a dichiarazioni di copyright, marchi, brevetti e altro ancora.' 
 ---
-= Note legali
+= Note legali per ONTAP Select
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

@@ -4,7 +4,7 @@ permalink: concept_perf_general.html
 keywords: ontap select, performance 
 summary: Le prestazioni di un cluster ONTAP Select possono variare in base alla configurazione hardware. 
 ---
-= Panoramica delle performance di ONTAP Select
+= Scopri le prestazioni di ONTAP Select
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
