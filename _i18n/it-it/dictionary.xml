@@ -2,7 +2,6 @@
 <blocks>
   <block id="bd5ae2e61e1784e8eadc165e6029ecf8" category="summary">Esistono diverse attività correlate che è possibile eseguire nell'ambito della protezione di un'implementazione ONTAP Select.</block>
   <block id="2fae32629d4ef4fc6341f1751b405e45" category="doc">Sicurezza</block>
-  <block id="167b2e8c89f5ceb184efcaf133c27779" category="paragraph">È possibile modificare la password per l'account di amministratore della macchina virtuale Deploy in base alle necessità utilizzando l'interfaccia della riga di comando.</block>
   <block id="f3a29486bed19a90f2da6d007818b427" category="list-title">Fasi</block>
   <block id="6946015929ad4f656738c88a1535f3e0" category="list-text">Accedere alla CLI dell'utilità di implementazione utilizzando l'account amministratore.</block>
   <block id="79f41a0e0ccd4b8ecf18041e9a81199d" category="list-text">Modificare la password:<block ref="677e091924fb0fefdff90f08468b81c4" prefix=" " category="inline-code"></block></block>
@@ -131,14 +130,8 @@
   <block id="a273e800cc2132ad1d962e51194e96e5" category="paragraph-title">Aggregati mirrorati</block>
   <block id="abba0f0dc82d61817731da74e40642c4" category="summary">È possibile implementare un cluster ONTAP Select a nodo singolo su un host VMware ESXi gestito da vCenter. Il cluster viene creato con una licenza di valutazione.</block>
   <block id="7c5309706c244a069f293270807d94f9" category="paragraph">Il flusso di lavoro per la creazione del cluster è diverso nelle seguenti situazioni:</block>
-  <block id="31b7bb22df4e14e27e8d94676de87687" category="list-text">L'host ESXi non è gestito da vCenter (host standalone)</block>
-  <block id="7f99b6195696eb3b2dd6306108e31199" category="list-text">Nel cluster vengono utilizzati più nodi o host</block>
-  <block id="23792fd2201db7e4a90f1bb62205da33" category="list-text">Il cluster viene implementato in un ambiente di produzione con una licenza acquistata</block>
-  <block id="34e4360ab412f7aa9e3c95f9f9415b6f" category="list-text">L'hypervisor KVM viene utilizzato al posto di VMware ESXi</block>
   <block id="507f8233cb2eb908786a8439f415fee2" category="list-text">A partire da ONTAP Select 9.10.1, non è più possibile implementare un nuovo cluster sull'hypervisor KVM.</block>
   <block id="93ffd34ce676a00f4a126c465fc48130" category="list-text">A partire da ONTAP Select 9.11.1, tutte le funzionalità di gestibilità non sono più disponibili per i cluster e gli host KVM esistenti, ad eccezione delle funzioni take offline e delete.</block>
-  <block id="02a3feeefaee61409aecc3199ba633fd" category="section-title">1. Registrare le credenziali del server vCenter</block>
-  <block id="9769928a2568daa5e0ec428f55c04f89" category="paragraph">Durante la distribuzione su un host ESXi gestito da un server vCenter, è necessario aggiungere una credenziale prima di registrare l'host. L'utility di amministrazione di deploy può quindi utilizzare la credenziale per l'autenticazione in vCenter.</block>
   <block id="3adbdb3ac060038aa0e6e6c138ef9873" category="cell">Categoria</block>
   <block id="4c57667deb9cc4427f7e6a777e3de812" category="cell">Verbo HTTP</block>
   <block id="ac70412e939d72a9234cdebb1af5867b" category="cell">Percorso</block>
@@ -152,58 +145,35 @@
   <block id="29c2c02a361c9d7028472e5d92cd4a54" category="list-text">Output</block>
   <block id="6fd18179e53fc3bd4a83e90c73684f11" category="list-text">ID credenziale nell'intestazione della risposta di posizione</block>
   <block id="a7b616ec1be656c2c3ef33dfd78bdb0c" category="list-text">Oggetto lavoro</block>
-  <block id="deadfde1342a222716de788f93895dbf" category="section-title">2. Registrare un host hypervisor</block>
-  <block id="50f3b14b7fbed4611e83c75b3c9c20a3" category="paragraph">È necessario aggiungere un host hypervisor in cui verrà eseguita la macchina virtuale contenente il nodo ONTAP Select.</block>
   <block id="249694a485fc5d3289c38986b4f8e887" category="cell">Cluster</block>
   <block id="88fc921d1f71318c5af975a07e0e8f04" category="cell">/hosts</block>
   <block id="1aa20ebe456cad66e6129fab4a195837" category="list-text">Ingresso JSON (step02)</block>
   <block id="d0dd05b272f8737bda5439adabfc6643" category="list-text">ID host nell'intestazione di risposta della posizione</block>
-  <block id="39383035f281c71cce438511fe8d6c51" category="section-title">3. Creare un cluster</block>
-  <block id="ed384ac8f730609703afe369807f8250" category="paragraph">Quando si crea un cluster ONTAP Select, la configurazione di base del cluster viene registrata e i nomi dei nodi vengono generati automaticamente da Deploy.</block>
   <block id="a8581617f4d06018ed83bcbb6d633f90" category="cell">/cluster</block>
-  <block id="e25498b7bd9652ce511f529df78712d4" category="list-text">Il parametro di query node_count deve essere impostato su 1 per un cluster a nodo singolo.</block>
   <block id="dae34b91c860e5a604ac5d4f6afd92c5" category="list-text">Ingresso JSON (step03)</block>
   <block id="2fe4167817733fec8e6ba1afddf78f1b" category="list-text">Sincrono</block>
   <block id="1b8b8b0085eceb8bce188a5913d56143" category="list-text">ID del cluster nell'intestazione della risposta di posizione</block>
-  <block id="3a35cc9294f17e216cdffe83bb91f788" category="section-title">4. Configurare il cluster</block>
-  <block id="754c9eee1c8ef23ccd9076075bd78511" category="paragraph">Durante la configurazione del cluster, è necessario fornire diversi attributi.</block>
   <block id="63bc9a3997d66d835d9f3ec29451407d" category="cell">PATCH</block>
   <block id="33faae66911153aa6d56f871c5f658a4" category="cell">/cluster/{cluster_id}</block>
-  <block id="3b6e7b3175c0359d5497f22d0e5daabe" category="list-text">È necessario fornire l'ID del cluster.</block>
   <block id="2ad2e34d4fd04283002befd67d1c29a8" category="list-text">Ingresso JSON (punto 04)</block>
   <block id="6adf97f83acf6453d4a6a4b1070f3754" category="list-text">Nessuno</block>
-  <block id="4af02a1f5e0473ffb86727e2bd8b6b53" category="section-title">5. Recuperare il nome del nodo</block>
-  <block id="c26f06391fa4424822a3dbd199d9a64f" category="paragraph">L'utility di amministrazione di deploy genera automaticamente gli identificatori e i nomi dei nodi quando viene creato un cluster. Prima di poter configurare un nodo, è necessario recuperare l'ID assegnato.</block>
   <block id="7528035a93ee69cedb1dbddb2f0bfcc8" category="cell">OTTIENI</block>
   <block id="42dce12ba7d8618ae5d2c83199fea8c7" category="cell">/cluster/{cluster_id}/nodi</block>
   <block id="26db382b78fbd183978d5f1aeb381a58" category="list-text">Record di array ciascuno dei quali descrive un singolo nodo con ID e nome univoci</block>
-  <block id="74cda71525f9aca3e46903d022234ad1" category="section-title">6. Configurare i nodi</block>
-  <block id="0a92566a847a42edd7244ec613900b3c" category="paragraph">È necessario fornire la configurazione di base per il nodo, che è la prima delle tre chiamate API utilizzate per configurare un nodo.</block>
   <block id="5ffb5f0d0de78321df46fc7c93ca64a3" category="cell">PERCORSO</block>
   <block id="af9a1e8be725824341f94f96e257b314" category="cell">/clusters/{cluster_id}/nodes/{node_id}</block>
-  <block id="e2b008addd29982e386d16b9228751e6" category="list-text">È necessario fornire l'ID del cluster e l'ID del nodo.</block>
   <block id="8f026c595638e4f7dbd8326086a2c7cd" category="list-text">Ingresso JSON (punto 06)</block>
-  <block id="9e2c6c95b203ef5d771d239c6ba5479b" category="list-text">Specificare l'ID host in cui verrà eseguito il nodo ONTAP Select.</block>
-  <block id="e3ffa31f1d872665590b8b0eadc78e7a" category="section-title">7. Recuperare le reti di nodi</block>
-  <block id="8637663f59921f4e94ab0db53688a62e" category="paragraph">È necessario identificare le reti di dati e di gestione utilizzate dal nodo nel cluster a nodo singolo. La rete interna non viene utilizzata con un cluster a nodo singolo.</block>
   <block id="284ca1efd0632ffce3951fad1a5347c6" category="cell">/clusters/{cluster_id}/nodes/{node_id}/networks</block>
   <block id="e8d9bbe73b019b41c0089d3e7a4fb864" category="list-text">Array di due record ciascuno che descrive una singola rete per il nodo, inclusi ID e scopo univoci</block>
-  <block id="d20ec6b7f7f600c9fcccd6514729b723" category="section-title">8. Configurare la rete del nodo</block>
-  <block id="fd044cc6dc8f7afdca50cedf9c5f9b6e" category="paragraph">È necessario configurare le reti dati e di gestione. La rete interna non viene utilizzata con un cluster a nodo singolo.</block>
   <block id="7487fb99cf5d2185162c369e66dbc1f3" category="admonition">Eseguire due volte la seguente chiamata API, una per ciascuna rete.</block>
   <block id="16629bbbcf84e6c1fef245e6a9d19614" category="cell">/cluster/{cluster_id}/nodes/{node_id}/networks/{network_id}</block>
-  <block id="ff503073d5b79100c9a9f78b013ceb2a" category="list-text">È necessario fornire l'ID del cluster, l'ID del nodo e l'ID di rete.</block>
   <block id="5e18d7f3d51078ef553f70ee4289c0ad" category="list-text">Ingresso JSON (step08)</block>
-  <block id="f35efe81d707c340d4ea2dfcb42b737f" category="list-text">Specificare il nome della rete.</block>
-  <block id="f4d85dee61b7e6ea8e579ded7b189205" category="section-title">9. Configurare il pool di storage del nodo</block>
   <block id="d5498e1eb1973de90900bb0d5c17cf3a" category="paragraph">La fase finale della configurazione di un nodo consiste nell'associare un pool di storage. È possibile determinare i pool di storage disponibili tramite il client Web vSphere o, facoltativamente, tramite l'API REST di implementazione.</block>
   <block id="19702db757a0d71c55c74a9cd29e7adc" category="list-text">Ingresso JSON (punto 09)</block>
   <block id="56c843bc5b42c39debe1aeb9c8cc5151" category="list-text">La capacità del pool è di 2 TB.</block>
-  <block id="7342217632a904bd0e46f2ccc65f1b37" category="section-title">10. Implementare il cluster</block>
   <block id="f11eb42db1edaa1e22748c9811162fc2" category="paragraph">Una volta configurati il cluster e il nodo, è possibile implementarlo.</block>
   <block id="365539463bcc61785d264265fdb0e583" category="cell">/clusters/{cluster_id}/deploy</block>
   <block id="33ba2ef8157bb8f83fe7476e84b76be7" category="list-text">Ingresso JSON (step10)</block>
-  <block id="95ccb28342b6f78f3f3a3eb2dc5046d6" category="list-text">Specificare la password per l'account amministratore di ONTAP.</block>
   <block id="dae8ace18bdcbcc6ae5aece263e14fe8" category="inline-image-macro">Opzioni</block>
   <block id="e94fcecbba43e9dc52109bded1878e47" category="summary">Scopri le opzioni di alta disponibilità per selezionare la configurazione ha migliore per il tuo ambiente.</block>
   <block id="80ca7f43f3e672c21243bfefe6098be3" category="paragraph">Anche se i clienti stanno iniziando a spostare i carichi di lavoro delle applicazioni dalle appliance di storage di livello Enterprise alle soluzioni basate su software eseguite su hardware commodity, le aspettative e le esigenze relative a resilienza e tolleranza agli errori non sono cambiate. Una soluzione ha che fornisce un RPO (Zero Recovery Point Objective) protegge il cliente dalla perdita di dati dovuta a un guasto da qualsiasi componente dello stack dell'infrastruttura.</block>
@@ -1430,8 +1400,6 @@
   <block id="f39c5431d2026e960c0f380a0c0c4ef9" category="summary">È possibile utilizzare un processo di workflow per implementare un cluster ONTAP Select.</block>
   <block id="43b13cac79173588a7f38f74b27f2a09" category="doc">Workflow di installazione e implementazione di ONTAP Select</block>
   <block id="f4e7ce7ba166f67f662306fe747a596e" category="paragraph">È possibile utilizzare il seguente flusso di lavoro per implementare e amministrare un cluster ONTAP Select.</block>
-  <block id="2c3df213abea0ad1cb494572704542f9" category="inline-image-macro">Descrive l'intero flusso di lavoro necessario per implementare un cluster ONTAP Select.</block>
-  <block id="bc0723c49208cb7ede4ce6ea0a477957" category="paragraph"><block ref="bc0723c49208cb7ede4ce6ea0a477957" category="inline-image-macro-rx" type="image"></block></block>
   <block id="a0529b215fbb180f33a4b55d2d06fa65" category="summary">È possibile rimuovere le immagini ONTAP Select dall'istanza dell'utilità di amministrazione della distribuzione quando non sono più necessarie.</block>
   <block id="44f3dc9f001188ee5a7b34cbdc80486f" category="admonition">Non rimuovere le immagini ONTAP Select utilizzate da un cluster.</block>
   <block id="bdcc30baa721ccd0a5acff90c91be1eb" category="paragraph">È possibile rimuovere le immagini ONTAP Select meno recenti che non sono attualmente in uso in un cluster o che sono pianificate per l'utilizzo con una futura implementazione del cluster.</block>
@@ -2878,7 +2846,6 @@ dischi di ricambio dell'aggregato di storage</block>
   <block id="e0d52f0658828de62020550252885d55" category="admonition">Le SVM dei dati non vengono create durante l'implementazione del cluster di ONTAP Select. Devono essere creati dall'amministratore del cluster dopo la distribuzione. Per ulteriori informazioni, vedere<block ref="35df8afad8b7a7c75a74b08ae370be2a" category="inline-link-rx"></block>.</block>
   <block id="c472d49cae1aabcbf09d7e5fe0e34c87" category="inline-link-macro">Tipi di SVM contenute in un cluster</block>
   <block id="2e6bba9624b33764642b52b2cab65274" category="list-text"><block ref="2e6bba9624b33764642b52b2cab65274" category="inline-link-macro-rx"></block></block>
-  <block id="c19cab121a967e7d4e145437fee16c02" category="doc">Licenze di valutazione per implementazioni ONTAP Select</block>
   <block id="3ad47d20affd564b7db18fcaa67fb9ca" category="paragraph">Per scaricare l'utilità di amministrazione di distribuzione di ONTAP Select, è necessario disporre di quanto segue:</block>
   <block id="f2fd759d6c3aedc384b758263e96be4b" category="inline-link">Registrazione utente</block>
   <block id="ee071d378f5b3ec57e4eda0d66300334" category="list-text">Un account registrato sul sito del supporto NetApp. Se non si dispone di un account, vedere<block ref="b0f5d39de7f85d20bb3da6a76b3c4368" category="inline-link-rx"></block>.</block>
@@ -4008,5 +3975,64 @@ dischi di ricambio dell'aggregato di storage</block>
   <block id="f86585270713788c4d391e92b289c1b7" category="sidebar">Accedi alla console video della macchina virtuale</block>
   <block id="9f0562c731b8981f21e8a7ac75bd947f" category="sidebar">Gestisci le licenze</block>
   <block id="3ed621212c6f1b8569fd40f868bd89b6" category="sidebar">Crea un cluster su ESXi</block>
-  <block id="b420f92a45e1d6fca9bee10cca41ea8e" category="sidebar">Crea un cluster utilizzando uno script</block>
+  <block id="06c2cea18679d64399783748fa367bdd" category="inline-image-macro">Uno</block>
+  <block id="1f173698a3e113840cf9553b985e9546" category="inline-link-macro">Pianifica l'implementazione e prepara l'ambiente</block>
+  <block id="0cc2d38d165374b11075a50884dde93e" category="paragraph-title"><block ref="58f667aaf05f87159670e12bd9bc076b" category="inline-image-macro-rx" type="image"></block> <block ref="bc673aef44e914b83c5666dd028af37f" category="inline-link-macro-rx"></block></block>
+  <block id="1b41b6340b18d76e9ff9a54c63828d78" category="paragraph">Esamina i requisiti di pianificazione per i tuoi nodi ONTAP Select, lo storage, la rete e l'ambiente hypervisor. Preparare l'ambiente in anticipo ti aiuta a evitare problemi di implementazione.</block>
+  <block id="aada29daee1d64ed0fe907043855cb7e" category="inline-image-macro">Due</block>
+  <block id="cc22db77d107f09741fa3b7ec1dfa61c" category="inline-link-macro">Installa l'utilità di amministrazione ONTAP Select Deploy</block>
+  <block id="43bd6e83b2610c63d18296819d73a492" category="paragraph-title"><block ref="54f425ce8d89f4ed6b8a546561af5d60" category="inline-image-macro-rx" type="image"></block> <block ref="e8a9f86a962282c92ed15932c183ff1d" category="inline-link-macro-rx"></block></block>
+  <block id="5d260d4875ba5a356fabaf8b69d208ca" category="paragraph">Installa l'utilità che utilizzi per distribuire e gestire i cluster ONTAP Select.</block>
+  <block id="ca8a2087e5557e317599344687a57391" category="inline-image-macro">Tre</block>
+  <block id="f334973fb5e85ff16903f0c968258f7d" category="inline-link-macro">Acquisisci le licenze necessarie per una distribuzione in produzione</block>
+  <block id="5f4071ccc4084d66bbe7dca02bb1bef7" category="paragraph-title"><block ref="05b2444faffd66d76e88602ea7dd353f" category="inline-image-macro-rx" type="image"></block> <block ref="e24b225c8c6381e9e8b085283cb5723c" category="inline-link-macro-rx"></block></block>
+  <block id="db0054a77b83672bf97bb4cca8f4076a" category="paragraph">Acquista e applica le licenze necessarie per la tua implementazione in produzione. Puoi scegliere tra i modelli di licenza Capacity Tiers e Capacity Pools.</block>
+  <block id="981b8fcee42e1e726a67a2b9a98ea6e9" category="inline-image-macro">Quattro</block>
+  <block id="46baf0faaedb25a655515fb45f5ef17d" category="paragraph-title"><block ref="beadfa85a2fdca06b91edc1131c603e6" category="inline-image-macro-rx" type="image"></block>Distribuisci un cluster ONTAP Select utilizzando l'utilità di amministrazione ONTAP Select Deploy</block>
+  <block id="ffdd01590185bffc27894f03a0680e5e" category="paragraph">Utilizza l'utility Deploy per creare il tuo cluster ONTAP Select:</block>
+  <block id="136efef2f6c6b6722e566469c42e337b" category="inline-link-macro">Distribuisci usando l'interfaccia utente web</block>
+  <block id="3930fe336289bdb4c824f71731b70bb6" category="list-text"><block ref="3930fe336289bdb4c824f71731b70bb6" category="inline-link-macro-rx"></block></block>
+  <block id="0742a7e7cbd5a1bf660a2620b420473d" category="inline-link-macro">Distribuisci usando la CLI</block>
+  <block id="03fdb68dc65659db9ce4c0a6ffd4022e" category="list-text"><block ref="03fdb68dc65659db9ce4c0a6ffd4022e" category="inline-link-macro-rx"></block></block>
+  <block id="3ea6dfab9abcbaca190ca2667c04b9d0" category="inline-link-macro">Distribuisci usando l'API REST</block>
+  <block id="0b7e3947d3e95cc2b3abf63714244284" category="list-text"><block ref="0b7e3947d3e95cc2b3abf63714244284" category="inline-link-macro-rx"></block></block>
+  <block id="e5d9de39f7ca1ba2637e5640af3ae8aa" category="inline-image-macro">Cinque</block>
+  <block id="127cf492d01f264c84434c9966dab61b" category="inline-link-macro">Amministra il cluster ONTAP Select usando gli strumenti e le interfacce di gestione standard NetApp</block>
+  <block id="d995c5b15b36edd802d5dc9df851b160" category="paragraph-title"><block ref="99e8b2f00e172bfcff96afdce69907bc" category="inline-image-macro-rx" type="image"></block> <block ref="06b422eb1b8b5bb65bbe5a0ffd2323df" category="inline-link-macro-rx"></block></block>
+  <block id="26f55681ae754cf5ec42df871d9e2f99" category="paragraph">Gestisci il tuo cluster ONTAP Select utilizzando gli stessi strumenti e le stesse interfacce di gestione che usi per gli altri cluster ONTAP.</block>
+  <block id="e6864e34f4d65a499bfe53b736dc0378" category="summary">È possibile distribuire un cluster a nodo singolo ONTAP Select su un host VMware ESXi gestito da vCenter.</block>
+  <block id="f3e678a96d419b6f1d5ddc7a3a5c3aa1" category="list-text">L'host ESXi non è gestito da vCenter (host autonomo).</block>
+  <block id="7bc0a21d26b932446f22e4075a357bcc" category="list-text">Vengono utilizzati più nodi o host all'interno del cluster.</block>
+  <block id="ab016232a2168d39ea1f79753f39bb19" category="list-text">Il cluster è distribuito in un ambiente di produzione con una licenza acquistata.</block>
+  <block id="2ee94d7a102ab640bc8638a0339b8ffa" category="list-text">L'hypervisor KVM viene utilizzato al posto di VMware ESXi.</block>
+  <block id="cf0b402ecf5ce15ffb6e61168e16d82a" category="section-title">Passaggio 1: Registrare le credenziali del server vCenter</block>
+  <block id="5dcb32c834696b60ade26eaf81f8c0e7" category="paragraph">Quando distribuisci su un host ESXi gestito da un server vCenter, devi aggiungere una credenziale prima di registrare l'host. L'utilità di amministrazione Deploy può quindi usare la credenziale per autenticarsi su vCenter.</block>
+  <block id="f7075096c94ef282f7b617acf686548e" category="section-title">Passaggio 2: Registra un host hypervisor</block>
+  <block id="0d32ff2f78a8226f930ad070dbf2b200" category="paragraph">Aggiungi un host hypervisor dove verrà eseguita la macchina virtuale contenente il nodo ONTAP Select.</block>
+  <block id="0e74e809efb314a0a4b5a6470000e851" category="section-title">Passaggio 3: Crea un cluster</block>
+  <block id="f6c3391efad448ecb42156687f5ace08" category="paragraph">Quando crei un ONTAP Select cluster, la configurazione di base del cluster viene registrata e Deploy genera automaticamente i nomi dei nodi.</block>
+  <block id="9e0b991cd101f73e8d35fa974c14073b" category="list-text">Dovresti impostare il parametro di query node_count su 1 per un cluster a nodo singolo.</block>
+  <block id="67b5b9ac03e80a9ea13af4734b6e8bb8" category="section-title">Passaggio 4: Configura il cluster</block>
+  <block id="65bccd87fe447c8b6f21e500529f040c" category="paragraph">Devi fornire i seguenti attributi durante la configurazione del cluster.</block>
+  <block id="05bc8bdd11bde1948394238ffacb7a65" category="list-text">Fornisci l'ID del cluster.</block>
+  <block id="f58455cd4f740fe5fd905db7c8ac09a5" category="section-title">Passaggio 5: Recupera il nome del nodo</block>
+  <block id="f442d0c2e46c79ced82e41a51f7ae76e" category="paragraph">L'utility di amministrazione Deploy genera automaticamente gli identificativi e i nomi dei nodi quando viene creato un cluster. Prima di poter configurare un nodo, devi recuperare l'ID assegnato.</block>
+  <block id="4d256325483f73babecbb5bdbf2475d3" category="section-title">Passaggio 6: Configura i nodi</block>
+  <block id="eea4406e3f3d1aae192a588f5339913a" category="paragraph">Fornisci la configurazione di base per il nodo, che è la prima di tre chiamate API usate per configurare un nodo.</block>
+  <block id="ab1c6b156393e1a7a7f16bd9e8be8a3a" category="list-text">Fornisci l'ID del cluster e l'ID del nodo.</block>
+  <block id="a02339a5ecf96045042cb434dd98c793" category="list-text">Fornisci l'ID host su cui verrà eseguito il nodo ONTAP Select.</block>
+  <block id="7d33e9e69f2d3f9e5d80a75eae0a6474" category="section-title">Passaggio 7: Recupera le reti dei nodi</block>
+  <block id="52e1a0ea7e8e71a162ace6f44ce4a4ee" category="paragraph">Identifica le reti dati e di gestione utilizzate dal nodo nel cluster a nodo singolo. La rete interna non viene utilizzata con un cluster a nodo singolo.</block>
+  <block id="1580d3607e0c89c61eff40ae033a4679" category="section-title">Passaggio 8: Configura la rete del nodo</block>
+  <block id="7d153586804d7dfa9888ba97c6a79a8a" category="paragraph">Configura le reti dati e di gestione. La rete interna non viene utilizzata con un cluster a nodo singolo.</block>
+  <block id="4b82d47ca5bb53c796795ca888543f41" category="list-text">Fornisci l'ID del cluster, l'ID del nodo e l'ID della rete.</block>
+  <block id="85cd47c65f06e9c605003ee7dbbe51b6" category="list-text">Fornisci il nome della rete.</block>
+  <block id="876e85f27d74bcaa396ff2a669d8d92a" category="section-title">Passaggio 9: Configura il pool di storage</block>
+  <block id="fc9158ac69a933dcc872a55a00603008" category="section-title">Passaggio 10: Distribuisci il cluster</block>
+  <block id="d9b35950bad487aa3680b88379c9a3a5" category="list-text">Fornisci la password per l'account amministratore di ONTAP.</block>
+  <block id="f5d566772171e02b234fa74a25218c5b" category="paragraph">Puoi proteggere una distribuzione di ONTAP Select cambiando la password dell'account amministratore della macchina virtuale Deploy quando necessario usando l'interfaccia a riga di comando.</block>
+  <block id="9026f6c98a9723f3a17a4324a530f75e" category="doc">Distribuisci un cluster ONTAP Select tramite l'interfaccia utente web</block>
+  <block id="d8dbba8f3ce92ce5f07a5e0348eee10d" category="inline-link-macro">lista di controllo pre-installazione</block>
+  <block id="cdf955804034c3c67f90a9fa2b26792d" category="paragraph">Hai esaminato il <block ref="1a659edfd1511c28d59e934c80be869d" category="inline-link-macro-rx"></block>.</block>
+  <block id="e16c906ba61aeeafbcb69e14b4357d15" category="sidebar">Script per creare un cluster</block>
 </blocks>

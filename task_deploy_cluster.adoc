@@ -4,7 +4,7 @@ permalink: task_deploy_cluster.html
 keywords: install, installing, deploy ontap select cluster, create cluster 
 summary: 'È possibile utilizzare l"interfaccia utente Web fornita con l"utility di amministrazione di ONTAP Select Deploy per implementare un cluster ONTAP Select a nodo singolo o a più nodi.' 
 ---
-= Implementare un cluster ONTAP Select
+= Distribuisci un cluster ONTAP Select tramite l'interfaccia utente web
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

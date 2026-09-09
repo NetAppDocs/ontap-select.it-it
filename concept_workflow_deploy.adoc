@@ -16,4 +16,28 @@ summary: È possibile utilizzare un processo di workflow per implementare un clu
 [role="lead"]
 È possibile utilizzare il seguente flusso di lavoro per implementare e amministrare un cluster ONTAP Select.
 
-image:deploy_workflow2.png["Descrive l'intero flusso di lavoro necessario per implementare un cluster ONTAP Select."]
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["Uno"] link:reference_plan_ots_general.html["Pianifica l'implementazione e prepara l'ambiente"]
+[role="quick-margin-para"]
+Esamina i requisiti di pianificazione per i tuoi nodi ONTAP Select, lo storage, la rete e l'ambiente hypervisor. Preparare l'ambiente in anticipo ti aiuta a evitare problemi di implementazione.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Due"] link:task_install_deploy.html["Installa l'utilità di amministrazione ONTAP Select Deploy"]
+[role="quick-margin-para"]
+Installa l'utilità che utilizzi per distribuire e gestire i cluster ONTAP Select.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Tre"] link:concept_lic_workflow.html["Acquisisci le licenze necessarie per una distribuzione in produzione"]
+[role="quick-margin-para"]
+Acquista e applica le licenze necessarie per la tua implementazione in produzione. Puoi scegliere tra i modelli di licenza Capacity Tiers e Capacity Pools.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["Quattro"]Distribuisci un cluster ONTAP Select utilizzando l'utilità di amministrazione ONTAP Select Deploy
+[role="quick-margin-para"]
+Utilizza l'utility Deploy per creare il tuo cluster ONTAP Select:
+
+[role="quick-margin-list"]
+* link:task_deploy_cluster.html["Distribuisci usando l'interfaccia utente web"]
+* link:task_cli_deploy_cluster.html["Distribuisci usando la CLI"]
+* link:reference_api_workflow.html["Distribuisci usando l'API REST"]
+
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png["Cinque"] link:concept_adm_before.html["Amministra il cluster ONTAP Select usando gli strumenti e le interfacce di gestione standard NetApp"]
+[role="quick-margin-para"]
+Gestisci il tuo cluster ONTAP Select utilizzando gli stessi strumenti e le stesse interfacce di gestione che usi per gli altri cluster ONTAP.

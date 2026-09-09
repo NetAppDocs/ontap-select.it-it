@@ -14,13 +14,7 @@ summary: 'Esistono diverse attività correlate che è possibile eseguire nell"am
 
 
 [role="lead"]
-Esistono diverse attività correlate che è possibile eseguire nell'ambito della protezione di un'implementazione ONTAP Select.
-
-
-
-= Modificare la password dell'amministratore di distribuzione
-
-È possibile modificare la password per l'account di amministratore della macchina virtuale Deploy in base alle necessità utilizzando l'interfaccia della riga di comando.
+Puoi proteggere una distribuzione di ONTAP Select cambiando la password dell'account amministratore della macchina virtuale Deploy quando necessario usando l'interfaccia a riga di comando.
 
 .Fasi
 . Accedere alla CLI dell'utilità di implementazione utilizzando l'account amministratore.
