@@ -41,7 +41,7 @@ indexpage:
       url: https://docs.netapp.com/us-en/ontap/
     - title: Blog ONTAP Select
       url: https://blog.netapp.com/tag/ontap-select/
-    - title: Community ONTAP Select
-      url: https://community.netapp.com/t5/forums/filteredbylabelpage/board-id/data-ontap-discussions/label-name/ontap%20select
+    - title: Community ONTAP
+      url: https://community.netapp.com/community/categories/ontap
     - title: Matrice di interoperabilità
       url: https://mysupport.netapp.com/matrix/
