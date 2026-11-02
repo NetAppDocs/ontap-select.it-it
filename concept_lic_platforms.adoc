@@ -150,16 +150,19 @@ La tabella seguente fornisce il tipo di licenza minimo richiesto per lo spazio d
 2+| Dimensione dell'istanza | Piccolo | Piccola e media | Piccola, media e grande 
 
 
-2+| Das locale con controller RAID hardware | 8 - 60 dischi | 8 - 60 dischi | 8 - 60 dischi 
+2+| Das locale con controller RAID hardware | 8 – 60 unità | 8 – 60 unità | 8 – 60 unità 
 
 
 2+| HDD (SAS, NL-SAS, SATA) | Non applicabile | 4 – 60 dischi | 4 – 60 dischi 
 
 
-2+| SSD (SAS) | Non applicabile | 4 – 60 dischi (solo SSD) | 4 – 60 dischi (solo SSD) 
+2+| SSD (SAS) | Non applicabile | 4 – 60 dischi | 4 – 60 dischi 
 
 
-2+| Das locale con RAID software | Non applicabile | Applicabile | 4 - 14 dischi (solo NVMe) 
+2+| NVMe | Non applicabile | Non applicabile | 4 – 14 unità 
+
+
+2+| Das locale con RAID software | Non applicabile | Applicabile | 4 – 14 unità (solo NVMe) 
 
 
 2+| Array esterni ^1^ 3+| Gli archivi dati ospitati su array esterni sono collegati tramite FC, FCoE, iSCSI e NFS (NFS non è supportato per KVM). Questi datastore offrono elevata disponibilità e resilienza. 
@@ -176,7 +179,7 @@ La tabella seguente fornisce il tipo di licenza minimo richiesto per lo spazio d
 2+| Tipo di software 3+| Descrizione 
 
 
-2+| Supporto Hypervisor (VMware) 3+| VMware vSphere 9.0 VMware vSphere 8.0GA e aggiornamenti da 1 a 3 VMware vSphere 7.0GA e aggiornamenti da 1 a 3C 
+2+| Supporto Hypervisor (VMware) 3+| VMware vSphere 9.1, 9.0 VMware vSphere 8.0GA e aggiornamenti da 1 a 3 
 
 
 2+| Supporto hypervisor (KVM)  a| 

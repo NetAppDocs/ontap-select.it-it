@@ -29,6 +29,7 @@ ONTAP Select non supporta i cloud key manager.
 
 --
 Supporto per processori Advanced Micro Devices (AMD):: A partire da ONTAP Select 9.19.1, ONTAP Select supporta i processori AMD su host Kernel-Based Virtual Machine (KVM) e hypervisor ESXi. Per ulteriori informazioni, consultare link:reference_plan_ots_hardware.html["Considerazioni sull'hypervisor VMware e sull'hardware"].
+Supporto migliorato di VMware ESXi:: ONTAP Select 9.19.1 include il supporto per VMware ESXi 9.1.
 
 
 

@@ -93,13 +93,17 @@ openssl dgst  -sha256 -verify ONTAP-Select-Deploy-Production.pub -signature ONTA
 Installare e avviare ONTAP Select Deploy VM utilizzando l'immagine OVF VM. Come parte del processo di installazione, è necessario configurare l'interfaccia di rete per utilizzare DHCP o una configurazione IP statica.
 
 .Prima di iniziare
+[role="tabbed-block"]
+====
+.ESXi
+--
 Per un hypervisor ESXi, è necessario prepararsi a implementare ONTAP Select Deploy VM:
 
 * Abilitare la funzionalità OVF nel browser installando il plug-in di integrazione del client VMware o eseguendo una configurazione simile in base alle necessità
 * Abilitare il DHCP nell'ambiente VMware se si assegna dinamicamente un indirizzo IP alla VM di distribuzione
 
 
-Per gli hypervisor ESXi e KVM, è necessario disporre delle informazioni di configurazione da utilizzare durante la creazione della macchina virtuale, incluso il nome della macchina virtuale, della rete esterna e del nome host. Quando si definisce una configurazione di rete statica, sono necessarie le seguenti informazioni aggiuntive:
+Devi disporre delle informazioni di configurazione da utilizzare durante la creazione della VM, inclusi il nome della VM, la rete esterna e host name. Quando definisci una configurazione di rete statica, ti servono le seguenti informazioni aggiuntive:
 
 * Indirizzo IP della macchina virtuale da implementare
 * Netmask
@@ -109,6 +113,21 @@ Per gli hypervisor ESXi e KVM, è necessario disporre delle informazioni di conf
 * Domini di ricerca DNS
 
 
+--
+.KVM
+--
+Per gli hypervisor KVM, devi avere le informazioni di configurazione da utilizzare durante la creazione della VM, inclusi il nome della VM, la rete esterna e host name. Quando definisci una configurazione di rete statica, ti servono le seguenti informazioni aggiuntive:
+
+* Indirizzo IP della macchina virtuale da implementare
+* Netmask
+* Indirizzo IP del gateway (router)
+* Indirizzo IP del server DNS primario
+* Indirizzo IP del secondo server DNS
+* Domini di ricerca DNS
+
+
+--
+====
 .A proposito di questa attività
 Se si utilizza vSphere, la procedura guidata di implementazione dei modelli OVF include un modulo che fornisce tutte le informazioni di configurazione di implementazione, inclusa la configurazione di rete. Tuttavia, se si sceglie di non utilizzare questo modulo, è possibile utilizzare la console della macchina virtuale di distribuzione per configurare la rete.
 
