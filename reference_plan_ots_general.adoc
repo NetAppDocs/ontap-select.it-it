@@ -18,6 +18,64 @@ Esistono diversi requisiti generali da prendere in considerazione durante la pia
 
 
 
+[[required-windows-knowledge-and-skills-for-hyper-v]]
+== Conoscenze e competenze di Windows richieste per Hyper-V
+
+Windows Server con l'hypervisor Hyper-V è un ambiente complesso. Prima di implementare ONTAP Select su Hyper-V, devi avere le conoscenze e le competenze necessarie.
+
+L'utilità di amministrazione ONTAP Select Deploy crea e gestisce la macchina virtuale (VM) ONTAP Select. Ti servono le seguenti competenze per preparare l'host Windows amministrato da Deploy e verificare che l'host soddisfi i requisiti di ONTAP Select.
+
+Amministrazione di Windows Server:: Dovresti avere esperienza con la release di Windows Server per la tua distribuzione ONTAP Select. In particolare, dovresti essere in grado di eseguire le seguenti attività:
++
+--
+* Installa e aggiorna Windows Server
+* Identifica la release di Windows Server installata e verifica che sia supportata
+* Installare e abilitare i ruoli del server e le funzionalità opzionali, incluso il ruolo Hyper-V
+* Configurare il sistema utilizzando l'interfaccia CLI
+* Dimensiona la CPU host e la memoria in modo che rimanga capacità disponibile sull'host dopo la distribuzione di un nodo ONTAP Select
+
+
+Per ulteriori informazioni su come preparare il tuo server Windows, incluse la configurazione e i pacchetti software necessari, consulta link:hyper-v-host-configuration-and-preparation-checklist.html["lista di controllo della configurazione host"].
+
+--
+Concetti e amministrazione di Hyper-V:: Dovresti avere familiarità con i concetti generali di virtualizzazione e con la piattaforma Hyper-V. In particolare, dovresti comprendere quanto segue:
++
+--
+* Come l'attivazione del ruolo Hyper-V modifica la rete e lo storage sull'host
+* Come Hyper-V presenta lo storage a una macchina virtuale, inclusa la differenza tra un disco rigido virtuale e un disco fisico che viene passato a una macchina virtuale
+* Come visualizzare la configurazione e lo stato di una VM e delle sue risorse
+
+
+
+NOTE: L'utilità di amministrazione Deploy crea e gestisce la VM ONTAP Select. Non riconfigurare, creare checkpoint, migrare o eliminare la VM utilizzando Hyper-V Manager, Failover Cluster Manager o PowerShell.
+
+--
+Configurazione di rete e switch virtuale:: Dovresti avere familiarità con i concetti di rete e la configurazione degli switch di rete. Inoltre, dovresti essere in grado di eseguire le seguenti attività sull'host Hyper-V:
++
+--
+* Pianifica e crea switch virtuali esterni e comprendi come ogni switch virtuale è associato a una scheda di rete fisica
+* Verifica lo stato del collegamento, la velocità e la configurazione IP delle schede di rete host
+* Configura l'assegnazione di tag VLAN in modo coerente sia sull'host che sulla rete fisica
+* Configura i frame jumbo su una scheda di rete fisica e determina l'unità di trasmissione massima (MTU) risultante
+
+
+L'utility di amministrazione Deploy utilizza gli switch virtuali già presenti sull'host, quindi devi pianificare la configurazione degli switch virtuali prima della distribuzione. Ad esempio, un cluster a due nodi richiede una rete interna con un MTU compreso tra 7500 e 9000 byte.
+
+--
+Gestione dello storage:: Dovresti essere in grado di gestire dischi e volumi su Windows Server. Nello specifico, dovresti essere in grado di eseguire le seguenti attività:
++
+--
+* Crea e dimensiona volumi NTFS o ReFS e assegna loro lettere di unità
+* Identifica il tipo di supporto, il protocollo di trasporto dello storage (tipo di bus) e la capacità di un disco fisico
+* Distingui un disco raw da un disco partizionato o che contiene già un volume
+* Inizializza un disco raw da usare nel sistema
+
+
+--
+
+
+
+
 [[required-linux-knowledge-and-skills-for-kvm]]
 == Conoscenze e competenze Linux necessarie per KVM
 
@@ -34,7 +92,7 @@ Distribuzione server Linux:: Si dovrebbe avere esperienza con la distribuzione L
 --
 
 
-Per ulteriori informazioni sulla preparazione del server Linux, inclusa la configurazione richiesta e i pacchetti software, fare riferimento a link:kvm-host-configuration-and-preparation-checklist.html["lista di controllo della configurazione host"]. Consultare i requisiti dell'hypervisor per le distribuzioni Linux attualmente supportate.
+Per ulteriori informazioni sulla preparazione del server Linux, inclusa la configurazione richiesta e i pacchetti software, fare riferimento a link:kvm-host-configuration-and-preparation-checklist.html["lista di controllo della configurazione host"].
 
 Implementazione e amministrazione di KVM:: È necessario acquisire familiarità con i concetti generali di virtualizzazione. Inoltre, ci sono diversi comandi CLI di Linux che è necessario utilizzare come parte dell'installazione e dell'amministrazione di ONTAP Select in un ambiente KVM:
 +
@@ -79,32 +137,39 @@ Dedicato e collocato:: In base al tipo di applicazione, è necessario determinar
 Esistono diversi problemi di pianificazione relativi all'host dell'hypervisor che è necessario considerare.
 
 
-CAUTION: Non modificare direttamente la configurazione di una macchina virtuale ONTAP Select, a meno che non venga richiesto dal supporto NetApp. Una macchina virtuale deve essere configurata e modificata solo tramite l'utility di amministrazione di Deploy. Apportare modifiche a una macchina virtuale ONTAP Select al di fuori dell'utility di implementazione senza l'assistenza del supporto NetApp può causare il malfunzionamento della macchina virtuale e renderla inutilizzabile.
+CAUTION: Non dovresti modificare direttamente la configurazione di una VM ONTAP Select, a meno che il supporto NetApp non ti indichi di farlo. Una VM dovrebbe essere configurata e modificata solo tramite l'utility di amministrazione Deploy. Apportare modifiche a una VM ONTAP Select al di fuori dell'utility Deploy senza l'assistenza del supporto NetApp può causare il guasto della VM e renderla inutilizzabile.
 
 Indipendente dall'hypervisor:: Sia ONTAP Select che l'utility di amministrazione di ONTAP Select Deploy sono indipendenti dall'hypervisor. I seguenti hypervisor sono supportati per entrambi.
 +
 --
-* VMware ESXi
+* Microsoft Hyper-V
++
+
+NOTE: A partire da ONTAP Select 9.20.1, ONTAP Select supporta l'hypervisor Microsoft Hyper-V.
+
 * Macchina virtuale basata su kernel (KVM)
-
-
---
-
-
++
 
 NOTE: A partire da ONTAP Select 9.14.1, il supporto per l'hypervisor KVM è stato ripristinato. In precedenza, il supporto per l'implementazione di un nuovo cluster su un hypervisor KVM è stato rimosso in ONTAP Select 9.10.1 e il supporto per la gestione di cluster e host KVM esistenti, ad eccezione di quelli da mettere offline o eliminare, è stato rimosso in ONTAP Select 9.11.1.
 
+* VMware ESXi
+
+
+--
+
+
 Fare riferimento alle informazioni di pianificazione specifiche dell'hypervisor e link:reference_release_notes.html["note di rilascio"] per ulteriori dettagli sulle piattaforme supportate.
 
-Hypervisor per nodi ONTAP Select e utility di amministrazione:: Sia l'utility di amministrazione di Deploy che i nodi ONTAP Select vengono eseguiti come macchine virtuali. L'hypervisor scelto per l'utility di implementazione è indipendente dall'hypervisor scelto per i nodi ONTAP Select. Si dispone di una flessibilità completa per l'associazione dei due elementi:
+Hypervisor per nodi ONTAP Select e utility di amministrazione:: Sia l'utility di amministrazione Deploy sia i nodi ONTAP Select vengono eseguiti come VM. L'hypervisor che scegli per l'utility Deploy è indipendente dall'hypervisor che scegli per i nodi ONTAP Select. Hai la massima flessibilità nell'abbinare i due:
 +
 --
-* L'utility di implementazione eseguita su VMware ESXi può creare e gestire cluster ONTAP Select su VMware ESXi o KVM
-* L'utility di implementazione in esecuzione su KVM può creare e gestire cluster ONTAP Select su VMware ESXi o KVM
+* L'utility di distribuzione in esecuzione su VMware ESXi può creare e gestire cluster ONTAP Select su VMware ESXi, Hyper-V o KVM
+* L'utility di distribuzione in esecuzione su Hyper-V può creare e gestire cluster ONTAP Select su VMware ESXi, Hyper-V o KVM
+* L'utilità Deploy in esecuzione su KVM può creare e gestire cluster ONTAP Select su VMware ESXi, Hyper-V o KVM
 
 
 --
-Una o più istanze del nodo ONTAP Select per host:: Ogni nodo ONTAP Select viene eseguito come macchina virtuale dedicata. È possibile creare più nodi sullo stesso host hypervisor, con le seguenti restrizioni:
+Una o più istanze del nodo ONTAP Select per host:: Ogni nodo ONTAP Select viene eseguito come una VM dedicata. Puoi creare più nodi sullo stesso host hypervisor, con le seguenti limitazioni:
 +
 --
 * Non è possibile eseguire più nodi da un singolo cluster ONTAP Select sullo stesso host. Tutti i nodi di un host specifico devono provenire da diversi cluster ONTAP Select.
@@ -153,7 +218,7 @@ Stima dello storage necessario:: È necessario determinare la quantità di stora
 
 
 
-NOTE: La capacità dello storage ONTAP Select corrisponde alla dimensione totale consentita dei dischi dati collegati alla macchina virtuale ONTAP Select.
+NOTE: La capacità di storage di ONTAP Select corrisponde alla dimensione totale consentita dei dischi dati collegati alla VM ONTAP Select.
 
 Modello di licensing per l'implementazione in produzione:: Devi selezionare il modello di licenza per Tier di capacità o pool di capacità per ogni cluster ONTAP Select distribuito in un ambiente di produzione. Per ulteriori informazioni, consultare la sezione _licenza_.
 
@@ -163,17 +228,17 @@ Modello di licensing per l'implementazione in produzione:: Devi selezionare il m
 [[authentication-using-the-credential-store]]
 == Autenticazione mediante l'archivio delle credenziali
 
-L'archivio credenziali ONTAP Select Deploy è un database che contiene le informazioni sull'account. L'implementazione utilizza le credenziali dell'account per eseguire l'autenticazione host come parte della creazione e della gestione del cluster. È necessario conoscere il modo in cui l'archivio di credenziali viene utilizzato per pianificare un'implementazione di ONTAP Select.
+L'archivio delle credenziali di ONTAP Select Deploy è un database che contiene le informazioni sugli account. Deploy utilizza le credenziali degli account per eseguire l'autenticazione dell'host durante la creazione e la gestione del cluster. Dovresti sapere come viene utilizzato l'archivio delle credenziali durante la pianificazione di un'implementazione di ONTAP Select.
 
 
-NOTE: Le informazioni dell'account vengono memorizzate in modo sicuro nel database utilizzando l'algoritmo di crittografia AES (Advanced Encryption Standard) e l'algoritmo di hashing SHA-256.
+NOTE: Le informazioni dell'account vengono memorizzate in modo sicuro nel database utilizzando l'algoritmo di crittografia Advanced Encryption Standard (AES) e l'algoritmo di hashing SHA-256.
 
 Tipi di credenziali:: Sono supportati i seguenti tipi di credenziali:
 +
 --
 * host
 +
-La credenziale *host* viene utilizzata per autenticare un host hypervisor come parte della distribuzione di un nodo ONTAP Select direttamente a ESXi o KVM.
+Le credenziali *host* vengono utilizzate per autenticare un host hypervisor durante la distribuzione di un nodo ONTAP Select direttamente su ESXi, Hyper-V o KVM.
 
 * vcenter
 +

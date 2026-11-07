@@ -65,7 +65,7 @@ Questo strumento è utile solo per la risoluzione dei problemi della rete intern
 
 La procedura guidata di creazione del cluster (parte dell'interfaccia utente di ONTAP Deploy) include il controllo della rete interna come passaggio facoltativo disponibile durante la creazione di cluster multi-nodo. Dato l'importante ruolo svolto dalla rete interna nei cluster multi-nodo, rendere questo passaggio parte del flusso di lavoro di creazione del cluster migliora il tasso di successo delle operazioni di creazione del cluster.
 
-A partire da ONTAP Deploy 2.10, la dimensione MTU utilizzata dalla rete interna può essere impostata tra 7,500 e 9,000. Il controllo della connettività di rete può essere utilizzato anche per verificare le dimensioni MTU comprese tra 7,500 e 9,000. Il valore MTU predefinito viene impostato sul valore dello switch della rete virtuale. Se nell'ambiente è presente un overlay di rete come VXLAN, tale valore predefinito deve essere sostituito con un valore inferiore.
+A partire da ONTAP Deploy 2.10, la dimensione della Maximum Transmission Unit (MTU) utilizzata dalla rete interna può essere impostata tra 7,500 e 9,000. Puoi anche utilizzare lo strumento di verifica della connettività di rete per testare la dimensione MTU tra 7,500 e 9,000. Il valore MTU predefinito è impostato sul valore dello switch di rete virtuale. Devi sostituire tale valore predefinito con un valore inferiore se nell'ambiente è presente un overlay di rete come VXLAN.
 
 
 

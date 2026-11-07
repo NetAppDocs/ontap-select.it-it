@@ -17,7 +17,12 @@ summary: 'È necessario installare l"utility di amministrazione di ONTAP Select 
 È necessario installare l'utility di amministrazione di ONTAP Select Deploy e utilizzare l'utility per creare un cluster ONTAP Select.
 
 .Prima di iniziare
-Hai esaminato il link:kvm-host-configuration-and-preparation-checklist.html["lista di controllo pre-installazione"].
+Hai esaminato la checklist di preinstallazione per il tuo host hypervisor:
+
+* link:esxi-host-configuration-and-preparation-checklist.html["Elenco di controllo dell'host ESXi"]
+* link:hyper-v-host-configuration-and-preparation-checklist.html["Lista di controllo per l'host Hyper-V"]
+* link:kvm-host-configuration-and-preparation-checklist.html["Elenco di controllo dell'host KVM"]
+
 
 
 
@@ -30,7 +35,7 @@ Scarica il pacchetto ONTAP Select dal sito di supporto NetApp .
 https://mysupport.netapp.com/site/user/registration["Hai un account registrato sul sito di supporto NetApp"^].
 
 .A proposito di questa attività
-L'utilità di amministrazione ONTAP Select Deploy è confezionata come macchina virtuale (VM) basata sullo standard Open Virtualization Format (OVF). Il singolo file compresso ha il suffisso `OVA` per gli host ESXi e `TGZ` per gli host KVM. La VM fornisce il server Deploy e le immagini di installazione per i nodi ONTAP Select.
+L'utilità di amministrazione ONTAP Select Deploy è distribuita come macchina virtuale (VM) basata su Open Virtualization Format. Il singolo file compresso ha il suffisso `ova` per gli host ESXi, `vhdx.tgz` per Hyper-V e `raw.tgz` per gli host KVM. La VM fornisce il server Deploy e le immagini di installazione per i nodi ONTAP Select.
 
 .Fasi
 . Accedi alla link:https://mysupport.netapp.com/site/downloads/["Download dal sito di supporto NetApp"^] page.
@@ -90,10 +95,15 @@ openssl dgst  -sha256 -verify ONTAP-Select-Deploy-Production.pub -signature ONTA
 [[step-3-deploy-the-virtual-machine]]
 == Passaggio 3: distribuire la macchina virtuale
 
-Installare e avviare ONTAP Select Deploy VM utilizzando l'immagine OVF VM. Come parte del processo di installazione, è necessario configurare l'interfaccia di rete per utilizzare DHCP o una configurazione IP statica.
+Crea la macchina virtuale ONTAP Select Deploy sull'host dell'hypervisor.
 
-.Prima di iniziare
 [role="tabbed-block"]
+====
+.ESXi
+--
+Installa e avvia ONTAP Select Deploy VM su un host ESXi utilizzando l'immagine VM OVF. Durante il processo di installazione, configuri l'interfaccia di rete per utilizzare DHCP o una configurazione IP statica.
+
+--
 ====
 .ESXi
 --
@@ -127,17 +137,12 @@ Per gli hypervisor KVM, devi avere le informazioni di configurazione da utilizza
 
 
 --
+[]
 ====
 .A proposito di questa attività
 Se si utilizza vSphere, la procedura guidata di implementazione dei modelli OVF include un modulo che fornisce tutte le informazioni di configurazione di implementazione, inclusa la configurazione di rete. Tuttavia, se si sceglie di non utilizzare questo modulo, è possibile utilizzare la console della macchina virtuale di distribuzione per configurare la rete.
 
 .Fasi
-I passaggi che segui dipendono dall'utilizzo di un hypervisor ESXi o KVM.
-
-[role="tabbed-block"]
-====
-.ESXi
---
 . Accedere al client vSphere e accedere.
 . Individuare la posizione appropriata nella gerarchia e selezionare *Deploy OVF Template* (implementa modello OVF).
 . Seleziona il file OVA e completa la procedura guidata "Distribuisci modello OVF". Seleziona le opzioni appropriate per il tuo ambiente.
@@ -169,8 +174,131 @@ Utilizzare DHCP per impostare le informazioni di rete? [n]:
 
 
 --
-.KVM
+
 --
+Installa e avvia la VM ONTAP Select Deploy su un host Hyper-V utilizzando la procedura guidata Nuova macchina virtuale.
+
+.Prima di iniziare
+Verifica che l'host Hyper-V soddisfi i seguenti requisiti:
+
+[cols="1,2"]
+|===
+| Requisito | Valore 
+
+
+| Ruolo di Hyper-V | Installato, incluso il modulo Hyper-V PowerShell 
+
+
+| generazione di VM | Generazione 1 
+
+
+| vCPU | 2 
+
+
+| Memoria | 4GB, statico (memoria dinamica disabilitata) 
+
+
+| Disco di avvio | Collegato al controller IDE 0, posizione 0 
+
+
+| Spazio libero su disco | Almeno 40GB sul volume che ospita il disco della VM 
+
+
+| Strumento di archiviazione | tar, incluso con Windows Server 2019 e versioni successive 
+|===
+Verifica di avere a disposizione le seguenti informazioni:
+
+[cols="1,2"]
+|===
+| Informazioni | Descrizione 
+
+
+| Nome VM | Nome della VM Deploy, ad esempio ONTAP-deploy-HV 
+
+
+| Nome dello switch virtuale | Nome dello switch virtuale esterno, ad esempio ONTAP_Vswitch 
+
+
+| Nome della NIC fisica | Scheda di rete host connessa alla rete della VM Deploy 
+
+
+| ID VLAN | Necessario solo se la porta dello switch prevede traffico taggato 
+
+
+| Nome host | FQDN o host name breve della Deploy VM 
+
+
+| Password di amministratore | Password per l'account admin, impostata al primo avvio 
+|===
+Quando definisci una configurazione di rete statica, ti servono le seguenti informazioni aggiuntive:
+
+* Indirizzo IP della macchina virtuale da implementare
+* Netmask
+* Indirizzo IP del gateway (router)
+* Indirizzo IP del server DNS primario
+* Indirizzo IP del secondo server DNS
+* Domini di ricerca DNS
+
+
+.A proposito di questa attività
+La creazione di uno switch virtuale esterno interrompe brevemente il traffico di rete sulla scheda di rete fisica. Se sei connesso all'host da remoto tramite la scheda di rete fisica, usa una console out-of-band (come il server BMC) o un adattatore di rete diverso per non perdere l'accesso.
+
+.Fasi
+. In Hyper-V Manager, seleziona *Nuovo* > *Macchina virtuale* per aprire la Creazione guidata nuova macchina virtuale.
+. Seleziona *Avanti*.
+. Inserisci il nome della VM, quindi seleziona *Avanti*.
+. Seleziona *Generation 1*, quindi seleziona *Next*.
++
+
+NOTE: ONTAP Select con Hyper-V non supporta le VM Generation 2.
+
+. Inserisci la quantità di memoria, quindi seleziona *Avanti*.
++
+
+NOTE: Il requisito minimo di memoria è di 4GB.
+
+. Seleziona il tuo switch virtuale dall'elenco a discesa, quindi seleziona *Avanti*.
+. Seleziona *Usa un disco rigido virtuale esistente* > *Sfoglia*, quindi individua e seleziona il file immagine `vhdx.tgz`.
+. Seleziona *Avanti*.
+. Verifica la configurazione, quindi seleziona *Finish*.
+. Se necessario, è possibile configurare la rete Deploy utilizzando la console VM:
++
+.. Attendere la seguente richiesta:
++
+[listing]
+----
+Host name :
+----
+.. Digitare il nome host e selezionare *Invio*.
+.. Attendere la seguente richiesta:
++
+[listing]
+----
+Use DHCP to set networking information? [n]:
+----
+.. Digitare *n* per definire una configurazione IP statica o *y* per utilizzare il DHCP, quindi selezionare *Invio*.
+.. Se si sceglie una configurazione statica, fornire tutte le informazioni di configurazione di rete necessarie.
+
+
+
+
+--
+
+--
+Installa e avvia ONTAP Select Deploy VM su un host KVM utilizzando l'immagine VM OVF. Durante il processo di installazione, configuri l'interfaccia di rete per utilizzare DHCP o una configurazione IP statica.
+
+.Prima di iniziare
+Devi disporre delle informazioni di configurazione da utilizzare durante la creazione della VM, inclusi il nome della VM, la rete esterna e host name. Quando definisci una configurazione di rete statica, ti servono le seguenti informazioni aggiuntive:
+
+* Indirizzo IP della macchina virtuale da implementare
+* Netmask
+* Indirizzo IP del gateway (router)
+* Indirizzo IP del server DNS primario
+* Indirizzo IP del secondo server DNS
+* Domini di ricerca DNS
+
+
+.Fasi
 . Accedere alla CLI dal server Linux:
 +
 [listing]
@@ -220,6 +348,8 @@ Use DHCP to set networking information? [n]:
 
 
 --
+
+--
 ====
 
 
@@ -231,7 +361,7 @@ Sign in all'interfaccia utente web per confermare che l'utilità Deploy sia disp
 .Fasi
 . Puntare il browser verso l'utility di implementazione utilizzando l'indirizzo IP o il nome di dominio:
 +
-`\https://<ip_address>/`
+`\https://<IP_address>/`
 
 . Fornire il nome e la password dell'account amministratore (admin) e accedere.
 . Se viene visualizzata la finestra a comparsa *Benvenuti in ONTAP Select*, esaminare i prerequisiti e selezionare *OK* per continuare.

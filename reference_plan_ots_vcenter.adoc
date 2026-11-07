@@ -89,4 +89,4 @@ Provisioning:: Tutti i privilegi della categoria.
 Tutti i privilegi della categoria.
 
 .Informazioni correlate
-link:reference_plan_dep_vmware.html#vmware-vcenter-server-considerations["Scopri di più sui privilegi VMware vSphere per vSAN ESA in vCenter"]
+link:plan-deploy-hypervisor.html#vmware-vcenter-server-considerations["Scopri di più sui privilegi VMware vSphere per vSAN ESA in vCenter"]

@@ -14,7 +14,7 @@ summary: 'Preparare ogni host hypervisor KVM in cui verrà distribuito un nodo O
 
 
 [role="lead"]
-Preparare ogni host hypervisor KVM in cui verrà distribuito un nodo ONTAP Select . Durante la preparazione degli host, valutare attentamente l'ambiente di distribuzione per assicurarsi che siano configurati correttamente e pronti a supportare la distribuzione di un cluster ONTAP Select .
+Prepara ciascun host hypervisor KVM in cui è distribuito un nodo ONTAP Select. Assicurati che gli host siano configurati correttamente e pronti a supportare la distribuzione di un cluster ONTAP Select.
 
 
 NOTE: L'utility di amministrazione ONTAP Select Deploy non esegue la configurazione di rete e storage richiesta per gli host hypervisor. È necessario preparare manualmente ciascun host prima di distribuire un cluster ONTAP Select .

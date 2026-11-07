@@ -17,7 +17,7 @@ summary: È necessario considerare diversi problemi di pianificazione relativi a
 È necessario considerare diversi problemi di pianificazione relativi allo storage host ONTAP Select.
 
 
-NOTE: Le informazioni sul supporto per l'archiviazione esterna sono descritte per gli host ESXi e KVM. Per ulteriori informazioni, fare riferimento a link:reference_plan_ots_vnas.html["Requisiti VMware ESXi"] e link:reference_plan_ots_kvm.html["Requisiti KVM"].
+NOTE: Le informazioni sul supporto dello storage sono descritte per gli host ESXi, Hyper-V e KVM. Per ulteriori informazioni, consulta link:reference_plan_ots_vnas.html["Requisiti di archiviazione esterna di VMware ESXi"], link:plan-ots-hyper-v.html["Requisiti di storage per Hyper-V"] e link:reference_plan_ots_kvm.html["Requisiti dello storage esterno per KVM"].
 
 
 

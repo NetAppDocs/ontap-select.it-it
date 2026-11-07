@@ -16,7 +16,7 @@ summary: 'È possibile aggiornare una macchina virtuale dell"utility di implemen
 [role="lead"]
 Aggiorna una macchina virtuale esistente di ONTAP Select Deploy sul posto utilizzando la CLI dell'utilità ONTAP Select Deploy.
 
-È possibile eseguire l'aggiornamento diretto a ONTAP Select Deploy 9.19.1 da ONTAP Select Deploy 9.18.1 o 9.17.1. Per eseguire l'aggiornamento da una versione precedente, ad esempio ONTAP Select Deploy 9.16.1, è necessario prima eseguire l'aggiornamento a ONTAP Select Deploy 9.17.1 o 9.18.1, quindi eseguire l'aggiornamento a ONTAP Select Deploy 9.19.1.
+È possibile eseguire l'aggiornamento diretto a ONTAP Select Deploy 9.20.1 da ONTAP Select Deploy 9.19.1 o 9.18.1. Per eseguire l'aggiornamento da una versione precedente, ad esempio ONTAP Select Deploy 9.17.1, è necessario prima eseguire l'aggiornamento a ONTAP Select Deploy 9.18.1 o 9.19.1, quindi eseguire l'aggiornamento a ONTAP Select Deploy 9.20.1.
 
 [NOTE]
 ====

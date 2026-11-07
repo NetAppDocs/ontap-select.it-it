@@ -25,73 +25,98 @@ NOTE: Le funzionalità di ONTAP con dipendenze specifiche dell'hardware non sono
 [[licensed-ontap-features]]
 == Funzionalità ONTAP con licenza predefinita
 
-Le seguenti funzioni di ONTAP sono supportate con ONTAP Select e concesse in licenza per impostazione predefinita:
+Le seguenti funzionalità di ONTAP sono supportate con ONTAP Select e concesse in licenza per impostazione predefinita.
 
-* Protezione autonoma dal ransomware (ARP) (aggiornamenti manuali)
-* CIFS
-* Deduplica e compressione
-* Gestione delle chiavi esterne utilizzando il Key Management Interoperability Protocol (KMIP)
-+
-Scopri di più link:https://docs.netapp.com/us-en/ontap/encryption-at-rest/configure-netapp-volume-encryption-concept.html["abilitazione e configurazione della gestione delle chiavi esterne"^].
-
-* FlexCache
-+
-ONTAP Select supporta i volumi cache FlexCache con write-back. I volumi origin FlexCache con write-back non sono supportati.
-
-+
-link:concept_ots_overview.html#flexcache-write-back-with-ontap-select["Scopri di più sulla funzione di write-back di FlexCache con ONTAP Select"]
-
-* FlexClone
-* ISCSI
-* NDMP
-* NetApp Volume Encryption (solo paesi non soggetti a restrizioni)
-* NFS
-* NVMe su TCP
-* Funzionalità di multi-tenancy ONTAP
-* ONTAP S3
-* S3 SnapMirror
-* SnapLock Select
-+
-SnapLock Select è l'implementazione di ONTAP SnapLock progettata per ONTAP Select e include SnapLock Enterprise. Non include SnapLock Compliance.
-
-+
-Scopri di piùlink:https://docs.netapp.com/us-en/ontap/snaplock/index.html["ONTAP SnapLock"^]
-
-* SnapMirror
-+
-ONTAP Select non supporta i gruppi di coerenza in Asynchronous SnapMirror.
-
-* SnapRestore
-* SnapVault
-* Disaster recovery delle macchine virtuali storage (DR SVM)
-+
-ONTAP Select supporta SVM DR sia come sorgente che come destinazione, con un massimo di 16 relazioni. Il supporto SVM DR è limitato all'utilizzo della versione di ONTAP sorgente fino a versioni +2. Ad esempio, la sorgente ONTAP Select 9.16.1 può connettersi alle destinazioni ONTAP versioni 9.16.1, 9.17.1 o 9.18.1.
+[cols="1,1,1"]
+|===
+| Caratteristica | Scopri | Note 
 
 
+| Protezione autonoma contro i ransomware (ARP) | link:https://docs.netapp.com/us-en/ontap/anti-ransomware/index.html["ONTAP Autonomous Ransomware Protection"^] | ONTAP Select supporta solo gli aggiornamenti ARP manuali. 
 
+
+| CIFS | link:https://docs.netapp.com/us-en/ontap/smb-admin/index.html["SMB ONTAP"^] |  
+
+
+| Deduplica e compressione | link:https://docs.netapp.com/us-en/ontap-restapi/storage_volumes_endpoint_overview.html["Gestione dei volumi di storage"^] |  
+
+
+| Gestione delle chiavi esterne utilizzando il Key Management Interoperability Protocol (KMIP) | link:https://docs.netapp.com/us-en/ontap/encryption-at-rest/configure-netapp-volume-encryption-concept.html["Abilitazione e configurazione della gestione delle chiavi esterne"^] |  
+
+
+| FlexCache | link:https://docs.netapp.com/us-en/ontap/flexcache-writeback/flexcache-write-back-guidelines.html["Write-back di ONTAP FlexCache"^] | ONTAP Select supporta i volumi cache FlexCache con write-back. *Attenzione*: esistono limitazioni per il write-back di FlexCache con ONTAP Select. Per ulteriori informazioni, consulta link:concept_ots_overview.html#flexcache-write-back-with-ontap-select["FlexCache write-back con ONTAP Select"]. 
+
+
+| FlexClone | link:https://docs.netapp.com/us-en/ontap/volumes/flexclone-efficient-copies-concept.html["volumi ONTAP FlexClone"^] |  
+
+
+| ISCSI  a| 
+* link:https://docs.netapp.com/us-en/ontap-restapi/protocols_san_iscsi_credentials_endpoint_overview.html["Gestione delle credenziali iSCSI"^]
+* link:https://docs.netapp.com/us-en/ontap-restapi/protocols_san_iscsi_services_endpoint_overview.html["Gestione dei servizi iSCSI"^]
+* link:https://docs.netapp.com/us-en/ontap-restapi/protocols_san_iscsi_sessions_endpoint_overview.html["Visualizzazione delle sessioni iSCSI"^]
+
+|  
+
+
+| NDMP | link:https://docs.netapp.com/us-en/ontap/tape-backup/ndmp-management-concept.html["NDMP per i volumi ONTAP FlexVol"^] |  
+
+
+| NetApp Volume Encryption | link:https://docs.netapp.com/us-en/ontap/encryption-at-rest/configure-netapp-volume-encryption-concept.html["Crittografia di volumi e aggregati di ONTAP NetApp"^] | ONTAP Select supporta NetApp Volume Encryption solo nei Paesi non soggetti a restrizioni. 
+
+
+| NFS | link:https://docs.netapp.com/us-en/ontap/nfs-admin/index.html["Accesso ai file ONTAP per il protocollo NFS"^] |  
+
+
+| NFS su TLS | link:https://docs.netapp.com/us-en/ontap/nfs-admin/enable-nfs-over-tls-task.html["Abilitare NFS tramite TLS"^] | ONTAP Select supporta NFS su TLS usando la CLI. System Manager non è supportato. 
+
+
+| NVMe su TCP | link:https://docs.netapp.com/us-en/ontap-restapi/protocols_nvme_services_endpoint_overview.html["Gestione dei servizi NVMe"^] |  
+
+
+| Funzionalità di multi-tenancy ONTAP | link:https://docs.netapp.com/us-en/ontap/concepts/svm-use-cases-concept.html["Casi d'uso di ONTAP SVM"^] |  
+
+
+| ONTAP S3 | link:https://docs.netapp.com/us-en/ontap/s3-config/index.html["Configurazione di ONTAP S3"^] |  
+
+
+| S3 SnapMirror | link:https://docs.netapp.com/us-en/ontap/s3-snapmirror/index.html["ONTAP SnapMirror S3"^] |  
+
+
+| SnapLock Select | link:https://docs.netapp.com/us-en/ontap/snaplock/index.html["ONTAP SnapLock"^] | SnapLock Select è l'implementazione di ONTAP SnapLock progettata per ONTAP Select e include SnapLock Enterprise. Non include SnapLock Compliance. 
+
+
+| SnapMirror | link:https://docs.netapp.com/us-en/ontap/data-protection/snapmirror-disaster-recovery-concept.html["ONTAP SnapMirror disaster recovery asincrono"^] | ONTAP Select non supporta i gruppi di coerenza in Asynchronous SnapMirror. 
+
+
+| SnapRestore | link:https://docs.netapp.com/us-en/ontap/data-protection/restore-contents-volume-snapshot-task.html["Ripristino del contenuto di un volume da uno snapshot di ONTAP"^] |  
+
+
+| SnapMirror DR, archivio (precedentemente noto come SnapVault) | link:https://docs.netapp.com/us-en/ontap/data-protection/snapmirror-replication-workflow-concept.html["Flusso di lavoro della replica ONTAP SnapMirror"^] |  
+
+
+| Disaster recovery delle macchine virtuali storage (DR SVM) | link:https://docs.netapp.com/us-en/ontap/data-protection/snapmirror-svm-replication-concept.html["replica SVM di ONTAP SnapMirror"^] | ONTAP Select supporta SVM DR sia come sorgente che come destinazione, con un massimo di 16 relazioni. Il supporto SVM DR è limitato all'utilizzo della versione di ONTAP sorgente fino a versioni +2. Ad esempio, la sorgente ONTAP Select 9.16.1 può connettersi alle destinazioni ONTAP versioni 9.16.1, 9.17.1 o 9.18.1. 
+|===
 
 
 [[ontap-features-that-are-separately-licensed]]
 [[other-ontap-features]]
 == Funzionalità ONTAP con licenza separata
 
-È necessario acquisire una licenza separata per qualsiasi funzionalità di ONTAP non inclusa nella licenza predefinita, tra cui:
+Devi acquisire una licenza separata per le seguenti funzionalità di ONTAP supportate da ONTAP Select ma non incluse nella licenza predefinita.
 
-* FabricPool
-+
-
-NOTE: Non è necessaria una licenza FabricPool quando si utilizza StorageGRID.
-
-* SDS MetroCluster (offerta di licenze premium ONTAP Select)
-* SnapMirror cloud
-+
-È necessario link:https://mysupport.netapp.com/site/help["aprire una richiesta di assistenza non tecnica"^] per ottenere una licenza cloud SnapMirror.
-
-+
-Scopri di piùlink:https://docs.netapp.com/us-en/ontap/concepts/snapmirror-cloud-backups-object-store-concept.html["SnapMirror cloud backup su storage a oggetti"^]
+[cols="1,1,1"]
+|===
+| Caratteristica | Scopri | Nota 
 
 
+| FabricPool | link:https://docs.netapp.com/us-en/ontap/concepts/fabricpool-concept.html["ONTAP FabricPool"^] | Non è necessaria una licenza FabricPool quando si utilizza StorageGRID. 
 
+
+| Scheda di sicurezza MetroCluster | link:https://docs.netapp.com/us-en/ontap/concepts/mcc-sds-ontap-select.html["MetroCluster SDS per ONTAP Select"^] | Si tratta di un'offerta di licenza premium ONTAP Select. 
+
+
+| SnapMirror cloud | link:https://docs.netapp.com/us-en/ontap/concepts/snapmirror-cloud-backups-object-store-concept.html["SnapMirror cloud backup su storage a oggetti"^] | È necessario link:https://mysupport.netapp.com/site/help["aprire una richiesta di assistenza non tecnica"^] per ottenere una licenza cloud SnapMirror. 
+|===
 .Informazioni correlate
 * link:concept_ots_overview.html#compare-ontap-select-and-ontap-9["Confrontare ONTAP Select e ONTAP 9"]
 * link:https://mysupport.netapp.com/site/systems/master-license-keys["Scopri le chiavi di licenza master NetApp ONTAP"^]

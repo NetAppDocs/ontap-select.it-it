@@ -20,7 +20,7 @@ ONTAP Select converte i dischi interni, NVMe, SSD o HDD e gli array storage este
 
 ONTAP Select si adatta alle tue esigenze di utilizzo della capacità con due modelli di licenza complementari: Tier di capacità e pool di capacità completamente flessibili. Entrambi i modelli di licenza ti consentono di aumentare la capacità in incrementi di solo 1TB TB. Ad esempio, puoi partire con pochi terabyte e aggiungere capacità in modo dinamico man mano che il progetto cresce. Se stai utilizzando pool di capacità, puoi ridistribuire la capacità come meglio credi al termine del progetto.
 
-ONTAP Select è integrato in framework di gestione del cloud come VMware vSphere e Kernel-based Virtual Machine (KVM). Questo aiuta ad accelerare l'implementazione di nuovi progetti come servizi file, directory home, ambienti di sviluppo software e test delle applicazioni.
+ONTAP Select è integrato nei framework di gestione del cloud come VMware vSphere, Microsoft Hyper-V e Kernel-based Virtual Machine (KVM). Ciò contribuisce ad accelerare l'implementazione di nuovi progetti, come servizi file, directory home, ambienti di sviluppo software e test delle applicazioni.
 
 Il software SnapMirror ti consente di spostare i dati tra storage ONTAP nel cloud ibrido per accedere con facilità ai dati dove vuoi. Ad esempio, è possibile allestire rapidamente un nuovo ambiente per realizzare una nuova idea, Poi, puoi spostare il progetto in una piattaforma di storage dedicata per l'implementazione in produzione o renderlo più accessibile nel cloud come parte di un flusso di lavoro di sviluppo.
 

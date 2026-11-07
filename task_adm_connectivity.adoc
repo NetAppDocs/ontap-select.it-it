@@ -24,8 +24,14 @@ Ogni volta che si avvia un test, viene creata una nuova esecuzione di processo i
 
 Il test ha due modalità che ne controllano il funzionamento:
 
-* Quick (veloce) questa modalità esegue un test di base senza interruzioni. Viene eseguito un TEST PING, insieme a un test delle dimensioni MTU della rete e di vSwitch.
-* Extended (estesa): Questa modalità esegue un test più completo su tutti i percorsi di rete ridondanti. Se si esegue questa operazione su un cluster ONTAP Select attivo, le prestazioni del cluster potrebbero risentirvi.
+* Rapido
++
+Questa modalità esegue un test di base senza interruzioni. Esegue un test PING, insieme a un test della dimensione della Maximum Transmission Unit (MTU) di rete e del vSwitch.
+
+* Esteso
++
+Questa modalità esegue un test più completo su tutti i percorsi di rete ridondanti. Se la esegui su un cluster ONTAP Select attivo, le prestazioni del cluster possono risentirne.
+
 
 
 

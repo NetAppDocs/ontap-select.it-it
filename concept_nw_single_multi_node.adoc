@@ -27,9 +27,6 @@ A differenza della versione multi-nodo del prodotto ONTAP Select, ogni ONTAP Sel
 
 Queste porte vengono utilizzate per fornire i seguenti servizi: LIF di gestione, dati e intercluster.
 
-.KVM
-È possibile implementare ONTAP Select come cluster a nodo singolo. L'host hypervisor include uno switch virtuale che fornisce l'accesso alla rete esterna.
-
 .ESXi
 La figura seguente mostra la relazione tra queste porte e gli adattatori fisici sottostanti. La figura raffigura un nodo del cluster ONTAP Select sull'hypervisor ESXi.
 
@@ -39,6 +36,9 @@ image:DDN_03.jpg["Configurazione di rete del cluster ONTAP Select a nodo singolo
 
 
 NOTE: Anche se due adattatori sono sufficienti per un cluster a nodo singolo, è comunque necessario il raggruppamento delle NIC.
+
+.Hyper-V e KVM
+È possibile implementare ONTAP Select come cluster a nodo singolo. L'host hypervisor include uno switch virtuale che fornisce l'accesso alla rete esterna.
 
 
 
@@ -146,7 +146,7 @@ Il traffico di rete del cluster deve fluire attraverso una rete di livello 2 a b
 Per i dettagli, consultare la sezione link:reference_plan_best_practices.html#two-node-stretched-ha-metrocluster-sds-best-practices["Best practice di ha (MetroCluster SDS) con due nodi estesi"].
 
 
-NOTE: Per garantire il massimo throughput per il traffico di rete del cluster, questa porta di rete è configurata per utilizzare frame jumbo (da 7500 a 9000 MTU). Per il corretto funzionamento del cluster, verificare che i frame jumbo siano abilitati su tutti gli switch virtuali e fisici upstream che forniscono servizi di rete interni ai nodi del cluster ONTAP Select.
+NOTE: Per garantire il massimo throughput per il traffico di rete del cluster, questa porta di rete è configurata per utilizzare jumbo frame con un'unità di trasmissione massima (MTU) da 7500 a 9000 byte. Per il corretto funzionamento del cluster, verifica che i jumbo frame siano abilitati su tutti gli switch virtuali e fisici a monte che forniscono servizi di rete interni ai nodi del cluster ONTAP Select.
 
 
 

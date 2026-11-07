@@ -38,7 +38,7 @@ Per modificare il numero di nodi in un cluster in una dimensione non supportata 
 [[hardware-and-storage-considerations]]
 == Considerazioni su hardware e storage
 
-La funzionalità di espansione e contrazione del cluster è supportata sui seguenti host hypervisor KVM ed ESXi.
+La funzionalità di espansione e contrazione del cluster è supportata sui seguenti host hypervisor ESXi e KVM.
 
 [role="tabbed-block"]
 ====

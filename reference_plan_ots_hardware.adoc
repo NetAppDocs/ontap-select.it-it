@@ -38,19 +38,10 @@ Per implementare un cluster ONTAP Select, l'organizzazione deve disporre di una 
 [[software-compatibility]]
 === Compatibilità software
 
-È possibile distribuire ONTAP Select sugli hypervisor KVM ed ESXi.
+Puoi distribuire ONTAP Select sugli hypervisor ESXi, Hyper-V e KVM.
 
 [role="tabbed-block"]
 ====
-.KVM
---
-ONTAP Select supporta le seguenti versioni dell'hypervisor KVM:
-
-* KVM su Red Hat Enterprise Linux (RHEL) 10.1, 10.0, 9.7, 9.6, 9.5, 9.4, 9.2, 9.1, 9.0, 8.8, 8.7, e 8.6
-* KVM su Rocky Linux 10.1, 10.0, 9.7, 9.6, 9.5, 9.4, 9.3, 9.2, 9.1, 9.0, 8.9, 8.8, 8.7, and 8.6
-
-
---
 .ESXi
 --
 ONTAP Select supporta le seguenti versioni dell'hypervisor ESXi:
@@ -63,11 +54,29 @@ ONTAP Select supporta le seguenti versioni dell'hypervisor ESXi:
 * VMware ESXi 8,0 GA (build 20513097)
 
 
+[NOTE]
+====
+NetApp supporta ONTAP Select sulle versioni identificate di ESXi, a condizione che anche VMware continui a supportare le stesse versioni.
 
-NOTE: NetApp supporta ONTAP Select sulle versioni identificate di ESXi, a condizione che anche VMware continui a supportare le stesse versioni.
+ESXi 7.0 GA ha raggiunto la fine dello stato di disponibilità.  Se si dispone di cluster ONTAP Select con questa versione, è necessario eseguire l'aggiornamento alle versioni supportate come da https://mysupport.netapp.com/matrix["Tool di matrice di interoperabilità (IMT)"^] .
+
+====
+--
+.Hyper-V
+--
+ONTAP Select supporta le seguenti versioni dell'hypervisor Hyper-V:
+
+* Microsoft Windows Server 2025 e 2022
 
 
-NOTE: ESXi 7.0 GA ha raggiunto la fine dello stato di disponibilità.  Se si dispone di cluster ONTAP Select con questa versione, è necessario eseguire l'aggiornamento alle versioni supportate come da https://mysupport.netapp.com/matrix["Tool di matrice di interoperabilità (IMT)"^] .
+--
+.KVM
+--
+ONTAP Select supporta le seguenti versioni dell'hypervisor KVM:
+
+* KVM su Red Hat Enterprise Linux (RHEL) 10.1, 10.0, 9.7, 9.6, 9.5, 9.4, 9.2, 9.1, 9.0, 8.8, 8.7, e 8.6
+* KVM su Rocky Linux 10.1, 10.0, 9.7, 9.6, 9.5, 9.4, 9.3, 9.2, 9.1, 9.0, 8.9, 8.8, 8.7, and 8.6
+
 
 --
 ====
