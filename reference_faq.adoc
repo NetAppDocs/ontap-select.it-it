@@ -191,7 +191,7 @@ Storage add supporta anche il RAID software. Tuttavia, nel caso di RAID software
 .ONTAP Select supporta gli archivi dati vSAN o di tipo array esterno?
 ONTAP Select Deploy e ONTAP Select per ESXi supportano la configurazione di un cluster a nodo singolo ONTAP Select utilizzando un vSAN o un tipo di datastore di array esterno per il suo pool di storage.
 
-ONTAP Select Deploy e ONTAP Select for KVM supportano la configurazione di un cluster a nodo singolo ONTAP Select utilizzando un tipo di pool di storage logico condiviso su array esterni. I pool di storage possono essere basati su iSCSI, FC/FCoE e NFS. Altri tipi di pool di storage non sono supportati.
+ONTAP Select Deploy e ONTAP Select for KVM supportano la configurazione di un cluster a nodo singolo ONTAP Select utilizzando un tipo di pool di storage logico condiviso su array esterni. I pool di storage possono essere basati su iSCSI o FC/FCoE. Altri tipi di pool di storage non sono supportati.
 
 Sono supportati i cluster HA multi-nodo su storage condiviso.
 

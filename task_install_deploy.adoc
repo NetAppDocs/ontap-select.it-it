@@ -103,10 +103,7 @@ Crea la macchina virtuale ONTAP Select Deploy sull'host dell'hypervisor.
 --
 Installa e avvia ONTAP Select Deploy VM su un host ESXi utilizzando l'immagine VM OVF. Durante il processo di installazione, configuri l'interfaccia di rete per utilizzare DHCP o una configurazione IP statica.
 
---
-====
-.ESXi
---
+.Prima di iniziare
 Per un hypervisor ESXi, è necessario prepararsi a implementare ONTAP Select Deploy VM:
 
 * Abilitare la funzionalità OVF nel browser installando il plug-in di integrazione del client VMware o eseguendo una configurazione simile in base alle necessità
@@ -123,22 +120,6 @@ Devi disporre delle informazioni di configurazione da utilizzare durante la crea
 * Domini di ricerca DNS
 
 
---
-.KVM
---
-Per gli hypervisor KVM, devi avere le informazioni di configurazione da utilizzare durante la creazione della VM, inclusi il nome della VM, la rete esterna e host name. Quando definisci una configurazione di rete statica, ti servono le seguenti informazioni aggiuntive:
-
-* Indirizzo IP della macchina virtuale da implementare
-* Netmask
-* Indirizzo IP del gateway (router)
-* Indirizzo IP del server DNS primario
-* Indirizzo IP del secondo server DNS
-* Domini di ricerca DNS
-
-
---
-[]
-====
 .A proposito di questa attività
 Se si utilizza vSphere, la procedura guidata di implementazione dei modelli OVF include un modulo che fornisce tutte le informazioni di configurazione di implementazione, inclusa la configurazione di rete. Tuttavia, se si sceglie di non utilizzare questo modulo, è possibile utilizzare la console della macchina virtuale di distribuzione per configurare la rete.
 
@@ -174,7 +155,7 @@ Utilizzare DHCP per impostare le informazioni di rete? [n]:
 
 
 --
-
+.Hyper-V
 --
 Installa e avvia la VM ONTAP Select Deploy su un host Hyper-V utilizzando la procedura guidata Nuova macchina virtuale.
 
@@ -283,7 +264,7 @@ Use DHCP to set networking information? [n]:
 
 
 --
-
+.KVM
 --
 Installa e avvia ONTAP Select Deploy VM su un host KVM utilizzando l'immagine VM OVF. Durante il processo di installazione, configuri l'interfaccia di rete per utilizzare DHCP o una configurazione IP statica.
 
@@ -346,8 +327,6 @@ Use DHCP to set networking information? [n]:
 
 
 
-
---
 
 --
 ====
