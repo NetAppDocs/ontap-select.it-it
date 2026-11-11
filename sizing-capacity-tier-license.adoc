@@ -16,13 +16,21 @@ summary: La licenza Capacity Tiers si basa sulla capacità del disco sottostante
 [role="lead"]
 La licenza Capacity Tiers si basa sulla capacità del disco sottostante gestita da ciascun nodo ONTAP Select e non sulla capacità utilizzabile del nodo, della coppia HA o del cluster. Ogni licenza Capacity Tiers è assegnata a un singolo numero di serie di nodo per una capacità specifica e richiede un contratto di supporto allegato.
 
+Prima di determinare le dimensioni della licenza Capacity Tiers, dovresti esaminare le seguenti considerazioni:
+
+* Sia nelle configurazioni RAID hardware (VMDK) che in quelle RAID software (NVMe o SSD), il consumo delle licenze viene calcolato in base ai dischi dati o alle partizioni dati allocate agli aggregati di dati.
+* ONTAP Select esclude dal consumo della licenza i dischi e le partizioni di parità RAID-DP. Hai la licenza solo per le partizioni dati e i dischi aggiunti a un aggregate, quindi l'overhead di parità RAID-DP non consuma capacità di licenza aggiuntiva.
+* La capacità dell'unità di standby non è inclusa nella capacità utilizzabile dell'aggregato e non consuma la capacità della licenza.
+* I dischi di parità sono dedicati alla protezione dei dati. Non forniscono spazio di archiviazione utilizzabile per volumi e dati e non vengono conteggiati come capacità utilizzabile.
+
+
 La capacità concessa in licenza per una licenza Capacity Tiers è espressa in TB interi, con un minimo di 1 TB. Calcoli la capacità concessa in licenza moltiplicando la quantità di spazio utilizzabile per il fattore di overhead. Il fattore di overhead stima la capacità di overhead del software ONTAP Select da prelevare dallo spazio utilizzabile e si applica per determinare la capacità ONTAP Select per unità NVMe, SSD, HDD o virtuali. Il fattore di overhead differisce tra cluster a nodo singolo e cluster multi-nodo (basati su coppia HA):
 
 * Fattore di overhead per cluster a nodo singolo è 1.13
 * Fattore di overhead per i cluster multi-nodo è 2,67
 
 
-Devi calcolare la capacità concessa in licenza in base allo spazio utilizzabile per assicurarti di averne abbastanza per la tua implementazione. Ad esempio, vuoi 10 TB di capacità utilizzabile per una coppia HA (5 TB per nodo):
+Devi calcolare la capacità concessa in licenza in base allo spazio utilizzabile per assicurarti di avere capacità sufficiente per un'implementazione. Ad esempio, vuoi 10 TB di capacità utilizzabile per una coppia HA (5 TB per nodo):
 
 * Con una coppia HA, i dati vengono duplicati tra entrambi i nodi per ridondanza, quindi per 10 TB di dati utilizzabili in una coppia HA, ti servono 10 TB per nodo, nel caso in cui uno dei nodi vada offline.
 * Il fattore 2,67 raddoppia la capacità di ciascun nodo e aggiunge la capacità di overhead (0,67) necessaria per il funzionamento di ONTAP Select.

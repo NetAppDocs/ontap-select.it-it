@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: sizing-capacity-pool-license.html 
-keywords: license, licensing, Capacity Tiers, usable, space 
-summary: La licenza Capacity Tiers si basa sulla capacità del disco sottostante gestita da ciascun nodo e non sulla capacità utilizzabile del nodo, della coppia HA o del cluster. Ogni licenza Capacity Tiers è assegnata a un singolo numero di serie di nodo per una capacità specifica e richiede un contratto di supporto allegato. 
+keywords: license, licensing, Capacity Pools, usable, space 
+summary: La licenza Capacity Pools si basa sulla capacità del disco sottostante gestita da ciascun nodo e non sulla capacità utilizzabile del nodo, della coppia HA o del cluster. Ogni licenza Capacity Pools è assegnata al numero di serie di un singolo nodo per una capacità specificata e richiede un contratto di supporto associato. 
 ---
 = Determina la dimensione della licenza dei Capacity Pools per ONTAP Select
 :hardbreaks:
@@ -14,13 +14,23 @@ summary: La licenza Capacity Tiers si basa sulla capacità del disco sottostante
 
 
 [role="lead"]
+Calcola la dimensione della licenza ONTAP Select Capacity Pool in base allo spazio utilizzabile e all'overhead di configurazione del cluster ONTAP Select per garantire una capacità con licenza sufficiente per una distribuzione.
+
+Prima di determinare la dimensione della licenza Capacity Pools, dovresti esaminare le seguenti considerazioni:
+
+* Sia nelle configurazioni RAID hardware (VMDK) che in quelle RAID software (NVMe o SSD), il consumo delle licenze viene calcolato in base ai dischi dati o alle partizioni dati allocate agli aggregati di dati.
+* ONTAP Select esclude dal consumo della licenza i dischi e le partizioni di parità RAID-DP. Hai la licenza solo per le partizioni dati e i dischi aggiunti a un aggregate, quindi l'overhead di parità RAID-DP non consuma capacità di licenza aggiuntiva.
+* La capacità dell'unità di standby non è inclusa nella capacità utilizzabile dell'aggregato e non consuma la capacità della licenza.
+* I dischi di parità sono dedicati alla protezione dei dati. Non forniscono spazio di archiviazione utilizzabile per volumi e dati e non vengono conteggiati come capacità utilizzabile.
+
+
 La capacità concessa in licenza per una Capacity Pool license è espressa in TB interi, con un minimo di 2 TB. Calcoli la capacità concessa in licenza moltiplicando la quantità di spazio utilizzabile per il fattore di overhead. Il fattore di overhead stima la capacità di overhead del software ONTAP Select da prelevare dallo spazio utilizzabile e si applica alla determinazione della capacità ONTAP Select per unità NVMe, SSD, HDD o virtuali. Il fattore di overhead varia tra cluster a nodo singolo e cluster multi-nodo (basati su coppia HA):
 
 * Fattore di overhead per cluster a nodo singolo è 1.13
 * Fattore di overhead per i cluster multi-nodo è 2,67
 
 
-Devi calcolare la capacità concessa in licenza in base allo spazio utilizzabile per assicurarti di averne abbastanza per la tua implementazione. Ad esempio, vuoi 20 TB di capacità utilizzabile per una coppia HA (10 TB per nodo):
+Devi calcolare la capacità concessa in licenza in base allo spazio utilizzabile per assicurarti di avere capacità sufficiente per una distribuzione. Per esempio, ti servono 20 TB di capacità utilizzabile per una coppia HA (10 TB per nodo):
 
 * Con una coppia HA, i dati vengono duplicati tra entrambi i nodi per ridondanza, quindi per 20 TB di dati utilizzabili in una coppia HA, devi avere 20 TB per nodo, nel caso in cui uno dei nodi vada offline.
 * Il fattore 2,67 raddoppia la capacità di ciascun nodo e aggiunge la capacità di overhead (0,67) necessaria per il funzionamento di ONTAP Select.
