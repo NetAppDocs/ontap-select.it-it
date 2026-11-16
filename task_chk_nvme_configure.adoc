@@ -98,7 +98,7 @@ image:nvme_02.png["Modificare la disponibilità del dispositivo PCI"]
 
 +
 
-NOTE: È necessario un datastore VMFS supportato anche da un dispositivo NVMe per ospitare i dischi di sistema delle macchine virtuali ONTAP Select e la NVRAM virtuale. Lasciare almeno un disco NVMe disponibile per questo scopo quando si configurano gli altri per il pass-through PCI.
+NOTE: Devi disporre di un datastore VMFS supportato anche da un dispositivo NVMe per ospitare i dischi di sistema della VM ONTAP Select e la NVRAM virtuale. Lascia disponibile almeno un'unità NVMe a questo scopo quando configuri le altre per il passthrough PCI.
 
 .. Selezionare *OK*. I dispositivi selezionati indicano *Disponibile (in attesa)*.
 

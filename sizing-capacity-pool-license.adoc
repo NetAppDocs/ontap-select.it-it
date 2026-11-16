@@ -14,7 +14,7 @@ summary: La licenza Capacity Pools si basa sulla capacità del disco sottostante
 
 
 [role="lead"]
-Calcola la dimensione della licenza ONTAP Select Capacity Pool in base allo spazio utilizzabile e all'overhead di configurazione del cluster ONTAP Select per garantire una capacità con licenza sufficiente per una distribuzione.
+Calcola la dimensione della licenza ONTAP Select Capacity Pool in base allo spazio utilizzabile e all'overhead della configurazione del cluster per assicurarti di disporre di una capacità con licenza sufficiente per un'implementazione.
 
 Prima di determinare la dimensione della licenza Capacity Pools, dovresti esaminare le seguenti considerazioni:
 
@@ -30,7 +30,7 @@ La capacità concessa in licenza per una Capacity Pool license è espressa in TB
 * Fattore di overhead per i cluster multi-nodo è 2,67
 
 
-Devi calcolare la capacità concessa in licenza in base allo spazio utilizzabile per assicurarti di avere capacità sufficiente per una distribuzione. Per esempio, ti servono 20 TB di capacità utilizzabile per una coppia HA (10 TB per nodo):
+Ad esempio, vuoi 20 TB di capacità utilizzabile per una coppia HA (10 TB per nodo):
 
 * Con una coppia HA, i dati vengono duplicati tra entrambi i nodi per ridondanza, quindi per 20 TB di dati utilizzabili in una coppia HA, devi avere 20 TB per nodo, nel caso in cui uno dei nodi vada offline.
 * Il fattore 2,67 raddoppia la capacità di ciascun nodo e aggiunge la capacità di overhead (0,67) necessaria per il funzionamento di ONTAP Select.
